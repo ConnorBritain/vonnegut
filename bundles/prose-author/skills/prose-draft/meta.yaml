@@ -1,0 +1,56 @@
+name: prose-draft
+kind: author
+surface: skill
+bundle: prose-author
+
+contract:
+  read_only: false
+  writes: private-run-artifacts
+  scope: draft-rewrite-continuation
+  clean_context: false
+  deterministic: partial
+  denied_inputs:
+    - catalog.json in generation or repair
+    - unauthorized session history
+  verification:
+    claims:
+      - explicit mechanical rules checked against exact delivered bytes
+      - observed distributions compared where matching evidence exists
+      - named reviews and artifact checks completed or explicitly unavailable
+    refuses:
+      - resemblance or quality guarantees
+      - detector success claims
+      - passed status for unavailable checks
+      - invented personal calibration without samples
+  runtime: tools/prose-runtime.mjs
+  maximum_repairs: 2
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Production runner uses the authenticated CLI with empty tools and MCP config,
+      a fresh working directory and audited execution records. Mechanical checks
+      are deterministic; semantic judgment and general filesystem isolation are not.
+  codex:
+    enforcement: partial
+    notes: >-
+      Production runner uses authenticated codex exec with fresh context, disabled
+      unrelated tools and audited events. Model selection follows configuration.
+      Context restriction is not a general filesystem isolation guarantee.
+  cursor:
+    enforcement: advisory
+    notes: >-
+      Mechanical tools are portable. No native model adapter is implemented;
+      without an available Claude or Codex CLI the result is ungated.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Instructions alone cannot enforce runtime use. Missing adapters or dependencies
+      must be reported; never simulate a verified result.
+
+requires:
+  node: Dependency-free production runner requires Node.js.
+  authenticated-cli: Claude or Codex CLI with a compatible noninteractive interface.
+  prose-tell-scan: Required artifact scanner; absence yields ungated output.
+  prose-review: Voice critic when a profile exists; fidelity critic and scan for rewrites and repairs.

@@ -1,0 +1,37 @@
+{
+  "name": "prose-tell-scan",
+  "version": "0.1.1",
+  "description": "Deterministic prose measurement: catalogued AI writing tells and cadence metrics, calibrated against your own corpus.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "homepage": "https://github.com/ConnorBritain/agent-primitives",
+  "repository": "https://github.com/ConnorBritain/agent-primitives",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "editing",
+    "ai-writing-tells",
+    "readability",
+    "review"
+  ],
+  "interface": {
+    "displayName": "Prose Tell Scan",
+    "shortDescription": "Counts the AI writing tells a regex can catch, against your own calibrated corpus.",
+    "longDescription": "Deterministic prose measurement: a catalogued scan for AI writing tells plus the cadence metrics a model cannot estimate about its own output. Register-aware, calibrated against your own corpus, and report-only — signals for an author about their own draft, never a verdict about who wrote something. Ships no rewriter, by design. It reports signals for the author to weigh and never states or implies who wrote a document. The judgement half of this bundle — a critic for the patterns a regex cannot decide — is authored but deliberately not shipped; see primitives/agents/prose-pattern-critic/meta.yaml for why.",
+    "developerName": "Connor England",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/ConnorBritain/agent-primitives",
+    "defaultPrompt": [
+      "Scan this draft for AI writing tells",
+      "Check whether my revision actually removed the tells",
+      "Calibrate a writing profile against my own corpus",
+      "Which sentences here could not be wrong?"
+    ]
+  }
+}

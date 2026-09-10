@@ -1,0 +1,20 @@
+{
+  "name": "prose-author",
+  "version": "0.6.0",
+  "description": "Personal-style writing with explicit rules, advisory corpus tendencies, scoped persistent preferences and exact-final-text checks. Authenticated Claude/Codex runtime; optional whole human examples.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "repository": "https://github.com/ConnorBritain/agent-primitives",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "drafting",
+    "voice",
+    "authoring",
+    "skill"
+  ],
+  "agents": "agents"
+}

@@ -1,0 +1,52 @@
+name: voice-feedback-interpret
+kind: planner
+ships: true
+surface: agent
+bundle: prose-author
+
+contract:
+  read_only: true
+  clean_context: true
+  scope: feedback-event
+  verdict: none
+  output: voice-feedback-source/2
+  inputs_inline: true
+  reads_corpus: false
+  reads_exemplars: false
+  reads_catalog: false
+  applies_own_plan: false
+  computes_hashes: false
+  observed_rates: advisory-not-quotas
+  explicit_rules: independent-user-instructions
+  never_claims:
+    - resemblance or quality guarantees
+    - factual certainty
+    - detector success
+
+harness:
+  claude-code:
+    enforcement: partial
+    tools: []
+    color: green
+    notes: >-
+      Inputs arrive inline; no tools are permitted. Model selection inherits the
+      caller configuration. The production runtime uses a fresh authenticated CLI
+      context and audits execution records. This is not general OS read isolation.
+  codex:
+    enforcement: partial
+    notes: >-
+      Use the production runtime with the voice-feedback-source/2 schema.
+      Authenticated CLI calls preserve configured models. Mechanical checks bind
+      exact final bytes; observed rates remain advisory and semantic review is fallible.
+      Historical source/1, source/2, source/3 and source/4 artifacts remain readable
+      through versioned historical tools; never silently relabel old evidence.
+  cursor:
+    enforcement: advisory
+    notes: >-
+      Supply a fresh context with only authorized inputs. No native Cursor model
+      adapter is implemented. Missing runtime support must be disclosed.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Prompt-only invocation does not enforce execution or storage boundaries.
+      Use deterministic tooling for artifacts and never claim unperformed checks.

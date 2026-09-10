@@ -1,0 +1,71 @@
+{
+  "name": "agent-primitives",
+  "owner": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "metadata": {
+    "description": "Portable agent patterns for Claude Code, Codex, Cursor, and AGENTS.md harnesses."
+  },
+  "plugins": [
+    {
+      "name": "verification-gate",
+      "description": "Two read-only reviewers that run before an agent may declare a task done: verification-critic (reward-hacking and spec drift) and architecture-reviewer (structural decay). Optional Stop hook refuses to end a turn on red Tier-1 gates.",
+      "source": "./bundles/verification-gate",
+      "version": "0.1.0",
+      "category": "code-quality",
+      "tags": [
+        "code-review",
+        "verification",
+        "reward-hacking",
+        "architecture",
+        "quality-gate"
+      ]
+    },
+    {
+      "name": "prose-tell-scan",
+      "description": "Deterministic prose measurement: a catalogued scan for AI writing tells plus the cadence metrics a model cannot estimate about its own output. Register-aware, calibrated against your own corpus, and report-only — signals for an author about their own draft, never a verdict about who wrote something. Ships no rewriter, by design.",
+      "source": "./bundles/prose-tell-scan",
+      "version": "0.1.1",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "prose",
+        "editing",
+        "ai-writing-tells",
+        "readability",
+        "review",
+        "subagent"
+      ]
+    },
+    {
+      "name": "prose-review",
+      "description": "Two read-only critics and one revising transformer for prose. prose-voice-critic: does this sound like the author, judged against their own corpus, with every finding required to cite how they write instead. prose-fidelity-critic: did a revision keep the facts, quotes, qualifications and claim strength of the original, judged against a deterministic scan that is authoritative on presence. prose-reviser: applies a plan of edits and emits a change log the fidelity critic then judges — out-of-plan edits impossible by construction. Never judges quality, never claims anything about who wrote something.",
+      "source": "./bundles/prose-review",
+      "version": "0.3.0",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "prose",
+        "editing",
+        "voice",
+        "review",
+        "revision"
+      ]
+    },
+    {
+      "name": "prose-author",
+      "description": "Personal-style writing with explicit rules, advisory corpus tendencies, scoped persistent preferences and exact-final-text checks. Authenticated Claude/Codex runtime; optional whole human examples.",
+      "source": "./bundles/prose-author",
+      "version": "0.6.0",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "prose",
+        "drafting",
+        "voice",
+        "authoring"
+      ]
+    }
+  ]
+}

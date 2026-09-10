@@ -1,0 +1,103 @@
+# Working in prose-author
+
+Instructions for an agent contributing to this bundle. For what the bundle
+*does*, see [`README.md`](README.md); for why it is shaped this way,
+[`DESIGN.md`](DESIGN.md).
+
+## The rule that is not negotiable
+
+**The drafter never receives `catalog.json`.** Not as a prohibition list, not as
+"avoid these words", not as a post-hoc hint, not behind a flag, not "just for
+this register".
+
+If you find yourself adding it because output quality would improve, stop: that
+improvement is the failure. Prose optimised against a tell list scores zero and
+reads like nobody wrote it, which is what the catalog exists to detect. The
+target is the author's corpus and voice card. The catalog runs *afterwards*, on
+the way to a human.
+
+## Current claims and historical verification
+
+Current runtime receipts may report only what their recorded checks support:
+
+- explicit mechanical rules checked against the exact delivered bytes
+- observed distributions compared where matching human evidence is available
+- named artifact and semantic reviews completed, failed, or not evaluated
+
+Observations are advisory, not quotas. A measured absence is not a universal
+prohibition. Explicit user preferences work independently of a corpus, and
+unavailable checks must never become passing checks. Semantic review does not
+prove factual accuracy. Rewrites and continuation remain supported task modes;
+supplied prior text is coherence/content context, never automatically a corpus
+sample. Clear persistent instructions save with a visible receipt and undo;
+inferred preferences need approval. Do not apply corpus-ingestion thresholds
+to feedback learning.
+
+The historical verifier's three claims remain unchanged for historical runs:
+
+- it was scanned against this author's profile
+- cadence and density were compared to this author's derived bands
+- no Tier A artifact is present
+
+Neither path claims that it **sounds like the author**, that it is **good**, or
+that it would **pass a detector**. These are tested for in `tests/selftest.mjs`, including the
+awkward case: the phrase "sounds like you" *does* appear in the output, inside
+the sentence disclaiming it, so the test asserts every occurrence sits after
+"Not claimed" rather than asserting the phrase is absent. A test written the
+naive way passes for the wrong reason and would keep passing if the disclaimer
+were replaced with an assertion.
+
+## When you touch numerical history
+
+History is opt-in and separate from both corpora and preference revisions.
+Model-based rhetorical analysis needs separate consent and a separate bounded
+budget. Never persist source matches, raw model outputs, or text in numerical
+state. Stage measurements stay generated provenance. Unknown flags must fail
+before writes; do not silently fall back from an explicit directory request.
+Compare compatible contextual series, not a pooled human/generated average.
+Departures are advisory and cannot independently authorize repair. Preserve
+the locked bounded diagnostic as evidence; repeat only affected cases after fixes.
+
+## When you touch exemplar selection
+
+`tools/exemplars.mjs` is the one channel that can quietly poison a voice. Four
+invariants, all tested, all with a mutation test behind them:
+
+1. whole files, never excerpts
+2. human keeps the majority — the cap is clamped below 0.5 **in code**
+3. below `CORPUS_MINIMUM` human samples, approved contributes **zero**
+4. approved samples order by `edit_fraction`, which is computed and never asserted
+
+Changing any of these means changing [`PROFILES.md`](../prose-tell-scan/PROFILES.md)
+in the same commit, because that file is the shared contract and two bundles
+read it.
+
+## Before you call a change here done
+
+- `node tests/selftest.mjs`, then **`node tests/mutations.mjs`** — which applies
+  every documented mutation, measures, restores, and fails if
+  [`tests/MUTATIONS.md`](tests/MUTATIONS.md) disagrees with the run. If you added
+  a guard, add its mutation; a guard with no failing mutation is decoration, and
+  a mutation scoring 0 is reported as a missing test rather than a passing row.
+  Do not hand-edit the table — `--update` regenerates it. Put the output in the PR.
+- If you touched anything under `skills/`, exercise current fallback/refusal
+  paths: preference-only without a corpus, limited-evidence profiles, Tier A
+  artifacts, missing required siblings/adapters, scoped conflicts, interrupted
+  calls and exhausted repairs. Preserve historical refusal tests as historical;
+  do not reintroduce the old cold-start prohibition into current assistance.
+- All four manifests parse and carry the same `version` as the marketplace entry.
+- Relative links resolve — this bundle links into `prose-tell-scan` twice.
+
+## What would make this a bad bundle
+
+From `DESIGN.md`, repeated here because it is the checklist that matters:
+
+- it ships with the catalog wired into drafting "just as a hint"
+- it claims the output sounds like the author
+- it compares against `_base` when no corpus exists, without saying so
+- cadence bands get a "small" contribution from approved drafts
+- `edit_fraction` becomes a field someone types
+- the corpus grows faster from its own output than from the author's writing
+
+Any one of those turns a tool that helps someone write into one that
+convincingly writes like a model and tells them it is them.
