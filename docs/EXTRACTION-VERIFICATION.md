@@ -22,8 +22,10 @@ evidence, not freshly generated results for this repository move.
 | Four historical run verifications | All passed |
 | Mutation concurrency safety | 3 passed; all 275 mutations leave the actual tree unchanged |
 
-The full mutation table check is in progress and is not yet claimed as passed.
-Mutation documentation has not been hand-edited. The new packaging test also
+The separate full command `node bundles/prose-author/tests/mutations.mjs`
+completed with exit code 0: **275 mutations caught, zero uncaught, zero crashed**.
+`MUTATIONS.md` matched the measured table without changes; mutation documentation
+was not hand-edited or regenerated. The new packaging test also
 checks maintained relative documentation links and safe legacy Codex-wrapper
 migration. Test references to four excluded engineering documents were replaced
 with four writing/install documents; assertions were not weakened.
@@ -40,6 +42,11 @@ Claude CLIs in isolated temporary configuration directories:
 - All seven Codex custom agents pass the installer check.
 - Project-scoped Bash loose installation includes seven agents, three skills and
   the fidelity scanner; skill entrypoints match their sources.
+
+After pushing extraction commit `0ef96ef`, a fresh clone of the public GitHub
+repository also passed both `node tools/check.mjs` (all 16 commands) and
+`node tools/check-installation.mjs`. These checks ran from the downloaded clone,
+outside both the original agent-primitives checkout and the extraction checkout.
 
 The original active installations, private corpus and shared writing-memory
 stores were not changed. The Windows PowerShell installer was carried over with
