@@ -8,7 +8,7 @@ plan entry authorised it.
 Its output is judged by [`prose-fidelity-critic`](../prose-fidelity-critic/)
 before it may be kept. That is not a courtesy — the whole design of this bundle
 turns on a fidelity check that lands before the reviser it guards, and on the
-sampling policy in [`.planning/SAMPLING-POLICY.md`](../../../.planning/SAMPLING-POLICY.md)
+historical sampling procedure in [the reviser guide](../../../bundles/prose-review/REVISER-USAGE.md)
 that keeps the gate's verdict from being a coin flip. Both preconditions are met
 now, which is why this primitive exists at all.
 
@@ -205,8 +205,8 @@ and it is the one thing the author is best placed to judge.
 Or install the whole bundle:
 
 ```
-/plugin marketplace add ConnorBritain/agent-primitives
-/plugin install prose-review@agent-primitives
+/plugin marketplace add ConnorBritain/vonnegut
+/plugin install prose-review@vonnegut
 ```
 
 The reviser has no corpus requirement. What it needs is:

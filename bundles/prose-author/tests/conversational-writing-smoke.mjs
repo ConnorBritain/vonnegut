@@ -16,7 +16,7 @@ const legacyInline = process.argv.includes("--legacy-inline");
 const historyTest = process.argv.includes("--history");
 assert.ok(!fullAccess || harness === "codex", "--full-access is a Codex test option requiring user authorization");
 const version = JSON.parse(readFileSync(new URL("../.claude-plugin/plugin.json", import.meta.url))).version;
-const skill = join(homedir(), `.${harness}`, `plugins/cache/agent-primitives/prose-author/${version}/skills/prose-draft`);
+const skill = join(homedir(), `.${harness}`, `plugins/cache/vonnegut/prose-author/${version}/skills/prose-draft`);
 const storeModule = await import(pathToFileURL(join(skill, "tools/preference-store.mjs")));
 mkdirSync(out, { mode: 0o700 });
 const store = join(out, "test-preferences"); storeModule.initPreferenceStore(store, "writing-conversation-test");

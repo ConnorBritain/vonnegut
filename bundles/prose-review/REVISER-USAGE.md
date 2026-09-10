@@ -23,7 +23,7 @@ Install the bundle:
 # or scope to a project
 ./install.sh --project
 # or as a Claude Code plugin
-/plugin install prose-review@agent-primitives
+/plugin install prose-review@vonnegut
 ```
 
 Verify:
@@ -139,8 +139,9 @@ For each fixture, the harness returns 7 verdicts. Reading the distribution:
 | **2/7 or fewer FAITHFUL** | The revision likely dropped something the critic considers material. Read the MATERIAL-LOSS findings; either fix the plan and re-run or accept the loss knowingly. |
 | **0/7 FAITHFUL** | Unanimous. The revision definitely dropped something a critic thinks matters. Rewrite the plan. |
 
-The sampling policy behind this — why k=7 and why SPLITs are surfaced not
-resolved — is in [`../../.planning/SAMPLING-POLICY.md`](../../.planning/SAMPLING-POLICY.md).
+This is the historical k=7 procedure: surface split verdicts instead of hiding
+disagreement by choosing a favorable draw. It is not the current writing
+runtime's default review budget; see the [runtime contract](../prose-author/RUNTIME.md).
 
 ### 5. Author decides
 

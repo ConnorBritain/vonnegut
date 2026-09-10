@@ -1,20 +1,24 @@
 # Working in this repo
 
-Instructions for a coding agent contributing to `agent-primitives` itself. For the agents this
-repo *ships*, see the relevant bundle — e.g. [`bundles/verification-gate/AGENTS.md`](bundles/verification-gate/AGENTS.md).
+Instructions for a coding agent contributing to `vonnegut` itself. For the agents this
+repo *ships*, see the relevant bundle — e.g. [`bundles/prose-author/AGENTS.md`](bundles/prose-author/AGENTS.md).
 
 ## What this repo is
 
-A library of agent patterns — reviewers, transformers, authors, investigators, planners —
+A library of personal-style writing primitives — reviewers, transformers, authors, investigators, planners —
 authored once in harness-neutral form under `primitives/` and deployed per harness under
 `bundles/`. Content is prompts and docs; the only executable code is hooks and the
 deterministic tooling some bundles ship under `bundles/<bundle>/tools/`. Both are held to
 the same bar — cross-platform, no dependencies, every path tested.
 
-The repo is **not scoped to any one domain.** The first bundle is about software delivery;
-nothing in the authoring guidance should assume that. If you're adding to the repo-level docs
-and find yourself writing "the diff" or "the verdict", you're writing bundle-level material in
-a repo-level file.
+This repo is scoped to writing. Components remain independently usable; do not couple
+drafting, review and measurement merely because they share a repository. Cross-bundle
+guidance lives here; a single bundle's protocol belongs beside that bundle.
+
+Run verification locally using `node tools/check.mjs` (and `--mutations` for the full
+mutation sweep). Do not add GitHub Actions. Historical run records and the old system
+handoff are evidence, not current instructions. Keep shared personal data outside this
+checkout and plugin caches; preserve the `~/.config/prose-author` storage defaults.
 
 ## The two rules that break things
 

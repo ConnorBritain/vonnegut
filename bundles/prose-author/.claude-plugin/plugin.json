@@ -6,7 +6,7 @@
     "name": "Connor England",
     "url": "https://github.com/ConnorBritain"
   },
-  "repository": "https://github.com/ConnorBritain/agent-primitives",
+  "repository": "https://github.com/ConnorBritain/vonnegut",
   "license": "MIT",
   "keywords": [
     "writing",
@@ -15,7 +15,7 @@
     "voice",
     "authoring"
   ],
-  "homepage": "https://github.com/ConnorBritain/agent-primitives",
+  "homepage": "https://github.com/ConnorBritain/vonnegut",
   "agents": [
     "./agents/voice-profile-render.md",
     "./agents/voice-draft.md",

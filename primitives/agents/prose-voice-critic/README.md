@@ -189,4 +189,4 @@ from a corpus rather than a property of the text.
 ./install.sh --project prose-voice-critic
 ```
 
-Or install the whole bundle: `/plugin install prose-review@agent-primitives`.
+Or install the whole bundle: `/plugin install prose-review@vonnegut`.

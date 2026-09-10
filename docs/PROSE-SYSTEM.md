@@ -1,5 +1,10 @@
 # Prose system — plan and state
 
+> Archived agent-primitives handoff, retained as historical evidence, not operational
+> instructions. Its verification-gate agents and GitHub Actions were not extracted.
+> For the current toolkit, see the [README](../README.md) and run local engineering
+> checks with `node tools/check.mjs`. Original history is linked in [provenance](PROVENANCE.md).
+
 > Historical v0.2-era handoff. For current prose-author v0.4 behavior, use the
 > [bundle protocol](../bundles/prose-author/PROTOCOL.md),
 > [runtime contract](../bundles/prose-author/RUNTIME.md), and

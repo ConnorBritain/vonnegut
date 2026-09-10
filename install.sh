@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Install agent-primitives into Claude Code.
+# Install vonnegut into Claude Code.
 #
 #   ./install.sh                       everything → ~/.claude/
 #   ./install.sh --project             everything → ./.claude/
-#   ./install.sh verification-critic   just that one
+#   ./install.sh prose-voice-critic    just that one
 #   ./install.sh <skill-name>          a skill, with its bundled tools
 #   ./install.sh --list                show what's available
 #
@@ -20,8 +20,8 @@
 # under a plugin. A command that shells out to a plugin path directly would need
 # the plugin install:
 #
-#   /plugin marketplace add ConnorBritain/agent-primitives
-#   /plugin install <bundle>@agent-primitives
+#   /plugin marketplace add ConnorBritain/vonnegut
+#   /plugin install <bundle>@vonnegut
 #
 # Skills carry their own tooling by relative path, so they work either way.
 #

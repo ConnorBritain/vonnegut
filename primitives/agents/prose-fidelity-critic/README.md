@@ -224,4 +224,4 @@ and the run logs beside it — not here, because they change and this does not.
 ./install.sh --project prose-fidelity-critic
 ```
 
-Or install the whole bundle: `/plugin install prose-review@agent-primitives`.
+Or install the whole bundle: `/plugin install prose-review@vonnegut`.

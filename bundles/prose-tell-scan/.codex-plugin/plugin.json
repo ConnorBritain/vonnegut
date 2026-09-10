@@ -6,8 +6,8 @@
     "name": "Connor England",
     "url": "https://github.com/ConnorBritain"
   },
-  "homepage": "https://github.com/ConnorBritain/agent-primitives",
-  "repository": "https://github.com/ConnorBritain/agent-primitives",
+  "homepage": "https://github.com/ConnorBritain/vonnegut",
+  "repository": "https://github.com/ConnorBritain/vonnegut",
   "license": "MIT",
   "keywords": [
     "writing",
@@ -26,7 +26,7 @@
     "capabilities": [
       "Interactive"
     ],
-    "websiteURL": "https://github.com/ConnorBritain/agent-primitives",
+    "websiteURL": "https://github.com/ConnorBritain/vonnegut",
     "defaultPrompt": [
       "Scan this draft for AI writing tells",
       "Check whether my revision actually removed the tells",

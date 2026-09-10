@@ -169,11 +169,9 @@ Current numbers and their caveats live in
 [`tests/critic-harness.md`](../../../bundles/prose-tell-scan/tests/critic-harness.md) and
 the run log beside it, not here, because they change and this does not.
 
-## Install
+## Availability
 
-```bash
-./install.sh prose-pattern-critic       # → ~/.claude/agents/
-./install.sh --project prose-pattern-critic
-```
-
-Or install the whole bundle: `/plugin install prose-tell-scan@agent-primitives`.
+This primitive is held (`ships: false`), not installable through the plugin or
+loose-file installer. The canonical [prompt](agent.md) and historical harness
+remain available for explicit experiments. Installing `prose-tell-scan` installs
+the deterministic scanner, not this critic.

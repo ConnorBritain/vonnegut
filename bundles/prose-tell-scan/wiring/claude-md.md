@@ -16,7 +16,7 @@ finishing drafts without remembering to check them.**
 ---
 
 ```markdown
-## Prose review   <!-- agent-primitives: prose-tell-scan -->
+## Prose review   <!-- vonnegut: prose-tell-scan -->
 
 Before I publish or send a piece of writing, run the `tell-scan` skill
 against it and report what it flags. Uncalibrated thresholds are guesses — say

@@ -103,8 +103,8 @@ already been told their own voice is wrong.
 ## Install
 
 ```
-/plugin marketplace add ConnorBritain/agent-primitives
-/plugin install prose-review@agent-primitives
+/plugin marketplace add ConnorBritain/vonnegut
+/plugin install prose-review@vonnegut
 ```
 
 ```bash

@@ -63,13 +63,13 @@ export async function run(t, { tmp, HERE }) {
   await test("local Codex installer requires an explicit source switch and refuses unrelated plugin impact", () => {
     assert.equal(installerArgs([]).local, true); assert.equal(installerArgs(["--remote"]).local, false);
     assert.throws(() => installerArgs(["--remote", "--local"]), /not both/);
-    const calls = [], root = join(HERE, "../../.."), remote = { name: "agent-primitives", root,
-      marketplaceSource: { sourceType: "git", source: "https://github.com/ConnorBritain/agent-primitives.git" } };
+    const calls = [], root = join(HERE, "../../.."), remote = { name: "vonnegut", root,
+      marketplaceSource: { sourceType: "git", source: "https://github.com/ConnorBritain/vonnegut.git" } };
     let extra = false;
     const run = (args) => {
       calls.push(args);
       if (args[1] === "marketplace" && args[2] === "list") return JSON.stringify({ marketplaces: [remote] });
-      if (args[1] === "list") return JSON.stringify({ installed: extra ? [{ marketplaceName: "agent-primitives", name: "unrelated" }] : [] });
+      if (args[1] === "list") return JSON.stringify({ installed: extra ? [{ marketplaceName: "vonnegut", name: "unrelated" }] : [] });
       return "{}";
     };
     assert.throws(() => installPlugins({}, run), /replace-marketplace/);
@@ -94,7 +94,7 @@ export async function run(t, { tmp, HERE }) {
     assert.throws(() => verifyDeployment(source, target), /inventory differs/);
   });
   await test("remote install checks cannot certify older plugins paired with current agent wrappers", () => {
-    const run = () => JSON.stringify({ installed: [{ pluginId: "prose-author@agent-primitives", installed: true, enabled: true, version: "0.3.0" }] });
+    const run = () => JSON.stringify({ installed: [{ pluginId: "prose-author@vonnegut", installed: true, enabled: true, version: "0.3.0" }] });
     assert.throws(() => checkPlugins({ local: false }, run), /do not mix remote plugins/);
   });
   await test("plugin dependency discovery uses enabled registry versions and never guesses among caches", () => {

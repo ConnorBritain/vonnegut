@@ -168,10 +168,10 @@ try {
                        "primitives/agents/prose-voice-critic/README.md",
                        "bundles/prose-tell-scan/wiring/claude-md.md",
                        "bundles/prose-tell-scan/wiring/agents-md.md",
-                       "bundles/verification-gate/AGENTS.md",
-                       "bundles/verification-gate/PROTOCOL.md",
-                       "bundles/verification-gate/wiring/claude-md.md",
-                       "bundles/verification-gate/wiring/agents-md.md"]) {
+                       "docs/PROVENANCE.md",
+                       "docs/MIGRATION.md",
+                       "bundles/prose-author/README.md",
+                       "bundles/prose-author/INSTALL.md"]) {
       const path = join(REPO, doc);
       const r = scan([path, "--profile", "technical"]).results[0];
       check(

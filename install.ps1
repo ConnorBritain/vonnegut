@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Install agent-primitives into Claude Code.
+  Install vonnegut into Claude Code.
 
 .DESCRIPTION
   Three kinds of thing get installed, to three destinations:
@@ -24,7 +24,7 @@
 .EXAMPLE
   .\install.ps1 -Project              # everything -> .\.claude\
 .EXAMPLE
-  .\install.ps1 verification-critic   # just that one
+  .\install.ps1 prose-voice-critic    # just that one
 .EXAMPLE
   .\install.ps1 <skill-name>          # a skill, with its bundled tools
 .EXAMPLE

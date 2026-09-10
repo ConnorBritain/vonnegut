@@ -6,7 +6,7 @@
     "name": "Connor England",
     "url": "https://github.com/ConnorBritain"
   },
-  "repository": "https://github.com/ConnorBritain/agent-primitives",
+  "repository": "https://github.com/ConnorBritain/vonnegut",
   "license": "MIT",
   "keywords": [
     "writing",
@@ -15,7 +15,7 @@
     "voice",
     "authoring"
   ],
-  "homepage": "https://github.com/ConnorBritain/agent-primitives",
+  "homepage": "https://github.com/ConnorBritain/vonnegut",
   "interface": {
     "displayName": "Prose Author",
     "shortDescription": "Personal-style writing with checked rules and persistent preferences.",
@@ -25,7 +25,7 @@
     "capabilities": [
       "Interactive"
     ],
-    "websiteURL": "https://github.com/ConnorBritain/agent-primitives",
+    "websiteURL": "https://github.com/ConnorBritain/vonnegut",
     "defaultPrompt": [
       "Draft a reply using my writing preferences",
       "Remember this style correction for future replies",

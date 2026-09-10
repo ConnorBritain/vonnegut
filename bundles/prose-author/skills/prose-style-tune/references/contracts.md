@@ -92,8 +92,7 @@ choice and treat an unexplained preference as weak evidence.
 
 ## Product boundary
 
-These contracts deliberately own no database, accounts, corpus library, visual editor,
-session history, or project lifecycle. A future Style Studio repository should persist and
-present these portable artifacts while consuming the agents and tools from
-`agent-primitives`. Persistent product state is the split point; semantic contracts remain
-here.
+Vonnegut owns the portable writing primitives and their local, versioned preference,
+identity and numerical-history stores. It does not provide accounts, a visual editor
+or cloud synchronization. A separate application can consume these contracts without
+coupling the independently usable drafting, reviewing and measurement components.

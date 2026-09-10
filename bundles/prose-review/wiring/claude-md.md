@@ -15,7 +15,7 @@ publishing without checking.**
 ---
 
 ```markdown
-## Prose voice   <!-- agent-primitives: prose-review -->
+## Prose voice   <!-- vonnegut: prose-review -->
 
 Before I publish a piece of writing, run `prose-voice-critic` against it and
 report what it flags. Every finding needs a corpus citation; drop any that

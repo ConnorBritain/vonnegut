@@ -224,14 +224,14 @@ what they want, so decide this before writing the manifests.
 **The mechanism.** In Claude Code, install granularity is the *plugin*, not the agent:
 
 ```
-/plugin marketplace add ConnorBritain/agent-primitives   # registers the catalog, installs nothing
-/plugin install verification-gate@agent-primitives       # installs the whole bundle
+/plugin marketplace add ConnorBritain/vonnegut   # registers the catalog, installs nothing
+/plugin install prose-review@vonnegut            # installs the whole bundle
 ```
 
 Enabling is the same granularity — a boolean per plugin in `settings.json`:
 
 ```json
-"enabledPlugins": { "verification-gate@agent-primitives": true }
+"enabledPlugins": { "prose-review@vonnegut": true }
 ```
 
 There is no per-agent selector in either. Install one primitive from a bundle and you install
@@ -243,11 +243,9 @@ so draw it once, deliberately.
 
 **The test.** Would anyone reasonably want one of these without the others?
 
-- *No* → one bundle. `verification-critic` and `architecture-reviewer` run at the same moment,
-  on the same diff, as one gate. A gate with half its checks is a strange thing to want.
-- *Yes* → separate bundles. A prose humanizer and a code reviewer share nothing: different
-  domain, different trigger, different projects. Bundling them forces anyone who wants one to
-  take both.
+- *No* → one bundle. A skill and the runtime it invokes must install together.
+- *Yes* → separate bundles. Someone can use prose measurement without generating
+  prose, or review an existing revision without installing a drafter.
 
 **Don't pre-split.** Two bundles means two sets of four manifests, two versions to keep in
 lockstep, and two marketplace entries — real cost, paid every release. Split when someone
@@ -278,17 +276,17 @@ than predictions:
   about whether the changing half should exist, only that it should not be holding the
   scoreboard.
 
-> **The first use of this clause is `prose-tell-scan`, and it is not yet proven.** The split
+> **Historical rationale from the initial `prose-tell-scan` split.** The split
 > was made on the two observed grounds above plus a *projected* cadence difference between a
 > catalog that carries a retrieval date and craft prompts that do not expire. The projection is
-> untested: at the time of writing `prose-review` does not exist and neither bundle has been
+> untested: at that time `prose-review` did not exist and neither bundle had been
 > released twice. Do not cite this as precedent for the cadence argument until there is a
 > release history to point at. If the cadences turn out to match, the honest outcome is to
 > merge the bundles and delete this paragraph.
 
 **Escape hatches** when a user wants finer control than the bundle gives:
 
-- Loose-file install takes individual names: `./install.sh verification-critic`
+- Loose-file install takes individual names: `./install.sh prose-voice-critic`
 - Put `enabledPlugins` in a *project's* `.claude/settings.json` and the bundle is active only
   in that repo — usually the on/off people actually want, e.g. a delivery gate that's live in
   application repos and absent in a docs repo.
@@ -312,7 +310,7 @@ a rationale, or a snippet that's true only of your bundle belongs next to it —
 
 ### Manifest differences that will bite you
 
-The four schemas are not interchangeable. Copy the shapes from `verification-gate`:
+The four schemas are not interchangeable. Copy the shapes from `prose-review`:
 
 - **`.claude-plugin`** — `agents` is an **array of file paths** (`["./agents/foo.md"]`).
 - **`.cursor-plugin`** — `agents` is a **directory name string** (`"agents"`).
@@ -335,7 +333,7 @@ prompt gives a bad answer, a broken hook blocks every turn.
 - **Respect `stop_hook_active`** on `Stop` hooks, or you've built an infinite loop.
 - **Cross-platform**, no dependencies. This repo targets Windows, macOS, and Linux.
 - **Test every path** — config absent, malformed, check passing, check failing, timeout, loop
-  guard. See [`gate-runner.mjs`](bundles/verification-gate/hooks/gate-runner.mjs).
+  guard. No hook is shipped by the current writing bundles.
 
 ## Ground truth, and what you may claim without it
 

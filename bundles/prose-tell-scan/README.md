@@ -3,9 +3,10 @@
 Deterministic measurement of prose: catalogued AI writing tells, and the rhythm
 metrics a model cannot reliably estimate about its own output.
 
-**Status: v0.2.** The scanner is report-only and calls no model. It now ships one
-primitive that does — `prose-pattern-critic`, scoped to exactly the patterns the
-catalog records as undecidable by regex. It reads; it still does not write.
+**Status: v0.1.1.** The shipped scanner is report-only and calls no model.
+`prose-pattern-critic` is an experimental held primitive for patterns the catalog
+records as undecidable by regex. Its source and evidence remain available, but it
+is not included in plugin or loose-file installation.
 
 > ### The invariant: the thing that measures does not also rewrite
 >
@@ -36,7 +37,7 @@ catalog records as undecidable by regex. It reads; it still does not write.
 > because it is repo policy, not a fact about this bundle, and two copies of a
 > policy argument drift the moment either bundle's story changes.
 
-| Ships today | What it is | What it does |
+| Component or supporting material | What it is | What it does |
 |---|---|---|
 | [`skills/tell-scan/`](skills/tell-scan/) | skill | The entry point. Dispatcher-triggered; carries its own tooling and profiles |
 | [`commands/tell-scan.md`](commands/tell-scan.md) | command | `/prose-tell-scan:tell-scan <file>`, or `/tell-scan` installed loose |
@@ -44,7 +45,7 @@ catalog records as undecidable by regex. It reads; it still does not write.
 | [`.../tools/init.mjs`](skills/tell-scan/tools/init.mjs) | script | Scaffolds a writing project: profiles, corpus dirs, path rules |
 | [`.../tools/ingest.mjs`](skills/tell-scan/tools/ingest.mjs) | script | Adds a corpus sample with provenance attached |
 | [`.../tools/calibrate.mjs`](skills/tell-scan/tools/calibrate.mjs) | script | Derives a register's thresholds from its human corpus |
-| [`agents/prose-pattern-critic.md`](agents/prose-pattern-critic.md) | agent | Read-only critic for the five `not_deterministic` patterns. Runs on a draft, after the scan |
+| [`prose-pattern-critic` source](../../primitives/agents/prose-pattern-critic/agent.md) | held agent | Experimental critic for `not_deterministic` patterns; not installed by this bundle |
 | [`tests/selftest.mjs`](tests/selftest.mjs) | script | 303 checks, including the bias and false-positive regressions and the critic's fixture integrity |
 | [`tests/critic-harness.md`](tests/critic-harness.md) | doc | How the critic is measured, and the two things prose-review's harness could not lend it |
 | [`.../profiles/`](skills/tell-scan/profiles/) | data | `_base` catalog + `essay`, `technical`, `narration`, `correspondence` |
@@ -80,7 +81,7 @@ Frequency is a counting problem, and counting is what scripts are for. So
 **anything decidable deterministically is decided here**, and the model passes
 downstream are reserved for judgement no regex can make. The catalog names the
 patterns it deliberately does *not* try to match, under `not_deterministic` — and
-since v0.2 those have an owner. See
+an experimental held critic addresses them. See
 [prose-pattern-critic](../../primitives/agents/prose-pattern-critic/README.md).
 
 ## Install
@@ -88,8 +89,8 @@ since v0.2 those have an owner. See
 ### Claude Code — plugin
 
 ```
-/plugin marketplace add ConnorBritain/agent-primitives
-/plugin install prose-tell-scan@agent-primitives
+/plugin marketplace add ConnorBritain/vonnegut
+/plugin install prose-tell-scan@vonnegut
 ```
 
 Gives you the skill *and* the `/prose-tell-scan:tell-scan` slash command.

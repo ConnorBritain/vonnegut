@@ -57,7 +57,7 @@ can be found, audited, and removed cleanly. Prose woven into someone's existing 
 unremovable — a year later nobody knows which line came from where.
 
 ```markdown
-## Self-verification gate   <!-- agent-primitives: verification-gate -->
+## Prose fidelity review   <!-- vonnegut: prose-review -->
 ...
 ```
 
@@ -73,10 +73,9 @@ is the one that wins by being always-loaded.
    added skips, harness escapes, and code overfit to a specific test input, and
    which returns findings with severity, location, evidence, and a fix...
 
-✅ Before declaring a non-trivial task done: run the Tier-1 gates and report the
-   command that produced the result, then invoke `verification-critic` and
-   `architecture-reviewer` in parallel with the original task statement. BLOCK
-   means not done.
+✅ Before delivering a prose revision: invoke `prose-fidelity-critic` with the
+   original and revised text in a fresh context. Report unresolved material
+   losses rather than presenting the revision as verified.
 ```
 
 **Say what "skip" looks like.** A rule with no stated exemption gets routed around silently the

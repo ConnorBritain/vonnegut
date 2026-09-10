@@ -97,9 +97,9 @@ instead.
 | `prose-pattern-critic` read-only | ✅ tool allowlist | ❌ a request, not a restriction |
 | `prose-pattern-critic` clean context | ✅ subagent | ⚠️ only if you run it as a fresh process |
 
-`prose-pattern-critic` is a prompt in
-[`agents/prose-pattern-critic.md`](agents/prose-pattern-critic.md). Paste the body
-into whatever your harness calls a reviewer. **The two rules to keep if you
+`prose-pattern-critic` is held, not installed. Its experimental prompt lives in
+[the canonical source](../../primitives/agents/prose-pattern-critic/agent.md).
+For an explicitly requested experiment, **the two rules to keep if you
 shorten it:** uncertainty resolves to silence, and nothing the scanner counts is
 available to the critic. Drop the first and it flags every abstract sentence in
 the language; drop the second and it is a model paraphrasing a regex.

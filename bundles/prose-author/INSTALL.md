@@ -1,5 +1,9 @@
 # Install the prose toolchain
 
+This is the Vonnegut marketplace. Existing agent-primitives users should read
+[migration](../../docs/MIGRATION.md) before enabling duplicate writing plugins.
+The shared writing-memory paths have not changed.
+
 The useful installation is three bundles together:
 
 - `prose-author` supplies `$prose-draft`, `$prose-style-tune`, and the profile and drafting agents.
@@ -25,7 +29,7 @@ plugins, and renders the seven harness-neutral agent prompts as read-only person
 under `~/.codex/agents/`. It is safe to rerun: it updates files it generated and refuses to
 overwrite an agent file it does not own.
 
-If `agent-primitives` is already registered from GitHub, an ordinary install
+If `vonnegut` is already registered from GitHub, an ordinary install
 stops before changing it. To intentionally switch to this local checkout:
 
 ```bash
@@ -71,20 +75,20 @@ For a **local candidate**, add the absolute path to your checkout in Claude Code
 then install the three plugins:
 
 ```text
-/plugin marketplace add /absolute/path/to/agent-primitives
-/plugin install prose-author@agent-primitives
-/plugin install prose-tell-scan@agent-primitives
-/plugin install prose-review@agent-primitives
+/plugin marketplace add /absolute/path/to/vonnegut
+/plugin install prose-author@vonnegut
+/plugin install prose-tell-scan@vonnegut
+/plugin install prose-review@vonnegut
 ```
 
 Replace the example path with your real checkout. For the published repository
 instead, use the GitHub source below. It does not include unpublished changes:
 
 ```text
-/plugin marketplace add ConnorBritain/agent-primitives
-/plugin install prose-author@agent-primitives
-/plugin install prose-tell-scan@agent-primitives
-/plugin install prose-review@agent-primitives
+/plugin marketplace add ConnorBritain/vonnegut
+/plugin install prose-author@vonnegut
+/plugin install prose-tell-scan@vonnegut
+/plugin install prose-review@vonnegut
 ```
 
 Or install loose files from a clone:
@@ -113,7 +117,7 @@ installation. For a **remote** Codex installation, refresh the marketplace when
 a newer bundle version has been published:
 
 ```bash
-codex plugin marketplace upgrade agent-primitives
+codex plugin marketplace upgrade vonnegut
 node install-prose-codex.mjs --remote
 ```
 
@@ -123,11 +127,11 @@ inside those selected directories first; keep corpora and preference stores outs
 
 While developing a same-version Claude plugin locally, `plugin update` can say
 “already at the latest version” while retaining old files. Re-run `claude plugin
-install prose-author@agent-primitives --scope user` to refresh that local bundle,
+install prose-author@vonnegut --scope user` to refresh that local bundle,
 then start a new session. The candidate's installed-byte checks caught this case;
 a version label alone is not proof that a local edit reached the installed copy.
 If that install still retains stale files, uninstall and reinstall only
-`prose-author@agent-primitives` through Claude's plugin commands, then verify the
+`prose-author@vonnegut` through Claude's plugin commands, then verify the
 installed bytes. Keep user corpora, preferences and numerical history outside
 plugin caches and loose skill directories.
 

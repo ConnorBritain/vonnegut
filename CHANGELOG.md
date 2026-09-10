@@ -17,8 +17,17 @@ it is not yet in their hands.
 
 ## Unreleased
 
-The prose-author local candidates below remain unpublished.
-No push, PR, release, tag or marketplace publication is implied.
+No new behavior release is introduced by the repository split. Historical entries
+labelled local candidates describe their status at the time of recording.
+
+## Vonnegut extraction — 2026-09-10
+
+- Copied the writing-only toolkit from agent-primitives commit `052a54a`:
+  prose-author 0.6.0, prose-review 0.3.0 and prose-tell-scan 0.1.1.
+- Changed repository and marketplace identity to `ConnorBritain/vonnegut` / `vonnegut`.
+- Preserved primitive names, prompt bodies, bundle versions, historical evidence
+  and shared writing-memory paths. Excluded unrelated engineering agents and Actions.
+- Added standalone packaging checks, local verification entrypoint and migration guidance.
 
 ---
 
@@ -51,15 +60,6 @@ No push, PR, release, tag or marketplace publication is implied.
 
 - **Added** `tell-scan` — scans prose for AI tells against a calibrated corpus rather
   than a fixed list, so the bands move with the author's own writing.
-
----
-
-## verification-gate
-
-### [0.1.0]
-
-- **Added** `verification-critic` and `architecture-reviewer`, plus the hook wiring that
-  runs them as a gate before work is declared done.
 
 ---
 
