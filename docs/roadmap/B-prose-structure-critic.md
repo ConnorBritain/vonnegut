@@ -1,6 +1,6 @@
 # B. prose-structure-critic
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
+Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
 [`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
 `primitives/agents/prose-structure-critic/README.md` and
 `bundles/prose-review/DESIGN.md`.

@@ -20,6 +20,7 @@
   "agents": [
     "./agents/prose-voice-critic.md",
     "./agents/prose-fidelity-critic.md",
-    "./agents/prose-reviser.md"
+    "./agents/prose-reviser.md",
+    "./agents/prose-structure-critic.md"
   ]
 }

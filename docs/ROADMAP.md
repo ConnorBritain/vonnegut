@@ -44,7 +44,7 @@ for how a session picks up from here.
 | Seq | Item | Bundle | Spec | Status |
 |---|---|---|---|---|
 | 1 | [A. prose-outline](#a-prose-outline) | `prose-outline` (new) | [A-prose-outline.md](roadmap/A-prose-outline.md) | shipped |
-| 1 | [B. prose-structure-critic](#b-prose-structure-critic) | `prose-review` | [B-prose-structure-critic.md](roadmap/B-prose-structure-critic.md) | planned |
+| 1 | [B. prose-structure-critic](#b-prose-structure-critic) | `prose-review` | [B-prose-structure-critic.md](roadmap/B-prose-structure-critic.md) | in-progress |
 | 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | planned |
 | 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | planned |
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | planned |
@@ -145,7 +145,7 @@ Doctorow) — ≤ 2 `REVISE` of 12 stated as a default, not a measurement; zero
 findings without a quote, zero authorship claims; PROTOCOL.md, AGENTS.md,
 wiring and README updated; primitive/bundle pair byte-identical.
 
-**Status.** planned
+**Status.** in-progress
 
 ## C. prose-bible
 

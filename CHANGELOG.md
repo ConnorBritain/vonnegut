@@ -92,6 +92,19 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-outline/RELEASE-v0.1.0.md).
 
 ## prose-review
 
+### [0.4.0] — in progress
+
+Roadmap item B ([`docs/roadmap/B-prose-structure-critic.md`](docs/roadmap/B-prose-structure-critic.md));
+deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+
+- **Added** `prose-structure-critic` (primitive + byte-identical bundle copy):
+  a clean-context reviewer of a draft's argument — order, transitions,
+  unsupported claims, balance — read from `outline-scan` JSON and, when the
+  writer has one, the intended outline. Two stated modes with opposite
+  tie-breaks. Registered in the Claude manifest and the Codex installer;
+  `DESIGN.md`'s table records the territory it takes from the unshipped
+  adversarial reader and substance critic.
+
 ### [0.3.0]
 
 - **Added** `prose-reviser`, under a log-only contract: it emits an edit log rather than

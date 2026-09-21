@@ -18,11 +18,12 @@ transformer.
 
 | primitive | kind | owns, exclusively | verdict |
 |---|---|---|---|
-| `prose-substance-critic` | reviewer | claims without support, missing specificity, stakes never stated | `CLEAN` / `REVISE` / `AUTHOR-INPUT` |
+| `prose-substance-critic` | reviewer | missing specificity, stakes never stated (*claims without support* moved to `prose-structure-critic`) | `CLEAN` / `REVISE` / `AUTHOR-INPUT` |
 | `prose-voice-critic` | reviewer | does this sound like this author, against their voice card and corpus | `CLEAN` / `REVISE` |
-| `prose-adversarial-reader` | reviewer | the whole-piece read: thesis, order, weakest section, strongest objection | `CLEAN` / `REVISE` |
+| `prose-adversarial-reader` | reviewer | the whole-piece read: thesis, strongest objection (*order* and *weakest section* moved to `prose-structure-critic`; roadmap item G ships this reader as a persona file) | `CLEAN` / `REVISE` |
 | `prose-medium-critic` | reviewer | delivery — TTS homographs, web scannability, print. **Conditional** | `CLEAN` / `REVISE` |
 | `prose-fidelity-critic` | reviewer | did a revision preserve what it had to | `FAITHFUL` / `MATERIAL-LOSS` |
+| `prose-structure-critic` | reviewer | does the structure carry the argument: order, transitions, unsupported claims, balance — against `outline-scan` and the intended outline. **Shipped 0.4.0**; took *order* and *weakest section* from `prose-adversarial-reader` and *claims without support* from `prose-substance-critic`, which no longer own them | `CLEAN` / `REVISE` |
 | `prose-reviser` | transformer | the single mutating pass | change log keyed to plan entries |
 
 `prose-pattern-critic` is **not here.** It reads `catalog.json` and belongs with

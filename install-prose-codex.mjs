@@ -21,6 +21,7 @@ const AGENTS = [
   "prose-voice-critic",
   "prose-fidelity-critic",
   "prose-reviser",
+  "prose-structure-critic",
 ];
 const HOST_BOUNDARY = `## Codex host boundary
 
