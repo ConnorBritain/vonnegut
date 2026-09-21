@@ -36,7 +36,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 ### B. prose-structure-critic — in-progress
 
 - [x] B1 — primitive `prose-structure-critic` (agent.md, meta.yaml, README) + byte-identical bundle copy; manifests and `install-prose-codex.mjs` AGENTS updated; DESIGN.md exclusivity note
-- [ ] B2 — fixtures in the four classes vs outline-scan + harness wiring (`run-harness.mjs` CRITICS entry, `verify-run.mjs` contract counts, leak check)
+- [x] B2 — fixtures in the four classes vs outline-scan + harness wiring (`run-harness.mjs` CRITICS entry, `verify-run.mjs` contract counts, leak check)
 - [ ] B3 — negative and positive harness runs recorded with `verify-run.mjs` output; PROTOCOL.md step 2, AGENTS.md, wiring, README updated
 - [ ] B4 — prose-review version bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 

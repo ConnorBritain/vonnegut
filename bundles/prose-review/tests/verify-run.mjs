@@ -30,6 +30,7 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, basename, resolve } from "node:path";
 import { scanFidelity, verdict as scanVerdict } from "../tools/fidelity-scan.mjs";
+import { scanDraft, scanSays } from "./structure-harness.mjs";
 
 /**
  * Per-critic profile. `clean` is the verdict that means "nothing to report" and
@@ -65,11 +66,36 @@ const CRITICS = {
     // Fixtures live in tests/fixtures/<critic>/, resolved from the run directory.
     report: (...a) => scannerAgreement(...a),
   },
+  // Shares the voice critic's two words. A run directory's MANIFEST names the
+  // critic; VERDICTS below is only the fallback for the legacy runs that predate
+  // manifests, none of which is a structure run.
+  structure: {
+    clean: "CLEAN",
+    flag: "REVISE",
+    contract: ["uncited", "authorship_claims"],
+    labels: {
+      negative: "negative (sound structure, n=%N%):    ",
+      positive: "positive (planted gap, n=%N%):        ",
+      uncited: "findings without a quoted span and a scan/outline reference: %V%   <- must be 0",
+      authorship_claims: "any claim about machine authorship: %V%        <- must be 0",
+    },
+    report: (...a) => structureAgreement(...a),
+  },
 };
 
 const VERDICTS = Object.fromEntries(
-  Object.entries(CRITICS).flatMap(([name, c]) => [[c.clean, name], [c.flag, name]]),
+  Object.entries(CRITICS).filter(([name]) => name !== "structure").flatMap(([name, c]) => [[c.clean, name], [c.flag, name]]),
 );
+
+/** The MANIFEST's critic when the run has one; otherwise the verdict word decides. */
+function criticFor(dir, verdictWord) {
+  const manifestPath = join(dir, "MANIFEST.json");
+  if (existsSync(manifestPath)) {
+    const declared = JSON.parse(readFileSync(manifestPath, "utf8")).critic;
+    if (declared && CRITICS[declared]) return declared;
+  }
+  return VERDICTS[verdictWord];
+}
 
 const RESULT = /RESULT:\s*([A-Z][A-Z-]*)\s*\|\s*(.+?)\s*$/m;
 const KIND = /^#\s+(Negative|Positive)\b/im;
@@ -113,8 +139,8 @@ export function readRun(dir) {
       continue;
     }
 
-    const critic = VERDICTS[m[1]];
-    if (!critic) {
+    const critic = criticFor(dir, m[1]);
+    if (!critic || ![CRITICS[critic].clean, CRITICS[critic].flag].includes(m[1])) {
       malformed.push(`${f} (unknown verdict "${m[1]}")`);
       continue;
     }
@@ -276,7 +302,54 @@ function scannerAgreement(runs, dir, critic, line) {
   return bad;
 }
 
-function main() {
+/**
+ * The structure critic's echo baseline. The parrot's verdict is the ECHO RULE in
+ * structure-harness.mjs applied to outline-scan over the fixture's draft — re-derived
+ * here from the fixture files, never read from a transcript. Leave-one-out negatives
+ * are corpus essays with no fixtures.json entry; their expected verdict is CLEAN by
+ * construction and their echo verdict is computed from the corpus file the MANIFEST
+ * names.
+ */
+async function structureAgreement(runs, dir, critic, line) {
+  const fixturesDir = join(dir, "..", "..", "fixtures", critic);
+  if (!existsSync(join(fixturesDir, "fixtures.json"))) return 0;
+  const manifest = JSON.parse(readFileSync(join(fixturesDir, "fixtures.json"), "utf8"));
+  const byName = new Map(manifest.fixtures.map((f) => [f.name, f]));
+  const runManifest = existsSync(join(dir, "MANIFEST.json")) ? JSON.parse(readFileSync(join(dir, "MANIFEST.json"), "utf8")) : null;
+  const repo = resolve(dir, "..", "..", "..", "..");
+  const cases = groupCases(runs);
+  let echo = 0, clearedOverFlag = 0, caughtBlindSpot = 0, correct = 0;
+  const unresolved = [];
+  for (const c of cases) {
+    const f = byName.get(c.fixture);
+    let draftPath, expect;
+    if (f) { draftPath = join(fixturesDir, c.fixture, "draft.md"); expect = f.expect; }
+    else if (c.fixture.startsWith("n-loo-") && runManifest) {
+      const staged = runManifest.cases.find((m) => m.fixture === c.fixture)?.inputs.find((i) => i.as === "draft.md");
+      if (!staged) { unresolved.push(c.fixture); continue; }
+      draftPath = join(repo, staged.from); expect = "CLEAN";
+    } else { unresolved.push(c.fixture); continue; }
+    const scan = scanSays(await scanDraft(readFileSync(draftPath, "utf8")));
+    if (c.majority === expect) correct += 1;
+    if (c.majority === scan) echo += 1;
+    else if (scan === "REVISE") clearedOverFlag += 1;
+    else caughtBlindSpot += 1;
+  }
+  const n = cases.length - unresolved.length;
+  process.stdout.write("\n");
+  line(`verdicts matching the expected verdict:                    ${correct} of ${n}`);
+  line(`counts the scan flagged and the critic cleared:            ${clearedOverFlag}`);
+  line(`gaps the scan could not see and the critic caught:         ${caughtBlindSpot}`);
+  line(`verdicts identical to the echo rule's (echo rate):         ${echo} of ${n}`);
+  line("the echo rule is tests/structure-harness.mjs ECHO_RULE, applied to outline-scan; it is a parrot, not a finding");
+  if (unresolved.length) {
+    process.stdout.write(`\n    ${unresolved.length} case(s) naming no known fixture: ${unresolved.join(", ")}\n`);
+    return 1;
+  }
+  return 0;
+}
+
+async function main() {
   const dir = process.argv[2];
   if (!dir || !existsSync(dir)) {
     process.stderr.write("verify-run: usage: node tests/verify-run.mjs <run-dir>\n");
@@ -339,7 +412,7 @@ function main() {
   // `main` does not grow a branch per critic. `prose-pattern-critic` is next and
   // reads a different deterministic artifact; it gets a `report` of its own rather
   // than another `if` here.
-  let bad = profile.report ? profile.report(runs, dir, critic, line) : 0;
+  let bad = profile.report ? await profile.report(runs, dir, critic, line) : 0;
   process.stdout.write("\n");
 
   if (mismatched.length) {

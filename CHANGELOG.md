@@ -104,6 +104,11 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
   tie-breaks. Registered in the Claude manifest and the Codex installer;
   `DESIGN.md`'s table records the territory it takes from the unshipped
   adversarial reader and substance critic.
+- **Added** the structure fixture set (`tests/fixtures/structure/`, nine
+  synthetic drafts classified by the four-class discipline against the
+  harness's stated echo rule, plus twelve named leave-one-out human essays)
+  and harness wiring: `run-harness.mjs prepare structure`, `verify-run.mjs`
+  echo baseline, and selftest re-derivation of every fixture's class.
 
 ### [0.3.0]
 

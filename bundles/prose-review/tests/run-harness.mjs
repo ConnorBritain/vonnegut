@@ -83,6 +83,7 @@ import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { renderReport, scanFidelity } from "../tools/fidelity-scan.mjs";
+import { structureFixtures, structureTask } from "./structure-harness.mjs";
 
 const TESTS = dirname(fileURLToPath(import.meta.url));
 const BUNDLE = resolve(TESTS, "..");
@@ -117,10 +118,33 @@ const CRITICS = {
     fixtures: fidelityFixtures,
     task: fidelityTask,
   },
+  // Shares CLEAN/REVISE with the voice critic, so a verdict alone no longer names
+  // the critic: every run since this landed carries a MANIFEST, and `criticFor`
+  // reads it. Legacy runs without one are voice or fidelity, which the words still
+  // distinguish.
+  structure: {
+    agent: "primitives/agents/prose-structure-critic/agent.md",
+    vocabulary: ["CLEAN", "REVISE"],
+    contract: ["uncited", "authorship_claims"],
+    finding: /\*\*CLASS\*\*/g,
+    phrase: { negative: "structure holds", positive: "structural gap" },
+    fixtures: structureFixtures,
+    task: structureTask,
+  },
 };
 
 const criticOf = (verdict) =>
   Object.keys(CRITICS).find((c) => CRITICS[c].vocabulary.includes(verdict));
+
+/** The critic a run belongs to: its MANIFEST when it has one, else the verdict word. */
+function criticFor(runDir, verdict) {
+  const manifestPath = join(runDir, "MANIFEST.json");
+  if (existsSync(manifestPath)) {
+    const declared = JSON.parse(readFileSync(manifestPath, "utf8")).critic;
+    if (declared && CRITICS[declared]) return declared;
+  }
+  return criticOf(verdict);
+}
 
 // ---------------------------------------------------------------------------
 // staging
@@ -304,7 +328,7 @@ function buildPrompt({ caseId, agentPath, inputs, task }) {
 // prepare
 // ---------------------------------------------------------------------------
 
-function prepare(criticName, runId, opts) {
+async function prepare(criticName, runId, opts) {
   const spec = CRITICS[criticName];
   if (!spec) die(`unknown critic ${JSON.stringify(criticName)} — known: ${Object.keys(CRITICS).join(", ")}`);
 
@@ -328,7 +352,7 @@ function prepare(criticName, runId, opts) {
 
   const entries = [];
   const leaks = [];
-  ordered.forEach((f, i) => {
+  for (const [i, f] of ordered.entries()) {
     const caseId = `case-${String(i + 1).padStart(2, "0")}`;
     const caseDir = join(runDir, "inputs", caseId);
     const staged = {};
@@ -352,13 +376,15 @@ function prepare(criticName, runId, opts) {
       caseId,
       agentPath: relative(REPO, join(runDir, "prompts", "agent-prompt.md")),
       inputs: f.inputs.map((i) => relative(REPO, join(caseDir, i.as))),
-      task: spec.task(staged),
+      // A task may run a deterministic tool over the staged copies (fidelity-scan,
+      // outline-scan); the structure task imports its tool asynchronously.
+      task: await spec.task(staged),
     });
     for (let d = 1; d <= draws; d += 1) {
       writeFileSync(join(runDir, "prompts", `${caseId}-d${d}.md`), `${prompt}\n`);
     }
     entries.push({ case: caseId, fixture: f.name, kind: f.kind, inputs: files });
-  });
+  }
 
   if (leaks.length) {
     // The staged copies are left on disk deliberately: the operator has to be able to
@@ -623,7 +649,7 @@ function collect(runDir) {
     const fixture = drawMatch ? drawMatch[1] : name;
     const draw = drawMatch ? Number(drawMatch[2]) : 1;
     const body = readFileSync(join(rawDir, f), "utf8").replace(/\s+$/, "");
-    const critic = manifest?.critic ?? guessCritic(body);
+    const critic = (manifest?.critic && CRITICS[manifest.critic]) ? manifest.critic : guessCritic(body);
     if (!critic) die(`collect: ${f} ends in no verdict this harness knows`);
     const spec = CRITICS[critic];
     const verdict = deriveVerdict(body, spec.vocabulary);
@@ -731,7 +757,7 @@ function check(runDir) {
     const p = parseWrapped(original, f);
     if (p.error) { problems.push(p.error); continue; }
 
-    const critic = criticOf(p.verdict);
+    const critic = criticFor(runDir, p.verdict);
     const spec = CRITICS[critic];
     const name = f.replace(/\.md$/, "");
     const kindFromName = name.startsWith("p-") ? "positive" : "negative";
@@ -775,15 +801,15 @@ function die(msg) {
 }
 
 const USAGE = `run-harness: usage:
-  node tests/run-harness.mjs prepare  <voice|fidelity> <run-id> [--only a,b] [--positives a,b]
+  node tests/run-harness.mjs prepare  <voice|fidelity|structure> <run-id> [--only a,b] [--positives a,b]
                                       [--draws N]              default 3; --draws 1 is labelled "single draw" downstream
-                                      [--fixtures-dir <dir>]   fidelity only; for testing the leak abort
+                                      [--fixtures-dir <dir>]   fidelity and structure; for testing the leak abort
   node tests/run-harness.mjs dispatch <run-dir> [--only a,b]
   node tests/run-harness.mjs collect  <run-dir>
   node tests/run-harness.mjs check    <run-dir>
 `;
 
-function main(argv) {
+async function main(argv) {
   const flags = {};
   const positional = [];
   for (let i = 0; i < argv.length; i++) {
@@ -811,7 +837,7 @@ function main(argv) {
     return full;
   };
 
-  if (cmd === "prepare") { if (!a || !b) die(USAGE); prepare(a, b, opts); }
+  if (cmd === "prepare") { if (!a || !b) die(USAGE); await prepare(a, b, opts); }
   else if (cmd === "dispatch") dispatch(dir(a), opts);
   else if (cmd === "collect") collect(dir(a));
   else if (cmd === "check") check(dir(a));

@@ -564,6 +564,59 @@ group("fidelity fixtures — integrity");
 }
 
 /* ------------------------------------------------------------------ */
+group("structure fixtures — integrity");
+
+{
+  const { STRUCTURE_FIXTURES, ECHO_RULE, scanSays, scanDraft, loadStructureManifest, structureFixtures } = await import("./structure-harness.mjs");
+  const { pathToFileURL } = await import("node:url");
+  const { join } = await import("node:path");
+  const manifest = loadStructureManifest();
+  const onDisk = readdirSync(STRUCTURE_FIXTURES, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  const declared = manifest.fixtures.map((f) => f.name).sort();
+  check("every structure fixture directory is declared in fixtures.json", JSON.stringify(onDisk) === JSON.stringify(declared), `disk=${onDisk.length} manifest=${declared.length}`);
+  check("fixtures.json states the echo rule it was classified under, and it is the harness's", manifest.echo_rule === ECHO_RULE.description);
+  const outlineSchemaPath = join(STRUCTURE_FIXTURES, "..", "..", "..", "..", "prose-outline", "skills", "prose-outline", "tools", "lib", "outline-schema.mjs");
+  const outlineSchema = existsSync(outlineSchemaPath) ? await import(pathToFileURL(outlineSchemaPath).href) : null;
+  for (const f of manifest.fixtures) {
+    const draft = readFileSync(join(STRUCTURE_FIXTURES, f.name, "draft.md"), "utf8");
+    const outlinePath = join(STRUCTURE_FIXTURES, f.name, "outline.json");
+    const hasOutline = existsSync(outlinePath);
+    // THE LEAK GUARD. The critic reads draft.md and outline.json; the answer may live in
+    // fixtures.json and nowhere else. The verdict words, expectation keys and class
+    // letters are what leaked once before, in a file a critic must read.
+    for (const [file, text] of [["draft.md", draft], ...(hasOutline ? [["outline.json", readFileSync(outlinePath, "utf8")]] : [])]) {
+      check(`${f.name}/${file}: carries no verdict word, expectation key or class label`,
+        !/\b(?:CLEAN|REVISE)\b/.test(text) && !/^\s*(?:expect|class|verdict|scan_says)\s*:/im.test(text));
+    }
+    check(`${f.name}: mode matches whether an outline is staged`, (f.mode === "intended-outline") === hasOutline);
+    if (hasOutline && outlineSchema) {
+      check(`${f.name}/outline.json validates as a voice-outline/1 body`, outlineSchema.validateOutlineBody(JSON.parse(readFileSync(outlinePath, "utf8"))).length === 0);
+    }
+    // The recorded echo verdict is re-derived from the draft, so an edited draft whose
+    // class silently shifts fails here rather than in a published baseline.
+    const says = scanSays(await scanDraft(draft));
+    check(`${f.name}: the echo rule still says ${f.scan_says}`, says === f.scan_says, `got ${says}`);
+    const expectedClass = { "CLEAN|CLEAN": "A", "REVISE|CLEAN": "B", "REVISE|REVISE": "C", "CLEAN|REVISE": "D" }[`${f.scan_says}|${f.expect}`];
+    check(`${f.name}: declared class ${f.class} matches its echo/expect pair`, f.class === expectedClass, `pair implies ${expectedClass}`);
+    const impliedKind = f.expect === "CLEAN" ? "negative" : "positive";
+    check(`${f.name}: kind, filename prefix and expected verdict agree`, f.kind === impliedKind && f.name.startsWith(f.kind === "positive" ? "p-" : "n-"));
+  }
+  const byClass = (c) => manifest.fixtures.filter((f) => f.class === c).length;
+  process.stdout.write(`  ---- class distribution: ${["A", "B", "C", "D"].map((c) => `${c}=${byClass(c)}`).join(" ")}\n`);
+  for (const c of ["A", "B", "C", "D"]) {
+    check(`structure class ${c} has at least 2 fixtures`, byClass(c) >= 2, `has ${byClass(c)}`);
+  }
+  // The leave-one-out set is named, not globbed: twelve corpus essays that exist and
+  // are argumentative human prose. Every one reads REVISE under the echo rule, which is
+  // the point — the parrot flags every human essay, so the critic must beat 0 of 12.
+  const loo = structureFixtures().filter((x) => x.name.startsWith("n-loo-"));
+  check("twelve named leave-one-out essays, all present in the corpus", loo.length === 12 && loo.every((x) => existsSync(x.inputs[0].from)));
+  let parrotFlags = 0;
+  for (const x of loo) if (scanSays(await scanDraft(readFileSync(x.inputs[0].from, "utf8"))) === "REVISE") parrotFlags += 1;
+  check(`the echo rule flags every leave-one-out essay (parrot baseline 0 of 12), as fixtures.json says (${parrotFlags} of 12)`, parrotFlags === 12);
+}
+
+/* ------------------------------------------------------------------ */
 group("primitive/bundle parity");
 
 {
