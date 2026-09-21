@@ -109,6 +109,12 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
   harness's stated echo rule, plus twelve named leave-one-out human essays)
   and harness wiring: `run-harness.mjs prepare structure`, `verify-run.mjs`
   echo baseline, and selftest re-derivation of every fixture's class.
+- **Changed** `PROTOCOL.md` (step 1 runs two scans, step 2 fans out to three
+  critics, step 3 pastes `PLAN-ENTRY` blocks), `AGENTS.md`, the wiring
+  snippets and README for the third critic. `tests/critic-harness.md` records
+  the structure protocol and states that **no structure run has been
+  dispatched**: the build environment had no CLI, so the run is recorded as
+  not run, never as passed.
 
 ### [0.3.0]
 

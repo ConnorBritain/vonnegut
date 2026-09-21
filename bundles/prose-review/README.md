@@ -1,15 +1,18 @@
 # prose-review
 
-Two read-only critics and one revising transformer for prose. Every rewrite
+Three read-only critics and one revising transformer for prose. Every rewrite
 this bundle produces goes through the fidelity gate before it reaches the
 author.
 
-**Status: v0.3 — two critics and a reviser.**
+**Status: v0.4 — three critics and a reviser.**
 
 - `prose-voice-critic`: does this draft sound like the person it is supposed to
   be by, judged against their own corpus.
 - `prose-fidelity-critic`: did this revision keep what it had to, judged against
   the original and a deterministic scan of it.
+- `prose-structure-critic`: does the structure carry the argument — order,
+  transitions, unsupported claims, balance — judged against `prose-outline`'s
+  scan and, when there is one, the outline the writer intended.
 - `prose-reviser`: applies an edit plan to a draft, emitting a change log the
   fidelity critic then judges. Out-of-plan edits are structurally impossible
   because the log is the only output channel. See
@@ -24,9 +27,10 @@ reason is in [`tests/critic-harness.md`](tests/critic-harness.md).
 | [`prose-voice-critic`](agents/prose-voice-critic.md) | shipped |
 | [`prose-fidelity-critic`](agents/prose-fidelity-critic.md) | shipped — **before** the reviser it guards |
 | [`prose-reviser`](agents/prose-reviser.md) | shipped v0.3.0, 2026-08-07 — see [`REVISER-USAGE.md`](REVISER-USAGE.md) |
-| `prose-substance-critic` | blocked — needs an argumentative corpus |
-| `prose-adversarial-reader` | blocked — same |
-| `prose-medium-critic` | designed |
+| [`prose-structure-critic`](agents/prose-structure-critic.md) | shipped v0.4.0 — reads `prose-outline`'s scan; see the [primitive README](../../primitives/agents/prose-structure-critic/README.md) |
+| `prose-substance-critic` | blocked — needs an argumentative corpus; *claims without support* now belongs to the structure critic |
+| `prose-adversarial-reader` | *order* and *weakest section* now belong to the structure critic; the rest ships as a persona in roadmap item G |
+| `prose-medium-critic` | designed; ships with roadmap item F |
 
 ## The two critics point opposite ways, on purpose
 

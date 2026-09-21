@@ -67,6 +67,33 @@ Do not judge whether it reads better, and do not judge voice — that is the voi
 critic's question. Do not propose fixes.
 ```
 
+```markdown
+## Prose structure review
+
+When a draft is an argument and its structure should be checked, and
+`prose-outline`'s scan is available:
+
+1. Run the scan FIRST and read its JSON:
+   `node <path>/skills/prose-outline/tools/outline-scan.mjs <draft> --json`
+   If there is no scan, say structure was not reviewed. Do not estimate
+   section lengths or transitions by eye.
+2. Say which mode you are in. With the intended outline supplied, assess
+   unsupported claims and order against it and resolve uncertainty toward
+   REVISE. Without one, assess only transitions and balance, say support and
+   order were not assessed, and resolve uncertainty to silence.
+3. The scan is authoritative on counts. Never re-count words or re-classify a
+   marker; dispute the tool under "Scanner defects".
+4. Every finding quotes a span and names the scan field or outline node it
+   rests on, and carries a PLAN-ENTRY saying what to do, never how the new
+   text should read. A finding without those is a guess — drop it.
+5. A flat reference document is correctly flat. Length alone is never a finding.
+6. Never state or imply that a passage was machine-written.
+7. End with CLEAN or REVISE. CLEAN is the expected result on a draft whose
+   structure does its job.
+
+Do not judge voice, fidelity, truth or prose quality. This is one question only.
+```
+
 ## The one thing worth getting right, per critic
 
 **Voice: rule 4.** A voice finding without evidence of how the author writes
@@ -77,6 +104,11 @@ voice are the failure mode that costs the most.
 answer from how plausible the sentence sounds, and it will be confident. The
 deterministic scan is there to make that error impossible, and a critic allowed
 to overrule it has given the property back.
+
+**Structure: rule 2.** Order and support have no referent without an intended
+outline. A critic that assesses them on its own authority teaches the writer
+to write to a template, so the mode line is the whole safeguard: with an
+outline, check against it; without one, stay quiet on those two classes.
 
 Note that rules 7 in one block and 5 in the other point in **opposite
 directions**. That is deliberate, and it is the part most likely to be
@@ -92,6 +124,7 @@ silence; fidelity resolves to MATERIAL-LOSS. Do not harmonise them.
 | Corpus-citation requirement (voice) | prompt | prompt — survives intact |
 | The error preference, both directions | prompt | prompt — survives intact |
 | Scan-is-authoritative (fidelity) | prompt + tool | prompt + tool — **survives**, if you run the scan |
+| Scan-is-authoritative and the mode line (structure) | prompt + tool | prompt + tool — **survives**, if you run `outline-scan` and say the mode |
 
 The ones that survive are the ones that matter most, which is the only good news
 in this table. The fidelity row is the best case in the bundle: its load-bearing

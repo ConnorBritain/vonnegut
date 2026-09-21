@@ -63,6 +63,11 @@ The deterministic pass is cheap and its output is evidence a critic would
 otherwise have to estimate. A model asked to count its own frequency tics finds
 the ones it remembers writing, not the ones it repeated.
 
+Two scans, when both bundles are installed: `tell-scan` for tells and cadence,
+and `prose-outline`'s `outline-scan` for structure (heading tree, section
+lengths, claim markers, unmarked boundaries). Each feeds the critic that reads
+it and neither is a finding on its own.
+
 Critics receive the scan JSON. They do **not** receive the catalog: what a
 pattern is called is not their business, and a critic given a prohibition list
 starts hunting for prohibited things.
@@ -75,6 +80,17 @@ exists to prevent — not a nicety.
 
 Parallel because the wall-clock cost is then one critic rather than five.
 
+The fan-out today: `prose-voice-critic` when a corpus exists, and
+`prose-structure-critic` when the draft is an argument (an essay, post, report
+or talk — not a note, a reply or reference material). The structure critic
+reads `outline-scan`'s JSON from step 1 and, when the project has one, the
+intended outline from `prose-outline`'s store; hand it both. With an outline it
+assesses support and order and resolves uncertainty to `REVISE`; without one it
+assesses only transitions and balance and resolves to silence, and it says which
+mode it is in on its first line. Without `prose-outline` installed there is no
+scan, the critic does not run, and the report says structure was not reviewed —
+it is never estimated by eye.
+
 `prose-medium-critic` spawns only when the profile declares a `medium`. Short or
 trivial prose skips the protocol entirely, and this session should say so out
 loud when it does rather than running five agents on a paragraph.
@@ -82,7 +98,9 @@ loud when it does rather than running five agents on a paragraph.
 ## Step 3 — consolidation, and the part to get right
 
 This session dedupes findings by span, ranks by severity × confidence, and emits
-an ordered plan.
+an ordered plan. The structure critic's findings each carry a `PLAN-ENTRY` in
+[PLAN-FORMAT](PLAN-FORMAT.md) shape; paste them in as they are, deduping by
+span like any other, and keep their `source: structure-critic`.
 
 **Disagreements are surfaced, never resolved.** When the voice critic wants a
 sentence kept and the substance critic wants it cut, that tension *is* the

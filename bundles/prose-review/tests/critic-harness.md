@@ -159,6 +159,64 @@ carry `corrected_after_run`, and `verify-run.mjs` prints the caveat, because a
 caveat that lives only in prose is the eleventh entry in `CALIBRATION.md` waiting
 to happen.
 
+## A third protocol, for the structure critic
+
+`prose-structure-critic` reads a deterministic artifact too — `outline-scan`'s
+counts — so it gets the fidelity critic's discipline, with one difference: the
+scan prints no verdict, so the harness supplies the parrot itself.
+[`structure-harness.mjs`](structure-harness.mjs) holds the **echo rule** (a
+section three times the median or a third of it, or an unmarked boundary inside
+a section) and applies it to the scan to get the verdict a critic would return
+by parroting the tool. The rule is a parrot, not a finding, and nothing ships
+it; it exists so the echo baseline can be reported and the fixtures classified.
+
+Fixtures live in [`fixtures/structure/`](fixtures/structure/): nine synthetic
+drafts (this repo's own writing — no corpus file has headings, so nothing here
+is a corpus copy) with an intended outline where the case is about support or
+order, plus twelve named leave-one-out essays staged straight from the corpus.
+
+| class | echo rule says | critic must say | what it tests |
+|---|---|---|---|
+| **A** | quiet | `CLEAN` | it does not manufacture findings from counts |
+| **B** | flags | `CLEAN` | it clears an over-flag — a coda, a scene break, a list — with a reason |
+| **C** | flags | `REVISE` | it names *which* count costs the argument |
+| **D** | quiet | `REVISE` | it catches what counts cannot see: order and support, against the outline |
+
+`selftest.mjs` re-derives `scan_says` for every fixture and fails if any class
+drops below two. **Every leave-one-out essay reads `REVISE` under the echo
+rule** — human essays have unmarked boundaries — so the parrot scores 0 of 12 on
+the negatives and the critic has to stay quiet where the counts are loud. That
+is the negative test, and it measures structure a human writer found
+acceptable, not whether the critic finds the right gaps; the four class-D
+fixtures are the only positive claim, and they are synthetic.
+
+Two modes, and the harness stages them by whether `outline.json` is present:
+intended-outline cases resolve uncertainty to `REVISE` and draft-only cases to
+silence, as the prompt says on its first line. A transcript in the wrong mode
+is a contract violation the reviewer records under `uncited`.
+
+```bash
+node tests/run-harness.mjs prepare  structure 2026-XX-XX-structure     # 21 cases × 3 draws
+node tests/run-harness.mjs dispatch runs/2026-XX-XX-structure           # or by hand
+node tests/run-harness.mjs collect  runs/2026-XX-XX-structure           # → verify-run, with the echo block
+```
+
+`verify-run.mjs` prints, beside the usual counts:
+
+```
+    verdicts matching the expected verdict:                    N of 21
+    counts the scan flagged and the critic cleared:            N
+    gaps the scan could not see and the critic caught:         N
+    verdicts identical to the echo rule's (echo rate):         N of 21
+```
+
+**No structure run has been dispatched yet.** The environment that built the
+critic had no authenticated CLI; `prepare` was exercised end to end (21 leak-free
+prompts, 4 in intended-outline mode) and the first real run is the next
+session's job. Until it is recorded here, the critic's evidence is the fixture
+set and the harness, not a number — and an undispatched run is recorded as not
+run, never as passed.
+
 ## The overlap test, once a second critic exists
 
 Run two critics on the same drafts and compare which spans they flag.
