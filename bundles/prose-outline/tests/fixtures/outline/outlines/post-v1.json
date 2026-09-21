@@ -1,0 +1,20 @@
+{
+  "schema": "voice-outline/1",
+  "id": "calibration-post",
+  "revision": 1,
+  "parent_digest": null,
+  "mode": "argument",
+  "title": "Three things I got wrong about calibration",
+  "thesis": "Calibrate before trusting the scanner, but for better reasons than the three I gave.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "text": "Shipped thresholds are guesses, and a labelled guess beats an unlabelled measurement.", "parent": null, "order": 1,
+      "evidence": [ { "slot": "e1", "filled_by": "the UNCALIBRATED banner drove more calibration than argument did" } ] },
+    { "id": "n2", "kind": "claim", "text": "Five samples give bands but not trustworthy bands.", "parent": null, "order": 2,
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n3", "kind": "claim", "text": "Calibration is not a one-time job; bands drift as the corpus grows.", "parent": null, "order": 3,
+      "evidence": [ { "slot": "e1", "filled_by": "a lock: a named snapshot calibrated against on purpose" } ] },
+    { "id": "n4", "kind": "claim", "text": "The tool was right; the reasons were the weak part.", "parent": null, "order": 4, "evidence": [] },
+    { "id": "n5", "kind": "open-question", "text": "Does anyone actually stop reading a banner that never goes away?", "parent": "n1", "order": 1 }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

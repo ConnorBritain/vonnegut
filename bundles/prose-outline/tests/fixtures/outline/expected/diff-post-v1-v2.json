@@ -1,0 +1,58 @@
+{
+  "schema": "outline-diff/1",
+  "before": {
+    "revision": 1
+  },
+  "after": {
+    "revision": 2
+  },
+  "mode_changed": null,
+  "title": null,
+  "thesis": null,
+  "added": [
+    "n6"
+  ],
+  "removed": [
+    "n5"
+  ],
+  "moved": [
+    {
+      "id": "n1",
+      "from": 1,
+      "to": 2,
+      "parent": null
+    },
+    {
+      "id": "n2",
+      "from": 2,
+      "to": 3,
+      "parent": null
+    },
+    {
+      "id": "n3",
+      "from": 3,
+      "to": 1,
+      "parent": null
+    }
+  ],
+  "reparented": [],
+  "reworded": [
+    {
+      "id": "n2",
+      "before": "Five samples give bands but not trustworthy bands.",
+      "after": "Five samples give bands but not bands you should trust."
+    }
+  ],
+  "kind_changed": [],
+  "evidence": [
+    {
+      "id": "n2",
+      "slot": "e1",
+      "change": "filled",
+      "before": null,
+      "after": "the tool now says 'thin' below ten"
+    }
+  ],
+  "unchanged": 1,
+  "summary": "1 added, 1 removed, 3 moved, 0 reparented, 1 reworded, 1 evidence changes, 1 unchanged"
+}

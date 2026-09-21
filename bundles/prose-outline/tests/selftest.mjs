@@ -13,7 +13,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { FIXTURES, loadCases, runCase, render } from "./text-index-fixtures.mjs";
-import { OUTLINE_FIXTURES, SCAN, loadOutlineCases, scanCase, render as renderOutline } from "./outline-fixtures.mjs";
+import { OUTLINE_FIXTURES, SCAN, DIFF, DIFF_PAIRS, loadOutline, diffPair, loadOutlineCases, scanCase, render as renderOutline } from "./outline-fixtures.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BUNDLE = resolve(HERE, "..");
@@ -232,6 +232,64 @@ group("outline-scan — fixtures reproduce, and the counts are the counts");
   check("CLI --json emits the same object the module returns", json.status === 0 && JSON.parse(json.stdout).headings.length === 4);
   check("CLI refuses an unknown flag and a missing file with exit 2",
     cli("nope.md", "--json").status === 2 && cli(join(OUTLINE_FIXTURES, "cases", "essay.md"), "--score").status === 2);
+}
+
+/* ------------------------------------------------------------------ */
+group("voice-outline/1 — the schema refuses what the differ could not compare");
+const os = await import(pathToFileURL(join(SKILL, "tools", "lib", "outline-schema.mjs")).href);
+{
+  const v1 = loadOutline("post-v1.json"), v2 = loadOutline("post-v2.json");
+  check("both fixture outlines validate", os.validateOutline(v1).length === 0 && os.validateOutline(v2).length === 0);
+  const clone = (doc) => JSON.parse(JSON.stringify(doc));
+  const bad = (mutate, pattern, name) => { const d = clone(v1); mutate(d); check(name, os.validateOutline(d).some((e) => pattern.test(e)), os.validateOutline(d).join("; ")); };
+  bad((d) => { d.nodes[1].id = "n1"; }, /duplicate id/, "a duplicate node id is refused");
+  bad((d) => { d.nodes[0].kind = "beat"; }, /kind must be claim/, "a beat-sheet kind in argument mode is refused");
+  bad((d) => { d.nodes[4].parent = "n99"; }, /parent n99 does not exist/, "a dangling parent is refused");
+  bad((d) => { d.nodes[4].evidence = []; }, /only a claim carries evidence/, "evidence on an open question is refused");
+  bad((d) => { d.nodes[0].evidence.push({ slot: "e1", filled_by: null }); }, /duplicate evidence slot/, "a duplicate evidence slot is refused");
+  bad((d) => { d.mode = "essay"; }, /mode must be/, "an unknown mode is refused");
+  bad((d) => { d.revision = 2; }, /ancestry/, "a revision above 1 needs a parent digest");
+  const beats = { mode: "beat-sheet", title: "Ch. 3", thesis: "Mara finds the mill empty.", nodes: [
+    { id: "n1", kind: "act", text: "Arrival", parent: null, order: 1 },
+    { id: "n2", kind: "beat", text: "The bridge and the river", parent: "n1", order: 1 },
+    { id: "n3", kind: "turn", text: "The ledger line in a stranger's hand", parent: "n1", order: 2 },
+    { id: "n4", kind: "open-question", text: "Who wrote the line?", parent: "n3", order: 1 } ] };
+  check("a beat-sheet body validates with acts, beats, turns and open questions", os.validateOutlineBody(beats).length === 0);
+  check("children() orders siblings by order then id", os.children(beats, "n1").map((n) => n.id).join() === "n2,n3");
+}
+
+/* ------------------------------------------------------------------ */
+group("outline-diff — by id, never by text");
+{
+  const d = await diffPair(DIFF_PAIRS[0]);
+  const expectedPath = join(OUTLINE_FIXTURES, "expected", "diff-post-v1-v2.json");
+  check("diff-post-v1-v2 matches its expected JSON", existsSync(expectedPath) && readFileSync(expectedPath, "utf8") === renderOutline(d),
+    "rerun tests/outline-fixtures.mjs --update and review the diff");
+  check("the planted move is found: n3 goes from position 3 to 1", d.moved.some((m) => m.id === "n3" && m.from === 3 && m.to === 1));
+  check("the planted addition and removal are found by id", d.added.join() === "n6" && d.removed.join() === "n5");
+  check("the rewording of n2 is a rewording, and its evidence slot went from empty to filled",
+    d.reworded.length === 1 && d.reworded[0].id === "n2" && d.evidence.length === 1 && d.evidence[0].change === "filled");
+  check("nothing was reparented and n4 is unchanged", d.reparented.length === 0 && d.unchanged === 1);
+  const v1 = loadOutline("post-v1.json");
+  const self = (await import(pathToFileURL(join(SKILL, "tools", "outline-diff.mjs")).href)).diffOutlines(v1, v1);
+  check("a document diffed against itself reports nothing but unchanged nodes",
+    self.added.length + self.removed.length + self.moved.length + self.reworded.length + self.evidence.length === 0 && self.unchanged === v1.nodes.length);
+  // The trap: a node vanishes and another appears with IDENTICAL text. Matching by
+  // text would call that a rename; by id it is one removal and one addition.
+  const v3 = JSON.parse(JSON.stringify(v1));
+  v3.revision = 2; v3.parent_digest = "0".repeat(64);
+  const n2 = v3.nodes.find((n) => n.id === "n2");
+  v3.nodes = v3.nodes.filter((n) => n.id !== "n2");
+  v3.nodes.push({ ...n2, id: "n7" });
+  const trap = (await import(pathToFileURL(join(SKILL, "tools", "outline-diff.mjs")).href)).diffOutlines(v1, v3);
+  check("a removed id with identical text elsewhere is removed + added, never a rewording",
+    trap.removed.join() === "n2" && trap.added.join() === "n7" && trap.reworded.length === 0);
+  const { spawnSync } = await import("node:child_process");
+  const cli = (...a) => spawnSync(process.execPath, [DIFF, ...a], { encoding: "utf8" });
+  const a = join(OUTLINE_FIXTURES, "outlines", "post-v1.json"), b = join(OUTLINE_FIXTURES, "outlines", "post-v2.json");
+  check("CLI --json parses and agrees; one file or a bad flag exits 2; an invalid outline exits 1",
+    JSON.parse(cli(a, b, "--json").stdout).added.join() === "n6" && cli(a).status === 2 && cli(a, b, "--fuzzy").status === 2
+      && cli(a, join(OUTLINE_FIXTURES, "cases.json")).status === 1);
 }
 
 /* ------------------------------------------------------------------ */

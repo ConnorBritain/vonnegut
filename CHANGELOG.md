@@ -68,6 +68,11 @@ pin and becomes a release entry when the last one is ticked.
   boundary, and a `not-evaluated` refusal for a heading-free note. Seven
   fixtures (an essay, a reference doc, a fiction chapter, two revisions of one
   post, a note, and a byte-identical corpus post) with generated expected JSON.
+- **Added** the `voice-outline/1` schema (argument and beat-sheet modes as one
+  node vocabulary, stable node ids, evidence slots on claims) and
+  `outline-diff.mjs`, which compares two revisions by id only — added,
+  removed, moved, reparented, reworded, evidence filled — and never matches by
+  text, with a fixture pair and generated expected output.
 
 ---
 

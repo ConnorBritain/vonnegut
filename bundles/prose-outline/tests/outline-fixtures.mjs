@@ -25,15 +25,24 @@ export async function scanCase(c) {
 
 export const render = (result) => `${JSON.stringify(result, null, 2)}\n`;
 
+export const DIFF = join(HERE, "..", "skills", "prose-outline", "tools", "outline-diff.mjs");
+export const DIFF_PAIRS = [{ name: "post-v1-v2", before: "post-v1.json", after: "post-v2.json" }];
+export const loadOutline = (name) => JSON.parse(readFileSync(join(OUTLINE_FIXTURES, "outlines", name), "utf8"));
+export async function diffPair(pair) {
+  const { diffOutlines } = await import(pathToFileURL(DIFF).href);
+  return diffOutlines(loadOutline(pair.before), loadOutline(pair.after));
+}
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const update = process.argv.includes("--update");
   let differing = 0;
-  for (const c of loadOutlineCases()) {
-    const actual = render(await scanCase(c));
-    const target = join(OUTLINE_FIXTURES, "expected", `${c.name}.json`);
-    if (update) { writeFileSync(target, actual); console.log(`  wrote ${c.name}.json`); continue; }
-    if (existsSync(target) && readFileSync(target, "utf8") === actual) console.log(`  ok   ${c.name}`);
-    else { differing += 1; console.log(`  DIFF ${c.name} — rerun with --update and review the diff`); }
-  }
+  const compare = (name, actual) => {
+    const target = join(OUTLINE_FIXTURES, "expected", `${name}.json`);
+    if (update) { writeFileSync(target, actual); console.log(`  wrote ${name}.json`); return; }
+    if (existsSync(target) && readFileSync(target, "utf8") === actual) console.log(`  ok   ${name}`);
+    else { differing += 1; console.log(`  DIFF ${name} — rerun with --update and review the diff`); }
+  };
+  for (const c of loadOutlineCases()) compare(c.name, render(await scanCase(c)));
+  for (const p of DIFF_PAIRS) compare(`diff-${p.name}`, render(await diffPair(p)));
   process.exit(differing ? 1 : 0);
 }
