@@ -29,7 +29,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] A3 — `lib/registry-reader.mjs` read-only registry reader + parity fixture against prose-author's `identity-store.mjs`; `lib/revision-store.mjs` implementing `docs/registry-stores.md`
 - [x] A4 — `outline-scan.mjs` + five fixtures + expected JSON + heading-free `not-evaluated` case
 - [x] A5 — `voice-outline/1` schema, `outline-diff.mjs` + revision-pair fixture with planted moves
-- [ ] A6 — `outline-store.mjs`: three registry states, approval gate, stale-revision refusal, undo round-trip; mutations registered
+- [x] A6 — `outline-store.mjs`: three registry states, approval gate, stale-revision refusal, undo round-trip; mutations registered
 - [ ] A7 — `prose-outline` SKILL.md + meta.yaml, beat-sheet mode, positive and negative skill test recorded
 - [ ] A8 — RELEASE-v0.1.0.md, CHANGELOG entry, README bundle table and install lines, version pin above, ROADMAP status → shipped
 

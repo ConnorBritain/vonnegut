@@ -75,7 +75,9 @@ const SUITES = {
   author: "bundles/prose-author/tests/selftest.mjs",
   sibling: "bundles/prose-tell-scan/tests/selftest.mjs",
   review: "bundles/prose-review/tests/selftest.mjs",
+  outline: "bundles/prose-outline/tests/selftest.mjs",
 };
+const OUTLINE_TOOLS = "bundles/prose-outline/skills/prose-outline/tools";
 
 const EXEMPLARS = `${TOOLS}/exemplars.mjs`;
 const VERIFY = `${TOOLS}/verify.mjs`;
@@ -138,6 +140,18 @@ export function createSandbox() {
  * meaningless rather than merely failing.
  */
 export const MUTATIONS = [
+  // prose-outline (docs/roadmap/A-prose-outline.md). Covered by its own suite.
+  { suite: "outline", name: "outline store writes without approval", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "nothing persistent is saved without explicit approval" },
+  { suite: "outline", name: "outline store accepts a stale expected revision", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");', with: "/* defect: overwrite whatever is current */", guards: "a caller working from a stale read cannot overwrite a newer revision" },
+  { suite: "outline", name: "outline store undoes past the first revision", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'if (current.revision === 1) throw new Error("No change to undo");', with: "if (false) throw new Error();", guards: "undo cannot invent a revision zero" },
+  { suite: "outline", name: "outline store ignores a held writer lock", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'try { fd = openSync(lock, "wx", 0o600); }', with: 'try { fd = openSync(lock, "w", 0o600); }', guards: "a second writer is refused rather than racing the first" },
+  { suite: "outline", name: "registry reader migrates an unknown schema", file: `${OUTLINE_TOOLS}/lib/registry-reader.mjs`, find: "if (state?.schema !== REGISTRY_SCHEMA)", with: "if (false)", guards: "an unknown registry version is refused, never reinterpreted" },
+  { suite: "outline", name: "registry reader ignores the pointer digest", file: `${OUTLINE_TOOLS}/lib/registry-reader.mjs`, find: "if (`${state.revision}-${sha256(bytes)}.json` !== pointer.file)", with: "if (false)", guards: "registry bytes must reproduce their pinned digest" },
+  { suite: "outline", name: "registry reader picks the first identity when none is selected", file: `${OUTLINE_TOOLS}/lib/registry-reader.mjs`, find: 'return state.identities.length ? { state: "ambiguous", identities: state.identities.map((e) => e.id) } : { state: "none" };', with: 'return state.identities.length ? { state: "selected", id: state.identities[0].id, entry: state.identities[0], registry_revision: state.revision, explicit: false } : { state: "none" };', guards: "identities without a default are a question for the user, never a guess" },
+  { suite: "outline", name: "outline store persists with no registry", file: `${OUTLINE_TOOLS}/outline-store.mjs`, find: 'if (selection.state === "none") throw', with: 'if (false) throw', guards: "without a writing identity registry, outlines stay task-local" },
+  { suite: "outline", name: "outline-scan reads structure into a heading-free note", file: `${OUTLINE_TOOLS}/outline-scan.mjs`, find: "if (!seg.headings.length && paragraphCount < 3) {", with: "if (false) {", guards: "a document with no structure is not-evaluated rather than measured" },
+  { suite: "outline", name: "outline-diff matches vanished nodes by text", file: `${OUTLINE_TOOLS}/outline-diff.mjs`, find: "for (const id of B.keys()) if (!A.has(id)) out.added.push(id);\n  for (const id of A.keys()) if (!B.has(id)) out.removed.push(id);", with: "for (const id of B.keys()) if (!A.has(id) && ![...A.values()].some((n) => n.text === B.get(id).text)) out.added.push(id);\n  for (const id of A.keys()) if (!B.has(id) && ![...B.values()].some((n) => n.text === A.get(id).text)) out.removed.push(id);", guards: "nodes are matched by id only, never by text" },
+  { suite: "outline", name: "outline schema accepts duplicate node ids", file: `${OUTLINE_TOOLS}/lib/outline-schema.mjs`, find: "if (ids.has(n.id)) errors.push(`${where}: duplicate id`);", with: "", guards: "node ids are unique, or the differ has nothing to key on" },
   { name: "identity accepts a future registry schema", file: `${TOOLS}/identity-store.mjs`, find: 'if (state?.schema !== IDENTITY_SCHEMA)', with: 'if (false)', guards: "incompatible registry versions are not silently reinterpreted" },
   { name: "identity ignores registry digests", file: `${TOOLS}/identity-store.mjs`, find: 'if (`${state.revision}-${sha256(bytes)}.json` !== pointer.file)', with: 'if (false)', guards: "shared registry revision bytes reproduce their pinned digest" },
   { name: "identity overwrites a stale registry revision", file: `${TOOLS}/identity-store.mjs`, find: 'if (state.revision !== expectedRevision)', with: 'if (false)', guards: "concurrent clients cannot overwrite a newer default or profile selection" },
@@ -1999,7 +2013,8 @@ export function runAll() {
       // affects prose-tell-scan's suite, not this one - running the wrong suite
       // would silently score 0, which is exactly the "no failing mutation" trap
       // this file exists to prevent.
-      const suite = SUITES[mut.suite === "sibling" ? "sibling" : mut.suite === "review" ? "review" : "author"];
+      if (mut.suite && !SUITES[mut.suite]) throw new Error(`unknown suite ${mut.suite}: ${mut.name}`);
+      const suite = SUITES[mut.suite ?? "author"];
       const restore = applyIn(sandbox, mut);
       try {
         results.push({ ...mut, ...runSuite(sandbox, suite) });

@@ -73,6 +73,13 @@ pin and becomes a release entry when the last one is ticked.
   `outline-diff.mjs`, which compares two revisions by id only — added,
   removed, moved, reparented, reworded, evidence filled — and never matches by
   text, with a fixture pair and generated expected output.
+- **Added** `outline-store.mjs`: `locate`, `show`, `list`, `save` and `undo`
+  over `<projects>/<identity>/<project>/outlines`, refusing to persist with no
+  registry or with identities and no default (exit 3, never picking the
+  first), returning a proposal without `--approved`, and refusing stale
+  revisions and invalid proposals before touching disk. Eleven mutations for
+  these guards are registered in the repo's mutation runner under a new
+  `outline` suite.
 
 ---
 

@@ -40,6 +40,11 @@ export function storePath(projectsDir, identity, project, store) {
 
 const revisionName = (doc) => `${String(doc.revision).padStart(6, "0")}-${digest(doc)}.json`;
 
+/** The caller's expected revision must be what is on disk right now, or it is working from a stale read. */
+function assertCurrent(current, expectedRevision) {
+  if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");
+}
+
 /** Validate the envelope every document shares; the payload is the caller's business. */
 export function validateEnvelope(doc, schema, id) {
   const errors = [];
@@ -98,12 +103,12 @@ export function saveStore(directory, { schema, id, payload, expectedRevision, ap
   const build = (current) => ({ schema, id, revision: (current?.revision ?? 0) + 1, parent_digest: current ? digest(current) : null, ...payload });
   if (!approved) {
     const current = readStore(directory, schema, id);
-    if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");
+    assertCurrent(current, expectedRevision);
     return { status: "proposal", proposal: build(current), receipt: "Nothing was saved; approval is required." };
   }
   return withLock(directory, () => {
     const current = readStore(directory, schema, id);
-    if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");
+    assertCurrent(current, expectedRevision);
     const next = build(current);
     const errors = validateEnvelope(next, schema, id);
     if (errors.length) throw new TypeError(errors.join("; "));
@@ -116,7 +121,7 @@ export function saveStore(directory, { schema, id, payload, expectedRevision, ap
 export function undoStore(directory, { schema, id, expectedRevision, approved = false }) {
   const current = readStore(directory, schema, id);
   if (!current) throw new Error("No store to undo");
-  if (current.revision !== expectedRevision) throw new Error("Stale revision; reread before changing this store");
+  assertCurrent(current, expectedRevision);
   if (current.revision === 1) throw new Error("No change to undo");
   const file = readdirSync(join(directory, "revisions")).find((f) => f.endsWith(`-${current.parent_digest}.json`));
   if (!file) throw new Error("Previous revision is missing; cannot invent undo history");
@@ -124,8 +129,7 @@ export function undoStore(directory, { schema, id, expectedRevision, approved = 
   const restored = { ...previous, revision: current.revision + 1, parent_digest: digest(current) };
   if (!approved) return { status: "proposal", proposal: restored, receipt: "Nothing was restored; approval is required." };
   return withLock(directory, () => {
-    const again = readStore(directory, schema, id);
-    if (again.revision !== expectedRevision) throw new Error("Stale revision; reread before changing this store");
+    assertCurrent(readStore(directory, schema, id), expectedRevision);
     persist(directory, restored);
     return { status: "saved", document: restored, receipt: { revision: restored.revision, restored_revision: previous.revision } };
   });

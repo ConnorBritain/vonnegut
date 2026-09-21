@@ -45,6 +45,8 @@ function check(name, condition, detail = "") {
   }
 }
 const group = (title) => process.stdout.write(`\n${title}\n`);
+/** Run a call that a REMOVED guard could turn into a throw; a mutation must fail a check, never crash the suite. */
+const attempt = (fn) => { try { return fn() ?? {}; } catch (e) { return { crashed: e.message }; } };
 
 /* ------------------------------------------------------------------ */
 group("Packaging — a skill-only bundle, four manifests that agree");
@@ -299,9 +301,9 @@ const REG = join(HERE, "fixtures", "registry");
 const tmp = mkdtempSync(join(tmpdir(), "prose-outline-selftest-"));
 try {
   check("no registry ⇒ state none", rr.selectedIdentity(join(tmp, "nowhere")).state === "none");
-  const amb = rr.selectedIdentity(join(REG, "ambiguous"));
+  const amb = attempt(() => rr.selectedIdentity(join(REG, "ambiguous")));
   check("identities without a default ⇒ ambiguous, listing them, never picking one",
-    amb.state === "ambiguous" && amb.identities.join() === "personal,work");
+    amb.state === "ambiguous" && amb.identities?.join() === "personal,work");
   const sel = rr.selectedIdentity(join(REG, "selected"));
   check("a selected default ⇒ selected, with the entry and registry revision",
     sel.state === "selected" && sel.id === "personal" && sel.entry.preference_store === "/private/writing/preferences" && sel.registry_revision === 2 && sel.explicit === false);
@@ -355,29 +357,75 @@ try {
   const p1 = rs.saveStore(dir, { ...S, payload: { title: "v1" }, expectedRevision: 0 });
   check("without approval: a proposal comes back and nothing touches disk",
     p1.status === "proposal" && p1.proposal.revision === 1 && p1.proposal.parent_digest === null && !existsSync(join(dir, "current.json")));
-  const s1 = rs.saveStore(dir, { ...S, payload: { title: "v1" }, expectedRevision: 0, approved: true });
+  const s1 = attempt(() => rs.saveStore(dir, { ...S, payload: { title: "v1" }, expectedRevision: 0, approved: true }));
   check("approved: revision 1 is written with a null parent and a receipt naming undo",
-    s1.status === "saved" && rs.readStore(dir, S.schema, S.id).title === "v1" && /Undo restores revision 0/.test(s1.receipt.undo));
+    s1.status === "saved" && rs.readStore(dir, S.schema, S.id)?.title === "v1" && /Undo restores revision 0/.test(s1.receipt?.undo ?? ""));
   threw = null; try { rs.saveStore(dir, { ...S, payload: { title: "v2" }, expectedRevision: 0, approved: true }); } catch (e) { threw = e.message; }
   check("a stale expected revision is refused", /Stale revision/.test(threw ?? ""));
-  const s2 = rs.saveStore(dir, { ...S, payload: { title: "v2" }, expectedRevision: 1, approved: true });
-  check("revision 2's parent digest is the canonical digest of revision 1", s2.document.parent_digest === rs.digest(s1.document));
+  const s2 = attempt(() => rs.saveStore(dir, { ...S, payload: { title: "v2" }, expectedRevision: 1, approved: true }));
+  check("revision 2's parent digest is the canonical digest of revision 1", s2.document?.parent_digest === rs.digest(s1.document ?? {}));
   threw = null; try { rs.saveStore(dir, { ...S, payload: { title: "x" }, expectedRevision: 2, approved: true, }); rs.saveStore(dir, { ...S, payload: { revision: 9 }, expectedRevision: 3, approved: true }); } catch (e) { threw = e.message; }
   check("a payload carrying envelope keys is refused", /envelope keys/.test(threw ?? ""));
-  const u0 = rs.undoStore(dir, { ...S, expectedRevision: 3 });
-  check("undo without approval proposes and writes nothing", u0.status === "proposal" && u0.proposal.title === "v2" && rs.readStore(dir, S.schema, S.id).revision === 3);
-  const u1 = rs.undoStore(dir, { ...S, expectedRevision: 3, approved: true });
-  check("undo writes a NEW revision holding the parent's payload; history stays", u1.document.revision === 4 && u1.document.title === "v2" && rs.listRevisions(dir).length === 4);
+  const u0 = attempt(() => rs.undoStore(dir, { ...S, expectedRevision: 3 }));
+  check("undo without approval proposes and writes nothing", u0.status === "proposal" && u0.proposal?.title === "v2" && rs.readStore(dir, S.schema, S.id)?.revision === 3);
+  const u1 = attempt(() => rs.undoStore(dir, { ...S, expectedRevision: 3, approved: true }));
+  check("undo writes a NEW revision holding the parent's payload; history stays", u1.document?.revision === 4 && u1.document?.title === "v2" && rs.listRevisions(dir).length === 4);
   const fresh = rs.storePath(tmp, "me", "note", "outlines");
-  rs.saveStore(fresh, { ...S, id: "note", payload: { title: "only" }, expectedRevision: 0, approved: true });
+  attempt(() => rs.saveStore(fresh, { ...S, id: "note", payload: { title: "only" }, expectedRevision: 0, approved: true }));
   threw = null; try { rs.undoStore(fresh, { ...S, id: "note", expectedRevision: 1, approved: true }); } catch (e) { threw = e.message; }
   check("undo at revision 1 is refused", /No change to undo/.test(threw ?? ""));
   writeFileSync(join(dir, ".writer.lock"), "");
   threw = null; try { rs.saveStore(dir, { ...S, payload: { title: "v5" }, expectedRevision: 4, approved: true }); } catch (e) { threw = e.message; }
   check("an existing lock is reported, not removed", /another or interrupted writer/.test(threw ?? "") && existsSync(join(dir, ".writer.lock")));
-  unlinkSync(join(dir, ".writer.lock"));
+  rmSync(join(dir, ".writer.lock"), { force: true });
   const prefs = await sibling("bundles/prose-author/skills/prose-draft/tools/preferences-v2.mjs", "digest parity");
-  if (prefs) check("digest parity with preferences-v2 on the same document", prefs.digest(s2.document) === rs.digest(s2.document) && prefs.stableJSON({ b: [1, { d: 2, c: 3 }], a: null }) === rs.stableJSON({ b: [1, { d: 2, c: 3 }], a: null }));
+  if (prefs) check("digest parity with preferences-v2 on the same document", prefs.digest(s2.document ?? {}) === rs.digest(s2.document ?? {}) && prefs.stableJSON({ b: [1, { d: 2, c: 3 }], a: null }) === rs.stableJSON({ b: [1, { d: 2, c: 3 }], a: null }));
+
+  /* ---------------------------------------------------------------- */
+  group("outline-store — three registry states, approval, undo, and nothing written by accident");
+  const { runStore, StoreRefusal } = await import(pathToFileURL(join(SKILL, "tools", "outline-store.mjs")).href);
+  const { spawnSync } = await import("node:child_process");
+  const STORE = join(SKILL, "tools", "outline-store.mjs");
+  const projects = join(tmp, "projects");
+  const proposal = join(tmp, "proposal.json");
+  const body = loadOutline("post-v1.json"); for (const k of ["schema", "id", "revision", "parent_digest"]) delete body[k];
+  writeFileSync(proposal, JSON.stringify(body));
+  const env = { PROSE_PROJECTS_DIR: projects };
+  const refusal = (argv, e) => { try { runStore(argv, e); return null; } catch (err) { return err; } };
+  let r = refusal(["save", "--proposal", proposal, "--project", "book", "--expected-revision", "0", "--approved", "--registry", join(tmp, "no-registry")], env);
+  check("no registry ⇒ cannot persist (exit 3), and no store directory appears",
+    r instanceof StoreRefusal && r.code === 3 && /task-local/.test(r.message) && !existsSync(projects));
+  r = refusal(["save", "--proposal", proposal, "--project", "book", "--expected-revision", "0", "--approved", "--registry", join(REG, "ambiguous")], env);
+  check("identities without a default ⇒ cannot persist (exit 3), naming them, never picking the first",
+    r instanceof StoreRefusal && r.code === 3 && /never pick the first/.test(r.message) && r.identities.join() === "personal,work" && !existsSync(projects));
+  const located = runStore(["locate", "--registry", join(REG, "ambiguous")], env);
+  check("locate reports the ambiguous state as data rather than throwing", located.status === "cannot-persist" && located.identities.length === 2);
+  const explicit = runStore(["locate", "--registry", join(REG, "ambiguous"), "--identity", "work"], env);
+  check("locate with --identity resolves and names the store directory", explicit.status === "located" && explicit.identity === "work" && explicit.directory === null);
+  const regSel = ["--registry", join(REG, "selected")];
+  const dry = attempt(() => runStore(["save", "--proposal", proposal, "--project", "book", "--expected-revision", "0", ...regSel], env));
+  check("selected, no --approved ⇒ a proposal is returned and nothing is written",
+    dry.status === "proposal" && dry.proposal?.revision === 1 && dry.identity === "personal" && !existsSync(join(projects, "personal", "book", "outlines", "current.json")));
+  const saved = attempt(() => runStore(["save", "--proposal", proposal, "--project", "book", "--expected-revision", "0", "--approved", ...regSel], env));
+  check("selected + --approved ⇒ revision 1 under <projects>/<identity>/<project>/outlines",
+    saved.status === "saved" && saved.revision === 1 && existsSync(join(projects, "personal", "book", "outlines", "current.json")));
+  const shown = attempt(() => runStore(["show", "--project", "book", ...regSel], env));
+  check("show returns the stored, valid voice-outline/1 with the project as its id", shown.outline?.schema === "voice-outline/1" && shown.outline?.id === "book" && shown.outline?.nodes.length === 5);
+  r = refusal(["save", "--proposal", proposal, "--project", "book", "--expected-revision", "0", "--approved", ...regSel], env);
+  check("a stale --expected-revision is refused with exit 1", r && r.code !== 3 && /Stale revision/.test(r.message));
+  writeFileSync(join(tmp, "bad.json"), JSON.stringify({ ...body, mode: "essay" }));
+  r = refusal(["save", "--proposal", join(tmp, "bad.json"), "--project", "book", "--expected-revision", "1", "--approved", ...regSel], env);
+  check("an invalid proposal is refused before anything is written", /not a valid outline/.test(r?.message ?? "") && attempt(() => runStore(["list", "--project", "book", ...regSel], env)).revisions?.length === 1);
+  attempt(() => runStore(["save", "--proposal", proposal, "--project", "book", "--expected-revision", "1", "--approved", ...regSel], env));
+  const undone = attempt(() => runStore(["undo", "--project", "book", "--expected-revision", "2", "--approved", ...regSel], env));
+  check("undo writes revision 3 restoring revision 1, and list shows all three", undone.status === "saved" && undone.revision === 3 && attempt(() => runStore(["list", "--project", "book", ...regSel], env)).revisions?.length === 3);
+  r = refusal(["save", "--proposal", proposal, "--project", "my book", "--expected-revision", "0", "--approved", ...regSel], env);
+  check("a project name outside the token rule is refused", /Project names use/.test(r?.message ?? ""));
+  const cli = (...a) => spawnSync(process.execPath, [STORE, ...a], { encoding: "utf8", env: { ...process.env, ...env } });
+  check("CLI: usage errors exit 2, a missing registry exits 3 with JSON, show on an empty project exits 1",
+    cli("save", "--project", "book").status === 2
+      && cli("locate", "--registry", join(tmp, "no-registry")).status === 3 && JSON.parse(cli("locate", "--registry", join(tmp, "no-registry")).stdout).status === "cannot-persist"
+      && cli("show", "--project", "nothing", ...regSel).status === 1);
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }
