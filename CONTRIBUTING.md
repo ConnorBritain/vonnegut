@@ -27,6 +27,31 @@ or only that it stays quiet. Answer it before writing the prompt, not after the 
 it also decides which way the prompt should resolve uncertainty. See
 [Ground truth](#ground-truth-and-what-you-may-claim-without-it).
 
+## Resuming work
+
+Planned work is tracked in one place so that a session can pick it up cold.
+
+1. **Read [`docs/ROADMAP.md`](docs/ROADMAP.md) and then
+   [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md) before anything else.** The
+   roadmap holds each item's goal, deterministic half, model half, bundle, registry
+   state and acceptance criteria; the status file holds one line per deliverable.
+2. **Pick the first unchecked deliverable in sequence order.** Read that item's spec
+   under `docs/roadmap/<item>.md` before writing anything; it is written so the spec
+   plus `STATUS.md` are enough to resume from.
+3. **Tick the `STATUS.md` line in the same commit as the work.** One deliverable per
+   commit at minimum. On an item's first deliverable set its status to `in-progress`
+   in both `ROADMAP.md` and the `STATUS.md` heading; on the last, `shipped`.
+4. **A version bump without a `STATUS.md` edit fails `node tools/check.mjs`.**
+   `docs/roadmap/STATUS.md` is the one place bundle versions are pinned;
+   `tools/check-packaging.mjs` reads its expected versions from there and
+   `tools/check-roadmap.mjs` cross-checks the manifests, the marketplace entry and
+   the CHANGELOG heading. That is deliberate: the roadmap cannot drift from the code
+   silently.
+5. **A design decision the spec does not settle:** write the options into the spec's
+   *Decisions* section, choose one, record why, and continue. Do not stall.
+6. **When an item ships, move its durable rationale into the bundle** (`README.md`,
+   `DESIGN.md`) and mark the spec historical at the top. `docs/` stays kind-agnostic.
+
 ## Kinds
 
 | Kind | Reads / writes | Output contract | Central risk |
@@ -485,6 +510,7 @@ Worked example: [`bundles/prose-review/tests/critic-harness.md`](bundles/prose-r
 [ ] positive AND negative test run, both recorded
 [ ] hooks tested across every path, if any
 [ ] root README catalog + kinds table updated
+[ ] docs/roadmap/STATUS.md line ticked in this commit; ROADMAP.md status field current
 ```
 
 ## Style

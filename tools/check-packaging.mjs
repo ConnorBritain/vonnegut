@@ -6,11 +6,13 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
 import { AGENTS, MARKER, renderAgent } from "../install-prose-codex.mjs";
+import { readBundleVersions } from "./check-roadmap.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = p => readFileSync(join(root, p), "utf8");
 const json = p => JSON.parse(read(p));
-const expected = { "prose-author": "0.6.0", "prose-review": "0.3.0", "prose-tell-scan": "0.1.1" };
+// The one version pin is docs/roadmap/STATUS.md; a bump anywhere else fails here.
+const expected = readBundleVersions(root);
 const market = json(".claude-plugin/marketplace.json");
 assert.equal(market.name, "vonnegut");
 assert.deepEqual(market.plugins.map(p => p.name).sort(), Object.keys(expected).sort());
@@ -81,4 +83,5 @@ try {
   run(); run("--check");
   assert.equal(readFileSync(target, "utf8"), renderAgent(AGENTS[0]));
 } finally { rmSync(temp, { recursive: true, force: true }); }
-console.log("Packaging passed: three bundles, twelve manifests, seven identical prompt bodies, held primitive excluded, maintained documentation links, no Actions, safe legacy-wrapper migration.");
+const bundleCount = Object.keys(expected).length;
+console.log(`Packaging passed: ${bundleCount} bundles at the STATUS.md-pinned versions, ${bundleCount * 4} manifests, ${deployed.length} identical prompt bodies, held primitive excluded, maintained documentation links, no Actions, safe legacy-wrapper migration.`);

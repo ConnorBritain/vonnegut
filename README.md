@@ -93,6 +93,8 @@ node tools/check.mjs --mutations
 The second command adds the full mutation sweep. Neither command generates new
 model drafts. There are no GitHub Actions workflows. See [contributing](CONTRIBUTING.md),
 [portability](docs/portability.md), [wiring](docs/wiring.md) and [extraction verification](docs/EXTRACTION-VERIFICATION.md).
+Planned work lives in the [roadmap](docs/ROADMAP.md); its [status checklist](docs/roadmap/STATUS.md)
+also pins every bundle version, and the checks fail when the two drift.
 
 With both CLIs installed, `node tools/check-installation.mjs` tests plugin and
 loose-file installation in temporary configuration directories, without changing

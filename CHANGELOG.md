@@ -17,6 +17,13 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Added** a durable roadmap — [`docs/ROADMAP.md`](docs/ROADMAP.md), one spec per
+  item under `docs/roadmap/`, and a `STATUS.md` checklist that is now the single
+  pin for bundle versions — plus `tools/check-roadmap.mjs`, run first by
+  `node tools/check.mjs`, which fails when a manifest version, the marketplace
+  entry, this file or the roadmap's status fields disagree with `STATUS.md`. No
+  bundle version changes.
+
 No new behavior release is introduced by the repository split. Historical entries
 labelled local candidates describe their status at the time of recording.
 
