@@ -30,7 +30,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] A4 — `outline-scan.mjs` + five fixtures + expected JSON + heading-free `not-evaluated` case
 - [x] A5 — `voice-outline/1` schema, `outline-diff.mjs` + revision-pair fixture with planted moves
 - [x] A6 — `outline-store.mjs`: three registry states, approval gate, stale-revision refusal, undo round-trip; mutations registered
-- [ ] A7 — `prose-outline` SKILL.md + meta.yaml, beat-sheet mode, positive and negative skill test recorded
+- [x] A7 — `prose-outline` SKILL.md + meta.yaml, beat-sheet mode, positive and negative skill test recorded
 - [ ] A8 — RELEASE-v0.1.0.md, CHANGELOG entry, README bundle table and install lines, version pin above, ROADMAP status → shipped
 
 ### B. prose-structure-critic — planned

@@ -37,8 +37,13 @@ export function validateOutlineBody(body) {
   if (!Object.hasOwn(MODES, body?.mode)) return [`mode must be ${Object.keys(MODES).join(" | ")}`];
   const kinds = MODES[body.mode];
   if (!nonempty(body.title)) errors.push("title is required");
-  if (!nonempty(body.thesis)) errors.push(body.mode === "argument" ? "thesis is required" : "thesis (the premise) is required");
   if (!Array.isArray(body.nodes)) return [...errors, "nodes must be an array"];
+  // A thesis may be withheld — but only when the outline says why, with at
+  // least one open question. An underspecified brief yields questions, not an
+  // invented thesis; a proposal with neither is not an outline.
+  const openQuestions = body.nodes.filter((n) => n?.kind === "open-question").length;
+  if (body.thesis === null) { if (!openQuestions) errors.push("thesis may be null only when at least one open-question node says what is missing"); }
+  else if (!nonempty(body.thesis)) errors.push(body.mode === "argument" ? "thesis is required (or null with open questions)" : "thesis (the premise) is required (or null with open questions)");
   const ids = new Set();
   for (const n of body.nodes) {
     const where = `node ${n?.id ?? "?"}`;

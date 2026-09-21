@@ -63,14 +63,49 @@ group("Packaging — a skill-only bundle, four manifests that agree");
 }
 
 /* ------------------------------------------------------------------ */
-group("Skill directory — present once A7 lands; until then, absent and said so");
+group("Skill — SKILL.md, meta.yaml, and the two promises about briefs, mechanically");
 {
-  const skill = existsSync(join(SKILL, "SKILL.md"));
-  process.stdout.write(`  note ${skill ? "SKILL.md present" : "SKILL.md not yet written (deliverable A7)"}\n`);
-  if (skill) {
-    const text = readFileSync(join(SKILL, "SKILL.md"), "utf8");
-    check("SKILL.md references its tools by relative path, never ${CLAUDE_PLUGIN_ROOT}", !text.includes("CLAUDE_PLUGIN_ROOT"));
+  const text = readFileSync(join(SKILL, "SKILL.md"), "utf8");
+  check("SKILL.md has frontmatter with name and a trigger-first description", /^---\nname: prose-outline\ndescription: This skill should be used when/.test(text));
+  check("SKILL.md references its tools by relative path, never ${CLAUDE_PLUGIN_ROOT}", !text.includes("CLAUDE_PLUGIN_ROOT") && /node tools\/outline-scan\.mjs/.test(text));
+  check("SKILL.md names every shipped tool, the approval flag and the three registry states",
+    ["outline-scan.mjs", "outline-diff.mjs", "outline-store.mjs", "proposal-check.mjs", "--approved", "`none`", "`ambiguous`", "`located`"].every((s) => text.includes(s)));
+  check("SKILL.md states the negative-test rule in so many words", /underspecified brief yields open questions, not an invented thesis/i.test(text));
+  check("SKILL.md never claims a verdict, a score or authorship", !/\bscore\b|who wrote/i.test(text.replace(/never state or imply who wrote/i, "")));
+  const meta = readFileSync(join(SKILL, "meta.yaml"), "utf8");
+  check("meta.yaml declares kind planner, surface skill, a nullable verdict and honest enforcement per harness",
+    /kind: planner/.test(meta) && /surface: skill/.test(meta) && /verdict: null/.test(meta) && ["claude-code", "cursor", "codex", "agents-md"].every((h) => new RegExp(`${h}:\\n\\s+enforcement: (enforced|partial|advisory)`).test(meta)));
+  check("meta.yaml lists every tool SKILL.md invokes", ["outline-scan", "outline-diff", "outline-store", "proposal-check"].every((t) => meta.includes(`tools/${t}.mjs`)));
+  for (const tool of ["outline-scan", "outline-diff", "outline-store", "proposal-check"]) check(`tools/${tool}.mjs exists`, existsSync(join(SKILL, "tools", `${tool}.mjs`)));
+  check("references/outline-schema.md exists and documents the null-thesis rule", /thesis.*`null`/.test(readFileSync(join(SKILL, "references", "outline-schema.md"), "utf8")));
+
+  const pc = await import(pathToFileURL(join(SKILL, "tools", "proposal-check.mjs")).href);
+  const BRIEFS = join(HERE, "fixtures", "briefs");
+  const briefs = JSON.parse(readFileSync(join(BRIEFS, "briefs.json"), "utf8")).briefs;
+  const load = (b) => ({ brief: readFileSync(join(BRIEFS, `${b.name}.md`), "utf8"), proposal: JSON.parse(readFileSync(join(BRIEFS, b.proposal), "utf8")) });
+  for (const b of briefs) {
+    const { brief, proposal } = load(b);
+    const report = pc.checkProposal(proposal, brief);
+    check(`${b.name}: the example proposal keeps the promise (${b.expect})`, report.status === "clean" && report.expectation === b.expect, JSON.stringify(report.findings));
   }
+  const concrete = load(briefs.find((b) => b.name === "concrete")), under = load(briefs.find((b) => b.name === "underspecified"));
+  check("the underspecified example against the concrete brief is a finding: a withheld thesis",
+    pc.checkProposal(under.proposal, concrete.brief).findings.some((f) => /withheld/.test(f)));
+  check("the concrete example against the underspecified brief is a finding: an invented thesis",
+    pc.checkProposal(concrete.proposal, under.brief).findings.some((f) => /invented thesis/.test(f)));
+  const bare = JSON.parse(JSON.stringify(concrete.proposal)); bare.nodes[1].evidence = [];
+  check("a claim with no evidence slot on a concrete brief is a finding", pc.checkProposal(bare, concrete.brief).findings.some((f) => /no evidence slot/.test(f)));
+  const mute = JSON.parse(JSON.stringify(under.proposal)); mute.nodes = [];
+  check("a null thesis with no open question is INVALID, not merely a finding", pc.checkProposal(mute, under.brief).status === "invalid");
+  check("with no brief, only the schema is checked and the expectation is null", pc.checkProposal(concrete.proposal).status === "clean" && pc.checkProposal(concrete.proposal).expectation === null);
+  const { spawnSync } = await import("node:child_process");
+  const cli = (...a) => spawnSync(process.execPath, [join(SKILL, "tools", "proposal-check.mjs"), ...a], { encoding: "utf8" });
+  check("CLI: clean exits 0, a finding exits 1, usage exits 2",
+    cli(join(BRIEFS, "concrete.proposal.json"), "--brief", join(BRIEFS, "concrete.md")).status === 0
+      && cli(join(BRIEFS, "underspecified.proposal.json"), "--brief", join(BRIEFS, "concrete.md")).status === 1
+      && cli().status === 2);
+  check("tests/skill-harness.md records how a real run is dispatched and that an undispatched run is not a pass",
+    /not\s+run, never as passed/.test(readFileSync(join(HERE, "skill-harness.md"), "utf8")));
 }
 
 /* ------------------------------------------------------------------ */

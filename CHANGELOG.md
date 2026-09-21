@@ -80,6 +80,14 @@ pin and becomes a release entry when the last one is ticked.
   revisions and invalid proposals before touching disk. Eleven mutations for
   these guards are registered in the repo's mutation runner under a new
   `outline` suite.
+- **Added** the `prose-outline` skill (SKILL.md, meta.yaml, a readable schema
+  reference) with argument and beat-sheet modes, and `proposal-check.mjs`,
+  which enforces the skill's two promises mechanically: a concrete brief yields
+  a thesis and a slot on every claim; an underspecified brief yields open
+  questions and a null thesis, never an invented one. The schema now refuses a
+  null thesis with no open question. Brief fixtures, example proposals and a
+  harness note record how real runs are dispatched and checked; no run was
+  dispatched in this environment.
 
 ---
 
