@@ -1,0 +1,454 @@
+{
+  "case": "letter.txt",
+  "module": "text-index/1",
+  "segment": {
+    "schema": "text-index/1",
+    "headings": [],
+    "paragraphs": [
+      {
+        "index": 0,
+        "offset": 140,
+        "line": 9,
+        "text": "MOSCOW, February 22, 1892.",
+        "words": 4,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "MOSCOW, February 22, 1892.",
+            "offset": 140,
+            "line": 9
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "offset": 173,
+        "line": 13,
+        "text": "... You are mistaken in thinking you were drunk at Shtcheglov’s name-day party. You had had a drop, that was all. You danced when they all danced, and your jigitivka on the cabman’s box excited nothing but general delight. As for your criticism, it was most likely far from severe, as I don’t remember it. I only remember that Vvedensky and I for some reason roared with laughter as we listened to you.",
+        "words": 72,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "... You are mistaken in thinking you were drunk at Shtcheglov’s name-day party.",
+            "offset": 173,
+            "line": 13
+          },
+          {
+            "text": "You had had a drop, that was all.",
+            "offset": 254,
+            "line": 14
+          },
+          {
+            "text": "You danced when they all danced, and your jigitivka on the cabman’s box excited nothing but general delight.",
+            "offset": 288,
+            "line": 14
+          },
+          {
+            "text": "As for your criticism, it was most likely far from severe, as I don’t remember it.",
+            "offset": 399,
+            "line": 16
+          },
+          {
+            "text": "I only remember that Vvedensky and I for some reason roared with laughter as we listened to you.",
+            "offset": 483,
+            "line": 17
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "offset": 584,
+        "line": 20,
+        "text": "Do you want my biography? Here it is. I was born in Taganrog in 1860. I finished the course at Taganrog high school in 1879. In 1884 I took my degree in medicine at the University of Moscow. In 1888 I gained the Pushkin prize. In 1890 I made a journey to Sahalin across Siberia and back by sea. In 1891 I made a tour in Europe, where I drank excellent wine and ate oysters. In 1892 I took part in an orgy in the company of V. A. Tihonov at a name-day party. I began writing in 1879. The published collections of my works are: “Motley Tales,” “In the Twilight,” “Stories,” “Surly People,” and a novel, “The Duel.” I have sinned in the dramatic line too, though with moderation. I have been translated into all the languages with the exception of the foreign ones, though I have indeed long ago been translated by the Germans. The Czechs and the Serbs approve of me also, and the French are not indifferent. The mysteries of love I fathomed at the age of thirteen. With my colleagues, doctors, and literary men alike, I am on the best of terms. I am a bachelor. I should like to receive a pension. I practice medicine, and so much so that sometimes in the summer I perform post-mortems, though I have not done so for two or three years. Of authors my favourite is Tolstoy, of doctors Zaharin.",
+        "words": 243,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Do you want my biography?",
+            "offset": 584,
+            "line": 20
+          },
+          {
+            "text": "Here it is.",
+            "offset": 610,
+            "line": 20
+          },
+          {
+            "text": "I was born in Taganrog in 1860.",
+            "offset": 622,
+            "line": 20
+          },
+          {
+            "text": "I finished the course at Taganrog high school in 1879.",
+            "offset": 654,
+            "line": 20
+          },
+          {
+            "text": "In 1884 I took my degree in medicine at the University of Moscow.",
+            "offset": 710,
+            "line": 21
+          },
+          {
+            "text": "In 1888 I gained the Pushkin prize.",
+            "offset": 777,
+            "line": 22
+          },
+          {
+            "text": "In 1890 I made a journey to Sahalin across Siberia and back by sea.",
+            "offset": 814,
+            "line": 23
+          },
+          {
+            "text": "In 1891 I made a tour in Europe, where I drank excellent wine and ate oysters.",
+            "offset": 883,
+            "line": 24
+          },
+          {
+            "text": "In 1892 I took part in an orgy in the company of V. A. Tihonov at a name-day party.",
+            "offset": 963,
+            "line": 25
+          },
+          {
+            "text": "I began writing in 1879.",
+            "offset": 1048,
+            "line": 26
+          },
+          {
+            "text": "The published collections of my works are: “Motley Tales,” “In the Twilight,” “Stories,” “Surly People,” and a novel, “The Duel.”",
+            "offset": 1073,
+            "line": 26
+          },
+          {
+            "text": "I have sinned in the dramatic line too, though with moderation.",
+            "offset": 1206,
+            "line": 28
+          },
+          {
+            "text": "I have been translated into all the languages with the exception of the foreign ones, though I have indeed long ago been translated by the Germans.",
+            "offset": 1271,
+            "line": 29
+          },
+          {
+            "text": "The Czechs and the Serbs approve of me also, and the French are not indifferent.",
+            "offset": 1421,
+            "line": 31
+          },
+          {
+            "text": "The mysteries of love I fathomed at the age of thirteen.",
+            "offset": 1503,
+            "line": 32
+          },
+          {
+            "text": "With my colleagues, doctors, and literary men alike, I am on the best of terms.",
+            "offset": 1561,
+            "line": 33
+          },
+          {
+            "text": "I am a bachelor.",
+            "offset": 1642,
+            "line": 34
+          },
+          {
+            "text": "I should like to receive a pension.",
+            "offset": 1659,
+            "line": 34
+          },
+          {
+            "text": "I practice medicine, and so much so that sometimes in the summer I perform post-mortems, though I have not done so for two or three years.",
+            "offset": 1695,
+            "line": 34
+          },
+          {
+            "text": "Of authors my favourite is Tolstoy, of doctors Zaharin.",
+            "offset": 1836,
+            "line": 36
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "offset": 1896,
+        "line": 39,
+        "text": "All that is nonsense though. Write what you like. If you haven’t facts make up with lyricism.",
+        "words": 17,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "All that is nonsense though.",
+            "offset": 1896,
+            "line": 39
+          },
+          {
+            "text": "Write what you like.",
+            "offset": 1925,
+            "line": 39
+          },
+          {
+            "text": "If you haven’t facts make up with lyricism.",
+            "offset": 1946,
+            "line": 39
+          }
+        ]
+      }
+    ],
+    "words": 336,
+    "masked": {
+      "frontmatter": 1,
+      "fenced": 0,
+      "inline": 0,
+      "urls": 0,
+      "comments": 0,
+      "html": 0
+    },
+    "limits": [
+      "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+      "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+      "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+      "Dates are recognised in numeric and month-name forms only.",
+      "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+    ]
+  },
+  "runs": [
+    {
+      "text": "MOSCOW",
+      "key": "moscow",
+      "offset": 140,
+      "line": 9,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Shtcheglov’s",
+      "key": "shtcheglov",
+      "offset": 224,
+      "line": 13,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Vvedensky and I",
+      "key": "vvedensky and i",
+      "offset": 504,
+      "line": 17,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Do",
+      "key": "do",
+      "offset": 584,
+      "line": 20,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Taganrog",
+      "key": "taganrog",
+      "offset": 636,
+      "line": 20,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Taganrog",
+      "key": "taganrog",
+      "offset": 680,
+      "line": 21,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "University of Moscow",
+      "key": "university of moscow",
+      "offset": 755,
+      "line": 22,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Pushkin",
+      "key": "pushkin",
+      "offset": 799,
+      "line": 23,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Sahalin",
+      "key": "sahalin",
+      "offset": 842,
+      "line": 23,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Siberia",
+      "key": "siberia",
+      "offset": 857,
+      "line": 23,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Europe",
+      "key": "europe",
+      "offset": 908,
+      "line": 24,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Tihonov",
+      "key": "tihonov",
+      "offset": 1018,
+      "line": 25,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Motley Tales",
+      "key": "motley tales",
+      "offset": 1118,
+      "line": 27,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "In the Twilight",
+      "key": "in the twilight",
+      "offset": 1134,
+      "line": 27,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Stories",
+      "key": "stories",
+      "offset": 1153,
+      "line": 27,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Surly People",
+      "key": "surly people",
+      "offset": 1164,
+      "line": 27,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Duel",
+      "key": "duel",
+      "offset": 1195,
+      "line": 28,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Germans",
+      "key": "germans",
+      "offset": 1412,
+      "line": 31,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "The Czechs and the Serbs",
+      "key": "czechs and the serbs",
+      "offset": 1421,
+      "line": 31,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "French",
+      "key": "french",
+      "offset": 1475,
+      "line": 32,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Tolstoy",
+      "key": "tolstoy",
+      "offset": 1864,
+      "line": 37,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Zaharin",
+      "key": "zaharin",
+      "offset": 1884,
+      "line": 37,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Write",
+      "key": "write",
+      "offset": 1925,
+      "line": 39,
+      "single": true,
+      "sentenceInitial": true
+    }
+  ],
+  "terms": [],
+  "numbers": [
+    {
+      "text": "February 22, 1892",
+      "kind": "date",
+      "offset": 149,
+      "line": 10
+    },
+    {
+      "text": "1860",
+      "kind": "date",
+      "offset": 648,
+      "line": 20
+    },
+    {
+      "text": "1879",
+      "kind": "date",
+      "offset": 704,
+      "line": 21
+    },
+    {
+      "text": "1884",
+      "kind": "date",
+      "offset": 713,
+      "line": 21
+    },
+    {
+      "text": "1888",
+      "kind": "date",
+      "offset": 780,
+      "line": 22
+    },
+    {
+      "text": "1890",
+      "kind": "date",
+      "offset": 817,
+      "line": 23
+    },
+    {
+      "text": "1891",
+      "kind": "date",
+      "offset": 886,
+      "line": 24
+    },
+    {
+      "text": "1892",
+      "kind": "date",
+      "offset": 966,
+      "line": 25
+    },
+    {
+      "text": "1879",
+      "kind": "date",
+      "offset": 1067,
+      "line": 26
+    }
+  ]
+}

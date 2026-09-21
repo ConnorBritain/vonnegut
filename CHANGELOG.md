@@ -49,6 +49,11 @@ pin and becomes a release entry when the last one is ticked.
 - **Added** the bundle scaffold: four manifests, marketplace entry, README,
   AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets and a selftest wired into
   `node tools/check.mjs`. No skill, tool or store ships yet.
+- **Added** `lib/text-index.mjs`, the canonical segmentation core (headings,
+  paragraphs, sentences, capitalised runs, defined terms, numbers and dates, all
+  with exact source offsets and lines), with three parity cases whose expected
+  JSON is generated output, and a cross-implementation check that its locations
+  agree with tell-scan, visible-prose and fidelity-scan on shared text.
 
 ---
 
