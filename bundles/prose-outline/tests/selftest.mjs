@@ -8,7 +8,8 @@
  * case builds its scratch state under the OS temp directory and touches
  * nothing in the repo. No model is dispatched.
  */
-import { existsSync, readFileSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, unlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { FIXTURES, loadCases, runCase, render } from "./text-index-fixtures.mjs";
@@ -173,6 +174,96 @@ group("text-index — agrees with the repo's other segmenters on shared text (cr
       check(`${name}: heading texts agree with fidelity-scan`, JSON.stringify(theirs) === JSON.stringify(ours), `${theirs} vs ${ours}`);
     }
   }
+}
+
+/* ------------------------------------------------------------------ */
+group("registry-reader — three states, read-only, pinned to prose-author's reader");
+const rr = await import(pathToFileURL(join(SKILL, "tools", "lib", "registry-reader.mjs")).href);
+const REG = join(HERE, "fixtures", "registry");
+const tmp = mkdtempSync(join(tmpdir(), "prose-outline-selftest-"));
+try {
+  check("no registry ⇒ state none", rr.selectedIdentity(join(tmp, "nowhere")).state === "none");
+  const amb = rr.selectedIdentity(join(REG, "ambiguous"));
+  check("identities without a default ⇒ ambiguous, listing them, never picking one",
+    amb.state === "ambiguous" && amb.identities.join() === "personal,work");
+  const sel = rr.selectedIdentity(join(REG, "selected"));
+  check("a selected default ⇒ selected, with the entry and registry revision",
+    sel.state === "selected" && sel.id === "personal" && sel.entry.preference_store === "/private/writing/preferences" && sel.registry_revision === 2 && sel.explicit === false);
+  check("an explicit identity resolves in an ambiguous registry", rr.selectedIdentity(join(REG, "ambiguous"), "work").id === "work");
+  let threw = null;
+  try { rr.selectedIdentity(join(REG, "ambiguous"), "nobody"); } catch (e) { threw = e.message; }
+  check("an explicit identity that does not exist is a refusal, not a state", /Unknown writing identity: nobody/.test(threw ?? ""));
+  // Tampering: change a byte of the current revision; the pointer's digest no longer reproduces.
+  const tampered = join(tmp, "tampered"); cpSync(join(REG, "selected"), tampered, { recursive: true });
+  const rev = JSON.parse(readFileSync(join(tampered, "current.json"), "utf8")).file;
+  writeFileSync(join(tampered, "revisions", rev), readFileSync(join(tampered, "revisions", rev), "utf8").replace('"personal"', '"personal "'));
+  threw = null; try { rr.readRegistry(tampered); } catch (e) { threw = e.message; }
+  check("a revision whose bytes do not reproduce the pointer digest is refused", /digest mismatch/.test(threw ?? ""));
+  const future = join(tmp, "future"); cpSync(join(REG, "selected"), future, { recursive: true });
+  const futureBytes = readFileSync(join(future, "revisions", rev), "utf8").replace("voice-identity-registry/1", "voice-identity-registry/2");
+  const futureFile = `2-${rr.sha256(futureBytes)}.json`;
+  writeFileSync(join(future, "revisions", futureFile), futureBytes); writeFileSync(join(future, "current.json"), JSON.stringify({ file: futureFile }));
+  threw = null; try { rr.readRegistry(future); } catch (e) { threw = e.message; }
+  check("an unknown registry schema is refused by name and never migrated", /voice-identity-registry\/2.*never migrates/.test(threw ?? ""));
+  check("PROSE_PROJECTS_DIR overrides the default under the registry; a relative value is refused",
+    rr.projectsDirectory({ PROSE_PROJECTS_DIR: "/elsewhere/projects" }) === "/elsewhere/projects"
+      && rr.projectsDirectory({}, "/reg") === join("/reg", "projects")
+      && (() => { try { rr.projectsDirectory({ PROSE_PROJECTS_DIR: "relative" }); return false; } catch { return true; } })());
+  const author = await sibling("bundles/prose-author/skills/prose-draft/tools/identity-store.mjs", "registry reader parity");
+  if (author) {
+    for (const state of ["ambiguous", "selected"]) {
+      check(`${state}: readRegistry equals prose-author's readIdentities`,
+        JSON.stringify(rr.readRegistry(join(REG, state))) === JSON.stringify(author.readIdentities(join(REG, state))));
+    }
+    const theirs = author.resolveIdentity(join(REG, "selected"));
+    check("selected: the entry equals prose-author's resolveIdentity entry",
+      JSON.stringify(sel.entry) === JSON.stringify(Object.fromEntries(Object.entries(theirs).filter(([k]) => !["registry_directory", "registry_revision"].includes(k))))
+        && theirs.registry_revision === sel.registry_revision);
+    // A registry prose-author writes fresh, right now, reads identically — the fixture is not a stale snapshot.
+    const fresh = join(tmp, "fresh");
+    author.registerIdentity(fresh, { id: "now", samples_dir: "/private/now", profile_file: null, preference_store: null, history_directory: null }, 0);
+    check("a registry prose-author writes today is read with the same state", rr.selectedIdentity(fresh).state === "ambiguous" && rr.readRegistry(fresh).revision === 1);
+    const profileV3 = await sibling("bundles/prose-author/skills/prose-draft/tools/profile-v3.mjs", "sha256 parity");
+    if (profileV3) check("prose-author's sha256 and this reader's agree on the same bytes", ["x", "revision bytes\n", "ü"].every((s) => rr.sha256(s) === profileV3.sha256(s)));
+  }
+
+  /* ---------------------------------------------------------------- */
+  group("revision-store — approval gate, stale refusal, immutable revisions, undo, lock");
+  const rs = await import(pathToFileURL(join(SKILL, "tools", "lib", "revision-store.mjs")).href);
+  check("store paths validate identity, project name and store kind",
+    rs.storePath("/p", "me", "book", "outlines") === join("/p", "me", "book", "outlines")
+      && ["bad name", "", "-x"].every((p) => { try { rs.storePath("/p", "me", p, "outlines"); return false; } catch { return true; } })
+      && (() => { try { rs.storePath("/p", "me", "book", "notes"); return false; } catch (e) { return /Unknown store/.test(e.message); } })());
+  const dir = rs.storePath(tmp, "me", "book", "outlines");
+  const S = { schema: "voice-outline/1", id: "book" };
+  const p1 = rs.saveStore(dir, { ...S, payload: { title: "v1" }, expectedRevision: 0 });
+  check("without approval: a proposal comes back and nothing touches disk",
+    p1.status === "proposal" && p1.proposal.revision === 1 && p1.proposal.parent_digest === null && !existsSync(join(dir, "current.json")));
+  const s1 = rs.saveStore(dir, { ...S, payload: { title: "v1" }, expectedRevision: 0, approved: true });
+  check("approved: revision 1 is written with a null parent and a receipt naming undo",
+    s1.status === "saved" && rs.readStore(dir, S.schema, S.id).title === "v1" && /Undo restores revision 0/.test(s1.receipt.undo));
+  threw = null; try { rs.saveStore(dir, { ...S, payload: { title: "v2" }, expectedRevision: 0, approved: true }); } catch (e) { threw = e.message; }
+  check("a stale expected revision is refused", /Stale revision/.test(threw ?? ""));
+  const s2 = rs.saveStore(dir, { ...S, payload: { title: "v2" }, expectedRevision: 1, approved: true });
+  check("revision 2's parent digest is the canonical digest of revision 1", s2.document.parent_digest === rs.digest(s1.document));
+  threw = null; try { rs.saveStore(dir, { ...S, payload: { title: "x" }, expectedRevision: 2, approved: true, }); rs.saveStore(dir, { ...S, payload: { revision: 9 }, expectedRevision: 3, approved: true }); } catch (e) { threw = e.message; }
+  check("a payload carrying envelope keys is refused", /envelope keys/.test(threw ?? ""));
+  const u0 = rs.undoStore(dir, { ...S, expectedRevision: 3 });
+  check("undo without approval proposes and writes nothing", u0.status === "proposal" && u0.proposal.title === "v2" && rs.readStore(dir, S.schema, S.id).revision === 3);
+  const u1 = rs.undoStore(dir, { ...S, expectedRevision: 3, approved: true });
+  check("undo writes a NEW revision holding the parent's payload; history stays", u1.document.revision === 4 && u1.document.title === "v2" && rs.listRevisions(dir).length === 4);
+  const fresh = rs.storePath(tmp, "me", "note", "outlines");
+  rs.saveStore(fresh, { ...S, id: "note", payload: { title: "only" }, expectedRevision: 0, approved: true });
+  threw = null; try { rs.undoStore(fresh, { ...S, id: "note", expectedRevision: 1, approved: true }); } catch (e) { threw = e.message; }
+  check("undo at revision 1 is refused", /No change to undo/.test(threw ?? ""));
+  writeFileSync(join(dir, ".writer.lock"), "");
+  threw = null; try { rs.saveStore(dir, { ...S, payload: { title: "v5" }, expectedRevision: 4, approved: true }); } catch (e) { threw = e.message; }
+  check("an existing lock is reported, not removed", /another or interrupted writer/.test(threw ?? "") && existsSync(join(dir, ".writer.lock")));
+  unlinkSync(join(dir, ".writer.lock"));
+  const prefs = await sibling("bundles/prose-author/skills/prose-draft/tools/preferences-v2.mjs", "digest parity");
+  if (prefs) check("digest parity with preferences-v2 on the same document", prefs.digest(s2.document) === rs.digest(s2.document) && prefs.stableJSON({ b: [1, { d: 2, c: 3 }], a: null }) === rs.stableJSON({ b: [1, { d: 2, c: 3 }], a: null }));
+} finally {
+  rmSync(tmp, { recursive: true, force: true });
 }
 
 process.stdout.write(`\n${"─".repeat(60)}\n`);

@@ -26,7 +26,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 - [x] A1 — bundle scaffold: four manifests, marketplace entry, README, AGENTS.md, PROTOCOL.md, wiring/, `check-packaging.mjs` shared-file list, `install.sh`/`install.ps1` help, `install-prose-codex.mjs` PLUGINS; `bundles/prose-outline/tests/selftest.mjs` wired into `tools/check.mjs`
 - [x] A2 — `lib/text-index.mjs` (canonical) with `tests/fixtures/text-index/` parity cases and the cross-implementation location fixture
-- [ ] A3 — `lib/registry-reader.mjs` read-only registry reader + parity fixture against prose-author's `identity-store.mjs`; `lib/revision-store.mjs` implementing `docs/registry-stores.md`
+- [x] A3 — `lib/registry-reader.mjs` read-only registry reader + parity fixture against prose-author's `identity-store.mjs`; `lib/revision-store.mjs` implementing `docs/registry-stores.md`
 - [ ] A4 — `outline-scan.mjs` + five fixtures + expected JSON + heading-free `not-evaluated` case
 - [ ] A5 — `voice-outline/1` schema, `outline-diff.mjs` + revision-pair fixture with planted moves
 - [ ] A6 — `outline-store.mjs`: three registry states, approval gate, stale-revision refusal, undo round-trip; mutations registered

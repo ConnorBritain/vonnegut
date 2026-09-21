@@ -54,6 +54,14 @@ pin and becomes a release entry when the last one is ticked.
   with exact source offsets and lines), with three parity cases whose expected
   JSON is generated output, and a cross-implementation check that its locations
   agree with tell-scan, visible-prose and fidelity-scan on shared text.
+- **Added** `lib/registry-reader.mjs` (read-only `voice-identity-registry/1`
+  access returning the three states `none | ambiguous | selected`, plus
+  `PROSE_PROJECTS_DIR` resolution) and `lib/revision-store.mjs` (the
+  [`docs/registry-stores.md`](docs/registry-stores.md) contract: immutable
+  revisions, atomic pointer, exclusive lock, undo as a new revision, and an
+  approval gate that returns a proposal instead of writing). Registry fixtures
+  are written by prose-author's own writer, and the selftest pins reader and
+  digest parity against it.
 
 ---
 

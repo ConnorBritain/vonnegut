@@ -1,0 +1,16 @@
+{
+  "schema": "voice-identity-registry/1",
+  "revision": 1,
+  "default_identity": null,
+  "identities": [
+    {
+      "samples_dir": "/private/writing/personal",
+      "profile_file": null,
+      "preference_store": "/private/writing/preferences",
+      "history_directory": null,
+      "id": "personal",
+      "history_identity": "personal",
+      "profile_digest": null
+    }
+  ]
+}
