@@ -13,6 +13,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { FIXTURES, loadCases, runCase, render } from "./text-index-fixtures.mjs";
+import { OUTLINE_FIXTURES, SCAN, loadOutlineCases, scanCase, render as renderOutline } from "./outline-fixtures.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BUNDLE = resolve(HERE, "..");
@@ -174,6 +175,63 @@ group("text-index — agrees with the repo's other segmenters on shared text (cr
       check(`${name}: heading texts agree with fidelity-scan`, JSON.stringify(theirs) === JSON.stringify(ours), `${theirs} vs ${ours}`);
     }
   }
+}
+
+/* ------------------------------------------------------------------ */
+group("outline-scan — fixtures reproduce, and the counts are the counts");
+{
+  const scans = {};
+  for (const c of loadOutlineCases()) {
+    const result = await scanCase(c);
+    scans[c.name] = result;
+    const expectedPath = join(OUTLINE_FIXTURES, "expected", `${c.name}.json`);
+    check(`${c.name} matches expected/${c.name}.json`, existsSync(expectedPath) && readFileSync(expectedPath, "utf8") === renderOutline(result),
+      "rerun tests/outline-fixtures.mjs --update and review the diff");
+    if (c.source) check(`${c.name} is a byte-identical copy of its corpus source`,
+      readFileSync(join(OUTLINE_FIXTURES, "cases", c.name)).equals(readFileSync(resolve(OUTLINE_FIXTURES, c.source))));
+    check(`${c.name}: scanning twice gives identical output`, renderOutline(await scanCase(c)) === renderOutline(result));
+  }
+  const essay = scans["essay.md"];
+  check("essay: four headings, the h2s parented to the h1, four sections, a measured status",
+    essay.status === "measured" && essay.headings.length === 4 && essay.headings.slice(1).every((h) => h.parent === 0) && essay.sections.length === 4);
+  const byTitle = Object.fromEntries(essay.sections.map((s) => [s.title, s]));
+  check("essay: the section with the numbers and the causal connectives carries the highest claim-marker rate",
+    Object.values(byTitle).every((s) => s.claim_markers_per_100_words <= byTitle["What breaks when the plan drifts"].claim_markers_per_100_words));
+  const openers = essay.sections.flatMap((s) => s.paragraphs).map((p) => p.transition_in?.marker).filter(Boolean);
+  check("essay: 'however', 'so' and 'therefore' are read as opening markers of the right kinds",
+    openers.includes("however") && openers.includes("so") && openers.includes("therefore")
+      && essay.sections.flatMap((s) => s.paragraphs).some((p) => p.transition_in?.kind === "contrast"));
+  check("essay: every paragraph's first_sentence opens that paragraph's text",
+    essay.sections.flatMap((s) => s.paragraphs).every((p) => p.first_sentence.length > 0));
+  check("essay: ratio_to_median is 1 at the median and the extremes bracket it",
+    essay.balance.min_ratio < 1 && essay.balance.max_ratio > 1 && essay.sections.some((s) => Math.abs(s.ratio_to_median - 1) < 0.2));
+  const tech = scans["technical.md"];
+  check("technical: six uniform sections read as balanced — a flat reference doc is not a finding",
+    tech.sections.length === 6 && tech.balance.max_ratio <= 2 && tech.balance.min_ratio >= 0.4);
+  const chapter = scans["chapter.md"];
+  check("chapter: thematic breaks are not paragraphs; one heading; five paragraphs",
+    chapter.headings.length === 1 && chapter.sections[0].paragraph_count === 5);
+  const v1 = scans["post-v1.md"], v2 = scans["post-v2.md"];
+  check("post v1→v2: the same headings in a different order, and one more paragraph in v2",
+    v1.headings.map((h) => h.text).sort().join("|") === v2.headings.map((h) => h.text).sort().join("|")
+      && v1.headings.map((h) => h.text).join("|") !== v2.headings.map((h) => h.text).join("|")
+      && v2.sections.reduce((n, s) => n + s.paragraph_count, 0) === v1.sections.reduce((n, s) => n + s.paragraph_count, 0) + 1);
+  const note = scans["note.md"];
+  check("note: no headings and two paragraphs ⇒ not-evaluated, with the reason, and no sections invented",
+    note.status === "not-evaluated" && /no headings and 2 paragraph/.test(note.reason) && note.sections.length === 0 && note.balance === null);
+  const flat = scans["flat.txt"];
+  check("flat corpus post: no headings but many paragraphs ⇒ one preamble section, measured, heading overlap null",
+    flat.status === "measured" && flat.sections.length === 1 && flat.sections[0].heading === null
+      && flat.sections[0].paragraphs.every((p) => p.heading_overlap_sentence === null));
+  check("every scan carries its limits, and the claim-marker lists are the tool's own",
+    Object.values(scans).every((s) => s.limits.some((l) => /Claim markers are counts/.test(l))));
+  // CLI: --json parses; a bad flag and a missing file exit 2.
+  const { spawnSync } = await import("node:child_process");
+  const cli = (...a) => spawnSync(process.execPath, [SCAN, ...a], { encoding: "utf8" });
+  const json = cli(join(OUTLINE_FIXTURES, "cases", "essay.md"), "--json");
+  check("CLI --json emits the same object the module returns", json.status === 0 && JSON.parse(json.stdout).headings.length === 4);
+  check("CLI refuses an unknown flag and a missing file with exit 2",
+    cli("nope.md", "--json").status === 2 && cli(join(OUTLINE_FIXTURES, "cases", "essay.md"), "--score").status === 2);
 }
 
 /* ------------------------------------------------------------------ */

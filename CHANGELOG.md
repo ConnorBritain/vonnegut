@@ -62,6 +62,12 @@ pin and becomes a release entry when the last one is ticked.
   approval gate that returns a proposal instead of writing). Registry fixtures
   are written by prose-author's own writer, and the selftest pins reader and
   digest parity against it.
+- **Added** `outline-scan.mjs`: heading tree, per-section words and ratio to the
+  median, two topic-sentence candidates per paragraph, claim-marker counts by
+  word class, opening transition markers and lexical links at every paragraph
+  boundary, and a `not-evaluated` refusal for a heading-free note. Seven
+  fixtures (an essay, a reference doc, a fiction chapter, two revisions of one
+  post, a note, and a byte-identical corpus post) with generated expected JSON.
 
 ---
 

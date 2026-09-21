@@ -1,0 +1,288 @@
+{
+  "schema": "outline-scan/1",
+  "file": "essay.md",
+  "markdown": true,
+  "words": 408,
+  "status": "measured",
+  "headings": [
+    {
+      "index": 0,
+      "level": 1,
+      "text": "Why the Roadmap Must Be a File",
+      "line": 1,
+      "parent": null
+    },
+    {
+      "index": 1,
+      "level": 2,
+      "text": "The plan lives where the work lives",
+      "line": 5,
+      "parent": 0
+    },
+    {
+      "index": 2,
+      "level": 2,
+      "text": "What breaks when the plan drifts",
+      "line": 11,
+      "parent": 0
+    },
+    {
+      "index": 3,
+      "level": 2,
+      "text": "The objection, and why it fails",
+      "line": 17,
+      "parent": 0
+    }
+  ],
+  "sections": [
+    {
+      "heading": 0,
+      "title": "Why the Roadmap Must Be a File",
+      "level": 1,
+      "paragraphs": [
+        {
+          "line": 3,
+          "words": 52,
+          "sentences": 4,
+          "first_sentence": "Every team I have watched lose a quarter lost it the same way.",
+          "heading_overlap_sentence": "This essay argues that a plan which is not a file under version control is not a plan.",
+          "heading_overlap": 0.111,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": null
+        }
+      ],
+      "words": 52,
+      "paragraph_count": 1,
+      "start_line": 1,
+      "end_line": 3,
+      "claim_markers": 0,
+      "claim_markers_per_100_words": 0,
+      "ratio_to_median": 0.493
+    },
+    {
+      "heading": 1,
+      "title": "The plan lives where the work lives",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 7,
+          "words": 67,
+          "sentences": 4,
+          "first_sentence": "A plan written in a document nobody opens is a plan nobody follows.",
+          "heading_overlap_sentence": "A plan written in a document nobody opens is a plan nobody follows.",
+          "heading_overlap": 0.125,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 2.985
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.065,
+            "linked": false,
+            "same_section": false
+          }
+        },
+        {
+          "line": 9,
+          "words": 52,
+          "sentences": 4,
+          "first_sentence": "There is a second reason.",
+          "heading_overlap_sentence": "When the plan changes, the diff says what changed and the commit says why.",
+          "heading_overlap": 0.125,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 1.923
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.07,
+            "linked": false,
+            "same_section": true
+          }
+        }
+      ],
+      "words": 119,
+      "paragraph_count": 2,
+      "start_line": 5,
+      "end_line": 9,
+      "claim_markers": 3,
+      "claim_markers_per_100_words": 2.521,
+      "ratio_to_median": 1.128
+    },
+    {
+      "heading": 2,
+      "title": "What breaks when the plan drifts",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 13,
+          "words": 59,
+          "sentences": 3,
+          "first_sentence": "However, a file alone is not enough.",
+          "heading_overlap_sentence": "A version bump without a note in the plan is the common case, and it is silent: the code says 0.7.0, the plan says 0.6.0, and nothing complains.",
+          "heading_overlap": 0.071,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 1,
+            "numeric": 4,
+            "citation": 0,
+            "total": 6,
+            "per_100_words": 10.169
+          },
+          "transition_in": {
+            "marker": "however",
+            "kind": "contrast",
+            "lexical_overlap": 0.091,
+            "linked": true,
+            "same_section": false
+          }
+        },
+        {
+          "line": 15,
+          "words": 57,
+          "sentences": 4,
+          "first_sentence": "So the check has to be mechanical.",
+          "heading_overlap_sentence": "Nobody remembered to update the plan; the build refused to pass until they did.",
+          "heading_overlap": 0.091,
+          "claim_markers": {
+            "assertive": 2,
+            "connective": 1,
+            "numeric": 1,
+            "citation": 0,
+            "total": 4,
+            "per_100_words": 7.018
+          },
+          "transition_in": {
+            "marker": "so",
+            "kind": "consequence",
+            "lexical_overlap": 0.036,
+            "linked": true,
+            "same_section": true
+          }
+        }
+      ],
+      "words": 116,
+      "paragraph_count": 2,
+      "start_line": 11,
+      "end_line": 15,
+      "claim_markers": 10,
+      "claim_markers_per_100_words": 8.621,
+      "ratio_to_median": 1.1
+    },
+    {
+      "heading": 3,
+      "title": "The objection, and why it fails",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 19,
+          "words": 56,
+          "sentences": 4,
+          "first_sentence": "The usual objection is that a mechanical check makes people update the plan without thinking.",
+          "heading_overlap_sentence": "The usual objection is that a mechanical check makes people update the plan without thinking.",
+          "heading_overlap": 0.091,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 1.786
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.078,
+            "linked": false,
+            "same_section": false
+          }
+        },
+        {
+          "line": 21,
+          "words": 39,
+          "sentences": 4,
+          "first_sentence": "Therefore the rule is simple.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 2.564
+          },
+          "transition_in": {
+            "marker": "therefore",
+            "kind": "consequence",
+            "lexical_overlap": 0.024,
+            "linked": true,
+            "same_section": true
+          }
+        }
+      ],
+      "words": 95,
+      "paragraph_count": 2,
+      "start_line": 17,
+      "end_line": 21,
+      "claim_markers": 2,
+      "claim_markers_per_100_words": 2.105,
+      "ratio_to_median": 0.9
+    }
+  ],
+  "balance": {
+    "sections": 4,
+    "median_words": 105.5,
+    "max_ratio": 1.128,
+    "min_ratio": 0.493
+  },
+  "transitions": {
+    "boundaries": 6,
+    "marked": 3,
+    "unmarked": [
+      {
+        "line": 7,
+        "section": "The plan lives where the work lives",
+        "same_section": false
+      },
+      {
+        "line": 9,
+        "section": "The plan lives where the work lives",
+        "same_section": true
+      },
+      {
+        "line": 19,
+        "section": "The objection, and why it fails",
+        "same_section": false
+      }
+    ]
+  },
+  "limits": [
+    "Topic-sentence candidates are positional (first sentence) and lexical (highest heading overlap); neither is a semantic judgement.",
+    "Claim markers are counts of listed word classes, not a claim detector; the lists are in the tool and are the whole definition.",
+    "A transition is a listed opening marker, a demonstrative, or content-word overlap ≥ 0.08 with the previous paragraph; absence of all three is reported, not judged.",
+    "Sections are ATX headings; a document with other structure reads as one preamble section.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}
