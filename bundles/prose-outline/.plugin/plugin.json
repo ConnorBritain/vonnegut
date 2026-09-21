@@ -1,0 +1,19 @@
+{
+  "name": "prose-outline",
+  "version": "0.1.0",
+  "description": "Outlines for prose: turn a brief into a checkable outline with thesis, claims, evidence slots and open questions (or acts, beats and turns for fiction); read a draft back into the outline it implies with a deterministic scan; diff two outline revisions by node; keep outlines per project in the shared writing-identity registry with undo. Proposes and measures; never drafts prose and never scores it.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "repository": "https://github.com/ConnorBritain/vonnegut",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "outline",
+    "structure",
+    "planning",
+    "skill"
+  ]
+}

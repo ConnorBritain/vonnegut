@@ -38,6 +38,20 @@ labelled local candidates describe their status at the time of recording.
 
 ---
 
+## prose-outline
+
+### [0.1.0] — in progress
+
+Deliverables land one at a time against
+[`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md); this heading is the version
+pin and becomes a release entry when the last one is ticked.
+
+- **Added** the bundle scaffold: four manifests, marketplace entry, README,
+  AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets and a selftest wired into
+  `node tools/check.mjs`. No skill, tool or store ships yet.
+
+---
+
 ## prose-review
 
 ### [0.3.0]

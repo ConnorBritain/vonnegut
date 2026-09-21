@@ -32,6 +32,24 @@ function copy() {
 }
 const edit = (dir, path, change) => writeFileSync(join(dir, path), change(readFileSync(join(dir, path), "utf8")));
 
+/**
+ * Put item A back to `planned` with nothing ticked, in the temp copy only, so the
+ * status-drift cases below stay valid whatever state the real roadmap is in.
+ */
+function planned(dir) {
+  edit(dir, "docs/ROADMAP.md", (t) => t
+    .replace(/^(\| 1 \| \[A\. prose-outline\].*\| )([a-z-]+) \|$/m, "$1planned |")
+    .replace(/^(## A\. prose-outline[\s\S]*?\*\*Status\.\*\* )([a-z-]+)$/m, "$1planned"));
+  edit(dir, "docs/roadmap/STATUS.md", (t) => {
+    const [before, rest] = t.split(/^(?=### A\. )/m).length > 1 ? [t.slice(0, t.indexOf("### A. ")), t.slice(t.indexOf("### A. "))] : ["", t];
+    const end = rest.indexOf("\n### ", 1);
+    const block = (end < 0 ? rest : rest.slice(0, end))
+      .replace(/^### A\. (.+?) — [a-z-]+$/m, "### A. $1 — planned")
+      .replace(/^- \[x\] A/gm, "- [ ] A");
+    return before + block + (end < 0 ? "" : rest.slice(end));
+  });
+}
+
 let cases = 0;
 function refuses(name, mutate, pattern) {
   const dir = copy();
@@ -71,17 +89,36 @@ refuses("a pin without a CHANGELOG entry is refused",
   },
   new RegExp(`CHANGELOG\\.md section ${firstBundle} has no '### \\[9\\.9\\.9\\]' entry`));
 
+{
+  const dir = copy();
+  try {
+    planned(dir);
+    assert.doesNotThrow(() => checkRoadmap(dir), "the normalised copy must pass before any case breaks one thing");
+    console.log("  ok   the normalised copy itself passes (the cases below break exactly one thing)");
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+}
+
 refuses("a STATUS.md item status that disagrees with ROADMAP.md is refused",
-  (dir) => edit(dir, "docs/roadmap/STATUS.md", (t) => t.replace("### A. prose-outline — planned", "### A. prose-outline — in-progress")),
+  (dir) => { planned(dir); edit(dir, "docs/roadmap/STATUS.md", (t) => t.replace("### A. prose-outline — planned", "### A. prose-outline — in-progress")); },
   /item A: STATUS\.md says 'in-progress', ROADMAP\.md says 'planned'/);
 
 refuses("a ROADMAP.md table status that disagrees with its own section is refused",
-  (dir) => edit(dir, "docs/ROADMAP.md", (t) => t.replace(/(\| 1 \| \[A\. prose-outline\].*\| )planned \|/, "$1shipped |")),
+  (dir) => { planned(dir); edit(dir, "docs/ROADMAP.md", (t) => t.replace(/(\| 1 \| \[A\. prose-outline\].*\| )planned \|/, "$1shipped |")); },
   /item A: section status 'planned' differs from table status 'shipped'/);
 
 refuses("a ticked deliverable under a planned item is refused",
-  (dir) => edit(dir, "docs/roadmap/STATUS.md", (t) => t.replace("- [ ] A1 — ", "- [x] A1 — ")),
+  (dir) => { planned(dir); edit(dir, "docs/roadmap/STATUS.md", (t) => t.replace("- [ ] A1 — ", "- [x] A1 — ")); },
   /item A is 'planned' but 1 of \d+ deliverables are ticked/);
+
+refuses("a shipped item with an unticked deliverable is refused",
+  (dir) => {
+    planned(dir);
+    edit(dir, "docs/ROADMAP.md", (t) => t
+      .replace(/(\| 1 \| \[A\. prose-outline\].*\| )planned \|/, "$1shipped |")
+      .replace(/^(## A\. prose-outline[\s\S]*?\*\*Status\.\*\* )planned$/m, "$1shipped"));
+    edit(dir, "docs/roadmap/STATUS.md", (t) => t.replace("### A. prose-outline — planned", "### A. prose-outline — shipped"));
+  },
+  /item A is 'shipped' but 0 of \d+ deliverables are ticked/);
 
 refuses("a deliverable missing from its spec is refused",
   (dir) => edit(dir, "docs/roadmap/A-prose-outline.md", (t) => t.replace("- A1 — ", "- A1x — ")),

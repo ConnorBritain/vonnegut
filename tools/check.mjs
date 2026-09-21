@@ -16,6 +16,7 @@ const checks = [
   ["tools/check-packaging.mjs"],
   ["bundles/prose-tell-scan/tests/selftest.mjs"],
   ["bundles/prose-tell-scan/tests/acceptance.mjs"],
+  ["bundles/prose-outline/tests/selftest.mjs"],
   ["bundles/prose-author/tests/selftest.mjs"],
   ["bundles/prose-review/tests/selftest.mjs"],
   ["bundles/prose-review/tests/run-harness-test.mjs"],

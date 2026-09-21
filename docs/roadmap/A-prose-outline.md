@@ -1,6 +1,6 @@
 # A. prose-outline
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
+Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
 [`STATUS.md`](STATUS.md)). Planning material: when this ships, the durable
 rationale moves to `bundles/prose-outline/README.md` and `DESIGN.md`, and this
 file becomes the record of how it was planned.

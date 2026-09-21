@@ -16,14 +16,15 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 | Bundle | Version |
 |---|---|
 | prose-author | 0.6.0 |
+| prose-outline | 0.1.0 |
 | prose-review | 0.3.0 |
 | prose-tell-scan | 0.1.1 |
 
 ## Deliverables
 
-### A. prose-outline — planned
+### A. prose-outline — in-progress
 
-- [ ] A1 — bundle scaffold: four manifests, marketplace entry, README, AGENTS.md, PROTOCOL.md, wiring/, `check-packaging.mjs` shared-file list, `install.sh`/`install.ps1` help, `install-prose-codex.mjs` PLUGINS; `bundles/prose-outline/tests/selftest.mjs` wired into `tools/check.mjs`
+- [x] A1 — bundle scaffold: four manifests, marketplace entry, README, AGENTS.md, PROTOCOL.md, wiring/, `check-packaging.mjs` shared-file list, `install.sh`/`install.ps1` help, `install-prose-codex.mjs` PLUGINS; `bundles/prose-outline/tests/selftest.mjs` wired into `tools/check.mjs`
 - [ ] A2 — `lib/text-index.mjs` (canonical) with `tests/fixtures/text-index/` parity cases and the cross-implementation location fixture
 - [ ] A3 — `lib/registry-reader.mjs` read-only registry reader + parity fixture against prose-author's `identity-store.mjs`; `lib/revision-store.mjs` implementing `docs/registry-stores.md`
 - [ ] A4 — `outline-scan.mjs` + five fixtures + expected JSON + heading-free `not-evaluated` case
