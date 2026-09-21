@@ -43,7 +43,7 @@ for how a session picks up from here.
 
 | Seq | Item | Bundle | Spec | Status |
 |---|---|---|---|---|
-| 1 | [A. prose-outline](#a-prose-outline) | `prose-outline` (new) | [A-prose-outline.md](roadmap/A-prose-outline.md) | in-progress |
+| 1 | [A. prose-outline](#a-prose-outline) | `prose-outline` (new) | [A-prose-outline.md](roadmap/A-prose-outline.md) | shipped |
 | 1 | [B. prose-structure-critic](#b-prose-structure-critic) | `prose-review` | [B-prose-structure-critic.md](roadmap/B-prose-structure-critic.md) | planned |
 | 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | planned |
 | 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | planned |
@@ -106,7 +106,7 @@ an underspecified brief yields open questions, not an invented thesis; mutations
 for the stale-revision guard, the approval gate and the heading-free refusal;
 `node tools/check.mjs` and `--mutations` green.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## B. prose-structure-critic
 

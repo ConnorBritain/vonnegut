@@ -1,8 +1,7 @@
 # prose-outline — design
 
-**Status: v0.1.0 in progress.** The planning record is
-[`docs/roadmap/A-prose-outline.md`](../../docs/roadmap/A-prose-outline.md);
-durable rationale moves here as deliverables land.
+**Status: v0.1.0.** The planning record is
+[`docs/roadmap/A-prose-outline.md`](../../docs/roadmap/A-prose-outline.md).
 
 ## The split
 

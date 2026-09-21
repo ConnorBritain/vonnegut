@@ -40,15 +40,14 @@ labelled local candidates describe their status at the time of recording.
 
 ## prose-outline
 
-### [0.1.0] — in progress
+### [0.1.0] — outlines, implied outlines, diffs and a per-project store
 
-Deliverables land one at a time against
-[`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md); this heading is the version
-pin and becomes a release entry when the last one is ticked.
+Roadmap item A ([`docs/roadmap/A-prose-outline.md`](docs/roadmap/A-prose-outline.md));
+release notes in [`RELEASE-v0.1.0.md`](bundles/prose-outline/RELEASE-v0.1.0.md).
 
-- **Added** the bundle scaffold: four manifests, marketplace entry, README,
-  AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets and a selftest wired into
-  `node tools/check.mjs`. No skill, tool or store ships yet.
+- **Added** the bundle: four manifests, marketplace entry, README, AGENTS.md,
+  PROTOCOL.md, DESIGN.md, wiring snippets and a selftest wired into
+  `node tools/check.mjs`.
 - **Added** `lib/text-index.mjs`, the canonical segmentation core (headings,
   paragraphs, sentences, capitalised runs, defined terms, numbers and dates, all
   with exact source offsets and lines), with three parity cases whose expected

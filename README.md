@@ -20,15 +20,16 @@ Observed frequencies are tendencies, not compulsory quotas. Missing checks stay
 visible. These tools do not guarantee resemblance, quality, factual accuracy or
 detector outcomes. Example facts are not automatically facts about you.
 
-## Three independently installable bundles
+## Four independently installable bundles
 
 | Bundle | Version | Purpose |
 |---|---|---|
 | [prose-author](bundles/prose-author/) | 0.6.0 | Drafting, profiles, persistent preferences and opt-in history |
 | [prose-review](bundles/prose-review/) | 0.3.0 | Voice and fidelity critics, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
+| [prose-outline](bundles/prose-outline/) | 0.1.0 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |
 
-Install all three for the complete writing workflow. Seven agents and three
+Install all four for the complete writing workflow. Seven agents and four
 skills ship; the experimental `prose-pattern-critic` source remains held.
 
 ## Install
@@ -45,9 +46,9 @@ node install-prose-codex.mjs
 node install-prose-codex.mjs --check
 ```
 
-This installs the local checkout's three plugins and seven custom agents. Keep
+This installs the local checkout's four plugins and seven custom agents. Keep
 the checkout at that path. Start a new session, then ask for `$prose-draft`,
-`$prose-style-tune` or `$tell-scan`.
+`$prose-style-tune`, `$tell-scan` or `$prose-outline`.
 
 ### Claude Code
 
@@ -56,9 +57,10 @@ the checkout at that path. Start a new session, then ask for `$prose-draft`,
 /plugin install prose-author@vonnegut
 /plugin install prose-review@vonnegut
 /plugin install prose-tell-scan@vonnegut
+/plugin install prose-outline@vonnegut
 ```
 
-Restart the session and ask for `prose-draft` or `prose-style-tune`.
+Restart the session and ask for `prose-draft`, `prose-style-tune` or `prose-outline`.
 For loose files, clone the repo and run `./install.sh` (Windows: `./install.ps1`).
 Use `--project` (`-Project` on Windows) to install into the current project.
 

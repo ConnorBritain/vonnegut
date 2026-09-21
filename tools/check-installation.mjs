@@ -8,8 +8,12 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { AGENTS, verifyDeployment } from "../install-prose-codex.mjs";
+import { readBundleVersions } from "./check-roadmap.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+// Every bundle STATUS.md pins is installed and checked; the list is never retyped here.
+const BUNDLES = Object.keys(readBundleVersions(root)).sort();
+const SKILLS = [["prose-author", "prose-draft"], ["prose-author", "prose-style-tune"], ["prose-tell-scan", "tell-scan"], ["prose-outline", "prose-outline"]];
 const temp = mkdtempSync(join(tmpdir(), "vonnegut-install-"));
 const run = (file, args, env, cwd = temp) => execFileSync(file, args, {
   env: { ...process.env, ...env }, cwd, encoding: "utf8", stdio: "pipe",
@@ -24,11 +28,11 @@ try {
   run(process.execPath, [join(root, "install-prose-codex.mjs"), "--check"], env);
   console.log("Installing Claude into an isolated configuration...");
   run("claude", ["plugin", "marketplace", "add", root], env);
-  for (const name of ["prose-author", "prose-review", "prose-tell-scan"]) {
+  for (const name of BUNDLES) {
     run("claude", ["plugin", "install", `${name}@vonnegut`, "--scope", "user"], env);
   }
   const listing = JSON.parse(run("claude", ["plugin", "list", "--json"], env));
-  for (const name of ["prose-author", "prose-review", "prose-tell-scan"]) {
+  for (const name of BUNDLES) {
     const entry = listing.find(e => e.id === `${name}@vonnegut`);
     assert.ok(entry?.enabled && !entry.errors?.length, `${name}: Claude enabled`);
     verifyDeployment(join(root, "bundles", name), entry.installPath);
@@ -44,7 +48,7 @@ try {
     console.log("Checking project-scoped loose-file installation...");
     run("bash", [join(root, "install.sh"), "--project"], env);
     for (const name of AGENTS) assert.ok(existsSync(join(temp, ".claude/agents", `${name}.md`)));
-    for (const [bundle, skill] of [["prose-author", "prose-draft"], ["prose-author", "prose-style-tune"], ["prose-tell-scan", "tell-scan"]]) {
+    for (const [bundle, skill] of SKILLS) {
       assert.equal(readFileSync(join(temp, ".claude/skills", skill, "SKILL.md"), "utf8"), readFileSync(join(root, "bundles", bundle, "skills", skill, "SKILL.md"), "utf8"));
     }
     assert.ok(existsSync(join(temp, ".claude/tools/fidelity-scan.mjs")));

@@ -4,11 +4,13 @@ This is the Vonnegut marketplace. Existing agent-primitives users should read
 [migration](../../docs/MIGRATION.md) before enabling duplicate writing plugins.
 The shared writing-memory paths have not changed.
 
-The useful installation is three bundles together:
+The useful installation is the bundles together:
 
 - `prose-author` supplies `$prose-draft`, `$prose-style-tune`, and the profile and drafting agents.
 - `prose-tell-scan` supplies the deterministic `$tell-scan` measurement skill.
 - `prose-review` supplies the independent voice and fidelity critics plus the reviser.
+- `prose-outline` supplies `$prose-outline`: outlines from a brief, a draft's implied
+  outline, diffs, and per-project persistence under the shared identity registry.
 
 `prose-author` still drafts when either companion is unavailable, but it labels the result
 **UNGATED** and names the missing check. Installing all three gives the workflow its intended
@@ -72,13 +74,14 @@ a non-default configuration directory.
 ## Claude Code
 
 For a **local candidate**, add the absolute path to your checkout in Claude Code,
-then install the three plugins:
+then install the plugins:
 
 ```text
 /plugin marketplace add /absolute/path/to/vonnegut
 /plugin install prose-author@vonnegut
 /plugin install prose-tell-scan@vonnegut
 /plugin install prose-review@vonnegut
+/plugin install prose-outline@vonnegut
 ```
 
 Replace the example path with your real checkout. For the published repository
@@ -89,13 +92,14 @@ instead, use the GitHub source below. It does not include unpublished changes:
 /plugin install prose-author@vonnegut
 /plugin install prose-tell-scan@vonnegut
 /plugin install prose-review@vonnegut
+/plugin install prose-outline@vonnegut
 ```
 
 Or install loose files from a clone:
 
 ```bash
 ./install.sh voice-profile-render voice-draft voice-feedback-interpret voice-rhetoric-measure \
-  prose-draft prose-style-tune tell-scan \
+  prose-draft prose-style-tune tell-scan prose-outline \
   prose-voice-critic prose-fidelity-critic prose-reviser
 ```
 

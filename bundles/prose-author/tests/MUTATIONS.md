@@ -12,6 +12,19 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 
 | mutation | tests failed | what it guards |
 |---|---|---|
+| outline store writes without approval | 5 | nothing persistent is saved without explicit approval |
+| outline store accepts a stale expected revision | 7 | a caller working from a stale read cannot overwrite a newer revision |
+| outline store undoes past the first revision | 1 | undo cannot invent a revision zero |
+| outline store ignores a held writer lock | 1 | a second writer is refused rather than racing the first |
+| registry reader migrates an unknown schema | 1 | an unknown registry version is refused, never reinterpreted |
+| registry reader ignores the pointer digest | 1 | registry bytes must reproduce their pinned digest |
+| registry reader picks the first identity when none is selected | 6 | identities without a default are a question for the user, never a guess |
+| outline store persists with no registry | 2 | without a writing identity registry, outlines stay task-local |
+| outline-scan reads structure into a heading-free note | 2 | a document with no structure is not-evaluated rather than measured |
+| outline-diff matches vanished nodes by text | 1 | nodes are matched by id only, never by text |
+| outline schema accepts a withheld thesis with no open question | 1 | an outline with no thesis must say what is missing |
+| proposal-check lets an underspecified brief keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
+| outline schema accepts duplicate node ids | 1 | node ids are unique, or the differ has nothing to key on |
 | identity accepts a future registry schema | 1 | incompatible registry versions are not silently reinterpreted |
 | identity ignores registry digests | 1 | shared registry revision bytes reproduce their pinned digest |
 | identity overwrites a stale registry revision | 5 | concurrent clients cannot overwrite a newer default or profile selection |

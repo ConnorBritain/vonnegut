@@ -1,9 +1,10 @@
 # A. prose-outline
 
-Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: when this ships, the durable
-rationale moves to `bundles/prose-outline/README.md` and `DESIGN.md`, and this
-file becomes the record of how it was planned.
+Status: **shipped** as prose-outline 0.1.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-outline/README.md`, `DESIGN.md`
+and `RELEASE-v0.1.0.md`; read those for what shipped. Decisions taken during
+the build that this spec did not anticipate are appended to §9.
 
 ## 1. Goal and non-goals
 
@@ -179,6 +180,16 @@ run; the skill never substitutes its own structural critique for it.
   the script cannot defend.
 - **Beat-sheet mode is a node vocabulary, not a second schema.** One store, one
   diff.
+- **(during build) A null thesis is legal only with open questions.** The
+  negative test — an underspecified brief yields questions, not an invented
+  thesis — became a schema rule rather than a prompt hope, and
+  `proposal-check.mjs` enforces both directions from the brief's `expect:`.
+- **(during build) Mutations live in the repo's single runner** under an
+  `outline` suite (`bundles/prose-author/tests/mutations.mjs` gained a generic
+  suite map) rather than a bundle-local runner; one table, one sweep.
+- **(during build) The skill test is dispatched from a session, not here.** No
+  authenticated CLI exists in the build environment; `tests/skill-harness.md`
+  records the procedure and that an undispatched run is not a pass.
 
 ## 10. Deliverables
 

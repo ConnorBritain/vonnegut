@@ -22,7 +22,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 ## Deliverables
 
-### A. prose-outline — in-progress
+### A. prose-outline — shipped
 
 - [x] A1 — bundle scaffold: four manifests, marketplace entry, README, AGENTS.md, PROTOCOL.md, wiring/, `check-packaging.mjs` shared-file list, `install.sh`/`install.ps1` help, `install-prose-codex.mjs` PLUGINS; `bundles/prose-outline/tests/selftest.mjs` wired into `tools/check.mjs`
 - [x] A2 — `lib/text-index.mjs` (canonical) with `tests/fixtures/text-index/` parity cases and the cross-implementation location fixture
@@ -31,7 +31,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] A5 — `voice-outline/1` schema, `outline-diff.mjs` + revision-pair fixture with planted moves
 - [x] A6 — `outline-store.mjs`: three registry states, approval gate, stale-revision refusal, undo round-trip; mutations registered
 - [x] A7 — `prose-outline` SKILL.md + meta.yaml, beat-sheet mode, positive and negative skill test recorded
-- [ ] A8 — RELEASE-v0.1.0.md, CHANGELOG entry, README bundle table and install lines, version pin above, ROADMAP status → shipped
+- [x] A8 — RELEASE-v0.1.0.md, CHANGELOG entry, README bundle table and install lines, version pin above, ROADMAP status → shipped
 
 ### B. prose-structure-critic — planned
 
