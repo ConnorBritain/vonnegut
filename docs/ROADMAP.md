@@ -48,7 +48,7 @@ for how a session picks up from here.
 | 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | shipped |
 | 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | shipped |
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | shipped |
-| 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | in-progress |
+| 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | shipped |
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | planned |
 
 Status values: `planned` | `in-progress` | `shipped`. Sequence 1 items are built
@@ -320,7 +320,7 @@ over-length thread segment and passes a compliant one; a run produces one
 in both disagreement directions vs repurpose-check with echo baseline; negative
 test on compliant human posts; mutations for the constraint checker.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## G. Reader-persona critics
 

@@ -173,6 +173,19 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md)
 
 ## prose-review
 
+### [0.6.0] — the medium critic ships
+
+Roadmap item F; release notes in [`RELEASE-v0.6.0.md`](bundles/prose-review/RELEASE-v0.6.0.md).
+
+- **Added** `prose-medium-critic` (primitive + byte-identical bundle copy):
+  reads a `medium-profile/1` and `repurpose-check` output the session supplies,
+  reports constructions that break in the medium, segment boundaries that cut a
+  sentence and semantic constraints unmet, never re-counts, resolves
+  uncertainty to silence. Six four-class fixtures, six leave-one-out Doctorow
+  posts, `medium-harness.mjs` with the stated echo rule, `prepare medium`,
+  `verify-run` echo baseline. `DESIGN.md` open question 5 answered: a bundle
+  member. No run dispatched.
+
 ### [0.5.0] — the fidelity critic reads provenance
 
 Roadmap item E; release notes in [`RELEASE-v0.5.0.md`](bundles/prose-review/RELEASE-v0.5.0.md).
@@ -241,6 +254,19 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 ---
 
 ## prose-author
+
+### [0.9.0] — one piece, many forms
+
+Roadmap item F; release notes in [`RELEASE-v0.9.0.md`](bundles/prose-author/RELEASE-v0.9.0.md).
+
+- **Added** the `prose-repurpose` skill, four `medium-profile/1` profiles under
+  `media/` with `checked` dates, `lib/medium-profile.mjs` (validation with
+  unknown fields, rule types and prohibition lists refused by name; digest;
+  facts for the job) and `repurpose-check.mjs` (ten mechanical rule types on
+  the final bytes, semantic constraints listed as the critic's, missing atoms
+  against the source listed and never failed, prose-review's `fidelity-scan`
+  located at run time). Suite `repurpose` (46 checks) and four mutations.
+  `PROTOCOL.md` gains "Repurposing". No runtime run per form dispatched.
 
 ### [0.8.0] — the claim auditor can point at the ledger
 

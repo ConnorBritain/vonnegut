@@ -1,9 +1,12 @@
 # F. prose-repurpose
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
-`bundles/prose-author/DESIGN.md` and `bundles/prose-review/DESIGN.md`.
-
+Status: **shipped** as prose-author 0.9.0 and prose-review 0.6.0 (mirror of
+[`ROADMAP.md`](../ROADMAP.md); deliverables in [`STATUS.md`](STATUS.md)).
+**Historical planning record.** The durable rationale now lives in
+`bundles/prose-author/skills/prose-repurpose/SKILL.md`, `bundles/prose-review/DESIGN.md`,
+`primitives/agents/prose-medium-critic/README.md` and the two release notes; read
+those for what shipped. Decisions taken during the build that this spec did not
+anticipate are in §9.
 ## 1. Goal and non-goals
 
 One piece → newsletter, LinkedIn post, thread, talk abstract, each drafted in
@@ -114,6 +117,26 @@ prose-tell-scan the existing ungated rules apply.
 - **Form ≠ medium**, so `PROFILES.md`'s `medium` keeps one meaning.
 - **Profiles ship with the producer skill**; the contract is documented
   centrally because two bundles read it.
+
+### Build-time decisions
+
+- **Semantic constraints are `not-evaluated`, never passed.** The check lists
+  each with the note saying what the critic reviews; a report that showed a
+  hook as "passed" because a script could not judge it would be the unavailable
+  check becoming a passing one.
+- **Missing atoms are listed, never failed.** Repurposing compresses on
+  purpose; which drops matter is the writer's call, and the critic is told so.
+- **`fidelity-scan` is located at run time**, the way the drafting runtime
+  locates it (`PROSE_REVIEW_ROOT`, a loose-file install, this repository's
+  layout), and `not-evaluated` when absent — never imported across the bundle
+  boundary.
+- **No `tts` profile in the first four.** The contract's `tts` medium is
+  reserved and the critic's prompt covers it; no shipped form is delivered by
+  voice yet, so a profile would have been a guess with a `checked` date nobody
+  checked.
+- **No class-B positive claim.** The critic's fixture set carries one class-B
+  case (a mechanical failure the critic must not restate); the negative test is
+  the six Doctorow posts, all loud under the echo rule.
 
 ## 10. Deliverables
 

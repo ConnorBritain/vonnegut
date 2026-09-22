@@ -18,6 +18,10 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | a ledger accepts confidence the writer did not label | 2 | confidence is a label the writer gives; the schema refuses anything else |
 | a ledger may cite a source the dossier does not have | 2 | every ledger claim points at a source the dossier holds |
 | provenance-scan associates an atom with any ledger entry regardless of shared words | 1 | an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source |
+| repurpose-check reports every mechanical constraint as passed | 3 | mechanical constraints are evaluated on the final bytes, never assumed |
+| repurpose-check drops the fidelity listing against the source | 2 | what the compression dropped is listed for the writer whenever the scanner is present |
+| a medium profile with an unknown field loads | 1 | unknown profile fields are refused by name |
+| a medium profile's delivery notes may carry a prohibition list | 1 | the only free text the critic weighs carries no prohibition list |
 | corpus ingest writes every candidate, not the selected ids | 5 | only the ids the writer selected are written into the human corpus |
 | corpus ingest accepts a selection the writer did not attest | 4 | attest must be literally true, given by the writer for this batch, or nothing is written |
 | corpus ingest drops the 200-word floor | 2 | a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude |

@@ -28,7 +28,7 @@
       "name": "prose-review",
       "description": "Two read-only critics and one revising transformer for prose. prose-voice-critic: does this sound like the author, judged against their own corpus, with every finding required to cite how they write instead. prose-fidelity-critic: did a revision keep the facts, quotes, qualifications and claim strength of the original, judged against a deterministic scan that is authoritative on presence. prose-reviser: applies a plan of edits and emits a change log the fidelity critic then judges — out-of-plan edits impossible by construction. Never judges quality, never claims anything about who wrote something.",
       "source": "./bundles/prose-review",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "category": "writing",
       "tags": [
         "writing",
@@ -90,7 +90,7 @@
       "name": "prose-author",
       "description": "Personal-style writing with explicit rules, advisory corpus tendencies, scoped persistent preferences and exact-final-text checks. Authenticated Claude/Codex runtime; optional whole human examples.",
       "source": "./bundles/prose-author",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "writing",
       "tags": [
         "writing",
