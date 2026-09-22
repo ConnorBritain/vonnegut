@@ -6,7 +6,7 @@ The shared writing-memory paths have not changed.
 
 The useful installation is the bundles together:
 
-- `prose-author` supplies `$prose-draft`, `$prose-style-tune`, `$prose-corpus`, and the profile and drafting agents.
+- `prose-author` supplies `$prose-draft`, `$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, and the profile and drafting agents.
 - `prose-tell-scan` supplies the deterministic `$tell-scan` measurement skill.
 - `prose-review` supplies the independent voice and fidelity critics plus the reviser.
 - `prose-outline` supplies `$prose-outline`: outlines from a brief, a draft's implied
@@ -66,6 +66,7 @@ Start a new Codex session after installation. Then name the workflow you want:
 - `$prose-draft` — rewrite a passage or draft from a topic, outline, brief, or reply prompt.
 - `$prose-style-tune` — inspect profile evidence, record feedback, pin preferences, and run a controlled comparison.
 - `$prose-corpus` — import existing writing from a Substack export, a Google Docs folder, a Markdown vault or an mbox; select and attest per batch; write only those.
+- `$prose-repurpose` — turn one piece into a newsletter issue, a post, a thread or a talk abstract in your voice, each under its medium profile, checked and reviewed.
 - `$tell-scan` — run the deterministic prose scan directly.
 
 The custom agents are normally dispatched by those skills. You can also ask Codex to use
@@ -108,7 +109,7 @@ Or install loose files from a clone:
 
 ```bash
 ./install.sh voice-profile-render voice-draft voice-feedback-interpret voice-rhetoric-measure \
-  prose-draft prose-style-tune prose-corpus tell-scan prose-outline prose-bible prose-research \
+  prose-draft prose-style-tune prose-corpus prose-repurpose tell-scan prose-outline prose-bible prose-research \
   prose-voice-critic prose-fidelity-critic prose-structure-critic prose-reviser prose-continuity-critic
 ```
 

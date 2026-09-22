@@ -69,6 +69,18 @@ const CRITICS = {
   // Shares the voice critic's two words. A run directory's MANIFEST names the
   // critic; VERDICTS below is only the fallback for the legacy runs that predate
   // manifests, none of which is a structure run.
+  medium: {
+    clean: "CLEAN",
+    flag: "REVISE",
+    contract: ["uncited", "authorship_claims"],
+    labels: {
+      negative: "negative (survives delivery, n=%N%):  ",
+      positive: "positive (breaks in the medium, n=%N%):",
+      uncited: "findings without a quoted span: %V%             <- must be 0",
+      authorship_claims: "any claim about machine authorship: %V%        <- must be 0",
+    },
+    report: (...a) => mediumAgreement(...a),
+  },
   structure: {
     clean: "CLEAN",
     flag: "REVISE",
@@ -84,7 +96,7 @@ const CRITICS = {
 };
 
 const VERDICTS = Object.fromEntries(
-  Object.entries(CRITICS).filter(([name]) => name !== "structure").flatMap(([name, c]) => [[c.clean, name], [c.flag, name]]),
+  Object.entries(CRITICS).filter(([name]) => !["structure", "reader", "medium"].includes(name)).flatMap(([name, c]) => [[c.clean, name], [c.flag, name]]),
 );
 
 /** The MANIFEST's critic when the run has one; otherwise the verdict word decides. */
@@ -310,6 +322,33 @@ function scannerAgreement(runs, dir, critic, line) {
  * construction and their echo verdict is computed from the corpus file the MANIFEST
  * names.
  */
+/** Echo baseline for the medium critic: repurpose-check's parrot beside the critic's verdicts. */
+async function mediumAgreement(runs, dir, critic, line) {
+  const { checkSays, checkPiece, loadMediumManifest, repurposePresent } = await import("./medium-harness.mjs");
+  if (!repurposePresent()) { line("    echo baseline: not computed — prose-author's repurpose skill is absent"); return; }
+  const manifest = loadMediumManifest();
+  const byName = new Map(manifest.fixtures.map((f) => [f.name, f]));
+  let same = 0, cleared = 0, caught = 0, total = 0;
+  for (const r of runs) {
+    const fixture = r.file.replace(/\.md$/, "").replace(/-d\d+$/, "");
+    const f = byName.get(fixture);
+    const form = f?.form ?? manifest.leave_one_out.form;
+    const inputs = join(dir, "inputs");
+    const manifestJson = existsSync(join(dir, "MANIFEST.json")) ? JSON.parse(readFileSync(join(dir, "MANIFEST.json"), "utf8")) : null;
+    const caseId = manifestJson?.cases.find((c) => c.fixture === fixture)?.case;
+    if (!caseId) continue;
+    const piece = readFileSync(join(inputs, caseId, "piece.md"), "utf8");
+    const says = checkSays(await checkPiece(piece, form));
+    total += 1;
+    if (says === r.verdict) same += 1;
+    if (says === critic.flag && r.verdict === critic.clean) cleared += 1;
+    if (says === critic.clean && r.verdict === critic.flag) caught += 1;
+  }
+  line(`    counts the check failed and the critic cleared:           ${cleared}`);
+  line(`    delivery problems the check could not see and the critic caught: ${caught}`);
+  line(`    verdicts identical to the echo rule's (echo rate):         ${same} of ${total}`);
+}
+
 async function structureAgreement(runs, dir, critic, line) {
   const fixturesDir = join(dir, "..", "..", "fixtures", critic);
   if (!existsSync(join(fixturesDir, "fixtures.json"))) return 0;

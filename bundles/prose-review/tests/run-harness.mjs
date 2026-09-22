@@ -84,6 +84,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { renderReport, scanFidelity } from "../tools/fidelity-scan.mjs";
 import { structureFixtures, structureTask } from "./structure-harness.mjs";
+import { mediumFixtures, mediumTask } from "./medium-harness.mjs";
 
 const TESTS = dirname(fileURLToPath(import.meta.url));
 const BUNDLE = resolve(TESTS, "..");
@@ -122,6 +123,19 @@ const CRITICS = {
   // the critic: every run since this landed carries a MANIFEST, and `criticFor`
   // reads it. Legacy runs without one are voice or fidelity, which the words still
   // distinguish.
+  // The profile is an INPUT staged beside the piece; repurpose-check (prose-author's) is
+  // computed at prepare time and embedded in the task, the way outline-scan is for the
+  // structure critic. Without prose-author's repurpose skill the fixtures cannot be staged
+  // and prepare says so.
+  medium: {
+    agent: "primitives/agents/prose-medium-critic/agent.md",
+    vocabulary: ["CLEAN", "REVISE"],
+    contract: ["uncited", "authorship_claims"],
+    finding: /\*\*CLASS\*\*/g,
+    phrase: { negative: "survives delivery", positive: "breaks in the medium" },
+    fixtures: mediumFixtures,
+    task: mediumTask,
+  },
   structure: {
     agent: "primitives/agents/prose-structure-critic/agent.md",
     vocabulary: ["CLEAN", "REVISE"],
@@ -829,7 +843,7 @@ function die(msg) {
 }
 
 const USAGE = `run-harness: usage:
-  node tests/run-harness.mjs prepare  <voice|fidelity|structure> <run-id> [--only a,b] [--positives a,b]
+  node tests/run-harness.mjs prepare  <voice|fidelity|structure|medium> <run-id> [--only a,b] [--positives a,b]
                                       [--draws N]              default 3; --draws 1 is labelled "single draw" downstream
                                       [--fixtures-dir <dir>]   fidelity and structure; for testing the leak abort
   node tests/run-harness.mjs dispatch <run-dir> [--only a,b]

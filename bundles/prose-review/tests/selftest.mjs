@@ -833,6 +833,42 @@ group("ellipsis provenance — the classifier FU-6's finding rests on");
     (m.authorial * 1000) / m.words < 1 && (m.total * 1000) / m.words > 5);
 }
 
+/* ------------------------------------------------------------------ */
+group("medium fixtures — integrity, four-class geometry re-derived from the echo rule");
+{
+  const mh = await import("./medium-harness.mjs");
+  const manifest = mh.loadMediumManifest();
+  const dir = new URL("fixtures/medium/", import.meta.url);
+  const onDisk = readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  check("every medium fixture directory is declared in fixtures.json", JSON.stringify(onDisk) === JSON.stringify(manifest.fixtures.map((f) => f.name).sort()));
+  check("the manifest states the echo rule the harness implements", manifest.echo_rule === mh.ECHO_RULE.description);
+  const classes = { A: 0, B: 0, C: 0, D: 0 };
+  for (const f of manifest.fixtures) {
+    const piece = readFileSync(new URL(`${f.name}/piece.md`, dir), "utf8");
+    check(`${f.name}: the piece carries no verdict word or expectation key`, !/\b(CLEAN|REVISE)\b/.test(piece) && !/^\s*(expect|class|check_says)\s*:/m.test(piece));
+    const geometry = { A: ["CLEAN", "CLEAN"], B: ["REVISE", "CLEAN"], C: ["REVISE", "REVISE"], D: ["CLEAN", "REVISE"] }[f.class];
+    check(`${f.name}: class ${f.class} matches check_says/expect, and kind matches expect and the name prefix`,
+      geometry && geometry[0] === f.check_says && geometry[1] === f.expect && (f.kind === "positive") === (f.expect === "REVISE") && f.name.startsWith(f.kind[0] + "-"));
+    classes[f.class] += 1;
+    if (!mh.repurposePresent()) { process.stdout.write(`  SKIP ${f.name}: check_says — prose-author's repurpose skill absent\n`); continue; }
+    const says = mh.checkSays(await mh.checkPiece(piece, f.form));
+    check(`${f.name}: check_says re-derived (${says})`, says === f.check_says);
+  }
+  check("classes A, B, C and D each have at least one fixture, and A and D at least two", classes.A >= 2 && classes.B >= 1 && classes.C >= 1 && classes.D >= 2, JSON.stringify(classes));
+  if (mh.repurposePresent()) {
+    let loud = 0;
+    for (const rel of manifest.leave_one_out.essays) {
+      const text = readFileSync(new URL(`../../prose-tell-scan/tests/corpus/human-essays/${rel}`, import.meta.url), "utf8");
+      if (mh.checkSays(await mh.checkPiece(text, manifest.leave_one_out.form)) === "REVISE") loud += 1;
+    }
+    check("every leave-one-out post reads REVISE under the echo rule: the parrot scores 0 of 6 on the negatives", loud === manifest.leave_one_out.essays.length, `${loud} loud`);
+  }
+  const { CRITICS } = await import("./run-harness.mjs");
+  const fixtures = CRITICS.medium.fixtures({});
+  check("medium fixtures stage piece.md and profile.json for every synthetic case and every leave-one-out post",
+    fixtures.length === manifest.fixtures.length + manifest.leave_one_out.essays.length && fixtures.every((f) => f.inputs.map((i) => i.as).join() === "piece.md,profile.json"));
+}
+
 process.stdout.write(`\n${"─".repeat(60)}\n`);
 process.stdout.write(`${passed} passed, ${failed} failed\n`);
 if (failed) {

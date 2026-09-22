@@ -83,6 +83,7 @@ const OUTLINE_TOOLS = "bundles/prose-outline/skills/prose-outline/tools";
 const BIBLE_TOOLS = "bundles/prose-bible/skills/prose-bible/tools";
 const RESEARCH_TOOLS = "bundles/prose-research/skills/prose-research/tools";
 const CORPUS_INGEST = "bundles/prose-author/skills/prose-corpus/tools/corpus-ingest.mjs";
+const REPURPOSE_TOOLS = "bundles/prose-author/skills/prose-repurpose/tools";
 
 const EXEMPLARS = `${TOOLS}/exemplars.mjs`;
 const VERIFY = `${TOOLS}/verify.mjs`;
@@ -152,6 +153,11 @@ export const MUTATIONS = [
   { suite: "research", name: "a ledger accepts confidence the writer did not label", file: `${RESEARCH_TOOLS}/lib/research-schema.mjs`, find: 'if (k?.confidence_by !== "writer") errors.push(', with: 'if (false) errors.push(', guards: "confidence is a label the writer gives; the schema refuses anything else" },
   { suite: "research", name: "a ledger may cite a source the dossier does not have", file: `${RESEARCH_TOOLS}/research-store.mjs`, find: "      if (unknown.length) throw new StoreRefusal(`Ledger claims cite sources the dossier does not have:", with: "      if (false) throw new StoreRefusal(`Ledger claims cite sources the dossier does not have:", guards: "every ledger claim points at a source the dossier holds" },
   { suite: "research", name: "provenance-scan associates an atom with any ledger entry regardless of shared words", file: `${RESEARCH_TOOLS}/provenance-scan.mjs`, find: "  return bestShare >= MATCH_SHARE ? best : null;", with: "  return best;", guards: "an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source" },
+  // prose-repurpose (docs/roadmap/F-prose-repurpose.md). Covered by the author suite (repurpose).
+  { name: "repurpose-check reports every mechanical constraint as passed", file: `${REPURPOSE_TOOLS}/repurpose-check.mjs`, find: '    ? { id: c.id, kind: "mechanical", ...evaluateRule(c.rule, body, profile) }', with: '    ? { id: c.id, kind: "mechanical", status: "passed", detail: "short-circuited" }', guards: "mechanical constraints are evaluated on the final bytes, never assumed" },
+  { name: "repurpose-check drops the fidelity listing against the source", file: `${REPURPOSE_TOOLS}/repurpose-check.mjs`, find: '      fidelity = { status: "listed", scanner: scanner,', with: '      fidelity = { status: "not-evaluated", reason: "dropped", scanner: scanner,', guards: "what the compression dropped is listed for the writer whenever the scanner is present" },
+  { name: "a medium profile with an unknown field loads", file: `${REPURPOSE_TOOLS}/lib/medium-profile.mjs`, find: '  for (const k of Object.keys(p)) if (!allowed.includes(k)) errors.push(`unknown field ${k}`);', with: "  /* defect: accept anything */", guards: "unknown profile fields are refused by name" },
+  { name: "a medium profile's delivery notes may carry a prohibition list", file: `${REPURPOSE_TOOLS}/lib/medium-profile.mjs`, find: 'errors.push("delivery_notes must not carry a prohibition list; that is a catalog by another name");', with: "/* defect */;", guards: "the only free text the critic weighs carries no prohibition list" },
   // prose-corpus (docs/roadmap/D-corpus-ingestion.md). Covered by the author suite (corpus-ingestion).
   { name: "corpus ingest writes every candidate, not the selected ids", file: CORPUS_INGEST, find: "  for (const id of selection.ids) {", with: "  for (const id of manifest.candidates.map((c) => c.id)) {", guards: "only the ids the writer selected are written into the human corpus" },
   { name: "corpus ingest accepts a selection the writer did not attest", file: CORPUS_INGEST, find: '  if (s?.attest !== true) errors.push("attest must be literally true', with: '  if (false) errors.push("attest must be literally true', guards: "attest must be literally true, given by the writer for this batch, or nothing is written" },

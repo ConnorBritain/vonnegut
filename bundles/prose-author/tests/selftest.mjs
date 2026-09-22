@@ -29,6 +29,7 @@ import * as runtimeV040 from "./suite-runtime-v040.mjs";
 import * as historyV050 from "./suite-history-v050.mjs";
 import * as identityV060 from "./suite-identity-v060.mjs";
 import * as corpusIngestion from "./suite-corpus-ingestion.mjs";
+import * as repurpose from "./suite-repurpose.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CORPUS = resolve(HERE, "..", "..", "prose-tell-scan", "tests", "corpus");
@@ -102,6 +103,7 @@ const SUITES = [
   ["history-v050", historyV050],
   ["identity-v060", identityV060],
   ["corpus-ingestion", corpusIngestion],
+  ["repurpose", repurpose],
 ];
 const only = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const selected = only.length

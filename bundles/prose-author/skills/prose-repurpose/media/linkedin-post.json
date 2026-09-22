@@ -1,0 +1,16 @@
+{
+  "schema": "medium-profile/1",
+  "form": "linkedin-post",
+  "medium": "web",
+  "length": { "unit": "characters", "min": 300, "max": 3000 },
+  "segments": null,
+  "structure": ["hook", "body", "close"],
+  "constraints": [
+    { "id": "platform-limit", "kind": "mechanical", "rule": { "type": "max_characters", "max": 3000 } },
+    { "id": "no-headings", "kind": "mechanical", "rule": { "type": "no_headings" } },
+    { "id": "hashtag-cap", "kind": "mechanical", "rule": { "type": "max_hashtags", "max": 3 } },
+    { "id": "hook-above-the-fold", "kind": "semantic", "rule": { "text": "The first two lines stand alone: the platform truncates after them with a 'see more', and a reader decides there." }, "note": "whether the first two lines carry the piece's reason to exist" }
+  ],
+  "delivery_notes": "Rendered as plain text with line breaks; markdown does not render, so a heading marker is a literal hash. Truncated after roughly two lines until the reader expands it. Read in a feed between other posts, usually on a phone.",
+  "checked": "2026-09-22"
+}

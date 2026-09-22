@@ -91,9 +91,14 @@ mode it is in on its first line. Without `prose-outline` installed there is no
 scan, the critic does not run, and the report says structure was not reviewed —
 it is never estimated by eye.
 
-`prose-medium-critic` spawns only when the profile declares a `medium`. Short or
-trivial prose skips the protocol entirely, and this session should say so out
-loud when it does rather than running five agents on a paragraph.
+`prose-medium-critic` spawns only when a medium profile is supplied — the
+`prose-repurpose` skill hands one over per form — or the corpus `profile.json`
+declares a `medium`. Run `repurpose-check` first and hand the critic the profile,
+the check output and the piece as a block; it never reads a path in another
+bundle's install, and it never re-counts what the check counted. Without a
+profile it does not spawn and the report says so. Short or trivial prose skips
+the protocol entirely, and this session should say so out loud when it does
+rather than running five agents on a paragraph.
 
 ## Step 3 — consolidation, and the part to get right
 

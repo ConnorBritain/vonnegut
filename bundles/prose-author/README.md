@@ -73,6 +73,7 @@ conflicts ask for clarification.
 | `prose-draft` skill | Prepare a writing task and invoke the production runner |
 | `prose-style-tune` skill | Save, scope, discover, compare, version and undo choices |
 | `prose-corpus` skill | Import existing writing as candidates; the writer selects and attests; write only those, with provenance |
+| `prose-repurpose` skill | One piece into newsletter, post, thread or abstract under a medium profile, through the runtime; checked, listed, reviewed |
 | `voice-profile-render` agent | Interpret cited human evidence for profile assembly |
 | `voice-draft` agent | Produce one candidate or bounded repair from authorized inputs |
 | `voice-feedback-interpret` agent | Propose narrow changes; never save its own proposal |

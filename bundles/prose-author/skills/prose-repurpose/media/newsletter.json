@@ -1,0 +1,16 @@
+{
+  "schema": "medium-profile/1",
+  "form": "newsletter",
+  "medium": "web",
+  "length": { "unit": "words", "min": 400, "max": 1200 },
+  "segments": null,
+  "structure": ["hook", "body", "close"],
+  "constraints": [
+    { "id": "length-band", "kind": "mechanical", "rule": { "type": "max_words", "max": 1200 } },
+    { "id": "enough-to-read", "kind": "mechanical", "rule": { "type": "min_words", "min": 400 } },
+    { "id": "hook-present", "kind": "semantic", "rule": { "text": "The first paragraph gives a reader who opened this in an inbox a reason to keep reading before any context is supplied." }, "note": "whether the opening earns the scroll; a heading is not a hook" },
+    { "id": "one-close", "kind": "semantic", "rule": { "text": "The piece ends once, with a close the reader can act on or sit with, not a second summary." }, "note": "double endings and trailing summaries" }
+  ],
+  "delivery_notes": "Read in an email client, on a phone as often as not, in one sitting or abandoned. Paragraphs longer than a phone screen lose readers who would have finished on a desktop. Links are fine in the body; a link is not a hook. The subject line is not part of the piece and is not reviewed here.",
+  "checked": "2026-09-22"
+}

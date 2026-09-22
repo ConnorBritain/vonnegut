@@ -23,6 +23,7 @@ const AGENTS = [
   "prose-reviser",
   "prose-structure-critic",
   "prose-continuity-critic",
+  "prose-medium-critic",
 ];
 const HOST_BOUNDARY = `## Codex host boundary
 

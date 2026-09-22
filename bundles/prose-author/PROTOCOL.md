@@ -114,3 +114,18 @@ Nothing is attested by inference, no mbox sender is guessed, no history or
 preference is touched, and no profile is refreshed as a side effect — offer the
 existing refresh path afterwards. Without `prose-tell-scan`, intake still works
 and calibration is reported unavailable.
+
+## Repurposing (v0.9)
+
+One finished piece becomes other forms through the `prose-repurpose` skill and
+the same runtime: one `rewrite` run per form the writer asked for, with the
+source piece as the passage, `context.form` set to the form so preferences
+scoped `forms: [<form>]` apply, and the medium profile's structure and
+mechanical constraints supplied as facts, its digest recorded in the receipt.
+`repurpose-check` then counts what the profile counts on the final bytes and
+lists what the source lost; a failed mechanical constraint goes back as a
+repair, at most twice, and the missing-atoms list is shown, never failed. With
+`prose-review` installed the medium critic reads the profile, the check and the
+piece in a clean context; without it the delivery is ungated for medium review
+and says so. Nothing the source does not say enters a form, and nothing is
+posted anywhere.

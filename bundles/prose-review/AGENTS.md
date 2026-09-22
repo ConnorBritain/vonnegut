@@ -94,6 +94,27 @@ When a draft is an argument and its structure should be checked, and
 Do not judge voice, fidelity, truth or prose quality. This is one question only.
 ```
 
+## Prose medium review
+
+Only when a medium profile is supplied (or the corpus profile declares a
+`medium`), and after `repurpose-check` has run over the piece:
+
+1. Paste the profile, the check output and the piece. Read the profile's
+   `delivery_notes` as the description of the medium; bring no list of your own.
+2. The check is authoritative on counts. Never re-count a length or a segment;
+   a mechanical constraint the check failed is the writer's to fix, not a
+   finding. Dispute the tool under "Check defects".
+3. Report only what a count cannot see: a construction that breaks in this
+   medium, a segment boundary that cuts a sentence, a semantic constraint the
+   check lists as not-evaluated and the piece does not meet. Quote the span.
+4. When you cannot tell, say nothing. Never state or imply that the piece was
+   machine-written.
+5. End with CLEAN or REVISE. CLEAN is the expected result on a piece that
+   survives delivery.
+
+Do not judge voice, structure, fidelity or prose quality. This is one question only.
+```
+
 ## The one thing worth getting right, per critic
 
 **Voice: rule 4.** A voice finding without evidence of how the author writes
@@ -125,6 +146,7 @@ silence; fidelity resolves to MATERIAL-LOSS. Do not harmonise them.
 | The error preference, both directions | prompt | prompt — survives intact |
 | Scan-is-authoritative (fidelity) | prompt + tool | prompt + tool — **survives**, if you run the scan |
 | Scan-is-authoritative and the mode line (structure) | prompt + tool | prompt + tool — **survives**, if you run `outline-scan` and say the mode |
+| Check-is-authoritative (medium) | prompt + tool | prompt + tool — **survives**, if you run `repurpose-check` and paste the profile |
 
 The ones that survive are the ones that matter most, which is the only good news
 in this table. The fidelity row is the best case in the bundle: its load-bearing

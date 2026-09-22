@@ -72,12 +72,12 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] E6 — `claim-audit.md` provenance packet + `draft-claim-audit.mjs` ledger ids + contract tests; prose-author bump
 - [x] E7 — RELEASE notes for all three bundles, CHANGELOG, README, version pin above, ROADMAP status → shipped
 
-### F. prose-repurpose — planned
+### F. prose-repurpose — in-progress
 
-- [ ] F1 — `docs/contracts/medium-profile.md` finalised; four `media/*.json` profiles validating against it
-- [ ] F2 — `repurpose-check.mjs` (mechanical constraints + fidelity-scan against the source) + fixtures + mutations
-- [ ] F3 — `prose-repurpose` SKILL.md + meta.yaml driving one runtime run per form with `forms` scope; profile digest in job and receipt; negative test recorded
-- [ ] F4 — primitive `prose-medium-critic` + bundle copy in prose-review; fixtures in both disagreement directions vs repurpose-check; harness runs recorded; DESIGN.md open question 5 answered
+- [x] F1 — `docs/contracts/medium-profile.md` finalised; four `media/*.json` profiles validating against it
+- [x] F2 — `repurpose-check.mjs` (mechanical constraints + fidelity-scan against the source) + fixtures + mutations
+- [x] F3 — `prose-repurpose` SKILL.md + meta.yaml driving one runtime run per form with `forms` scope; profile digest in job and receipt; negative test recorded
+- [x] F4 — primitive `prose-medium-critic` + bundle copy in prose-review; fixtures in both disagreement directions vs repurpose-check; harness runs recorded; DESIGN.md open question 5 answered
 - [ ] F5 — prose-author and prose-review bumps, RELEASE notes, CHANGELOG, README, version pin above, ROADMAP status → shipped
 
 ### G. Reader-persona critics — planned
