@@ -1,7 +1,7 @@
 {
   "name": "prose-review",
-  "version": "0.3.0",
-  "description": "Two read-only critics and one revising transformer for prose: does this draft sound like its author, did a revision keep what it had to, and apply a plan of edits under a fidelity gate.",
+  "version": "0.4.0",
+  "description": "Three read-only critics and one revising transformer for prose: does this draft sound like its author, did a revision keep what it had to, does its structure carry its argument, and apply a plan of edits under a fidelity gate.",
   "author": {
     "name": "Connor England",
     "url": "https://github.com/ConnorBritain"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Prose Review",
     "shortDescription": "Critics that judge a draft against the author's own writing, plus a reviser that applies a plan under a fidelity gate.",
-    "longDescription": "Two read-only critics and one revising transformer, each owning one question exclusively. prose-voice-critic: whether a draft sounds like the person it is supposed to be by, judged against a corpus of their own writing, with every finding required to cite how they write instead. prose-fidelity-critic: whether a revision kept the facts, quotes, named entities, qualifications and claim strength of the original, judged against a deterministic scan that is authoritative on presence so the critic argues only about consequence. prose-reviser: takes an ORIGINAL and an edit PLAN and emits a change log the harness applies, then the fidelity critic judges — the reviser cannot make out-of-plan edits by construction because its only output channel is a list of before/after pairs referring to plan ids. Neither critic judges quality, and none of these primitives state or imply that text was machine-generated. NOTE: Codex enforces neither the read-only tool restriction nor context isolation. Run each as a fresh `codex exec` rather than inline, and route the reviser's log through the fidelity gate before saving the reconstructed revision — the shape of the safety here is the gate, not the prompt. See docs/portability.md.",
+    "longDescription": "Three read-only critics and one revising transformer, each owning one question exclusively. prose-voice-critic: whether a draft sounds like the person it is supposed to be by, judged against a corpus of their own writing, with every finding required to cite how they write instead. prose-fidelity-critic: whether a revision kept the facts, quotes, named entities, qualifications and claim strength of the original, judged against a deterministic scan that is authoritative on presence so the critic argues only about consequence. prose-structure-critic: whether a draft's structure carries its argument, judged against outline-scan and, when one exists, the outline the writer intended, with uncertainty resolving to REVISE only where the outline makes support and order checkable. prose-reviser: takes an ORIGINAL and an edit PLAN and emits a change log the harness applies, then the fidelity critic judges — the reviser cannot make out-of-plan edits by construction because its only output channel is a list of before/after pairs referring to plan ids. No critic judges quality, and none of these primitives state or imply that text was machine-generated. NOTE: Codex enforces neither the read-only tool restriction nor context isolation. Run each as a fresh `codex exec` rather than inline, and route the reviser's log through the fidelity gate before saving the reconstructed revision — the shape of the safety here is the gate, not the prompt. See docs/portability.md.",
     "developerName": "Connor England",
     "category": "Developer Tools",
     "capabilities": [

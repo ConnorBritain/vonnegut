@@ -1673,6 +1673,14 @@ export const MUTATIONS = [
     guards: "cold-start cannot calibrate against model norms on day one",
   },
   {
+    name: "let the structure harness's echo rule never flag",
+    file: "bundles/prose-review/tests/structure-harness.mjs",
+    suite: "review",
+    find: '  return extreme || gap ? "REVISE" : "CLEAN";',
+    with: '  return "CLEAN";',
+    guards: "every structure fixture's class is re-derived from the stated echo rule, so a parrot that cannot flag breaks the four-class table rather than silently flattering the critic",
+  },
+  {
     name: "let fidelity-scan pass a MATERIAL-LOSS as FAITHFUL",
     file: FIDELITY,
     suite: "review",

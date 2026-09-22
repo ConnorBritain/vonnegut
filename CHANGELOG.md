@@ -92,7 +92,7 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-outline/RELEASE-v0.1.0.md).
 
 ## prose-review
 
-### [0.4.0] — in progress
+### [0.4.0] — a third critic: structure
 
 Roadmap item B ([`docs/roadmap/B-prose-structure-critic.md`](docs/roadmap/B-prose-structure-critic.md));
 deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).

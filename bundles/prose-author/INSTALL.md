@@ -27,7 +27,7 @@ node install-prose-codex.mjs
 
 The default installs **this local checkout**, including uncommitted candidate changes;
 it does not download GitHub main. The installer adds the checkout as a Codex marketplace, installs and enables all three
-plugins, and renders the seven harness-neutral agent prompts as read-only personal Codex agents
+plugins, and renders the eight harness-neutral agent prompts as read-only personal Codex agents
 under `~/.codex/agents/`. It is safe to rerun: it updates files it generated and refuses to
 overwrite an agent file it does not own.
 
@@ -107,7 +107,7 @@ The loose install puts agents in `~/.claude/agents/`, skills in `~/.claude/skill
 fidelity scanner in `~/.claude/tools/`, and the tell-scan command in
 `~/.claude/commands/`. On Windows use `install.ps1` with the same names and
 `-Project` instead of `--project`. Use `--project` to install into the current
-project's `.claude/` directory instead. Run `claude agents` to confirm the seven agents, then
+project's `.claude/` directory instead. Run `claude agents` to confirm the eight agents, then
 start a new Claude Code session.
 
 Invoke `prose-draft` or `prose-style-tune` by name. A loose tell-scan install uses

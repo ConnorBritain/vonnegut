@@ -1,10 +1,11 @@
 # B. prose-structure-critic
 
-Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
-`primitives/agents/prose-structure-critic/README.md` and
-`bundles/prose-review/DESIGN.md`.
-
+Status: **shipped** as prose-review 0.4.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `primitives/agents/prose-structure-critic/README.md`,
+`bundles/prose-review/DESIGN.md` and `bundles/prose-review/RELEASE-v0.4.0.md`;
+read those for what shipped. Decisions taken during the build that this spec did
+not anticipate are appended to §9.
 ## 1. Goal and non-goals
 
 A clean-context reviewer of a draft's argument: order, missing transitions,
@@ -109,6 +110,24 @@ frontmatter-stripped and leak-checked for `CLEAN`/`REVISE`.
   `prose-substance-critic`. DESIGN.md's table is amended in the same commit.
 - **Emits plan entries, not a plan.** The session still consolidates
   (no orchestrator code); the block is a convenience in PLAN-FORMAT shape.
+
+### Build-time decisions
+
+- **B3's "recorded runs" ships as a recorded non-run.** The build environment
+  had no authenticated CLI, so no structure run was dispatched. The protocol,
+  the commands and the echo block are in `tests/critic-harness.md`, marked
+  *not run, never as passed*; the first real run is the next session's job.
+  Rejected: holding the item until a run exists (the fixtures, harness and
+  wiring are testable without one, and a blocked item hides finished work) and
+  fabricating a table from a dry read of the prompts.
+- **The echo rule is guarded by a mutation.** `structure-harness.mjs`'s
+  `scanSays` is the one place the four-class table depends on; a mutation that
+  makes it never flag breaks the selftest's re-derivation. Registered in the
+  review suite.
+- **Class D positives are synthetic drafts with intended outlines.** No corpus
+  essay has an outline, so the "only the outline exposes it" cases are this
+  repo's own writing; the leave-one-out negatives stay corpus essays staged
+  draft-only. Recorded in `fixtures.json`.
 
 ## 10. Deliverables
 

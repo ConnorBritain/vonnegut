@@ -17,7 +17,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 |---|---|
 | prose-author | 0.6.0 |
 | prose-outline | 0.1.0 |
-| prose-review | 0.3.0 |
+| prose-review | 0.4.0 |
 | prose-tell-scan | 0.1.1 |
 
 ## Deliverables
@@ -33,12 +33,12 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] A7 — `prose-outline` SKILL.md + meta.yaml, beat-sheet mode, positive and negative skill test recorded
 - [x] A8 — RELEASE-v0.1.0.md, CHANGELOG entry, README bundle table and install lines, version pin above, ROADMAP status → shipped
 
-### B. prose-structure-critic — in-progress
+### B. prose-structure-critic — shipped
 
 - [x] B1 — primitive `prose-structure-critic` (agent.md, meta.yaml, README) + byte-identical bundle copy; manifests and `install-prose-codex.mjs` AGENTS updated; DESIGN.md exclusivity note
 - [x] B2 — fixtures in the four classes vs outline-scan + harness wiring (`run-harness.mjs` CRITICS entry, `verify-run.mjs` contract counts, leak check)
 - [x] B3 — negative and positive harness runs recorded with `verify-run.mjs` output; PROTOCOL.md step 2, AGENTS.md, wiring, README updated
-- [ ] B4 — prose-review version bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+- [x] B4 — prose-review version bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
 ### C. prose-bible — planned
 

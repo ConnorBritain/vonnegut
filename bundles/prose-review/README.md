@@ -32,7 +32,7 @@ reason is in [`tests/critic-harness.md`](tests/critic-harness.md).
 | `prose-adversarial-reader` | *order* and *weakest section* now belong to the structure critic; the rest ships as a persona in roadmap item G |
 | `prose-medium-critic` | designed; ships with roadmap item F |
 
-## The two critics point opposite ways, on purpose
+## The critics point opposite ways, on purpose
 
 `prose-voice-critic` resolves uncertainty to **silence**. `prose-fidelity-critic`
 resolves it to **`MATERIAL-LOSS`**. That is not an inconsistency in the bundle; it
@@ -44,6 +44,11 @@ truth sitting in the original, every finding is checkable by anyone, and a wrong
 finding costs a glance at two quoted lines. What is *not* recoverable there is the
 miss: a loss waved through ships, and the original is often gone by the time
 anyone looks.
+
+`prose-structure-critic` does both, and says which on its first line. With the
+outline the writer intended, support and order are checkable against it and
+uncertainty resolves to `REVISE`; without one, only transitions and balance are
+assessed and uncertainty resolves to silence, for the voice critic's reason.
 
 ## Why the reviser ships after its guards
 
