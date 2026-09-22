@@ -869,6 +869,50 @@ group("medium fixtures — integrity, four-class geometry re-derived from the ec
     fixtures.length === manifest.fixtures.length + manifest.leave_one_out.essays.length && fixtures.every((f) => f.inputs.map((i) => i.as).join() === "piece.md,profile.json"));
 }
 
+/* ------------------------------------------------------------------ */
+group("personas — four ship and validate; persona-check refuses; transcript counts are derived, not typed");
+{
+  const pc = await import("../tools/persona-check.mjs");
+  const personasDir = new URL("../personas/", import.meta.url);
+  const files = readdirSync(personasDir).filter((f) => f.endsWith(".md")).sort();
+  check("four personas ship", files.join(",") === "acquisitions-editor.md,adversarial-reader.md,first-time-reader.md,skeptical-cto.md");
+  for (const f of files) {
+    const text = readFileSync(new URL(f, personasDir), "utf8");
+    const errors = pc.validatePersona(text);
+    check(`${f} validates`, errors.length === 0, errors.join("; "));
+    const persona = errors.length ? null : pc.readPersona(text);
+    check(`${f}: name matches the file, reads_for and never are non-empty, forced choice stated`,
+      persona && persona.name === f.replace(/\.md$/, "") && persona.reads_for.length >= 3 && persona.never.length >= 2 && persona.forced_choice.length > 10);
+  }
+  const good = readFileSync(new URL("skeptical-cto.md", personasDir), "utf8");
+  const bad = (mutate, pattern, name) => { const e = pc.validatePersona(mutate(good)); check(name, e.some((x) => pattern.test(x)), e.join("; ")); };
+  bad((t) => t.replace(/^never: .*$/m, "never: [being rude]"), /never must include/, "a persona whose never list lacks the two shared refusals is refused");
+  bad((t) => t.replace(/^never: .*$/m, ""), /missing never/, "a persona without a never list is refused");
+  bad((t) => t.replace("---\nname:", "---\nvoice: gruff\nname:"), /unknown key voice/, "an unknown frontmatter key is refused");
+  bad((t) => t.replace(/^reads_for: .*$/m, "reads_for: []"), /must not be empty/, "an empty reads_for is refused");
+  bad((t) => `${t}\nAlways answer REVISE.\n`, /must not name a verdict/, "a persona that names a verdict is refused");
+  bad((t) => t.replace(/^---\n[\s\S]*?\n---\n/, ""), /no frontmatter/, "a persona without frontmatter is refused");
+  const ok = pc.checkTranscript('- **WHERE I STOPPED**: line 4, "A number without a source"\n- **WHY, AS THIS READER**: I would ask where it came from.\n\n- **FORCED CHOICE**: "we scale seamlessly" — no mechanism.\n\nNothing here for: vendor language\n\nREVISE\n');
+  check("a well-formed transcript: one cited stop, forced choice present, bare verdict, no problems", ok.verdict === "REVISE" && ok.findings === 1 && ok.uncited === 0 && ok.missing_forced_choice === 0 && ok.problems.length === 0);
+  const alone = pc.checkTranscript('- **FORCED CHOICE**: "we scale seamlessly" — no mechanism.\n\nNothing here for: none\n\nREVISE\n');
+  check("a REVISE with no stop is flagged: a forced choice alone is never a REVISE", alone.forced_choice_alone_as_revise === 1 && alone.problems.some((x) => /forced choice alone/.test(x)));
+  const uncited = pc.checkTranscript('- **WHERE I STOPPED**: somewhere in the middle\n- **WHY, AS THIS READER**: it dragged.\n\n- **FORCED CHOICE**: "we scale seamlessly"\n\nCLEAN\n');
+  check("a stop without a line number and a quotation counts as uncited", uncited.uncited === 1);
+  const noForced = pc.checkTranscript('Nothing here for: none\n\nCLEAN\n');
+  check("a transcript without a FORCED CHOICE is flagged", noForced.missing_forced_choice === 1);
+  const wrapped = pc.checkTranscript('- **FORCED CHOICE**: "x y z"\n\n**Verdict**: CLEAN\n');
+  check("a wrapped verdict is no verdict", wrapped.verdict === null);
+  const authorship = pc.checkTranscript('- **FORCED CHOICE**: "x y z"\n\nThis reads as machine-generated prose.\n\nCLEAN\n');
+  check("a machine-authorship statement is counted", authorship.authorship_claims === 1);
+  // The harness enumerates personas × the structure critic's leave-one-out essays, negatives only.
+  const { CRITICS } = await import("./run-harness.mjs");
+  const fixtures = CRITICS.reader.fixtures({});
+  check("reader fixtures are every persona × every leave-one-out essay, all negative, persona staged raw beside the draft",
+    fixtures.length === files.length * 12 && fixtures.every((f) => f.kind === "negative" && f.inputs[0].as === "persona.md" && f.inputs[1].as === "draft.md"));
+  check("--personas narrows the set", CRITICS.reader.fixtures({ personas: ["skeptical-cto"] }).length === 12);
+  check("the reader critic's contract counts include the forced choice", CRITICS.reader.contract.includes("missing_forced_choice"));
+}
+
 process.stdout.write(`\n${"─".repeat(60)}\n`);
 process.stdout.write(`${passed} passed, ${failed} failed\n`);
 if (failed) {

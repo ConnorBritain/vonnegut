@@ -115,6 +115,25 @@ Only when a medium profile is supplied (or the corpus profile declares a
 Do not judge voice, structure, fidelity or prose quality. This is one question only.
 ```
 
+## Prose reader review
+
+Only when the author names a reader ("read this as …"):
+
+1. Paste the persona file (from `personas/`, or one in the same shape that
+   `tools/persona-check.mjs persona <file>` accepts) beside the draft. The
+   persona is the whole brief about the reader; bring no other concerns.
+2. Report only where that reader stops, for something the persona's
+   `reads_for` names. Quote the sentence and say, in the first person, why.
+3. Always make the forced choice: one quoted sentence. A forced choice alone
+   is never a REVISE.
+4. List the `reads_for` items that produced nothing. When you cannot tell
+   whether this reader would stop, say nothing.
+5. Never judge the writing, and never state or imply who wrote it.
+6. End with CLEAN or REVISE. CLEAN is a reader who finishes.
+
+Do not judge voice, structure, fidelity or prose quality. This is one reader's reaction only.
+```
+
 ## The one thing worth getting right, per critic
 
 **Voice: rule 4.** A voice finding without evidence of how the author writes
@@ -144,6 +163,7 @@ silence; fidelity resolves to MATERIAL-LOSS. Do not harmonise them.
 | Clean context | ✅ | ❌ unless you run a fresh subprocess |
 | Corpus-citation requirement (voice) | prompt | prompt — survives intact |
 | The error preference, both directions | prompt | prompt — survives intact |
+| Persona-as-input and the forced choice (reader) | prompt + `persona-check` | prompt + `persona-check` — **survives**, if you validate the persona and check the transcript |
 | Scan-is-authoritative (fidelity) | prompt + tool | prompt + tool — **survives**, if you run the scan |
 | Scan-is-authoritative and the mode line (structure) | prompt + tool | prompt + tool — **survives**, if you run `outline-scan` and say the mode |
 | Check-is-authoritative (medium) | prompt + tool | prompt + tool — **survives**, if you run `repurpose-check` and paste the profile |

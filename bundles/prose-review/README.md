@@ -29,7 +29,8 @@ reason is in [`tests/critic-harness.md`](tests/critic-harness.md).
 | [`prose-reviser`](agents/prose-reviser.md) | shipped v0.3.0, 2026-08-07 — see [`REVISER-USAGE.md`](REVISER-USAGE.md) |
 | [`prose-structure-critic`](agents/prose-structure-critic.md) | shipped v0.4.0 — reads `prose-outline`'s scan; see the [primitive README](../../primitives/agents/prose-structure-critic/README.md) |
 | `prose-substance-critic` | blocked — needs an argumentative corpus; *claims without support* now belongs to the structure critic |
-| `prose-adversarial-reader` | *order* and *weakest section* now belong to the structure critic; the rest ships as a persona in roadmap item G |
+| [`prose-reader-critic`](agents/prose-reader-critic.md) | shipped v0.6.0 — one prompt, many readers; personas in [`personas/`](personas/); see the [primitive README](../../primitives/agents/prose-reader-critic/README.md) |
+| `prose-adversarial-reader` | *order* and *weakest section* belong to the structure critic; the rest ships as [`personas/adversarial-reader.md`](personas/adversarial-reader.md), read by `prose-reader-critic` |
 | [`prose-medium-critic`](agents/prose-medium-critic.md) | shipped v0.6.0 — conditional; reads a `medium-profile/1` and `repurpose-check` output the session supplies; see the [primitive README](../../primitives/agents/prose-medium-critic/README.md) |
 
 ## The critics point opposite ways, on purpose

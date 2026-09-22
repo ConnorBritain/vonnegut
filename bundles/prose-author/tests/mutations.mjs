@@ -1712,6 +1712,22 @@ export const MUTATIONS = [
     guards: "every structure fixture's class is re-derived from the stated echo rule, so a parrot that cannot flag breaks the four-class table rather than silently flattering the critic",
   },
   {
+    name: "let a persona omit the two refusals every reader shares",
+    file: "bundles/prose-review/tools/persona-check.mjs",
+    suite: "review",
+    find: "for (const re of MANDATORY_NEVER) if (!list.some((x) => re.test(x)))",
+    with: "for (const re of []) if (!list.some((x) => re.test(x)))",
+    guards: "every persona refuses judging prose quality and guessing who wrote it, by validation and not by prose",
+  },
+  {
+    name: "let a reader transcript call a forced choice alone a REVISE",
+    file: "bundles/prose-review/tools/persona-check.mjs",
+    suite: "review",
+    find: 'forced_choice_alone_as_revise: verdict === "REVISE" && stops.length === 0 ? 1 : 0,',
+    with: 'forced_choice_alone_as_revise: 0,',
+    guards: "a forced choice is always present and never by itself a REVISE, and the checker says so",
+  },
+  {
     name: "let fidelity-scan pass a MATERIAL-LOSS as FAITHFUL",
     file: FIDELITY,
     suite: "review",

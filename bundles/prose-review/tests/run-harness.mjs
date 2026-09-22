@@ -83,7 +83,7 @@ import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { renderReport, scanFidelity } from "../tools/fidelity-scan.mjs";
-import { structureFixtures, structureTask } from "./structure-harness.mjs";
+import { loadStructureManifest, structureFixtures, structureTask } from "./structure-harness.mjs";
 import { mediumFixtures, mediumTask } from "./medium-harness.mjs";
 
 const TESTS = dirname(fileURLToPath(import.meta.url));
@@ -135,6 +135,19 @@ const CRITICS = {
     phrase: { negative: "survives delivery", positive: "breaks in the medium" },
     fixtures: mediumFixtures,
     task: mediumTask,
+  },
+  // One prompt, many readers: the persona is an INPUT staged beside the draft, never a
+  // template. Fixtures are leave-one-out per persona over the same twelve argumentative
+  // essays the structure critic uses; there are no positives, because no material exists
+  // where "this reader would stop here" is known by construction (G spec §8).
+  reader: {
+    agent: "primitives/agents/prose-reader-critic/agent.md",
+    vocabulary: ["CLEAN", "REVISE"],
+    contract: ["uncited", "authorship_claims", "missing_forced_choice"],
+    finding: /\*\*WHERE I STOPPED\*\*/g,
+    phrase: { negative: "reader finishes", positive: "reader stops" },
+    fixtures: readerFixtures,
+    task: readerTask,
   },
   structure: {
     agent: "primitives/agents/prose-structure-critic/agent.md",
@@ -279,6 +292,44 @@ function voiceFixtures(opts = {}) {
   return [...negatives, ...positives];
 }
 
+/**
+ * Reader fixtures: every shipped persona × the leave-one-out essay list the structure
+ * fixtures name. `--only` accepts `n-<persona>-<essay>`; `--personas a,b` narrows the
+ * personas. Staged inputs are `persona.md` and `draft.md`; the persona file is validated
+ * by persona-check before staging so a malformed persona aborts prepare, not the run.
+ */
+function readerFixtures(opts = {}) {
+  const personasDir = join(TESTS, "..", "personas");
+  const corpus = join(REPO, "bundles", "prose-tell-scan", "tests", "corpus", "human-essays");
+  const essays = loadStructureManifest().leave_one_out ?? [];
+  const personas = readdirSync(personasDir).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, "")).sort()
+    .filter((p) => !opts.personas || opts.personas.includes(p));
+  return personas.flatMap((persona) => essays.map((rel) => ({
+    name: `n-${persona}-${rel.split("/").pop().replace(/\.txt$/, "")}`,
+    kind: "negative",
+    inputs: [
+      { as: "persona.md", from: join(personasDir, `${persona}.md`) },
+      { as: "draft.md", from: join(corpus, rel) },
+    ],
+  })));
+}
+
+function readerTask(staged) {
+  return [
+    "`persona.md` describes the reader you are. `draft.md` is the draft. Read the draft as",
+    "that reader and report where you stop, following your instructions exactly, including",
+    "the FORCED CHOICE and the closing one-line verdict.",
+    "",
+    "## persona",
+    "",
+    "```markdown",
+    staged["persona.md"].trim(),
+    "```",
+    "",
+    "You do not know who wrote the draft, and you will not guess.",
+  ].join("\n");
+}
+
 // ---------------------------------------------------------------------------
 // per-critic task text
 // ---------------------------------------------------------------------------
@@ -400,7 +451,9 @@ async function prepare(criticName, runId, opts) {
       inputs.push({ as: "provenance.json", from: join(caseDir, "provenance.json") });
     }
     for (const input of inputs) {
-      const text = stripFrontmatter(readFileSync(input.from, "utf8"));
+      const raw = readFileSync(input.from, "utf8");
+      // A persona file's frontmatter IS the brief (reads_for, never, forced_choice); every other staged file has its labels stripped.
+      const text = input.as === "persona.md" ? raw : stripFrontmatter(raw);
       const leak = leakCheck(`${f.name}/${input.as}`, text);
       if (leak) leaks.push(leak);
       staged[input.as] = text;
@@ -868,6 +921,7 @@ async function main(argv) {
   const opts = {
     only: flags.only?.split(","),
     positives: flags.positives?.split(","),
+    personas: flags.personas?.split(","),
     fixturesDir: flags["fixtures-dir"] ? resolve(flags["fixtures-dir"]) : undefined,
     draws,
   };

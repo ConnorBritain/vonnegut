@@ -81,6 +81,18 @@ const CRITICS = {
     },
     report: (...a) => mediumAgreement(...a),
   },
+  reader: {
+    clean: "CLEAN",
+    flag: "REVISE",
+    contract: ["uncited", "authorship_claims", "missing_forced_choice"],
+    labels: {
+      negative: "negative (reader finishes, n=%N%):   ",
+      positive: "positive (reader stops, n=%N%):      ",
+      uncited: "stops without a quoted sentence: %V%          <- must be 0",
+      authorship_claims: "any claim about machine authorship: %V%        <- must be 0",
+      missing_forced_choice: "transcripts without a FORCED CHOICE: %V%       <- must be 0",
+    },
+  },
   structure: {
     clean: "CLEAN",
     flag: "REVISE",

@@ -22,6 +22,7 @@
     "./agents/prose-fidelity-critic.md",
     "./agents/prose-reviser.md",
     "./agents/prose-structure-critic.md",
-    "./agents/prose-medium-critic.md"
+    "./agents/prose-medium-critic.md",
+    "./agents/prose-reader-critic.md"
   ]
 }

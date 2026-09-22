@@ -100,6 +100,15 @@ profile it does not spawn and the report says so. Short or trivial prose skips
 the protocol entirely, and this session should say so out loud when it does
 rather than running five agents on a paragraph.
 
+`prose-reader-critic` spawns only when the author names a reader — "read this
+as a skeptical CTO", "as someone who has never read me", "as the person who
+wants me to be wrong" — one clean-context agent per named persona, in the same
+fan-out. Paste the persona file from `personas/` (or the project's own, in the
+same shape, validated with `tools/persona-check.mjs`) beside the draft; the
+prompt never embeds one. Each returns where that reader stops and one forced
+choice. Never spawned by default, and the consolidation cap in step 3 applies
+across personas as across critics.
+
 ## Step 3 — consolidation, and the part to get right
 
 This session dedupes findings by span, ranks by severity × confidence, and emits
