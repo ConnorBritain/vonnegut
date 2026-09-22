@@ -1,6 +1,6 @@
 # prose-outline — design
 
-**Status: v0.1.0.** The planning record is
+**Status: v0.1.1.** The planning record is
 [`docs/roadmap/A-prose-outline.md`](../../docs/roadmap/A-prose-outline.md).
 
 ## The split

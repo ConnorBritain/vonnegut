@@ -1,8 +1,7 @@
 # prose-bible — design
 
-**Status: v0.1.0 in progress.** The planning record is
-[`docs/roadmap/C-prose-bible.md`](../../docs/roadmap/C-prose-bible.md);
-durable rationale moves here as deliverables land.
+**Status: v0.1.0.** The planning record is
+[`docs/roadmap/C-prose-bible.md`](../../docs/roadmap/C-prose-bible.md).
 
 ## The split
 

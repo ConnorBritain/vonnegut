@@ -40,10 +40,10 @@ labelled local candidates describe their status at the time of recording.
 
 ## prose-bible
 
-### [0.1.0] — in progress
+### [0.1.0] — a continuity index, a per-project bible and a critic that cites two places or nothing
 
 Roadmap item C ([`docs/roadmap/C-prose-bible.md`](docs/roadmap/C-prose-bible.md));
-deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 - **Added** the bundle scaffold: four manifests, marketplace entry, README,
   AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets, a selftest wired into
@@ -79,6 +79,17 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
   neither has been run here.
 
 ## prose-outline
+
+### [0.1.1] — definition-pattern fixes in the shared text-index
+
+Release notes in [`RELEASE-v0.1.1.md`](bundles/prose-outline/RELEASE-v0.1.1.md).
+
+- **Changed** `lib/text-index.mjs`: a proper name with one lower-case noun is a
+  defined term in the is-a pattern only; definitions stop at commas; function
+  words at either edge of a lower-case term are trimmed; heading markers count
+  as sentence starts. Found while prose-bible built its index over the same
+  module; the parity and outline-scan fixtures are regenerated and reviewed.
+  `prose-bible` ships the file byte for byte and `check-packaging.mjs` pins it.
 
 ### [0.1.0] — outlines, implied outlines, diffs and a per-project store
 

@@ -4,10 +4,9 @@ Continuity for a project: what a character looks like, what a term means, when
 a thing happened, which metaphor you already used, which anecdote you already
 told. One skill, one read-only critic.
 
-**Status: v0.1.0 in progress.** Deliverables land one commit at a time and are
-tracked in [`docs/roadmap/STATUS.md`](../../docs/roadmap/STATUS.md); the plan
-is [`docs/roadmap/C-prose-bible.md`](../../docs/roadmap/C-prose-bible.md).
-Until that checklist is complete this bundle is a candidate, not a release.
+**Status: v0.1.0.** See [`RELEASE-v0.1.0.md`](RELEASE-v0.1.0.md) for what
+ships and the evidence; the planning record is
+[`docs/roadmap/C-prose-bible.md`](../../docs/roadmap/C-prose-bible.md).
 
 | Component | What it is | What it does |
 |---|---|---|

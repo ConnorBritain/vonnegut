@@ -1,6 +1,6 @@
 {
   "name": "prose-outline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Outlines for prose: brief to checkable outline, draft to implied outline, outline diffs, per-project persistence with undo.",
   "author": {
     "name": "Connor England",

@@ -1,9 +1,10 @@
 # C. prose-bible
 
-Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
-`bundles/prose-bible/README.md` and `DESIGN.md`.
-
+Status: **shipped** as prose-bible 0.1.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-bible/README.md`, `DESIGN.md` and
+`RELEASE-v0.1.0.md`; read those for what shipped. Decisions taken during the
+build that this spec did not anticipate are in §9.
 ## 1. Goal and non-goals
 
 A per-project continuity store — characters, defined terms, timeline, recurring

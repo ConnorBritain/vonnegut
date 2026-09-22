@@ -20,16 +20,17 @@ Observed frequencies are tendencies, not compulsory quotas. Missing checks stay
 visible. These tools do not guarantee resemblance, quality, factual accuracy or
 detector outcomes. Example facts are not automatically facts about you.
 
-## Four independently installable bundles
+## Five independently installable bundles
 
 | Bundle | Version | Purpose |
 |---|---|---|
 | [prose-author](bundles/prose-author/) | 0.6.0 | Drafting, profiles, persistent preferences and opt-in history |
 | [prose-review](bundles/prose-review/) | 0.4.0 | Voice, fidelity and structure critics, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
-| [prose-outline](bundles/prose-outline/) | 0.1.0 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |
+| [prose-outline](bundles/prose-outline/) | 0.1.1 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |
+| [prose-bible](bundles/prose-bible/) | 0.1.0 | Cross-file continuity index, per-project bible, and a critic that cites two places or nothing |
 
-Install all four for the complete writing workflow. Eight agents and four
+Install all five for the complete writing workflow. Nine agents and five
 skills ship; the experimental `prose-pattern-critic` source remains held.
 
 ## Install
@@ -46,9 +47,9 @@ node install-prose-codex.mjs
 node install-prose-codex.mjs --check
 ```
 
-This installs the local checkout's four plugins and eight custom agents. Keep
+This installs the local checkout's five plugins and nine custom agents. Keep
 the checkout at that path. Start a new session, then ask for `$prose-draft`,
-`$prose-style-tune`, `$tell-scan` or `$prose-outline`.
+`$prose-style-tune`, `$tell-scan`, `$prose-outline` or `$prose-bible`.
 
 ### Claude Code
 
@@ -58,9 +59,10 @@ the checkout at that path. Start a new session, then ask for `$prose-draft`,
 /plugin install prose-review@vonnegut
 /plugin install prose-tell-scan@vonnegut
 /plugin install prose-outline@vonnegut
+/plugin install prose-bible@vonnegut
 ```
 
-Restart the session and ask for `prose-draft`, `prose-style-tune` or `prose-outline`.
+Restart the session and ask for `prose-draft`, `prose-style-tune`, `prose-outline` or `prose-bible`.
 For loose files, clone the repo and run `./install.sh` (Windows: `./install.ps1`).
 Use `--project` (`-Project` on Windows) to install into the current project.
 

@@ -12,6 +12,13 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 
 | mutation | tests failed | what it guards |
 |---|---|---|
+| the shared text-index copy drifts from prose-outline's canonical | 1 | a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name |
+| bible store writes without approval | 3 | no bible revision is written without the approval flag |
+| bible store accepts a stale expected revision | 3 | a stale read cannot overwrite a newer bible |
+| bible store picks the first identity when none is selected | 1 | with several identities and no default the store asks, never picks |
+| index-diff accepts a document that is not an index | 1 | the diff refuses input that is not an entity-index/1, rather than reporting nothing on it |
+| the bible proposal resolves a two-valued attribute itself | 1 | an attribute the text states two ways is flagged for the writer, never chosen by the tool |
+| the continuity harness's echo rule never flags | 6 | every continuity fixture's class is re-derived from the stated echo rule |
 | outline store writes without approval | 5 | nothing persistent is saved without explicit approval |
 | outline store accepts a stale expected revision | 7 | a caller working from a stale read cannot overwrite a newer revision |
 | outline store undoes past the first revision | 1 | undo cannot invent a revision zero |

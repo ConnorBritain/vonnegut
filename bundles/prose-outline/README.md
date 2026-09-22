@@ -2,7 +2,7 @@
 
 Outlines for prose. One skill, no agents.
 
-**Status: v0.1.0.** See [`RELEASE-v0.1.0.md`](RELEASE-v0.1.0.md) for what
+**Status: v0.1.1.** See [`RELEASE-v0.1.1.md`](RELEASE-v0.1.1.md) and [`RELEASE-v0.1.0.md`](RELEASE-v0.1.0.md) for what
 ships and the evidence; the planning record is
 [`docs/roadmap/A-prose-outline.md`](../../docs/roadmap/A-prose-outline.md).
 
