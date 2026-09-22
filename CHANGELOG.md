@@ -143,10 +143,10 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-outline/RELEASE-v0.1.0.md).
 
 ## prose-research
 
-### [0.1.0] — in progress
+### [0.1.0] — sources pinned, quotes checked, claims ledgered
 
 Roadmap item E ([`docs/roadmap/E-prose-research.md`](docs/roadmap/E-prose-research.md));
-deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md).
 
 - **Added** the bundle scaffold: four manifests, marketplace entry, README,
   AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets, a selftest wired into
@@ -172,6 +172,19 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
   neither has been run here. Mutations registered under the `research` suite.
 
 ## prose-review
+
+### [0.5.0] — the fidelity critic reads provenance
+
+Roadmap item E; release notes in [`RELEASE-v0.5.0.md`](bundles/prose-review/RELEASE-v0.5.0.md).
+
+- **Changed** `prose-fidelity-critic` (primitive + byte-identical bundle copy):
+  an optional `provenance-scan` block makes a quote atom that drifted from its
+  ledger source an item-1 finding; nothing else changes and truth is still
+  refused. `meta.yaml` records the optional tool and the refusal.
+- **Added** provenance fidelity fixtures (three, on Bacon's *Of Anger*; two
+  class D relative to the scan, one class A) with `provenance/` directories the
+  harness scans at prepare time through prose-research's tool, staging only the
+  scan output; `selftest.mjs` re-derives `provenance_says`.
 
 ### [0.4.0] — a third critic: structure
 
@@ -228,6 +241,17 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 ---
 
 ## prose-author
+
+### [0.8.0] — the claim auditor can point at the ledger
+
+Roadmap item E; release notes in [`RELEASE-v0.8.0.md`](bundles/prose-author/RELEASE-v0.8.0.md).
+
+- **Changed** `draft-claim-audit.mjs`: a disclosed claim may carry
+  `ledger: "kN"` when a `claim-audit-provenance/1` packet accompanies the
+  request; an id the packet lacks, or an id without a packet, is refused; a
+  malformed packet is refused before any row is read; without a packet nothing
+  changes. `references/claim-audit.md` says when to cite an entry and that a
+  pointer is not verification. Five contract checks in `suite-voice-draft.mjs`.
 
 ### [0.7.0] — corpus intake from where the writing lives
 

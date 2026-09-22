@@ -1,8 +1,7 @@
 # prose-research — design
 
-**Status: v0.1.0 in progress.** The planning record is
-[`docs/roadmap/E-prose-research.md`](../../docs/roadmap/E-prose-research.md);
-durable rationale moves here as deliverables land.
+**Status: v0.1.0.** The planning record is
+[`docs/roadmap/E-prose-research.md`](../../docs/roadmap/E-prose-research.md).
 
 ## The split
 

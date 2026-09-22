@@ -15,11 +15,11 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 | Bundle | Version |
 |---|---|
-| prose-author | 0.7.0 |
+| prose-author | 0.8.0 |
 | prose-bible | 0.1.0 |
 | prose-outline | 0.1.1 |
 | prose-research | 0.1.0 |
-| prose-review | 0.4.0 |
+| prose-review | 0.5.0 |
 | prose-tell-scan | 0.1.1 |
 
 ## Deliverables
@@ -62,7 +62,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] D6 — register/form suggestion heuristics + progress report against both floors, numbers re-derived by test; mutations (select-all, history flag)
 - [x] D7 — prose-author version bump, RELEASE notes, CHANGELOG, INSTALL/README, version pin above, ROADMAP status → shipped
 
-### E. prose-research — in-progress
+### E. prose-research — shipped
 
 - [x] E1 — bundle scaffold (manifests, marketplace, README, AGENTS.md, PROTOCOL.md, wiring/, install scripts, shared-file pairs for `registry-reader`/`revision-store`); selftest wired
 - [x] E2 — `research-dossier/1` + `claims-ledger/1` schemas; `source-intake.mjs` (URL, file, PDF via pdftotext-or-refuse) + fixtures
@@ -70,7 +70,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] E4 — `research-store.mjs` (store contract) + `prose-research` SKILL.md + meta.yaml; negative test recorded
 - [x] E5 — `provenance-scan.mjs` + `prose-fidelity-critic` optional provenance block (quote atoms only) + new fixtures in the four classes; existing runs still re-check; prose-review bump
 - [x] E6 — `claim-audit.md` provenance packet + `draft-claim-audit.mjs` ledger ids + contract tests; prose-author bump
-- [ ] E7 — RELEASE notes for all three bundles, CHANGELOG, README, version pin above, ROADMAP status → shipped
+- [x] E7 — RELEASE notes for all three bundles, CHANGELOG, README, version pin above, ROADMAP status → shipped
 
 ### F. prose-repurpose — planned
 

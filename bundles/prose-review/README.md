@@ -4,7 +4,7 @@ Three read-only critics and one revising transformer for prose. Every rewrite
 this bundle produces goes through the fidelity gate before it reaches the
 author.
 
-**Status: v0.4 — three critics and a reviser.**
+**Status: v0.5 — three critics and a reviser; the fidelity critic reads provenance.**
 
 - `prose-voice-critic`: does this draft sound like the person it is supposed to
   be by, judged against their own corpus.

@@ -12,6 +12,12 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 
 | mutation | tests failed | what it guards |
 |---|---|---|
+| quote matching widened beyond whitespace to case and punctuation | 7 | a changed case or comma is drift; whitespace is the only normalisation |
+| an offline link check reports ok | 1 | not-evaluated is never ok |
+| the research store writes without approval | 3 | no dossier or ledger revision is written without the approval flag |
+| a ledger accepts confidence the writer did not label | 2 | confidence is a label the writer gives; the schema refuses anything else |
+| a ledger may cite a source the dossier does not have | 2 | every ledger claim points at a source the dossier holds |
+| provenance-scan associates an atom with any ledger entry regardless of shared words | 1 | an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source |
 | corpus ingest writes every candidate, not the selected ids | 5 | only the ids the writer selected are written into the human corpus |
 | corpus ingest accepts a selection the writer did not attest | 4 | attest must be literally true, given by the writer for this batch, or nothing is written |
 | corpus ingest drops the 200-word floor | 2 | a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude |
@@ -119,13 +125,13 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | allow a sentence to cite a claim outside the closed ledger | 2 | every factual sentence is restricted to the pre-writing claim ledger |
 | allow an unused retrospective claim into the ledger | 4 | the claim ledger is a closed pre-writing plan rather than a post-hoc dump |
 | allow prose to be emitted before its supposed pre-writing ledger | 2 | source/3 mechanically proves the claim ledger precedes expressive prose |
-| stop reconciling independent audit sentence ids | 2 | an audit decision cannot drift onto a different sentence |
-| assemble a sentence the independent auditor rejected | 3 | fabricated quotations, citations, and biographies cannot pass through as claims |
-| accept opaque independent labels with no rationale | 2 | every independent basis decision remains inspectable clause by clause |
+| stop reconciling independent audit sentence ids | 1 | an audit decision cannot drift onto a different sentence |
+| assemble a sentence the independent auditor rejected | 2 | fabricated quotations, citations, and biographies cannot pass through as claims |
+| accept opaque independent labels with no rationale | 1 | every independent basis decision remains inspectable clause by clause |
 | turn ordinary request entailments back into external claims | 1 | buying and ownership roles remain usable reasoning without licensing contingent facts |
-| let a historical disclosure cite words absent from its sentence | 2 | historical audit evidence remains bound to exact prose |
-| detach a current disclosure from its deterministic sentence evidence | 3 | a current audit-owned claim is mechanically anchored to the complete immutable sentence |
-| let a keep row smuggle claims into the audit overlay | 2 | only an explicit disclose decision may append to the verification queue |
+| let a historical disclosure cite words absent from its sentence | 1 | historical audit evidence remains bound to exact prose |
+| detach a current disclosure from its deterministic sentence evidence | 2 | a current audit-owned claim is mechanically anchored to the complete immutable sentence |
+| let a keep row smuggle claims into the audit overlay | 1 | only an explicit disclose decision may append to the verification queue |
 | drop audit-owned claims from the public verification record | 3 | an independently discovered premise cannot disappear between audit and publication |
 | let the independent auditor trust the drafter's labels | 1 | the factual audit is independent rather than the same self-report twice |
 | let hard factual failures become ordinary disclosures | 1 | fabricated citations, attributed wording, biography, and leakage remain fatal |

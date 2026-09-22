@@ -13,6 +13,8 @@ The useful installation is the bundles together:
   outline, diffs, and per-project persistence under the shared identity registry.
 - `prose-bible` supplies `$prose-bible` and the continuity critic: a cross-file index of
   names, terms, dates and repeats, a per-project bible, and contradictions cited two places.
+- `prose-research` supplies `$prose-research`: sources pinned by sha, a dossier and claims
+  ledger, and deterministic quote, link and coverage checks; provenance for the fidelity critic.
 
 `prose-author` still drafts when either companion is unavailable, but it labels the result
 **UNGATED** and names the missing check. Installing all three gives the workflow its intended
@@ -28,7 +30,7 @@ node install-prose-codex.mjs
 ```
 
 The default installs **this local checkout**, including uncommitted candidate changes;
-it does not download GitHub main. The installer adds the checkout as a Codex marketplace, installs and enables all five
+it does not download GitHub main. The installer adds the checkout as a Codex marketplace, installs and enables all six
 plugins, and renders the nine harness-neutral agent prompts as read-only personal Codex agents
 under `~/.codex/agents/`. It is safe to rerun: it updates files it generated and refuses to
 overwrite an agent file it does not own.
@@ -86,6 +88,7 @@ then install the plugins:
 /plugin install prose-review@vonnegut
 /plugin install prose-outline@vonnegut
 /plugin install prose-bible@vonnegut
+/plugin install prose-research@vonnegut
 ```
 
 Replace the example path with your real checkout. For the published repository
@@ -98,13 +101,14 @@ instead, use the GitHub source below. It does not include unpublished changes:
 /plugin install prose-review@vonnegut
 /plugin install prose-outline@vonnegut
 /plugin install prose-bible@vonnegut
+/plugin install prose-research@vonnegut
 ```
 
 Or install loose files from a clone:
 
 ```bash
 ./install.sh voice-profile-render voice-draft voice-feedback-interpret voice-rhetoric-measure \
-  prose-draft prose-style-tune prose-corpus tell-scan prose-outline prose-bible \
+  prose-draft prose-style-tune prose-corpus tell-scan prose-outline prose-bible prose-research \
   prose-voice-critic prose-fidelity-critic prose-structure-critic prose-reviser prose-continuity-critic
 ```
 

@@ -1,9 +1,11 @@
 # E. prose-research
 
-Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
-`bundles/prose-research/README.md` and `DESIGN.md`.
-
+Status: **shipped** as prose-research 0.1.0, with prose-review 0.5.0 and prose-author
+0.8.0 (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in [`STATUS.md`](STATUS.md)).
+**Historical planning record.** The durable rationale now lives in
+`bundles/prose-research/README.md`, `DESIGN.md` and the three release notes;
+read those for what shipped. Decisions taken during the build that this spec did
+not anticipate are in §9.
 ## 1. Goal and non-goals
 
 Source intake (URL, PDF text, notes) → a dossier of quotable passages with

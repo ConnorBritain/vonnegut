@@ -1,6 +1,6 @@
 {
   "name": "prose-review",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Three read-only critics and one revising transformer for prose: does this draft sound like its author, did a revision keep what it had to, does its structure carry its argument, and apply a plan of edits under a fidelity gate.",
   "author": {
     "name": "Connor England",

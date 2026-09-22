@@ -47,7 +47,7 @@ for how a session picks up from here.
 | 1 | [B. prose-structure-critic](#b-prose-structure-critic) | `prose-review` | [B-prose-structure-critic.md](roadmap/B-prose-structure-critic.md) | shipped |
 | 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | shipped |
 | 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | shipped |
-| 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | in-progress |
+| 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | shipped |
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | planned |
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | planned |
 
@@ -272,7 +272,7 @@ preserved a quote but the source disagrees; existing fidelity harness runs still
 re-check byte-for-byte; claim-audit contract tests extended; mutations for the
 whitespace-normalisation and offline `not-evaluated` guards.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## F. prose-repurpose
 
