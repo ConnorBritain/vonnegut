@@ -1,0 +1,67 @@
+# Metadata for the prose-corpus skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". This file
+# exists because the contract and an honest per-harness enforcement label are
+# not optional for any surface.
+
+name: prose-corpus
+kind: author
+surface: skill
+bundle: prose-author
+
+# Why author: it writes files — corpus samples — which is the one thing a
+# reviewer or planner may never do. The same denied-inputs discipline as
+# prose-draft applies: nothing it reads may become a sample by inference.
+
+contract:
+  read_only: false
+  writes: human-corpus-samples-with-provenance
+  scope: the selected identity's samples_dir, corpus/human only
+  clean_context: false
+  deterministic: partial    # importers, ingest and progress are scripts; selection and attestation are conversation
+  verdict: null
+
+  denied_inputs:
+    - the tell catalog, in any form
+    - corpus/ai and corpus/approved (other contracts own them)
+    - a model-drafted piece presented as human
+
+  refuses:
+    - Setting attest from an inference, a suggestion or a previous batch
+    - Guessing which mbox address is the writer's
+    - Writing anything but the selected ids, anywhere but corpus/human
+    - Enabling history or rhetoric collection, touching preferences, running calibrate
+    - Dating an undated piece today
+    - Stating or implying who wrote a piece
+
+  tools:
+    - tools/import-substack.mjs
+    - tools/import-gdocs.mjs
+    - tools/import-vault.mjs
+    - tools/import-mbox.mjs
+    - tools/corpus-ingest.mjs    # selection schema enforces attest === true; word floor; progress re-derived from disk
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      The ingest script refuses a selection without a literal attest: true and
+      writes only listed ids; that the model asks before setting the flag is a
+      prompt rule, not a harness guarantee.
+  cursor:
+    enforcement: partial
+    notes: >-
+      Scripts behave identically. Skill dispatch is absent; invoke by name.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same. Use the bundle's AGENTS.md block so the attestation is asked per batch.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      The scripts port intact; "attest only after a yes, per batch" and "never
+      guess the writer's address" are prose. Keep both if you shorten it.
+
+requires:
+  node: Dependency-free scripts require Node.js.
+  prose-tell-scan: Optional. Calibration reads what this writes; without it ingestion works and calibration is reported unavailable.

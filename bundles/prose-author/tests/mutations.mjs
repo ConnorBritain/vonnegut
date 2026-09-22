@@ -80,6 +80,7 @@ const SUITES = {
 };
 const OUTLINE_TOOLS = "bundles/prose-outline/skills/prose-outline/tools";
 const BIBLE_TOOLS = "bundles/prose-bible/skills/prose-bible/tools";
+const CORPUS_INGEST = "bundles/prose-author/skills/prose-corpus/tools/corpus-ingest.mjs";
 
 const EXEMPLARS = `${TOOLS}/exemplars.mjs`;
 const VERIFY = `${TOOLS}/verify.mjs`;
@@ -142,6 +143,11 @@ export function createSandbox() {
  * meaningless rather than merely failing.
  */
 export const MUTATIONS = [
+  // prose-corpus (docs/roadmap/D-corpus-ingestion.md). Covered by the author suite (corpus-ingestion).
+  { name: "corpus ingest writes every candidate, not the selected ids", file: CORPUS_INGEST, find: "  for (const id of selection.ids) {", with: "  for (const id of manifest.candidates.map((c) => c.id)) {", guards: "only the ids the writer selected are written into the human corpus" },
+  { name: "corpus ingest accepts a selection the writer did not attest", file: CORPUS_INGEST, find: '  if (s?.attest !== true) errors.push("attest must be literally true', with: '  if (false) errors.push("attest must be literally true', guards: "attest must be literally true, given by the writer for this batch, or nothing is written" },
+  { name: "corpus ingest drops the 200-word floor", file: CORPUS_INGEST, find: "    if (count < MIN_WORDS) { refused.push({ id, why: `${count} words, needs ${MIN_WORDS}` }); continue; }", with: "    if (false) { continue; }", guards: "a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude" },
+  { name: "corpus ingest enables history as a side effect", file: CORPUS_INGEST, find: "    mkdirSync(target, { recursive: true });", with: '    mkdirSync(target, { recursive: true }); writeFileSync(join(samplesDir, "history-enabled.json"), "{}");', guards: "ingestion writes under corpus/human and nothing else — no history, no preferences, no profile" },
   // prose-bible (docs/roadmap/C-prose-bible.md). Covered by its own suite, which also pins the shared copies.
   { suite: "bible", name: "the shared text-index copy drifts from prose-outline's canonical", file: `${BIBLE_TOOLS}/lib/text-index.mjs`, find: "export function capitalisedRuns(source, { markdown = true } = {}) {", with: "export function capitalisedRuns(source, { markdown = true } = {}) { /* drifted */", guards: "a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name" },
   { suite: "bible", name: "bible store writes without approval", file: `${BIBLE_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "no bible revision is written without the approval flag" },

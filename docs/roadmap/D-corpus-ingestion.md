@@ -1,6 +1,6 @@
 # D. Corpus ingestion
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
+Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
 [`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
 `bundles/prose-author/DESIGN.md` and the skill README.
 
@@ -115,6 +115,26 @@ PROFILES.md's), and the skill says calibration is unavailable.
 - **mbox sender is explicit.** Guessing which address is the writer is exactly
   the inference this repo refuses.
 - **Attestation per batch, in the writer's words**, mirroring `--attest`.
+
+### Build-time decisions
+
+- **Candidates carry their text.** The manifest embeds each candidate's
+  extracted text, so `corpus-ingest.mjs` needs no importer at write time and an
+  mbox message — which is not a file — ingests like a file. The cost is a large
+  task-local JSON; the benefit is one write path with one contract.
+- **Register goes into frontmatter as `profile:`**, which tell-scan's profile
+  resolver already reads, plus `form:`; progress groups by both. An identity's
+  `samples_dir` is one profile directory, so register is a file property, not a
+  directory.
+- **An undated piece is refused, never dated today.** Export metadata or
+  nothing; the writer can supply a date by re-running with a corrected
+  manifest. A file's mtime is when it was downloaded, and calibrate's age
+  reasoning would be fed a lie.
+- **Progress is re-derived from disk**, never from what was just written, and
+  the suite recounts it independently — the pattern `cross-count.mjs` set.
+- **The word floor, profile floor and calibration floor are reproduced as
+  constants** in `lib/provenance.mjs` with their origins named, and the parity
+  test asserts the word floor equals tell-scan's `MIN_SAMPLE_WORDS`.
 
 ## 10. Deliverables
 

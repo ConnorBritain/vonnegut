@@ -199,6 +199,30 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 
 ## prose-author
 
+### [0.7.0] — in progress
+
+Roadmap item D ([`docs/roadmap/D-corpus-ingestion.md`](docs/roadmap/D-corpus-ingestion.md));
+deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+
+- **Added** the `prose-corpus` skill: four importers (a Substack export, a
+  Google Docs export folder, a Markdown vault, an mbox with an explicit
+  `--from`) that read a folder and propose candidates with title, date from
+  export metadata or null, word count, a register suggestion with its reason
+  and the text; `corpus-candidates/1` and `corpus-selection/1` (whose `attest`
+  must be literally `true`, given by the writer per batch); and
+  `corpus-ingest.mjs`, which writes exactly the selected ids under the
+  identity's `samples_dir/corpus/human/[group]` with the provenance
+  frontmatter `prose-tell-scan` reads plus `profile`, `form` and
+  `imported_by`, refuses pieces under 200 words, undated pieces and existing
+  files by name, and prints progress against the profile floor and the
+  calibration floor re-derived from disk.
+- **Added** `tests/suite-corpus-ingestion.mjs` with four synthetic fixture
+  exports and generated expected manifests, a parity check that runs
+  prose-tell-scan's own `readProvenance` over every file written, and four
+  mutations (select everything, attest defaults true, floor removed, history
+  enabled as a side effect). `PROFILES.md` "Who reads what" gains the writer
+  row; `PROTOCOL.md` gains "Corpus intake".
+
 ### [0.6.0] — shared writing identities
 
 - **Added** a harness-independent `voice-identity-registry/1` outside plugin

@@ -100,3 +100,17 @@ numerical history remain separate and outside plugin caches. Resolve once before
 the run snapshot, then keep those inputs fixed. A one-off author can opt out.
 History still requires consent, and generated prose never becomes human corpus
 material automatically. See [identity operations](skills/prose-draft/references/identities.md).
+
+## Corpus intake (v0.7)
+
+Existing writing enters `corpus/human/` through the `prose-corpus` skill and
+nowhere else. An importer reads a Substack export, a Google Docs export folder,
+a Markdown vault or an mbox and proposes candidates with a register suggestion
+and its reason; the writer selects, names the register and group, and attests
+per batch, in their own words, that they wrote the pieces unaided; ingest
+writes the selected ids with the provenance frontmatter `prose-tell-scan`
+reads and prints progress against the profile floor and the calibration floor.
+Nothing is attested by inference, no mbox sender is guessed, no history or
+preference is touched, and no profile is refreshed as a side effect — offer the
+existing refresh path afterwards. Without `prose-tell-scan`, intake still works
+and calibration is reported unavailable.

@@ -1,0 +1,58 @@
+{
+  "schema": "corpus-candidates/1",
+  "importer": "gdocs",
+  "source_root": "<gdocs>",
+  "candidates": [
+    {
+      "id": "c001",
+      "title": "Field notes on editing",
+      "date": "2023-11-20",
+      "words": 307,
+      "suggested": {
+        "register": "essay",
+        "form": "note",
+        "why": "4 paragraphs of continuous prose; titled \"Field notes on editing\""
+      },
+      "path": "Field-notes-on-editing.html",
+      "text": "I kept a notebook for eleven years before I understood what it was for. It was not for remembering, though I told myself that; the entries I reread are the ones I already remember, and the ones I have forgotten I do not go looking for. It was for slowing down. A sentence written by hand takes as long as it takes, and in that time the thought has to hold still and be looked at, which most thoughts cannot survive. The notebook was a sieve. What came through it was smaller than what went in, and better, and mine in a way that the quick things were not.\n\nPeople ask how to start one and I tell them the truth, which is that the first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince. But you throw away the idea that they were the thing. The thing starts when you stop performing for the reader you imagine looking over your shoulder, and that takes about three notebooks of practice, and nobody I know has skipped it. The hand gets tired before the performance does, which is the mercy of the medium.\n\nThere is a version of this advice that turns into a product, and I want to be careful not to give it. Nobody needs a particular pen. The paper does not matter. What matters is that the tool cannot be edited, so the sentence you wrote is the sentence you wrote, and you have to live with it long enough to see what it actually says. Every editing tool I have used lets me hide from that. The notebook does not, and that is the whole of its virtue, and it is enough.\n\nDon’t trust the first draft & don't trust the fourth."
+    },
+    {
+      "id": "c002",
+      "title": "Letter to the board",
+      "date": null,
+      "words": 209,
+      "suggested": {
+        "register": "correspondence",
+        "form": "note",
+        "why": "opens with a salutation and closes with a sign-off; titled \"Letter to the board\""
+      },
+      "path": "Letter to the board.txt",
+      "text": "Dear board,\n\nI kept a notebook for eleven years before I understood what it was for. It was not for remembering, though I told myself that; the entries I reread are the ones I already remember, and the ones I have forgotten I do not go looking for. It was for slowing down. A sentence written by hand takes as long as it takes, and in that time the thought has to hold still and be looked at, which most thoughts cannot survive. The notebook was a sieve. What came through it was smaller than what went in, and better, and mine in a way that the quick things were not.\n\nPeople ask how to start one and I tell them the truth, which is that the first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince. But you throw away the idea that they were the thing. The thing starts when you stop performing for the reader you imagine looking over your shoulder, and that takes about three notebooks of practice, and nobody I know has skipped it. The hand gets tired before the performance does, which is the mercy of the medium.\n\nBest,\nAna"
+    },
+    {
+      "id": "c003",
+      "title": "setup guide",
+      "date": null,
+      "words": 219,
+      "suggested": {
+        "register": "technical",
+        "form": "note",
+        "why": "contains code; titled \"setup guide\""
+      },
+      "path": "setup-guide.md",
+      "text": "# Setup guide\n\n## Install\n\n1. Clone the repository.\n2. Run `npm install`.\n3. Copy the config.\n\n## Configure\n\n- Set the port.\n- Set the token.\n- Set the path.\n\n```\nconst port = 8080;\n```\n\n## Run\n\nThere is a version of this advice that turns into a product, and I want to be careful not to give it. Nobody needs a particular pen. The paper does not matter. What matters is that the tool cannot be edited, so the sentence you wrote is the sentence you wrote, and you have to live with it long enough to see what it actually says. Every editing tool I have used lets me hide from that. The notebook does not, and that is the whole of its virtue, and it is enough.\n\n## Troubleshoot\n\nPeople ask how to start one and I tell them the truth, which is that the first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince. But you throw away the idea that they were the thing. The thing starts when you stop performing for the reader you imagine looking over your shoulder, and that takes about three notebooks of practice, and nobody I know has skipped it. The hand gets tired before the performance does, which is the mercy of the medium."
+    }
+  ],
+  "refused": [
+    {
+      "path": "Old-draft.docx",
+      "why": ".docx is not read here; export the document as HTML or plain text (File → Download → Web page / Plain text)"
+    }
+  ],
+  "limits": [
+    "Word counts use prose-tell-scan's word rule; dates come from export metadata and are null when absent, never today's.",
+    "Register and form are heuristic suggestions with a stated reason; the writer overrides them.",
+    "Nothing here says a human wrote a piece. Attestation is the writer's, given per batch at ingest.",
+    "Google's HTML export carries the document's styling as inline CSS; only text survives. Comments and suggestions are not exported and not read."
+  ]
+}

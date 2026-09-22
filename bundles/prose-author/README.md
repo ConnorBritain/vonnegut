@@ -51,6 +51,10 @@ never enters generation or repair.
 - An existing passage: preserve its supplied facts and qualifications during a
   rewrite, or pass it as coherence context for continuation. Generated text is
   never silently added to the human corpus.
+- Writing that lives elsewhere: a Substack export, a Google Docs folder, a
+  Markdown vault or an mbox is imported as candidates; you choose which pieces,
+  which register, and attest per batch that you wrote them. Only those are
+  written, with provenance, and progress toward both floors is reported.
 - A correction: “never use exclamation marks in replies” saves with a visible
   scope/version receipt and undo. Ordinary edits stay local; inferred
   preferences require approval. One word can be useful feedback.
@@ -66,6 +70,7 @@ conflicts ask for clarification.
 | --- | --- |
 | `prose-draft` skill | Prepare a writing task and invoke the production runner |
 | `prose-style-tune` skill | Save, scope, discover, compare, version and undo choices |
+| `prose-corpus` skill | Import existing writing as candidates; the writer selects and attests; write only those, with provenance |
 | `voice-profile-render` agent | Interpret cited human evidence for profile assembly |
 | `voice-draft` agent | Produce one candidate or bounded repair from authorized inputs |
 | `voice-feedback-interpret` agent | Propose narrow changes; never save its own proposal |

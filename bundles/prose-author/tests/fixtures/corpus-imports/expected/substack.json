@@ -1,0 +1,75 @@
+{
+  "schema": "corpus-candidates/1",
+  "importer": "substack",
+  "source_root": "<substack>",
+  "candidates": [
+    {
+      "id": "c001",
+      "title": "On keeping a notebook",
+      "date": "2024-03-01",
+      "words": 301,
+      "suggested": {
+        "register": "essay",
+        "form": "newsletter",
+        "why": "a published post; titled \"On keeping a notebook\""
+      },
+      "path": "posts/100001.on-keeping-a-notebook.html",
+      "text": "I kept a notebook for eleven years before I understood what it was for. It was not for remembering, though I told myself that; the entries I reread are the ones I already remember, and the ones I have forgotten I do not go looking for. It was for slowing down. A sentence written by hand takes as long as it takes, and in that time the thought has to hold still and be looked at, which most thoughts cannot survive. The notebook was a sieve. What came through it was smaller than what went in, and better, and mine in a way that the quick things were not.\n\nPeople ask how to start one and I tell them the truth, which is that the first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince. But you throw away the idea that they were the thing. The thing starts when you stop performing for the reader you imagine looking over your shoulder, and that takes about three notebooks of practice, and nobody I know has skipped it. The hand gets tired before the performance does, which is the mercy of the medium.\n\nThere is a version of this advice that turns into a product, and I want to be careful not to give it. Nobody needs a particular pen. The paper does not matter. What matters is that the tool cannot be edited, so the sentence you wrote is the sentence you wrote, and you have to live with it long enough to see what it actually says. Every editing tool I have used lets me hide from that. The notebook does not, and that is the whole of its virtue, and it is enough.\n\nA notebook, open"
+    },
+    {
+      "id": "c002",
+      "title": "A draft about pens, unsent",
+      "date": "2024-04-15",
+      "words": 211,
+      "suggested": {
+        "register": "essay",
+        "form": "newsletter",
+        "why": "a published post; titled \"A draft about pens, unsent\"; unpublished draft in the export"
+      },
+      "path": "posts/100002.a-draft-about-pens.html",
+      "text": "There is a version of this advice that turns into a product, and I want to be careful not to give it. Nobody needs a particular pen. The paper does not matter. What matters is that the tool cannot be edited, so the sentence you wrote is the sentence you wrote, and you have to live with it long enough to see what it actually says. Every editing tool I have used lets me hide from that. The notebook does not, and that is the whole of its virtue, and it is enough.\n\nI kept a notebook for eleven years before I understood what it was for. It was not for remembering, though I told myself that; the entries I reread are the ones I already remember, and the ones I have forgotten I do not go looking for. It was for slowing down. A sentence written by hand takes as long as it takes, and in that time the thought has to hold still and be looked at, which most thoughts cannot survive. The notebook was a sieve. What came through it was smaller than what went in, and better, and mine in a way that the quick things were not.\n\nThe pen is not the point — it never was."
+    },
+    {
+      "id": "c003",
+      "title": "Short one",
+      "date": "2024-05-02",
+      "words": 23,
+      "suggested": {
+        "register": "essay",
+        "form": "newsletter",
+        "why": "a published post; titled \"Short one\""
+      },
+      "path": "posts/100003.short-one.html",
+      "text": "Just a quick note to say the next issue is late. It will be worth it, or it will at least be long."
+    },
+    {
+      "id": "c004",
+      "title": null,
+      "date": null,
+      "words": 189,
+      "suggested": {
+        "register": "essay",
+        "form": "newsletter",
+        "why": "a published post; not listed in posts.csv (no date)"
+      },
+      "path": "posts/100005.orphan.html",
+      "text": "People ask how to start one and I tell them the truth, which is that the first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince. But you throw away the idea that they were the thing. The thing starts when you stop performing for the reader you imagine looking over your shoulder, and that takes about three notebooks of practice, and nobody I know has skipped it. The hand gets tired before the performance does, which is the mercy of the medium.\n\nThere is a version of this advice that turns into a product, and I want to be careful not to give it. Nobody needs a particular pen. The paper does not matter. What matters is that the tool cannot be edited, so the sentence you wrote is the sentence you wrote, and you have to live with it long enough to see what it actually says. Every editing tool I have used lets me hide from that. The notebook does not, and that is the whole of its virtue, and it is enough."
+    }
+  ],
+  "refused": [
+    {
+      "path": "posts/100006.empty.html",
+      "why": "no text after HTML conversion"
+    },
+    {
+      "path": "posts/100004.*.html",
+      "why": "listed in posts.csv but no HTML file"
+    }
+  ],
+  "limits": [
+    "Word counts use prose-tell-scan's word rule; dates come from export metadata and are null when absent, never today's.",
+    "Register and form are heuristic suggestions with a stated reason; the writer overrides them.",
+    "Nothing here says a human wrote a piece. Attestation is the writer's, given per batch at ingest.",
+    "Subtitles are not part of the body; the CSV's is_published flag is reported, not acted on."
+  ]
+}
