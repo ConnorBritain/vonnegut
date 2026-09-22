@@ -1,9 +1,10 @@
 # G. Reader-persona critics
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
-`primitives/agents/prose-reader-critic/README.md` and `bundles/prose-review/DESIGN.md`.
-
+Status: **shipped** as prose-review 0.7.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `primitives/agents/prose-reader-critic/README.md`,
+`bundles/prose-review/DESIGN.md` and `RELEASE-v0.7.0.md`; read those for what
+shipped. Decisions taken during the build that this spec did not anticipate are in §9.
 ## 1. Goal and non-goals
 
 "Read this as a skeptical CTO / a first-time reader / an acquisitions editor":
@@ -101,6 +102,18 @@ the consolidation cap applies across personas. Never spawned by default.
   with B.
 - **Ships on the negative test only.** No ground truth; the README claims no
   more.
+
+### Build-time decisions
+
+- **The persona is staged raw.** Every other staged input has its frontmatter
+  stripped because that is where labels leak; a persona's frontmatter *is* the
+  brief, and its `never:` line is a rule, not an expectation. The harness
+  special-cases `persona.md` and says so in place.
+- **A forced choice alone is never a `REVISE`**, and the checker counts the
+  case (`forced_choice_alone_as_revise`) so a transcript that inflates a CLEAN
+  reader into a REVISE is a contract problem, not a judgement call.
+- **Blank frontmatter lines are tolerated; unreadable ones are not.** Found
+  when the "missing never" test removed a line and left a gap.
 
 ## 10. Deliverables
 

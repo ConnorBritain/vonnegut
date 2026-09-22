@@ -49,7 +49,7 @@ for how a session picks up from here.
 | 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | shipped |
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | shipped |
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | shipped |
-| 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | in-progress |
+| 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | shipped |
 
 Status values: `planned` | `in-progress` | `shipped`. Sequence 1 items are built
 together because A and C share one text-index module and B consumes A's scan.
@@ -356,4 +356,4 @@ leave-one-out over human essays with the false-positive bound reported as a
 default; forced choice present in every transcript; zero uncited findings, zero
 authorship claims; PROTOCOL.md step 2 lists personas as conditional spawns.
 
-**Status.** in-progress
+**Status.** shipped

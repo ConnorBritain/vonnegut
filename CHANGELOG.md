@@ -173,6 +173,17 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md)
 
 ## prose-review
 
+### [0.7.0] — one prompt, many readers
+
+Roadmap item G; release notes in [`RELEASE-v0.7.0.md`](bundles/prose-review/RELEASE-v0.7.0.md).
+
+- **Added** `prose-reader-critic` (primitive + byte-identical bundle copy),
+  four persona files under `personas/`, `tools/persona-check.mjs`,
+  `prepare reader` staging every persona × the leave-one-out essays, and the
+  `missing_forced_choice` contract count. The adversarial reader ships as a
+  persona; `DESIGN.md` and `PROTOCOL.md` say so. Two mutations. No run
+  dispatched.
+
 ### [0.6.0] — the medium critic ships
 
 Roadmap item F; release notes in [`RELEASE-v0.6.0.md`](bundles/prose-review/RELEASE-v0.6.0.md).

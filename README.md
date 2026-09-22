@@ -25,13 +25,13 @@ detector outcomes. Example facts are not automatically facts about you.
 | Bundle | Version | Purpose |
 |---|---|---|
 | [prose-author](bundles/prose-author/) | 0.9.0 | Drafting, profiles, persistent preferences, opt-in history, corpus intake |
-| [prose-review](bundles/prose-review/) | 0.6.0 | Voice, fidelity (provenance-aware), structure and medium critics, plus a plan-based reviser |
+| [prose-review](bundles/prose-review/) | 0.7.0 | Voice, fidelity (provenance-aware), structure, medium and reader-persona critics, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
 | [prose-outline](bundles/prose-outline/) | 0.1.1 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |
 | [prose-bible](bundles/prose-bible/) | 0.1.0 | Cross-file continuity index, per-project bible, and a critic that cites two places or nothing |
 | [prose-research](bundles/prose-research/) | 0.1.0 | Sources pinned by sha, a dossier and claims ledger, quote / link / coverage checks, provenance for the fidelity critic |
 
-Install all six for the complete writing workflow. Ten agents and eight
+Install all six for the complete writing workflow. Eleven agents and eight
 skills ship; the experimental `prose-pattern-critic` source remains held.
 
 ## Install
@@ -48,7 +48,7 @@ node install-prose-codex.mjs
 node install-prose-codex.mjs --check
 ```
 
-This installs the local checkout's six plugins and ten custom agents. Keep
+This installs the local checkout's six plugins and eleven custom agents. Keep
 the checkout at that path. Start a new session, then ask for `$prose-draft`,
 `$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, `$tell-scan`, `$prose-outline`, `$prose-bible` or `$prose-research`.
 

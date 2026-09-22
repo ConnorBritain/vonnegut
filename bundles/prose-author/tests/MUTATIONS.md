@@ -290,6 +290,8 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | let calibrate skip the aggregate cap on approved samples | 2 | approved samples cannot dominate the blended pool past the cap |
 | let calibrate blend approved samples below the human floor | 2 | cold-start cannot calibrate against model norms on day one |
 | let the structure harness's echo rule never flag | 6 | every structure fixture's class is re-derived from the stated echo rule, so a parrot that cannot flag breaks the four-class table rather than silently flattering the critic |
+| let a persona omit the two refusals every reader shares | 1 | every persona refuses judging prose quality and guessing who wrote it, by validation and not by prose |
+| let a reader transcript call a forced choice alone a REVISE | 1 | a forced choice is always present and never by itself a REVISE, and the checker says so |
 | let fidelity-scan pass a MATERIAL-LOSS as FAITHFUL | 11 | the verdict actually distinguishes fidelity states |
 | let fidelity-scan cross line breaks with proper-noun runs | 4 | proper-noun runs stay within a line - a headings-plus-sentence false positive fires on every structured document |
 | let fidelity-scan skip thousands-separator normalisation | 1 | 1,234 and 1234 read as the same information, so users are not trained to game the formatter |

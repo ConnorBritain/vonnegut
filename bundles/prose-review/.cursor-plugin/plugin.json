@@ -1,6 +1,6 @@
 {
   "name": "prose-review",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Three read-only critics and one revising transformer for prose. prose-voice-critic: does this sound like the author, judged against their own corpus. prose-fidelity-critic: did a revision keep what it had to, judged against the original and a deterministic scan. prose-structure-critic: does the structure carry the argument, judged against outline-scan and the intended outline. prose-reviser: applies a plan of edits and emits a change log the fidelity critic then judges. Every rewrite goes through the gate.",
   "author": {
     "name": "Connor England"

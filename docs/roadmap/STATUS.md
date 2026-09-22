@@ -19,7 +19,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 | prose-bible | 0.1.0 |
 | prose-outline | 0.1.1 |
 | prose-research | 0.1.0 |
-| prose-review | 0.6.0 |
+| prose-review | 0.7.0 |
 | prose-tell-scan | 0.1.1 |
 
 ## Deliverables
@@ -80,9 +80,9 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] F4 — primitive `prose-medium-critic` + bundle copy in prose-review; fixtures in both disagreement directions vs repurpose-check; harness runs recorded; DESIGN.md open question 5 answered
 - [x] F5 — prose-author and prose-review bumps, RELEASE notes, CHANGELOG, README, version pin above, ROADMAP status → shipped
 
-### G. Reader-persona critics — in-progress
+### G. Reader-persona critics — shipped
 
 - [x] G1 — primitive `prose-reader-critic` + bundle copy; DESIGN.md table amended (adversarial reader becomes a persona)
 - [x] G2 — `personas/{skeptical-cto,first-time-reader,acquisitions-editor,adversarial-reader}.md` + `tools/persona-check.mjs` + fixtures
 - [x] G3 — harness entry staging the persona as input; leave-one-out runs per persona recorded; PROTOCOL.md step 2 conditional spawn; AGENTS.md, wiring, README
-- [ ] G4 — prose-review bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+- [x] G4 — prose-review bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped

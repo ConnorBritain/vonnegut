@@ -31,7 +31,7 @@ node install-prose-codex.mjs
 
 The default installs **this local checkout**, including uncommitted candidate changes;
 it does not download GitHub main. The installer adds the checkout as a Codex marketplace, installs and enables all six
-plugins, and renders the ten harness-neutral agent prompts as read-only personal Codex agents
+plugins, and renders the eleven harness-neutral agent prompts as read-only personal Codex agents
 under `~/.codex/agents/`. It is safe to rerun: it updates files it generated and refuses to
 overwrite an agent file it does not own.
 
@@ -110,14 +110,14 @@ Or install loose files from a clone:
 ```bash
 ./install.sh voice-profile-render voice-draft voice-feedback-interpret voice-rhetoric-measure \
   prose-draft prose-style-tune prose-corpus prose-repurpose tell-scan prose-outline prose-bible prose-research \
-  prose-voice-critic prose-fidelity-critic prose-structure-critic prose-medium-critic prose-reviser prose-continuity-critic
+  prose-voice-critic prose-fidelity-critic prose-structure-critic prose-medium-critic prose-reader-critic prose-reviser prose-continuity-critic
 ```
 
 The loose install puts agents in `~/.claude/agents/`, skills in `~/.claude/skills/`, the
 fidelity scanner in `~/.claude/tools/`, and the tell-scan command in
 `~/.claude/commands/`. On Windows use `install.ps1` with the same names and
 `-Project` instead of `--project`. Use `--project` to install into the current
-project's `.claude/` directory instead. Run `claude agents` to confirm the ten agents, then
+project's `.claude/` directory instead. Run `claude agents` to confirm the eleven agents, then
 start a new Claude Code session.
 
 Invoke `prose-draft` or `prose-style-tune` by name. A loose tell-scan install uses
