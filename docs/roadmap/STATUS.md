@@ -16,6 +16,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 | Bundle | Version |
 |---|---|
 | prose-author | 0.6.0 |
+| prose-bible | 0.1.0 |
 | prose-outline | 0.1.0 |
 | prose-review | 0.4.0 |
 | prose-tell-scan | 0.1.1 |
@@ -40,14 +41,14 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] B3 — negative and positive harness runs recorded with `verify-run.mjs` output; PROTOCOL.md step 2, AGENTS.md, wiring, README updated
 - [x] B4 — prose-review version bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### C. prose-bible — planned
+### C. prose-bible — in-progress
 
-- [ ] C1 — bundle scaffold (manifests, marketplace, README, AGENTS.md, PROTOCOL.md, wiring/, install scripts, `check-packaging.mjs` shared-file pairs for `text-index`, `registry-reader`, `revision-store`); selftest wired into `tools/check.mjs`
-- [ ] C2 — `entity-index.mjs` + three-file fixture project with planted drift + expected JSON
-- [ ] C3 — `index-diff.mjs` naming the planted contradictions and nothing else
-- [ ] C4 — `voice-bible/1` schema + `bible-store.mjs` (same store contract as A6) + mutations, including one that breaks a shared-file copy to prove the pin
-- [ ] C5 — primitive `prose-continuity-critic` + bundle copy + fixtures in four classes vs index-diff + harness + recorded runs
-- [ ] C6 — `prose-bible` SKILL.md + meta.yaml, proposal/confirm flow, negative test recorded
+- [x] C1 — bundle scaffold (manifests, marketplace, README, AGENTS.md, PROTOCOL.md, wiring/, install scripts, `check-packaging.mjs` shared-file pairs for `text-index`, `registry-reader`, `revision-store`); selftest wired into `tools/check.mjs`
+- [x] C2 — `entity-index.mjs` + three-file fixture project with planted drift + expected JSON
+- [x] C3 — `index-diff.mjs` naming the planted contradictions and nothing else
+- [x] C4 — `voice-bible/1` schema + `bible-store.mjs` (same store contract as A6) + mutations, including one that breaks a shared-file copy to prove the pin
+- [x] C5 — primitive `prose-continuity-critic` + bundle copy + fixtures in four classes vs index-diff + harness + recorded runs
+- [x] C6 — `prose-bible` SKILL.md + meta.yaml, proposal/confirm flow, negative test recorded
 - [ ] C7 — RELEASE-v0.1.0.md, CHANGELOG, README, version pin above, ROADMAP status → shipped
 
 ### D. Corpus ingestion — planned

@@ -3246,11 +3246,11 @@
   ],
   "terms": [
     {
-      "term": "that conservatism",
-      "key": "that conservatism",
+      "term": "conservatism",
+      "key": "conservatism",
       "kind": "is-a",
-      "definition": "belief that some people were born to rule, and others to be ruled over, and that any attempt to elevate the latter group",
-      "offset": 2814,
+      "definition": "belief that some people were born to rule",
+      "offset": 2819,
       "line": 50
     },
     {
@@ -3262,26 +3262,26 @@
       "line": 54
     },
     {
-      "term": "rights",
-      "key": "rights",
+      "term": "Property rights",
+      "key": "property rights",
       "kind": "is-a",
-      "definition": "human right,\" then they are on the right",
-      "offset": 4617,
+      "definition": "human right",
+      "offset": 4608,
       "line": 68
     },
     {
-      "term": "that property rights",
-      "key": "that property rights",
+      "term": "property rights",
+      "key": "property rights",
       "kind": "is-a",
-      "definition": "tool for achieving human rights, then you're on the left",
-      "offset": 4766,
+      "definition": "tool for achieving human rights",
+      "offset": 4771,
       "line": 72
     },
     {
       "term": "property rights",
       "key": "property rights",
       "kind": "is-a",
-      "definition": "tool to achieve human rights, then property rights can be set aside when they impede other rights",
+      "definition": "tool to achieve human rights",
       "offset": 5194,
       "line": 74
     },
@@ -3297,7 +3297,7 @@
       "term": "property rights",
       "key": "property rights",
       "kind": "is-a",
-      "definition": "human right, then I can burn down my orchard and laugh as you starve outside the gates",
+      "definition": "human right",
       "offset": 7349,
       "line": 94
     },

@@ -1,0 +1,12 @@
+{
+  "schema": "voice-bible/1",
+  "id": "valley",
+  "revision": 1,
+  "parent_digest": null,
+  "entries": [
+    { "id": "b1", "kind": "character", "name": "Dorota", "key": "dorota",
+      "attributes": { "eyes": "grey", "bearing": "a soldier's way of standing" },
+      "definition": null, "first_seen": { "file": "chapter-05.md", "line": 3 },
+      "notes": "Grey. Her mother's eyes; it is the point of chapter twelve." }
+  ]
+}

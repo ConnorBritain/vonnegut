@@ -38,6 +38,46 @@ labelled local candidates describe their status at the time of recording.
 
 ---
 
+## prose-bible
+
+### [0.1.0] — in progress
+
+Roadmap item C ([`docs/roadmap/C-prose-bible.md`](docs/roadmap/C-prose-bible.md));
+deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+
+- **Added** the bundle scaffold: four manifests, marketplace entry, README,
+  AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets, a selftest wired into
+  `node tools/check.mjs`, and `check-packaging.mjs` pins for the three shared
+  library files (`text-index`, `registry-reader`, `revision-store`) that must
+  stay byte-identical to prose-outline's canonical copies.
+- **Added** `entity-index.mjs` (names, defined terms, attributes, dates and
+  repeated passages across a project's files, every one with file, line and
+  sentence) and `index-diff.mjs` (the same key defined two ways, an attribute
+  stated with two values, a date that moved under one context word, a passage
+  retold, a bible entry the text contradicts), with a planted-drift fixture
+  project and a consistent control whose expected JSON is regenerated, never
+  hand-edited.
+- **Added** `voice-bible/1` and `bible-store.mjs`: propose entries from the
+  index (an attribute stated two ways is flagged for the writer, never
+  resolved), and save, show, list and undo under the same registry store
+  contract as prose-outline — three registry states, approval flag,
+  stale-revision refusal. Mutations registered, including one that edits a
+  shared-file copy to prove the pin fires.
+- **Added** `prose-continuity-critic` (primitive + byte-identical bundle copy):
+  reads index-diff's candidates and the bible, reports a definition, attribute,
+  date or repeat contradiction only with both locations quoted, may cite
+  nothing the index did not supply, resolves uncertainty to silence. Seven
+  fixtures in `tests/fixtures/continuity/` classified against the harness's
+  stated echo rule (class D empty by construction, and the manifest says why),
+  a bundle-local `tests/continuity-harness.mjs` with the same discipline and
+  wrapper grammar as prose-review's, and `tests/critic-harness.md` recording
+  that **no run has been dispatched**.
+- **Added** the `prose-bible` skill (SKILL.md, meta.yaml, `references/bible-schema.md`):
+  index first and never from memory, propose entries the writer confirms, save
+  only on a yes, hand candidates to the critic in a clean context.
+  `tests/skill-harness.md` records the positive and negative test and that
+  neither has been run here.
+
 ## prose-outline
 
 ### [0.1.0] — outlines, implied outlines, diffs and a per-project store

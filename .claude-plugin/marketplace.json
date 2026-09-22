@@ -55,6 +55,22 @@
       ]
     },
     {
+      "name": "prose-bible",
+      "description": "Continuity for multi-file prose projects: a deterministic cross-file index of names, defined terms, attributes, dates and repeated passages with locations; a diff that pairs what differs; a per-project bible in the shared writing-identity registry, proposed from the index and confirmed entry by entry; and a read-only critic that reports contradictions citing two locations or nothing. Never fact-checks against the world and never saves without approval.",
+      "source": "./bundles/prose-bible",
+      "version": "0.1.0",
+      "category": "writing",
+      "tags": [
+        "writing",
+        "prose",
+        "continuity",
+        "fiction",
+        "bible",
+        "skill",
+        "critic"
+      ]
+    },
+    {
       "name": "prose-author",
       "description": "Personal-style writing with explicit rules, advisory corpus tendencies, scoped persistent preferences and exact-final-text checks. Authenticated Claude/Codex runtime; optional whole human examples.",
       "source": "./bundles/prose-author",

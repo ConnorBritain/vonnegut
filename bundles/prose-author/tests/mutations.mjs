@@ -76,8 +76,10 @@ const SUITES = {
   sibling: "bundles/prose-tell-scan/tests/selftest.mjs",
   review: "bundles/prose-review/tests/selftest.mjs",
   outline: "bundles/prose-outline/tests/selftest.mjs",
+  bible: "bundles/prose-bible/tests/selftest.mjs",
 };
 const OUTLINE_TOOLS = "bundles/prose-outline/skills/prose-outline/tools";
+const BIBLE_TOOLS = "bundles/prose-bible/skills/prose-bible/tools";
 
 const EXEMPLARS = `${TOOLS}/exemplars.mjs`;
 const VERIFY = `${TOOLS}/verify.mjs`;
@@ -140,6 +142,14 @@ export function createSandbox() {
  * meaningless rather than merely failing.
  */
 export const MUTATIONS = [
+  // prose-bible (docs/roadmap/C-prose-bible.md). Covered by its own suite, which also pins the shared copies.
+  { suite: "bible", name: "the shared text-index copy drifts from prose-outline's canonical", file: `${BIBLE_TOOLS}/lib/text-index.mjs`, find: "export function capitalisedRuns(source, { markdown = true } = {}) {", with: "export function capitalisedRuns(source, { markdown = true } = {}) { /* drifted */", guards: "a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name" },
+  { suite: "bible", name: "bible store writes without approval", file: `${BIBLE_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "no bible revision is written without the approval flag" },
+  { suite: "bible", name: "bible store accepts a stale expected revision", file: `${BIBLE_TOOLS}/lib/revision-store.mjs`, find: 'if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");', with: "/* defect: overwrite whatever is current */", guards: "a stale read cannot overwrite a newer bible" },
+  { suite: "bible", name: "bible store picks the first identity when none is selected", file: `${BIBLE_TOOLS}/bible-store.mjs`, find: 'if (selection.state === "ambiguous") throw Object.assign(new StoreRefusal(', with: 'if (false) throw Object.assign(new StoreRefusal(', guards: "with several identities and no default the store asks, never picks" },
+  { suite: "bible", name: "index-diff accepts a document that is not an index", file: `${BIBLE_TOOLS}/index-diff.mjs`, find: 'if (index?.schema !== "entity-index/1") throw new TypeError("Expected an entity-index/1 document");', with: "/* defect: diff whatever arrives */", guards: "the diff refuses input that is not an entity-index/1, rather than reporting nothing on it" },
+  { suite: "bible", name: "the bible proposal resolves a two-valued attribute itself", file: `${BIBLE_TOOLS}/lib/bible-schema.mjs`, find: '${t.attributes.length > 1 ? "; attributes vary — confirm which is right" : ""}', with: '${""}', guards: "an attribute the text states two ways is flagged for the writer, never chosen by the tool" },
+  { suite: "bible", name: "the continuity harness's echo rule never flags", file: "bundles/prose-bible/tests/continuity-harness.mjs", find: '  return any ? "REVISE" : "CLEAN";', with: '  return "CLEAN";', guards: "every continuity fixture's class is re-derived from the stated echo rule" },
   // prose-outline (docs/roadmap/A-prose-outline.md). Covered by its own suite.
   { suite: "outline", name: "outline store writes without approval", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "nothing persistent is saved without explicit approval" },
   { suite: "outline", name: "outline store accepts a stale expected revision", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");', with: "/* defect: overwrite whatever is current */", guards: "a caller working from a stale read cannot overwrite a newer revision" },

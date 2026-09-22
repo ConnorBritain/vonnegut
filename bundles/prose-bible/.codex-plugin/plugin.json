@@ -1,0 +1,37 @@
+{
+  "name": "prose-bible",
+  "version": "0.1.0",
+  "description": "Per-project continuity for prose: a bible of characters, terms, timeline and metaphors; a cross-file index with locations; a critic that flags contradictions it can cite in two places.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "homepage": "https://github.com/ConnorBritain/vonnegut",
+  "repository": "https://github.com/ConnorBritain/vonnegut",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "continuity",
+    "fiction",
+    "editing",
+    "review"
+  ],
+  "interface": {
+    "displayName": "Prose Bible",
+    "shortDescription": "Keeps a project's characters, terms and timeline straight, and flags contradictions it can cite in two places.",
+    "longDescription": "One skill and one read-only critic. prose-bible proposes bible entries from a deterministic cross-file index (names, defined terms, dates, numbers, repeated passages, each with file, line and offset), which the writer confirms one by one; entries persist per project in the shared writing-identity registry with undo, and nothing is saved without approval. prose-continuity-critic reads the index's diff and the bible in a clean context and reports a term defined two ways, an attribute that drifted, an anecdote retold — every finding citing both locations, or dropped. It never guesses a location the index did not supply, never scores, and never states or implies who wrote anything. NOTE: Codex enforces neither the critic's read-only tool restriction nor context isolation; run it as a fresh `codex exec` over the index and bible rather than inline.",
+    "developerName": "Connor England",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/ConnorBritain/vonnegut",
+    "defaultPrompt": [
+      "Build the bible for this novel from the chapters so far",
+      "Did I contradict myself anywhere across these essays?",
+      "Which terms have I defined more than one way?",
+      "Show me every place Mara's eyes are described"
+    ]
+  }
+}

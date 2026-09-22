@@ -43,6 +43,18 @@ for (const [name, version] of Object.entries(expected)) {
   }
 }
 assert.deepEqual(deployed.sort(), [...AGENTS].sort());
+
+// Shared library files ship as byte-identical copies, never as cross-bundle imports
+// (docs/ROADMAP.md "No cross-bundle import"). The canonical copy is the first path;
+// every other copy must match it exactly, so drift is impossible rather than detected late.
+const SHARED_FILES = [
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/text-index.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/text-index.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/registry-reader.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/revision-store.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/revision-store.mjs"],
+];
+for (const [canonical, ...copies] of SHARED_FILES) {
+  for (const copy of copies) assert.ok(readFileSync(join(root, canonical)).equals(readFileSync(join(root, copy))), `${copy} must be byte-identical to ${canonical}`);
+}
 assert.match(read("primitives/agents/prose-pattern-critic/meta.yaml"), /ships:\s*false/);
 
 // Check maintained documentation, not frozen run records or historical handoffs.
@@ -84,4 +96,4 @@ try {
   assert.equal(readFileSync(target, "utf8"), renderAgent(AGENTS[0]));
 } finally { rmSync(temp, { recursive: true, force: true }); }
 const bundleCount = Object.keys(expected).length;
-console.log(`Packaging passed: ${bundleCount} bundles at the STATUS.md-pinned versions, ${bundleCount * 4} manifests, ${deployed.length} identical prompt bodies, held primitive excluded, maintained documentation links, no Actions, safe legacy-wrapper migration.`);
+console.log(`Packaging passed: ${bundleCount} bundles at the STATUS.md-pinned versions, ${bundleCount * 4} manifests, ${deployed.length} identical prompt bodies, ${SHARED_FILES.length} shared files pinned, held primitive excluded, maintained documentation links, no Actions, safe legacy-wrapper migration.`);

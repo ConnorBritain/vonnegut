@@ -1,0 +1,37 @@
+{
+  "schema": "index-diff/1",
+  "redefined": [],
+  "attribute_drift": [],
+  "repeated": [
+    {
+      "kind": "near",
+      "similarity": 0.6,
+      "locations": [
+        {
+          "file": "essay-01.md",
+          "line": 3,
+          "offset": 23,
+          "text": "The Cadence Rule is the one habit that made the scanner useful: never calibrate on fewer than ten pieces.",
+          "before": null,
+          "after": "I learned it in 2021, the year I first pointed the tool at my own newsletter and watched it flag every sentence."
+        },
+        {
+          "file": "notes.md",
+          "line": 3,
+          "offset": 9,
+          "text": "The Cadence Rule: never calibrate on fewer than ten pieces.",
+          "before": null,
+          "after": "First stated in the 2021 newsletter post; restate it in every essay that mentions calibration."
+        }
+      ]
+    }
+  ],
+  "bible_conflicts": [],
+  "limits": [
+    "Two definitions are 'different' when their content-word overlap is below 0.5; a paraphrase can pass as the same and a different emphasis as different.",
+    "Attribute values are compared after lower-casing and stripping punctuation; 'grey' and 'gray' are different values.",
+    "Every entry is a candidate; a flashback, a nickname or a lie looks the same as drift here."
+  ],
+  "date_drift": [],
+  "summary": "0 redefined, 0 attribute drift, 0 date drift, 1 repeated, 0 bible conflicts"
+}

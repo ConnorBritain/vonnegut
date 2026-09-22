@@ -1,0 +1,23 @@
+{
+  "name": "prose-bible",
+  "version": "0.1.0",
+  "description": "A per-project continuity bible for prose — characters, defined terms, timeline, recurring metaphors, already-said concepts — kept in the shared writing-identity registry with undo, plus a deterministic cross-file index of names, terms, dates and definitions with locations, and a read-only critic that flags contradictions only where it can cite two places. Never guesses, never scores, never says who wrote anything.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "repository": "https://github.com/ConnorBritain/vonnegut",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "continuity",
+    "fiction",
+    "editing",
+    "review",
+    "subagent"
+  ],
+  "agents": [
+    "./agents/prose-continuity-critic.md"
+  ]
+}

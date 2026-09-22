@@ -45,7 +45,7 @@ for how a session picks up from here.
 |---|---|---|---|---|
 | 1 | [A. prose-outline](#a-prose-outline) | `prose-outline` (new) | [A-prose-outline.md](roadmap/A-prose-outline.md) | shipped |
 | 1 | [B. prose-structure-critic](#b-prose-structure-critic) | `prose-review` | [B-prose-structure-critic.md](roadmap/B-prose-structure-critic.md) | shipped |
-| 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | planned |
+| 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | in-progress |
 | 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | planned |
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | planned |
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | planned |
@@ -187,7 +187,7 @@ fixtures in the four classes vs index-diff, echo baseline reported; negative
 test on a consistent project returns `CLEAN`; mutations for the two-location
 rule enforcement in the harness and the store guards; check + mutations green.
 
-**Status.** planned
+**Status.** in-progress
 
 ## D. Corpus ingestion
 

@@ -1,6 +1,6 @@
 # C. prose-bible
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
+Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
 [`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
 `bundles/prose-bible/README.md` and `DESIGN.md`.
 
@@ -120,6 +120,36 @@ critic ships here.
   already fixed.
 - **Shared libs are byte-identical copies** pinned by the packaging check; see A.
 - **Repeated-passage threshold** is a `limits` entry, not a claim of precision.
+
+### Build-time decisions
+
+- **Definition patterns changed in the shared `text-index`, and the canonical
+  copy follows.** Building the index over prose showed three defects in the
+  patterns A shipped: a proper name followed by one lower-case noun ("the
+  Harrow road is …") was never a defined term; a definition ran through commas
+  ("the old road to the coast, closed since the flood" became one definition);
+  and an appositive could swallow a verb ("Halvard tried, the year the bridge
+  went" defined "Halvard tried"). The fix (a `TERM_RUN_TAIL` allowed only in the
+  is-a pattern, definitions stopping at commas, heading markers counting as a
+  sentence start) is applied to prose-outline's canonical copy in the same
+  commit as C2, its expected fixtures regenerated and reviewed, and
+  prose-outline bumped to 0.1.1 at C7. Rejected: keeping two versions (the pin
+  forbids it) and leaving the canonical copy alone (the bible would then ship a
+  worse index than it was tested with).
+- **The critic's harness is bundle-local** (`tests/continuity-harness.mjs`),
+  not a `CRITICS.continuity` entry in prose-review's. A consumer may import the
+  producer it reads at test time; a producer's tests never know their consumers,
+  and prose-review reads nothing of this bundle's. The wrapper grammar is kept
+  identical so transcripts read the same. Recorded in `DESIGN.md`.
+- **Class D is empty by construction.** The critic receives candidates, not
+  text, and may cite nothing the index did not supply; an empty diff leaves it
+  nothing to cite. The fixture manifest states this so the missing class reads
+  as a decision. The negative test for this critic is class B: quiet where the
+  diff is loud.
+- **The echo rule is the loudest possible** — any candidate is a contradiction —
+  because that is index-diff's verdict if it were allowed one. Repeats count:
+  a critic that parrots the diff sends the writer after every refrain, which is
+  the failure the critic exists to prevent.
 
 ## 10. Deliverables
 

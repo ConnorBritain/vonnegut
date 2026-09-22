@@ -1,0 +1,302 @@
+{
+  "schema": "entity-index/1",
+  "files": [
+    "chapter-01.md",
+    "chapter-02.md",
+    "notes.md"
+  ],
+  "min_occurrences": 2,
+  "terms": [
+    {
+      "key": "book of hours",
+      "surface_forms": [
+        "Book of Hours",
+        "The Book of Hours"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "chapter-01.md",
+          "line": 5,
+          "offset": 286,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+          "sentence_initial": false
+        },
+        {
+          "file": "chapter-02.md",
+          "line": 5,
+          "offset": 273,
+          "sentence": "Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.",
+          "sentence_initial": false
+        },
+        {
+          "file": "notes.md",
+          "line": 7,
+          "offset": 233,
+          "sentence": "Grey eyes (do not change this; it matters in chapter nine).",
+          "sentence_initial": false
+        }
+      ],
+      "definitions": [
+        {
+          "file": "notes.md",
+          "line": 7,
+          "offset": 233,
+          "sentence": "Grey eyes (do not change this; it matters in chapter nine).",
+          "pattern": "is-a",
+          "definition": "joke about the monastery"
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "chapter-01.md",
+        "chapter-02.md",
+        "notes.md"
+      ]
+    },
+    {
+      "key": "harrow",
+      "surface_forms": [
+        "Harrow",
+        "The Harrow"
+      ],
+      "kind": "name",
+      "occurrences": [
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 81,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+          "sentence_initial": false
+        },
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 144,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+          "sentence_initial": false
+        },
+        {
+          "file": "chapter-02.md",
+          "line": 5,
+          "offset": 169,
+          "sentence": "Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.",
+          "sentence_initial": false
+        },
+        {
+          "file": "notes.md",
+          "line": 5,
+          "offset": 111,
+          "sentence": "Grey eyes (do not change this; it matters in chapter nine).",
+          "sentence_initial": false
+        }
+      ],
+      "definitions": [],
+      "attributes": [],
+      "files": [
+        "chapter-01.md",
+        "chapter-02.md",
+        "notes.md"
+      ]
+    },
+    {
+      "key": "harrow road",
+      "surface_forms": [
+        "Harrow road"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 81,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898."
+        },
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 144,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898."
+        },
+        {
+          "file": "notes.md",
+          "line": 5,
+          "offset": 115,
+          "sentence": "Grey eyes (do not change this; it matters in chapter nine)."
+        }
+      ],
+      "definitions": [
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 81,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+          "pattern": "is-a",
+          "definition": "first building she had ever loved"
+        },
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 144,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+          "pattern": "is-a",
+          "definition": "old road to the coast"
+        },
+        {
+          "file": "notes.md",
+          "line": 5,
+          "offset": 115,
+          "sentence": "Grey eyes (do not change this; it matters in chapter nine).",
+          "pattern": "is-a",
+          "definition": "road to the quarry"
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "chapter-01.md",
+        "notes.md"
+      ]
+    },
+    {
+      "key": "ledger",
+      "surface_forms": [
+        "ledger"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "chapter-01.md",
+          "line": 5,
+          "offset": 275,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898."
+        }
+      ],
+      "definitions": [
+        {
+          "file": "chapter-01.md",
+          "line": 5,
+          "offset": 275,
+          "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+          "pattern": "called",
+          "definition": null
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "chapter-01.md"
+      ]
+    },
+    {
+      "key": "mara",
+      "surface_forms": [
+        "Mara"
+      ],
+      "kind": "name",
+      "occurrences": [
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 15,
+          "sentence": "Mara had grey eyes and a habit of counting doors.",
+          "sentence_initial": true
+        },
+        {
+          "file": "chapter-02.md",
+          "line": 3,
+          "offset": 66,
+          "sentence": "Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.",
+          "sentence_initial": true
+        },
+        {
+          "file": "notes.md",
+          "line": 3,
+          "offset": 17,
+          "sentence": "Mara: counts doors when anxious.",
+          "sentence_initial": true
+        }
+      ],
+      "definitions": [],
+      "attributes": [
+        {
+          "file": "chapter-01.md",
+          "line": 3,
+          "offset": 15,
+          "sentence": "Mara had grey eyes and a habit of counting doors.",
+          "attribute": "eyes",
+          "value": "grey",
+          "shape": "had"
+        },
+        {
+          "file": "chapter-02.md",
+          "line": 3,
+          "offset": 66,
+          "sentence": "Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.",
+          "attribute": "eyes",
+          "value": "green",
+          "shape": "had"
+        }
+      ],
+      "files": [
+        "chapter-01.md",
+        "chapter-02.md",
+        "notes.md"
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "text": "1898",
+      "kind": "date",
+      "offset": 212,
+      "line": 3,
+      "file": "chapter-01.md",
+      "sentence": "The mill on the Harrow road was the first building she had ever loved, and the Harrow road is the old road to the coast, closed since the flood of 1898.",
+      "context": "flood"
+    },
+    {
+      "text": "1889",
+      "kind": "date",
+      "offset": 205,
+      "line": 5,
+      "file": "chapter-02.md",
+      "sentence": "Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.",
+      "context": "flood"
+    }
+  ],
+  "repeats": [
+    {
+      "kind": "near",
+      "similarity": 0.684,
+      "locations": [
+        {
+          "file": "chapter-01.md",
+          "line": 7,
+          "offset": 365,
+          "text": "She told him the story about the bees: how her grandmother had sold honey in pickle jars, the labels in her own hand, and had never written anything else down.",
+          "before": "He called the ledger the Book of Hours, though it recorded flour, and he had kept it for eleven years.",
+          "after": null
+        },
+        {
+          "file": "chapter-02.md",
+          "line": 7,
+          "offset": 394,
+          "text": "She thought of her grandmother's honey, sold in pickle jars with labels in her own hand; the old woman had never written anything else down.",
+          "before": "He had kept that ledger for eleven years.",
+          "after": null
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "A term is a capitalised run seen at least --min times, or a defined term; a single word seen only at sentence starts is not a term; pronouns are never resolved, so 'her eyes were green' attaches to nobody.",
+    "Attributes are two surface patterns — <Name>'s <noun> is/was/are/were <value>, and <Name> had <adjective> <noun> — over a fixed list of attribute nouns (eyes, hair, voice, age, name, …).",
+    "A date's context is the content word before it ('flood of 1898' → flood); dates sharing a context with different values are candidates.",
+    "Repeats are sentences of 8+ words recurring across files, exact or with content-word overlap ≥ 0.6, each with the sentence before and after; comparison is capped at 250000 pairs.",
+    "Files indexed: .md, .markdown, .txt; dotfiles and node_modules are skipped.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}

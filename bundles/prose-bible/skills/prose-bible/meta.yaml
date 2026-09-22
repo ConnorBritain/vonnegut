@@ -1,0 +1,64 @@
+# Metadata for the prose-bible skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". This file
+# exists because the contract and an honest per-harness enforcement label are
+# not optional for any surface.
+
+name: prose-bible
+kind: investigator
+surface: skill
+bundle: prose-bible
+
+# Why investigator: it maps a project — every name, term, date and repeat, each
+# with a location — and separates what it observed (the index) from what it
+# infers (a proposed entry, confirmed by the writer). It says what it could not
+# determine in the index's limits. The judgement half is the critic beside it.
+
+contract:
+  read_only: false          # it writes ONE thing: a bible revision, on approval
+  writes: project-bible-store
+  clean_context: false
+  scope: repo               # a project's files
+  deterministic: partial    # index, diff, store and proposal are scripts; confirmation is conversation
+  verdict: null
+
+  denied_inputs:
+    - the tell catalog, in any form
+    - the corpus (voice is not this skill's question)
+    - another identity's bible
+
+  refuses:
+    - Listing occurrences, names or definitions from memory instead of the index
+    - Choosing between two stated attribute values; the writer decides
+    - Saving without the user's approval, or as a side effect of indexing or reviewing
+    - Picking an identity when the registry has several and no default
+    - Adding a contradiction the critic did not cite in two places
+    - Fact-checking against the world — prose-research owns that
+    - Stating or implying who wrote a passage
+
+  tools:
+    - tools/entity-index.mjs     # locations, with limits
+    - tools/index-diff.mjs       # candidates, each with two locations
+    - tools/bible-store.mjs      # propose, and approval-gated save/undo
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Dispatcher-triggered from the description. The scripts are deterministic
+      and the approval gate is a flag the script honours; that the model sets it
+      only after a yes is a prompt rule, not a harness guarantee.
+  cursor:
+    enforcement: partial
+    notes: >-
+      Scripts and store behave identically. Skill dispatch is absent; invoke by name.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same. Use the bundle's AGENTS.md block so the model runs the index instead
+      of listing from memory, and runs the critic as a fresh process.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      The scripts port intact; the approval rule and "from the index, not from
+      memory" are prose. Keep the second if you shorten it.

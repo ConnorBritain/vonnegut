@@ -155,7 +155,7 @@
       "offset": 23,
       "line": 4,
       "single": false,
-      "sentenceInitial": false
+      "sentenceInitial": true
     },
     {
       "text": "The Danube",
@@ -187,7 +187,7 @@
       "offset": 172,
       "line": 9,
       "single": true,
-      "sentenceInitial": false
+      "sentenceInitial": true
     },
     {
       "text": "The Inn",
@@ -195,7 +195,7 @@
       "offset": 187,
       "line": 11,
       "single": false,
-      "sentenceInitial": false
+      "sentenceInitial": true
     },
     {
       "text": "Passau",
@@ -235,7 +235,7 @@
       "offset": 430,
       "line": 20,
       "single": true,
-      "sentenceInitial": false
+      "sentenceInitial": true
     },
     {
       "text": "Danube",
@@ -256,18 +256,18 @@
   ],
   "terms": [
     {
-      "term": "The Danube",
+      "term": "Danube",
       "key": "danube",
       "kind": "is-a",
       "definition": "river that runs through ten countries",
-      "offset": 34,
+      "offset": 38,
       "line": 6
     },
     {
       "term": "The Inn",
       "key": "inn",
       "kind": "appositive",
-      "definition": "fastest of them, joins at Passau",
+      "definition": "fastest of them",
       "offset": 187,
       "line": 11
     },
