@@ -58,6 +58,16 @@ Every disclosed claim carries:
 Do not copy an evidence span. The sentence ID already identifies immutable source text;
 deterministic assembly binds each disclosure to that complete sentence as exact evidence.
 
+When the request is accompanied by a **provenance packet** — ledger entries from the
+writer's research, each with an id (`k1`, `k2`, …), the proposition it records, the
+source's exact quote and the source id — state a disclosed claim that one of those
+entries records in the packet's own words for that proposition. Deterministic assembly
+then attaches the entry's id to the disclosure so a downstream reviewer knows where to
+look; you never write the id yourself, and a claim the packet does not record is
+disclosed exactly as it would be without a packet. A ledger pointer does not change the
+row's status: the claim is still disclosed, not verified, because a ledger proves a
+source said something, not that it is true.
+
 Use `status: "reject"` rather than disclosure for a fabricated or placeholder citation,
 attributed wording absent from the request, invented first-person author biography,
 corpus/profile leakage, or a proposition too incoherent to state clearly enough for a

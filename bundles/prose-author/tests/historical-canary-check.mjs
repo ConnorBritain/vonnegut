@@ -10,6 +10,7 @@ const RUN = "bundles/prose-author/tests/runs/2026-08-30-v030-style-spec-canary-2
 const ARCHIVED = {
   "primitives/agents/voice-draft/agent.md": "bundles/prose-author/tests/fixtures/historical-v030/voice-draft/agent.md",
   "bundles/prose-author/tests/acceptance-runner.mjs": "bundles/prose-author/tests/fixtures/historical-v030/acceptance-runner.mjs",
+  "bundles/prose-author/skills/prose-draft/tools/draft-claim-audit.mjs": "bundles/prose-author/tests/fixtures/historical-v030/draft-claim-audit.mjs",
 };
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
 export function checkHistoricalStyleCanary(root = ROOT) {
