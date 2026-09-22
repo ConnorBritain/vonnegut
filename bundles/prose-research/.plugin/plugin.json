@@ -1,0 +1,19 @@
+{
+  "name": "prose-research",
+  "version": "0.1.0",
+  "description": "Provenance for prose: take sources in (a URL, a file, a PDF's text), keep a dossier of quotable passages with locations and a claims ledger (claim, source, quote, the writer's confidence) in the shared writing-identity registry with undo, and check a draft deterministically — every ledger quote verbatim against its source, every link, every sentence that makes a claim no entry backs. Hands quote provenance to the fidelity critic. Never says a claim is true, never ranks sources, never saves without approval.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "repository": "https://github.com/ConnorBritain/vonnegut",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "research",
+    "sources",
+    "citations",
+    "provenance"
+  ]
+}

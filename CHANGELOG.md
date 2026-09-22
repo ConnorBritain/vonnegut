@@ -141,6 +141,36 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-outline/RELEASE-v0.1.0.md).
 
 ---
 
+## prose-research
+
+### [0.1.0] — in progress
+
+Roadmap item E ([`docs/roadmap/E-prose-research.md`](docs/roadmap/E-prose-research.md));
+deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+
+- **Added** the bundle scaffold: four manifests, marketplace entry, README,
+  AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets, a selftest wired into
+  `node tools/check.mjs`, and `check-packaging.mjs` pins for the shared
+  `registry-reader`, `revision-store` (prose-outline's) and `html-text`
+  (prose-author's) copies.
+- **Added** `research-dossier/1`, `claims-ledger/1` (confidence is the writer's
+  label, carried as `confidence_by: "writer"`) and the task-local
+  `sentence-map/1`; `source-intake.mjs` (URL through Node's fetch, file, PDF
+  through `pdftotext` or a refusal with the export instruction; text, sha256
+  and retrieval instant; never stores).
+- **Added** `claims-check.mjs`: every ledger quote exact, drifted or absent
+  after whitespace normalisation and nothing else; every link ok, dead or
+  not-evaluated (offline is never ok); every draft sentence the map marks as a
+  claim with no ledger entry. Fixtures with a planted changed word, a changed
+  case, an uncached source, a dead locator and two unledgered sentences;
+  expected output generated, never hand-edited.
+- **Added** `research-store.mjs` (`add-source`, `save`, `undo` for the dossier
+  and the ledger under `<project>/research/`, source text cached by sha,
+  approval-gated, ledger sources checked against the dossier) and the
+  `prose-research` skill (SKILL.md, meta.yaml, schema references);
+  `tests/skill-harness.md` records the positive and negative test and that
+  neither has been run here. Mutations registered under the `research` suite.
+
 ## prose-review
 
 ### [0.4.0] — a third critic: structure

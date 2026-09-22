@@ -1,0 +1,13 @@
+{
+  "schema": "sentence-map/1",
+  "sentences": [
+    { "id": "p1s1", "text": "The mill on the Harrow road was built in 1851 by the Teodor family.", "claim": true, "ledger": "k1" },
+    { "id": "p1s2", "text": "The parish record says \"the wheel was cast in Sheffield and carried up the valley on three carts,\" which took eleven days.", "claim": true, "ledger": "k2" },
+    { "id": "p2s1", "text": "When the flood of 1898 closed the coast road, the mill kept working.", "claim": true, "ledger": "k3" },
+    { "id": "p2s2", "text": "The miller wrote that \"we ground on through the water, because the bread would not wait.\"", "claim": true, "ledger": "k3" },
+    { "id": "p2s3", "text": "The ledger for that winter records forty-one sacks, more than any winter before it.", "claim": true, "ledger": null },
+    { "id": "p3s1", "text": "The quarry closed in 1961; its last foreman said \"the stone ran out before the men did.\"", "claim": true, "ledger": "k5" },
+    { "id": "p3s2", "text": "The walkers' guide still recommends the quarry path in wet weather.", "claim": true, "ledger": "k4" },
+    { "id": "p4s1", "text": "Most valleys like this one lost their mills before the war.", "claim": true, "ledger": null }
+  ]
+}

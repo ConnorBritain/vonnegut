@@ -1,0 +1,47 @@
+{
+  "schema": "research-dossier/1",
+  "id": "mill",
+  "revision": 1,
+  "parent_digest": null,
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "file",
+      "locator": "file://<fixtures>/sources/mill-history.txt",
+      "retrieved_at": "2026-01-02T03:04:05.000Z",
+      "sha256": "1e47f59ab28b9937e5eeb7f5b865dcdec895d440419bcade431261c58849213c",
+      "text_file": "1e47f59ab28b9937e5eeb7f5b865dcdec895d440419bcade431261c58849213c.txt",
+      "title": "mill-history"
+    },
+    {
+      "id": "s2",
+      "kind": "url",
+      "locator": "file://<fixtures>/sources/valley-guide.html",
+      "retrieved_at": "2026-01-02T03:04:05.000Z",
+      "sha256": "a778ada900b62905760ab2fd0ddf6e2e25bcab3a79c32a91806645e6239bfd05",
+      "text_file": "a778ada900b62905760ab2fd0ddf6e2e25bcab3a79c32a91806645e6239bfd05.txt",
+      "title": "A walker's guide to the valley"
+    },
+    {
+      "id": "s3",
+      "kind": "url",
+      "locator": "file://<fixtures>/sources/gone-newsletter.html",
+      "retrieved_at": "2026-01-02T03:04:05.000Z",
+      "sha256": "24dbda3451d42efcc48c012a99105137783aa7d5aaea3fe2a370889754c9b797",
+      "text_file": "24dbda3451d42efcc48c012a99105137783aa7d5aaea3fe2a370889754c9b797.txt",
+      "title": "Parish newsletter (gone)"
+    }
+  ],
+  "passages": [
+    {
+      "id": "p1",
+      "source": "s1",
+      "location": {
+        "line": 2,
+        "offset": 31
+      },
+      "quote": "the wheel was cast in Sheffield and carried up the valley on two carts",
+      "note": "parish record"
+    }
+  ]
+}

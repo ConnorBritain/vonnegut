@@ -13,7 +13,7 @@ import { readBundleVersions } from "./check-roadmap.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 // Every bundle STATUS.md pins is installed and checked; the list is never retyped here.
 const BUNDLES = Object.keys(readBundleVersions(root)).sort();
-const SKILLS = [["prose-author", "prose-draft"], ["prose-author", "prose-style-tune"], ["prose-author", "prose-corpus"], ["prose-tell-scan", "tell-scan"], ["prose-outline", "prose-outline"], ["prose-bible", "prose-bible"]];
+const SKILLS = [["prose-author", "prose-draft"], ["prose-author", "prose-style-tune"], ["prose-author", "prose-corpus"], ["prose-tell-scan", "tell-scan"], ["prose-outline", "prose-outline"], ["prose-bible", "prose-bible"], ["prose-research", "prose-research"]];
 const temp = mkdtempSync(join(tmpdir(), "vonnegut-install-"));
 const run = (file, args, env, cwd = temp) => execFileSync(file, args, {
   env: { ...process.env, ...env }, cwd, encoding: "utf8", stdio: "pipe",

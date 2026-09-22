@@ -50,7 +50,9 @@ assert.deepEqual(deployed.sort(), [...AGENTS].sort());
 const SHARED_FILES = [
   ["bundles/prose-outline/skills/prose-outline/tools/lib/text-index.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/text-index.mjs"],
   ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/registry-reader.mjs"],
-  ["bundles/prose-outline/skills/prose-outline/tools/lib/revision-store.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/revision-store.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/revision-store.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/revision-store.mjs", "bundles/prose-research/skills/prose-research/tools/lib/revision-store.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-research/skills/prose-research/tools/lib/registry-reader.mjs"],
+  ["bundles/prose-author/skills/prose-corpus/tools/lib/html-text.mjs", "bundles/prose-research/skills/prose-research/tools/lib/html-text.mjs"],
 ];
 for (const [canonical, ...copies] of SHARED_FILES) {
   for (const copy of copies) assert.ok(readFileSync(join(root, canonical)).equals(readFileSync(join(root, copy))), `${copy} must be byte-identical to ${canonical}`);

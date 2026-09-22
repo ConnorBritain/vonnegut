@@ -77,9 +77,11 @@ const SUITES = {
   review: "bundles/prose-review/tests/selftest.mjs",
   outline: "bundles/prose-outline/tests/selftest.mjs",
   bible: "bundles/prose-bible/tests/selftest.mjs",
+  research: "bundles/prose-research/tests/selftest.mjs",
 };
 const OUTLINE_TOOLS = "bundles/prose-outline/skills/prose-outline/tools";
 const BIBLE_TOOLS = "bundles/prose-bible/skills/prose-bible/tools";
+const RESEARCH_TOOLS = "bundles/prose-research/skills/prose-research/tools";
 const CORPUS_INGEST = "bundles/prose-author/skills/prose-corpus/tools/corpus-ingest.mjs";
 
 const EXEMPLARS = `${TOOLS}/exemplars.mjs`;
@@ -143,6 +145,13 @@ export function createSandbox() {
  * meaningless rather than merely failing.
  */
 export const MUTATIONS = [
+  // prose-research (docs/roadmap/E-prose-research.md). Covered by its own suite.
+  { suite: "research", name: "quote matching widened beyond whitespace to case and punctuation", file: `${RESEARCH_TOOLS}/lib/research-schema.mjs`, find: 'export const normalise = (s) => s.replace(/\\s+/g, " ").trim();', with: 'export const normalise = (s) => s.replace(/\\s+/g, " ").trim().toLowerCase().replace(/[^a-z0-9 ]/g, "");', guards: "a changed case or comma is drift; whitespace is the only normalisation" },
+  { suite: "research", name: "an offline link check reports ok", file: `${RESEARCH_TOOLS}/claims-check.mjs`, find: 'if (offline) { out.push({ source: s.id, status: "not-evaluated", code: null, why: "--offline" }); continue; }', with: 'if (offline) { out.push({ source: s.id, status: "ok", code: null, why: "--offline" }); continue; }', guards: "not-evaluated is never ok" },
+  { suite: "research", name: "the research store writes without approval", file: `${RESEARCH_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "no dossier or ledger revision is written without the approval flag" },
+  { suite: "research", name: "a ledger accepts confidence the writer did not label", file: `${RESEARCH_TOOLS}/lib/research-schema.mjs`, find: 'if (k?.confidence_by !== "writer") errors.push(', with: 'if (false) errors.push(', guards: "confidence is a label the writer gives; the schema refuses anything else" },
+  { suite: "research", name: "a ledger may cite a source the dossier does not have", file: `${RESEARCH_TOOLS}/research-store.mjs`, find: "      if (unknown.length) throw new StoreRefusal(`Ledger claims cite sources the dossier does not have:", with: "      if (false) throw new StoreRefusal(`Ledger claims cite sources the dossier does not have:", guards: "every ledger claim points at a source the dossier holds" },
+  { suite: "research", name: "provenance-scan associates an atom with any ledger entry regardless of shared words", file: `${RESEARCH_TOOLS}/provenance-scan.mjs`, find: "  return bestShare >= MATCH_SHARE ? best : null;", with: "  return best;", guards: "an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source" },
   // prose-corpus (docs/roadmap/D-corpus-ingestion.md). Covered by the author suite (corpus-ingestion).
   { name: "corpus ingest writes every candidate, not the selected ids", file: CORPUS_INGEST, find: "  for (const id of selection.ids) {", with: "  for (const id of manifest.candidates.map((c) => c.id)) {", guards: "only the ids the writer selected are written into the human corpus" },
   { name: "corpus ingest accepts a selection the writer did not attest", file: CORPUS_INGEST, find: '  if (s?.attest !== true) errors.push("attest must be literally true', with: '  if (false) errors.push("attest must be literally true', guards: "attest must be literally true, given by the writer for this batch, or nothing is written" },

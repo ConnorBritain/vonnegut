@@ -1,6 +1,6 @@
 # E. prose-research
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
+Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
 [`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
 `bundles/prose-research/README.md` and `DESIGN.md`.
 
