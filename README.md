@@ -24,13 +24,13 @@ detector outcomes. Example facts are not automatically facts about you.
 
 | Bundle | Version | Purpose |
 |---|---|---|
-| [prose-author](bundles/prose-author/) | 0.6.0 | Drafting, profiles, persistent preferences and opt-in history |
+| [prose-author](bundles/prose-author/) | 0.7.0 | Drafting, profiles, persistent preferences, opt-in history, corpus intake |
 | [prose-review](bundles/prose-review/) | 0.4.0 | Voice, fidelity and structure critics, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
 | [prose-outline](bundles/prose-outline/) | 0.1.1 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |
 | [prose-bible](bundles/prose-bible/) | 0.1.0 | Cross-file continuity index, per-project bible, and a critic that cites two places or nothing |
 
-Install all five for the complete writing workflow. Nine agents and five
+Install all five for the complete writing workflow. Nine agents and six
 skills ship; the experimental `prose-pattern-critic` source remains held.
 
 ## Install
@@ -49,7 +49,7 @@ node install-prose-codex.mjs --check
 
 This installs the local checkout's five plugins and nine custom agents. Keep
 the checkout at that path. Start a new session, then ask for `$prose-draft`,
-`$prose-style-tune`, `$tell-scan`, `$prose-outline` or `$prose-bible`.
+`$prose-style-tune`, `$prose-corpus`, `$tell-scan`, `$prose-outline` or `$prose-bible`.
 
 ### Claude Code
 

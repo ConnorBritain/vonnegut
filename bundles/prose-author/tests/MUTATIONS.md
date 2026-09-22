@@ -12,6 +12,10 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 
 | mutation | tests failed | what it guards |
 |---|---|---|
+| corpus ingest writes every candidate, not the selected ids | 5 | only the ids the writer selected are written into the human corpus |
+| corpus ingest accepts a selection the writer did not attest | 4 | attest must be literally true, given by the writer for this batch, or nothing is written |
+| corpus ingest drops the 200-word floor | 2 | a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude |
+| corpus ingest enables history as a side effect | 1 | ingestion writes under corpus/human and nothing else — no history, no preferences, no profile |
 | the shared text-index copy drifts from prose-outline's canonical | 1 | a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name |
 | bible store writes without approval | 3 | no bible revision is written without the approval flag |
 | bible store accepts a stale expected revision | 3 | a stale read cannot overwrite a newer bible |
@@ -266,9 +270,9 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | drop the attestation requirement | 5 | unattested text cannot become the definition of human |
 | stop excluding READMEs | 3 | scaffolding is never a writing sample |
 | lose the loose-file scanner candidate | 1 | verification works under the install shape install.sh produces |
-| rename readProvenance in calibrate.mjs (sibling present) | 1 | the port is pinned against a sibling that CHANGED, not just absent |
+| rename readProvenance in calibrate.mjs (sibling present) | 3 | the port is pinned against a sibling that CHANGED, not just absent |
 | drop .markdown/.mdx from the ported extension set | 3 | calibration and drafting agree on what counts as a sample |
-| change the word floor on one side only | 1 | the ported floor equals the sibling's |
+| change the word floor on one side only | 2 | the ported floor equals the sibling's |
 | let a trivial edit through ingest | 2 | voice does not collapse by accepting the model's near-verbatim output |
 | let a sub-minimum sample into approved/ | 1 | approved/ never advertises files calibration would exclude |
 | let --verify skip the recompute and trust the stored ef | 1 | --verify actually re-derives ef rather than restating what the file says |

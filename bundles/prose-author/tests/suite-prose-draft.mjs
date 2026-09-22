@@ -29,12 +29,15 @@ export async function run(t, { tmp, makeProfile, HERE, CORPUS }) {
       ".cursor-plugin/plugin.json", ".plugin/plugin.json",
     ];
     const manifests = manifestPaths.map((path) => JSON.parse(fsRead(join(bundle, path), "utf8")));
-    t.check("all four prose-author manifests agree at 0.6.0",
-      manifests.every((manifest) => manifest.version === "0.6.0"));
+    // The one version pin is docs/roadmap/STATUS.md (tools/check-roadmap.mjs); this bundle's
+    // test asserts only that its own four manifests and the marketplace entry agree.
+    const version = manifests[0].version;
+    t.check(`all four prose-author manifests agree at ${version}`,
+      /^\d+\.\d+\.\d+$/.test(version) && manifests.every((manifest) => manifest.version === version));
 
     const marketplace = JSON.parse(fsRead(resolve(HERE, "..", "..", "..", ".claude-plugin", "marketplace.json"), "utf8"));
     const entry = marketplace.plugins.find((plugin) => plugin.name === "prose-author");
-    t.check("the marketplace prose-author entry agrees at 0.6.0", entry?.version === "0.6.0");
+    t.check(`the marketplace prose-author entry agrees at ${version}`, entry?.version === version);
 
     const claudeAgents = manifests[0].agents ?? [];
     t.check("the Claude manifest exposes all four shipped agents",

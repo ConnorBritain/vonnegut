@@ -15,7 +15,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 | Bundle | Version |
 |---|---|
-| prose-author | 0.6.0 |
+| prose-author | 0.7.0 |
 | prose-bible | 0.1.0 |
 | prose-outline | 0.1.1 |
 | prose-review | 0.4.0 |
@@ -51,7 +51,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] C6 — `prose-bible` SKILL.md + meta.yaml, proposal/confirm flow, negative test recorded
 - [x] C7 — RELEASE-v0.1.0.md, CHANGELOG, README, version pin above, ROADMAP status → shipped
 
-### D. Corpus ingestion — in-progress
+### D. Corpus ingestion — shipped
 
 - [x] D1 — `prose-corpus` skill scaffold (SKILL.md, meta.yaml) + `corpus-ingest.mjs` writing PROFILES.md frontmatter for selected ids only; provenance parity test against tell-scan's reader; PROFILES.md writer row
 - [x] D2 — Substack export importer + fixture + expected manifest
@@ -59,7 +59,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] D4 — Markdown vault importer + fixture
 - [x] D5 — mbox importer (MIME, quoted-printable, base64, reply stripping) + fixture
 - [x] D6 — register/form suggestion heuristics + progress report against both floors, numbers re-derived by test; mutations (select-all, history flag)
-- [ ] D7 — prose-author version bump, RELEASE notes, CHANGELOG, INSTALL/README, version pin above, ROADMAP status → shipped
+- [x] D7 — prose-author version bump, RELEASE notes, CHANGELOG, INSTALL/README, version pin above, ROADMAP status → shipped
 
 ### E. prose-research — planned
 

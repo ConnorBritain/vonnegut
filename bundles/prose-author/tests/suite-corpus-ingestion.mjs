@@ -130,11 +130,16 @@ export async function run(t, { tmp, HERE } = {}) {
     if (existsSync(sibling) && existsSync(profileLib)) {
       const cal = await import(pathToFileURL(sibling).href);
       const prof = await import(pathToFileURL(profileLib).href);
-      const theirs = cal.readProvenance(text);
+      // Crash-safe: a sibling whose reader was renamed or removed must produce a clean FAIL
+      // here (the parity check is what pins the port), not a TypeError the mutation harness
+      // scores as "the count is not a count".
+      const theirs = typeof cal.readProvenance === "function" ? cal.readProvenance(text) : { ok: false, reason: "prose-tell-scan exports no readProvenance" };
+      const theirProfile = typeof prof.frontmatterProfile === "function" ? prof.frontmatterProfile(text) : null;
+      const theirMin = cal.MIN_SAMPLE_WORDS;
       t.check("PARITY: prose-tell-scan's readProvenance accepts the file and agrees on source and date", theirs.ok === true && theirs.source === p.source && theirs.date === p.date && theirs.body === p.body);
-      t.check("PARITY: tell-scan's frontmatterProfile resolves the register from the profile line", prof.frontmatterProfile(text) === "essay");
-      t.check("PARITY: a file this module rejects, tell-scan rejects for the same reason", ["---\nsource: x\ndate: 2020-01-01\n---\nbody", "---\nsource: x\ndate: 2020-01-01\nhuman_authored: false\n---\nbody", "no frontmatter"].every((s) => cal.readProvenance(s).ok === false && cal.readProvenance(s).reason === prov.readProvenance(s).reason));
-      t.check("PARITY: the word floor equals tell-scan's MIN_SAMPLE_WORDS", cal.MIN_SAMPLE_WORDS === prov.MIN_WORDS);
+      t.check("PARITY: tell-scan's frontmatterProfile resolves the register from the profile line", theirProfile === "essay");
+      t.check("PARITY: a file this module rejects, tell-scan rejects for the same reason", ["---\nsource: x\ndate: 2020-01-01\n---\nbody", "---\nsource: x\ndate: 2020-01-01\nhuman_authored: false\n---\nbody", "no frontmatter"].every((s) => typeof cal.readProvenance === "function" && cal.readProvenance(s).ok === false && cal.readProvenance(s).reason === prov.readProvenance(s).reason));
+      t.check("PARITY: the word floor equals tell-scan's MIN_SAMPLE_WORDS", theirMin === prov.MIN_WORDS);
     } else {
       process.stdout.write("  SKIP parity — prose-tell-scan absent\n");
     }

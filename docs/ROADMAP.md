@@ -46,7 +46,7 @@ for how a session picks up from here.
 | 1 | [A. prose-outline](#a-prose-outline) | `prose-outline` (new) | [A-prose-outline.md](roadmap/A-prose-outline.md) | shipped |
 | 1 | [B. prose-structure-critic](#b-prose-structure-critic) | `prose-review` | [B-prose-structure-critic.md](roadmap/B-prose-structure-critic.md) | shipped |
 | 1 | [C. prose-bible](#c-prose-bible) | `prose-bible` (new) | [C-prose-bible.md](roadmap/C-prose-bible.md) | shipped |
-| 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | in-progress |
+| 2 | [D. Corpus ingestion](#d-corpus-ingestion) | `prose-author` | [D-corpus-ingestion.md](roadmap/D-corpus-ingestion.md) | shipped |
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | planned |
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | planned |
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | planned |
@@ -226,7 +226,7 @@ against the calibrator's provenance reader; a mutation that makes ingest select
 everything is caught; a mutation that flips a history flag is caught; the
 progress report's numbers are re-derived by the test, not read from prose.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## E. prose-research
 

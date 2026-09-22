@@ -199,10 +199,10 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 
 ## prose-author
 
-### [0.7.0] — in progress
+### [0.7.0] — corpus intake from where the writing lives
 
 Roadmap item D ([`docs/roadmap/D-corpus-ingestion.md`](docs/roadmap/D-corpus-ingestion.md));
-deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+release notes in [`RELEASE-v0.7.0.md`](bundles/prose-author/RELEASE-v0.7.0.md).
 
 - **Added** the `prose-corpus` skill: four importers (a Substack export, a
   Google Docs export folder, a Markdown vault, an mbox with an explicit

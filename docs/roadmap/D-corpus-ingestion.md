@@ -1,9 +1,11 @@
 # D. Corpus ingestion
 
-Status: **in-progress** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). Planning material: on ship, rationale moves to
-`bundles/prose-author/DESIGN.md` and the skill README.
-
+Status: **shipped** as prose-author 0.7.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-author/skills/prose-corpus/SKILL.md`,
+`bundles/prose-author/PROTOCOL.md` ("Corpus intake") and `RELEASE-v0.7.0.md`;
+read those for what shipped. Decisions taken during the build that this spec did
+not anticipate are in §9.
 ## 1. Goal and non-goals
 
 Bring a writer's existing work into `corpus/human/` with provenance from the
