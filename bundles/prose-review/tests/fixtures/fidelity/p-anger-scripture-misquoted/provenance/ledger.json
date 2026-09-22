@@ -1,0 +1,20 @@
+{
+  "schema": "claims-ledger/1",
+  "id": "anger",
+  "revision": 1,
+  "parent_digest": null,
+  "claims": [
+    {
+      "id": "k1",
+      "confidence": "high",
+      "confidence_by": "writer",
+      "claim": "Scripture exhorts patience as possession of the soul.",
+      "source": "s1",
+      "location": {
+        "line": 2,
+        "offset": 0
+      },
+      "quote": "In your patience possess ye your souls"
+    }
+  ]
+}

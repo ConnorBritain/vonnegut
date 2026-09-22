@@ -1,0 +1,18 @@
+{
+  "schema": "research-dossier/1",
+  "id": "anger",
+  "revision": 1,
+  "parent_digest": null,
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "notes",
+      "locator": "file://<fixture>/luke-21.txt",
+      "retrieved_at": "2026-01-02T03:04:05.000Z",
+      "sha256": "9b75cd6e75742f56c29d9e93d57f83e489e9f6c8c3dcc6802b850dde1d017443",
+      "text_file": "9b75cd6e75742f56c29d9e93d57f83e489e9f6c8c3dcc6802b850dde1d017443.txt",
+      "title": "Luke 21, a translation"
+    }
+  ],
+  "passages": []
+}

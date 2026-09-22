@@ -80,7 +80,7 @@ import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { renderReport, scanFidelity } from "../tools/fidelity-scan.mjs";
 import { structureFixtures, structureTask } from "./structure-harness.mjs";
@@ -203,7 +203,24 @@ function fidelityFixtures(opts = {}) {
       { as: "original.md", from: join(dir, f.name, "original.md") },
       { as: "revision.md", from: join(dir, f.name, "revision.md") },
     ],
+    // A fixture with a provenance/ directory carries a ledger, a dossier and cached source
+    // text. The critic never sees those: prepare runs prose-research's provenance-scan over
+    // them (a producer imported at test time, the way structure imports outline-scan) and
+    // stages ONLY the scan output as provenance.json. Without prose-research the fixture
+    // cannot be staged, and prepare says so rather than staging it without its signal.
+    provenance: existsSync(join(dir, f.name, "provenance")) ? join(dir, f.name, "provenance") : null,
   }));
+}
+
+const PROVENANCE_SCAN = join(REPO, "bundles", "prose-research", "skills", "prose-research", "tools", "provenance-scan.mjs");
+
+/** provenance-scan over a fixture's provenance/ directory, or null when prose-research is absent. */
+async function provenanceFor(f, staged) {
+  if (!f.provenance) return null;
+  if (!existsSync(PROVENANCE_SCAN)) throw new Error(`${f.name} carries provenance but prose-research is absent; it cannot be staged`);
+  const { provenanceScan } = await import(pathToFileURL(PROVENANCE_SCAN).href);
+  const read = (name) => JSON.parse(readFileSync(join(f.provenance, name), "utf8"));
+  return provenanceScan({ revision: staged["revision.md"], original: staged["original.md"], ledger: read("ledger.json"), dossier: read("dossier.json"), sourcesDir: join(f.provenance, "sources") });
 }
 
 /**
@@ -254,9 +271,12 @@ function voiceFixtures(opts = {}) {
 
 function fidelityTask(staged) {
   const scan = scanFidelity(staged["original.md"], staged["revision.md"]);
+  // Staged by prepare when the fixture carries provenance/; the critic reads the same bytes.
+  const provenance = staged["provenance.json"] ? JSON.parse(staged["provenance.json"]) : null;
   return [
     "You have an original, a revision of it, and the output of `fidelity-scan` over the",
-    "pair. Report on the revision's fidelity, following your instructions exactly,",
+    "pair" + (provenance ? ", and the output of `provenance-scan` over the revision's quotations." : "."),
+    "Report on the revision's fidelity, following your instructions exactly,",
     "including the output contract and the closing one-line verdict.",
     "",
     "## fidelity-scan output",
@@ -264,6 +284,7 @@ function fidelityTask(staged) {
     "```",
     renderReport(scan).replace(/^\n/, ""),
     "```",
+    ...(provenance ? ["", "## provenance-scan output", "", "```json", JSON.stringify(provenance, null, 1), "```"] : []),
     "",
     "The scan is authoritative on presence. You are authoritative only on consequence.",
   ].join("\n");
@@ -357,7 +378,14 @@ async function prepare(criticName, runId, opts) {
     const caseDir = join(runDir, "inputs", caseId);
     const staged = {};
     const files = [];
-    for (const input of f.inputs) {
+    const inputs = [...f.inputs];
+    if (f.provenance) {
+      const scanned = await provenanceFor(f, Object.fromEntries(f.inputs.map((i) => [i.as, stripFrontmatter(readFileSync(i.from, "utf8"))])));
+      mkdirSync(caseDir, { recursive: true });
+      writeFileSync(join(caseDir, "provenance.json"), `${JSON.stringify(scanned, null, 1)}\n`);
+      inputs.push({ as: "provenance.json", from: join(caseDir, "provenance.json") });
+    }
+    for (const input of inputs) {
       const text = stripFrontmatter(readFileSync(input.from, "utf8"));
       const leak = leakCheck(`${f.name}/${input.as}`, text);
       if (leak) leaks.push(leak);
@@ -375,7 +403,7 @@ async function prepare(criticName, runId, opts) {
     const prompt = buildPrompt({
       caseId,
       agentPath: relative(REPO, join(runDir, "prompts", "agent-prompt.md")),
-      inputs: f.inputs.map((i) => relative(REPO, join(caseDir, i.as))),
+      inputs: inputs.map((i) => relative(REPO, join(caseDir, i.as))),
       // A task may run a deterministic tool over the staged copies (fidelity-scan,
       // outline-scan); the structure task imports its tool asynchronously.
       task: await spec.task(staged),

@@ -20,7 +20,7 @@ Your job is the half a string comparison cannot do: which absences cost the read
 
 ## Look for exactly these, in priority order
 
-1. **Flagged atoms that are genuinely gone** - a number, date, quote, or named entity whose information the reader cannot recover from the revision. "Opened in 1965" becoming "opened in the mid-sixties" loses precision the reader cannot get back. A second mention of a name replaced by "the university" loses nothing.
+1. **Flagged atoms that are genuinely gone** - a number, date, quote, or named entity whose information the reader cannot recover from the revision. "Opened in 1965" becoming "opened in the mid-sixties" loses precision the reader cannot get back. A second mention of a name replaced by "the university" loses nothing. Where a `provenance-scan` block is supplied, a quote atom it marks `drifted` belongs here too: the revision carries a quotation its ledger source does not say, and the block shows the source's words. Quote both. You may not claim a drifted atom matches its source, any more than you may claim a scan-flagged atom is present; a dispute goes under *Scanner defects*.
 2. **Claim drift the scan cannot see** - the revision states something the original did not. Polarity reversed, a hedge removed (*may have been* becoming *was*), a claim strengthened or weakened, an attribution dropped so an opinion reads as fact. The scan is blind to all of this, because every word involved is still on the page.
 3. **Dropped qualifications and scope limits** - *in most cases*, *before 1890*, *among the younger writers*. Each one narrows a claim, and removing one broadens it silently. This is the most common real loss in a competent rewrite and the least likely to look like one.
 4. **Edits outside the plan** - where an edit plan was supplied, any change not traceable to an entry in it. A reviser that improved something nobody asked it to improve has exceeded its mandate, and that is a finding even when the change is good.
@@ -30,9 +30,13 @@ Your job is the half a string comparison cannot do: which absences cost the read
 
 An atom the scan flagged and you did not raise as a finding must appear under *Immaterial losses* with the reason, one line each. Returning `FAITHFUL` over a list you did not read is the failure this critic exists to prevent, and a group waved through as "the rest are fine" is indistinguishable from not having looked.
 
+## Provenance, when it is supplied
+
+Sometimes the session also supplies `provenance-scan` output: for each quote atom, whether its words appear in the source the writer's ledger says it came from - `exact`, `drifted`, `absent` (source not cached) or `unledgered`. It is authoritative on that presence exactly as `fidelity-scan` is on its own. It changes one thing only: a `drifted` quote is an item-1 finding even when the scan is quiet, because a quotation that does not match its source is a loss the reader cannot see. It changes nothing else. `unledgered` and `absent` are not findings. You still do not judge whether a claim is true, whether a source is good, or whether a ledger entry should exist - even with a ledger in front of you. Without the block, this section does not apply and nothing about your job changes.
+
 ## What is NOT a finding
 
-The revision reading better, or worse. Sentences merged or split. A different word for the same thing. Reordering that preserves the relations between claims. Anything about voice, register, or rhythm - `prose-voice-critic` owns those and runs on the revision separately. Length, in either direction: a revision asked to cut by half is not unfaithful for being half as long, only for what it chose to cut.
+The revision reading better, or worse. Sentences merged or split. A different word for the same thing. Reordering that preserves the relations between claims. Anything about voice, register, or rhythm - `prose-voice-critic` owns those and runs on the revision separately. Whether a claim is true, or a source reliable, with or without a provenance block - nothing in this bundle judges that. Length, in either direction: a revision asked to cut by half is not unfaithful for being half as long, only for what it chose to cut.
 
 ## Output
 

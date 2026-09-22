@@ -24,7 +24,9 @@
     "sensitive; with that defect fixed the scanner no longer over-flags it and the fixture",
     "is class A. Nothing about the revision changed. A fixture's class is a property of the",
     "PAIR AND THE SCANNER, not of the revision alone - so a class is not evidence that",
-    "survives a tool change, and the harness numbers must be re-derived after one."
+    "survives a tool change, and the harness numbers must be re-derived after one.",
+    "",
+    "PROVENANCE FIXTURES (roadmap item E). A fixture with a provenance/ directory carries a ledger, a dossier and cached source text; prepare runs prose-research's provenance-scan over them and stages only the scan output. `provenance_says` is that scan's status for the fixture's ledgered quote atom, re-derived by the selftest. The two class-D provenance cases are D relative to fidelity-scan: the quote is preserved between drafts, so the scan is quiet, and only the source disagreeing exposes the loss. No class-B provenance fixture exists: a revision that corrects a misquotation to the source changes what the original said, which is arguable, and a class-B fixture must be unarguable."
   ],
   "corpus_root": "../../../../prose-tell-scan/tests/corpus/human-essays/gutenberg",
   "fixtures": [
@@ -156,6 +158,36 @@
       "scan_verdict": "FAITHFUL",
       "expect": "MATERIAL-LOSS",
       "revision_does": "Keeps every name and the Latin tag; reverses 'neither is it always most seen that very beautiful persons are otherwise of great virtue' into a flat assertion, turns 'a man cannot tell whether Apelles or Albert Durer were the more trifler' into a ruling, and drops 'But this holds not always', 'for the most part' and 'if it be true'."
+    },
+    {
+      "name": "n-anger-scripture-exact",
+      "kind": "negative",
+      "class": "A",
+      "source": "bacon-of-anger.txt",
+      "scan_verdict": "FAITHFUL",
+      "expect": "FAITHFUL",
+      "provenance_says": "exact",
+      "revision_does": "Two light rewordings, every atom kept, and a provenance block whose one ledgered quote ('to possess our souls in patience') matches its source. Scan quiet, provenance quiet: the block must not make the critic invent a loss."
+    },
+    {
+      "name": "p-anger-scripture-misquoted",
+      "kind": "positive",
+      "class": "D",
+      "source": "bacon-of-anger.txt",
+      "scan_verdict": "FAITHFUL",
+      "expect": "MATERIAL-LOSS",
+      "provenance_says": "drifted",
+      "revision_does": "The same light rewordings; the quotation is preserved word for word, so fidelity-scan is quiet. The provenance block says the ledger's source reads 'In your patience possess ye your souls' - the quote in both drafts does not match what the writer's own ledger says the source says. Only provenance exposes it. Class D relative to the scan, and the whole argument for the block."
+    },
+    {
+      "name": "p-anger-seneca-misquoted",
+      "kind": "positive",
+      "class": "D",
+      "source": "bacon-of-anger.txt",
+      "scan_verdict": "FAITHFUL",
+      "expect": "MATERIAL-LOSS",
+      "provenance_says": "drifted",
+      "revision_does": "As above with the Seneca quotation: preserved between drafts, but the ledger's source reads 'Anger is like a ruin which breaks itself on that upon which it falls' - every word present, the order changed. A second class-D case so the class is not carried by one fixture."
     }
   ]
 }

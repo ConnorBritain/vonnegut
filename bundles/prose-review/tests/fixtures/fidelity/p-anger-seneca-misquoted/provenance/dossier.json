@@ -1,0 +1,18 @@
+{
+  "schema": "research-dossier/1",
+  "id": "anger",
+  "revision": 1,
+  "parent_digest": null,
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "notes",
+      "locator": "file://<fixture>/seneca-de-ira.txt",
+      "retrieved_at": "2026-01-02T03:04:05.000Z",
+      "sha256": "19536c3e55adba5fd951fcca9e2aebb9a713b6d2ba59693fc2ad8b16ef048593",
+      "text_file": "19536c3e55adba5fd951fcca9e2aebb9a713b6d2ba59693fc2ad8b16ef048593.txt",
+      "title": "Seneca, De Ira (translation)"
+    }
+  ],
+  "passages": []
+}

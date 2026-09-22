@@ -10,6 +10,7 @@
  */
 
 import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { extractAtoms, scanFidelity, verdict, renderReport } from "../tools/fidelity-scan.mjs";
 import { singleWordEntityCandidates } from "./single-word-survey.mjs";
 import { classifyLetter, measure, FIXTURE_LETTERS } from "./ellipsis-provenance.mjs";
@@ -382,12 +383,15 @@ group("fidelity-scan — presence + verdict");
   // to be covered by proper-noun runs the tool no longer extracts from inside
   // quotations. Net 55 -> 53. The numbers are updated to what the code now does;
   // tuning the code to preserve them would be the tail wagging the dog.
-  const notEntities = ["Adeste", "April", "Auto", "Cogita", "Deus", "Easter", "Exhibition",
+  // PROVENANCE FIXTURES (roadmap item E) added three Bacon "Of Anger" originals and moved the
+  // survey: "Be" (sentence-initial inside a quotation) and "Telam" (Latin) join the non-entities,
+  // "Livia" is a name. 53 -> 56 candidates, 13 -> 15 inside a quotation. Re-measured, not tuned.
+  const notEntities = ["Adeste", "April", "Auto", "Be", "Cogita", "Deus", "Easter", "Exhibition",
     "Extinctus", "Faculties", "February", "Feri", "French", "Frenchmen", "Germans", "Jam",
     "January", "Nunc", "October", "Pompa", "Pulchrorum", "Romani", "Saturday",
-    "Stoics", "Stories", "Thursday", "Ut"];
-  check("the single-word-entity survey still yields 53 candidates over the fixture originals",
-    candidates.size === 53, `got ${candidates.size}`);
+    "Stoics", "Stories", "Telam", "Thursday", "Ut"];
+  check("the single-word-entity survey still yields 56 candidates over the fixture originals",
+    candidates.size === 56, `got ${candidates.size}`);
   check("every word the survey calls a non-entity is still produced by the rule",
     notEntities.every((w) => candidates.has(w)),
     notEntities.filter((w) => !candidates.has(w)).join(" "));
@@ -400,8 +404,8 @@ group("fidelity-scan — presence + verdict");
   // duplicating a loss the quote atom already carries. The permissive
   // single-word rule would re-introduce exactly the duplication the
   // quote-interior fix removed.
-  check("and 13 candidates duplicate a loss the quote atoms already report",
-    insideAQuote.size === 13, `got ${insideAQuote.size}: ${[...insideAQuote].sort().join(" ")}`);
+  check("and 15 candidates duplicate a loss the quote atoms already report",
+    insideAQuote.size === 15, `got ${insideAQuote.size}: ${[...insideAQuote].sort().join(" ")}`);
 
   // The counterweight, and it is why this is a survey rather than a one-line
   // won't-fix: the rule DOES find the entities the harness transcripts said the
@@ -533,6 +537,28 @@ group("fidelity fixtures — integrity");
       "MATERIAL-LOSS|MATERIAL-LOSS": "C", "FAITHFUL|MATERIAL-LOSS": "D" }[`${f.scan_verdict}|${f.expect}`];
     check(`${f.name}: declared class ${f.class} matches its scan/expect pair`,
       f.class === expectedClass, `pair implies ${expectedClass}`);
+
+    // PROVENANCE FIXTURES (roadmap item E). The fixture's ledgered quote atom must still
+    // read as the manifest says against its cached source, or the class-D claim is folklore.
+    // prose-research is imported at test time only; absent, the check is a printed SKIP.
+    if (f.provenance_says) {
+      const provDir = new URL(`${f.name}/provenance/`, dir);
+      const scanPath = new URL("../../prose-research/skills/prose-research/tools/provenance-scan.mjs", import.meta.url);
+      check(`${f.name}: carries a provenance/ directory with ledger, dossier and cached sources`,
+        existsSync(new URL("ledger.json", provDir)) && existsSync(new URL("dossier.json", provDir)) && existsSync(new URL("sources/", provDir)));
+      if (!existsSync(scanPath)) process.stdout.write(`  SKIP ${f.name}: provenance_says — prose-research absent\n`);
+      else {
+        const { provenanceScan } = await import(scanPath.href);
+        const read = (name) => JSON.parse(readFileSync(new URL(name, provDir), "utf8"));
+        const rev = readFileSync(new URL(`${f.name}/revision.md`, dir), "utf8");
+        const p = provenanceScan({ revision: rev, original, ledger: read("ledger.json"), dossier: read("dossier.json"), sourcesDir: fileURLToPath(new URL("sources/", provDir)) });
+        const ledgered = p.quotes.filter((q) => q.ledger);
+        check(`${f.name}: provenance-scan still says ${f.provenance_says} for the ledgered atom`,
+          ledgered.length >= 1 && ledgered.every((q) => q.status === f.provenance_says), JSON.stringify(ledgered.map((q) => q.status)));
+        check(`${f.name}: a class-D provenance case is quiet for the scan and loud for provenance only`,
+          f.class !== "D" || (f.scan_verdict === "FAITHFUL" && f.provenance_says === "drifted"));
+      }
+    }
 
     // negative = must come back FAITHFUL, positive = must come back MATERIAL-LOSS.
     // verify-run.mjs derives the two denominators from the filename prefix, so a
