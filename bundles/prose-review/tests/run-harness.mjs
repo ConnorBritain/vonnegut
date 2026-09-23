@@ -80,9 +80,11 @@ import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { renderReport, scanFidelity } from "../tools/fidelity-scan.mjs";
+import { loadStructureManifest, structureFixtures, structureTask } from "./structure-harness.mjs";
+import { mediumFixtures, mediumTask } from "./medium-harness.mjs";
 
 const TESTS = dirname(fileURLToPath(import.meta.url));
 const BUNDLE = resolve(TESTS, "..");
@@ -117,10 +119,59 @@ const CRITICS = {
     fixtures: fidelityFixtures,
     task: fidelityTask,
   },
+  // Shares CLEAN/REVISE with the voice critic, so a verdict alone no longer names
+  // the critic: every run since this landed carries a MANIFEST, and `criticFor`
+  // reads it. Legacy runs without one are voice or fidelity, which the words still
+  // distinguish.
+  // The profile is an INPUT staged beside the piece; repurpose-check (prose-author's) is
+  // computed at prepare time and embedded in the task, the way outline-scan is for the
+  // structure critic. Without prose-author's repurpose skill the fixtures cannot be staged
+  // and prepare says so.
+  medium: {
+    agent: "primitives/agents/prose-medium-critic/agent.md",
+    vocabulary: ["CLEAN", "REVISE"],
+    contract: ["uncited", "authorship_claims"],
+    finding: /\*\*CLASS\*\*/g,
+    phrase: { negative: "survives delivery", positive: "breaks in the medium" },
+    fixtures: mediumFixtures,
+    task: mediumTask,
+  },
+  // One prompt, many readers: the persona is an INPUT staged beside the draft, never a
+  // template. Fixtures are leave-one-out per persona over the same twelve argumentative
+  // essays the structure critic uses; there are no positives, because no material exists
+  // where "this reader would stop here" is known by construction (G spec §8).
+  reader: {
+    agent: "primitives/agents/prose-reader-critic/agent.md",
+    vocabulary: ["CLEAN", "REVISE"],
+    contract: ["uncited", "authorship_claims", "missing_forced_choice"],
+    finding: /\*\*WHERE I STOPPED\*\*/g,
+    phrase: { negative: "reader finishes", positive: "reader stops" },
+    fixtures: readerFixtures,
+    task: readerTask,
+  },
+  structure: {
+    agent: "primitives/agents/prose-structure-critic/agent.md",
+    vocabulary: ["CLEAN", "REVISE"],
+    contract: ["uncited", "authorship_claims"],
+    finding: /\*\*CLASS\*\*/g,
+    phrase: { negative: "structure holds", positive: "structural gap" },
+    fixtures: structureFixtures,
+    task: structureTask,
+  },
 };
 
 const criticOf = (verdict) =>
   Object.keys(CRITICS).find((c) => CRITICS[c].vocabulary.includes(verdict));
+
+/** The critic a run belongs to: its MANIFEST when it has one, else the verdict word. */
+function criticFor(runDir, verdict) {
+  const manifestPath = join(runDir, "MANIFEST.json");
+  if (existsSync(manifestPath)) {
+    const declared = JSON.parse(readFileSync(manifestPath, "utf8")).critic;
+    if (declared && CRITICS[declared]) return declared;
+  }
+  return criticOf(verdict);
+}
 
 // ---------------------------------------------------------------------------
 // staging
@@ -179,7 +230,24 @@ function fidelityFixtures(opts = {}) {
       { as: "original.md", from: join(dir, f.name, "original.md") },
       { as: "revision.md", from: join(dir, f.name, "revision.md") },
     ],
+    // A fixture with a provenance/ directory carries a ledger, a dossier and cached source
+    // text. The critic never sees those: prepare runs prose-research's provenance-scan over
+    // them (a producer imported at test time, the way structure imports outline-scan) and
+    // stages ONLY the scan output as provenance.json. Without prose-research the fixture
+    // cannot be staged, and prepare says so rather than staging it without its signal.
+    provenance: existsSync(join(dir, f.name, "provenance")) ? join(dir, f.name, "provenance") : null,
   }));
+}
+
+const PROVENANCE_SCAN = join(REPO, "bundles", "prose-research", "skills", "prose-research", "tools", "provenance-scan.mjs");
+
+/** provenance-scan over a fixture's provenance/ directory, or null when prose-research is absent. */
+async function provenanceFor(f, staged) {
+  if (!f.provenance) return null;
+  if (!existsSync(PROVENANCE_SCAN)) throw new Error(`${f.name} carries provenance but prose-research is absent; it cannot be staged`);
+  const { provenanceScan } = await import(pathToFileURL(PROVENANCE_SCAN).href);
+  const read = (name) => JSON.parse(readFileSync(join(f.provenance, name), "utf8"));
+  return provenanceScan({ revision: staged["revision.md"], original: staged["original.md"], ledger: read("ledger.json"), dossier: read("dossier.json"), sourcesDir: join(f.provenance, "sources") });
 }
 
 /**
@@ -224,15 +292,56 @@ function voiceFixtures(opts = {}) {
   return [...negatives, ...positives];
 }
 
+/**
+ * Reader fixtures: every shipped persona × the leave-one-out essay list the structure
+ * fixtures name. `--only` accepts `n-<persona>-<essay>`; `--personas a,b` narrows the
+ * personas. Staged inputs are `persona.md` and `draft.md`; the persona file is validated
+ * by persona-check before staging so a malformed persona aborts prepare, not the run.
+ */
+function readerFixtures(opts = {}) {
+  const personasDir = join(TESTS, "..", "personas");
+  const corpus = join(REPO, "bundles", "prose-tell-scan", "tests", "corpus", "human-essays");
+  const essays = loadStructureManifest().leave_one_out ?? [];
+  const personas = readdirSync(personasDir).filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, "")).sort()
+    .filter((p) => !opts.personas || opts.personas.includes(p));
+  return personas.flatMap((persona) => essays.map((rel) => ({
+    name: `n-${persona}-${rel.split("/").pop().replace(/\.txt$/, "")}`,
+    kind: "negative",
+    inputs: [
+      { as: "persona.md", from: join(personasDir, `${persona}.md`) },
+      { as: "draft.md", from: join(corpus, rel) },
+    ],
+  })));
+}
+
+function readerTask(staged) {
+  return [
+    "`persona.md` describes the reader you are. `draft.md` is the draft. Read the draft as",
+    "that reader and report where you stop, following your instructions exactly, including",
+    "the FORCED CHOICE and the closing one-line verdict.",
+    "",
+    "## persona",
+    "",
+    "```markdown",
+    staged["persona.md"].trim(),
+    "```",
+    "",
+    "You do not know who wrote the draft, and you will not guess.",
+  ].join("\n");
+}
+
 // ---------------------------------------------------------------------------
 // per-critic task text
 // ---------------------------------------------------------------------------
 
 function fidelityTask(staged) {
   const scan = scanFidelity(staged["original.md"], staged["revision.md"]);
+  // Staged by prepare when the fixture carries provenance/; the critic reads the same bytes.
+  const provenance = staged["provenance.json"] ? JSON.parse(staged["provenance.json"]) : null;
   return [
     "You have an original, a revision of it, and the output of `fidelity-scan` over the",
-    "pair. Report on the revision's fidelity, following your instructions exactly,",
+    "pair" + (provenance ? ", and the output of `provenance-scan` over the revision's quotations." : "."),
+    "Report on the revision's fidelity, following your instructions exactly,",
     "including the output contract and the closing one-line verdict.",
     "",
     "## fidelity-scan output",
@@ -240,6 +349,7 @@ function fidelityTask(staged) {
     "```",
     renderReport(scan).replace(/^\n/, ""),
     "```",
+    ...(provenance ? ["", "## provenance-scan output", "", "```json", JSON.stringify(provenance, null, 1), "```"] : []),
     "",
     "The scan is authoritative on presence. You are authoritative only on consequence.",
   ].join("\n");
@@ -304,7 +414,7 @@ function buildPrompt({ caseId, agentPath, inputs, task }) {
 // prepare
 // ---------------------------------------------------------------------------
 
-function prepare(criticName, runId, opts) {
+async function prepare(criticName, runId, opts) {
   const spec = CRITICS[criticName];
   if (!spec) die(`unknown critic ${JSON.stringify(criticName)} — known: ${Object.keys(CRITICS).join(", ")}`);
 
@@ -328,13 +438,22 @@ function prepare(criticName, runId, opts) {
 
   const entries = [];
   const leaks = [];
-  ordered.forEach((f, i) => {
+  for (const [i, f] of ordered.entries()) {
     const caseId = `case-${String(i + 1).padStart(2, "0")}`;
     const caseDir = join(runDir, "inputs", caseId);
     const staged = {};
     const files = [];
-    for (const input of f.inputs) {
-      const text = stripFrontmatter(readFileSync(input.from, "utf8"));
+    const inputs = [...f.inputs];
+    if (f.provenance) {
+      const scanned = await provenanceFor(f, Object.fromEntries(f.inputs.map((i) => [i.as, stripFrontmatter(readFileSync(i.from, "utf8"))])));
+      mkdirSync(caseDir, { recursive: true });
+      writeFileSync(join(caseDir, "provenance.json"), `${JSON.stringify(scanned, null, 1)}\n`);
+      inputs.push({ as: "provenance.json", from: join(caseDir, "provenance.json") });
+    }
+    for (const input of inputs) {
+      const raw = readFileSync(input.from, "utf8");
+      // A persona file's frontmatter IS the brief (reads_for, never, forced_choice); every other staged file has its labels stripped.
+      const text = input.as === "persona.md" ? raw : stripFrontmatter(raw);
       const leak = leakCheck(`${f.name}/${input.as}`, text);
       if (leak) leaks.push(leak);
       staged[input.as] = text;
@@ -351,14 +470,16 @@ function prepare(criticName, runId, opts) {
     const prompt = buildPrompt({
       caseId,
       agentPath: relative(REPO, join(runDir, "prompts", "agent-prompt.md")),
-      inputs: f.inputs.map((i) => relative(REPO, join(caseDir, i.as))),
-      task: spec.task(staged),
+      inputs: inputs.map((i) => relative(REPO, join(caseDir, i.as))),
+      // A task may run a deterministic tool over the staged copies (fidelity-scan,
+      // outline-scan); the structure task imports its tool asynchronously.
+      task: await spec.task(staged),
     });
     for (let d = 1; d <= draws; d += 1) {
       writeFileSync(join(runDir, "prompts", `${caseId}-d${d}.md`), `${prompt}\n`);
     }
     entries.push({ case: caseId, fixture: f.name, kind: f.kind, inputs: files });
-  });
+  }
 
   if (leaks.length) {
     // The staged copies are left on disk deliberately: the operator has to be able to
@@ -623,7 +744,7 @@ function collect(runDir) {
     const fixture = drawMatch ? drawMatch[1] : name;
     const draw = drawMatch ? Number(drawMatch[2]) : 1;
     const body = readFileSync(join(rawDir, f), "utf8").replace(/\s+$/, "");
-    const critic = manifest?.critic ?? guessCritic(body);
+    const critic = (manifest?.critic && CRITICS[manifest.critic]) ? manifest.critic : guessCritic(body);
     if (!critic) die(`collect: ${f} ends in no verdict this harness knows`);
     const spec = CRITICS[critic];
     const verdict = deriveVerdict(body, spec.vocabulary);
@@ -731,7 +852,7 @@ function check(runDir) {
     const p = parseWrapped(original, f);
     if (p.error) { problems.push(p.error); continue; }
 
-    const critic = criticOf(p.verdict);
+    const critic = criticFor(runDir, p.verdict);
     const spec = CRITICS[critic];
     const name = f.replace(/\.md$/, "");
     const kindFromName = name.startsWith("p-") ? "positive" : "negative";
@@ -775,15 +896,15 @@ function die(msg) {
 }
 
 const USAGE = `run-harness: usage:
-  node tests/run-harness.mjs prepare  <voice|fidelity> <run-id> [--only a,b] [--positives a,b]
+  node tests/run-harness.mjs prepare  <voice|fidelity|structure|medium> <run-id> [--only a,b] [--positives a,b]
                                       [--draws N]              default 3; --draws 1 is labelled "single draw" downstream
-                                      [--fixtures-dir <dir>]   fidelity only; for testing the leak abort
+                                      [--fixtures-dir <dir>]   fidelity and structure; for testing the leak abort
   node tests/run-harness.mjs dispatch <run-dir> [--only a,b]
   node tests/run-harness.mjs collect  <run-dir>
   node tests/run-harness.mjs check    <run-dir>
 `;
 
-function main(argv) {
+async function main(argv) {
   const flags = {};
   const positional = [];
   for (let i = 0; i < argv.length; i++) {
@@ -800,6 +921,7 @@ function main(argv) {
   const opts = {
     only: flags.only?.split(","),
     positives: flags.positives?.split(","),
+    personas: flags.personas?.split(","),
     fixturesDir: flags["fixtures-dir"] ? resolve(flags["fixtures-dir"]) : undefined,
     draws,
   };
@@ -811,7 +933,7 @@ function main(argv) {
     return full;
   };
 
-  if (cmd === "prepare") { if (!a || !b) die(USAGE); prepare(a, b, opts); }
+  if (cmd === "prepare") { if (!a || !b) die(USAGE); await prepare(a, b, opts); }
   else if (cmd === "dispatch") dispatch(dir(a), opts);
   else if (cmd === "collect") collect(dir(a));
   else if (cmd === "check") check(dir(a));

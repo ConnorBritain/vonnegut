@@ -1,0 +1,69 @@
+# Metadata for the prose-repurpose skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". This file
+# exists because the contract and an honest per-harness enforcement label are
+# not optional for any surface.
+
+name: prose-repurpose
+kind: author
+surface: skill
+bundle: prose-author
+
+# Why author: it produces prose, through the sibling runtime, one run per form.
+# The same denied-inputs discipline as prose-draft applies, and one more:
+# nothing the source does not say may appear in a form.
+
+contract:
+  read_only: false
+  writes: private-run-artifacts
+  scope: one source piece → one delivery per chosen form
+  clean_context: false
+  deterministic: partial    # profiles, the check and the receipt are scripts; drafting is the runtime's models
+  verdict: null
+  runtime: ../prose-draft/tools/prose-runtime.mjs
+
+  denied_inputs:
+    - catalog.json in generation or repair
+    - a profile edited to make a draft pass
+    - facts the source piece does not contain
+
+  refuses:
+    - Producing forms the writer did not ask for
+    - Inventing a claim, number or quotation absent from the source
+    - Publishing, posting or scheduling anywhere
+    - Re-counting what repurpose-check counted
+    - Treating the missing-atoms list as a failure or hiding it
+    - Optimising for a metric
+
+  tools:
+    - media/*.json                  # medium-profile/1, validated on load, unknown fields refused
+    - tools/repurpose-check.mjs     # mechanical constraints on final bytes; fidelity-scan against the source, listed not failed
+    - tools/lib/medium-profile.mjs  # validator, digest, profileFacts
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Profiles and the check are deterministic; the runtime's receipts record the
+      profile digest. That the model never adds a fact the source lacks is the
+      runtime's claim audit plus a prompt rule, not a harness guarantee.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same runtime path through authenticated codex exec. The medium critic runs
+      as a fresh process or not at all.
+  cursor:
+    enforcement: advisory
+    notes: >-
+      The check and profiles work with Node. Drafting needs an implemented Claude
+      or Codex adapter; without one the result is ungated.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Instructions alone cannot enforce runtime use. Keep "never invent a fact the
+      source lacks" and "the missing-atoms list is the writer's" if you shorten it.
+
+requires:
+  node: Dependency-free scripts require Node.js.
+  authenticated-cli: The sibling runtime's requirement; the check runs without it.
+  prose-review: Optional. The medium critic and fidelity-scan; without it the delivery is ungated for medium review and the fidelity block is not-evaluated.

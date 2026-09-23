@@ -20,15 +20,18 @@ Observed frequencies are tendencies, not compulsory quotas. Missing checks stay
 visible. These tools do not guarantee resemblance, quality, factual accuracy or
 detector outcomes. Example facts are not automatically facts about you.
 
-## Three independently installable bundles
+## Six independently installable bundles
 
 | Bundle | Version | Purpose |
 |---|---|---|
-| [prose-author](bundles/prose-author/) | 0.6.0 | Drafting, profiles, persistent preferences and opt-in history |
-| [prose-review](bundles/prose-review/) | 0.3.0 | Voice and fidelity critics, plus a plan-based reviser |
+| [prose-author](bundles/prose-author/) | 0.9.0 | Drafting, profiles, persistent preferences, opt-in history, corpus intake |
+| [prose-review](bundles/prose-review/) | 0.7.0 | Voice, fidelity (provenance-aware), structure, medium and reader-persona critics, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
+| [prose-outline](bundles/prose-outline/) | 0.1.1 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |
+| [prose-bible](bundles/prose-bible/) | 0.1.0 | Cross-file continuity index, per-project bible, and a critic that cites two places or nothing |
+| [prose-research](bundles/prose-research/) | 0.1.0 | Sources pinned by sha, a dossier and claims ledger, quote / link / coverage checks, provenance for the fidelity critic |
 
-Install all three for the complete writing workflow. Seven agents and three
+Install all six for the complete writing workflow. Eleven agents and eight
 skills ship; the experimental `prose-pattern-critic` source remains held.
 
 ## Install
@@ -45,9 +48,9 @@ node install-prose-codex.mjs
 node install-prose-codex.mjs --check
 ```
 
-This installs the local checkout's three plugins and seven custom agents. Keep
+This installs the local checkout's six plugins and eleven custom agents. Keep
 the checkout at that path. Start a new session, then ask for `$prose-draft`,
-`$prose-style-tune` or `$tell-scan`.
+`$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, `$tell-scan`, `$prose-outline`, `$prose-bible` or `$prose-research`.
 
 ### Claude Code
 
@@ -56,9 +59,12 @@ the checkout at that path. Start a new session, then ask for `$prose-draft`,
 /plugin install prose-author@vonnegut
 /plugin install prose-review@vonnegut
 /plugin install prose-tell-scan@vonnegut
+/plugin install prose-outline@vonnegut
+/plugin install prose-bible@vonnegut
+/plugin install prose-research@vonnegut
 ```
 
-Restart the session and ask for `prose-draft` or `prose-style-tune`.
+Restart the session and ask for `prose-draft`, `prose-style-tune`, `prose-outline`, `prose-bible` or `prose-research`.
 For loose files, clone the repo and run `./install.sh` (Windows: `./install.ps1`).
 Use `--project` (`-Project` on Windows) to install into the current project.
 
@@ -93,6 +99,8 @@ node tools/check.mjs --mutations
 The second command adds the full mutation sweep. Neither command generates new
 model drafts. There are no GitHub Actions workflows. See [contributing](CONTRIBUTING.md),
 [portability](docs/portability.md), [wiring](docs/wiring.md) and [extraction verification](docs/EXTRACTION-VERIFICATION.md).
+Planned work lives in the [roadmap](docs/ROADMAP.md); its [status checklist](docs/roadmap/STATUS.md)
+also pins every bundle version, and the checks fail when the two drift.
 
 With both CLIs installed, `node tools/check-installation.mjs` tests plugin and
 loose-file installation in temporary configuration directories, without changing

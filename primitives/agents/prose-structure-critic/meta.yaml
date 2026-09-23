@@ -1,0 +1,92 @@
+# Harness-specific metadata for the prose-structure-critic primitive.
+# The prompt body lives in agent.md and is shared verbatim across every target.
+# This file records what each harness can and cannot enforce about it.
+
+name: prose-structure-critic
+kind: reviewer
+surface: agent
+bundle: prose-review
+
+# Ships as of prose-review 0.4.0 (roadmap item B, docs/roadmap/B-prose-structure-critic.md).
+ships: true
+
+contract:
+  read_only: true          # a critic that can edit will restructure instead of report
+  clean_context: true      # it must not be the session that wrote the draft or the outline
+  verdict: [CLEAN, REVISE]
+  scope: file              # a whole draft plus its scan, not a diff
+
+  # TWO TIE-BREAKS IN ONE PROMPT, and the reason is CONTRIBUTING's ground-truth
+  # question rather than a house style.
+  #
+  # With an intended outline, "is this claim supported" and "is this section
+  # out of order" have a referent the writer wrote down; a wrong finding costs a
+  # glance at the outline, a missed one ships. That is the fidelity critic's
+  # situation, and it gets the fidelity critic's rule: uncertainty → REVISE.
+  #
+  # Without an outline, neither question has a referent. "Your argument is out
+  # of order" on the critic's own authority is the voice critic's situation -
+  # a wrong finding teaches the writer to write to a template - and it gets the
+  # voice critic's rule: uncertainty → silence, and classes 1 and 2 are not
+  # assessed at all. The prompt states the mode in its first line so a reader
+  # of the transcript knows which rule was in force.
+  uncertainty_resolves_to:
+    intended-outline: revise
+    draft-only: silence
+  adversarial_framing:
+    intended-outline: true
+    draft-only: false
+
+  # The deterministic half runs first and is authoritative on counts. The
+  # critic argues consequence and may not re-count.
+  reads_tool: bundles/prose-outline/skills/prose-outline/tools/outline-scan.mjs
+  reads_optional: voice-outline/1 (the intended outline) and outline-diff/1
+
+  refuses:
+    - Re-counting or re-classifying anything the scan counted; disputes go to Scanner defects
+    - Any finding without a quoted span and a scan field or outline node behind it
+    - Order or support findings in draft-only mode
+    - Calling a flat reference document imbalanced, or length alone a finding
+    - Judging voice, fidelity, truth or prose quality - other critics own those
+    - Proposing replacement text; a PLAN-ENTRY says what to do, not how it should read
+    - Stating or implying that a passage was machine-written
+
+  # Exclusivity (DESIGN.md): this critic takes argument order and "weakest
+  # section" from the unshipped prose-adversarial-reader, and "claims without
+  # support" from the unshipped prose-substance-critic. Neither may claim them
+  # again; the DESIGN.md table records the transfer.
+
+harness:
+  claude-code:
+    enforcement: enforced
+    model: sonnet
+    color: green
+    tools:
+      - Read
+      - Grep
+      - Glob
+      - Bash(node *outline-scan.mjs*:*)
+    notes: >-
+      Full contract. read_only is granted by the tool allowlist: no write tool,
+      and the only Bash it may run is the scan. Clean context is the mechanism -
+      a critic that drafted the outline will read its own intent into the draft.
+
+  cursor:
+    enforcement: partial
+    notes: >-
+      No tool allowlist, so read-only is a request. The scan still runs and is
+      still authoritative on counts, which is the half that survives best.
+
+  codex:
+    enforcement: advisory
+    notes: >-
+      Neither read-only nor context isolation is enforced. Run it as a fresh
+      `codex exec` over the draft, scan and outline rather than inline, and run
+      outline-scan yourself first so the critic cannot skip the counting.
+
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Prompt only. The two rules to keep if you shorten it: the scan is
+      authoritative on counts, and order and support are assessed only against
+      an intended outline - never on the critic's own authority.

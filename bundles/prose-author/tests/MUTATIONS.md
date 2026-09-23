@@ -12,6 +12,40 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 
 | mutation | tests failed | what it guards |
 |---|---|---|
+| quote matching widened beyond whitespace to case and punctuation | 7 | a changed case or comma is drift; whitespace is the only normalisation |
+| an offline link check reports ok | 1 | not-evaluated is never ok |
+| the research store writes without approval | 3 | no dossier or ledger revision is written without the approval flag |
+| a ledger accepts confidence the writer did not label | 2 | confidence is a label the writer gives; the schema refuses anything else |
+| a ledger may cite a source the dossier does not have | 2 | every ledger claim points at a source the dossier holds |
+| provenance-scan associates an atom with any ledger entry regardless of shared words | 1 | an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source |
+| repurpose-check reports every mechanical constraint as passed | 3 | mechanical constraints are evaluated on the final bytes, never assumed |
+| repurpose-check drops the fidelity listing against the source | 2 | what the compression dropped is listed for the writer whenever the scanner is present |
+| a medium profile with an unknown field loads | 1 | unknown profile fields are refused by name |
+| a medium profile's delivery notes may carry a prohibition list | 1 | the only free text the critic weighs carries no prohibition list |
+| corpus ingest writes every candidate, not the selected ids | 5 | only the ids the writer selected are written into the human corpus |
+| corpus ingest accepts a selection the writer did not attest | 4 | attest must be literally true, given by the writer for this batch, or nothing is written |
+| corpus ingest drops the 200-word floor | 2 | a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude |
+| corpus ingest enables history as a side effect | 1 | ingestion writes under corpus/human and nothing else — no history, no preferences, no profile |
+| the shared text-index copy drifts from prose-outline's canonical | 1 | a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name |
+| bible store writes without approval | 3 | no bible revision is written without the approval flag |
+| bible store accepts a stale expected revision | 3 | a stale read cannot overwrite a newer bible |
+| bible store picks the first identity when none is selected | 1 | with several identities and no default the store asks, never picks |
+| index-diff accepts a document that is not an index | 1 | the diff refuses input that is not an entity-index/1, rather than reporting nothing on it |
+| the bible proposal resolves a two-valued attribute itself | 1 | an attribute the text states two ways is flagged for the writer, never chosen by the tool |
+| the continuity harness's echo rule never flags | 6 | every continuity fixture's class is re-derived from the stated echo rule |
+| outline store writes without approval | 5 | nothing persistent is saved without explicit approval |
+| outline store accepts a stale expected revision | 7 | a caller working from a stale read cannot overwrite a newer revision |
+| outline store undoes past the first revision | 1 | undo cannot invent a revision zero |
+| outline store ignores a held writer lock | 1 | a second writer is refused rather than racing the first |
+| registry reader migrates an unknown schema | 1 | an unknown registry version is refused, never reinterpreted |
+| registry reader ignores the pointer digest | 1 | registry bytes must reproduce their pinned digest |
+| registry reader picks the first identity when none is selected | 6 | identities without a default are a question for the user, never a guess |
+| outline store persists with no registry | 2 | without a writing identity registry, outlines stay task-local |
+| outline-scan reads structure into a heading-free note | 2 | a document with no structure is not-evaluated rather than measured |
+| outline-diff matches vanished nodes by text | 1 | nodes are matched by id only, never by text |
+| outline schema accepts a withheld thesis with no open question | 1 | an outline with no thesis must say what is missing |
+| proposal-check lets an underspecified brief keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
+| outline schema accepts duplicate node ids | 1 | node ids are unique, or the differ has nothing to key on |
 | identity accepts a future registry schema | 1 | incompatible registry versions are not silently reinterpreted |
 | identity ignores registry digests | 1 | shared registry revision bytes reproduce their pinned digest |
 | identity overwrites a stale registry revision | 5 | concurrent clients cannot overwrite a newer default or profile selection |
@@ -95,13 +129,13 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | allow a sentence to cite a claim outside the closed ledger | 2 | every factual sentence is restricted to the pre-writing claim ledger |
 | allow an unused retrospective claim into the ledger | 4 | the claim ledger is a closed pre-writing plan rather than a post-hoc dump |
 | allow prose to be emitted before its supposed pre-writing ledger | 2 | source/3 mechanically proves the claim ledger precedes expressive prose |
-| stop reconciling independent audit sentence ids | 2 | an audit decision cannot drift onto a different sentence |
-| assemble a sentence the independent auditor rejected | 3 | fabricated quotations, citations, and biographies cannot pass through as claims |
-| accept opaque independent labels with no rationale | 2 | every independent basis decision remains inspectable clause by clause |
+| stop reconciling independent audit sentence ids | 1 | an audit decision cannot drift onto a different sentence |
+| assemble a sentence the independent auditor rejected | 2 | fabricated quotations, citations, and biographies cannot pass through as claims |
+| accept opaque independent labels with no rationale | 1 | every independent basis decision remains inspectable clause by clause |
 | turn ordinary request entailments back into external claims | 1 | buying and ownership roles remain usable reasoning without licensing contingent facts |
-| let a historical disclosure cite words absent from its sentence | 2 | historical audit evidence remains bound to exact prose |
-| detach a current disclosure from its deterministic sentence evidence | 3 | a current audit-owned claim is mechanically anchored to the complete immutable sentence |
-| let a keep row smuggle claims into the audit overlay | 2 | only an explicit disclose decision may append to the verification queue |
+| let a historical disclosure cite words absent from its sentence | 1 | historical audit evidence remains bound to exact prose |
+| detach a current disclosure from its deterministic sentence evidence | 2 | a current audit-owned claim is mechanically anchored to the complete immutable sentence |
+| let a keep row smuggle claims into the audit overlay | 1 | only an explicit disclose decision may append to the verification queue |
 | drop audit-owned claims from the public verification record | 3 | an independently discovered premise cannot disappear between audit and publication |
 | let the independent auditor trust the drafter's labels | 1 | the factual audit is independent rather than the same self-report twice |
 | let hard factual failures become ordinary disclosures | 1 | fabricated citations, attributed wording, biography, and leakage remain fatal |
@@ -246,15 +280,18 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | drop the attestation requirement | 5 | unattested text cannot become the definition of human |
 | stop excluding READMEs | 3 | scaffolding is never a writing sample |
 | lose the loose-file scanner candidate | 1 | verification works under the install shape install.sh produces |
-| rename readProvenance in calibrate.mjs (sibling present) | 1 | the port is pinned against a sibling that CHANGED, not just absent |
+| rename readProvenance in calibrate.mjs (sibling present) | 3 | the port is pinned against a sibling that CHANGED, not just absent |
 | drop .markdown/.mdx from the ported extension set | 3 | calibration and drafting agree on what counts as a sample |
-| change the word floor on one side only | 1 | the ported floor equals the sibling's |
+| change the word floor on one side only | 2 | the ported floor equals the sibling's |
 | let a trivial edit through ingest | 2 | voice does not collapse by accepting the model's near-verbatim output |
 | let a sub-minimum sample into approved/ | 1 | approved/ never advertises files calibration would exclude |
 | let --verify skip the recompute and trust the stored ef | 1 | --verify actually re-derives ef rather than restating what the file says |
 | reintroduce the model: unknown sentinel | 1 | the frontmatter never claims an unknown model that would pollute filtering |
 | let calibrate skip the aggregate cap on approved samples | 2 | approved samples cannot dominate the blended pool past the cap |
 | let calibrate blend approved samples below the human floor | 2 | cold-start cannot calibrate against model norms on day one |
+| let the structure harness's echo rule never flag | 6 | every structure fixture's class is re-derived from the stated echo rule, so a parrot that cannot flag breaks the four-class table rather than silently flattering the critic |
+| let a persona omit the two refusals every reader shares | 1 | every persona refuses judging prose quality and guessing who wrote it, by validation and not by prose |
+| let a reader transcript call a forced choice alone a REVISE | 1 | a forced choice is always present and never by itself a REVISE, and the checker says so |
 | let fidelity-scan pass a MATERIAL-LOSS as FAITHFUL | 11 | the verdict actually distinguishes fidelity states |
 | let fidelity-scan cross line breaks with proper-noun runs | 4 | proper-noun runs stay within a line - a headings-plus-sentence false positive fires on every structured document |
 | let fidelity-scan skip thousands-separator normalisation | 1 | 1,234 and 1234 read as the same information, so users are not trained to game the formatter |

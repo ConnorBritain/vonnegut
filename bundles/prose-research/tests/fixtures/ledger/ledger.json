@@ -1,0 +1,10 @@
+{
+  "claims": [
+    { "id": "k1", "claim": "The mill on the Harrow road was built in 1851 by the Teodor family.", "source": "s1", "location": { "line": 1, "offset": 0 }, "quote": "The mill on the Harrow road was built in 1851 by the Teodor family", "confidence": "high", "confidence_by": "writer" },
+    { "id": "k2", "claim": "The wheel was cast in Sheffield and brought up the valley by cart.", "source": "s1", "location": { "line": 2, "offset": 31 }, "quote": "the wheel was cast in Sheffield and carried up the valley on two carts", "confidence": "high", "confidence_by": "writer" },
+    { "id": "k3", "claim": "The mill kept working through the flood of 1898.", "source": "s1", "location": { "line": 6, "offset": 13 }, "quote": "we ground on through the water, because the bread could not wait", "confidence": "medium", "confidence_by": "writer" },
+    { "id": "k4", "claim": "The guide recommends the quarry path in wet weather.", "source": "s2", "location": { "line": 3, "offset": 131 }, "quote": "Take the quarry path in wet weather, and the coast road only in June.", "confidence": "medium", "confidence_by": "writer" },
+    { "id": "k5", "claim": "The quarry closed in 1961.", "source": "s3", "location": { "line": 1, "offset": 0 }, "quote": "the stone ran out before the men did", "confidence": "low", "confidence_by": "writer" },
+    { "id": "k6", "claim": "The wheel was called an ornament in 1923.", "source": "s1", "location": { "line": 40, "offset": 0 }, "quote": "an ornament, not an engine", "confidence": "high", "confidence_by": "writer" }
+  ]
+}

@@ -1,0 +1,3467 @@
+{
+  "case": "post.txt",
+  "module": "text-index/1",
+  "segment": {
+    "schema": "text-index/1",
+    "headings": [],
+    "paragraphs": [
+      {
+        "index": 0,
+        "offset": 207,
+        "line": 10,
+        "text": "Today's links",
+        "words": 2,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Today's links",
+            "offset": 207,
+            "line": 10
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "offset": 222,
+        "line": 12,
+        "text": "Post-political: What a \"leftist\" is.",
+        "words": 5,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Post-political: What a \"leftist\" is.",
+            "offset": 222,
+            "line": 12
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "offset": 260,
+        "line": 14,
+        "text": "Hey look at this: Delights to delectate.",
+        "words": 7,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Hey look at this: Delights to delectate.",
+            "offset": 260,
+            "line": 14
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "offset": 302,
+        "line": 16,
+        "text": "Object permanence: MSFT x OSCON; Parental spyware; \"Resurrection Man\"; Brexit do-over petition; Workplace email spying; Record label internet death penalty; News should be cheap, free and chaotic; \"Jughead\".",
+        "words": 28,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Object permanence: MSFT x OSCON; Parental spyware; \"Resurrection Man\"; Brexit do-over petition; Workplace email spying; Record label internet death penalty; News should be cheap, free and chaotic; \"Jughead\".",
+            "offset": 302,
+            "line": 16
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "offset": 511,
+        "line": 18,
+        "text": "Upcoming appearances: London, Edinburgh, Sydney, Melbourne, Brighton, London, South Bend.",
+        "words": 10,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Upcoming appearances: London, Edinburgh, Sydney, Melbourne, Brighton, London, South Bend.",
+            "offset": 511,
+            "line": 18
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "offset": 602,
+        "line": 20,
+        "text": "Recent appearances: Where I've been.",
+        "words": 5,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Recent appearances: Where I've been.",
+            "offset": 602,
+            "line": 20
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "offset": 640,
+        "line": 22,
+        "text": "Latest books: You keep readin' em, I'll keep writin' 'em.",
+        "words": 10,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Latest books: You keep readin' em, I'll keep writin' 'em.",
+            "offset": 640,
+            "line": 22
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "offset": 699,
+        "line": 24,
+        "text": "Upcoming books: Like I said, I'll keep writin' 'em.",
+        "words": 9,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Upcoming books: Like I said, I'll keep writin' 'em.",
+            "offset": 699,
+            "line": 24
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "offset": 752,
+        "line": 26,
+        "text": "Colophon: All the rest.",
+        "words": 4,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Colophon: All the rest.",
+            "offset": 752,
+            "line": 26
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "offset": 777,
+        "line": 28,
+        "text": "Post-political (permalink)",
+        "words": 2,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Post-political (permalink)",
+            "offset": 777,
+            "line": 28
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "offset": 805,
+        "line": 30,
+        "text": "There's plenty of reasons to be skeptical of centrists who bemoan \"political polarization\" and call for a politics that abandons the \"tribalism of left and right.\"",
+        "words": 26,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "There's plenty of reasons to be skeptical of centrists who bemoan \"political polarization\" and call for a politics that abandons the \"tribalism of left and right.\"",
+            "offset": 805,
+            "line": 30
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "offset": 970,
+        "line": 32,
+        "text": "Obviously there's the false equivalence: on the right, you have fascists who want to send masked, armed goons into the streets to beat, kidnap and murder your neighbors. On the left, you have calls for higher taxes, unions, environmental impact reviews for data-centers, and an end to the genocide in Gaza.",
+        "words": 51,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Obviously there's the false equivalence: on the right, you have fascists who want to send masked, armed goons into the streets to beat, kidnap and murder your neighbors.",
+            "offset": 970,
+            "line": 32
+          },
+          {
+            "text": "On the left, you have calls for higher taxes, unions, environmental impact reviews for data-centers, and an end to the genocide in Gaza.",
+            "offset": 1140,
+            "line": 32
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "offset": 1278,
+        "line": 34,
+        "text": "\"Leftist extremism\" is moving some zines around:",
+        "words": 7,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Leftist extremism\" is moving some zines around:",
+            "offset": 1278,
+            "line": 34
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "offset": 1429,
+        "line": 38,
+        "text": "Right wing extremism is attempting the overthrow of the government, murdering brown people in gulags, and the earth's richest man slaughtering the world's poorest children for the lulz:",
+        "words": 28,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Right wing extremism is attempting the overthrow of the government, murdering brown people in gulags, and the earth's richest man slaughtering the world's poorest children for the lulz:",
+            "offset": 1429,
+            "line": 38
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "offset": 1706,
+        "line": 42,
+        "text": "\"Horseshoe theory\" (the idea that the far right and the far left actually bend around to meet each other) is bullshit:",
+        "words": 21,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Horseshoe theory\" (the idea that the far right and the far left actually bend around to meet each other) is bullshit:",
+            "offset": 1706,
+            "line": 42
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "offset": 1902,
+        "line": 46,
+        "text": "The reality is that the right and left have large, substantive disagreements that are matters of life and death. Anyone dismissing these as \"tribalism\" doesn't know what \"left\" and \"right\" mean. At best, they have mistaken a collection of cultural signifiers – pronouns, MMA, brands of beer – for politics.",
+        "words": 48,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "The reality is that the right and left have large, substantive disagreements that are matters of life and death.",
+            "offset": 1902,
+            "line": 46
+          },
+          {
+            "text": "Anyone dismissing these as \"tribalism\" doesn't know what \"left\" and \"right\" mean.",
+            "offset": 2015,
+            "line": 46
+          },
+          {
+            "text": "At best, they have mistaken a collection of cultural signifiers – pronouns, MMA, brands of beer – for politics.",
+            "offset": 2097,
+            "line": 46
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "offset": 2210,
+        "line": 48,
+        "text": "Mistaking cultural signifiers and identity markers for politics is centrism's most dangerous pathology, the thing that makes centrism the handmaiden of the right. If you think identity markers are politics, then you'll be tempted to think the answer to a world run by 150 rich, white, cis straight guys is to replace half of them with women, POCs and queer people. The difference between the left and the right isn't the identities of the ruling class – it's whether we have a ruling class at all.",
+        "words": 85,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Mistaking cultural signifiers and identity markers for politics is centrism's most dangerous pathology, the thing that makes centrism the handmaiden of the right.",
+            "offset": 2210,
+            "line": 48
+          },
+          {
+            "text": "If you think identity markers are politics, then you'll be tempted to think the answer to a world run by 150 rich, white, cis straight guys is to replace half of them with women, POCs and queer people.",
+            "offset": 2373,
+            "line": 48
+          },
+          {
+            "text": "The difference between the left and the right isn't the identities of the ruling class – it's whether we have a ruling class at all.",
+            "offset": 2575,
+            "line": 48
+          }
+        ]
+      },
+      {
+        "index": 17,
+        "offset": 2709,
+        "line": 50,
+        "text": "I collect definitions of \"right\" and \"left.\" There's Corey Robin's definition from The Reactionary Mind, that conservatism is the belief that some people were born to rule, and others to be ruled over, and that any attempt to elevate the latter group to positions of power (through civil rights movements, affirmative action, etc) will result in dire misrule and disaster:",
+        "words": 60,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "I collect definitions of \"right\" and \"left.\"",
+            "offset": 2709,
+            "line": 50
+          },
+          {
+            "text": "There's Corey Robin's definition from The Reactionary Mind, that conservatism is the belief that some people were born to rule, and others to be ruled over, and that any attempt to elevate the latter group to positions of power (through civil rights movements, affirmative action, etc) will result in dire misrule and disaster:",
+            "offset": 2754,
+            "line": 50
+          }
+        ]
+      },
+      {
+        "index": 18,
+        "offset": 3163,
+        "line": 54,
+        "text": "This explains how the right can encompass white nationalists (rule by white people), Hindu nationalists (rule by high-caste Hindus), libertarians (rule by bosses), imperialists (rule by military aggressors), etc. It also explains the right's obsession with learning the racial and gender markers of anyone involved in a plane crash or other disaster: \"See, the oil tanker was being piloted by a DEI hire when it crashed into that bridge!\"",
+        "words": 69,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "This explains how the right can encompass white nationalists (rule by white people), Hindu nationalists (rule by high-caste Hindus), libertarians (rule by bosses), imperialists (rule by military aggressors), etc. It also explains the right's obsession with learning the racial and gender markers of anyone involved in a plane crash or other disaster: \"See, the oil tanker was being piloted by a DEI hire when it crashed into that bridge!\"",
+            "offset": 3163,
+            "line": 54
+          }
+        ]
+      },
+      {
+        "index": 19,
+        "offset": 3603,
+        "line": 56,
+        "text": "Another important definition is Wilhoit's Law:",
+        "words": 6,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Another important definition is Wilhoit's Law:",
+            "offset": 3603,
+            "line": 56
+          }
+        ]
+      },
+      {
+        "index": 20,
+        "offset": 3651,
+        "line": 58,
+        "text": "Conservatism consists of exactly one proposition, to wit: There must be in-groups whom the law protects but does not bind, alongside out-groups whom the law binds but does not protect.",
+        "words": 30,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Conservatism consists of exactly one proposition, to wit: There must be in-groups whom the law protects but does not bind, alongside out-groups whom the law binds but does not protect.",
+            "offset": 3651,
+            "line": 58
+          }
+        ]
+      },
+      {
+        "index": 21,
+        "offset": 3923,
+        "line": 62,
+        "text": "This one hardly needs explanation in this era of \"it's not a crime if the president does it,\" where Alex Jones can owe billions to the parents of dozens of murdered children and somehow not have to pay or give up his assets:",
+        "words": 43,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "This one hardly needs explanation in this era of \"it's not a crime if the president does it,\" where Alex Jones can owe billions to the parents of dozens of murdered children and somehow not have to pay or give up his assets:",
+            "offset": 3923,
+            "line": 62
+          }
+        ]
+      },
+      {
+        "index": 22,
+        "offset": 4218,
+        "line": 66,
+        "text": "But when it comes to a \"post-politics that is neither right nor left,\" the definition I turn to most often comes from science fiction writer Steven Brust, who once told me:",
+        "words": 31,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "But when it comes to a \"post-politics that is neither right nor left,\" the definition I turn to most often comes from science fiction writer Steven Brust, who once told me:",
+            "offset": 4218,
+            "line": 66
+          }
+        ]
+      },
+      {
+        "index": 23,
+        "offset": 4392,
+        "line": 68,
+        "text": "\"Left\" and \"right\" have had the same meaning since the French Revolution. If you want to know if someone is on the left or the right, ask them, \"What is more important: human rights or property rights?\" If they say \"Property rights are a human right,\" then they are on the right.",
+        "words": 52,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Left\" and \"right\" have had the same meaning since the French Revolution.",
+            "offset": 4392,
+            "line": 68
+          },
+          {
+            "text": "If you want to know if someone is on the left or the right, ask them, \"What is more important: human rights or property rights?\"",
+            "offset": 4466,
+            "line": 68
+          },
+          {
+            "text": "If they say \"Property rights are a human right,\" then they are on the right.",
+            "offset": 4595,
+            "line": 68
+          }
+        ]
+      },
+      {
+        "index": 24,
+        "offset": 4725,
+        "line": 72,
+        "text": "That's it. That's the crux. If you think that property rights are a tool for achieving human rights, then you're on the left. You might support the right of farmers to block attempts to expropriate them via eminent domain in order to build a data center, or the right of people to not have their homes or devices searched by cops, or a library's right to own and archive digital books, even if the publishers insist that ebooks are never \"sold,\" merely \"licensed.\"",
+        "words": 83,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "That's it.",
+            "offset": 4725,
+            "line": 72
+          },
+          {
+            "text": "That's the crux.",
+            "offset": 4736,
+            "line": 72
+          },
+          {
+            "text": "If you think that property rights are a tool for achieving human rights, then you're on the left.",
+            "offset": 4753,
+            "line": 72
+          },
+          {
+            "text": "You might support the right of farmers to block attempts to expropriate them via eminent domain in order to build a data center, or the right of people to not have their homes or devices searched by cops, or a library's right to own and archive digital books, even if the publishers insist that ebooks are never \"sold,\" merely \"licensed.\"",
+            "offset": 4851,
+            "line": 72
+          }
+        ]
+      },
+      {
+        "index": 25,
+        "offset": 5191,
+        "line": 74,
+        "text": "If property rights are a tool to achieve human rights, then property rights can be set aside when they impede other rights. Human beings have the right to health care, which is why we should have taken away the pharma companies' patents and copyrights, ending vaccine apartheid and letting the poor world make its own vaccines:",
+        "words": 56,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "If property rights are a tool to achieve human rights, then property rights can be set aside when they impede other rights.",
+            "offset": 5191,
+            "line": 74
+          },
+          {
+            "text": "Human beings have the right to health care, which is why we should have taken away the pharma companies' patents and copyrights, ending vaccine apartheid and letting the poor world make its own vaccines:",
+            "offset": 5315,
+            "line": 74
+          }
+        ]
+      },
+      {
+        "index": 26,
+        "offset": 5591,
+        "line": 78,
+        "text": "Human beings have the right to shelter. If your town has a million empty homes and a million homeless people, there's an obvious solution. At the very least, you can tax the shit out of empty homes to discourage the creation of derelict, empty blights:",
+        "words": 45,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Human beings have the right to shelter.",
+            "offset": 5591,
+            "line": 78
+          },
+          {
+            "text": "If your town has a million empty homes and a million homeless people, there's an obvious solution.",
+            "offset": 5631,
+            "line": 78
+          },
+          {
+            "text": "At the very least, you can tax the shit out of empty homes to discourage the creation of derelict, empty blights:",
+            "offset": 5730,
+            "line": 78
+          }
+        ]
+      },
+      {
+        "index": 27,
+        "offset": 5936,
+        "line": 82,
+        "text": "Human beings have the right to food. If a cartel claims that you may not legally sell your 100,000lbs of nectarines, you can just give them away and tell the cartel to fuck off:",
+        "words": 35,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Human beings have the right to food.",
+            "offset": 5936,
+            "line": 82
+          },
+          {
+            "text": "If a cartel claims that you may not legally sell your 100,000lbs of nectarines, you can just give them away and tell the cartel to fuck off:",
+            "offset": 5973,
+            "line": 82
+          }
+        ]
+      },
+      {
+        "index": 28,
+        "offset": 6220,
+        "line": 86,
+        "text": "As Brust says, this fight is as old as the French Revolution. It's literally the plot of Les Miz (\"In days gone by, I stole a loaf of bread in order to live\").",
+        "words": 33,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "As Brust says, this fight is as old as the French Revolution.",
+            "offset": 6220,
+            "line": 86
+          },
+          {
+            "text": "It's literally the plot of Les Miz (\"In days gone by, I stole a loaf of bread in order to live\").",
+            "offset": 6282,
+            "line": 86
+          }
+        ]
+      },
+      {
+        "index": 29,
+        "offset": 6381,
+        "line": 88,
+        "text": "Note that this framework leaves plenty of room for disagreement among leftists: we can disagree about who should get taxed and how, when a company should be ordered to destroy its ill-gotten loot and when that loot should be divided up among its victims, and what to do about empty houses and homeless people. We can disagree about reparations, about collectivization and co-operatives, about land reform. Very (very!) few leftists want to abolish property, but to be a leftist is to agree that property is only ever a means, and never an end.",
+        "words": 93,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Note that this framework leaves plenty of room for disagreement among leftists: we can disagree about who should get taxed and how, when a company should be ordered to destroy its ill-gotten loot and when that loot should be divided up among its victims, and what to do about empty houses and homeless people.",
+            "offset": 6381,
+            "line": 88
+          },
+          {
+            "text": "We can disagree about reparations, about collectivization and co-operatives, about land reform.",
+            "offset": 6691,
+            "line": 88
+          },
+          {
+            "text": "Very (very!)",
+            "offset": 6787,
+            "line": 88
+          },
+          {
+            "text": "few leftists want to abolish property, but to be a leftist is to agree that property is only ever a means, and never an end.",
+            "offset": 6800,
+            "line": 88
+          }
+        ]
+      },
+      {
+        "index": 30,
+        "offset": 6926,
+        "line": 90,
+        "text": "In systems thinking, we are counseled that the most profound and durable changes come from shifts in paradigms, from which all rules, laws and arrangements flow:",
+        "words": 26,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "In systems thinking, we are counseled that the most profound and durable changes come from shifts in paradigms, from which all rules, laws and arrangements flow:",
+            "offset": 6926,
+            "line": 90
+          }
+        ]
+      },
+      {
+        "index": 31,
+        "offset": 7155,
+        "line": 94,
+        "text": "\"Left\" and \"right\" represent two radically different paradigms. The right's paradigm is that property rights are human rights, which cashes out to \"property rights are the only human right.\" If property rights are a human right, then I can burn down my orchard and laugh as you starve outside the gates. If property rights are human rights, I can leave an apartment building empty while you freeze to death on its sidewalk. If property rights are human rights, I can fill my factory with death-traps and insist that the workers I kill freely chose to assume that risk (as economists would say, they have a \"revealed preference\" for being killed at work):",
+        "words": 112,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Left\" and \"right\" represent two radically different paradigms.",
+            "offset": 7155,
+            "line": 94
+          },
+          {
+            "text": "The right's paradigm is that property rights are human rights, which cashes out to \"property rights are the only human right.\"",
+            "offset": 7219,
+            "line": 94
+          },
+          {
+            "text": "If property rights are a human right, then I can burn down my orchard and laugh as you starve outside the gates.",
+            "offset": 7346,
+            "line": 94
+          },
+          {
+            "text": "If property rights are human rights, I can leave an apartment building empty while you freeze to death on its sidewalk.",
+            "offset": 7459,
+            "line": 94
+          },
+          {
+            "text": "If property rights are human rights, I can fill my factory with death-traps and insist that the workers I kill freely chose to assume that risk (as economists would say, they have a \"revealed preference\" for being killed at work):",
+            "offset": 7579,
+            "line": 94
+          }
+        ]
+      },
+      {
+        "index": 32,
+        "offset": 7886,
+        "line": 98,
+        "text": "Leftists view property rights as a tool, like laws, or regulations, or polls, or voting. Used well, these tools can produce prosperity for all. But \"voting\" and \"laws\" aren't good unto themselves. The Swiss practice of voting on whether your neighbors qualify for citizenship is barbaric:",
+        "words": 46,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Leftists view property rights as a tool, like laws, or regulations, or polls, or voting.",
+            "offset": 7886,
+            "line": 98
+          },
+          {
+            "text": "Used well, these tools can produce prosperity for all.",
+            "offset": 7975,
+            "line": 98
+          },
+          {
+            "text": "But \"voting\" and \"laws\" aren't good unto themselves.",
+            "offset": 8030,
+            "line": 98
+          },
+          {
+            "text": "The Swiss practice of voting on whether your neighbors qualify for citizenship is barbaric:",
+            "offset": 8083,
+            "line": 98
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "offset": 8220,
+        "line": 102,
+        "text": "Good regulations and laws are good, but simply passing any law is stupid and gets you into terrible trouble, even if the stupid law you've passed is designed to solve a real problem:",
+        "words": 33,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Good regulations and laws are good, but simply passing any law is stupid and gets you into terrible trouble, even if the stupid law you've passed is designed to solve a real problem:",
+            "offset": 8220,
+            "line": 102
+          }
+        ]
+      },
+      {
+        "index": 34,
+        "offset": 8472,
+        "line": 106,
+        "text": "Viewed as tools, property rights are perfectly useful ways of achieving the primary purpose of a civilization: to safeguard the human rights of its people. Viewed as ends unto themselves, property rights are a terrible danger to our civilization and species.",
+        "words": 41,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Viewed as tools, property rights are perfectly useful ways of achieving the primary purpose of a civilization: to safeguard the human rights of its people.",
+            "offset": 8472,
+            "line": 106
+          },
+          {
+            "text": "Viewed as ends unto themselves, property rights are a terrible danger to our civilization and species.",
+            "offset": 8628,
+            "line": 106
+          }
+        ]
+      },
+      {
+        "index": 35,
+        "offset": 8732,
+        "line": 108,
+        "text": "If you believe property rights are tools, then you can pass laws banning corporations from electioneering:",
+        "words": 16,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "If you believe property rights are tools, then you can pass laws banning corporations from electioneering:",
+            "offset": 8732,
+            "line": 108
+          }
+        ]
+      },
+      {
+        "index": 36,
+        "offset": 8922,
+        "line": 112,
+        "text": "If you believe property rights are human rights, then you end up supporting unlimited dark money spending in elections:",
+        "words": 19,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "If you believe property rights are human rights, then you end up supporting unlimited dark money spending in elections:",
+            "offset": 8922,
+            "line": 112
+          }
+        ]
+      },
+      {
+        "index": 37,
+        "offset": 9104,
+        "line": 116,
+        "text": "If you believe property rights are tools, you can order landlords who want to ban their tenants from installing balcony solar to fuck off. If you believe property rights are human rights, then landlords can force their tenants to pay every dime the fossil fuel industry demands of them. \"Property right as tool\" allows you to defend a farmer's right to install a wind-farm, and still, to block a data-center from installing a gas turbine on its own land.",
+        "words": 79,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "If you believe property rights are tools, you can order landlords who want to ban their tenants from installing balcony solar to fuck off.",
+            "offset": 9104,
+            "line": 116
+          },
+          {
+            "text": "If you believe property rights are human rights, then landlords can force their tenants to pay every dime the fossil fuel industry demands of them.",
+            "offset": 9243,
+            "line": 116
+          },
+          {
+            "text": "\"Property right as tool\" allows you to defend a farmer's right to install a wind-farm, and still, to block a data-center from installing a gas turbine on its own land.",
+            "offset": 9391,
+            "line": 116
+          }
+        ]
+      },
+      {
+        "index": 38,
+        "offset": 9560,
+        "line": 118,
+        "text": "\"Post-political\" movements are made up of people who don't know what politics are. A \"centrist\" is ultimately a rightist, because the foundation of rightism is the supremacy of property. It is the ideology that breeds hereditary aristocracy (\"property is a human right\" means that it's a violation of your human rights to expect you to work for a living if you emerged from a lucky orifice). It's the ideology that breeds oligarchy.",
+        "words": 72,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Post-political\" movements are made up of people who don't know what politics are.",
+            "offset": 9560,
+            "line": 118
+          },
+          {
+            "text": "A \"centrist\" is ultimately a rightist, because the foundation of rightism is the supremacy of property.",
+            "offset": 9643,
+            "line": 118
+          },
+          {
+            "text": "It is the ideology that breeds hereditary aristocracy (\"property is a human right\" means that it's a violation of your human rights to expect you to work for a living if you emerged from a lucky orifice).",
+            "offset": 9747,
+            "line": 118
+          },
+          {
+            "text": "It's the ideology that breeds oligarchy.",
+            "offset": 9952,
+            "line": 118
+          }
+        ]
+      },
+      {
+        "index": 39,
+        "offset": 9994,
+        "line": 120,
+        "text": "Politics aren't a bunch of cultural signifiers or identity markers. Politics aren't about who rules – it's about whether we are ruled at all, or whether we are free.",
+        "words": 28,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Politics aren't a bunch of cultural signifiers or identity markers.",
+            "offset": 9994,
+            "line": 120
+          },
+          {
+            "text": "Politics aren't about who rules – it's about whether we are ruled at all, or whether we are free.",
+            "offset": 10062,
+            "line": 120
+          }
+        ]
+      },
+      {
+        "index": 40,
+        "offset": 10161,
+        "line": 122,
+        "text": "(Image: Lewis Clarke, CC BY-SA 2.0, modified)",
+        "words": 8,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "(Image: Lewis Clarke, CC BY-SA 2.0, modified)",
+            "offset": 10161,
+            "line": 122
+          }
+        ]
+      },
+      {
+        "index": 41,
+        "offset": 10208,
+        "line": 124,
+        "text": "Hey look at this (permalink)",
+        "words": 5,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Hey look at this (permalink)",
+            "offset": 10208,
+            "line": 124
+          }
+        ]
+      },
+      {
+        "index": 42,
+        "offset": 10238,
+        "line": 126,
+        "text": "Hell Is Other People",
+        "words": 4,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Hell Is Other People",
+            "offset": 10238,
+            "line": 126
+          }
+        ]
+      },
+      {
+        "index": 43,
+        "offset": 10336,
+        "line": 128,
+        "text": "Incarcerated People Lose Treasured Media When Prisons Change Tablet Contracts",
+        "words": 10,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Incarcerated People Lose Treasured Media When Prisons Change Tablet Contracts",
+            "offset": 10336,
+            "line": 128
+          }
+        ]
+      },
+      {
+        "index": 44,
+        "offset": 10524,
+        "line": 130,
+        "text": "Jay Rosen’s Internet Archive: an Introduction",
+        "words": 6,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Jay Rosen’s Internet Archive: an Introduction",
+            "offset": 10524,
+            "line": 130
+          }
+        ]
+      },
+      {
+        "index": 45,
+        "offset": 10647,
+        "line": 132,
+        "text": "Zohran Mamdani on the Promise of America",
+        "words": 7,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Zohran Mamdani on the Promise of America",
+            "offset": 10647,
+            "line": 132
+          }
+        ]
+      },
+      {
+        "index": 46,
+        "offset": 10757,
+        "line": 134,
+        "text": "The official website of Nand to Tetris courses",
+        "words": 8,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "The official website of Nand to Tetris courses",
+            "offset": 10757,
+            "line": 134
+          }
+        ]
+      },
+      {
+        "index": 47,
+        "offset": 10834,
+        "line": 136,
+        "text": "Object permanence (permalink)",
+        "words": 3,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Object permanence (permalink)",
+            "offset": 10834,
+            "line": 136
+          }
+        ]
+      },
+      {
+        "index": 48,
+        "offset": 10865,
+        "line": 138,
+        "text": "#25yrsago Why Microsoft was invited to OSCON",
+        "words": 7,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#25yrsago Why Microsoft was invited to OSCON",
+            "offset": 10865,
+            "line": 138
+          }
+        ]
+      },
+      {
+        "index": 49,
+        "offset": 11001,
+        "line": 140,
+        "text": "#25yrsago The Extent of Systematic Monitoring of Employee E-mail and Internet Use",
+        "words": 12,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#25yrsago The Extent of Systematic Monitoring of Employee E-mail and Internet Use",
+            "offset": 11001,
+            "line": 140
+          }
+        ]
+      },
+      {
+        "index": 50,
+        "offset": 11192,
+        "line": 142,
+        "text": "#20yrsago BPI: We should be able to cut off your Internet",
+        "words": 11,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#20yrsago BPI: We should be able to cut off your Internet",
+            "offset": 11192,
+            "line": 142
+          }
+        ]
+      },
+      {
+        "index": 51,
+        "offset": 11338,
+        "line": 144,
+        "text": "#20yrsago Technology for parents to spy on kids",
+        "words": 8,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#20yrsago Technology for parents to spy on kids",
+            "offset": 11338,
+            "line": 144
+          }
+        ]
+      },
+      {
+        "index": 52,
+        "offset": 11500,
+        "line": 146,
+        "text": "#20yrsago Dale Bailey's \"The Resurrection Man\"",
+        "words": 6,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#20yrsago Dale Bailey's \"The Resurrection Man\"",
+            "offset": 11500,
+            "line": 146
+          }
+        ]
+      },
+      {
+        "index": 53,
+        "offset": 11631,
+        "line": 148,
+        "text": "#10yrsago A law prof responds to students who anonymously complained about #blacklivesmatter tee",
+        "words": 13,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#10yrsago A law prof responds to students who anonymously complained about #blacklivesmatter tee",
+            "offset": 11631,
+            "line": 148
+          }
+        ]
+      },
+      {
+        "index": 54,
+        "offset": 11831,
+        "line": 150,
+        "text": "#10yrsago UK government rejects Brexit do-over petition with 4.1m signatures",
+        "words": 11,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#10yrsago UK government rejects Brexit do-over petition with 4.1m signatures",
+            "offset": 11831,
+            "line": 150
+          }
+        ]
+      },
+      {
+        "index": 55,
+        "offset": 12069,
+        "line": 152,
+        "text": "#10yrsago New Zealanders raise millions to buy beach and donate it to the public",
+        "words": 14,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#10yrsago New Zealanders raise millions to buy beach and donate it to the public",
+            "offset": 12069,
+            "line": 152
+          }
+        ]
+      },
+      {
+        "index": 56,
+        "offset": 12198,
+        "line": 154,
+        "text": "#10yrsago Jughead: Zdarsky’s reboot is funny, fannish, and freaky",
+        "words": 9,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#10yrsago Jughead: Zdarsky’s reboot is funny, fannish, and freaky",
+            "offset": 12198,
+            "line": 154
+          }
+        ]
+      },
+      {
+        "index": 57,
+        "offset": 12357,
+        "line": 156,
+        "text": "#5yrsago Biden's Right to Repair will include electronics, too",
+        "words": 9,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "#5yrsago Biden's Right to Repair will include electronics, too",
+            "offset": 12357,
+            "line": 156
+          }
+        ]
+      },
+      {
+        "index": 58,
+        "offset": 12488,
+        "line": 158,
+        "text": "Upcoming appearances (permalink)",
+        "words": 3,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Upcoming appearances (permalink)",
+            "offset": 12488,
+            "line": 158
+          }
+        ]
+      },
+      {
+        "index": 59,
+        "offset": 12522,
+        "line": 160,
+        "text": "London: Idler Festival, Jul 11",
+        "words": 5,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "London: Idler Festival, Jul 11",
+            "offset": 12522,
+            "line": 160
+          }
+        ]
+      },
+      {
+        "index": 60,
+        "offset": 12589,
+        "line": 164,
+        "text": "Edinburgh International Book Festival with Jimmy Wales, Aug 17",
+        "words": 9,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Edinburgh International Book Festival with Jimmy Wales, Aug 17",
+            "offset": 12589,
+            "line": 164
+          }
+        ]
+      },
+      {
+        "index": 61,
+        "offset": 12735,
+        "line": 168,
+        "text": "Sydney: The Festival of Dangerous Ideas, Aug 23-24",
+        "words": 8,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Sydney: The Festival of Dangerous Ideas, Aug 23-24",
+            "offset": 12735,
+            "line": 168
+          }
+        ]
+      },
+      {
+        "index": 62,
+        "offset": 12840,
+        "line": 172,
+        "text": "Melbourne: Enshittification at the Wheeler Centre, Aug 25",
+        "words": 8,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Melbourne: Enshittification at the Wheeler Centre, Aug 25",
+            "offset": 12840,
+            "line": 172
+          }
+        ]
+      },
+      {
+        "index": 63,
+        "offset": 12988,
+        "line": 176,
+        "text": "Brighton: The Reverse Centaur's Guide to Life After AI with Carole Cadwalladr (Brighton Dome), Sep 8",
+        "words": 16,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Brighton: The Reverse Centaur's Guide to Life After AI with Carole Cadwalladr (Brighton Dome), Sep 8",
+            "offset": 12988,
+            "line": 176
+          }
+        ]
+      },
+      {
+        "index": 64,
+        "offset": 13188,
+        "line": 180,
+        "text": "London: The Reverse Centaur's Guide to Life After AI with Riley Quinn (Foyle's Picadilly), Sep 9",
+        "words": 16,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "London: The Reverse Centaur's Guide to Life After AI with Riley Quinn (Foyle's Picadilly), Sep 9",
+            "offset": 13188,
+            "line": 180
+          }
+        ]
+      },
+      {
+        "index": 65,
+        "offset": 13362,
+        "line": 184,
+        "text": "South Bend: An Evening With Cory Doctorow (Notre Dame), Oct 6",
+        "words": 11,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "South Bend: An Evening With Cory Doctorow (Notre Dame), Oct 6",
+            "offset": 13362,
+            "line": 184
+          }
+        ]
+      },
+      {
+        "index": 66,
+        "offset": 13497,
+        "line": 188,
+        "text": "Recent appearances (permalink)",
+        "words": 3,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Recent appearances (permalink)",
+            "offset": 13497,
+            "line": 188
+          }
+        ]
+      },
+      {
+        "index": 67,
+        "offset": 13529,
+        "line": 190,
+        "text": "Can AI be Saved From Capitalism? (Everyday Anarchism)",
+        "words": 8,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Can AI be Saved From Capitalism?",
+            "offset": 13529,
+            "line": 190
+          },
+          {
+            "text": "(Everyday Anarchism)",
+            "offset": 13562,
+            "line": 190
+          }
+        ]
+      },
+      {
+        "index": 68,
+        "offset": 13670,
+        "line": 194,
+        "text": "Lawfare Daily",
+        "words": 2,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Lawfare Daily",
+            "offset": 13670,
+            "line": 194
+          }
+        ]
+      },
+      {
+        "index": 69,
+        "offset": 13730,
+        "line": 198,
+        "text": "How to Think About AI (Organized Money)",
+        "words": 7,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "How to Think About AI (Organized Money)",
+            "offset": 13730,
+            "line": 198
+          }
+        ]
+      },
+      {
+        "index": 70,
+        "offset": 13845,
+        "line": 202,
+        "text": "Breaking Points",
+        "words": 2,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Breaking Points",
+            "offset": 13845,
+            "line": 202
+          }
+        ]
+      },
+      {
+        "index": 71,
+        "offset": 13907,
+        "line": 206,
+        "text": "A.I. Enshittifies Everything (Slate)",
+        "words": 5,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "A.I.",
+            "offset": 13907,
+            "line": 206
+          },
+          {
+            "text": "Enshittifies Everything (Slate)",
+            "offset": 13912,
+            "line": 206
+          }
+        ]
+      },
+      {
+        "index": 72,
+        "offset": 14067,
+        "line": 210,
+        "text": "Latest books (permalink)",
+        "words": 3,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Latest books (permalink)",
+            "offset": 14067,
+            "line": 210
+          }
+        ]
+      },
+      {
+        "index": 73,
+        "offset": 14093,
+        "line": 212,
+        "text": "\"The Reverse-Centaur's Guide to AI,\" a short book about being a better AI critic, Farrar, Straus and Giroux, June 2026",
+        "words": 20,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"The Reverse-Centaur's Guide to AI,\" a short book about being a better AI critic, Farrar, Straus and Giroux, June 2026",
+            "offset": 14093,
+            "line": 212
+          }
+        ]
+      },
+      {
+        "index": 74,
+        "offset": 14297,
+        "line": 216,
+        "text": "\"Canny Valley\": A limited edition collection of the collages I create for Pluralistic, self-published, September 2025",
+        "words": 16,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Canny Valley\": A limited edition collection of the collages I create for Pluralistic, self-published, September 2025",
+            "offset": 14297,
+            "line": 216
+          }
+        ]
+      },
+      {
+        "index": 75,
+        "offset": 14479,
+        "line": 218,
+        "text": "\"Enshittification: Why Everything Suddenly Got Worse and What to Do About It,\" Farrar, Straus, Giroux, October 7 2025",
+        "words": 18,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Enshittification: Why Everything Suddenly Got Worse and What to Do About It,\" Farrar, Straus, Giroux, October 7 2025",
+            "offset": 14479,
+            "line": 218
+          }
+        ]
+      },
+      {
+        "index": 76,
+        "offset": 14662,
+        "line": 222,
+        "text": "\"Picks and Shovels\": a sequel to \"Red Team Blues,\" about the heroic era of the PC, Tor Books (US), Head of Zeus (UK), February 2025 (",
+        "words": 25,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Picks and Shovels\": a sequel to \"Red Team Blues,\" about the heroic era of the PC, Tor Books (US), Head of Zeus (UK), February 2025 (",
+            "offset": 14662,
+            "line": 222
+          }
+        ]
+      },
+      {
+        "index": 77,
+        "offset": 14859,
+        "line": 224,
+        "text": "\"The Bezzle\": a sequel to \"Red Team Blues,\" about prison-tech and other grifts, Tor Books (US), Head of Zeus (UK), February 2024 (thebezzle.org).",
+        "words": 24,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"The Bezzle\": a sequel to \"Red Team Blues,\" about prison-tech and other grifts, Tor Books (US), Head of Zeus (UK), February 2024 (thebezzle.org).",
+            "offset": 14859,
+            "line": 224
+          }
+        ]
+      },
+      {
+        "index": 78,
+        "offset": 15006,
+        "line": 226,
+        "text": "\"The Lost Cause:\" a solarpunk novel of hope in the climate emergency, Tor Books (US), Head of Zeus (UK), November 2023 (",
+        "words": 21,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"The Lost Cause:\" a solarpunk novel of hope in the climate emergency, Tor Books (US), Head of Zeus (UK), November 2023 (",
+            "offset": 15006,
+            "line": 226
+          }
+        ]
+      },
+      {
+        "index": 79,
+        "offset": 15151,
+        "line": 228,
+        "text": "\"The Internet Con\": A nonfiction book about interoperability and Big Tech (Verso) September 2023 ( Signed copies at Book Soup (",
+        "words": 19,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"The Internet Con\": A nonfiction book about interoperability and Big Tech (Verso) September 2023 ( Signed copies at Book Soup (",
+            "offset": 15151,
+            "line": 228
+          }
+        ]
+      },
+      {
+        "index": 80,
+        "offset": 15364,
+        "line": 230,
+        "text": "\"Red Team Blues\": \"A grabby, compulsive thriller that will leave you knowing more about how the world works than you did before.\" Tor Books",
+        "words": 24,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Red Team Blues\": \"A grabby, compulsive thriller that will leave you knowing more about how the world works than you did before.\"",
+            "offset": 15364,
+            "line": 230
+          },
+          {
+            "text": "Tor Books",
+            "offset": 15494,
+            "line": 230
+          }
+        ]
+      },
+      {
+        "index": 81,
+        "offset": 15530,
+        "line": 232,
+        "text": "\"Chokepoint Capitalism: How to Beat Big Tech, Tame Big Content, and Get Artists Paid, with Rebecca Giblin\", on how to unrig the markets for creative labor, Beacon Press/Scribe 2022",
+        "words": 30,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Chokepoint Capitalism: How to Beat Big Tech, Tame Big Content, and Get Artists Paid, with Rebecca Giblin\", on how to unrig the markets for creative labor, Beacon Press/Scribe 2022",
+            "offset": 15530,
+            "line": 232
+          }
+        ]
+      },
+      {
+        "index": 82,
+        "offset": 15745,
+        "line": 234,
+        "text": "Upcoming books (permalink)",
+        "words": 3,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Upcoming books (permalink)",
+            "offset": 15745,
+            "line": 234
+          }
+        ]
+      },
+      {
+        "index": 83,
+        "offset": 15773,
+        "line": 236,
+        "text": "\"The Post-American Internet,\" a geopolitical sequel of sorts to Enshittification, Farrar, Straus and Giroux, 2027",
+        "words": 15,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"The Post-American Internet,\" a geopolitical sequel of sorts to Enshittification, Farrar, Straus and Giroux, 2027",
+            "offset": 15773,
+            "line": 236
+          }
+        ]
+      },
+      {
+        "index": 84,
+        "offset": 15888,
+        "line": 238,
+        "text": "\"Unauthorized Bread\": a middle-grades graphic novel adapted from my novella about refugees, toasters and DRM, FirstSecond, April 20, 2027",
+        "words": 19,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Unauthorized Bread\": a middle-grades graphic novel adapted from my novella about refugees, toasters and DRM, FirstSecond, April 20, 2027",
+            "offset": 15888,
+            "line": 238
+          }
+        ]
+      },
+      {
+        "index": 85,
+        "offset": 16027,
+        "line": 240,
+        "text": "\"Enshittification, Why Everything Suddenly Got Worse and What to Do About It\" (the graphic novel), Firstsecond, 2027",
+        "words": 17,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"Enshittification, Why Everything Suddenly Got Worse and What to Do About It\" (the graphic novel), Firstsecond, 2027",
+            "offset": 16027,
+            "line": 240
+          }
+        ]
+      },
+      {
+        "index": 86,
+        "offset": 16145,
+        "line": 242,
+        "text": "\"The Memex Method,\" Farrar, Straus, Giroux, 2027",
+        "words": 7,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "\"The Memex Method,\" Farrar, Straus, Giroux, 2027",
+            "offset": 16145,
+            "line": 242
+          }
+        ]
+      },
+      {
+        "index": 87,
+        "offset": 16195,
+        "line": 244,
+        "text": "Colophon (permalink)",
+        "words": 2,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Colophon (permalink)",
+            "offset": 16195,
+            "line": 244
+          }
+        ]
+      },
+      {
+        "index": 88,
+        "offset": 16217,
+        "line": 246,
+        "text": "Today's top sources:",
+        "words": 3,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Today's top sources:",
+            "offset": 16217,
+            "line": 246
+          }
+        ]
+      },
+      {
+        "index": 89,
+        "offset": 16239,
+        "line": 248,
+        "text": "Currently writing: \"The Post-American Internet,\" a sequel to \"Enshittification,\" about the better world the rest of us get to have now that Trump has torched America. Fourth draft completed. Submitted to editor.",
+        "words": 32,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "Currently writing: \"The Post-American Internet,\" a sequel to \"Enshittification,\" about the better world the rest of us get to have now that Trump has torched America.",
+            "offset": 16239,
+            "line": 248
+          },
+          {
+            "text": "Fourth draft completed.",
+            "offset": 16406,
+            "line": 248
+          },
+          {
+            "text": "Submitted to editor.",
+            "offset": 16430,
+            "line": 248
+          }
+        ]
+      },
+      {
+        "index": 90,
+        "offset": 16452,
+        "line": 250,
+        "text": "A Little Brother short story about DIY insulin PLANNING",
+        "words": 9,
+        "heading": null,
+        "sentences": [
+          {
+            "text": "A Little Brother short story about DIY insulin PLANNING",
+            "offset": 16452,
+            "line": 250
+          }
+        ]
+      }
+    ],
+    "words": 2017,
+    "masked": {
+      "frontmatter": 1,
+      "fenced": 0,
+      "inline": 0,
+      "urls": 52,
+      "comments": 0,
+      "html": 0
+    },
+    "limits": [
+      "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+      "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+      "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+      "Dates are recognised in numeric and month-name forms only.",
+      "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+    ]
+  },
+  "runs": [
+    {
+      "text": "Today's",
+      "key": "today",
+      "offset": 207,
+      "line": 10,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Post-political",
+      "key": "post-political",
+      "offset": 222,
+      "line": 12,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Hey",
+      "key": "hey",
+      "offset": 260,
+      "line": 14,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Delights",
+      "key": "delights",
+      "offset": 278,
+      "line": 14,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Object",
+      "key": "object",
+      "offset": 302,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "MSFT",
+      "key": "msft",
+      "offset": 321,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "OSCON",
+      "key": "oscon",
+      "offset": 328,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Parental",
+      "key": "parental",
+      "offset": 335,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Resurrection Man",
+      "key": "resurrection man",
+      "offset": 354,
+      "line": 16,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Brexit",
+      "key": "brexit",
+      "offset": 373,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Workplace",
+      "key": "workplace",
+      "offset": 398,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Record",
+      "key": "record",
+      "offset": 422,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "News",
+      "key": "news",
+      "offset": 459,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Jughead",
+      "key": "jughead",
+      "offset": 500,
+      "line": 16,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Upcoming",
+      "key": "upcoming",
+      "offset": 511,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "London",
+      "key": "london",
+      "offset": 533,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Edinburgh",
+      "key": "edinburgh",
+      "offset": 541,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Sydney",
+      "key": "sydney",
+      "offset": 552,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Melbourne",
+      "key": "melbourne",
+      "offset": 560,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Brighton",
+      "key": "brighton",
+      "offset": 571,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "London",
+      "key": "london",
+      "offset": 581,
+      "line": 18,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "South Bend",
+      "key": "south bend",
+      "offset": 589,
+      "line": 18,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Recent",
+      "key": "recent",
+      "offset": 602,
+      "line": 20,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Where I've",
+      "key": "where i've",
+      "offset": 622,
+      "line": 20,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Latest",
+      "key": "latest",
+      "offset": 640,
+      "line": 22,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "I'll",
+      "key": "i'll",
+      "offset": 675,
+      "line": 22,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Upcoming",
+      "key": "upcoming",
+      "offset": 699,
+      "line": 24,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Like I",
+      "key": "like i",
+      "offset": 715,
+      "line": 24,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "I'll",
+      "key": "i'll",
+      "offset": 728,
+      "line": 24,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Colophon",
+      "key": "colophon",
+      "offset": 752,
+      "line": 26,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Post-political",
+      "key": "post-political",
+      "offset": 777,
+      "line": 28,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "There's",
+      "key": "there",
+      "offset": 805,
+      "line": 30,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Obviously",
+      "key": "obviously",
+      "offset": 970,
+      "line": 32,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Gaza",
+      "key": "gaza",
+      "offset": 1271,
+      "line": 32,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Leftist",
+      "key": "leftist",
+      "offset": 1279,
+      "line": 34,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Right",
+      "key": "right",
+      "offset": 1429,
+      "line": 38,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Horseshoe",
+      "key": "horseshoe",
+      "offset": 1707,
+      "line": 42,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Anyone",
+      "key": "anyone",
+      "offset": 2015,
+      "line": 46,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "MMA",
+      "key": "mma",
+      "offset": 2173,
+      "line": 46,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Mistaking",
+      "key": "mistaking",
+      "offset": 2210,
+      "line": 48,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "POCs",
+      "key": "pocs",
+      "offset": 2552,
+      "line": 48,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "There's Corey Robin's",
+      "key": "there's corey robin",
+      "offset": 2754,
+      "line": 50,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Reactionary Mind",
+      "key": "reactionary mind",
+      "offset": 2792,
+      "line": 50,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Hindu",
+      "key": "hindu",
+      "offset": 3248,
+      "line": 54,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Hindus",
+      "key": "hindus",
+      "offset": 3287,
+      "line": 54,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "See",
+      "key": "see",
+      "offset": 3515,
+      "line": 54,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "DEI",
+      "key": "dei",
+      "offset": 3558,
+      "line": 54,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Another",
+      "key": "another",
+      "offset": 3603,
+      "line": 56,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Wilhoit's Law",
+      "key": "wilhoit's law",
+      "offset": 3635,
+      "line": 56,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Conservatism",
+      "key": "conservatism",
+      "offset": 3651,
+      "line": 58,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Alex Jones",
+      "key": "alex jones",
+      "offset": 4023,
+      "line": 62,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Steven Brust",
+      "key": "steven brust",
+      "offset": 4359,
+      "line": 66,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Left",
+      "key": "left",
+      "offset": 4393,
+      "line": 68,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "French Revolution",
+      "key": "french revolution",
+      "offset": 4447,
+      "line": 68,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Property",
+      "key": "property",
+      "offset": 4608,
+      "line": 68,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "That's",
+      "key": "that",
+      "offset": 4725,
+      "line": 72,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "That's",
+      "key": "that",
+      "offset": 4736,
+      "line": 72,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Human",
+      "key": "human",
+      "offset": 5315,
+      "line": 74,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Human",
+      "key": "human",
+      "offset": 5591,
+      "line": 78,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Human",
+      "key": "human",
+      "offset": 5936,
+      "line": 82,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "As Brust",
+      "key": "as brust",
+      "offset": 6220,
+      "line": 86,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "French Revolution",
+      "key": "french revolution",
+      "offset": 6263,
+      "line": 86,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "It's",
+      "key": "it",
+      "offset": 6282,
+      "line": 86,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Les Miz",
+      "key": "les miz",
+      "offset": 6309,
+      "line": 86,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Note",
+      "key": "note",
+      "offset": 6381,
+      "line": 88,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Left",
+      "key": "left",
+      "offset": 7156,
+      "line": 94,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Leftists",
+      "key": "leftists",
+      "offset": 7886,
+      "line": 98,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Used",
+      "key": "used",
+      "offset": 7975,
+      "line": 98,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Swiss",
+      "key": "swiss",
+      "offset": 8083,
+      "line": 98,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Viewed",
+      "key": "viewed",
+      "offset": 8472,
+      "line": 106,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Viewed",
+      "key": "viewed",
+      "offset": 8628,
+      "line": 106,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Property",
+      "key": "property",
+      "offset": 9392,
+      "line": 116,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Post-political",
+      "key": "post-political",
+      "offset": 9561,
+      "line": 118,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "It's",
+      "key": "it",
+      "offset": 9952,
+      "line": 118,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Politics",
+      "key": "politics",
+      "offset": 9994,
+      "line": 120,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Politics",
+      "key": "politics",
+      "offset": 10062,
+      "line": 120,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Image",
+      "key": "image",
+      "offset": 10162,
+      "line": 122,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Lewis Clarke",
+      "key": "lewis clarke",
+      "offset": 10169,
+      "line": 122,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "CC BY-SA",
+      "key": "cc by-sa",
+      "offset": 10183,
+      "line": 122,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Hey",
+      "key": "hey",
+      "offset": 10208,
+      "line": 124,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Hell Is Other People",
+      "key": "hell is other people",
+      "offset": 10238,
+      "line": 126,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Incarcerated People Lose Treasured Media When Prisons Change Tablet Contracts",
+      "key": "incarcerated people lose treasured media when prisons change tablet contracts",
+      "offset": 10336,
+      "line": 128,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Jay Rosen’s Internet Archive",
+      "key": "jay rosen’s internet archive",
+      "offset": 10524,
+      "line": 130,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Introduction",
+      "key": "introduction",
+      "offset": 10557,
+      "line": 130,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Zohran Mamdani",
+      "key": "zohran mamdani",
+      "offset": 10647,
+      "line": 132,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Promise of America",
+      "key": "promise of america",
+      "offset": 10669,
+      "line": 132,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Nand",
+      "key": "nand",
+      "offset": 10781,
+      "line": 134,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Tetris",
+      "key": "tetris",
+      "offset": 10789,
+      "line": 134,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Object",
+      "key": "object",
+      "offset": 10834,
+      "line": 136,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Why Microsoft",
+      "key": "why microsoft",
+      "offset": 10875,
+      "line": 138,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "OSCON",
+      "key": "oscon",
+      "offset": 10904,
+      "line": 138,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "The Extent of Systematic Monitoring of Employee E-mail and Internet Use",
+      "key": "extent of systematic monitoring of employee e-mail and internet use",
+      "offset": 11011,
+      "line": 140,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "BPI",
+      "key": "bpi",
+      "offset": 11202,
+      "line": 142,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Internet",
+      "key": "internet",
+      "offset": 11241,
+      "line": 142,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Technology",
+      "key": "technology",
+      "offset": 11348,
+      "line": 144,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Dale Bailey's",
+      "key": "dale bailey",
+      "offset": 11510,
+      "line": 146,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "The Resurrection Man",
+      "key": "resurrection man",
+      "offset": 11525,
+      "line": 146,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "UK",
+      "key": "uk",
+      "offset": 11841,
+      "line": 150,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Brexit",
+      "key": "brexit",
+      "offset": 11863,
+      "line": 150,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "New Zealanders",
+      "key": "new zealanders",
+      "offset": 12079,
+      "line": 152,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Jughead",
+      "key": "jughead",
+      "offset": 12208,
+      "line": 154,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Zdarsky’s",
+      "key": "zdarsky",
+      "offset": 12217,
+      "line": 154,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Biden's Right",
+      "key": "biden's right",
+      "offset": 12366,
+      "line": 156,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Repair",
+      "key": "repair",
+      "offset": 12383,
+      "line": 156,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Upcoming",
+      "key": "upcoming",
+      "offset": 12488,
+      "line": 158,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "London",
+      "key": "london",
+      "offset": 12522,
+      "line": 160,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Idler Festival",
+      "key": "idler festival",
+      "offset": 12530,
+      "line": 160,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Edinburgh International Book Festival",
+      "key": "edinburgh international book festival",
+      "offset": 12589,
+      "line": 164,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Jimmy Wales",
+      "key": "jimmy wales",
+      "offset": 12632,
+      "line": 164,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Sydney",
+      "key": "sydney",
+      "offset": 12735,
+      "line": 168,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Festival of Dangerous Ideas",
+      "key": "festival of dangerous ideas",
+      "offset": 12743,
+      "line": 168,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Melbourne",
+      "key": "melbourne",
+      "offset": 12840,
+      "line": 172,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Enshittification",
+      "key": "enshittification",
+      "offset": 12851,
+      "line": 172,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Wheeler Centre",
+      "key": "wheeler centre",
+      "offset": 12875,
+      "line": 172,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Brighton",
+      "key": "brighton",
+      "offset": 12988,
+      "line": 176,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Reverse Centaur's Guide",
+      "key": "reverse centaur's guide",
+      "offset": 12998,
+      "line": 176,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Life After AI",
+      "key": "life after ai",
+      "offset": 13029,
+      "line": 176,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Carole Cadwalladr",
+      "key": "carole cadwalladr",
+      "offset": 13048,
+      "line": 176,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Brighton Dome",
+      "key": "brighton dome",
+      "offset": 13067,
+      "line": 176,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "London",
+      "key": "london",
+      "offset": 13188,
+      "line": 180,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Reverse Centaur's Guide",
+      "key": "reverse centaur's guide",
+      "offset": 13196,
+      "line": 180,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Life After AI",
+      "key": "life after ai",
+      "offset": 13227,
+      "line": 180,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Riley Quinn",
+      "key": "riley quinn",
+      "offset": 13246,
+      "line": 180,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Foyle's Picadilly",
+      "key": "foyle's picadilly",
+      "offset": 13259,
+      "line": 180,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "South Bend",
+      "key": "south bend",
+      "offset": 13362,
+      "line": 184,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "An Evening With Cory Doctorow",
+      "key": "evening with cory doctorow",
+      "offset": 13374,
+      "line": 184,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Notre Dame",
+      "key": "notre dame",
+      "offset": 13405,
+      "line": 184,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Recent",
+      "key": "recent",
+      "offset": 13497,
+      "line": 188,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Can AI",
+      "key": "can ai",
+      "offset": 13529,
+      "line": 190,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Saved From Capitalism",
+      "key": "saved from capitalism",
+      "offset": 13539,
+      "line": 190,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Everyday Anarchism",
+      "key": "everyday anarchism",
+      "offset": 13563,
+      "line": 190,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Lawfare Daily",
+      "key": "lawfare daily",
+      "offset": 13670,
+      "line": 194,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Think About AI",
+      "key": "think about ai",
+      "offset": 13737,
+      "line": 198,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Organized Money",
+      "key": "organized money",
+      "offset": 13753,
+      "line": 198,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Breaking Points",
+      "key": "breaking points",
+      "offset": 13845,
+      "line": 202,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Enshittifies Everything",
+      "key": "enshittifies everything",
+      "offset": 13912,
+      "line": 206,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Slate",
+      "key": "slate",
+      "offset": 13937,
+      "line": 206,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Latest",
+      "key": "latest",
+      "offset": 14067,
+      "line": 210,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Reverse-Centaur's Guide",
+      "key": "reverse-centaur's guide",
+      "offset": 14094,
+      "line": 212,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "AI",
+      "key": "ai",
+      "offset": 14125,
+      "line": 212,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "AI",
+      "key": "ai",
+      "offset": 14164,
+      "line": 212,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Farrar",
+      "key": "farrar",
+      "offset": 14175,
+      "line": 212,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Straus and Giroux",
+      "key": "straus and giroux",
+      "offset": 14183,
+      "line": 212,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Canny Valley",
+      "key": "canny valley",
+      "offset": 14298,
+      "line": 216,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Pluralistic",
+      "key": "pluralistic",
+      "offset": 14371,
+      "line": 216,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Enshittification",
+      "key": "enshittification",
+      "offset": 14480,
+      "line": 218,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Why Everything Suddenly Got Worse and What",
+      "key": "why everything suddenly got worse and what",
+      "offset": 14498,
+      "line": 218,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Do About It",
+      "key": "do about it",
+      "offset": 14544,
+      "line": 218,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Farrar",
+      "key": "farrar",
+      "offset": 14558,
+      "line": 218,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Straus",
+      "key": "straus",
+      "offset": 14566,
+      "line": 218,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Giroux",
+      "key": "giroux",
+      "offset": 14574,
+      "line": 218,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Picks and Shovels",
+      "key": "picks and shovels",
+      "offset": 14663,
+      "line": 222,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Red Team Blues",
+      "key": "red team blues",
+      "offset": 14696,
+      "line": 222,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "PC",
+      "key": "pc",
+      "offset": 14741,
+      "line": 222,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Tor Books",
+      "key": "tor books",
+      "offset": 14745,
+      "line": 222,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Head of Zeus",
+      "key": "head of zeus",
+      "offset": 14761,
+      "line": 222,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "UK",
+      "key": "uk",
+      "offset": 14775,
+      "line": 222,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Bezzle",
+      "key": "bezzle",
+      "offset": 14860,
+      "line": 224,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Red Team Blues",
+      "key": "red team blues",
+      "offset": 14886,
+      "line": 224,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Tor Books",
+      "key": "tor books",
+      "offset": 14939,
+      "line": 224,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Head of Zeus",
+      "key": "head of zeus",
+      "offset": 14955,
+      "line": 224,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "UK",
+      "key": "uk",
+      "offset": 14969,
+      "line": 224,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Lost Cause",
+      "key": "lost cause",
+      "offset": 15007,
+      "line": 226,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Tor Books",
+      "key": "tor books",
+      "offset": 15076,
+      "line": 226,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Head of Zeus",
+      "key": "head of zeus",
+      "offset": 15092,
+      "line": 226,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "UK",
+      "key": "uk",
+      "offset": 15106,
+      "line": 226,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Internet Con",
+      "key": "internet con",
+      "offset": 15152,
+      "line": 228,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Big Tech",
+      "key": "big tech",
+      "offset": 15216,
+      "line": 228,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Verso",
+      "key": "verso",
+      "offset": 15226,
+      "line": 228,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Signed",
+      "key": "signed",
+      "offset": 15289,
+      "line": 228,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Book Soup",
+      "key": "book soup",
+      "offset": 15306,
+      "line": 228,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Red Team Blues",
+      "key": "red team blues",
+      "offset": 15365,
+      "line": 230,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Tor Books",
+      "key": "tor books",
+      "offset": 15494,
+      "line": 230,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Chokepoint Capitalism",
+      "key": "chokepoint capitalism",
+      "offset": 15531,
+      "line": 232,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Beat Big Tech",
+      "key": "beat big tech",
+      "offset": 15561,
+      "line": 232,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Tame Big Content",
+      "key": "tame big content",
+      "offset": 15576,
+      "line": 232,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Get Artists Paid",
+      "key": "get artists paid",
+      "offset": 15598,
+      "line": 232,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Rebecca Giblin",
+      "key": "rebecca giblin",
+      "offset": 15621,
+      "line": 232,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Beacon Press",
+      "key": "beacon press",
+      "offset": 15686,
+      "line": 232,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Scribe",
+      "key": "scribe",
+      "offset": 15699,
+      "line": 232,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Upcoming",
+      "key": "upcoming",
+      "offset": 15745,
+      "line": 234,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Post-American Internet",
+      "key": "post-american internet",
+      "offset": 15774,
+      "line": 236,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Enshittification",
+      "key": "enshittification",
+      "offset": 15837,
+      "line": 236,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Farrar",
+      "key": "farrar",
+      "offset": 15855,
+      "line": 236,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Straus and Giroux",
+      "key": "straus and giroux",
+      "offset": 15863,
+      "line": 236,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Unauthorized Bread",
+      "key": "unauthorized bread",
+      "offset": 15889,
+      "line": 238,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "DRM",
+      "key": "drm",
+      "offset": 15993,
+      "line": 238,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "FirstSecond",
+      "key": "firstsecond",
+      "offset": 15998,
+      "line": 238,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Enshittification",
+      "key": "enshittification",
+      "offset": 16028,
+      "line": 240,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Why Everything Suddenly Got Worse and What",
+      "key": "why everything suddenly got worse and what",
+      "offset": 16046,
+      "line": 240,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Do About It",
+      "key": "do about it",
+      "offset": 16092,
+      "line": 240,
+      "single": false,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Firstsecond",
+      "key": "firstsecond",
+      "offset": 16126,
+      "line": 240,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "The Memex Method",
+      "key": "memex method",
+      "offset": 16146,
+      "line": 242,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Farrar",
+      "key": "farrar",
+      "offset": 16165,
+      "line": 242,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Straus",
+      "key": "straus",
+      "offset": 16173,
+      "line": 242,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Giroux",
+      "key": "giroux",
+      "offset": 16181,
+      "line": 242,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Colophon",
+      "key": "colophon",
+      "offset": 16195,
+      "line": 244,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Today's",
+      "key": "today",
+      "offset": 16217,
+      "line": 246,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Currently",
+      "key": "currently",
+      "offset": 16239,
+      "line": 248,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "The Post-American Internet",
+      "key": "post-american internet",
+      "offset": 16259,
+      "line": 248,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Enshittification",
+      "key": "enshittification",
+      "offset": 16301,
+      "line": 248,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Trump",
+      "key": "trump",
+      "offset": 16379,
+      "line": 248,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "America",
+      "key": "america",
+      "offset": 16397,
+      "line": 248,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "Fourth",
+      "key": "fourth",
+      "offset": 16406,
+      "line": 248,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "Submitted",
+      "key": "submitted",
+      "offset": 16430,
+      "line": 248,
+      "single": true,
+      "sentenceInitial": true
+    },
+    {
+      "text": "A Little Brother",
+      "key": "little brother",
+      "offset": 16452,
+      "line": 250,
+      "single": false,
+      "sentenceInitial": true
+    },
+    {
+      "text": "DIY",
+      "key": "diy",
+      "offset": 16487,
+      "line": 250,
+      "single": true,
+      "sentenceInitial": false
+    },
+    {
+      "text": "PLANNING",
+      "key": "planning",
+      "offset": 16499,
+      "line": 250,
+      "single": true,
+      "sentenceInitial": false
+    }
+  ],
+  "terms": [
+    {
+      "term": "conservatism",
+      "key": "conservatism",
+      "kind": "is-a",
+      "definition": "belief that some people were born to rule",
+      "offset": 2819,
+      "line": 50
+    },
+    {
+      "term": "See",
+      "key": "see",
+      "kind": "appositive",
+      "definition": "oil tanker was being piloted by a DEI hire when it crashed into that bridge!\"",
+      "offset": 3515,
+      "line": 54
+    },
+    {
+      "term": "Property rights",
+      "key": "property rights",
+      "kind": "is-a",
+      "definition": "human right",
+      "offset": 4608,
+      "line": 68
+    },
+    {
+      "term": "property rights",
+      "key": "property rights",
+      "kind": "is-a",
+      "definition": "tool for achieving human rights",
+      "offset": 4771,
+      "line": 72
+    },
+    {
+      "term": "property rights",
+      "key": "property rights",
+      "kind": "is-a",
+      "definition": "tool to achieve human rights",
+      "offset": 5194,
+      "line": 74
+    },
+    {
+      "term": "property rights",
+      "key": "property rights",
+      "kind": "is-a",
+      "definition": "only human right",
+      "offset": 7303,
+      "line": 94
+    },
+    {
+      "term": "property rights",
+      "key": "property rights",
+      "kind": "is-a",
+      "definition": "human right",
+      "offset": 7349,
+      "line": 94
+    },
+    {
+      "term": "property rights",
+      "key": "property rights",
+      "kind": "is-a",
+      "definition": "terrible danger to our civilization and species",
+      "offset": 8660,
+      "line": 106
+    },
+    {
+      "term": "foundation of rightism",
+      "key": "foundation of rightism",
+      "kind": "is-a",
+      "definition": "supremacy of property",
+      "offset": 9694,
+      "line": 118
+    }
+  ],
+  "numbers": [
+    {
+      "text": "150",
+      "kind": "number",
+      "offset": 2478,
+      "line": 48
+    },
+    {
+      "text": "100",
+      "kind": "number",
+      "offset": 6027,
+      "line": 82
+    },
+    {
+      "text": "2.0",
+      "kind": "number",
+      "offset": 10192,
+      "line": 122
+    },
+    {
+      "text": "4",
+      "kind": "number",
+      "offset": 11892,
+      "line": 150
+    },
+    {
+      "text": "Jul 11",
+      "kind": "date",
+      "offset": 12546,
+      "line": 160
+    },
+    {
+      "text": "Aug 17",
+      "kind": "date",
+      "offset": 12645,
+      "line": 164
+    },
+    {
+      "text": "Aug 23",
+      "kind": "date",
+      "offset": 12776,
+      "line": 168
+    },
+    {
+      "text": "24",
+      "kind": "number",
+      "offset": 12783,
+      "line": 168
+    },
+    {
+      "text": "Aug 25",
+      "kind": "date",
+      "offset": 12891,
+      "line": 172
+    },
+    {
+      "text": "Sep 8",
+      "kind": "date",
+      "offset": 13083,
+      "line": 176
+    },
+    {
+      "text": "Sep 9",
+      "kind": "date",
+      "offset": 13279,
+      "line": 180
+    },
+    {
+      "text": "Oct 6",
+      "kind": "date",
+      "offset": 13418,
+      "line": 184
+    },
+    {
+      "text": "June 2026",
+      "kind": "date",
+      "offset": 14202,
+      "line": 212
+    },
+    {
+      "text": "September 2025",
+      "kind": "date",
+      "offset": 14400,
+      "line": 216
+    },
+    {
+      "text": "October 7 2025",
+      "kind": "date",
+      "offset": 14582,
+      "line": 218
+    },
+    {
+      "text": "February 2025",
+      "kind": "date",
+      "offset": 14780,
+      "line": 222
+    },
+    {
+      "text": "February 2024",
+      "kind": "date",
+      "offset": 14974,
+      "line": 224
+    },
+    {
+      "text": "November 2023",
+      "kind": "date",
+      "offset": 15111,
+      "line": 226
+    },
+    {
+      "text": "September 2023",
+      "kind": "date",
+      "offset": 15233,
+      "line": 228
+    },
+    {
+      "text": "2022",
+      "kind": "date",
+      "offset": 15706,
+      "line": 232
+    },
+    {
+      "text": "2027",
+      "kind": "date",
+      "offset": 15882,
+      "line": 236
+    },
+    {
+      "text": "April 20, 2027",
+      "kind": "date",
+      "offset": 16011,
+      "line": 238
+    },
+    {
+      "text": "2027",
+      "kind": "date",
+      "offset": 16139,
+      "line": 240
+    },
+    {
+      "text": "2027",
+      "kind": "date",
+      "offset": 16189,
+      "line": 242
+    }
+  ]
+}

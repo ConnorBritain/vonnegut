@@ -1,0 +1,12 @@
+{
+  "_comment": [
+    "The skill's positive and negative tests. Each brief carries `expect:` in frontmatter; each",
+    "`*.proposal.json` is an EXAMPLE of a proposal that keeps the promise, checked by",
+    "tools/proposal-check.mjs in the selftest. A real run of the skill is dispatched from a session",
+    "(see tests/skill-harness.md); its proposals are checked the same way and the transcripts kept under tests/runs/."
+  ],
+  "briefs": [
+    { "name": "concrete", "expect": "concrete", "proposal": "concrete.proposal.json", "why": "Three supplied facts, an audience, a length and an ending: every claim can carry a slot and the thesis is given." },
+    { "name": "underspecified", "expect": "underspecified", "proposal": "underspecified.proposal.json", "why": "Topic named, nothing else: the honest outline is four questions and no thesis." }
+  ]
+}

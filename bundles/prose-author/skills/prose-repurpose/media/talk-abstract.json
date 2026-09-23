@@ -1,0 +1,18 @@
+{
+  "schema": "medium-profile/1",
+  "form": "talk-abstract",
+  "medium": "print",
+  "length": { "unit": "words", "min": 80, "max": 250 },
+  "segments": null,
+  "structure": ["problem", "claim", "takeaway"],
+  "constraints": [
+    { "id": "length-band", "kind": "mechanical", "rule": { "type": "max_words", "max": 250 } },
+    { "id": "enough-to-judge", "kind": "mechanical", "rule": { "type": "min_words", "min": 80 } },
+    { "id": "single-paragraph", "kind": "mechanical", "rule": { "type": "single_paragraph" } },
+    { "id": "no-headings", "kind": "mechanical", "rule": { "type": "no_headings" } },
+    { "id": "takeaway-stated", "kind": "semantic", "rule": { "text": "The abstract says what an attendee leaves with, as a statement, not a promise to explain." }, "note": "whether the takeaway is stated or only promised" },
+    { "id": "no-facts-the-source-lacks", "kind": "semantic", "rule": { "text": "Every claim in the abstract is in the source piece; an abstract for a talk not yet given may not invent results." }, "note": "claims the source does not make" }
+  ],
+  "delivery_notes": "Printed in a programme and pasted into a review form. Read by a committee comparing forty of these in an afternoon, then by an attendee choosing between three rooms. No formatting survives; a single paragraph is all that is delivered.",
+  "checked": "2026-09-22"
+}

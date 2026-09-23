@@ -9,3 +9,7 @@ current prompt parity, behavior and evidence are checked separately.
 
 Do not update these files to match a current agent or invoke them as the ordinary
 writing workflow. A historical artifact is not evidence for a current prompt.
+
+`draft-claim-audit.mjs` — the claim auditor as the v0.3 canary locked it, archived when
+roadmap item E (prose-author 0.8.0) taught the live auditor to attach a research ledger id to
+a disclosed claim. The canary still runs against these bytes.

@@ -1,0 +1,18 @@
+{
+  "schema": "research-dossier/1",
+  "id": "anger",
+  "revision": 1,
+  "parent_digest": null,
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "notes",
+      "locator": "file://<fixture>/luke-21.txt",
+      "retrieved_at": "2026-01-02T03:04:05.000Z",
+      "sha256": "87a6c0e1df549616a9a9a7221e39ac1d8328ee2b48376fe62589b2f316d1c104",
+      "text_file": "87a6c0e1df549616a9a9a7221e39ac1d8328ee2b48376fe62589b2f316d1c104.txt",
+      "title": "Luke 21, Authorised Version"
+    }
+  ],
+  "passages": []
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "provenance-scan/1",
+  "quotes": [
+    {
+      "atom": "the wheel was cast in Sheffield and carried up the valley on three carts,",
+      "in": "revision",
+      "ledger": "k2",
+      "source": "s1",
+      "status": "drifted",
+      "source_span": "the wheel was cast in Sheffield and carried up the valley on two carts",
+      "why": "the source does not contain this wording; the ledger's quote is shown"
+    },
+    {
+      "atom": "we ground on through the water, because the bread would not wait.",
+      "in": "revision",
+      "ledger": "k3",
+      "source": "s1",
+      "status": "exact",
+      "source_span": "we ground on through the water, because the bread could not wait"
+    },
+    {
+      "atom": "the stone ran out before the men did.",
+      "in": "revision",
+      "ledger": "k5",
+      "source": "s3",
+      "status": "absent",
+      "source_span": null,
+      "why": "the source text is not cached; presence cannot be determined"
+    }
+  ],
+  "counts": {
+    "exact": 1,
+    "drifted": 1,
+    "absent": 1,
+    "unledgered": 0
+  },
+  "limits": [
+    "Presence only: an atom is exact when its words appear in the cached source text, drifted when its ledger source does not contain them, absent when that source is not cached, unledgered when no ledger quote shares 60% of its words. Truth is not assessed.",
+    "The quote rule is fidelity-scan's: three or more words inside straight or paired curly quotes, never across a blank line."
+  ]
+}

@@ -17,7 +17,7 @@ import { installedCompanions } from "../skills/prose-draft/tools/installed-depen
 import { renderWritingReceipt, renderWritingDelivery } from "../skills/prose-draft/tools/writing-receipt.mjs";
 import { parseSuiteSummary } from "./mutations.mjs";
 import { chatReceiptMode } from "./chat-receipt.mjs";
-import { parseArgs as installerArgs, installPlugins, checkPlugins, verifyDeployment } from "../../../install-prose-codex.mjs";
+import { parseArgs as installerArgs, installPlugins, checkPlugins, verifyDeployment, PLUGINS } from "../../../install-prose-codex.mjs";
 
 const candidate = (draft) => ({ schema: "voice-draft-source/5", kind: "draft", draft, omitted: [], claims: [], refused: "" });
 const clear = (input) => ({ schema: "prose-runtime-review/1", verdict: "clear", findings: [],
@@ -80,7 +80,9 @@ export async function run(t, { tmp, HERE }) {
     extra = false; installPlugins({ replaceMarketplace: true }, run);
     const addSource = calls.find((c) => c[1] === "marketplace" && c[2] === "add");
     assert.equal(addSource[3], root); assert.ok(!addSource.includes("--ref"));
-    assert.equal(calls.filter((c) => c[1] === "add").length, 3);
+    // One `plugin add` per bundle the installer ships; the list is the installer's, not a retyped count.
+    assert.equal(calls.filter((c) => c[1] === "add").length, PLUGINS.length);
+    assert.ok(PLUGINS.length >= 3);
   });
   await test("deployment checks reject changed final installed bytes and stale extra tools", () => {
     const source = join(tmp, "deployment-source"), target = join(tmp, "deployment-target");

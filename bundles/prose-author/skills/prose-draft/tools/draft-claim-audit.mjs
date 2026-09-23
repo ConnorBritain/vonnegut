@@ -21,6 +21,35 @@ const disclosedClaim = {
   required: ["claim", "kind", "verification_question"],
 };
 
+/**
+ * The provenance packet (roadmap item E): the part of a prose-research claims ledger a
+ * disclosed claim may be pointed at. Supplied beside the request, never inferred. The
+ * auditor's output does not carry ledger ids - the portable output schema names every
+ * property exactly once, and a model-typed id would be one more thing to trust from the
+ * pass being audited. Assembly attaches the id deterministically when a disclosed claim's
+ * proposition equals a packet entry's after the normalisation the closed-ledger check uses.
+ * A pointer says where a downstream reviewer should look; the row stays `disclose`.
+ */
+export const PROVENANCE_PACKET_SCHEMA_ID = "claim-audit-provenance/1";
+export function validateProvenancePacket(packet) {
+  const errors = [];
+  if (packet === null || packet === undefined) return errors;
+  if (!packet || typeof packet !== "object" || Array.isArray(packet)) return ["provenance packet must be an object"];
+  if (packet.schema !== PROVENANCE_PACKET_SCHEMA_ID) errors.push(`provenance packet schema must be ${PROVENANCE_PACKET_SCHEMA_ID}`);
+  if (!Array.isArray(packet.ledger)) return [...errors, "provenance packet ledger must be an array"];
+  const ids = new Set();
+  packet.ledger.forEach((entry, i) => {
+    const at = `provenance ledger[${i}]`;
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) { errors.push(`${at} must be an object`); return; }
+    for (const k of Object.keys(entry)) if (!["id", "claim", "quote", "source"].includes(k)) errors.push(`${at}: unknown field ${k}`);
+    if (!/^k[1-9][0-9]*$/.test(entry.id ?? "")) errors.push(`${at}.id must be kN`);
+    if (ids.has(entry.id)) errors.push(`${at}: duplicate id ${entry.id}`); ids.add(entry.id);
+    for (const k of ["claim", "quote", "source"]) if (typeof entry[k] !== "string" || !entry[k].trim()) errors.push(`${at}.${k} must be a non-empty string`);
+  });
+  return errors;
+}
+const claimKey = (text) => String(text ?? "").normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
+
 export const AUDIT_SCHEMA = {
   type: "object",
   additionalProperties: false,
@@ -84,7 +113,10 @@ export function sentenceRefs(source) {
   return sentenceUnits(source);
 }
 
-export function applyVoiceDraftClaimAudit(source, audit, { request = null } = {}) {
+export function applyVoiceDraftClaimAudit(source, audit, { request = null, provenance = null } = {}) {
+  const packetErrors = validateProvenancePacket(provenance);
+  if (packetErrors.length) return { ok: false, errors: packetErrors, source: null, claims: [] };
+  const packetByClaim = new Map((provenance?.ledger ?? []).map((e) => [claimKey(e.claim), e.id]));
   const errors = [];
   const original = validateVoiceDraftSource(source, { request });
   if (!original.ok) errors.push(...original.errors.map((error) => `draft source: ${error}`));
@@ -191,6 +223,9 @@ export function applyVoiceDraftClaimAudit(source, audit, { request = null } = {}
                 : String(claim.evidence ?? ""),
               kind: claim.kind,
               verification_question: String(claim.verification_question ?? "").trim(),
+              // Present only when a packet was supplied: the ledger entry whose proposition
+              // this claim states, or null. A pointer, not a verification.
+              ...(provenance ? { ledger: packetByClaim.get(key) ?? null } : {}),
             });
           }
         }

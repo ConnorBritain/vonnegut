@@ -1,0 +1,5 @@
+post_id,post_date,is_published,email_sent_at,type,audience,title,subtitle
+100001,2024-03-01T14:02:00.000Z,true,2024-03-01T14:05:00.000Z,newsletter,everyone,"On keeping a notebook","Eleven years, three bad ones"
+100002,2024-04-15T09:00:00.000Z,false,,newsletter,everyone,"A draft about pens, unsent","Notes toward nothing"
+100003,2024-05-02T09:00:00.000Z,true,2024-05-02T09:10:00.000Z,newsletter,everyone,"Short one","A note"
+100004,2024-06-01T09:00:00.000Z,true,,newsletter,everyone,"Missing body","Listed but no file"

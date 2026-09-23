@@ -1,0 +1,20 @@
+{
+  "schema": "claims-ledger/1",
+  "id": "anger",
+  "revision": 1,
+  "parent_digest": null,
+  "claims": [
+    {
+      "id": "k1",
+      "confidence": "high",
+      "confidence_by": "writer",
+      "claim": "Seneca compared anger to a ruin that breaks on what it falls upon.",
+      "source": "s1",
+      "location": {
+        "line": 2,
+        "offset": 0
+      },
+      "quote": "Anger is like a ruin which breaks itself on that upon which it falls"
+    }
+  ]
+}

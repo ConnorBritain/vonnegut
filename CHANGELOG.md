@@ -17,6 +17,13 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Added** a durable roadmap — [`docs/ROADMAP.md`](docs/ROADMAP.md), one spec per
+  item under `docs/roadmap/`, and a `STATUS.md` checklist that is now the single
+  pin for bundle versions — plus `tools/check-roadmap.mjs`, run first by
+  `node tools/check.mjs`, which fails when a manifest version, the marketplace
+  entry, this file or the roadmap's status fields disagree with `STATUS.md`. No
+  bundle version changes.
+
 No new behavior release is introduced by the repository split. Historical entries
 labelled local candidates describe their status at the time of recording.
 
@@ -31,7 +38,201 @@ labelled local candidates describe their status at the time of recording.
 
 ---
 
+## prose-bible
+
+### [0.1.0] — a continuity index, a per-project bible and a critic that cites two places or nothing
+
+Roadmap item C ([`docs/roadmap/C-prose-bible.md`](docs/roadmap/C-prose-bible.md));
+release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
+
+- **Added** the bundle scaffold: four manifests, marketplace entry, README,
+  AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets, a selftest wired into
+  `node tools/check.mjs`, and `check-packaging.mjs` pins for the three shared
+  library files (`text-index`, `registry-reader`, `revision-store`) that must
+  stay byte-identical to prose-outline's canonical copies.
+- **Added** `entity-index.mjs` (names, defined terms, attributes, dates and
+  repeated passages across a project's files, every one with file, line and
+  sentence) and `index-diff.mjs` (the same key defined two ways, an attribute
+  stated with two values, a date that moved under one context word, a passage
+  retold, a bible entry the text contradicts), with a planted-drift fixture
+  project and a consistent control whose expected JSON is regenerated, never
+  hand-edited.
+- **Added** `voice-bible/1` and `bible-store.mjs`: propose entries from the
+  index (an attribute stated two ways is flagged for the writer, never
+  resolved), and save, show, list and undo under the same registry store
+  contract as prose-outline — three registry states, approval flag,
+  stale-revision refusal. Mutations registered, including one that edits a
+  shared-file copy to prove the pin fires.
+- **Added** `prose-continuity-critic` (primitive + byte-identical bundle copy):
+  reads index-diff's candidates and the bible, reports a definition, attribute,
+  date or repeat contradiction only with both locations quoted, may cite
+  nothing the index did not supply, resolves uncertainty to silence. Seven
+  fixtures in `tests/fixtures/continuity/` classified against the harness's
+  stated echo rule (class D empty by construction, and the manifest says why),
+  a bundle-local `tests/continuity-harness.mjs` with the same discipline and
+  wrapper grammar as prose-review's, and `tests/critic-harness.md` recording
+  that **no run has been dispatched**.
+- **Added** the `prose-bible` skill (SKILL.md, meta.yaml, `references/bible-schema.md`):
+  index first and never from memory, propose entries the writer confirms, save
+  only on a yes, hand candidates to the critic in a clean context.
+  `tests/skill-harness.md` records the positive and negative test and that
+  neither has been run here.
+
+## prose-outline
+
+### [0.1.1] — definition-pattern fixes in the shared text-index
+
+Release notes in [`RELEASE-v0.1.1.md`](bundles/prose-outline/RELEASE-v0.1.1.md).
+
+- **Changed** `lib/text-index.mjs`: a proper name with one lower-case noun is a
+  defined term in the is-a pattern only; definitions stop at commas; function
+  words at either edge of a lower-case term are trimmed; heading markers count
+  as sentence starts. Found while prose-bible built its index over the same
+  module; the parity and outline-scan fixtures are regenerated and reviewed.
+  `prose-bible` ships the file byte for byte and `check-packaging.mjs` pins it.
+
+### [0.1.0] — outlines, implied outlines, diffs and a per-project store
+
+Roadmap item A ([`docs/roadmap/A-prose-outline.md`](docs/roadmap/A-prose-outline.md));
+release notes in [`RELEASE-v0.1.0.md`](bundles/prose-outline/RELEASE-v0.1.0.md).
+
+- **Added** the bundle: four manifests, marketplace entry, README, AGENTS.md,
+  PROTOCOL.md, DESIGN.md, wiring snippets and a selftest wired into
+  `node tools/check.mjs`.
+- **Added** `lib/text-index.mjs`, the canonical segmentation core (headings,
+  paragraphs, sentences, capitalised runs, defined terms, numbers and dates, all
+  with exact source offsets and lines), with three parity cases whose expected
+  JSON is generated output, and a cross-implementation check that its locations
+  agree with tell-scan, visible-prose and fidelity-scan on shared text.
+- **Added** `lib/registry-reader.mjs` (read-only `voice-identity-registry/1`
+  access returning the three states `none | ambiguous | selected`, plus
+  `PROSE_PROJECTS_DIR` resolution) and `lib/revision-store.mjs` (the
+  [`docs/registry-stores.md`](docs/registry-stores.md) contract: immutable
+  revisions, atomic pointer, exclusive lock, undo as a new revision, and an
+  approval gate that returns a proposal instead of writing). Registry fixtures
+  are written by prose-author's own writer, and the selftest pins reader and
+  digest parity against it.
+- **Added** `outline-scan.mjs`: heading tree, per-section words and ratio to the
+  median, two topic-sentence candidates per paragraph, claim-marker counts by
+  word class, opening transition markers and lexical links at every paragraph
+  boundary, and a `not-evaluated` refusal for a heading-free note. Seven
+  fixtures (an essay, a reference doc, a fiction chapter, two revisions of one
+  post, a note, and a byte-identical corpus post) with generated expected JSON.
+- **Added** the `voice-outline/1` schema (argument and beat-sheet modes as one
+  node vocabulary, stable node ids, evidence slots on claims) and
+  `outline-diff.mjs`, which compares two revisions by id only — added,
+  removed, moved, reparented, reworded, evidence filled — and never matches by
+  text, with a fixture pair and generated expected output.
+- **Added** `outline-store.mjs`: `locate`, `show`, `list`, `save` and `undo`
+  over `<projects>/<identity>/<project>/outlines`, refusing to persist with no
+  registry or with identities and no default (exit 3, never picking the
+  first), returning a proposal without `--approved`, and refusing stale
+  revisions and invalid proposals before touching disk. Eleven mutations for
+  these guards are registered in the repo's mutation runner under a new
+  `outline` suite.
+- **Added** the `prose-outline` skill (SKILL.md, meta.yaml, a readable schema
+  reference) with argument and beat-sheet modes, and `proposal-check.mjs`,
+  which enforces the skill's two promises mechanically: a concrete brief yields
+  a thesis and a slot on every claim; an underspecified brief yields open
+  questions and a null thesis, never an invented one. The schema now refuses a
+  null thesis with no open question. Brief fixtures, example proposals and a
+  harness note record how real runs are dispatched and checked; no run was
+  dispatched in this environment.
+
+---
+
+## prose-research
+
+### [0.1.0] — sources pinned, quotes checked, claims ledgered
+
+Roadmap item E ([`docs/roadmap/E-prose-research.md`](docs/roadmap/E-prose-research.md));
+release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md).
+
+- **Added** the bundle scaffold: four manifests, marketplace entry, README,
+  AGENTS.md, PROTOCOL.md, DESIGN.md, wiring snippets, a selftest wired into
+  `node tools/check.mjs`, and `check-packaging.mjs` pins for the shared
+  `registry-reader`, `revision-store` (prose-outline's) and `html-text`
+  (prose-author's) copies.
+- **Added** `research-dossier/1`, `claims-ledger/1` (confidence is the writer's
+  label, carried as `confidence_by: "writer"`) and the task-local
+  `sentence-map/1`; `source-intake.mjs` (URL through Node's fetch, file, PDF
+  through `pdftotext` or a refusal with the export instruction; text, sha256
+  and retrieval instant; never stores).
+- **Added** `claims-check.mjs`: every ledger quote exact, drifted or absent
+  after whitespace normalisation and nothing else; every link ok, dead or
+  not-evaluated (offline is never ok); every draft sentence the map marks as a
+  claim with no ledger entry. Fixtures with a planted changed word, a changed
+  case, an uncached source, a dead locator and two unledgered sentences;
+  expected output generated, never hand-edited.
+- **Added** `research-store.mjs` (`add-source`, `save`, `undo` for the dossier
+  and the ledger under `<project>/research/`, source text cached by sha,
+  approval-gated, ledger sources checked against the dossier) and the
+  `prose-research` skill (SKILL.md, meta.yaml, schema references);
+  `tests/skill-harness.md` records the positive and negative test and that
+  neither has been run here. Mutations registered under the `research` suite.
+
 ## prose-review
+
+### [0.7.0] — one prompt, many readers
+
+Roadmap item G; release notes in [`RELEASE-v0.7.0.md`](bundles/prose-review/RELEASE-v0.7.0.md).
+
+- **Added** `prose-reader-critic` (primitive + byte-identical bundle copy),
+  four persona files under `personas/`, `tools/persona-check.mjs`,
+  `prepare reader` staging every persona × the leave-one-out essays, and the
+  `missing_forced_choice` contract count. The adversarial reader ships as a
+  persona; `DESIGN.md` and `PROTOCOL.md` say so. Two mutations. No run
+  dispatched.
+
+### [0.6.0] — the medium critic ships
+
+Roadmap item F; release notes in [`RELEASE-v0.6.0.md`](bundles/prose-review/RELEASE-v0.6.0.md).
+
+- **Added** `prose-medium-critic` (primitive + byte-identical bundle copy):
+  reads a `medium-profile/1` and `repurpose-check` output the session supplies,
+  reports constructions that break in the medium, segment boundaries that cut a
+  sentence and semantic constraints unmet, never re-counts, resolves
+  uncertainty to silence. Six four-class fixtures, six leave-one-out Doctorow
+  posts, `medium-harness.mjs` with the stated echo rule, `prepare medium`,
+  `verify-run` echo baseline. `DESIGN.md` open question 5 answered: a bundle
+  member. No run dispatched.
+
+### [0.5.0] — the fidelity critic reads provenance
+
+Roadmap item E; release notes in [`RELEASE-v0.5.0.md`](bundles/prose-review/RELEASE-v0.5.0.md).
+
+- **Changed** `prose-fidelity-critic` (primitive + byte-identical bundle copy):
+  an optional `provenance-scan` block makes a quote atom that drifted from its
+  ledger source an item-1 finding; nothing else changes and truth is still
+  refused. `meta.yaml` records the optional tool and the refusal.
+- **Added** provenance fidelity fixtures (three, on Bacon's *Of Anger*; two
+  class D relative to the scan, one class A) with `provenance/` directories the
+  harness scans at prepare time through prose-research's tool, staging only the
+  scan output; `selftest.mjs` re-derives `provenance_says`.
+
+### [0.4.0] — a third critic: structure
+
+Roadmap item B ([`docs/roadmap/B-prose-structure-critic.md`](docs/roadmap/B-prose-structure-critic.md));
+deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md).
+
+- **Added** `prose-structure-critic` (primitive + byte-identical bundle copy):
+  a clean-context reviewer of a draft's argument — order, transitions,
+  unsupported claims, balance — read from `outline-scan` JSON and, when the
+  writer has one, the intended outline. Two stated modes with opposite
+  tie-breaks. Registered in the Claude manifest and the Codex installer;
+  `DESIGN.md`'s table records the territory it takes from the unshipped
+  adversarial reader and substance critic.
+- **Added** the structure fixture set (`tests/fixtures/structure/`, nine
+  synthetic drafts classified by the four-class discipline against the
+  harness's stated echo rule, plus twelve named leave-one-out human essays)
+  and harness wiring: `run-harness.mjs prepare structure`, `verify-run.mjs`
+  echo baseline, and selftest re-derivation of every fixture's class.
+- **Changed** `PROTOCOL.md` (step 1 runs two scans, step 2 fans out to three
+  critics, step 3 pastes `PLAN-ENTRY` blocks), `AGENTS.md`, the wiring
+  snippets and README for the third critic. `tests/critic-harness.md` records
+  the structure protocol and states that **no structure run has been
+  dispatched**: the build environment had no CLI, so the run is recorded as
+  not run, never as passed.
 
 ### [0.3.0]
 
@@ -64,6 +265,54 @@ labelled local candidates describe their status at the time of recording.
 ---
 
 ## prose-author
+
+### [0.9.0] — one piece, many forms
+
+Roadmap item F; release notes in [`RELEASE-v0.9.0.md`](bundles/prose-author/RELEASE-v0.9.0.md).
+
+- **Added** the `prose-repurpose` skill, four `medium-profile/1` profiles under
+  `media/` with `checked` dates, `lib/medium-profile.mjs` (validation with
+  unknown fields, rule types and prohibition lists refused by name; digest;
+  facts for the job) and `repurpose-check.mjs` (ten mechanical rule types on
+  the final bytes, semantic constraints listed as the critic's, missing atoms
+  against the source listed and never failed, prose-review's `fidelity-scan`
+  located at run time). Suite `repurpose` (46 checks) and four mutations.
+  `PROTOCOL.md` gains "Repurposing". No runtime run per form dispatched.
+
+### [0.8.0] — the claim auditor can point at the ledger
+
+Roadmap item E; release notes in [`RELEASE-v0.8.0.md`](bundles/prose-author/RELEASE-v0.8.0.md).
+
+- **Changed** `draft-claim-audit.mjs`: a disclosed claim may carry
+  `ledger: "kN"` when a `claim-audit-provenance/1` packet accompanies the
+  request; an id the packet lacks, or an id without a packet, is refused; a
+  malformed packet is refused before any row is read; without a packet nothing
+  changes. `references/claim-audit.md` says when to cite an entry and that a
+  pointer is not verification. Five contract checks in `suite-voice-draft.mjs`.
+
+### [0.7.0] — corpus intake from where the writing lives
+
+Roadmap item D ([`docs/roadmap/D-corpus-ingestion.md`](docs/roadmap/D-corpus-ingestion.md));
+release notes in [`RELEASE-v0.7.0.md`](bundles/prose-author/RELEASE-v0.7.0.md).
+
+- **Added** the `prose-corpus` skill: four importers (a Substack export, a
+  Google Docs export folder, a Markdown vault, an mbox with an explicit
+  `--from`) that read a folder and propose candidates with title, date from
+  export metadata or null, word count, a register suggestion with its reason
+  and the text; `corpus-candidates/1` and `corpus-selection/1` (whose `attest`
+  must be literally `true`, given by the writer per batch); and
+  `corpus-ingest.mjs`, which writes exactly the selected ids under the
+  identity's `samples_dir/corpus/human/[group]` with the provenance
+  frontmatter `prose-tell-scan` reads plus `profile`, `form` and
+  `imported_by`, refuses pieces under 200 words, undated pieces and existing
+  files by name, and prints progress against the profile floor and the
+  calibration floor re-derived from disk.
+- **Added** `tests/suite-corpus-ingestion.mjs` with four synthetic fixture
+  exports and generated expected manifests, a parity check that runs
+  prose-tell-scan's own `readProvenance` over every file written, and four
+  mutations (select everything, attest defaults true, floor removed, history
+  enabled as a side effect). `PROFILES.md` "Who reads what" gains the writer
+  row; `PROTOCOL.md` gains "Corpus intake".
 
 ### [0.6.0] — shared writing identities
 

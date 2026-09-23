@@ -6,11 +6,13 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
 import { AGENTS, MARKER, renderAgent } from "../install-prose-codex.mjs";
+import { readBundleVersions } from "./check-roadmap.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = p => readFileSync(join(root, p), "utf8");
 const json = p => JSON.parse(read(p));
-const expected = { "prose-author": "0.6.0", "prose-review": "0.3.0", "prose-tell-scan": "0.1.1" };
+// The one version pin is docs/roadmap/STATUS.md; a bump anywhere else fails here.
+const expected = readBundleVersions(root);
 const market = json(".claude-plugin/marketplace.json");
 assert.equal(market.name, "vonnegut");
 assert.deepEqual(market.plugins.map(p => p.name).sort(), Object.keys(expected).sort());
@@ -41,6 +43,20 @@ for (const [name, version] of Object.entries(expected)) {
   }
 }
 assert.deepEqual(deployed.sort(), [...AGENTS].sort());
+
+// Shared library files ship as byte-identical copies, never as cross-bundle imports
+// (docs/ROADMAP.md "No cross-bundle import"). The canonical copy is the first path;
+// every other copy must match it exactly, so drift is impossible rather than detected late.
+const SHARED_FILES = [
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/text-index.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/text-index.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/registry-reader.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/revision-store.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/revision-store.mjs", "bundles/prose-research/skills/prose-research/tools/lib/revision-store.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-research/skills/prose-research/tools/lib/registry-reader.mjs"],
+  ["bundles/prose-author/skills/prose-corpus/tools/lib/html-text.mjs", "bundles/prose-research/skills/prose-research/tools/lib/html-text.mjs"],
+];
+for (const [canonical, ...copies] of SHARED_FILES) {
+  for (const copy of copies) assert.ok(readFileSync(join(root, canonical)).equals(readFileSync(join(root, copy))), `${copy} must be byte-identical to ${canonical}`);
+}
 assert.match(read("primitives/agents/prose-pattern-critic/meta.yaml"), /ships:\s*false/);
 
 // Check maintained documentation, not frozen run records or historical handoffs.
@@ -81,4 +97,5 @@ try {
   run(); run("--check");
   assert.equal(readFileSync(target, "utf8"), renderAgent(AGENTS[0]));
 } finally { rmSync(temp, { recursive: true, force: true }); }
-console.log("Packaging passed: three bundles, twelve manifests, seven identical prompt bodies, held primitive excluded, maintained documentation links, no Actions, safe legacy-wrapper migration.");
+const bundleCount = Object.keys(expected).length;
+console.log(`Packaging passed: ${bundleCount} bundles at the STATUS.md-pinned versions, ${bundleCount * 4} manifests, ${deployed.length} identical prompt bodies, ${SHARED_FILES.length} shared files pinned, held primitive excluded, maintained documentation links, no Actions, safe legacy-wrapper migration.`);

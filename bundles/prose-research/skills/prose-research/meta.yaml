@@ -1,0 +1,73 @@
+# Metadata for the prose-research skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". This file
+# exists because the contract and an honest per-harness enforcement label are
+# not optional for any surface.
+
+name: prose-research
+kind: investigator
+surface: skill
+bundle: prose-research
+
+# Why investigator: it maps a project's sources, passages and claims, each with
+# a location, and separates what it observed (the source text, the checks) from
+# what it inferred (the sentence map). It says what it could not determine
+# (absent, not-evaluated). The judgement halves live elsewhere: the fidelity
+# critic (prose-review) and claim-audit (prose-author).
+
+contract:
+  read_only: false          # it writes TWO things: a dossier revision and a ledger revision, on approval
+  writes: project-research-store
+  clean_context: false
+  scope: repo               # a project's sources and drafts
+  deterministic: partial    # intake, checks, scan and store are scripts; passage and claim proposals and the sentence map are conversation
+  verdict: null
+
+  denied_inputs:
+    - the tell catalog, in any form
+    - the corpus (voice is not this skill's question)
+    - another identity's research store
+
+  refuses:
+    - Saying a claim is true, false, likely or unlikely
+    - Filling in confidence, or reading confidence back as a measurement
+    - Ranking or recommending sources
+    - Saving without the user's approval, or as a side effect of checking
+    - Picking an identity when the registry has several and no default
+    - Inventing a ledger entry or a coverage row for a draft that has no claims
+    - Guessing a PDF's text without pdftotext or a text export
+    - Stating or implying who wrote a passage
+
+  tools:
+    - tools/source-intake.mjs    # fetch or read; proposes, never stores
+    - tools/claims-check.mjs     # quotes (whitespace-only normalisation), links (offline ⇒ not-evaluated), coverage from the map
+    - tools/provenance-scan.mjs  # quote atoms vs their ledger sources; read by prose-fidelity-critic
+    - tools/research-store.mjs   # add-source, save, undo — all approval-gated
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Dispatcher-triggered from the description. The scripts are deterministic
+      and the approval gate is a flag the script honours; that the model sets it
+      only after a yes, and never labels confidence itself, is a prompt rule.
+  cursor:
+    enforcement: partial
+    notes: >-
+      Scripts and store behave identically. Skill dispatch is absent; invoke by name.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same. Use the bundle's AGENTS.md block so the model runs the checks instead
+      of asserting quotes are exact from memory.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      The scripts port intact; "never say a claim is true" and "confidence is the
+      writer's" are prose. Keep both if you shorten it.
+
+requires:
+  node: Dependency-free scripts require Node.js 18+ (built-in fetch).
+  pdftotext: Optional. Without it a PDF is refused with the export instruction.
+  prose-review: Optional. The fidelity critic reads provenance-scan; without it the scan is reported unread.
+  prose-author: Optional. claim-audit's provenance packet; without it coverage is the only claim-level signal.

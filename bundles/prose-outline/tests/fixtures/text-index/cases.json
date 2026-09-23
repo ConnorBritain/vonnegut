@@ -1,0 +1,16 @@
+{
+  "_comment": [
+    "Parity cases for lib/text-index.mjs. Both bundles that carry the module run these and must",
+    "produce the expected JSON byte for byte. `source` names the corpus file a case is a",
+    "BYTE-IDENTICAL copy of (selftest enforces it); a case with no source is synthetic.",
+    "Regenerate expected output with: node tests/text-index-fixtures.mjs --update  (review the diff)."
+  ],
+  "cases": [
+    { "name": "rivers.md", "markdown": true, "source": null,
+      "why": "Every Markdown construct the masker knows, plus abbreviations, initials, an ellipsis, a decimal-free number, two date forms and three definition patterns." },
+    { "name": "letter.txt", "markdown": false, "source": "../../../../prose-tell-scan/tests/corpus/human-essays/gutenberg/chekhov-081-to-v-a-tihonov.txt",
+      "why": "Plain hard-wrapped prose with names, dates and book titles; no Markdown at all." },
+    { "name": "post.txt", "markdown": true, "source": "../../../../prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-09-wilhoitian.txt",
+      "why": "Frontmatter, bare URLs, no ATX headings — the shape a blog export takes." }
+  ]
+}

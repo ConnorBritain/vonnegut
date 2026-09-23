@@ -2,7 +2,10 @@
 
 Personal-style drafting with explicit preferences, human writing examples and
 checks tied to the delivered text. **v0.6.0 adds shared writing identities** across
-compatible installations, without copying your corpus or preferences into plugins.
+compatible installations, without copying your corpus or preferences into plugins;
+**v0.7.0 adds corpus intake** from a Substack export, a Google Docs folder, a
+Markdown vault or an mbox, selected and attested by the writer per batch;
+**v0.9.0 adds repurposing** into other forms under medium profiles.
 See [identity setup and limits](skills/prose-draft/references/identities.md) and
 [v0.6 verification](tests/V060-ENGINEERING.md). Historical evaluation evidence
 remains in [v0.5 verification](tests/V050-FINAL-ENGINEERING.md) and
@@ -51,6 +54,10 @@ never enters generation or repair.
 - An existing passage: preserve its supplied facts and qualifications during a
   rewrite, or pass it as coherence context for continuation. Generated text is
   never silently added to the human corpus.
+- Writing that lives elsewhere: a Substack export, a Google Docs folder, a
+  Markdown vault or an mbox is imported as candidates; you choose which pieces,
+  which register, and attest per batch that you wrote them. Only those are
+  written, with provenance, and progress toward both floors is reported.
 - A correction: “never use exclamation marks in replies” saves with a visible
   scope/version receipt and undo. Ordinary edits stay local; inferred
   preferences require approval. One word can be useful feedback.
@@ -66,6 +73,8 @@ conflicts ask for clarification.
 | --- | --- |
 | `prose-draft` skill | Prepare a writing task and invoke the production runner |
 | `prose-style-tune` skill | Save, scope, discover, compare, version and undo choices |
+| `prose-corpus` skill | Import existing writing as candidates; the writer selects and attests; write only those, with provenance |
+| `prose-repurpose` skill | One piece into newsletter, post, thread or abstract under a medium profile, through the runtime; checked, listed, reviewed |
 | `voice-profile-render` agent | Interpret cited human evidence for profile assembly |
 | `voice-draft` agent | Produce one candidate or bounded repair from authorized inputs |
 | `voice-feedback-interpret` agent | Propose narrow changes; never save its own proposal |

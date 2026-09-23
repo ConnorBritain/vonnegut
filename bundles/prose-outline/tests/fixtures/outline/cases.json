@@ -1,0 +1,16 @@
+{
+  "_comment": [
+    "outline-scan cases. Expected JSON is generated (node tests/outline-fixtures.mjs --update) and reviewed,",
+    "never hand-edited. `source` names a corpus file the case is a BYTE-IDENTICAL copy of; null means synthetic.",
+    "post-v1/post-v2 are one post in two revisions: v2 moves the third section to first and adds one paragraph."
+  ],
+  "cases": [
+    { "name": "essay.md", "source": null, "why": "An argument with three sections, an opening marker in each, citations and numbers." },
+    { "name": "technical.md", "source": null, "why": "A reference doc: five short uniform sections; flat is correct here and the scan must not say otherwise." },
+    { "name": "chapter.md", "source": null, "why": "Fiction: one heading, scene breaks as thematic breaks, few markers; beat-sheet material." },
+    { "name": "post-v1.md", "source": null, "why": "Revision one of a post." },
+    { "name": "post-v2.md", "source": null, "why": "Revision two: a section moved, a paragraph added; the diff fixture pairs with v1." },
+    { "name": "note.md", "source": null, "why": "No headings, two paragraphs: not-evaluated, with the reason." },
+    { "name": "flat.txt", "source": "../../../../prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-11-your-risk.txt", "why": "No ATX headings but many paragraphs: one preamble section, measured." }
+  ]
+}

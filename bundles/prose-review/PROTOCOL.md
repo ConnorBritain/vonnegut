@@ -63,6 +63,11 @@ The deterministic pass is cheap and its output is evidence a critic would
 otherwise have to estimate. A model asked to count its own frequency tics finds
 the ones it remembers writing, not the ones it repeated.
 
+Two scans, when both bundles are installed: `tell-scan` for tells and cadence,
+and `prose-outline`'s `outline-scan` for structure (heading tree, section
+lengths, claim markers, unmarked boundaries). Each feeds the critic that reads
+it and neither is a finding on its own.
+
 Critics receive the scan JSON. They do **not** receive the catalog: what a
 pattern is called is not their business, and a critic given a prohibition list
 starts hunting for prohibited things.
@@ -75,14 +80,41 @@ exists to prevent — not a nicety.
 
 Parallel because the wall-clock cost is then one critic rather than five.
 
-`prose-medium-critic` spawns only when the profile declares a `medium`. Short or
-trivial prose skips the protocol entirely, and this session should say so out
-loud when it does rather than running five agents on a paragraph.
+The fan-out today: `prose-voice-critic` when a corpus exists, and
+`prose-structure-critic` when the draft is an argument (an essay, post, report
+or talk — not a note, a reply or reference material). The structure critic
+reads `outline-scan`'s JSON from step 1 and, when the project has one, the
+intended outline from `prose-outline`'s store; hand it both. With an outline it
+assesses support and order and resolves uncertainty to `REVISE`; without one it
+assesses only transitions and balance and resolves to silence, and it says which
+mode it is in on its first line. Without `prose-outline` installed there is no
+scan, the critic does not run, and the report says structure was not reviewed —
+it is never estimated by eye.
+
+`prose-medium-critic` spawns only when a medium profile is supplied — the
+`prose-repurpose` skill hands one over per form — or the corpus `profile.json`
+declares a `medium`. Run `repurpose-check` first and hand the critic the profile,
+the check output and the piece as a block; it never reads a path in another
+bundle's install, and it never re-counts what the check counted. Without a
+profile it does not spawn and the report says so. Short or trivial prose skips
+the protocol entirely, and this session should say so out loud when it does
+rather than running five agents on a paragraph.
+
+`prose-reader-critic` spawns only when the author names a reader — "read this
+as a skeptical CTO", "as someone who has never read me", "as the person who
+wants me to be wrong" — one clean-context agent per named persona, in the same
+fan-out. Paste the persona file from `personas/` (or the project's own, in the
+same shape, validated with `tools/persona-check.mjs`) beside the draft; the
+prompt never embeds one. Each returns where that reader stops and one forced
+choice. Never spawned by default, and the consolidation cap in step 3 applies
+across personas as across critics.
 
 ## Step 3 — consolidation, and the part to get right
 
 This session dedupes findings by span, ranks by severity × confidence, and emits
-an ordered plan.
+an ordered plan. The structure critic's findings each carry a `PLAN-ENTRY` in
+[PLAN-FORMAT](PLAN-FORMAT.md) shape; paste them in as they are, deduping by
+span like any other, and keep their `source: structure-critic`.
 
 **Disagreements are surfaced, never resolved.** When the voice critic wants a
 sentence kept and the substance critic wants it cut, that tension *is* the

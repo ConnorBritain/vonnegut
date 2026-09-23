@@ -1,0 +1,14 @@
+{
+  "mode": "argument",
+  "title": "Why the roadmap must be a file",
+  "thesis": "A plan that is not a file under version control, checked by the build, is not a plan.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "text": "A plan lives where the work lives, or it is not read.",
+      "evidence": [ { "slot": "e1", "filled_by": "three retrospectives" }, { "slot": "e2", "filled_by": "a file has a history" } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2, "text": "The check must be mechanical, because plan and code drift silently and nothing complains.",
+      "evidence": [ { "slot": "e1", "filled_by": "the 2024 script: eleven stale entries to zero" }, { "slot": "e2", "filled_by": "the silent drift case: code says 0.7.0, plan says 0.6.0" } ] },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 3, "text": "The forced-edit objection is true and does not matter.",
+      "evidence": [ { "slot": "e1", "filled_by": "a small forced edit is where a reviewer looks" } ] },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 4, "text": "The rule: file, next to the code, build fails on disagreement.", "evidence": [ { "slot": "e1", "filled_by": "follows from n1–n3" } ] }
+  ]
+}

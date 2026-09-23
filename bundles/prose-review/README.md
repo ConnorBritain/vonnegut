@@ -1,15 +1,18 @@
 # prose-review
 
-Two read-only critics and one revising transformer for prose. Every rewrite
+Three read-only critics and one revising transformer for prose. Every rewrite
 this bundle produces goes through the fidelity gate before it reaches the
 author.
 
-**Status: v0.3 — two critics and a reviser.**
+**Status: v0.7 — five critics and a reviser; the medium and reader critics are conditional.**
 
 - `prose-voice-critic`: does this draft sound like the person it is supposed to
   be by, judged against their own corpus.
 - `prose-fidelity-critic`: did this revision keep what it had to, judged against
   the original and a deterministic scan of it.
+- `prose-structure-critic`: does the structure carry the argument — order,
+  transitions, unsupported claims, balance — judged against `prose-outline`'s
+  scan and, when there is one, the outline the writer intended.
 - `prose-reviser`: applies an edit plan to a draft, emitting a change log the
   fidelity critic then judges. Out-of-plan edits are structurally impossible
   because the log is the only output channel. See
@@ -24,11 +27,13 @@ reason is in [`tests/critic-harness.md`](tests/critic-harness.md).
 | [`prose-voice-critic`](agents/prose-voice-critic.md) | shipped |
 | [`prose-fidelity-critic`](agents/prose-fidelity-critic.md) | shipped — **before** the reviser it guards |
 | [`prose-reviser`](agents/prose-reviser.md) | shipped v0.3.0, 2026-08-07 — see [`REVISER-USAGE.md`](REVISER-USAGE.md) |
-| `prose-substance-critic` | blocked — needs an argumentative corpus |
-| `prose-adversarial-reader` | blocked — same |
-| `prose-medium-critic` | designed |
+| [`prose-structure-critic`](agents/prose-structure-critic.md) | shipped v0.4.0 — reads `prose-outline`'s scan; see the [primitive README](../../primitives/agents/prose-structure-critic/README.md) |
+| `prose-substance-critic` | blocked — needs an argumentative corpus; *claims without support* now belongs to the structure critic |
+| [`prose-reader-critic`](agents/prose-reader-critic.md) | shipped v0.6.0 — one prompt, many readers; personas in [`personas/`](personas/); see the [primitive README](../../primitives/agents/prose-reader-critic/README.md) |
+| `prose-adversarial-reader` | *order* and *weakest section* belong to the structure critic; the rest ships as [`personas/adversarial-reader.md`](personas/adversarial-reader.md), read by `prose-reader-critic` |
+| [`prose-medium-critic`](agents/prose-medium-critic.md) | shipped v0.6.0 — conditional; reads a `medium-profile/1` and `repurpose-check` output the session supplies; see the [primitive README](../../primitives/agents/prose-medium-critic/README.md) |
 
-## The two critics point opposite ways, on purpose
+## The critics point opposite ways, on purpose
 
 `prose-voice-critic` resolves uncertainty to **silence**. `prose-fidelity-critic`
 resolves it to **`MATERIAL-LOSS`**. That is not an inconsistency in the bundle; it
@@ -40,6 +45,11 @@ truth sitting in the original, every finding is checkable by anyone, and a wrong
 finding costs a glance at two quoted lines. What is *not* recoverable there is the
 miss: a loss waved through ships, and the original is often gone by the time
 anyone looks.
+
+`prose-structure-critic` does both, and says which on its first line. With the
+outline the writer intended, support and order are checkable against it and
+uncertainty resolves to `REVISE`; without one, only transitions and balance are
+assessed and uncertainty resolves to silence, for the voice critic's reason.
 
 ## Why the reviser ships after its guards
 

@@ -1,0 +1,37 @@
+{
+  "name": "prose-research",
+  "version": "0.1.0",
+  "description": "Provenance for prose: a dossier of sources and quotable passages, a claims ledger with the writer's confidence, and deterministic checks of quotes, links and unledgered claims.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "homepage": "https://github.com/ConnorBritain/vonnegut",
+  "repository": "https://github.com/ConnorBritain/vonnegut",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "research",
+    "sources",
+    "citations",
+    "provenance"
+  ],
+  "interface": {
+    "displayName": "Prose Research",
+    "shortDescription": "Keeps a project's sources, passages and claims with provenance, and checks a draft's quotes, links and unledgered claims.",
+    "longDescription": "One skill. prose-research takes a source in (a URL fetched with Node's built-in fetch, a file, a PDF through pdftotext or a text export), proposes a dossier entry with the text's sha256 and retrieval instant, and stores it only on approval under the shared writing-identity registry, where cached source text lets a quote be checked later against what the source said then. A claims ledger records claim, source, location, exact quote and the writer's own confidence label, carried as confidence_by: writer so nothing reads it as a measurement. claims-check.mjs reports every ledger quote as exact, drifted or absent (whitespace is the only normalisation), every link as ok, dead or not-evaluated (offline is never ok), and every draft sentence the model's sentence map marks as a claim with no ledger entry. provenance-scan.mjs tells prose-review's fidelity critic which quote atoms drifted from their sources. Nothing here says a claim is true. NOTE: Codex runs the skill inline; use the bundle's AGENTS.md block so quotes are checked by the script rather than asserted from memory.",
+    "developerName": "Connor England",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/ConnorBritain/vonnegut",
+    "defaultPrompt": [
+      "Add this article to my sources and pull the quotable passages",
+      "Which sentences in this draft make a claim I have no source for?",
+      "Check every quote in this piece against its source",
+      "Are any of the links in my sources dead?"
+    ]
+  }
+}

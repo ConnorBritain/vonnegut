@@ -1,0 +1,216 @@
+{
+  "schema": "entity-index/1",
+  "files": [
+    "essay-01.md",
+    "essay-02.md",
+    "notes.md"
+  ],
+  "min_occurrences": 2,
+  "terms": [
+    {
+      "key": "cadence rule",
+      "surface_forms": [
+        "Cadence Rule",
+        "The Cadence Rule"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "essay-01.md",
+          "line": 3,
+          "offset": 23,
+          "sentence": "The Cadence Rule is the one habit that made the scanner useful: never calibrate on fewer than ten pieces.",
+          "sentence_initial": false
+        },
+        {
+          "file": "essay-01.md",
+          "line": 3,
+          "offset": 27,
+          "sentence": "The Cadence Rule is the one habit that made the scanner useful: never calibrate on fewer than ten pieces."
+        },
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 89,
+          "sentence": "The Cadence Rule still applies: a lock made from fewer than ten pieces is a lock on noise, and I have made that mistake exactly once, in 2021.",
+          "sentence_initial": false
+        },
+        {
+          "file": "notes.md",
+          "line": 3,
+          "offset": 9,
+          "sentence": "The Cadence Rule: never calibrate on fewer than ten pieces.",
+          "sentence_initial": false
+        }
+      ],
+      "definitions": [
+        {
+          "file": "essay-01.md",
+          "line": 3,
+          "offset": 27,
+          "sentence": "The Cadence Rule is the one habit that made the scanner useful: never calibrate on fewer than ten pieces.",
+          "pattern": "is-a",
+          "definition": "one habit that made the scanner useful"
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "essay-01.md",
+        "essay-02.md",
+        "notes.md"
+      ]
+    },
+    {
+      "key": "lock",
+      "surface_forms": [
+        "lock"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 24,
+          "sentence": "A lock is a named snapshot of the bands you calibrated on purpose."
+        }
+      ],
+      "definitions": [
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 24,
+          "sentence": "A lock is a named snapshot of the bands you calibrated on purpose.",
+          "pattern": "is-a",
+          "definition": "named snapshot of the bands you calibrated on purpose"
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "essay-02.md"
+      ]
+    },
+    {
+      "key": "pieces",
+      "surface_forms": [
+        "pieces"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 153,
+          "sentence": "The Cadence Rule still applies: a lock made from fewer than ten pieces is a lock on noise, and I have made that mistake exactly once, in 2021."
+        }
+      ],
+      "definitions": [
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 153,
+          "sentence": "The Cadence Rule still applies: a lock made from fewer than ten pieces is a lock on noise, and I have made that mistake exactly once, in 2021.",
+          "pattern": "is-a",
+          "definition": "lock on noise"
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "essay-02.md"
+      ]
+    },
+    {
+      "key": "snapshot",
+      "surface_forms": [
+        "snapshot"
+      ],
+      "kind": "term",
+      "occurrences": [
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 40,
+          "sentence": "A lock is a named snapshot of the bands you calibrated on purpose."
+        }
+      ],
+      "definitions": [
+        {
+          "file": "essay-02.md",
+          "line": 3,
+          "offset": 40,
+          "sentence": "A lock is a named snapshot of the bands you calibrated on purpose.",
+          "pattern": "called",
+          "definition": null
+        }
+      ],
+      "attributes": [],
+      "files": [
+        "essay-02.md"
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "text": "2021",
+      "kind": "date",
+      "offset": 145,
+      "line": 3,
+      "file": "essay-01.md",
+      "sentence": "I learned it in 2021, the year I first pointed the tool at my own newsletter and watched it flag every sentence.",
+      "context": "learned"
+    },
+    {
+      "text": "2021",
+      "kind": "date",
+      "offset": 226,
+      "line": 3,
+      "file": "essay-02.md",
+      "sentence": "The Cadence Rule still applies: a lock made from fewer than ten pieces is a lock on noise, and I have made that mistake exactly once, in 2021.",
+      "context": "exactly"
+    },
+    {
+      "text": "2021",
+      "kind": "date",
+      "offset": 89,
+      "line": 3,
+      "file": "notes.md",
+      "sentence": "First stated in the 2021 newsletter post; restate it in every essay that mentions calibration.",
+      "context": "stated"
+    }
+  ],
+  "repeats": [
+    {
+      "kind": "near",
+      "similarity": 0.6,
+      "locations": [
+        {
+          "file": "essay-01.md",
+          "line": 3,
+          "offset": 23,
+          "text": "The Cadence Rule is the one habit that made the scanner useful: never calibrate on fewer than ten pieces.",
+          "before": null,
+          "after": "I learned it in 2021, the year I first pointed the tool at my own newsletter and watched it flag every sentence."
+        },
+        {
+          "file": "notes.md",
+          "line": 3,
+          "offset": 9,
+          "text": "The Cadence Rule: never calibrate on fewer than ten pieces.",
+          "before": null,
+          "after": "First stated in the 2021 newsletter post; restate it in every essay that mentions calibration."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "A term is a capitalised run seen at least --min times, or a defined term; a single word seen only at sentence starts is not a term; pronouns are never resolved, so 'her eyes were green' attaches to nobody.",
+    "Attributes are two surface patterns — <Name>'s <noun> is/was/are/were <value>, and <Name> had <adjective> <noun> — over a fixed list of attribute nouns (eyes, hair, voice, age, name, …).",
+    "A date's context is the content word before it ('flood of 1898' → flood); dates sharing a context with different values are candidates.",
+    "Repeats are sentences of 8+ words recurring across files, exact or with content-word overlap ≥ 0.6, each with the sentence before and after; comparison is capped at 250000 pairs.",
+    "Files indexed: .md, .markdown, .txt; dotfiles and node_modules are skipped.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}

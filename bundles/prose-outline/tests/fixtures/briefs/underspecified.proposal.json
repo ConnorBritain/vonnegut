@@ -1,0 +1,12 @@
+{
+  "mode": "argument",
+  "title": "Calibration (topic to be settled)",
+  "thesis": null,
+  "nodes": [
+    { "id": "n1", "kind": "open-question", "parent": null, "order": 1, "text": "Which calibration — the scanner's thresholds against a corpus, or something else we discussed?" },
+    { "id": "n2", "kind": "open-question", "parent": null, "order": 2, "text": "What is the claim: that readers should calibrate before trusting, or that our defaults are wrong, or a correction to an earlier post?" },
+    { "id": "n3", "kind": "open-question", "parent": null, "order": 3, "text": "Which conversation is 'the stuff we talked about' — is there a note or a transcript to read?" },
+    { "id": "n4", "kind": "open-question", "parent": null, "order": 4, "text": "Newsletter length and audience: the usual 600 words for subscribers, or a longer one?" }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

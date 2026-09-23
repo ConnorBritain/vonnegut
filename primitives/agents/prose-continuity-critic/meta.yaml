@@ -1,0 +1,79 @@
+# Harness-specific metadata for the prose-continuity-critic primitive.
+# The prompt body lives in agent.md and is shared verbatim across every target.
+# This file records what each harness can and cannot enforce about it.
+
+name: prose-continuity-critic
+kind: reviewer
+surface: agent
+bundle: prose-bible
+
+# Ships as of prose-bible 0.1.0 (roadmap item C, docs/roadmap/C-prose-bible.md).
+# It lives beside the index it reads, the way prose-pattern-critic lives beside
+# the catalog: it has nothing to say without index-diff's candidates.
+ships: true
+
+contract:
+  read_only: true          # a critic that can edit will "fix" one of the two tellings
+  clean_context: true      # it must not be the session that wrote the chapters
+  verdict: [CLEAN, REVISE]
+  scope: repo              # a project's files, through the index, not one draft
+
+  # Uncertainty resolves to SILENCE, for the voice critic's reason: no ground
+  # truth. A flashback, a nickname, a lying character and a deliberate
+  # redefinition all look like drift to a diff, and a wrong "you contradicted
+  # yourself" sends the writer through their own book and teaches them to
+  # flatten variation. The critic ships on the negative test - quiet over a
+  # consistent project - with the planted-drift positives as the only positive
+  # claim, and its README says no more than that.
+  uncertainty_resolves_to: silence
+  adversarial_framing: false
+
+  # The deterministic half is authoritative on LOCATIONS. The critic may cite
+  # only what index-diff listed; a third location from memory is an invented
+  # contradiction. Disputes with the tool go under Index gaps.
+  reads_tool: skills/prose-bible/tools/index-diff.mjs
+  reads_optional: voice-bible/1 (the project's bible)
+
+  refuses:
+    - Any finding that does not quote both locations from the candidate list
+    - Naming a location the index did not supply, from memory or inference
+    - Raising a contradiction index-diff did not list as a candidate
+    - Judging voice, structure, truth or quality - other primitives own those
+    - Proposing which telling is correct; the writer decides
+    - Stating or implying that a passage was machine-written
+
+harness:
+  claude-code:
+    enforcement: enforced
+    model: sonnet
+    color: purple
+    tools:
+      - Read
+      - Grep
+      - Glob
+      - Bash(node *index-diff.mjs*:*)
+    notes: >-
+      Full contract. read_only is granted by the tool allowlist: no write tool,
+      and the only Bash it may run is the diff. Clean context matters here the
+      way it does for fidelity - a critic that wrote chapter two remembers why
+      the eyes changed.
+
+  cursor:
+    enforcement: partial
+    notes: >-
+      No tool allowlist, so read-only is a request. The index and diff still run
+      and are still authoritative on locations, which is the half that survives.
+
+  codex:
+    enforcement: advisory
+    notes: >-
+      Neither read-only nor context isolation is enforced. Run it as a fresh
+      `codex exec` over the diff and the bible rather than inline, and run
+      entity-index and index-diff yourself first so it cannot skip them.
+
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Prompt only. The rule to keep if you shorten it: two locations from the
+      candidate list, or nothing. Drop it and the critic starts remembering
+      contradictions that are not on disk.

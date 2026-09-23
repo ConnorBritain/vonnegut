@@ -349,6 +349,25 @@ export async function run(t, { HERE }) {
       factualApplied.ok && factualApplied.source === factualDirect
         && factualOutput.ok && factualOutput.output.includes('"claim": "Acme released version 2."')
         && factualOutput.output.includes('"where": "paragraph 1"'));
+    // PROVENANCE PACKET (roadmap item E6). Assembly attaches a prose-research ledger id to a
+    // disclosed claim whose proposition the packet records; the auditor never writes the id,
+    // the output schema is untouched, and disclosure stays disclosure - the pointer says where
+    // to look, never that the claim is true.
+    const packet = { schema: "claim-audit-provenance/1", ledger: [{ id: "k1", claim: "Acme released version 2.", quote: "Acme shipped version 2 on Tuesday", source: "s1" }] };
+    const withPacket = applyVoiceDraftClaimAudit(factualDirect, factualAudit, { request, provenance: packet });
+    t.check("a disclosed claim the packet records is attached to its ledger id and stays disclosed",
+      withPacket.ok && withPacket.claims.length === 1 && withPacket.claims[0].ledger === "k1");
+    const otherPacket = { ...packet, ledger: [{ ...packet.ledger[0], claim: "Acme released version 3." }] };
+    t.check("a disclosed claim the packet does not record carries ledger: null, not a neighbour's id",
+      applyVoiceDraftClaimAudit(factualDirect, factualAudit, { request, provenance: otherPacket }).claims[0].ledger === null);
+    t.check("a malformed packet is refused before any row is read",
+      !applyVoiceDraftClaimAudit(factualDirect, factualAudit, { request, provenance: { schema: "claim-audit-provenance/1", ledger: [{ id: "k1", claim: "x" }] } }).ok
+        && !applyVoiceDraftClaimAudit(factualDirect, factualAudit, { request, provenance: { schema: "nope", ledger: [] } }).ok);
+    t.check("without a packet, behaviour is unchanged: no ledger field appears and the audit validates as before",
+      applyVoiceDraftClaimAudit(factualDirect, factualAudit, { request }).ok
+        && !("ledger" in applyVoiceDraftClaimAudit(factualDirect, factualAudit, { request }).claims[0]));
+    t.check("the auditor's output schema is untouched: a claim carrying a ledger key is still refused",
+      !applyVoiceDraftClaimAudit(factualDirect, { ...factualAudit, sentences: [{ ...factualAudit.sentences[0], claims: [{ ...factualAudit.sentences[0].claims[0], ledger: "k1" }] }, factualAudit.sentences[1]] }, { request, provenance: packet }).ok);
     t.check("a hard-failure reject still prevents direct prose assembly",
       !applyVoiceDraftClaimAudit(factualDirect, {
         ...factualAudit,

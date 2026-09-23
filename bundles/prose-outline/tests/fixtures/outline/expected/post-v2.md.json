@@ -1,0 +1,291 @@
+{
+  "schema": "outline-scan/1",
+  "file": "post-v2.md",
+  "markdown": true,
+  "words": 262,
+  "status": "measured",
+  "headings": [
+    {
+      "index": 0,
+      "level": 1,
+      "text": "Three things I got wrong about calibration",
+      "line": 1,
+      "parent": null
+    },
+    {
+      "index": 1,
+      "level": 2,
+      "text": "I said calibration was a one-time job",
+      "line": 5,
+      "parent": 0
+    },
+    {
+      "index": 2,
+      "level": 2,
+      "text": "I said thresholds were guesses",
+      "line": 9,
+      "parent": 0
+    },
+    {
+      "index": 3,
+      "level": 2,
+      "text": "I said five samples were enough",
+      "line": 15,
+      "parent": 0
+    },
+    {
+      "index": 4,
+      "level": 2,
+      "text": "What I would say now",
+      "line": 19,
+      "parent": 0
+    }
+  ],
+  "sections": [
+    {
+      "heading": 0,
+      "title": "Three things I got wrong about calibration",
+      "level": 1,
+      "paragraphs": [
+        {
+          "line": 3,
+          "words": 32,
+          "sentences": 3,
+          "first_sentence": "I spent a year telling people to calibrate their scanner before trusting it.",
+          "heading_overlap_sentence": "But three of the reasons I gave were wrong, and it is worth saying which.",
+          "heading_overlap": 0.111,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 3.125
+          },
+          "transition_in": null
+        }
+      ],
+      "words": 32,
+      "paragraph_count": 1,
+      "start_line": 1,
+      "end_line": 3,
+      "claim_markers": 1,
+      "claim_markers_per_100_words": 3.125,
+      "ratio_to_median": 0.889
+    },
+    {
+      "heading": 1,
+      "title": "I said calibration was a one-time job",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 7,
+          "words": 36,
+          "sentences": 3,
+          "first_sentence": "It is not.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.032,
+            "linked": false,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 36,
+      "paragraph_count": 1,
+      "start_line": 5,
+      "end_line": 7,
+      "claim_markers": 0,
+      "claim_markers_per_100_words": 0,
+      "ratio_to_median": 1
+    },
+    {
+      "heading": 2,
+      "title": "I said thresholds were guesses",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 11,
+          "words": 47,
+          "sentences": 3,
+          "first_sentence": "They are, when they ship.",
+          "heading_overlap_sentence": "The shipped thresholds print an UNCALIBRATED banner on every run, and that banner did more to get people calibrating than any argument I made.",
+          "heading_overlap": 0.067,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": false
+          }
+        },
+        {
+          "line": 13,
+          "words": 50,
+          "sentences": 3,
+          "first_sentence": "There is a corollary I did not see at the time.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 2,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 4
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.049,
+            "linked": false,
+            "same_section": true
+          }
+        }
+      ],
+      "words": 97,
+      "paragraph_count": 2,
+      "start_line": 9,
+      "end_line": 13,
+      "claim_markers": 2,
+      "claim_markers_per_100_words": 2.062,
+      "ratio_to_median": 2.694
+    },
+    {
+      "heading": 3,
+      "title": "I said five samples were enough",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 17,
+          "words": 40,
+          "sentences": 3,
+          "first_sentence": "Five samples get you bands.",
+          "heading_overlap_sentence": "Five samples get you bands.",
+          "heading_overlap": 0.2,
+          "claim_markers": {
+            "assertive": 2,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 1,
+            "total": 4,
+            "per_100_words": 10
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.029,
+            "linked": false,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 40,
+      "paragraph_count": 1,
+      "start_line": 15,
+      "end_line": 17,
+      "claim_markers": 4,
+      "claim_markers_per_100_words": 10,
+      "ratio_to_median": 1.111
+    },
+    {
+      "heading": 4,
+      "title": "What I would say now",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 21,
+          "words": 27,
+          "sentences": 3,
+          "first_sentence": "Calibrate, yes.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.12,
+            "linked": true,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 27,
+      "paragraph_count": 1,
+      "start_line": 19,
+      "end_line": 21,
+      "claim_markers": 0,
+      "claim_markers_per_100_words": 0,
+      "ratio_to_median": 0.75
+    }
+  ],
+  "balance": {
+    "sections": 5,
+    "median_words": 36,
+    "max_ratio": 2.694,
+    "min_ratio": 0.75
+  },
+  "transitions": {
+    "boundaries": 5,
+    "marked": 1,
+    "unmarked": [
+      {
+        "line": 7,
+        "section": "I said calibration was a one-time job",
+        "same_section": false
+      },
+      {
+        "line": 11,
+        "section": "I said thresholds were guesses",
+        "same_section": false
+      },
+      {
+        "line": 13,
+        "section": "I said thresholds were guesses",
+        "same_section": true
+      },
+      {
+        "line": 17,
+        "section": "I said five samples were enough",
+        "same_section": false
+      }
+    ]
+  },
+  "limits": [
+    "Topic-sentence candidates are positional (first sentence) and lexical (highest heading overlap); neither is a semantic judgement.",
+    "Claim markers are counts of listed word classes, not a claim detector; the lists are in the tool and are the whole definition.",
+    "A transition is a listed opening marker, a demonstrative, or content-word overlap ≥ 0.08 with the previous paragraph; absence of all three is reported, not judged.",
+    "Sections are ATX headings; a document with other structure reads as one preamble section.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}

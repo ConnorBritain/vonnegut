@@ -39,6 +39,7 @@ contract:
   # prevents, which is a model "seeing" a number in the revision because the
   # sentence around it sounds right.
   reads_tool: tools/fidelity-scan.mjs
+  reads_tool_optional: prose-research/skills/prose-research/tools/provenance-scan.mjs   # supplied by the session as a block; never read from another plugin's path
 
   refuses:
     - Claiming a scan-flagged atom is present. Disputes go to Scanner defects, as a
@@ -47,6 +48,8 @@ contract:
     - Judging whether the revision reads better, or sounds like the author -
       prose-voice-critic owns voice and runs on the revision separately
     - Proposing fixes. It reports what is missing; the author decides whether they meant it.
+    - Judging truth, source reliability or claim support, even when a provenance block
+      and a ledger are supplied. Provenance changes one thing: a drifted quote is a loss.
     - Passing judgement at all when no original is supplied
 
 harness:

@@ -4,11 +4,17 @@ This is the Vonnegut marketplace. Existing agent-primitives users should read
 [migration](../../docs/MIGRATION.md) before enabling duplicate writing plugins.
 The shared writing-memory paths have not changed.
 
-The useful installation is three bundles together:
+The useful installation is the bundles together:
 
-- `prose-author` supplies `$prose-draft`, `$prose-style-tune`, and the profile and drafting agents.
+- `prose-author` supplies `$prose-draft`, `$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, and the profile and drafting agents.
 - `prose-tell-scan` supplies the deterministic `$tell-scan` measurement skill.
 - `prose-review` supplies the independent voice and fidelity critics plus the reviser.
+- `prose-outline` supplies `$prose-outline`: outlines from a brief, a draft's implied
+  outline, diffs, and per-project persistence under the shared identity registry.
+- `prose-bible` supplies `$prose-bible` and the continuity critic: a cross-file index of
+  names, terms, dates and repeats, a per-project bible, and contradictions cited two places.
+- `prose-research` supplies `$prose-research`: sources pinned by sha, a dossier and claims
+  ledger, and deterministic quote, link and coverage checks; provenance for the fidelity critic.
 
 `prose-author` still drafts when either companion is unavailable, but it labels the result
 **UNGATED** and names the missing check. Installing all three gives the workflow its intended
@@ -24,8 +30,8 @@ node install-prose-codex.mjs
 ```
 
 The default installs **this local checkout**, including uncommitted candidate changes;
-it does not download GitHub main. The installer adds the checkout as a Codex marketplace, installs and enables all three
-plugins, and renders the seven harness-neutral agent prompts as read-only personal Codex agents
+it does not download GitHub main. The installer adds the checkout as a Codex marketplace, installs and enables all six
+plugins, and renders the eleven harness-neutral agent prompts as read-only personal Codex agents
 under `~/.codex/agents/`. It is safe to rerun: it updates files it generated and refuses to
 overwrite an agent file it does not own.
 
@@ -59,6 +65,8 @@ Start a new Codex session after installation. Then name the workflow you want:
 
 - `$prose-draft` — rewrite a passage or draft from a topic, outline, brief, or reply prompt.
 - `$prose-style-tune` — inspect profile evidence, record feedback, pin preferences, and run a controlled comparison.
+- `$prose-corpus` — import existing writing from a Substack export, a Google Docs folder, a Markdown vault or an mbox; select and attest per batch; write only those.
+- `$prose-repurpose` — turn one piece into a newsletter issue, a post, a thread or a talk abstract in your voice, each under its medium profile, checked and reviewed.
 - `$tell-scan` — run the deterministic prose scan directly.
 
 The custom agents are normally dispatched by those skills. You can also ask Codex to use
@@ -72,13 +80,16 @@ a non-default configuration directory.
 ## Claude Code
 
 For a **local candidate**, add the absolute path to your checkout in Claude Code,
-then install the three plugins:
+then install the plugins:
 
 ```text
 /plugin marketplace add /absolute/path/to/vonnegut
 /plugin install prose-author@vonnegut
 /plugin install prose-tell-scan@vonnegut
 /plugin install prose-review@vonnegut
+/plugin install prose-outline@vonnegut
+/plugin install prose-bible@vonnegut
+/plugin install prose-research@vonnegut
 ```
 
 Replace the example path with your real checkout. For the published repository
@@ -89,21 +100,24 @@ instead, use the GitHub source below. It does not include unpublished changes:
 /plugin install prose-author@vonnegut
 /plugin install prose-tell-scan@vonnegut
 /plugin install prose-review@vonnegut
+/plugin install prose-outline@vonnegut
+/plugin install prose-bible@vonnegut
+/plugin install prose-research@vonnegut
 ```
 
 Or install loose files from a clone:
 
 ```bash
 ./install.sh voice-profile-render voice-draft voice-feedback-interpret voice-rhetoric-measure \
-  prose-draft prose-style-tune tell-scan \
-  prose-voice-critic prose-fidelity-critic prose-reviser
+  prose-draft prose-style-tune prose-corpus prose-repurpose tell-scan prose-outline prose-bible prose-research \
+  prose-voice-critic prose-fidelity-critic prose-structure-critic prose-medium-critic prose-reader-critic prose-reviser prose-continuity-critic
 ```
 
 The loose install puts agents in `~/.claude/agents/`, skills in `~/.claude/skills/`, the
 fidelity scanner in `~/.claude/tools/`, and the tell-scan command in
 `~/.claude/commands/`. On Windows use `install.ps1` with the same names and
 `-Project` instead of `--project`. Use `--project` to install into the current
-project's `.claude/` directory instead. Run `claude agents` to confirm the seven agents, then
+project's `.claude/` directory instead. Run `claude agents` to confirm the eleven agents, then
 start a new Claude Code session.
 
 Invoke `prose-draft` or `prose-style-tune` by name. A loose tell-scan install uses

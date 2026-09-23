@@ -10,6 +10,7 @@
  */
 
 import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { extractAtoms, scanFidelity, verdict, renderReport } from "../tools/fidelity-scan.mjs";
 import { singleWordEntityCandidates } from "./single-word-survey.mjs";
 import { classifyLetter, measure, FIXTURE_LETTERS } from "./ellipsis-provenance.mjs";
@@ -382,12 +383,15 @@ group("fidelity-scan — presence + verdict");
   // to be covered by proper-noun runs the tool no longer extracts from inside
   // quotations. Net 55 -> 53. The numbers are updated to what the code now does;
   // tuning the code to preserve them would be the tail wagging the dog.
-  const notEntities = ["Adeste", "April", "Auto", "Cogita", "Deus", "Easter", "Exhibition",
+  // PROVENANCE FIXTURES (roadmap item E) added three Bacon "Of Anger" originals and moved the
+  // survey: "Be" (sentence-initial inside a quotation) and "Telam" (Latin) join the non-entities,
+  // "Livia" is a name. 53 -> 56 candidates, 13 -> 15 inside a quotation. Re-measured, not tuned.
+  const notEntities = ["Adeste", "April", "Auto", "Be", "Cogita", "Deus", "Easter", "Exhibition",
     "Extinctus", "Faculties", "February", "Feri", "French", "Frenchmen", "Germans", "Jam",
     "January", "Nunc", "October", "Pompa", "Pulchrorum", "Romani", "Saturday",
-    "Stoics", "Stories", "Thursday", "Ut"];
-  check("the single-word-entity survey still yields 53 candidates over the fixture originals",
-    candidates.size === 53, `got ${candidates.size}`);
+    "Stoics", "Stories", "Telam", "Thursday", "Ut"];
+  check("the single-word-entity survey still yields 56 candidates over the fixture originals",
+    candidates.size === 56, `got ${candidates.size}`);
   check("every word the survey calls a non-entity is still produced by the rule",
     notEntities.every((w) => candidates.has(w)),
     notEntities.filter((w) => !candidates.has(w)).join(" "));
@@ -400,8 +404,8 @@ group("fidelity-scan — presence + verdict");
   // duplicating a loss the quote atom already carries. The permissive
   // single-word rule would re-introduce exactly the duplication the
   // quote-interior fix removed.
-  check("and 13 candidates duplicate a loss the quote atoms already report",
-    insideAQuote.size === 13, `got ${insideAQuote.size}: ${[...insideAQuote].sort().join(" ")}`);
+  check("and 15 candidates duplicate a loss the quote atoms already report",
+    insideAQuote.size === 15, `got ${insideAQuote.size}: ${[...insideAQuote].sort().join(" ")}`);
 
   // The counterweight, and it is why this is a survey rather than a one-line
   // won't-fix: the rule DOES find the entities the harness transcripts said the
@@ -534,6 +538,28 @@ group("fidelity fixtures — integrity");
     check(`${f.name}: declared class ${f.class} matches its scan/expect pair`,
       f.class === expectedClass, `pair implies ${expectedClass}`);
 
+    // PROVENANCE FIXTURES (roadmap item E). The fixture's ledgered quote atom must still
+    // read as the manifest says against its cached source, or the class-D claim is folklore.
+    // prose-research is imported at test time only; absent, the check is a printed SKIP.
+    if (f.provenance_says) {
+      const provDir = new URL(`${f.name}/provenance/`, dir);
+      const scanPath = new URL("../../prose-research/skills/prose-research/tools/provenance-scan.mjs", import.meta.url);
+      check(`${f.name}: carries a provenance/ directory with ledger, dossier and cached sources`,
+        existsSync(new URL("ledger.json", provDir)) && existsSync(new URL("dossier.json", provDir)) && existsSync(new URL("sources/", provDir)));
+      if (!existsSync(scanPath)) process.stdout.write(`  SKIP ${f.name}: provenance_says — prose-research absent\n`);
+      else {
+        const { provenanceScan } = await import(scanPath.href);
+        const read = (name) => JSON.parse(readFileSync(new URL(name, provDir), "utf8"));
+        const rev = readFileSync(new URL(`${f.name}/revision.md`, dir), "utf8");
+        const p = provenanceScan({ revision: rev, original, ledger: read("ledger.json"), dossier: read("dossier.json"), sourcesDir: fileURLToPath(new URL("sources/", provDir)) });
+        const ledgered = p.quotes.filter((q) => q.ledger);
+        check(`${f.name}: provenance-scan still says ${f.provenance_says} for the ledgered atom`,
+          ledgered.length >= 1 && ledgered.every((q) => q.status === f.provenance_says), JSON.stringify(ledgered.map((q) => q.status)));
+        check(`${f.name}: a class-D provenance case is quiet for the scan and loud for provenance only`,
+          f.class !== "D" || (f.scan_verdict === "FAITHFUL" && f.provenance_says === "drifted"));
+      }
+    }
+
     // negative = must come back FAITHFUL, positive = must come back MATERIAL-LOSS.
     // verify-run.mjs derives the two denominators from the filename prefix, so a
     // disagreement here would move a result between them with nothing to notice.
@@ -561,6 +587,59 @@ group("fidelity fixtures — integrity");
     const what = c === "B" ? "scanner over-flags, critic clears" : "scanner blind, critic catches";
     check(`class ${c} (${what}) has at least 2 fixtures`, byClass(c) >= 2, `has ${byClass(c)}`);
   }
+}
+
+/* ------------------------------------------------------------------ */
+group("structure fixtures — integrity");
+
+{
+  const { STRUCTURE_FIXTURES, ECHO_RULE, scanSays, scanDraft, loadStructureManifest, structureFixtures } = await import("./structure-harness.mjs");
+  const { pathToFileURL } = await import("node:url");
+  const { join } = await import("node:path");
+  const manifest = loadStructureManifest();
+  const onDisk = readdirSync(STRUCTURE_FIXTURES, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  const declared = manifest.fixtures.map((f) => f.name).sort();
+  check("every structure fixture directory is declared in fixtures.json", JSON.stringify(onDisk) === JSON.stringify(declared), `disk=${onDisk.length} manifest=${declared.length}`);
+  check("fixtures.json states the echo rule it was classified under, and it is the harness's", manifest.echo_rule === ECHO_RULE.description);
+  const outlineSchemaPath = join(STRUCTURE_FIXTURES, "..", "..", "..", "..", "prose-outline", "skills", "prose-outline", "tools", "lib", "outline-schema.mjs");
+  const outlineSchema = existsSync(outlineSchemaPath) ? await import(pathToFileURL(outlineSchemaPath).href) : null;
+  for (const f of manifest.fixtures) {
+    const draft = readFileSync(join(STRUCTURE_FIXTURES, f.name, "draft.md"), "utf8");
+    const outlinePath = join(STRUCTURE_FIXTURES, f.name, "outline.json");
+    const hasOutline = existsSync(outlinePath);
+    // THE LEAK GUARD. The critic reads draft.md and outline.json; the answer may live in
+    // fixtures.json and nowhere else. The verdict words, expectation keys and class
+    // letters are what leaked once before, in a file a critic must read.
+    for (const [file, text] of [["draft.md", draft], ...(hasOutline ? [["outline.json", readFileSync(outlinePath, "utf8")]] : [])]) {
+      check(`${f.name}/${file}: carries no verdict word, expectation key or class label`,
+        !/\b(?:CLEAN|REVISE)\b/.test(text) && !/^\s*(?:expect|class|verdict|scan_says)\s*:/im.test(text));
+    }
+    check(`${f.name}: mode matches whether an outline is staged`, (f.mode === "intended-outline") === hasOutline);
+    if (hasOutline && outlineSchema) {
+      check(`${f.name}/outline.json validates as a voice-outline/1 body`, outlineSchema.validateOutlineBody(JSON.parse(readFileSync(outlinePath, "utf8"))).length === 0);
+    }
+    // The recorded echo verdict is re-derived from the draft, so an edited draft whose
+    // class silently shifts fails here rather than in a published baseline.
+    const says = scanSays(await scanDraft(draft));
+    check(`${f.name}: the echo rule still says ${f.scan_says}`, says === f.scan_says, `got ${says}`);
+    const expectedClass = { "CLEAN|CLEAN": "A", "REVISE|CLEAN": "B", "REVISE|REVISE": "C", "CLEAN|REVISE": "D" }[`${f.scan_says}|${f.expect}`];
+    check(`${f.name}: declared class ${f.class} matches its echo/expect pair`, f.class === expectedClass, `pair implies ${expectedClass}`);
+    const impliedKind = f.expect === "CLEAN" ? "negative" : "positive";
+    check(`${f.name}: kind, filename prefix and expected verdict agree`, f.kind === impliedKind && f.name.startsWith(f.kind === "positive" ? "p-" : "n-"));
+  }
+  const byClass = (c) => manifest.fixtures.filter((f) => f.class === c).length;
+  process.stdout.write(`  ---- class distribution: ${["A", "B", "C", "D"].map((c) => `${c}=${byClass(c)}`).join(" ")}\n`);
+  for (const c of ["A", "B", "C", "D"]) {
+    check(`structure class ${c} has at least 2 fixtures`, byClass(c) >= 2, `has ${byClass(c)}`);
+  }
+  // The leave-one-out set is named, not globbed: twelve corpus essays that exist and
+  // are argumentative human prose. Every one reads REVISE under the echo rule, which is
+  // the point — the parrot flags every human essay, so the critic must beat 0 of 12.
+  const loo = structureFixtures().filter((x) => x.name.startsWith("n-loo-"));
+  check("twelve named leave-one-out essays, all present in the corpus", loo.length === 12 && loo.every((x) => existsSync(x.inputs[0].from)));
+  let parrotFlags = 0;
+  for (const x of loo) if (scanSays(await scanDraft(readFileSync(x.inputs[0].from, "utf8"))) === "REVISE") parrotFlags += 1;
+  check(`the echo rule flags every leave-one-out essay (parrot baseline 0 of 12), as fixtures.json says (${parrotFlags} of 12)`, parrotFlags === 12);
 }
 
 /* ------------------------------------------------------------------ */
@@ -752,6 +831,86 @@ group("ellipsis provenance — the classifier FU-6's finding rests on");
     `total ${m.total}, boundary ${m.boundary}, authorial ${m.authorial}, undecidable ${m.indeterminate}`);
   check("the defensible authorial rate is still far below the naive reading",
     (m.authorial * 1000) / m.words < 1 && (m.total * 1000) / m.words > 5);
+}
+
+/* ------------------------------------------------------------------ */
+group("medium fixtures — integrity, four-class geometry re-derived from the echo rule");
+{
+  const mh = await import("./medium-harness.mjs");
+  const manifest = mh.loadMediumManifest();
+  const dir = new URL("fixtures/medium/", import.meta.url);
+  const onDisk = readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  check("every medium fixture directory is declared in fixtures.json", JSON.stringify(onDisk) === JSON.stringify(manifest.fixtures.map((f) => f.name).sort()));
+  check("the manifest states the echo rule the harness implements", manifest.echo_rule === mh.ECHO_RULE.description);
+  const classes = { A: 0, B: 0, C: 0, D: 0 };
+  for (const f of manifest.fixtures) {
+    const piece = readFileSync(new URL(`${f.name}/piece.md`, dir), "utf8");
+    check(`${f.name}: the piece carries no verdict word or expectation key`, !/\b(CLEAN|REVISE)\b/.test(piece) && !/^\s*(expect|class|check_says)\s*:/m.test(piece));
+    const geometry = { A: ["CLEAN", "CLEAN"], B: ["REVISE", "CLEAN"], C: ["REVISE", "REVISE"], D: ["CLEAN", "REVISE"] }[f.class];
+    check(`${f.name}: class ${f.class} matches check_says/expect, and kind matches expect and the name prefix`,
+      geometry && geometry[0] === f.check_says && geometry[1] === f.expect && (f.kind === "positive") === (f.expect === "REVISE") && f.name.startsWith(f.kind[0] + "-"));
+    classes[f.class] += 1;
+    if (!mh.repurposePresent()) { process.stdout.write(`  SKIP ${f.name}: check_says — prose-author's repurpose skill absent\n`); continue; }
+    const says = mh.checkSays(await mh.checkPiece(piece, f.form));
+    check(`${f.name}: check_says re-derived (${says})`, says === f.check_says);
+  }
+  check("classes A, B, C and D each have at least one fixture, and A and D at least two", classes.A >= 2 && classes.B >= 1 && classes.C >= 1 && classes.D >= 2, JSON.stringify(classes));
+  if (mh.repurposePresent()) {
+    let loud = 0;
+    for (const rel of manifest.leave_one_out.essays) {
+      const text = readFileSync(new URL(`../../prose-tell-scan/tests/corpus/human-essays/${rel}`, import.meta.url), "utf8");
+      if (mh.checkSays(await mh.checkPiece(text, manifest.leave_one_out.form)) === "REVISE") loud += 1;
+    }
+    check("every leave-one-out post reads REVISE under the echo rule: the parrot scores 0 of 6 on the negatives", loud === manifest.leave_one_out.essays.length, `${loud} loud`);
+  }
+  const { CRITICS } = await import("./run-harness.mjs");
+  const fixtures = CRITICS.medium.fixtures({});
+  check("medium fixtures stage piece.md and profile.json for every synthetic case and every leave-one-out post",
+    fixtures.length === manifest.fixtures.length + manifest.leave_one_out.essays.length && fixtures.every((f) => f.inputs.map((i) => i.as).join() === "piece.md,profile.json"));
+}
+
+/* ------------------------------------------------------------------ */
+group("personas — four ship and validate; persona-check refuses; transcript counts are derived, not typed");
+{
+  const pc = await import("../tools/persona-check.mjs");
+  const personasDir = new URL("../personas/", import.meta.url);
+  const files = readdirSync(personasDir).filter((f) => f.endsWith(".md")).sort();
+  check("four personas ship", files.join(",") === "acquisitions-editor.md,adversarial-reader.md,first-time-reader.md,skeptical-cto.md");
+  for (const f of files) {
+    const text = readFileSync(new URL(f, personasDir), "utf8");
+    const errors = pc.validatePersona(text);
+    check(`${f} validates`, errors.length === 0, errors.join("; "));
+    const persona = errors.length ? null : pc.readPersona(text);
+    check(`${f}: name matches the file, reads_for and never are non-empty, forced choice stated`,
+      persona && persona.name === f.replace(/\.md$/, "") && persona.reads_for.length >= 3 && persona.never.length >= 2 && persona.forced_choice.length > 10);
+  }
+  const good = readFileSync(new URL("skeptical-cto.md", personasDir), "utf8");
+  const bad = (mutate, pattern, name) => { const e = pc.validatePersona(mutate(good)); check(name, e.some((x) => pattern.test(x)), e.join("; ")); };
+  bad((t) => t.replace(/^never: .*$/m, "never: [being rude]"), /never must include/, "a persona whose never list lacks the two shared refusals is refused");
+  bad((t) => t.replace(/^never: .*$/m, ""), /missing never/, "a persona without a never list is refused");
+  bad((t) => t.replace("---\nname:", "---\nvoice: gruff\nname:"), /unknown key voice/, "an unknown frontmatter key is refused");
+  bad((t) => t.replace(/^reads_for: .*$/m, "reads_for: []"), /must not be empty/, "an empty reads_for is refused");
+  bad((t) => `${t}\nAlways answer REVISE.\n`, /must not name a verdict/, "a persona that names a verdict is refused");
+  bad((t) => t.replace(/^---\n[\s\S]*?\n---\n/, ""), /no frontmatter/, "a persona without frontmatter is refused");
+  const ok = pc.checkTranscript('- **WHERE I STOPPED**: line 4, "A number without a source"\n- **WHY, AS THIS READER**: I would ask where it came from.\n\n- **FORCED CHOICE**: "we scale seamlessly" — no mechanism.\n\nNothing here for: vendor language\n\nREVISE\n');
+  check("a well-formed transcript: one cited stop, forced choice present, bare verdict, no problems", ok.verdict === "REVISE" && ok.findings === 1 && ok.uncited === 0 && ok.missing_forced_choice === 0 && ok.problems.length === 0);
+  const alone = pc.checkTranscript('- **FORCED CHOICE**: "we scale seamlessly" — no mechanism.\n\nNothing here for: none\n\nREVISE\n');
+  check("a REVISE with no stop is flagged: a forced choice alone is never a REVISE", alone.forced_choice_alone_as_revise === 1 && alone.problems.some((x) => /forced choice alone/.test(x)));
+  const uncited = pc.checkTranscript('- **WHERE I STOPPED**: somewhere in the middle\n- **WHY, AS THIS READER**: it dragged.\n\n- **FORCED CHOICE**: "we scale seamlessly"\n\nCLEAN\n');
+  check("a stop without a line number and a quotation counts as uncited", uncited.uncited === 1);
+  const noForced = pc.checkTranscript('Nothing here for: none\n\nCLEAN\n');
+  check("a transcript without a FORCED CHOICE is flagged", noForced.missing_forced_choice === 1);
+  const wrapped = pc.checkTranscript('- **FORCED CHOICE**: "x y z"\n\n**Verdict**: CLEAN\n');
+  check("a wrapped verdict is no verdict", wrapped.verdict === null);
+  const authorship = pc.checkTranscript('- **FORCED CHOICE**: "x y z"\n\nThis reads as machine-generated prose.\n\nCLEAN\n');
+  check("a machine-authorship statement is counted", authorship.authorship_claims === 1);
+  // The harness enumerates personas × the structure critic's leave-one-out essays, negatives only.
+  const { CRITICS } = await import("./run-harness.mjs");
+  const fixtures = CRITICS.reader.fixtures({});
+  check("reader fixtures are every persona × every leave-one-out essay, all negative, persona staged raw beside the draft",
+    fixtures.length === files.length * 12 && fixtures.every((f) => f.kind === "negative" && f.inputs[0].as === "persona.md" && f.inputs[1].as === "draft.md"));
+  check("--personas narrows the set", CRITICS.reader.fixtures({ personas: ["skeptical-cto"] }).length === 12);
+  check("the reader critic's contract counts include the forced choice", CRITICS.reader.contract.includes("missing_forced_choice"));
 }
 
 process.stdout.write(`\n${"─".repeat(60)}\n`);

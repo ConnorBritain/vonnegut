@@ -1,0 +1,38 @@
+{
+  "_comment": [
+    "Acceptance fixtures for prose-continuity-critic. Each fixture is a small project directory; at prepare",
+    "time the harness runs entity-index and index-diff over it and stages ONLY the diff JSON (and bible.json",
+    "where one exists). The critic never sees the project files, this manifest, or the expected verdict.",
+    "",
+    "`diff_says` is the ECHO RULE's verdict (tests/continuity-harness.mjs), re-derived by the selftest: what a",
+    "critic gets by parroting index-diff - any candidate at all is a contradiction. `class` is the",
+    "disagreement geometry, not a severity:",
+    "  A  diff quiet, critic quiet    - nothing to judge; it does not manufacture findings",
+    "  B  diff flags, critic quiet    - it clears an over-flag (a refrain, a restatement, two true definitions)",
+    "  C  diff flags, critic flags    - it names WHICH candidates cannot both hold, citing both locations",
+    "  D  diff quiet, critic flags    - EMPTY BY CONSTRUCTION. The critic may cite nothing the index did not",
+    "     supply, and it receives no text beyond the candidates, so with an empty diff it has nothing to",
+    "     cite. What the index missed is an *Index gaps* note, never a finding. The class is listed so the",
+    "     absence is a decision, not an oversight.",
+    "B is the whole argument for the critic existing: index-diff alone would send the writer after every",
+    "refrain. The parrot's score is reported beside the critic's."
+  ],
+  "echo_rule": "flagged when index-diff reports any candidate: redefined, attribute_drift, date_drift, repeated or bible_conflicts",
+  "fixtures": [
+    { "name": "n-two-notes", "kind": "negative", "class": "A", "diff_says": "CLEAN", "expect": "CLEAN",
+      "project_does": "Two diary entries sharing no name, term or sentence. The index is empty; the diff is empty; the critic has nothing to say." },
+    { "name": "n-separate-topics", "kind": "negative", "class": "A", "diff_says": "CLEAN", "expect": "CLEAN",
+      "project_does": "Two essays each with its own proper noun (a knife, a map series), each consistent within itself. Names index; nothing pairs." },
+    { "name": "n-refrain", "kind": "negative", "class": "B", "diff_says": "REVISE", "expect": "CLEAN",
+      "project_does": "One sentence repeated three times across two parts as a refrain, and the second part says it is one ('the way you say grace'). The diff reports an exact repeat; the critic must clear it." },
+    { "name": "n-restated-rule", "kind": "negative", "class": "B", "diff_says": "REVISE", "expect": "CLEAN", "project": "control",
+      "project_does": "The consistent control project. The working notes restate a rule the essay states, on purpose ('restate it in every essay'). A near repeat, not a retelling." },
+    { "name": "n-alias-definitions", "kind": "negative", "class": "B", "diff_says": "REVISE", "expect": "CLEAN",
+      "project_does": "Ines is 'the miller's daughter' in one chapter and 'the one who counts the sacks' in the next. Two true things about one person; the diff calls it a redefinition, the critic must not." },
+    { "name": "p-drift-project", "kind": "positive", "class": "C", "diff_says": "REVISE", "expect": "REVISE", "project": "project",
+      "project_does": "The planted-drift project: grey then green eyes, the Harrow road to the coast then to the quarry, the flood of 1898 then 1889, the bees anecdote told twice as new. The diff also lists a harmless pair (the road as 'the first building she had ever loved', a misattributed clause); the critic must name the real ones." },
+    { "name": "p-bible-conflict", "kind": "positive", "class": "C", "diff_says": "REVISE", "expect": "REVISE",
+      "project_does": "The text is consistent with itself (green eyes, once) but the bible the writer confirmed says grey, and says why it matters. The only candidate has source: bible; the critic must raise it." }
+  ],
+  "class_counts_note": "A 2, B 3, C 2, D 0 by construction (see above). The negative test for this critic is B: quiet where the diff is loud."
+}

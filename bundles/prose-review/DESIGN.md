@@ -18,11 +18,13 @@ transformer.
 
 | primitive | kind | owns, exclusively | verdict |
 |---|---|---|---|
-| `prose-substance-critic` | reviewer | claims without support, missing specificity, stakes never stated | `CLEAN` / `REVISE` / `AUTHOR-INPUT` |
+| `prose-substance-critic` | reviewer | missing specificity, stakes never stated (*claims without support* moved to `prose-structure-critic`) | `CLEAN` / `REVISE` / `AUTHOR-INPUT` |
 | `prose-voice-critic` | reviewer | does this sound like this author, against their voice card and corpus | `CLEAN` / `REVISE` |
-| `prose-adversarial-reader` | reviewer | the whole-piece read: thesis, order, weakest section, strongest objection | `CLEAN` / `REVISE` |
-| `prose-medium-critic` | reviewer | delivery — TTS homographs, web scannability, print. **Conditional** | `CLEAN` / `REVISE` |
+| `prose-adversarial-reader` | persona file | the whole-piece read: thesis, strongest objection (*order* and *weakest section* moved to `prose-structure-critic`). **Shipped 0.6.0 as `personas/adversarial-reader.md`**, read by `prose-reader-critic` — a data file, not a prompt | — |
+| `prose-reader-critic` | reviewer | reads the draft as one named reader described in a persona block the session supplies, reports where that reader stops, makes one forced choice. **Shipped 0.6.0** (roadmap item G) | `CLEAN` / `REVISE` |
+| `prose-medium-critic` | reviewer | delivery — TTS homographs, web scannability, print, segment boundaries — against a `medium-profile/1` and `repurpose-check`. **Conditional; shipped 0.6.0** (roadmap item F) | `CLEAN` / `REVISE` |
 | `prose-fidelity-critic` | reviewer | did a revision preserve what it had to | `FAITHFUL` / `MATERIAL-LOSS` |
+| `prose-structure-critic` | reviewer | does the structure carry the argument: order, transitions, unsupported claims, balance — against `outline-scan` and the intended outline. **Shipped 0.4.0**; took *order* and *weakest section* from `prose-adversarial-reader` and *claims without support* from `prose-substance-critic`, which no longer own them | `CLEAN` / `REVISE` |
 | `prose-reviser` | transformer | the single mutating pass | change log keyed to plan entries |
 
 `prose-pattern-critic` is **not here.** It reads `catalog.json` and belongs with
@@ -195,8 +197,9 @@ Three defences, and they are design constraints rather than polish:
    is information, and it should be visible.
 2. **The consolidated plan is ordered and capped.** Top findings, then a count of
    the rest. An author can ask for everything; they should not be handed it.
-3. **`prose-adversarial-reader` makes a forced choice** — the single worst
-   sentence, by line number. One concrete thing beats twelve abstract ones, and
+3. **The reader critic makes a forced choice** — the single sentence this
+   reader would push back on hardest, quoted (the adversarial reader is one of
+   its personas). One concrete thing beats twelve abstract ones, and
    the forced choice prevents the hedging that a "list the problems" prompt
    invites.
 
@@ -207,8 +210,8 @@ Three defences, and they are design constraints rather than polish:
 Five subagents per draft is real money and real latency, on something an author
 may run repeatedly while editing.
 
-- `prose-medium-critic` is **conditional** — it spawns only when the profile
-  declares a `medium`.
+- `prose-medium-critic` is **conditional** — it spawns only when a medium
+  profile is supplied or the corpus profile declares a `medium`.
 - Short or trivial prose should skip the whole protocol, and the protocol should
   say so out loud when it does.
 - Critics run in parallel; the wall-clock cost is one critic, not five.
@@ -282,7 +285,11 @@ orchestrator makes where it is not.
 
 5. **Is `prose-medium-critic` a bundle member at all?** It is the marginal one:
    different trigger, different evidence, conditional spawn. It may want to be its
-   own thing.
+   own thing. **Answered in roadmap item F: a bundle member.** Nobody wants it
+   without the other critics, and it needs nothing they do not — it receives the
+   profile as a block from the session and never reads `prose-author`'s install,
+   where the profiles ship. The contract both bundles read lives at
+   `docs/contracts/medium-profile.md`, with no owner.
 
 ---
 

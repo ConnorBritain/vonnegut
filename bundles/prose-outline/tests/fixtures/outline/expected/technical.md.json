@@ -1,0 +1,302 @@
+{
+  "schema": "outline-scan/1",
+  "file": "technical.md",
+  "markdown": true,
+  "words": 110,
+  "status": "measured",
+  "headings": [
+    {
+      "index": 0,
+      "level": 1,
+      "text": "outline-store reference",
+      "line": 1,
+      "parent": null
+    },
+    {
+      "index": 1,
+      "level": 2,
+      "text": "locate",
+      "line": 5,
+      "parent": 0
+    },
+    {
+      "index": 2,
+      "level": 2,
+      "text": "show",
+      "line": 9,
+      "parent": 0
+    },
+    {
+      "index": 3,
+      "level": 2,
+      "text": "save",
+      "line": 13,
+      "parent": 0
+    },
+    {
+      "index": 4,
+      "level": 2,
+      "text": "undo",
+      "line": 17,
+      "parent": 0
+    },
+    {
+      "index": 5,
+      "level": 2,
+      "text": "list",
+      "line": 21,
+      "parent": 0
+    }
+  ],
+  "sections": [
+    {
+      "heading": 0,
+      "title": "outline-store reference",
+      "level": 1,
+      "paragraphs": [
+        {
+          "line": 3,
+          "words": 14,
+          "sentences": 2,
+          "first_sentence": "Command-line reference for the outline store.",
+          "heading_overlap_sentence": "Command-line reference for the outline store.",
+          "heading_overlap": 0.2,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": null
+        }
+      ],
+      "words": 14,
+      "paragraph_count": 1,
+      "start_line": 1,
+      "end_line": 3,
+      "claim_markers": 0,
+      "claim_markers_per_100_words": 0,
+      "ratio_to_median": 0.903
+    },
+    {
+      "heading": 1,
+      "title": "locate",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 7,
+          "words": 25,
+          "sentences": 3,
+          "first_sentence": "Prints the projects directory and the registry state.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 4
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.056,
+            "linked": false,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 25,
+      "paragraph_count": 1,
+      "start_line": 5,
+      "end_line": 7,
+      "claim_markers": 1,
+      "claim_markers_per_100_words": 4,
+      "ratio_to_median": 1.613
+    },
+    {
+      "heading": 2,
+      "title": "show",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 11,
+          "words": 17,
+          "sentences": 3,
+          "first_sentence": "Prints the current outline for a project.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5.882
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.059,
+            "linked": false,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 17,
+      "paragraph_count": 1,
+      "start_line": 9,
+      "end_line": 11,
+      "claim_markers": 1,
+      "claim_markers_per_100_words": 5.882,
+      "ratio_to_median": 1.097
+    },
+    {
+      "heading": 3,
+      "title": "save",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 15,
+          "words": 21,
+          "sentences": 3,
+          "first_sentence": "Writes a proposal as the next revision.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 9.524
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.2,
+            "linked": true,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 21,
+      "paragraph_count": 1,
+      "start_line": 13,
+      "end_line": 15,
+      "claim_markers": 2,
+      "claim_markers_per_100_words": 9.524,
+      "ratio_to_median": 1.355
+    },
+    {
+      "heading": 4,
+      "title": "undo",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 19,
+          "words": 14,
+          "sentences": 3,
+          "first_sentence": "Restores the previous revision as a new revision.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 7.143
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.143,
+            "linked": true,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 14,
+      "paragraph_count": 1,
+      "start_line": 17,
+      "end_line": 19,
+      "claim_markers": 1,
+      "claim_markers_per_100_words": 7.143,
+      "ratio_to_median": 0.903
+    },
+    {
+      "heading": 5,
+      "title": "list",
+      "level": 2,
+      "paragraphs": [
+        {
+          "line": 23,
+          "words": 12,
+          "sentences": 1,
+          "first_sentence": "Prints every revision for a project, oldest first, with its parent digest.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.091,
+            "linked": true,
+            "same_section": false
+          }
+        }
+      ],
+      "words": 12,
+      "paragraph_count": 1,
+      "start_line": 21,
+      "end_line": 23,
+      "claim_markers": 0,
+      "claim_markers_per_100_words": 0,
+      "ratio_to_median": 0.774
+    }
+  ],
+  "balance": {
+    "sections": 6,
+    "median_words": 15.5,
+    "max_ratio": 1.613,
+    "min_ratio": 0.774
+  },
+  "transitions": {
+    "boundaries": 5,
+    "marked": 3,
+    "unmarked": [
+      {
+        "line": 7,
+        "section": "locate",
+        "same_section": false
+      },
+      {
+        "line": 11,
+        "section": "show",
+        "same_section": false
+      }
+    ]
+  },
+  "limits": [
+    "Topic-sentence candidates are positional (first sentence) and lexical (highest heading overlap); neither is a semantic judgement.",
+    "Claim markers are counts of listed word classes, not a claim detector; the lists are in the tool and are the whole definition.",
+    "A transition is a listed opening marker, a demonstrative, or content-word overlap ≥ 0.08 with the previous paragraph; absence of all three is reported, not judged.",
+    "Sections are ATX headings; a document with other structure reads as one preamble section.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}

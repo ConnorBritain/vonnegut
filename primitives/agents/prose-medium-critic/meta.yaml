@@ -1,0 +1,70 @@
+# Harness-specific metadata for the prose-medium-critic primitive.
+# The prompt body lives in agent.md and is shared verbatim across every target.
+# This file records what each harness can and cannot enforce about it.
+
+name: prose-medium-critic
+kind: reviewer
+surface: agent
+bundle: prose-review
+
+contract:
+  read_only: true          # a critic that can edit reflows instead of reports
+  clean_context: true      # a critic that drafted the piece knows what it meant to sound like
+  verdict: [CLEAN, REVISE]
+  scope: file              # one delivered piece, one profile
+
+  # THE PROFILE IS AN INPUT. The session pastes the medium profile beside the
+  # piece and the check output, the way every critic receives scan JSON. The
+  # critic never reads a path inside prose-author's install, where the profiles
+  # ship; docs/contracts/medium-profile.md is the contract both bundles read.
+  inputs:
+    - the medium profile (medium-profile/1)
+    - repurpose-check output (repurpose-check/1)
+    - the piece as delivered
+
+  # No ground truth: nobody can check "a listener would mishear this". Same
+  # departure as prose-voice-critic, for the same reason.
+  uncertainty_resolves_to: silence
+  adversarial_framing: false
+
+  # The deterministic half runs first and is authoritative on counts. The critic
+  # evaluates only the semantic constraints the check lists as not-evaluated
+  # and the delivery notes; it never re-counts a length or a segment.
+  reads_tool: prose-author/skills/prose-repurpose/tools/repurpose-check.mjs   # supplied by the session as a block
+
+  refuses:
+    - Re-counting anything the check counted, or disputing a count outside Check defects
+    - Any finding without a quoted span
+    - Judging quality, voice, structure or fidelity - other critics own those
+    - Treating the missing-atoms list as a finding; compression is the writer's call
+    - Proposing rewrites
+    - Any statement about machine authorship
+
+harness:
+  claude-code:
+    enforcement: enforced
+    model: sonnet
+    color: yellow
+    tools:
+      - Read
+      - Grep
+      - Glob
+    notes: >-
+      Read-only by tool allowlist and clean context by subagent. Spawned only
+      when a medium profile is supplied or the corpus profile declares a medium
+      (prose-review PROTOCOL.md step 2); never by default.
+  cursor:
+    enforcement: advisory
+    notes: >-
+      No agent registry. Paste the profile, the check output and the piece into
+      a fresh chat with the prompt body; read-only and clean context are requests.
+  codex:
+    enforcement: partial
+    notes: >-
+      A custom agent with the prompt body; run as a fresh `codex exec`, never
+      inline. Read-only is not enforced.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Everything is prose. Keep "you may not re-count" and "when you cannot
+      tell, say nothing" if you shorten it.

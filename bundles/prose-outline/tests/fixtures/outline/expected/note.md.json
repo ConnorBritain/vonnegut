@@ -1,0 +1,23 @@
+{
+  "schema": "outline-scan/1",
+  "file": "note.md",
+  "markdown": true,
+  "words": 17,
+  "status": "not-evaluated",
+  "reason": "no headings and 2 paragraph(s): there is no structure to read",
+  "headings": [],
+  "sections": [],
+  "balance": null,
+  "transitions": null,
+  "limits": [
+    "Topic-sentence candidates are positional (first sentence) and lexical (highest heading overlap); neither is a semantic judgement.",
+    "Claim markers are counts of listed word classes, not a claim detector; the lists are in the tool and are the whole definition.",
+    "A transition is a listed opening marker, a demonstrative, or content-word overlap ≥ 0.08 with the previous paragraph; absence of all three is reported, not judged.",
+    "Sections are ATX headings; a document with other structure reads as one preamble section.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}

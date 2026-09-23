@@ -75,7 +75,15 @@ const SUITES = {
   author: "bundles/prose-author/tests/selftest.mjs",
   sibling: "bundles/prose-tell-scan/tests/selftest.mjs",
   review: "bundles/prose-review/tests/selftest.mjs",
+  outline: "bundles/prose-outline/tests/selftest.mjs",
+  bible: "bundles/prose-bible/tests/selftest.mjs",
+  research: "bundles/prose-research/tests/selftest.mjs",
 };
+const OUTLINE_TOOLS = "bundles/prose-outline/skills/prose-outline/tools";
+const BIBLE_TOOLS = "bundles/prose-bible/skills/prose-bible/tools";
+const RESEARCH_TOOLS = "bundles/prose-research/skills/prose-research/tools";
+const CORPUS_INGEST = "bundles/prose-author/skills/prose-corpus/tools/corpus-ingest.mjs";
+const REPURPOSE_TOOLS = "bundles/prose-author/skills/prose-repurpose/tools";
 
 const EXEMPLARS = `${TOOLS}/exemplars.mjs`;
 const VERIFY = `${TOOLS}/verify.mjs`;
@@ -138,6 +146,45 @@ export function createSandbox() {
  * meaningless rather than merely failing.
  */
 export const MUTATIONS = [
+  // prose-research (docs/roadmap/E-prose-research.md). Covered by its own suite.
+  { suite: "research", name: "quote matching widened beyond whitespace to case and punctuation", file: `${RESEARCH_TOOLS}/lib/research-schema.mjs`, find: 'export const normalise = (s) => s.replace(/\\s+/g, " ").trim();', with: 'export const normalise = (s) => s.replace(/\\s+/g, " ").trim().toLowerCase().replace(/[^a-z0-9 ]/g, "");', guards: "a changed case or comma is drift; whitespace is the only normalisation" },
+  { suite: "research", name: "an offline link check reports ok", file: `${RESEARCH_TOOLS}/claims-check.mjs`, find: 'if (offline) { out.push({ source: s.id, status: "not-evaluated", code: null, why: "--offline" }); continue; }', with: 'if (offline) { out.push({ source: s.id, status: "ok", code: null, why: "--offline" }); continue; }', guards: "not-evaluated is never ok" },
+  { suite: "research", name: "the research store writes without approval", file: `${RESEARCH_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "no dossier or ledger revision is written without the approval flag" },
+  { suite: "research", name: "a ledger accepts confidence the writer did not label", file: `${RESEARCH_TOOLS}/lib/research-schema.mjs`, find: 'if (k?.confidence_by !== "writer") errors.push(', with: 'if (false) errors.push(', guards: "confidence is a label the writer gives; the schema refuses anything else" },
+  { suite: "research", name: "a ledger may cite a source the dossier does not have", file: `${RESEARCH_TOOLS}/research-store.mjs`, find: "      if (unknown.length) throw new StoreRefusal(`Ledger claims cite sources the dossier does not have:", with: "      if (false) throw new StoreRefusal(`Ledger claims cite sources the dossier does not have:", guards: "every ledger claim points at a source the dossier holds" },
+  { suite: "research", name: "provenance-scan associates an atom with any ledger entry regardless of shared words", file: `${RESEARCH_TOOLS}/provenance-scan.mjs`, find: "  return bestShare >= MATCH_SHARE ? best : null;", with: "  return best;", guards: "an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source" },
+  // prose-repurpose (docs/roadmap/F-prose-repurpose.md). Covered by the author suite (repurpose).
+  { name: "repurpose-check reports every mechanical constraint as passed", file: `${REPURPOSE_TOOLS}/repurpose-check.mjs`, find: '    ? { id: c.id, kind: "mechanical", ...evaluateRule(c.rule, body, profile) }', with: '    ? { id: c.id, kind: "mechanical", status: "passed", detail: "short-circuited" }', guards: "mechanical constraints are evaluated on the final bytes, never assumed" },
+  { name: "repurpose-check drops the fidelity listing against the source", file: `${REPURPOSE_TOOLS}/repurpose-check.mjs`, find: '      fidelity = { status: "listed", scanner: scanner,', with: '      fidelity = { status: "not-evaluated", reason: "dropped", scanner: scanner,', guards: "what the compression dropped is listed for the writer whenever the scanner is present" },
+  { name: "a medium profile with an unknown field loads", file: `${REPURPOSE_TOOLS}/lib/medium-profile.mjs`, find: '  for (const k of Object.keys(p)) if (!allowed.includes(k)) errors.push(`unknown field ${k}`);', with: "  /* defect: accept anything */", guards: "unknown profile fields are refused by name" },
+  { name: "a medium profile's delivery notes may carry a prohibition list", file: `${REPURPOSE_TOOLS}/lib/medium-profile.mjs`, find: 'errors.push("delivery_notes must not carry a prohibition list; that is a catalog by another name");', with: "/* defect */;", guards: "the only free text the critic weighs carries no prohibition list" },
+  // prose-corpus (docs/roadmap/D-corpus-ingestion.md). Covered by the author suite (corpus-ingestion).
+  { name: "corpus ingest writes every candidate, not the selected ids", file: CORPUS_INGEST, find: "  for (const id of selection.ids) {", with: "  for (const id of manifest.candidates.map((c) => c.id)) {", guards: "only the ids the writer selected are written into the human corpus" },
+  { name: "corpus ingest accepts a selection the writer did not attest", file: CORPUS_INGEST, find: '  if (s?.attest !== true) errors.push("attest must be literally true', with: '  if (false) errors.push("attest must be literally true', guards: "attest must be literally true, given by the writer for this batch, or nothing is written" },
+  { name: "corpus ingest drops the 200-word floor", file: CORPUS_INGEST, find: "    if (count < MIN_WORDS) { refused.push({ id, why: `${count} words, needs ${MIN_WORDS}` }); continue; }", with: "    if (false) { continue; }", guards: "a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude" },
+  { name: "corpus ingest enables history as a side effect", file: CORPUS_INGEST, find: "    mkdirSync(target, { recursive: true });", with: '    mkdirSync(target, { recursive: true }); writeFileSync(join(samplesDir, "history-enabled.json"), "{}");', guards: "ingestion writes under corpus/human and nothing else — no history, no preferences, no profile" },
+  // prose-bible (docs/roadmap/C-prose-bible.md). Covered by its own suite, which also pins the shared copies.
+  { suite: "bible", name: "the shared text-index copy drifts from prose-outline's canonical", file: `${BIBLE_TOOLS}/lib/text-index.mjs`, find: "export function capitalisedRuns(source, { markdown = true } = {}) {", with: "export function capitalisedRuns(source, { markdown = true } = {}) { /* drifted */", guards: "a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name" },
+  { suite: "bible", name: "bible store writes without approval", file: `${BIBLE_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "no bible revision is written without the approval flag" },
+  { suite: "bible", name: "bible store accepts a stale expected revision", file: `${BIBLE_TOOLS}/lib/revision-store.mjs`, find: 'if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");', with: "/* defect: overwrite whatever is current */", guards: "a stale read cannot overwrite a newer bible" },
+  { suite: "bible", name: "bible store picks the first identity when none is selected", file: `${BIBLE_TOOLS}/bible-store.mjs`, find: 'if (selection.state === "ambiguous") throw Object.assign(new StoreRefusal(', with: 'if (false) throw Object.assign(new StoreRefusal(', guards: "with several identities and no default the store asks, never picks" },
+  { suite: "bible", name: "index-diff accepts a document that is not an index", file: `${BIBLE_TOOLS}/index-diff.mjs`, find: 'if (index?.schema !== "entity-index/1") throw new TypeError("Expected an entity-index/1 document");', with: "/* defect: diff whatever arrives */", guards: "the diff refuses input that is not an entity-index/1, rather than reporting nothing on it" },
+  { suite: "bible", name: "the bible proposal resolves a two-valued attribute itself", file: `${BIBLE_TOOLS}/lib/bible-schema.mjs`, find: '${t.attributes.length > 1 ? "; attributes vary — confirm which is right" : ""}', with: '${""}', guards: "an attribute the text states two ways is flagged for the writer, never chosen by the tool" },
+  { suite: "bible", name: "the continuity harness's echo rule never flags", file: "bundles/prose-bible/tests/continuity-harness.mjs", find: '  return any ? "REVISE" : "CLEAN";', with: '  return "CLEAN";', guards: "every continuity fixture's class is re-derived from the stated echo rule" },
+  // prose-outline (docs/roadmap/A-prose-outline.md). Covered by its own suite.
+  { suite: "outline", name: "outline store writes without approval", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: "  if (!approved) {\n    const current = readStore(directory, schema, id);", with: "  if (false) {\n    const current = readStore(directory, schema, id);", guards: "nothing persistent is saved without explicit approval" },
+  { suite: "outline", name: "outline store accepts a stale expected revision", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'if ((current?.revision ?? 0) !== expectedRevision) throw new Error("Stale revision; reread before changing this store");', with: "/* defect: overwrite whatever is current */", guards: "a caller working from a stale read cannot overwrite a newer revision" },
+  { suite: "outline", name: "outline store undoes past the first revision", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'if (current.revision === 1) throw new Error("No change to undo");', with: "if (false) throw new Error();", guards: "undo cannot invent a revision zero" },
+  { suite: "outline", name: "outline store ignores a held writer lock", file: `${OUTLINE_TOOLS}/lib/revision-store.mjs`, find: 'try { fd = openSync(lock, "wx", 0o600); }', with: 'try { fd = openSync(lock, "w", 0o600); }', guards: "a second writer is refused rather than racing the first" },
+  { suite: "outline", name: "registry reader migrates an unknown schema", file: `${OUTLINE_TOOLS}/lib/registry-reader.mjs`, find: "if (state?.schema !== REGISTRY_SCHEMA)", with: "if (false)", guards: "an unknown registry version is refused, never reinterpreted" },
+  { suite: "outline", name: "registry reader ignores the pointer digest", file: `${OUTLINE_TOOLS}/lib/registry-reader.mjs`, find: "if (`${state.revision}-${sha256(bytes)}.json` !== pointer.file)", with: "if (false)", guards: "registry bytes must reproduce their pinned digest" },
+  { suite: "outline", name: "registry reader picks the first identity when none is selected", file: `${OUTLINE_TOOLS}/lib/registry-reader.mjs`, find: 'return state.identities.length ? { state: "ambiguous", identities: state.identities.map((e) => e.id) } : { state: "none" };', with: 'return state.identities.length ? { state: "selected", id: state.identities[0].id, entry: state.identities[0], registry_revision: state.revision, explicit: false } : { state: "none" };', guards: "identities without a default are a question for the user, never a guess" },
+  { suite: "outline", name: "outline store persists with no registry", file: `${OUTLINE_TOOLS}/outline-store.mjs`, find: 'if (selection.state === "none") throw', with: 'if (false) throw', guards: "without a writing identity registry, outlines stay task-local" },
+  { suite: "outline", name: "outline-scan reads structure into a heading-free note", file: `${OUTLINE_TOOLS}/outline-scan.mjs`, find: "if (!seg.headings.length && paragraphCount < 3) {", with: "if (false) {", guards: "a document with no structure is not-evaluated rather than measured" },
+  { suite: "outline", name: "outline-diff matches vanished nodes by text", file: `${OUTLINE_TOOLS}/outline-diff.mjs`, find: "for (const id of B.keys()) if (!A.has(id)) out.added.push(id);\n  for (const id of A.keys()) if (!B.has(id)) out.removed.push(id);", with: "for (const id of B.keys()) if (!A.has(id) && ![...A.values()].some((n) => n.text === B.get(id).text)) out.added.push(id);\n  for (const id of A.keys()) if (!B.has(id) && ![...B.values()].some((n) => n.text === A.get(id).text)) out.removed.push(id);", guards: "nodes are matched by id only, never by text" },
+  { suite: "outline", name: "outline schema accepts a withheld thesis with no open question", file: `${OUTLINE_TOOLS}/lib/outline-schema.mjs`, find: 'if (body.thesis === null) { if (!openQuestions) errors.push("thesis may be null only when at least one open-question node says what is missing"); }', with: "if (body.thesis === null) { /* defect: silence is allowed */ }", guards: "an outline with no thesis must say what is missing" },
+  { suite: "outline", name: "proposal-check lets an underspecified brief keep an invented thesis", file: `${OUTLINE_TOOLS}/proposal-check.mjs`, find: 'if (body.thesis !== null) report.findings.push("an underspecified brief must not yield an invented thesis (thesis should be null)");', with: "/* defect: accept a guessed thesis */", guards: "the skill's negative test is enforced by the checker, not by reading" },
+  { suite: "outline", name: "outline schema accepts duplicate node ids", file: `${OUTLINE_TOOLS}/lib/outline-schema.mjs`, find: "if (ids.has(n.id)) errors.push(`${where}: duplicate id`);", with: "", guards: "node ids are unique, or the differ has nothing to key on" },
   { name: "identity accepts a future registry schema", file: `${TOOLS}/identity-store.mjs`, find: 'if (state?.schema !== IDENTITY_SCHEMA)', with: 'if (false)', guards: "incompatible registry versions are not silently reinterpreted" },
   { name: "identity ignores registry digests", file: `${TOOLS}/identity-store.mjs`, find: 'if (`${state.revision}-${sha256(bytes)}.json` !== pointer.file)', with: 'if (false)', guards: "shared registry revision bytes reproduce their pinned digest" },
   { name: "identity overwrites a stale registry revision", file: `${TOOLS}/identity-store.mjs`, find: 'if (state.revision !== expectedRevision)', with: 'if (false)', guards: "concurrent clients cannot overwrite a newer default or profile selection" },
@@ -1657,6 +1704,30 @@ export const MUTATIONS = [
     guards: "cold-start cannot calibrate against model norms on day one",
   },
   {
+    name: "let the structure harness's echo rule never flag",
+    file: "bundles/prose-review/tests/structure-harness.mjs",
+    suite: "review",
+    find: '  return extreme || gap ? "REVISE" : "CLEAN";',
+    with: '  return "CLEAN";',
+    guards: "every structure fixture's class is re-derived from the stated echo rule, so a parrot that cannot flag breaks the four-class table rather than silently flattering the critic",
+  },
+  {
+    name: "let a persona omit the two refusals every reader shares",
+    file: "bundles/prose-review/tools/persona-check.mjs",
+    suite: "review",
+    find: "for (const re of MANDATORY_NEVER) if (!list.some((x) => re.test(x)))",
+    with: "for (const re of []) if (!list.some((x) => re.test(x)))",
+    guards: "every persona refuses judging prose quality and guessing who wrote it, by validation and not by prose",
+  },
+  {
+    name: "let a reader transcript call a forced choice alone a REVISE",
+    file: "bundles/prose-review/tools/persona-check.mjs",
+    suite: "review",
+    find: 'forced_choice_alone_as_revise: verdict === "REVISE" && stops.length === 0 ? 1 : 0,',
+    with: 'forced_choice_alone_as_revise: 0,',
+    guards: "a forced choice is always present and never by itself a REVISE, and the checker says so",
+  },
+  {
     name: "let fidelity-scan pass a MATERIAL-LOSS as FAITHFUL",
     file: FIDELITY,
     suite: "review",
@@ -1999,7 +2070,8 @@ export function runAll() {
       // affects prose-tell-scan's suite, not this one - running the wrong suite
       // would silently score 0, which is exactly the "no failing mutation" trap
       // this file exists to prevent.
-      const suite = SUITES[mut.suite === "sibling" ? "sibling" : mut.suite === "review" ? "review" : "author"];
+      if (mut.suite && !SUITES[mut.suite]) throw new Error(`unknown suite ${mut.suite}: ${mut.name}`);
+      const suite = SUITES[mut.suite ?? "author"];
       const restore = applyIn(sandbox, mut);
       try {
         results.push({ ...mut, ...runSuite(sandbox, suite) });

@@ -1,0 +1,125 @@
+{
+  "schema": "claims-check/1",
+  "quotes": [
+    {
+      "claim": "k1",
+      "source": "s1",
+      "status": "exact",
+      "expected": "The mill on the Harrow road was built in 1851 by the Teodor family",
+      "found": {
+        "line": 1,
+        "offset": 0
+      }
+    },
+    {
+      "claim": "k2",
+      "source": "s1",
+      "status": "exact",
+      "expected": "the wheel was cast in Sheffield and carried up the valley on two carts",
+      "found": {
+        "line": 2,
+        "offset": 135
+      }
+    },
+    {
+      "claim": "k3",
+      "source": "s1",
+      "status": "drifted",
+      "expected": "we ground on through the water, because the bread could not wait",
+      "found": {
+        "line": 6,
+        "offset": 13,
+        "text": "that \"we ground on through the water, because the bread would not"
+      },
+      "why": "the source says something else at the recorded location"
+    },
+    {
+      "claim": "k4",
+      "source": "s2",
+      "status": "drifted",
+      "expected": "Take the quarry path in wet weather, and the coast road only in June.",
+      "found": {
+        "line": 3,
+        "offset": 131,
+        "text": "take the quarry path in wet weather, and the coast road only in June.”"
+      },
+      "why": "the source says something else at the recorded location"
+    },
+    {
+      "claim": "k5",
+      "source": "s3",
+      "status": "absent",
+      "expected": "the stone ran out before the men did",
+      "found": null,
+      "why": "the source text is not in the dossier's cache"
+    },
+    {
+      "claim": "k6",
+      "source": "s1",
+      "status": "exact",
+      "expected": "an ornament, not an engine",
+      "found": {
+        "line": 10,
+        "offset": 573
+      },
+      "why": "found at line 10, recorded at line 40"
+    }
+  ],
+  "links": [
+    {
+      "source": "s1",
+      "status": "not-evaluated",
+      "code": null,
+      "why": "file source"
+    },
+    {
+      "source": "s2",
+      "status": "ok",
+      "code": null,
+      "why": "file exists"
+    },
+    {
+      "source": "s3",
+      "status": "dead",
+      "code": null,
+      "why": "file is gone"
+    }
+  ],
+  "coverage": [
+    {
+      "sentence_id": "p2s3",
+      "text": "The ledger for that winter records forty-one sacks, more than any winter before it.",
+      "status": "unledgered",
+      "ledger": null
+    },
+    {
+      "sentence_id": "p4s1",
+      "text": "Most valleys like this one lost their mills before the war.",
+      "status": "unledgered",
+      "ledger": null
+    }
+  ],
+  "counts": {
+    "quotes": {
+      "exact": 3,
+      "drifted": 2,
+      "absent": 1
+    },
+    "links": {
+      "ok": 1,
+      "dead": 1,
+      "not-evaluated": 1
+    },
+    "coverage": {
+      "unledgered": 2,
+      "not-in-draft": 0,
+      "unknown-ledger": 0
+    }
+  },
+  "limits": [
+    "Quote matching normalises whitespace and nothing else; a paraphrase, a changed word, comma or case is drifted, and that is the point.",
+    "A link status is an HTTP status, not a content check; not-evaluated is never ok.",
+    "Coverage reads the model's sentence map: which sentences are claims is the map's judgement, shown here, not measured.",
+    "Nothing here says whether a claim is true. An exact quote from a wrong source is exact."
+  ]
+}

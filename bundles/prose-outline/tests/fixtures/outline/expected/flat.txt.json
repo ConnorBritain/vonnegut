@@ -1,0 +1,2505 @@
+{
+  "schema": "outline-scan/1",
+  "file": "flat.txt",
+  "markdown": false,
+  "words": 3086,
+  "status": "measured",
+  "headings": [],
+  "sections": [
+    {
+      "heading": null,
+      "title": "(preamble)",
+      "level": 0,
+      "paragraphs": [
+        {
+          "line": 10,
+          "words": 2,
+          "sentences": 1,
+          "first_sentence": "Today's links",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": null
+        },
+        {
+          "line": 12,
+          "words": 12,
+          "sentences": 1,
+          "first_sentence": "Workplace \"flexibility\" isn't: What the gig economy calls flexibility is just risk-shifting.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 14,
+          "words": 7,
+          "sentences": 1,
+          "first_sentence": "Hey look at this: Delights to delectate.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 16,
+          "words": 30,
+          "sentences": 1,
+          "first_sentence": "Object permanence: \"Alanya to Alanya\"; ToS are the internet's biggest lie; Soviet jokes; Fox rapists v gag orders; GBAO is the future; \"Fun Family\"; Sacklers get to keep the loot.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 18,
+          "words": 10,
+          "sentences": 1,
+          "first_sentence": "Upcoming appearances: London, Edinburgh, Sydney, Melbourne, Brighton, London, South Bend.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 20,
+          "words": 5,
+          "sentences": 1,
+          "first_sentence": "Recent appearances: Where I've been.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.091,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 22,
+          "words": 10,
+          "sentences": 1,
+          "first_sentence": "Latest books: You keep readin' em, I'll keep writin' 'em.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 24,
+          "words": 9,
+          "sentences": 1,
+          "first_sentence": "Upcoming books: Like I said, I'll keep writin' 'em.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 1,
+            "per_100_words": 11.111
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.444,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 26,
+          "words": 4,
+          "sentences": 1,
+          "first_sentence": "Colophon: All the rest.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 28,
+          "words": 4,
+          "sentences": 1,
+          "first_sentence": "Workplace \"flexibility\" isn't (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 30,
+          "words": 51,
+          "sentences": 2,
+          "first_sentence": "Here's an irony: the \"gig economy\" is a statistical black hole.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 32,
+          "words": 68,
+          "sentences": 3,
+          "first_sentence": "The reason this is ironic is that the \"gig economy\" is dominated by a handful of massive, data-driven firms that know the precise, up-to-the-second answer to these questions.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 3,
+            "total": 3,
+            "per_100_words": 4.412
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.125,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 34,
+          "words": 37,
+          "sentences": 2,
+          "first_sentence": "Most of our industry-wide figures about the sector come from painstaking, expensive survey work.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 5.405
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.019,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 36,
+          "words": 64,
+          "sentences": 3,
+          "first_sentence": "But every now and again, we get a flashbulb glimpse of the full picture.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 3.125
+          },
+          "transition_in": {
+            "marker": "but",
+            "kind": "contrast",
+            "lexical_overlap": 0.019,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 38,
+          "words": 62,
+          "sentences": 1,
+          "first_sentence": "In a new American Prospect longread called \"The Dangerous Myth of Flexibility,\" Weil builds on the public record developed in the case to demolish the central myth of the gigwork companies: that they enter into a mutually beneficial arrangement with their workers by offering \"flexibility\" that lets workers \"choose work that fits the rhythms of their lives, not the other way around\":",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.016,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 42,
+          "words": 57,
+          "sentences": 2,
+          "first_sentence": "This quote comes from Tony West, the Uber executive who has led the company's efforts to formalize its worker misclassification program, notably California's Prop 22, a $225m statewide campaign that overturned the state's landmark gig work standards.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 1.754
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.015,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 44,
+          "words": 43,
+          "sentences": 2,
+          "first_sentence": "On its face, West's statement sounds reasonable, and most of us have heard a version of it, possibly even from an Uber driver.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.055,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 46,
+          "words": 60,
+          "sentences": 3,
+          "first_sentence": "Anyone who runs a business has to manage a key operational risk: staffing levels.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.038,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 48,
+          "words": 116,
+          "sentences": 4,
+          "first_sentence": "In America, Congress and state legislatures have created a system that allows restaurateurs to transfer this risk onto their employees: the \"tipped minimum wage.\"",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 1,
+            "numeric": 9,
+            "citation": 0,
+            "total": 10,
+            "per_100_words": 8.621
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.077,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 50,
+          "words": 49,
+          "sentences": 3,
+          "first_sentence": "This is a transfer of risk from bosses to workers.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.075,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 52,
+          "words": 85,
+          "sentences": 5,
+          "first_sentence": "This is quite a sweet deal for bosses.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.12,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 54,
+          "words": 82,
+          "sentences": 3,
+          "first_sentence": "For most businesses, workers are less exposed to risks from their boss's strategic errors.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.043,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 56,
+          "words": 111,
+          "sentences": 5,
+          "first_sentence": "But as sweet as restaurateurs have it, that's nothing compared to the incredible deal that gig platforms get.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": "but",
+            "kind": "contrast",
+            "lexical_overlap": 0.049,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 58,
+          "words": 109,
+          "sentences": 5,
+          "first_sentence": "Uber and Lyft claim that drivers have control, too – when (if) they're offered a job, they get to decide whether to take it.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 2,
+            "connective": 1,
+            "numeric": 2,
+            "citation": 0,
+            "total": 5,
+            "per_100_words": 4.587
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.155,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 62,
+          "words": 69,
+          "sentences": 3,
+          "first_sentence": "But workers can't simply refuse offers and wait for the wage on offer to increase.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 1.449
+          },
+          "transition_in": {
+            "marker": "but",
+            "kind": "contrast",
+            "lexical_overlap": 0.064,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 64,
+          "words": 88,
+          "sentences": 4,
+          "first_sentence": "This is \"flexibility,\" but mostly it's flexibility for Uber, not for drivers.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 2.273
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.029,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 68,
+          "words": 87,
+          "sentences": 3,
+          "first_sentence": "Uber has perfected a system of algorithmic pricing that allows it to dangle just enough money in front of drivers to maximize their number on the road, irrespective of how many riders are looking for cars.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.147,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 70,
+          "words": 94,
+          "sentences": 4,
+          "first_sentence": "Of course, it works the same way for passengers, each of whom is offered a different price for the same ride, based on the company's surveillance data and its realtime calculations about how much the rider is willing to pay.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 3,
+            "total": 3,
+            "per_100_words": 3.191
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.064,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 74,
+          "words": 37,
+          "sentences": 1,
+          "first_sentence": "This works so well (for Uber) that Uber has launched a side hustle selling algorithmic pricing and algorithmic wage discrimination systems to companies in other sectors, so expect this arrangement to infect ever-wider swathes of the economy:",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 2,
+            "numeric": 0,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 5.405
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.052,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 78,
+          "words": 34,
+          "sentences": 2,
+          "first_sentence": "(And this is neither here nor there, but holy shit, is Uber's investor relations site seriously serving ASPX pages in 2026?!",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 5.882
+          },
+          "transition_in": {
+            "marker": "and",
+            "kind": "addition",
+            "lexical_overlap": 0.025,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 80,
+          "words": 58,
+          "sentences": 2,
+          "first_sentence": "Back to algorithmic pricing: this opaque, take-it-or-leave-it algorithmic pricing arrangement sets Uber apart from other platforms where sellers offer temporary use of their property to buyers.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 1,
+            "per_100_words": 1.724
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.037,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 82,
+          "words": 117,
+          "sentences": 3,
+          "first_sentence": "As Weil points out, even if Uber had to pay the minimum wage and assume other operational risks associated with running a business, they'd still have access to these algorithmic tools, albeit with different parameters.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 2,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 1.709
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.046,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 84,
+          "words": 57,
+          "sentences": 2,
+          "first_sentence": "Uber could try to offload those risks onto passengers, but remember, Uber is already charging riders a personalized price based on massive troves of surveillance data that is continuously re-analyzed to guess the largest sum you're willing to pay for any given ride.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 1,
+            "per_100_words": 1.754
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.035,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 86,
+          "words": 81,
+          "sentences": 3,
+          "first_sentence": "Weil has been in many forums – including that Massachusetts courtroom – where Uber touted its \"flexibility\" as a benefit to drivers.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 2,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 2.469
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.028,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 88,
+          "words": 47,
+          "sentences": 2,
+          "first_sentence": "Outside of the US, these companies are being forced to shift the risk from their workers' backs to their own balance sheets.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 4.255
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.063,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 92,
+          "words": 54,
+          "sentences": 2,
+          "first_sentence": "The US government is pulling out all the stops to prevent these standards from being applied to US gig companies, even abroad.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.102,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 96,
+          "words": 29,
+          "sentences": 2,
+          "first_sentence": "But, as Weil says, this isn't about innovation, flexibility or AI.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": "but",
+            "kind": "contrast",
+            "lexical_overlap": 0.071,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 98,
+          "words": 100,
+          "sentences": 7,
+          "first_sentence": "The rest of the world has its own ideas.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 1,
+            "per_100_words": 1
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.051,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 100,
+          "words": 68,
+          "sentences": 4,
+          "first_sentence": "What's a labor organizer to do?",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.013,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 104,
+          "words": 79,
+          "sentences": 3,
+          "first_sentence": "This is deliciously ingenious, and the labor organizing need not stop there.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 1.266
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.056,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 108,
+          "words": 114,
+          "sentences": 4,
+          "first_sentence": "The only problem is the \"anticircumvention\" laws that criminalize this kind of reverse-engineering and modifications of apps.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 0.877
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.054,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 110,
+          "words": 54,
+          "sentences": 2,
+          "first_sentence": "This is the hidden silver lining to Trump's lunatic tariffs: they take away the threat that kept all those US-protecting foreign IP laws in force.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.078,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 114,
+          "words": 33,
+          "sentences": 2,
+          "first_sentence": "The possibilities for counterapps in gig work are endless.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 118,
+          "words": 62,
+          "sentences": 2,
+          "first_sentence": "In his article, Weil cites a study showing that customers for gig apps tend not to comparison shop – once you choose your default taxi-hailing app, that becomes your go-to.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 1,
+            "per_100_words": 1.613
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.043,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 122,
+          "words": 61,
+          "sentences": 2,
+          "first_sentence": "The platforms like to pitch themselves as \"frictionless,\" but the reality is that they don't reduce friction so much as reallocate it.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 3,
+            "numeric": 0,
+            "citation": 0,
+            "total": 3,
+            "per_100_words": 4.918
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.018,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 126,
+          "words": 30,
+          "sentences": 1,
+          "first_sentence": "Tony West isn't lying when he says Uber values flexibility – they value their flexibility, which arises out of the constraints (technical, legal) they impose on us: the drivers and passengers.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 128,
+          "words": 5,
+          "sentences": 1,
+          "first_sentence": "Hey look at this (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 130,
+          "words": 15,
+          "sentences": 1,
+          "first_sentence": "Farmers Finally Get a John Deere Right to Repair Agreement That Doesn’t Screw Them Over",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 132,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Stuff of Legends",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 134,
+          "words": 7,
+          "sentences": 1,
+          "first_sentence": "Revenue is just an agreement between friends",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 136,
+          "words": 11,
+          "sentences": 1,
+          "first_sentence": "Brown Professor Suspects Most of His Class Used AI to Cheat",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 138,
+          "words": 16,
+          "sentences": 1,
+          "first_sentence": "Google's new remote attestation scheme is every bit as terrible as its old remote attestation scheme",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 140,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Object permanence (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 142,
+          "words": 8,
+          "sentences": 1,
+          "first_sentence": "#20yrsago Alanya to Alanya: feminist science fiction adventure",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 144,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "#20yrsago Soviet jokes",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.125,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 146,
+          "words": 14,
+          "sentences": 1,
+          "first_sentence": "#10yrsago Empirical proof that Terms of Service are “the biggest lie on the Internet”",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 148,
+          "words": 15,
+          "sentences": 1,
+          "first_sentence": "#10yrsago Fox’s employee contracts may mean Gretchen Carlson will never get her day in court",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 6.667
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.053,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 150,
+          "words": 13,
+          "sentences": 1,
+          "first_sentence": "#10yrsago To see the future, visit the most remote areas of the GBAO",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.056,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 152,
+          "words": 9,
+          "sentences": 1,
+          "first_sentence": "#10yrsago Benjamin Frisch’s “Fun Family”: good old American narcissism",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.077,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 154,
+          "words": 8,
+          "sentences": 1,
+          "first_sentence": "#5yrsago The Sacklers will get to keep billions",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 156,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Upcoming appearances (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 158,
+          "words": 5,
+          "sentences": 1,
+          "first_sentence": "London: Idler Festival, Jul 11",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 20
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 162,
+          "words": 9,
+          "sentences": 1,
+          "first_sentence": "Edinburgh International Book Festival with Jimmy Wales, Aug 17",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 11.111
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.1,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 166,
+          "words": 8,
+          "sentences": 1,
+          "first_sentence": "Sydney: The Festival of Dangerous Ideas, Aug 23-24",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 2,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 25
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.182,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 170,
+          "words": 8,
+          "sentences": 1,
+          "first_sentence": "Melbourne: Enshittification at the Wheeler Centre, Aug 25",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 12.5
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.1,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 174,
+          "words": 16,
+          "sentences": 1,
+          "first_sentence": "Brighton: The Reverse Centaur's Guide to Life After AI with Carole Cadwalladr (Brighton Dome), Sep 8",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 6.25
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 178,
+          "words": 16,
+          "sentences": 1,
+          "first_sentence": "London: The Reverse Centaur's Guide to Life After AI with Riley Quinn (Foyle's Picadilly), Sep 9",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 6.25
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.357,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 182,
+          "words": 11,
+          "sentences": 1,
+          "first_sentence": "South Bend: An Evening With Cory Doctorow (Notre Dame), Oct 6",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 9.091
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 186,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Recent appearances (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 188,
+          "words": 11,
+          "sentences": 2,
+          "first_sentence": "You Bought it, They Break It (What Now?",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 192,
+          "words": 8,
+          "sentences": 2,
+          "first_sentence": "Can AI be Saved From Capitalism?",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 196,
+          "words": 2,
+          "sentences": 1,
+          "first_sentence": "Lawfare Daily",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 200,
+          "words": 7,
+          "sentences": 1,
+          "first_sentence": "How to Think About AI (Organized Money)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 204,
+          "words": 2,
+          "sentences": 1,
+          "first_sentence": "Breaking Points",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 208,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Latest books (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 210,
+          "words": 20,
+          "sentences": 1,
+          "first_sentence": "\"The Reverse-Centaur's Guide to AI,\" a short book about being a better AI critic, Farrar, Straus and Giroux, June 2026",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 214,
+          "words": 16,
+          "sentences": 1,
+          "first_sentence": "\"Canny Valley\": A limited edition collection of the collages I create for Pluralistic, self-published, September 2025",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 6.25
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 216,
+          "words": 18,
+          "sentences": 1,
+          "first_sentence": "\"Enshittification: Why Everything Suddenly Got Worse and What to Do About It,\" Farrar, Straus, Giroux, October 7 2025",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5.556
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.048,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 220,
+          "words": 25,
+          "sentences": 1,
+          "first_sentence": "\"Picks and Shovels\": a sequel to \"Red Team Blues,\" about the heroic era of the PC, Tor Books (US), Head of Zeus (UK), February 2025 (",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 4
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.083,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 222,
+          "words": 24,
+          "sentences": 1,
+          "first_sentence": "\"The Bezzle\": a sequel to \"Red Team Blues,\" about prison-tech and other grifts, Tor Books (US), Head of Zeus (UK), February 2024 (thebezzle.org).",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 4.167
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.476,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 224,
+          "words": 21,
+          "sentences": 1,
+          "first_sentence": "\"The Lost Cause:\" a solarpunk novel of hope in the climate emergency, Tor Books (US), Head of Zeus (UK), November 2023 (",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 4.762
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.16,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 226,
+          "words": 19,
+          "sentences": 1,
+          "first_sentence": "\"The Internet Con\": A nonfiction book about interoperability and Big Tech (Verso) September 2023 ( Signed copies at Book Soup (",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5.263
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.038,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 228,
+          "words": 24,
+          "sentences": 2,
+          "first_sentence": "\"Red Team Blues\": \"A grabby, compulsive thriller that will leave you knowing more about how the world works than you did before.\"",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.037,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 230,
+          "words": 30,
+          "sentences": 1,
+          "first_sentence": "\"Chokepoint Capitalism: How to Beat Big Tech, Tame Big Content, and Get Artists Paid, with Rebecca Giblin\", on how to unrig the markets for creative labor, Beacon Press/Scribe 2022",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 3.333
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 232,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Upcoming books (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 234,
+          "words": 15,
+          "sentences": 1,
+          "first_sentence": "\"The Post-American Internet,\" a geopolitical sequel of sorts to Enshittification, Farrar, Straus and Giroux, 2027",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 6.667
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 236,
+          "words": 19,
+          "sentences": 1,
+          "first_sentence": "\"Unauthorized Bread\": a middle-grades graphic novel adapted from my novella about refugees, toasters and DRM, FirstSecond, April 20, 2027",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5.263
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.043,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 238,
+          "words": 17,
+          "sentences": 1,
+          "first_sentence": "\"Enshittification, Why Everything Suddenly Got Worse and What to Do About It\" (the graphic novel), Firstsecond, 2027",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5.882
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.263,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 240,
+          "words": 7,
+          "sentences": 1,
+          "first_sentence": "\"The Memex Method,\" Farrar, Straus, Giroux, 2027",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 1,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 14.286
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.067,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 242,
+          "words": 2,
+          "sentences": 1,
+          "first_sentence": "Colophon (permalink)",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 244,
+          "words": 3,
+          "sentences": 1,
+          "first_sentence": "Today's top sources:",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 246,
+          "words": 32,
+          "sentences": 3,
+          "first_sentence": "Currently writing: \"The Post-American Internet,\" a sequel to \"Enshittification,\" about the better world the rest of us get to have now that Trump has torched America.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 248,
+          "words": 9,
+          "sentences": 1,
+          "first_sentence": "A Little Brother short story about DIY insulin PLANNING",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.037,
+            "linked": false,
+            "same_section": true
+          }
+        }
+      ],
+      "words": 3086,
+      "paragraph_count": 93,
+      "start_line": 10,
+      "end_line": 248,
+      "claim_markers": 70,
+      "claim_markers_per_100_words": 2.268,
+      "ratio_to_median": 1
+    }
+  ],
+  "balance": {
+    "sections": 1,
+    "median_words": 3086,
+    "max_ratio": 1,
+    "min_ratio": 1
+  },
+  "transitions": {
+    "boundaries": 92,
+    "marked": 27,
+    "unmarked": [
+      {
+        "line": 12,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 14,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 16,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 18,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 22,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 26,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 28,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 30,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 34,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 38,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 44,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 46,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 48,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 54,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 70,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 80,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 82,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 84,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 86,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 88,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 98,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 100,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 108,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 114,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 118,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 122,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 126,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 128,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 130,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 132,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 134,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 136,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 138,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 140,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 142,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 146,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 148,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 150,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 152,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 154,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 156,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 158,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 174,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 182,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 186,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 188,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 192,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 196,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 200,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 204,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 208,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 210,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 214,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 216,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 226,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 228,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 230,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 232,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 234,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 236,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 240,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 242,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 244,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 246,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 248,
+        "section": "(preamble)",
+        "same_section": true
+      }
+    ]
+  },
+  "limits": [
+    "Topic-sentence candidates are positional (first sentence) and lexical (highest heading overlap); neither is a semantic judgement.",
+    "Claim markers are counts of listed word classes, not a claim detector; the lists are in the tool and are the whole definition.",
+    "A transition is a listed opening marker, a demonstrative, or content-word overlap ≥ 0.08 with the previous paragraph; absence of all three is reported, not judged.",
+    "Sections are ATX headings; a document with other structure reads as one preamble section.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}

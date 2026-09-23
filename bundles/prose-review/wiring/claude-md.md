@@ -35,3 +35,8 @@ Skip for short or throwaway writing, and say so when you do.
 - **Do not bind a revise pass this way** when one exists. A transformer running
   on its own judgement will eventually rewrite something you did not want
   rewritten.
+- **The structure critic needs no rule either.** It runs in the step-2 fan-out
+  when a draft is an argument and `prose-outline`'s scan exists; a session that
+  follows `PROTOCOL.md` spawns it. If you bind anything, bind the protocol, not
+  the critic: "before publishing an argument, run the review protocol" — and
+  write the skip in for notes and replies.

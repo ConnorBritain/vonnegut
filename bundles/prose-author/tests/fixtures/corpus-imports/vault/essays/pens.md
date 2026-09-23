@@ -1,0 +1,10 @@
+---
+created: 2022-10-01
+---
+There is a version of this advice that turns into a product, and I want to be careful not to give it. Nobody needs a particular pen. The paper does not matter. What matters is that the tool cannot be edited, so the sentence you wrote is the sentence you wrote, and you have to live with it long enough to see what it actually says. Every editing tool I have used lets me hide from that. The notebook does not, and that is the whole of its virtue, and it is enough.
+
+%%
+private comment block
+%%
+
+I kept a notebook for eleven years before I understood what it was for. It was not for remembering, though I told myself that; the entries I reread are the ones I already remember, and the ones I have forgotten I do not go looking for. It was for slowing down. A sentence written by hand takes as long as it takes, and in that time the thought has to hold still and be looked at, which most thoughts cannot survive. The notebook was a sieve. What came through it was smaller than what went in, and better, and mine in a way that the quick things were not.

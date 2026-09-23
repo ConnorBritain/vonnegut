@@ -1,0 +1,49 @@
+{
+  "_comment": [
+    "Acceptance fixtures for prose-medium-critic. Each synthetic fixture is a piece.md and a `form` naming",
+    "the medium profile it was made for (staged from prose-author's prose-repurpose skill at prepare time,",
+    "the way the structure critic's scan is computed then). The critic receives the profile, the output of",
+    "repurpose-check over the piece, and the piece. It never sees this manifest.",
+    "",
+    "`check_says` is the ECHO RULE's verdict (tests/medium-harness.mjs), re-derived by the selftest: what a",
+    "critic gets by parroting repurpose-check - any failed mechanical constraint is a REVISE. `class` is the",
+    "disagreement geometry, not a severity:",
+    "  A  check quiet, critic quiet    - a compliant piece; the critic manufactures nothing",
+    "  B  check flags, critic quiet    - a mechanical failure is the writer's to fix, not a finding; the critic clears it",
+    "  C  check flags, critic flags    - an over-length segment that ALSO cuts a sentence: the critic names the cut",
+    "  D  check quiet, critic flags    - every count passes; only a reader in the medium sees the cut sentence or the buried hook",
+    "B and D are the whole argument for the critic existing. The parrot's score is reported beside the critic's.",
+    "",
+    "The leave-one-out negatives are the six shortest Doctorow posts staged under the newsletter profile; every",
+    "one is over the profile's word band, so the check says REVISE on all six and the critic must stay quiet where",
+    "the count is loud. That is the negative test: compliant human prose as delivery, not whether the critic finds",
+    "the right delivery problems."
+  ],
+  "echo_rule": "flagged when repurpose-check reports any mechanical constraint as failed",
+  "fixtures": [
+    { "name": "n-thread-clean", "kind": "negative", "class": "A", "form": "thread", "check_says": "CLEAN", "expect": "CLEAN",
+      "piece_does": "Five segments, each under 280 characters, each a whole sentence or two, no link in the first. Nothing to count against and nothing for the medium to break." },
+    { "name": "n-thread-long-but-whole", "kind": "negative", "class": "B", "form": "thread", "check_says": "REVISE", "expect": "CLEAN",
+      "piece_does": "The first segment is over 280 characters, so the check fails segment-limit. Every segment is whole sentences and stands alone; the length is the writer's to fix, and the critic must not restate the count as a finding." },
+    { "name": "p-thread-long-and-cut", "kind": "positive", "class": "C", "form": "thread", "check_says": "REVISE", "expect": "REVISE",
+      "piece_does": "The first segment is over the limit AND ends mid-sentence ('and the / difference is the whole of it'). The check flags the length; the critic must name the cut, which the count cannot see." },
+    { "name": "p-thread-cut-sentence", "kind": "positive", "class": "D", "form": "thread", "check_says": "CLEAN", "expect": "REVISE",
+      "piece_does": "Every segment is under the limit and there is no link, so the check is quiet. The first separator falls between 'what it was' and 'for.' Only a reader who meets segment one alone sees it." },
+    { "name": "n-post-hook-carries", "kind": "negative", "class": "A", "form": "linkedin-post", "check_says": "CLEAN", "expect": "CLEAN",
+      "piece_does": "Under 3,000 characters, no headings, no hashtags; the first line states the piece's claim, so the truncation point carries it." },
+    { "name": "p-post-hook-buried", "kind": "positive", "class": "D", "form": "linkedin-post", "check_says": "CLEAN", "expect": "REVISE",
+      "piece_does": "Same body, but the first two lines are 'a few thoughts... in no particular order' and 'some background first'. Every count passes; the platform truncates after two lines that carry nothing, which is the semantic constraint hook-above-the-fold the check lists as the critic's." }
+  ],
+  "leave_one_out": {
+    "form": "newsletter",
+    "essays": [
+      "pluralistic/2026-07-29-la-la-la-la-la.txt",
+      "pluralistic/2026-07-13-go-meta-meta.txt",
+      "pluralistic/2026-07-10-posthuman-as-in-no-humans.txt",
+      "pluralistic/2026-08-04-technology-freedom-cooperative.txt",
+      "pluralistic/2026-07-14-designated-survivor.txt",
+      "pluralistic/2026-07-09-wilhoitian.txt"
+    ]
+  },
+  "leave_one_out_note": "Six posts by one author, staged under the newsletter profile as pieces delivered on the web. All exceed the profile's 1,200-word band, so the parrot scores 0 of 6 on the negatives. Expected CLEAN on all six; <= 1 REVISE is a default, not a measurement (critic-harness.md)."
+}

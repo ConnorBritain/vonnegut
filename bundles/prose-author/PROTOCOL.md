@@ -100,3 +100,32 @@ numerical history remain separate and outside plugin caches. Resolve once before
 the run snapshot, then keep those inputs fixed. A one-off author can opt out.
 History still requires consent, and generated prose never becomes human corpus
 material automatically. See [identity operations](skills/prose-draft/references/identities.md).
+
+## Corpus intake (v0.7)
+
+Existing writing enters `corpus/human/` through the `prose-corpus` skill and
+nowhere else. An importer reads a Substack export, a Google Docs export folder,
+a Markdown vault or an mbox and proposes candidates with a register suggestion
+and its reason; the writer selects, names the register and group, and attests
+per batch, in their own words, that they wrote the pieces unaided; ingest
+writes the selected ids with the provenance frontmatter `prose-tell-scan`
+reads and prints progress against the profile floor and the calibration floor.
+Nothing is attested by inference, no mbox sender is guessed, no history or
+preference is touched, and no profile is refreshed as a side effect — offer the
+existing refresh path afterwards. Without `prose-tell-scan`, intake still works
+and calibration is reported unavailable.
+
+## Repurposing (v0.9)
+
+One finished piece becomes other forms through the `prose-repurpose` skill and
+the same runtime: one `rewrite` run per form the writer asked for, with the
+source piece as the passage, `context.form` set to the form so preferences
+scoped `forms: [<form>]` apply, and the medium profile's structure and
+mechanical constraints supplied as facts, its digest recorded in the receipt.
+`repurpose-check` then counts what the profile counts on the final bytes and
+lists what the source lost; a failed mechanical constraint goes back as a
+repair, at most twice, and the missing-atoms list is shown, never failed. With
+`prose-review` installed the medium critic reads the profile, the check and the
+piece in a clean context; without it the delivery is ungated for medium review
+and says so. Nothing the source does not say enters a form, and nothing is
+posted anywhere.

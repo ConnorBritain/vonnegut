@@ -1,0 +1,77 @@
+# Harness-specific metadata for the prose-reader-critic primitive.
+# The prompt body lives in agent.md and is shared verbatim across every target.
+# This file records what each harness can and cannot enforce about it.
+
+name: prose-reader-critic
+kind: reviewer
+surface: agent
+bundle: prose-review
+
+contract:
+  read_only: true          # a reader who can edit stops reading and starts rewriting
+  clean_context: true      # a reader who watched the draft being written is not a reader
+  verdict: [CLEAN, REVISE]
+  scope: file              # one draft, one persona
+
+  # ONE PROMPT, MANY READERS. The persona is an INPUT block the session pastes
+  # beside the draft, the way every critic receives scan JSON. The prompt never
+  # embeds a persona: the byte-identical rule between primitives/ and bundles/
+  # leaves no substitution surface, and a persona as a prompt would drift and
+  # need its own harness. A persona is a data file, reviewable and diffable.
+  inputs:
+    - the persona block (bundles/prose-review/personas/<name>.md, or a project's own)
+    - the draft
+
+  # No ground truth. Nobody can check "this reader would stop here", so a wrong
+  # finding cannot be caught and teaches the author to write for a reader who
+  # does not exist. Same departure as prose-voice-critic, for the same reason.
+  uncertainty_resolves_to: silence
+  adversarial_framing: false
+
+  # The forced choice is the one output that is always present. It is what
+  # makes a CLEAN reader still useful: a reader who finishes still had a least
+  # favourite sentence, and that sentence is information a scan cannot supply.
+  always_emits: FORCED CHOICE
+
+  refuses:
+    - Any finding that does not quote the sentence it stops at
+    - A stop the persona's reads_for does not name; a concern borrowed from another reader
+    - Anything on the persona's never list, and always: judging prose quality and
+      guessing who wrote it
+    - Proposing a rewrite. It reports a reaction; the author decides what to do with it.
+    - Calling a forced choice alone a REVISE
+    - Any statement about machine authorship
+
+  # Validated by a script, not typed: tools/persona-check.mjs checks the persona
+  # file's frontmatter before the run and the transcript's shape after it.
+  reads_tool: tools/persona-check.mjs
+
+harness:
+  claude-code:
+    enforcement: enforced
+    model: sonnet
+    color: cyan
+    tools:
+      - Read
+      - Grep
+      - Glob
+    notes: >-
+      Read-only by tool allowlist and clean context by subagent. The persona
+      arrives in the task prompt; nothing in the tool list reaches another
+      plugin's install.
+  cursor:
+    enforcement: advisory
+    notes: >-
+      No agent registry. Paste the persona block and the draft into a fresh
+      chat with the prompt body; read-only and clean context are requests.
+  codex:
+    enforcement: partial
+    notes: >-
+      A custom agent with the prompt body; run as a fresh `codex exec` per
+      persona, never inline. Read-only is not enforced.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      Everything is prose. Keep the forced choice and "when you cannot tell,
+      say nothing" if you shorten it; they are the two rules that make the
+      report mean anything.

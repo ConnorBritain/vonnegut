@@ -77,6 +77,10 @@ landed first.
 
 ## Before you call a change here done
 
+- **Roadmap work:** read [`docs/ROADMAP.md`](docs/ROADMAP.md) and
+  [`docs/roadmap/STATUS.md`](docs/roadmap/STATUS.md) first, take the first unchecked
+  deliverable in sequence order, and tick its line in the same commit. See
+  [`CONTRIBUTING.md`](CONTRIBUTING.md#resuming-work).
 - **Prompts:** run the positive *and* negative test for the primitive's kind
   ([`CONTRIBUTING.md`](CONTRIBUTING.md#testing-a-primitive)). Both results go in the PR. The
   negative test is the one that gets skipped and the one that matters.
@@ -95,6 +99,9 @@ bundles/<bundle>/                                           deployable unit, 4 m
 docs/wiring.md                                              invocation modes; editing
                                                             CLAUDE.md / AGENTS.md
 docs/portability.md                                         what degrades per harness, per kind
+docs/ROADMAP.md · docs/roadmap/                             planned work, per-item specs,
+                                                            STATUS.md checklist + version pin
+docs/registry-stores.md · docs/contracts/                   cross-bundle contracts with no owner
 .claude-plugin/marketplace.json                             makes the repo a CC marketplace
 install.sh / install.ps1                                    loose-file install
 CHANGELOG.md                                                per-bundle history; held work included

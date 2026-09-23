@@ -1,0 +1,19 @@
+{
+  "mode": "argument",
+  "title": "Why the roadmap must be a file",
+  "thesis": "A plan that is not a file under version control, checked by the build, is not a plan.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "text": "A plan lives where the work lives, or it is not read.",
+      "evidence": [ { "slot": "e1", "filled_by": "last three retrospectives: checked-in plans survived, wiki plans died" } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2, "text": "A plan and a codebase drift the moment either moves, and the drift is silent.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n3", "kind": "claim", "parent": "n2", "order": 1, "text": "A mechanical check closes the gap: it cannot forget.",
+      "evidence": [ { "slot": "e1", "filled_by": "March 2024 script; stale entries eleven to zero in a month" } ] },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 3, "text": "The forced-edit objection is true and does not matter: the check buys the impossibility of silent edits, not thoughtful ones.",
+      "evidence": [ { "slot": "e1", "filled_by": "the objection as stated in the brief" } ] },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 4, "text": "The rule: file, next to the code, build fails on disagreement.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n6", "kind": "open-question", "parent": "n2", "order": 2, "text": "Is there a concrete drift incident to open the section with, or does it stay abstract?" }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

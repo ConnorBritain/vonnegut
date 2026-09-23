@@ -11,9 +11,14 @@ if (args.some(a => a !== "--mutations")) {
   process.exit(2);
 }
 const checks = [
+  ["tools/check-roadmap.mjs"],
+  ["tools/check-roadmap-test.mjs"],
   ["tools/check-packaging.mjs"],
   ["bundles/prose-tell-scan/tests/selftest.mjs"],
   ["bundles/prose-tell-scan/tests/acceptance.mjs"],
+  ["bundles/prose-outline/tests/selftest.mjs"],
+  ["bundles/prose-bible/tests/selftest.mjs"],
+  ["bundles/prose-research/tests/selftest.mjs"],
   ["bundles/prose-author/tests/selftest.mjs"],
   ["bundles/prose-review/tests/selftest.mjs"],
   ["bundles/prose-review/tests/run-harness-test.mjs"],

@@ -1,0 +1,36 @@
+{
+  "name": "prose-outline",
+  "version": "0.1.1",
+  "description": "Outlines for prose: brief to checkable outline, draft to implied outline, outline diffs, per-project persistence with undo.",
+  "author": {
+    "name": "Connor England",
+    "url": "https://github.com/ConnorBritain"
+  },
+  "homepage": "https://github.com/ConnorBritain/vonnegut",
+  "repository": "https://github.com/ConnorBritain/vonnegut",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "prose",
+    "outline",
+    "structure",
+    "planning"
+  ],
+  "interface": {
+    "displayName": "Prose Outline",
+    "shortDescription": "Turns a brief into a checkable outline and reads a draft back into the outline it implies.",
+    "longDescription": "One skill, no agents. prose-outline turns a brief into a voice-outline/1 proposal — thesis, ordered claims, evidence slots, open questions, or acts, beats and turns in beat-sheet mode — and saves it per project in the shared writing-identity registry only after you approve, with undo. A dependency-free scanner reads a draft back into its implied outline (heading tree, topic-sentence candidates, claim-marker density, transitions, section balance) so the structure critic in prose-review has something counted to judge; a differ compares two outline revisions by node id. It proposes and measures; it never drafts, never scores, and never says who wrote anything.",
+    "developerName": "Connor England",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/ConnorBritain/vonnegut",
+    "defaultPrompt": [
+      "Outline this essay from my brief",
+      "What does this draft actually argue, section by section?",
+      "Beat-sheet this chapter",
+      "Diff the outline against last week's version"
+    ]
+  }
+}
