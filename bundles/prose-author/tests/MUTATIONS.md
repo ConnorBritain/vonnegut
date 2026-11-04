@@ -23,8 +23,9 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | a medium profile with an unknown field loads | 1 | unknown profile fields are refused by name |
 | a medium profile's delivery notes may carry a prohibition list | 1 | the only free text the critic weighs carries no prohibition list |
 | corpus ingest writes every candidate, not the selected ids | 5 | only the ids the writer selected are written into the human corpus |
-| corpus ingest accepts a selection the writer did not attest | 4 | attest must be literally true, given by the writer for this batch, or nothing is written |
+| corpus ingest accepts a selection the writer did not attest | 3 | attest must be literally true, given by the writer for this batch, or nothing is written |
 | corpus ingest drops the 200-word floor | 2 | a piece below tell-scan's sample floor is refused by name rather than ingested as a sample calibration will then exclude |
+| corpus ingest writes no author, so the profile renderer excludes every ingested piece | 3 | an ingested file carries the author and register prose-draft's reader needs, so it reaches the profile instead of being excluded |
 | corpus ingest enables history as a side effect | 1 | ingestion writes under corpus/human and nothing else — no history, no preferences, no profile |
 | the shared text-index copy drifts from prose-outline's canonical | 1 | a shared library edited in one bundle and not the other is caught by the byte-identical pin, not shipped as two indexes under one name |
 | bible store writes without approval | 3 | no bible revision is written without the approval flag |
