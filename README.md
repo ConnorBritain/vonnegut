@@ -24,7 +24,7 @@ detector outcomes. Example facts are not automatically facts about you.
 
 | Bundle | Version | Purpose |
 |---|---|---|
-| [prose-author](bundles/prose-author/) | 0.9.0 | Drafting, profiles, persistent preferences, opt-in history, corpus intake |
+| [prose-author](bundles/prose-author/) | 0.9.1 | Drafting, profiles, persistent preferences, opt-in history, corpus intake |
 | [prose-review](bundles/prose-review/) | 0.7.0 | Voice, fidelity (provenance-aware), structure, medium and reader-persona critics, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
 | [prose-outline](bundles/prose-outline/) | 0.1.1 | Outlines from a brief, a draft's implied outline, diffs, per-project persistence |

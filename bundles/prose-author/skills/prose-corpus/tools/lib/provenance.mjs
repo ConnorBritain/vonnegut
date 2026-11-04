@@ -3,8 +3,10 @@
  *
  * `prose-tell-scan`'s `ingest.mjs` writes the frontmatter and its `calibrate.mjs`
  * `readProvenance` reads it (PROFILES.md "Provenance"). This module writes the
- * same bytes plus two fields the reader ignores (`profile`, which tell-scan's
- * profile resolver does read, and `imported_by`). The parity test in
+ * same bytes plus fields the reader ignores (`profile`, which tell-scan's
+ * profile resolver does read, `imported_by`, and `author` and `register`, which
+ * prose-draft's `readCurrentSamples` needs: it excludes a sample without
+ * `author` and compares its `register`, not `profile`). The parity test in
  * `tests/suite-corpus-ingestion.mjs` runs tell-scan's own reader over what this
  * writes, so the port cannot drift silently. Shipped code never imports across
  * a bundle boundary.
@@ -23,7 +25,7 @@ export function stripFrontmatter(text) {
 
 const yamlString = (s) => (/^[\w./ -]*$/.test(s) && !/^\s|\s$/.test(s) && s !== "" ? s : JSON.stringify(s));
 
-export function renderFrontmatter({ source, date, ingested_from, imported_by, profile, form }) {
+export function renderFrontmatter({ source, date, ingested_from, imported_by, profile, form, author }) {
   if (!source || !date || !ingested_from || !imported_by) throw new TypeError("frontmatter needs source, date, ingested_from and imported_by");
   return `---\n`
     + `source: ${yamlString(source)}\n`
@@ -32,6 +34,8 @@ export function renderFrontmatter({ source, date, ingested_from, imported_by, pr
     + `ingested_from: ${yamlString(ingested_from)}\n`
     + (profile ? `profile: ${profile}\n` : "")
     + (form ? `form: ${form}\n` : "")
+    + (author ? `author: ${yamlString(author)}\n` : "")
+    + (profile ? `register: ${profile}\n` : "")
     + `imported_by: ${imported_by}\n`
     + `---\n\n`;
 }

@@ -35,15 +35,20 @@ writer which address is theirs; the importer refuses to guess.
 
 Show at most ten candidates at a time: id, title, date, words, suggested
 register/form and why. Ask which to keep, which register (`essay`, `technical`,
-`narration`, `correspondence`) and optional group and form, and then — for this
-batch, in the writer's own words — whether they wrote these pieces unaided.
+`narration`, `correspondence`) and optional group and form, the author name the
+pieces should carry, and then — for this batch, in the writer's own words —
+whether they wrote these pieces unaided.
 Write the answer to a task-local selection file:
 
 ```json
 { "schema": "corpus-selection/1", "ids": ["c001", "c002"], "register": "essay",
-  "group": null, "form": "newsletter", "attest": true,
+  "group": null, "form": "newsletter", "attest": true, "author": "Sam Writer",
   "source": "my Substack export, March 2024" }
 ```
+
+`author` is the name as the writer gives it; never infer it from the export.
+The profile renderer excludes a sample without one, so a selection without it
+is refused rather than ingested as a corpus that can never reach a profile.
 
 `attest: true` is set only after a yes for this batch. Never set it from an
 inference, from the importer's suggestion, or from an earlier batch's answer.

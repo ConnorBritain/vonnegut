@@ -7,7 +7,7 @@
  *   node corpus-ingest.mjs progress --samples-dir DIR [--json]
  *
  * The selection (`corpus-selection/1`) is the writer's: which ids, which
- * register, an optional group, and `attest: true` — literally true, set only
+ * register, an optional group, the `author` name, and `attest: true` — literally true, set only
  * after the writer said, in their own words, that they wrote these unaided.
  * Anything else is refused and nothing is written. Candidates under 200 words
  * are refused (tell-scan's floor). An existing file is refused unless --force.
@@ -35,6 +35,7 @@ export function validateSelection(s) {
   if (s?.form !== undefined && s.form !== null && !TOKEN.test(s.form)) errors.push("form must be a lower-case token or null");
   if (s?.attest !== true) errors.push("attest must be literally true — the writer's own confirmation that they wrote these unaided, given for this batch");
   if (typeof s?.source !== "string" || !s.source.trim()) errors.push("source must name where these came from, in the writer's words");
+  if (typeof s?.author !== "string" || !s.author.trim()) errors.push("author must name who wrote these, as the writer gives it — the profile renderer excludes a sample without one");
   return errors;
 }
 
@@ -56,7 +57,7 @@ export function ingest({ manifest, selection, samplesDir, force = false, now = n
     const name = `${slug(c.title, id)}.md`;
     const out = join(target, name);
     if (existsSync(out) && !force) { refused.push({ id, why: `${name} already in this corpus (use --force)` }); continue; }
-    const frontmatter = renderFrontmatter({ source: selection.source.trim(), date, ingested_from: c.path, imported_by: importedBy, profile: selection.register, form: selection.form ?? c.suggested?.form ?? null });
+    const frontmatter = renderFrontmatter({ source: selection.source.trim(), date, ingested_from: c.path, imported_by: importedBy, profile: selection.register, form: selection.form ?? c.suggested?.form ?? null, author: selection.author.trim() });
     mkdirSync(target, { recursive: true });
     writeFileSync(out, `${frontmatter}${c.text.trim()}\n`);
     written.push({ id, file: out, words: count, date });

@@ -112,7 +112,7 @@ export async function run(t, { tmp, HERE } = {}) {
   const samples = join(tmp, "corpus-ingest-samples");
   mkdirSync(join(samples, "corpus", "human"), { recursive: true });
   const substack = manifests.substack;
-  const base = { schema: "corpus-selection/1", ids: ["c001", "c002"], register: "essay", group: null, form: null, attest: true, source: "my Substack export, March 2024" };
+  const base = { schema: "corpus-selection/1", ids: ["c001", "c002"], register: "essay", group: null, form: null, attest: true, source: "my Substack export, March 2024", author: "Sam Writer" };
   {
     const before = readdirSync(samples);
     const r = attempt(() => ingest({ manifest: substack, selection: base, samplesDir: samples }));
@@ -121,8 +121,18 @@ export async function run(t, { tmp, HERE } = {}) {
     t.check("nothing outside corpus/human is created — no history, no preferences, no profile", readdirSync(samples).join() === before.join() && readdirSync(samples).join() === "corpus" && readdirSync(join(samples, "corpus")).join() === "human");
     const text = readFileSync(join(samples, "corpus", "human", "on-keeping-a-notebook.md"), "utf8");
     const p = prov.readProvenance(text);
-    t.check("frontmatter: source, date, human_authored: true, ingested_from, profile, form, imported_by — in tell-scan's byte order", p.ok && p.source === base.source && p.date === "2024-03-01" && p.profile === "essay" && p.form === "newsletter" && p.imported_by === "prose-corpus/substack"
-      && /^---\nsource: "my Substack export, March 2024"\ndate: 2024-03-01\nhuman_authored: true\ningested_from: posts\/100001\.on-keeping-a-notebook\.html\nprofile: essay\nform: newsletter\nimported_by: prose-corpus\/substack\n---\n\n/.test(text));
+    t.check("frontmatter: source, date, human_authored: true, ingested_from, profile, form, author, register, imported_by — in tell-scan's byte order", p.ok && p.source === base.source && p.date === "2024-03-01" && p.profile === "essay" && p.form === "newsletter" && p.imported_by === "prose-corpus/substack"
+      && /^---\nsource: "my Substack export, March 2024"\ndate: 2024-03-01\nhuman_authored: true\ningested_from: posts\/100001\.on-keeping-a-notebook\.html\nprofile: essay\nform: newsletter\nauthor: Sam Writer\nregister: essay\nimported_by: prose-corpus\/substack\n---\n\n/.test(text));
+    // The seam to the profile renderer, inside this bundle: prose-draft's reader and measurer
+    // must accept what ingest wrote. Before 0.9.1 they excluded every ingested file for want
+    // of `author`, and compared `register` where ingest had written only `profile`.
+    {
+      const v3 = await import(pathToFileURL(join(TOOLS, "..", "..", "prose-draft", "tools", "profile-v3.mjs")).href);
+      const read = v3.readCurrentSamples(samples);
+      const measured = attempt(() => v3.measureSamples(read, { register: "essay" }));
+      t.check("SEAM: prose-draft's readCurrentSamples reads author and register from an ingested file", read.length === 2 && read.every((s) => s.author === "Sam Writer" && s.register === "essay" && s.form === "newsletter" && s.human_authored === true), JSON.stringify(read.map((s) => [s.id, s.author, s.register])));
+      t.check("SEAM: measureSamples uses every ingested file under its register and excludes none", measured.sample_count === 2 && measured.samples_excluded?.length === 0, JSON.stringify(measured.samples_excluded ?? measured.crashed));
+    }
     t.check("the body is the candidate's text, frontmatter-free", p.body.trim() === substack.candidates[0].text.trim());
     // Parity with the reader that actually decides what is a sample.
     const sibling = resolve(HERE, "..", "..", "prose-tell-scan", "skills", "tell-scan", "tools", "calibrate.mjs");
@@ -159,6 +169,8 @@ export async function run(t, { tmp, HERE } = {}) {
     refusal({ ...base, ids: [] }, /empty selection ingests nothing/, "an empty selection is refused, not silently a no-op");
     refusal({ ...base, ids: ["c999"] }, /not in the manifest/, "an id the manifest does not have is refused");
     refusal({ ...base, ids: ["c004"], source: " " }, /source must name/, "a blank source is refused");
+    refusal({ ...base, ids: ["c004"], author: undefined }, /author must name who wrote these/, "a selection without an author is refused — the renderer would exclude every piece");
+    refusal({ ...base, ids: ["c004"], author: "  " }, /author must name who wrote these/, "a blank author is refused");
     refusal({ ...base, ids: ["c004"], register: "poetry" }, /register must be one of/, "an unknown register is refused");
     refusal({ ...base, ids: ["c004"], group: "Bad Group" }, /group must be a lower-case token/, "a group that is not a token is refused");
     t.check("validateSelection lists every problem at once", validateSelection({}).length >= 5);

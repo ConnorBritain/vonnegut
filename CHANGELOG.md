@@ -266,6 +266,21 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 
 ## prose-author
 
+### [0.9.1] — ingested corpus reaches the profile
+
+- **Fixed** `prose-corpus` ingest wrote files the profile renderer could not use.
+  `readCurrentSamples` excludes a sample without `author` and compares
+  `register`, but ingest wrote neither (only `profile`), so every attested
+  import was dropped as "Missing human authorship/source attribution" and a
+  profile render reported no usable corpus. The `corpus-selection/1` selection
+  now requires `author`, the name as the writer gives it, and ingest writes
+  `author` and `register` after `form`. Tell-scan's provenance reader ignores
+  both fields, so parity is unchanged. Files ingested by 0.7.0–0.9.0 need
+  those two lines added, or need to be re-ingested with `--force`.
+- **Added** checks to suite `corpus-ingestion`: prose-draft's reader and
+  measurer accept what ingest wrote, and a selection with a missing or blank
+  author is refused. Also one mutation (ingest writes no author).
+
 ### [0.9.0] — one piece, many forms
 
 Roadmap item F; release notes in [`RELEASE-v0.9.0.md`](bundles/prose-author/RELEASE-v0.9.0.md).

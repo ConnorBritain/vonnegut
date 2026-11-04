@@ -106,7 +106,7 @@ material automatically. See [identity operations](skills/prose-draft/references/
 Existing writing enters `corpus/human/` through the `prose-corpus` skill and
 nowhere else. An importer reads a Substack export, a Google Docs export folder,
 a Markdown vault or an mbox and proposes candidates with a register suggestion
-and its reason; the writer selects, names the register and group, and attests
+and its reason; the writer selects, names the register, group and author, and attests
 per batch, in their own words, that they wrote the pieces unaided; ingest
 writes the selected ids with the provenance frontmatter `prose-tell-scan`
 reads and prints progress against the profile floor and the calibration floor.
