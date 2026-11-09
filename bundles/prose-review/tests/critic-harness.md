@@ -360,6 +360,7 @@ k=3 with a majority + split report. See [`.planning/SAMPLING-POLICY.md`](../../.
 | [2026-08-05-s4](runs/2026-08-05-fidelity-s4-complete.md) — `prose-fidelity-critic`, full sweep **after** the P3 scanner fix | 1 | **4 MATERIAL-LOSS / 6** | **7 MATERIAL-LOSS / 7** | 0 | 0 |
 | [2026-11-09-fidelity-provenance](runs/2026-11-09-fidelity-provenance/README.md) — `prose-fidelity-critic`, 16 fixtures incl. the three provenance ones | 3 | **2 MATERIAL-LOSS / 7** (1 split) | **9 MATERIAL-LOSS / 9** | 0 | 0 |
 | [2026-11-09-medium](runs/2026-11-09-medium/README.md) — `prose-medium-critic`, first run | 3 | **8 REVISE / 9** — negative test not met; see the log | **3 REVISE / 3** synthetic | 0 | 0 |
+| [2026-11-09-reader](runs/2026-11-09-reader/README.md) — `prose-reader-critic`, four personas × 12 essays | 3 | **16 REVISE / 48**: skeptical-cto 1/12, acquisitions-editor 3/12, first-time-reader 3/12, adversarial-reader 9/12 | — (no positives by design) | 0 | 0 |
 | [2026-11-09-structure](runs/2026-11-09-structure/README.md) — `prose-structure-critic`, first run | 3 | **0 REVISE / 17** (12 leave-one-out + 5 synthetic) | **4 REVISE / 4** synthetic | 0 | 0 |
 
 **The fidelity critic's negative rate got WORSE when the scanner got better, and

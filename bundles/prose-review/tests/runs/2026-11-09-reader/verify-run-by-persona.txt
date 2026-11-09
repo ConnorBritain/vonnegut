@@ -1,0 +1,46 @@
+# verify-run.mjs over each persona's 36 wrapped transcripts (plus MANIFEST.json), copied to a scratch directory per persona on 2026-11-09.
+# Header line (scratch path) dropped; everything below each '==' is the tool's output verbatim.
+
+== acquisitions-editor
+  /tmp/claude-0/-home-user-vonnegut/114b4780-cec9-5a21-b936-a7727c043a5c/scratchpad/p-acquisitions-editor — 12 case(s), 36 transcript(s) (k=3)
+
+    negative (reader finishes, n=12):    3 REVISE, 9 CLEAN
+    positive (reader stops, n=0):       0 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  0 of 12   (a split is a finding)
+    stops without a quoted sentence: 0          <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+    transcripts without a FORCED CHOICE: 0       <- must be 0
+
+
+== adversarial-reader
+  /tmp/claude-0/-home-user-vonnegut/114b4780-cec9-5a21-b936-a7727c043a5c/scratchpad/p-adversarial-reader — 12 case(s), 36 transcript(s) (k=3)
+
+    negative (reader finishes, n=12):    9 REVISE, 3 CLEAN
+    positive (reader stops, n=0):       0 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  1 of 12   (a split is a finding)
+    stops without a quoted sentence: 0          <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+    transcripts without a FORCED CHOICE: 0       <- must be 0
+
+
+== first-time-reader
+  /tmp/claude-0/-home-user-vonnegut/114b4780-cec9-5a21-b936-a7727c043a5c/scratchpad/p-first-time-reader — 12 case(s), 36 transcript(s) (k=3)
+
+    negative (reader finishes, n=12):    3 REVISE, 9 CLEAN
+    positive (reader stops, n=0):       0 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  3 of 12   (a split is a finding)
+    stops without a quoted sentence: 0          <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+    transcripts without a FORCED CHOICE: 0       <- must be 0
+
+
+== skeptical-cto
+  /tmp/claude-0/-home-user-vonnegut/114b4780-cec9-5a21-b936-a7727c043a5c/scratchpad/p-skeptical-cto — 12 case(s), 36 transcript(s) (k=3)
+
+    negative (reader finishes, n=12):    1 REVISE, 11 CLEAN
+    positive (reader stops, n=0):       0 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  2 of 12   (a split is a finding)
+    stops without a quoted sentence: 0          <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+    transcripts without a FORCED CHOICE: 0       <- must be 0
+

@@ -17,6 +17,11 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** `prose-reader-critic` (prose-review): first run,
+  `tests/runs/2026-11-09-reader`, 4 personas × 12 essays × 3 draws — 16
+  `REVISE` of 48 negatives: skeptical-cto 1/12 (within the 0–2 default),
+  acquisitions-editor 3/12, first-time-reader 3/12, adversarial-reader 9/12
+  (all three exceeding it). Contract counts 0. No persona tuned; follow-up.
 - **Measured** `prose-medium-critic` (prose-review): first run,
   `tests/runs/2026-11-09-medium`, 12 cases × 3 draws — **8 `REVISE` of 9
   negatives**, so the negative test it ships on is not met; 3 of 3 positives;

@@ -1,0 +1,826 @@
+{
+  "critic": "reader",
+  "run_id": "2026-11-09-reader",
+  "prepared": "2026-11-09",
+  "draws": 3,
+  "agent_prompt": "primitives/agents/prose-reader-critic/agent.md",
+  "agent_sha256": "b903080f9e4c36182bff562059a349d01b57e0fb279fdafc8673936b44ec0acc",
+  "cases": [
+    {
+      "case": "case-01",
+      "fixture": "n-first-time-reader-2026-07-16-lucky-orifices",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-16-lucky-orifices.txt",
+          "sha256": "3fbe7cefa93700466d42df3ec7afc3d4432a2e6bd0adb60cfd8f4dcf117f2744"
+        }
+      ]
+    },
+    {
+      "case": "case-02",
+      "fixture": "n-acquisitions-editor-2026-07-31-just-do-it",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-31-just-do-it.txt",
+          "sha256": "88e37c3e106864d0e187cb3f0d33bfd1714165de807ac0396b56961eb570075f"
+        }
+      ]
+    },
+    {
+      "case": "case-03",
+      "fixture": "n-first-time-reader-bacon-of-friendship",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-friendship.txt",
+          "sha256": "3876c2ee3b4ff00aead1af9eb1609f2d136b406f22aae99d54278e2ae6770adb"
+        }
+      ]
+    },
+    {
+      "case": "case-04",
+      "fixture": "n-skeptical-cto-chesterton-the-shop-of-ghosts",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-shop-of-ghosts.txt",
+          "sha256": "87d17af764a12f0059f4f0a45fe5ef0968dae564bd5b435cfb0f2ac19abbc5e1"
+        }
+      ]
+    },
+    {
+      "case": "case-05",
+      "fixture": "n-adversarial-reader-chesterton-humanity-an-interlude",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-humanity-an-interlude.txt",
+          "sha256": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3"
+        }
+      ]
+    },
+    {
+      "case": "case-06",
+      "fixture": "n-acquisitions-editor-2026-07-25-cruel-cruelty-oh-cruelty",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-25-cruel-cruelty-oh-cruelty.txt",
+          "sha256": "e427ea50f17eecf48300e8dfa251c61bda4acc2624a31c0bdf662ddbe23aa2ef"
+        }
+      ]
+    },
+    {
+      "case": "case-07",
+      "fixture": "n-skeptical-cto-bacon-of-seditions-and-troubles",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-seditions-and-troubles.txt",
+          "sha256": "da142a176e0eede581cfadf58d974f24a46fc36adba7e81258e9d11fd38b72ce"
+        }
+      ]
+    },
+    {
+      "case": "case-08",
+      "fixture": "n-first-time-reader-chesterton-the-diabolist",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-diabolist.txt",
+          "sha256": "86b3a3f20354ee86d42e2c3c86b17c20bc4b6b5a363d82b9ccf8ad2e86d7a506"
+        }
+      ]
+    },
+    {
+      "case": "case-09",
+      "fixture": "n-skeptical-cto-2026-07-16-lucky-orifices",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-16-lucky-orifices.txt",
+          "sha256": "3fbe7cefa93700466d42df3ec7afc3d4432a2e6bd0adb60cfd8f4dcf117f2744"
+        }
+      ]
+    },
+    {
+      "case": "case-10",
+      "fixture": "n-adversarial-reader-bacon-of-the-true-greatness-of-kingdoms-and-estates",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-the-true-greatness-of-kingdoms-and-estates.txt",
+          "sha256": "58f0ffdbf160c6fcbe015e784467f86fa55417b25aab97b2e1e2b7cd8c3b1e9c"
+        }
+      ]
+    },
+    {
+      "case": "case-11",
+      "fixture": "n-adversarial-reader-bacon-of-friendship",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-friendship.txt",
+          "sha256": "3876c2ee3b4ff00aead1af9eb1609f2d136b406f22aae99d54278e2ae6770adb"
+        }
+      ]
+    },
+    {
+      "case": "case-12",
+      "fixture": "n-adversarial-reader-chesterton-the-shop-of-ghosts",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-shop-of-ghosts.txt",
+          "sha256": "87d17af764a12f0059f4f0a45fe5ef0968dae564bd5b435cfb0f2ac19abbc5e1"
+        }
+      ]
+    },
+    {
+      "case": "case-13",
+      "fixture": "n-acquisitions-editor-chesterton-the-diabolist",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-diabolist.txt",
+          "sha256": "86b3a3f20354ee86d42e2c3c86b17c20bc4b6b5a363d82b9ccf8ad2e86d7a506"
+        }
+      ]
+    },
+    {
+      "case": "case-14",
+      "fixture": "n-adversarial-reader-2026-07-25-cruel-cruelty-oh-cruelty",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-25-cruel-cruelty-oh-cruelty.txt",
+          "sha256": "e427ea50f17eecf48300e8dfa251c61bda4acc2624a31c0bdf662ddbe23aa2ef"
+        }
+      ]
+    },
+    {
+      "case": "case-15",
+      "fixture": "n-first-time-reader-chesterton-the-shop-of-ghosts",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-shop-of-ghosts.txt",
+          "sha256": "87d17af764a12f0059f4f0a45fe5ef0968dae564bd5b435cfb0f2ac19abbc5e1"
+        }
+      ]
+    },
+    {
+      "case": "case-16",
+      "fixture": "n-acquisitions-editor-bacon-of-friendship",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-friendship.txt",
+          "sha256": "3876c2ee3b4ff00aead1af9eb1609f2d136b406f22aae99d54278e2ae6770adb"
+        }
+      ]
+    },
+    {
+      "case": "case-17",
+      "fixture": "n-first-time-reader-bacon-of-seditions-and-troubles",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-seditions-and-troubles.txt",
+          "sha256": "da142a176e0eede581cfadf58d974f24a46fc36adba7e81258e9d11fd38b72ce"
+        }
+      ]
+    },
+    {
+      "case": "case-18",
+      "fixture": "n-skeptical-cto-chesterton-humanity-an-interlude",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-humanity-an-interlude.txt",
+          "sha256": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3"
+        }
+      ]
+    },
+    {
+      "case": "case-19",
+      "fixture": "n-first-time-reader-bacon-of-the-true-greatness-of-kingdoms-and-estates",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-the-true-greatness-of-kingdoms-and-estates.txt",
+          "sha256": "58f0ffdbf160c6fcbe015e784467f86fa55417b25aab97b2e1e2b7cd8c3b1e9c"
+        }
+      ]
+    },
+    {
+      "case": "case-20",
+      "fixture": "n-first-time-reader-2026-07-31-just-do-it",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-31-just-do-it.txt",
+          "sha256": "88e37c3e106864d0e187cb3f0d33bfd1714165de807ac0396b56961eb570075f"
+        }
+      ]
+    },
+    {
+      "case": "case-21",
+      "fixture": "n-acquisitions-editor-bacon-of-the-true-greatness-of-kingdoms-and-estates",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-the-true-greatness-of-kingdoms-and-estates.txt",
+          "sha256": "58f0ffdbf160c6fcbe015e784467f86fa55417b25aab97b2e1e2b7cd8c3b1e9c"
+        }
+      ]
+    },
+    {
+      "case": "case-22",
+      "fixture": "n-acquisitions-editor-chesterton-the-shop-of-ghosts",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-shop-of-ghosts.txt",
+          "sha256": "87d17af764a12f0059f4f0a45fe5ef0968dae564bd5b435cfb0f2ac19abbc5e1"
+        }
+      ]
+    },
+    {
+      "case": "case-23",
+      "fixture": "n-acquisitions-editor-chesterton-humanity-an-interlude",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-humanity-an-interlude.txt",
+          "sha256": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3"
+        }
+      ]
+    },
+    {
+      "case": "case-24",
+      "fixture": "n-first-time-reader-chesterton-a-somewhat-improbable-story",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-a-somewhat-improbable-story.txt",
+          "sha256": "856d8adbc13608533a63a45cb9822f936f6d1618a972cb6abd8bb59b8e270825"
+        }
+      ]
+    },
+    {
+      "case": "case-25",
+      "fixture": "n-first-time-reader-2026-08-01-dare-snot",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-08-01-dare-snot.txt",
+          "sha256": "6c0b53e195fc7f03efad5d47c457a0d8f38cfe1400cb29d51bae5e6cf88e52b8"
+        }
+      ]
+    },
+    {
+      "case": "case-26",
+      "fixture": "n-acquisitions-editor-2026-07-16-lucky-orifices",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-16-lucky-orifices.txt",
+          "sha256": "3fbe7cefa93700466d42df3ec7afc3d4432a2e6bd0adb60cfd8f4dcf117f2744"
+        }
+      ]
+    },
+    {
+      "case": "case-27",
+      "fixture": "n-adversarial-reader-2026-07-16-lucky-orifices",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-16-lucky-orifices.txt",
+          "sha256": "3fbe7cefa93700466d42df3ec7afc3d4432a2e6bd0adb60cfd8f4dcf117f2744"
+        }
+      ]
+    },
+    {
+      "case": "case-28",
+      "fixture": "n-skeptical-cto-2026-08-01-dare-snot",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-08-01-dare-snot.txt",
+          "sha256": "6c0b53e195fc7f03efad5d47c457a0d8f38cfe1400cb29d51bae5e6cf88e52b8"
+        }
+      ]
+    },
+    {
+      "case": "case-29",
+      "fixture": "n-adversarial-reader-chesterton-a-somewhat-improbable-story",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-a-somewhat-improbable-story.txt",
+          "sha256": "856d8adbc13608533a63a45cb9822f936f6d1618a972cb6abd8bb59b8e270825"
+        }
+      ]
+    },
+    {
+      "case": "case-30",
+      "fixture": "n-first-time-reader-bacon-of-gardens",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-gardens.txt",
+          "sha256": "d2c1a60ec9645d9118821c642777b1c40c60bf3212c544a38d21111bec258949"
+        }
+      ]
+    },
+    {
+      "case": "case-31",
+      "fixture": "n-adversarial-reader-bacon-of-seditions-and-troubles",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-seditions-and-troubles.txt",
+          "sha256": "da142a176e0eede581cfadf58d974f24a46fc36adba7e81258e9d11fd38b72ce"
+        }
+      ]
+    },
+    {
+      "case": "case-32",
+      "fixture": "n-skeptical-cto-chesterton-the-diabolist",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-diabolist.txt",
+          "sha256": "86b3a3f20354ee86d42e2c3c86b17c20bc4b6b5a363d82b9ccf8ad2e86d7a506"
+        }
+      ]
+    },
+    {
+      "case": "case-33",
+      "fixture": "n-adversarial-reader-2026-08-01-dare-snot",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-08-01-dare-snot.txt",
+          "sha256": "6c0b53e195fc7f03efad5d47c457a0d8f38cfe1400cb29d51bae5e6cf88e52b8"
+        }
+      ]
+    },
+    {
+      "case": "case-34",
+      "fixture": "n-acquisitions-editor-bacon-of-gardens",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-gardens.txt",
+          "sha256": "d2c1a60ec9645d9118821c642777b1c40c60bf3212c544a38d21111bec258949"
+        }
+      ]
+    },
+    {
+      "case": "case-35",
+      "fixture": "n-acquisitions-editor-2026-08-01-dare-snot",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-08-01-dare-snot.txt",
+          "sha256": "6c0b53e195fc7f03efad5d47c457a0d8f38cfe1400cb29d51bae5e6cf88e52b8"
+        }
+      ]
+    },
+    {
+      "case": "case-36",
+      "fixture": "n-skeptical-cto-bacon-of-friendship",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-friendship.txt",
+          "sha256": "3876c2ee3b4ff00aead1af9eb1609f2d136b406f22aae99d54278e2ae6770adb"
+        }
+      ]
+    },
+    {
+      "case": "case-37",
+      "fixture": "n-skeptical-cto-2026-07-25-cruel-cruelty-oh-cruelty",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-25-cruel-cruelty-oh-cruelty.txt",
+          "sha256": "e427ea50f17eecf48300e8dfa251c61bda4acc2624a31c0bdf662ddbe23aa2ef"
+        }
+      ]
+    },
+    {
+      "case": "case-38",
+      "fixture": "n-adversarial-reader-bacon-of-gardens",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-gardens.txt",
+          "sha256": "d2c1a60ec9645d9118821c642777b1c40c60bf3212c544a38d21111bec258949"
+        }
+      ]
+    },
+    {
+      "case": "case-39",
+      "fixture": "n-adversarial-reader-chesterton-the-diabolist",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-diabolist.txt",
+          "sha256": "86b3a3f20354ee86d42e2c3c86b17c20bc4b6b5a363d82b9ccf8ad2e86d7a506"
+        }
+      ]
+    },
+    {
+      "case": "case-40",
+      "fixture": "n-acquisitions-editor-chesterton-a-somewhat-improbable-story",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-a-somewhat-improbable-story.txt",
+          "sha256": "856d8adbc13608533a63a45cb9822f936f6d1618a972cb6abd8bb59b8e270825"
+        }
+      ]
+    },
+    {
+      "case": "case-41",
+      "fixture": "n-skeptical-cto-chesterton-a-somewhat-improbable-story",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-a-somewhat-improbable-story.txt",
+          "sha256": "856d8adbc13608533a63a45cb9822f936f6d1618a972cb6abd8bb59b8e270825"
+        }
+      ]
+    },
+    {
+      "case": "case-42",
+      "fixture": "n-first-time-reader-2026-07-25-cruel-cruelty-oh-cruelty",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-25-cruel-cruelty-oh-cruelty.txt",
+          "sha256": "e427ea50f17eecf48300e8dfa251c61bda4acc2624a31c0bdf662ddbe23aa2ef"
+        }
+      ]
+    },
+    {
+      "case": "case-43",
+      "fixture": "n-acquisitions-editor-bacon-of-seditions-and-troubles",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/acquisitions-editor.md",
+          "sha256": "7fdf177a3108f7790e7f2ae0413843202926534b5520947923193f1db83f3471"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-seditions-and-troubles.txt",
+          "sha256": "da142a176e0eede581cfadf58d974f24a46fc36adba7e81258e9d11fd38b72ce"
+        }
+      ]
+    },
+    {
+      "case": "case-44",
+      "fixture": "n-adversarial-reader-2026-07-31-just-do-it",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/adversarial-reader.md",
+          "sha256": "dec225e50b71458cf1499a4158713487312cde2dc11beb6c5006918606876ba9"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-31-just-do-it.txt",
+          "sha256": "88e37c3e106864d0e187cb3f0d33bfd1714165de807ac0396b56961eb570075f"
+        }
+      ]
+    },
+    {
+      "case": "case-45",
+      "fixture": "n-skeptical-cto-2026-07-31-just-do-it",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-31-just-do-it.txt",
+          "sha256": "88e37c3e106864d0e187cb3f0d33bfd1714165de807ac0396b56961eb570075f"
+        }
+      ]
+    },
+    {
+      "case": "case-46",
+      "fixture": "n-first-time-reader-chesterton-humanity-an-interlude",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/first-time-reader.md",
+          "sha256": "88f2bb2d998f2305af6c952fcd15cfb0e33491f4b5e1c6ced28416ee5ca28993"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-humanity-an-interlude.txt",
+          "sha256": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3"
+        }
+      ]
+    },
+    {
+      "case": "case-47",
+      "fixture": "n-skeptical-cto-bacon-of-gardens",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-gardens.txt",
+          "sha256": "d2c1a60ec9645d9118821c642777b1c40c60bf3212c544a38d21111bec258949"
+        }
+      ]
+    },
+    {
+      "case": "case-48",
+      "fixture": "n-skeptical-cto-bacon-of-the-true-greatness-of-kingdoms-and-estates",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "persona.md",
+          "from": "bundles/prose-review/personas/skeptical-cto.md",
+          "sha256": "bfed70160572f8d124b8dbe190ba0e102d9d8f2647171cf1265a89ed68a31102"
+        },
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-the-true-greatness-of-kingdoms-and-estates.txt",
+          "sha256": "58f0ffdbf160c6fcbe015e784467f86fa55417b25aab97b2e1e2b7cd8c3b1e9c"
+        }
+      ]
+    }
+  ]
+}

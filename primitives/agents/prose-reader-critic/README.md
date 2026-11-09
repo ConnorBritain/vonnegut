@@ -76,7 +76,12 @@ paragraph. Two runs may stop in different places.
 
 **The bound is measured on essays.** The leave-one-out negative is Bacon,
 Chesterton and Doctorow, not the writer's own genre; a persona tuned for
-pitches has not been run on pitches.
+pitches has not been run on pitches. Measured once, 2026-11-09, k=3, majority
+verdicts on the twelve essays: `skeptical-cto` 1 `REVISE` of 12,
+`acquisitions-editor` 3, `first-time-reader` 3, `adversarial-reader` 9 — three
+of four above the 0–2 default (`bundles/prose-review/tests/runs/2026-11-09-reader`).
+The adversarial reader's stops are attacks on argumentative essays, which is its
+job; whether 0–2 is the right bound for it is unsettled.
 
 **Four personas is a starting set**, chosen because each names a question
 authors ask. A project's own personas are the same file shape; they are not
