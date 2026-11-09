@@ -94,6 +94,11 @@ Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-trans
   without losing line numbers or the speaker's words; words, turns, recurring
   terms, questions, fillers and topic-shift segments, all labelled heuristic
   where they are. Six fixtures with expected JSON; `tests/brainstorm-selftest.mjs`.
+- **Added** `project-brief/1` (`lib/brief-schema.mjs`, `references/brief-schema.md`)
+  and `brief-store.mjs`: a new `brief` store under the registry, approval-gated
+  (the cached source text included), stale-revision refusal, undo; transcripts
+  are cached as their cleaned text. `revision-store.mjs` accepts the `brief` store
+  name in every byte-identical copy.
 
 ### [0.1.1] — definition-pattern fixes in the shared text-index
 

@@ -90,7 +90,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 ### H. Transcript intake and brainstorm — in-progress
 
 - [x] H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON
-- [ ] H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned
+- [x] H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned
 - [ ] H3 — `angles-check.mjs` + fixtures
 - [ ] H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative)
 - [ ] H5 — mutations in a `brainstorm` suite; PROTOCOL/README/AGENTS/DESIGN

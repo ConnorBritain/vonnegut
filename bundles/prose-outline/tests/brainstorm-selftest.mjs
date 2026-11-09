@@ -90,6 +90,69 @@ try {
   const { createHash } = await import("node:crypto");
   check("--clean-out writes exactly the text whose digest and line count the JSON reports",
     existsSync(out) && createHash("sha256").update(readFileSync(out, "utf8")).digest("hex") === parsed.clean?.digest && readFileSync(out, "utf8").split("\n").length - 1 === parsed.clean?.lines);
+
+  /* ---------------------------------------------------------------- */
+  group("project-brief/1 — the schema refuses what later stages could not trust");
+  const bs = await import(pathToFileURL(join(BRAINSTORM, "tools", "lib", "brief-schema.mjs")).href);
+  const sha = "a".repeat(64);
+  const angle = (over = {}) => ({ id: "a1", title: "The starter is the bakery", thesis: "The invisible slow part decides the result.", audience: "team leads",
+    shape: "narrative-arc", uses: [{ segment: "s1", line: 3, quote: "the starter is the whole bakery" }], leaves_out: ["s3"], open_questions: [], ...over });
+  const brief = (over = {}) => ({ ...bs.emptyBrief(), sources: [{ kind: "transcript", digest: sha, words: 962, cached: `sources/${sha}.txt`, format: "plain" }], angles: [angle()], ...over });
+  const errs = (b) => bs.validateBriefBody(b);
+  check("a well-formed brief validates, and so does an empty one", errs(brief()).length === 0 && errs(bs.emptyBrief()).length === 0, errs(brief()).join("; "));
+  check("a null thesis with no open question is refused — thin material yields questions, not silence", errs(brief({ angles: [angle({ thesis: null })] })).some((e) => /null thesis/.test(e))
+    && errs(brief({ angles: [angle({ thesis: null, open_questions: ["What is the claim?"] })] })).length === 0);
+  check("an angle that quotes nothing is refused", errs(brief({ angles: [angle({ uses: [] })] })).some((e) => /quote at least one passage/.test(e)));
+  check("unknown fields are refused at every level", errs({ ...brief(), extra: 1 }).some((e) => /unknown field extra/.test(e))
+    && errs(brief({ angles: [angle({ score: 9 })] })).some((e) => /unknown field score/.test(e)));
+  check("chosen_angle must name an existing angle; duplicate angle ids are refused",
+    errs(brief({ chosen_angle: "a7" })).some((e) => /chosen_angle/.test(e)) && errs(brief({ angles: [angle(), angle()] })).some((e) => /duplicate id/.test(e)) && errs(brief({ chosen_angle: "a1" })).length === 0);
+  check("a source's cache path must be its own digest, and one text is one source",
+    errs(brief({ sources: [{ kind: "notes", digest: sha, words: 1, cached: "sources/other.txt" }] })).some((e) => /cached/.test(e))
+      && errs(brief({ sources: [{ kind: "notes", digest: sha, words: 1, cached: `sources/${sha}.txt` }, { kind: "summary", digest: sha, words: 1, cached: `sources/${sha}.txt` }] })).some((e) => /already a source/.test(e)));
+
+  /* ---------------------------------------------------------------- */
+  group("brief-store — three registry states, approval for the cache too, stale refusal, undo");
+  const { runStore, StoreRefusal } = await import(pathToFileURL(join(BRAINSTORM, "tools", "brief-store.mjs")).href);
+  const REG = join(HERE, "fixtures", "registry");
+  const projects = join(tmp, "projects");
+  const env = { PROSE_PROJECTS_DIR: projects };
+  const regSel = ["--registry", join(REG, "selected")];
+  const refusal = (argv) => { try { runStore(argv, env); return null; } catch (e) { return e; } };
+  const monoFile = join(TRANSCRIPTS, "monologue.txt");
+  let r = refusal(["add-source", "--project", "bread", "--file", monoFile, "--kind", "transcript", "--expected-revision", "0", "--approved", "--registry", join(tmp, "no-registry")]);
+  check("no registry ⇒ cannot persist (exit 3), nothing written", r instanceof StoreRefusal && r.code === 3 && /task-local/.test(r.message) && !existsSync(projects));
+  r = refusal(["add-source", "--project", "bread", "--file", monoFile, "--kind", "transcript", "--expected-revision", "0", "--approved", "--registry", join(REG, "ambiguous")]);
+  check("identities without a default ⇒ cannot persist, never the first identity", r instanceof StoreRefusal && r.code === 3 && /never pick the first/.test(r.message) && !existsSync(projects));
+  const dry = (() => { try { return runStore(["add-source", "--project", "bread", "--file", monoFile, "--kind", "transcript", "--expected-revision", "0", ...regSel], env); } catch (e) { return { crashed: e.message }; } })();
+  check("add-source without --approved proposes and writes nothing — not the revision, not the cached text",
+    dry.status === "proposal" && !existsSync(join(projects, "personal", "bread", "brief")));
+  const added = (() => { try { return runStore(["add-source", "--project", "bread", "--file", monoFile, "--kind", "transcript", "--expected-revision", "0", "--approved", ...regSel], env); } catch (e) { return { crashed: e.message }; } })();
+  const cached = added.source ? join(projects, "personal", "bread", "brief", added.source.cached) : "";
+  check("approved: revision 1 holds the source, and the CLEANED transcript is cached under its digest",
+    added.status === "saved" && added.revision === 1 && existsSync(cached) && readFileSync(cached, "utf8") === cleanOf("monologue.txt") && added.source.format === "plain");
+  r = refusal(["add-source", "--project", "bread", "--file", monoFile, "--kind", "transcript", "--expected-revision", "1", "--approved", ...regSel]);
+  check("the same transcript twice is refused", /already a source/.test(r?.message ?? ""));
+  r = refusal(["add-source", "--project", "bread", "--file", join(TRANSCRIPTS, "fragment.txt"), "--kind", "summary", "--expected-revision", "0", "--approved", ...regSel]);
+  check("a stale expected revision is refused", /Stale revision/.test(r?.message ?? ""));
+  const shown = runStore(["show", "--project", "bread", ...regSel], env);
+  const proposal = join(tmp, "angles.json");
+  writeFileSync(proposal, JSON.stringify({ ...shown.brief, angles: [angle()], chosen_angle: "a1" }));
+  const saved = (() => { try { return runStore(["save", "--project", "bread", "--proposal", proposal, "--expected-revision", "1", "--approved", ...regSel], env); } catch (e) { return { crashed: e.message }; } })();
+  check("a proposal carrying the stored envelope saves as revision 2 (envelope keys stripped, not trusted)", saved.status === "saved" && saved.revision === 2);
+  writeFileSync(proposal, JSON.stringify({ ...shown.brief, sources: [...shown.brief.sources, { kind: "notes", digest: "b".repeat(64), words: 3, cached: `sources/${"b".repeat(64)}.txt` }] }));
+  r = refusal(["save", "--project", "bread", "--proposal", proposal, "--expected-revision", "2", "--approved", ...regSel]);
+  check("a brief citing a source that was never cached is refused", /not cached/.test(r?.message ?? ""));
+  writeFileSync(proposal, JSON.stringify({ ...shown.brief, angles: [angle({ thesis: null })] }));
+  r = refusal(["save", "--project", "bread", "--proposal", proposal, "--expected-revision", "2", "--approved", ...regSel]);
+  check("an invalid brief is refused before anything is written", /not a valid brief/.test(r?.message ?? "") && runStore(["list", "--project", "bread", ...regSel], env).revisions.length === 2);
+  const undone = (() => { try { return runStore(["undo", "--project", "bread", "--expected-revision", "2", "--approved", ...regSel], env); } catch (e) { return { crashed: e.message }; } })();
+  check("undo writes revision 3 restoring revision 1's brief (no angles)", undone.status === "saved" && undone.revision === 3 && runStore(["show", "--project", "bread", ...regSel], env).brief.angles.length === 0);
+  const BCLI = join(BRAINSTORM, "tools", "brief-store.mjs");
+  const bcli = (...a) => spawnSync(process.execPath, [BCLI, ...a], { encoding: "utf8", env: { ...process.env, ...env } });
+  check("CLI: a bad --kind and a missing flag exit 2; a missing registry exits 3",
+    bcli("add-source", "--project", "x", "--file", monoFile, "--kind", "memo", "--expected-revision", "0").status === 2
+      && bcli("save", "--project", "x").status === 2 && bcli("locate", "--registry", join(tmp, "nowhere")).status === 3);
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }
