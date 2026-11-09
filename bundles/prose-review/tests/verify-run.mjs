@@ -367,7 +367,9 @@ async function structureAgreement(runs, dir, critic, line) {
   const manifest = JSON.parse(readFileSync(join(fixturesDir, "fixtures.json"), "utf8"));
   const byName = new Map(manifest.fixtures.map((f) => [f.name, f]));
   const runManifest = existsSync(join(dir, "MANIFEST.json")) ? JSON.parse(readFileSync(join(dir, "MANIFEST.json"), "utf8")) : null;
-  const repo = resolve(dir, "..", "..", "..", "..");
+  // runs/<run> → tests → prose-review → bundles → repo: five levels. This read four until the
+  // first structure run (2026-11-09) reached a leave-one-out case and found it.
+  const repo = resolve(dir, "..", "..", "..", "..", "..");
   const cases = groupCases(runs);
   let echo = 0, clearedOverFlag = 0, caughtBlindSpot = 0, correct = 0;
   const unresolved = [];

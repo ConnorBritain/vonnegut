@@ -17,6 +17,12 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** `prose-structure-critic` (prose-review): first run,
+  `tests/runs/2026-11-09-structure`, 21 cases × 3 draws — 0 `REVISE` of 12
+  leave-one-out essays, 4 of 4 synthetic positives, echo rate 4 of 21, both
+  contract counts 0. **Fixed** `verify-run.mjs`'s structure block resolving the
+  repository root one directory short, which crashed on the first
+  leave-one-out case.
 - **Added** a durable roadmap — [`docs/ROADMAP.md`](docs/ROADMAP.md), one spec per
   item under `docs/roadmap/`, and a `STATUS.md` checklist that is now the single
   pin for bundle versions — plus `tools/check-roadmap.mjs`, run first by
