@@ -1,0 +1,57 @@
+model: claude-opus-5-5
+
+Bash: cd <task>/skillwork/prose-research-positive-d3; ls -la; ls -la sources; cat draft.md; cat ledger.json; ls <repo>/bundles/prose-research/skills/prose-research/tools <repo>/bundles/prose-research/skills/prose-research/references
+
+Bash: cd <task>/skillwork/prose-research-positive-d3; ls -laR; echo ---; cat draft.md; echo ---; cat ledger.json
+
+Bash: cd <task>/skillwork/prose-research-positive-d3; cat -n sources/mill-history.txt; echo ---; cat -n sources/valley-guide.html; echo; S=<repo>/bundles/prose-research/skills/prose-research; cat $S/references/ledger-schema.md $S/references/dossier-schema.md 2>&1 | head -150
+
+Bash: cd <task>/skillwork/prose-research-positive-d3; cat -n sources/mill-history.txt; echo ---; cat -n sources/valley-guide.html
+
+Read: <repo>/bundles/prose-research/skills/prose-research/references/ledger-schema.md
+
+Read: <repo>/bundles/prose-research/skills/prose-research/references/dossier-schema.md
+
+Bash: cd <task>/skillwork/prose-research-positive-d3; T=<task>; mkdir -p $T; node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs sources/mill-history.txt --json > $T/intake-s1.json; node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs sources/valley-guide.html --json > $T/intake-s2.json; cat $T/intake-s1.json $T/intake-s2.json
+
+Bash: mkdir -p <task>/task && node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs sources/mill-history.txt --json > <task>/task/intake-s1.json && node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs sources/valley-guide.html --json > <task>/task/intake-s2.json && cat <task>/task/intake-s*.json
+
+Bash: cd <task>/task && python3 -I - <<'EOF'
+import json, os
+os.makedirs("sources", exist_ok=True)
+srcs=[]
+for sid,f in [("s1","intake-s1.json"),("s2","intake-s2.json")]:
+    d=json.load(open(f)); s=d["source"]; s["id"]=sid
+    open(os.path.join("sources", s["text_file"]),"w").write(d["text"])
+    srcs.append(s)
+json.dump({"sources":srcs,"passages":[]}, open("dossier.json","w"), indent=1)
+S=[("h1","The mill and the road",False,None),
+("p1s1","The mill on the Harrow road was built in 1851 by the Teodor family.",True,"k1"),
+("p1s2",'The parish record says "the wheel was cast in Sheffield and carried up the valley on three carts," which took eleven days.',True,"k2"),
+("p2s1","When the flood of 1898 closed the coast road, the mill kept working.",True,"k3"),
+("p2s2",'The miller wrote that "we ground on through the water, because the bread would not wait."',True,"k3"),
+("p2s3","The ledger for that winter records forty-one sacks, more than any winter before it.",True,None),
+("p3s1",'The quarry closed in 1961; its last foreman said "the stone ran out before the men did."',True,"k5"),
+("p3s2","The walkers' guide still recommends the quarry path in wet weather.",True,"k4"),
+("p4s1","Most valleys like this one lost their mills before the war.",True,None)]
+json.dump({"schema":"sentence-map/1","sentences":[{"id":a,"text":b,"claim":c,"ledger":d} for a,b,c,d in S]}, open("map.json","w"), indent=1)
+EOF
+P=<task>/skillwork/prose-research-positive-d3; node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger "$P/ledger.json" --dossier dossier.json --sources-dir sources --draft "$P/draft.md" --map map.json --json
+
+Write: <task>/build.py
+
+Bash: cd <task> && python3 -I build.py task && cd task && node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger <task>/skillwork/prose-research-positive-d3/ledger.json --dossier dossier.json --sources-dir sources --draft <task>/skillwork/prose-research-positive-d3/draft.md --map map.json --json
+
+Bash: python3 -I <task>/build.py <task>/task
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger <task>/skillwork/prose-research-positive-d3/ledger.json --dossier <task>/task/dossier.json --sources-dir <task>/task/sources --draft <task>/skillwork/prose-research-positive-d3/draft.md --map <task>/task/map.json --json
+
+Write: <task>/build.mjs
+
+Bash: node <task>/build.mjs <task>/task
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger <task>/skillwork/prose-research-positive-d3/ledger.json --dossier <task>/task/dossier.json --sources-dir <task>/task/sources --draft <task>/skillwork/prose-research-positive-d3/draft.md --map <task>/task/map.json --json
+
+Edit: <task>/build.mjs
+
+Bash: node <task>/build.mjs <task>/task <task>/skillwork/prose-research-positive-d3/ledger.json && node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger <task>/task/ledger.json --dossier <task>/task/dossier.json --sources-dir <task>/task/sources --draft <task>/skillwork/prose-research-positive-d3/draft.md --map <task>/task/map.json --json

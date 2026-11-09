@@ -17,6 +17,11 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** the `prose-research` skill: first run,
+  `tests/runs/2026-11-09-skill`, positive and negative × 3 draws. Positive met
+  3/3 against `claims-check` over the skill's own maps. Negative behaviour met
+  3/3, but its coverage check was not produced; re-run owed. The fixture ledger
+  lacks the header `claims-check` requires.
 - **Measured** the `prose-outline` skill: first run,
   `tests/runs/2026-11-09-skill`, two briefs × 3 draws — `proposal-check
   --brief` clean on all six; no thesis invented for the underspecified brief;

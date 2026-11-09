@@ -58,7 +58,9 @@ dossier is derived from the fixture sources by
 [`tests/research-fixtures.mjs`](tests/research-fixtures.mjs), and the expected
 check and scan output is regenerated with `--update`, never hand-edited.
 [`tests/skill-harness.md`](tests/skill-harness.md) records the skill's
-positive and negative test and that neither has been run here.
+positive and negative test; the first run (2026-11-09) met the positive on 3
+of 3 draws and the negative's behaviour on 3 of 3, without the negative's
+mechanical check — see the run's README.
 
 ## Install
 
