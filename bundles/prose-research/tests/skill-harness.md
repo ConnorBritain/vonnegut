@@ -32,9 +32,14 @@ From a session with the bundle installed:
    true or false (it must not), whether confidence was asked rather than
    filled, and whether anything was saved before a yes.
 
-Quote the scripts' output; do not retype it. A run that was not dispatched —
-this environment has no authenticated CLI — is recorded as not run, never as
-passed.
+Quote the scripts' output; do not retype it. A run that was not dispatched is
+recorded as not run, never as passed.
+
+## Runs
+
+| run | draws | positive | negative |
+|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-skill/README.md) | 3 | `claims-check` over the skill's map: expected rows on 3/3; nothing true/false, no confidence filled, nothing saved | no claim marked, no entry invented on 3/3 — **the coverage check was not produced** (dispatch allowlist; bare fixture ledger; maps not schema-valid). Re-run owed |
 
 ## What this does not measure
 

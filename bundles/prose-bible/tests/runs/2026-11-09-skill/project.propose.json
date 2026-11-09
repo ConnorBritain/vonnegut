@@ -1,0 +1,61 @@
+{
+  "status": "proposal",
+  "project": null,
+  "entries": 4,
+  "proposal": {
+    "entries": [
+      {
+        "id": "b1",
+        "kind": "term",
+        "name": "Book of Hours",
+        "key": "book of hours",
+        "definition": "joke about the monastery",
+        "first_seen": {
+          "file": "chapter-01.md",
+          "line": 5
+        },
+        "notes": "proposed from the index: 3 occurrence(s) in 3 file(s)"
+      },
+      {
+        "id": "b2",
+        "kind": "concept",
+        "name": "Harrow",
+        "key": "harrow",
+        "definition": null,
+        "first_seen": {
+          "file": "chapter-01.md",
+          "line": 3
+        },
+        "notes": "proposed from the index: 4 occurrence(s) in 3 file(s)"
+      },
+      {
+        "id": "b3",
+        "kind": "term",
+        "name": "Harrow road",
+        "key": "harrow road",
+        "definition": "first building she had ever loved",
+        "first_seen": {
+          "file": "chapter-01.md",
+          "line": 3
+        },
+        "notes": "proposed from the index: 3 occurrence(s) in 2 file(s)"
+      },
+      {
+        "id": "b4",
+        "kind": "character",
+        "name": "Mara",
+        "key": "mara",
+        "attributes": {
+          "eyes": "grey"
+        },
+        "definition": null,
+        "first_seen": {
+          "file": "chapter-01.md",
+          "line": 3
+        },
+        "notes": "proposed from the index: 3 occurrence(s) in 3 file(s); attributes vary — confirm which is right"
+      }
+    ]
+  },
+  "receipt": "Candidates from the index; nothing is saved until each is confirmed and save runs with --approved."
+}

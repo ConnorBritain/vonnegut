@@ -49,8 +49,25 @@ medium and structure critics are named by their MANIFEST.
 - Two mutations in the `review` suite (a persona allowed to omit the shared
   refusals; a forced choice alone allowed as a `REVISE`), both caught; the
   sweep's table is in `bundles/prose-author/tests/MUTATIONS.md`.
-- **No reader run has been dispatched.** The environment had no CLI; the
-  false-positive bound per persona is the next session's job, and until it is
-  recorded the critic's evidence is the fixture set and harness, not a number.
+- **First reader run, 2026-11-09** (`tests/runs/2026-11-09-reader`, 4 personas
+  × 12 essays × 3 draws through `run-harness.mjs dispatch`, recorded after this
+  release). `verify-run.mjs` over the whole run, quoted:
+
+  ```
+      negative (reader finishes, n=48):    16 REVISE, 32 CLEAN
+      positive (reader stops, n=0):       0 REVISE, 0 CLEAN
+      cases whose k=3 draws did not all agree:  6 of 48   (a split is a finding)
+      stops without a quoted sentence: 0          <- must be 0
+      any claim about machine authorship: 0        <- must be 0
+      transcripts without a FORCED CHOICE: 0       <- must be 0
+  ```
+
+  Per persona (the same tool over each persona's transcripts, quoted in the
+  run's `verify-run-by-persona.txt`): `skeptical-cto` 1 `REVISE` of 12, within
+  the 0–2 default; `acquisitions-editor` 3 of 12 and `first-time-reader` 3 of
+  12, **exceeding the default**; `adversarial-reader` 9 of 12, **exceeding the
+  default** into the band `critic-harness.md` calls broken. No persona was
+  tuned in response; that, or a per-persona default, is follow-up. The
+  contract counts were made by the session, not a person.
   A persona is a description, not a person; the bound is measured on essays,
   not on the writer's genre; four personas is a starting set.

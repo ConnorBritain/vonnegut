@@ -1,0 +1,106 @@
+{
+  "critic": "continuity",
+  "run_id": "2026-11-09-continuity",
+  "prepared": "2026-11-09",
+  "draws": 3,
+  "agent_prompt": "primitives/agents/prose-continuity-critic/agent.md",
+  "agent_sha256": "be86f1d878edd5477aa9cb09a9b2b810e254511f60476121fe5853366f9777cf",
+  "echo_rule": "flagged when index-diff reports any candidate: redefined, attribute_drift, date_drift, repeated or bible_conflicts",
+  "cases": [
+    {
+      "case": "case-01",
+      "fixture": "p-bible-conflict",
+      "kind": "positive",
+      "project": "bundles/prose-bible/tests/fixtures/continuity/p-bible-conflict",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "9f919bca1f88439f2cdc71a821774e59fd5f47123233154bac2841e8d506dfa6"
+        },
+        {
+          "as": "bible.json",
+          "sha256": "eefaf247c8dd6836ad689aedc216b333aaa45893d5cd709d7c7047ec944475c9"
+        }
+      ],
+      "diff_says": "REVISE"
+    },
+    {
+      "case": "case-02",
+      "fixture": "p-drift-project",
+      "kind": "positive",
+      "project": "bundles/prose-bible/tests/fixtures/project",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "849fad5d6cb7ebe80b34a27861681c7a46e20f7b3517dfa61f9f27e0447da126"
+        }
+      ],
+      "diff_says": "REVISE"
+    },
+    {
+      "case": "case-03",
+      "fixture": "n-refrain",
+      "kind": "negative",
+      "project": "bundles/prose-bible/tests/fixtures/continuity/n-refrain",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "92f005865b3a58d5faff8a119b4889bf6ed03a82ec928420ecadf1f9c52683c8"
+        }
+      ],
+      "diff_says": "REVISE"
+    },
+    {
+      "case": "case-04",
+      "fixture": "n-separate-topics",
+      "kind": "negative",
+      "project": "bundles/prose-bible/tests/fixtures/continuity/n-separate-topics",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "32bd2fa3282a5531b8ccd0e87361f09aec5878b1554bd40500002c296af8a582"
+        }
+      ],
+      "diff_says": "CLEAN"
+    },
+    {
+      "case": "case-05",
+      "fixture": "n-two-notes",
+      "kind": "negative",
+      "project": "bundles/prose-bible/tests/fixtures/continuity/n-two-notes",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "32bd2fa3282a5531b8ccd0e87361f09aec5878b1554bd40500002c296af8a582"
+        }
+      ],
+      "diff_says": "CLEAN"
+    },
+    {
+      "case": "case-06",
+      "fixture": "n-alias-definitions",
+      "kind": "negative",
+      "project": "bundles/prose-bible/tests/fixtures/continuity/n-alias-definitions",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "1d45fa05d1addb94fc606e4da2387ff29a8a90a00f744dce7bd752c48085775d"
+        }
+      ],
+      "diff_says": "REVISE"
+    },
+    {
+      "case": "case-07",
+      "fixture": "n-restated-rule",
+      "kind": "negative",
+      "project": "bundles/prose-bible/tests/fixtures/control",
+      "inputs": [
+        {
+          "as": "diff.json",
+          "sha256": "1fc5170421b25febf8542fb5827616711b9f7e18b9aedda9a20cdf983150a361"
+        }
+      ],
+      "diff_says": "REVISE"
+    }
+  ]
+}

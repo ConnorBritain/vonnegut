@@ -1,0 +1,14 @@
+
+  bundles/prose-review/tests/runs/2026-11-09-fidelity-provenance — 16 case(s), 48 transcript(s) (k=3)
+
+    negative (faithful revisions, n=7):     2 MATERIAL-LOSS, 5 FAITHFUL
+    positive (lossy revisions, n=9):        9 MATERIAL-LOSS, 0 FAITHFUL
+    cases whose k=3 draws did not all agree:  1 of 16   (a split is a finding)
+    findings not quoting both original and revision: 0   <- must be 0
+    claims an atom is present that the scan flagged: 0   <- must be 0
+
+    verdicts matching the fixture's expected verdict:  14 of 16
+    losses the scan flagged and the critic cleared:    1
+    losses the scan missed and the critic caught:      6
+    verdicts identical to fidelity-scan's (echo rate): 9 of 16
+

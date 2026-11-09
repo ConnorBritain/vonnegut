@@ -1,0 +1,439 @@
+{
+  "n-loo-2026-07-09-wilhoitian-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 1, \"Today's links\", followed by the table of contents on lines 3–17 (\"Post-political: What a \"leftist\" is.\" … \"Colophon: All the rest.\") / - **AS DELIVERED**: A reader who opens this in an inbox on a phone sees a heading and then a menu of nine section labels. Nothing gives them a reason to scroll until the argument starts at line 21, which is b",
+      "- **LOCATION**: line 1, \"Today's links\", followed by the table of contents on lines 3–17 (\"Post-political: What a \"leftist\" is.\" … \"Colophon: All the rest.\") / - **AS DELIVERED**: A reader who opens this in an inbox on a phone sees a heading and then a menu of nine section labels. Nothing gives them a reason to scroll until the argument starts at line 21, which is below the first screen. / - **CON"
+    ]
+  },
+  "n-loo-2026-07-09-wilhoitian-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–17, \"Today's links\" / \"Post-political: What a \"leftist\" is.\" / … / \"Colophon: All the rest.\" / - **AS DELIVERED**: On a phone, the opening screen is a heading followed by a nine-item table of contents. The first sentence of prose (\"There's plenty of reasons to be skeptical of centrists…\") doesn't appear until line 21, below a second heading, ",
+      "- **LOCATION**: lines 1–17, \"Today's links\" / \"Post-political: What a \"leftist\" is.\" / … / \"Colophon: All the rest.\" / - **AS DELIVERED**: On a phone, the opening screen is a heading followed by a nine-item table of contents. The first sentence of prose (\"There's plenty of reasons to be skeptical of centrists…\") doesn't appear until line 21, below a second heading, so the reader is given an index ",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 111, \"Politics aren't about who rules – it's about whether we are ruled at all, or whether we are free.\" Then lines 237–241: \"Today's top sources:\" … \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay ends at line 111. The email then runs about 130 more lines of link lists, event dates, book listings and a ",
+      "- **LOCATION**: line 111, \"Politics aren't about who rules – it's about whether we are ruled at all, or whether we are free.\" Then lines 237–241: \"Today's top sources:\" … \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay ends at line 111. The email then runs about 130 more lines of link lists, event dates, book listings and a colophon. A reader who scrolls t"
+    ]
+  },
+  "n-loo-2026-07-09-wilhoitian-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–17. The piece opens with \"Today's links\", followed by a contents list: \"Post-political: What a \"leftist\" is.\" / \"Hey look at this: Delights to delectate.\" / … / \"Colophon: All the rest.\" / - **AS DELIVERED**: Someone who opens this on a phone first sees a heading, then a full screen of section labels. The first sentence that gives them a reas",
+      "- **LOCATION**: lines 1–17. The piece opens with \"Today's links\", followed by a contents list: \"Post-political: What a \"leftist\" is.\" / \"Hey look at this: Delights to delectate.\" / … / \"Colophon: All the rest.\" / - **AS DELIVERED**: Someone who opens this on a phone first sees a heading, then a full screen of section labels. The first sentence that gives them a reason to keep reading is at line 21"
+    ]
+  },
+  "n-loo-2026-07-10-posthuman-as-in-no-humans-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 1, \"Today's links\", followed by the contents list at lines 3–17, starting \"\\\"Rights for robots\\\" and the AI slavery fantasy: When we were robots in Egypt…\" / - **AS DELIVERED**: The first thing a reader sees on opening the email is a heading and then a table of section labels, so nothing in the opening paragraph gives them a reason to scroll. Th",
+      "- **LOCATION**: line 1, \"Today's links\", followed by the contents list at lines 3–17, starting \"\\\"Rights for robots\\\" and the AI slavery fantasy: When we were robots in Egypt…\" / - **AS DELIVERED**: The first thing a reader sees on opening the email is a heading and then a table of section labels, so nothing in the opening paragraph gives them a reason to scroll. The essay's own argument doesn't s"
+    ]
+  },
+  "n-loo-2026-07-10-posthuman-as-in-no-humans-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: constraint-unmet / **LOCATION**: lines 1–17, opening with \"Today's links\" and running through \"Colophon: All the rest.\" / **AS DELIVERED**: The inbox reader opens on a heading followed by a table of contents of section labels, and the first sentence with any pull (\"While the AI bubble is primarily a material phenomenon…\") doesn't arrive until line 21, below a screen of navigation on a p",
+      "**LOCATION**: lines 1–17, opening with \"Today's links\" and running through \"Colophon: All the rest.\" / **AS DELIVERED**: The inbox reader opens on a heading followed by a table of contents of section labels, and the first sentence with any pull (\"While the AI bubble is primarily a material phenomenon…\") doesn't arrive until line 21, below a screen of navigation on a phone. / **CONSTRAINT**: hook-p",
+      "**CLASS**: constraint-unmet / **LOCATION**: lines 205–209, \"Today's top sources:\" (with nothing after it) and the last line, \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: The essay ends at line 73, but the reader who gets that far keeps going through link lists, dates and book listings. The piece then stops on an empty label and a work-status note, which gives the r",
+      "**LOCATION**: lines 205–209, \"Today's top sources:\" (with nothing after it) and the last line, \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: The essay ends at line 73, but the reader who gets that far keeps going through link lists, dates and book listings. The piece then stops on an empty label and a work-status note, which gives the reader nothing to act on or sit",
+      "**CLASS**: breaks-in-medium / **LOCATION**: line 25, \"If you'd like an essay-formatted version of this thread to read or share, here's a link to it on pluralistic.net\" / **AS DELIVERED**: Someone reading an email is told they are reading a \"thread\" and is offered an \"essay-formatted version\" of the essay already open in front of them. / **CONSTRAINT**: delivery_notes",
+      "**LOCATION**: line 25, \"If you'd like an essay-formatted version of this thread to read or share, here's a link to it on pluralistic.net\" / **AS DELIVERED**: Someone reading an email is told they are reading a \"thread\" and is offered an \"essay-formatted version\" of the essay already open in front of them. / **CONSTRAINT**: delivery_notes"
+    ]
+  },
+  "n-loo-2026-07-10-posthuman-as-in-no-humans-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–17, opening with \"Today's links\" and continuing through the table of contents: \"Hey look at this: Delights to delectate.\" … \"Colophon: All the rest.\" / - **AS DELIVERED**: Someone opening this in an inbox gets a heading and then nine lines of section labels. The essay's first real paragraph is at line 21, so nothing gives the reader a reason ",
+      "- **LOCATION**: lines 1–17, opening with \"Today's links\" and continuing through the table of contents: \"Hey look at this: Delights to delectate.\" … \"Colophon: All the rest.\" / - **AS DELIVERED**: Someone opening this in an inbox gets a heading and then nine lines of section labels. The essay's first real paragraph is at line 21, so nothing gives the reader a reason to scroll before then. / - **CON",
+      "- **CLASS**: breaks-in-medium / - **LOCATION**: line 25, \"If you'd like an essay-formatted version of this thread to read or share, here's a link to it on pluralistic.net\" / - **AS DELIVERED**: The reader is already reading the essay in an email client. Here they are told they are reading a \"thread\" and offered an essay version of it, and this lands in the middle of the opening argument, between l",
+      "- **LOCATION**: line 25, \"If you'd like an essay-formatted version of this thread to read or share, here's a link to it on pluralistic.net\" / - **AS DELIVERED**: The reader is already reading the essay in an email client. Here they are told they are reading a \"thread\" and offered an essay version of it, and this lands in the middle of the opening argument, between line 21's colon and line 29. / - ",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 205–209, \"Today's top sources:\" (nothing follows it) … \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay's own ending at line 73 comes 130 lines before the end. After it come link lists and boilerplate, and the piece stops on a label with no list under it and a work-status fragment. That leaves the reader",
+      "- **LOCATION**: lines 205–209, \"Today's top sources:\" (nothing follows it) … \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay's own ending at line 73 comes 130 lines before the end. After it come link lists and boilerplate, and the piece stops on a label with no list under it and a work-status fragment. That leaves the reader with nothing to act on or sit w"
+    ]
+  },
+  "n-loo-2026-07-13-go-meta-meta-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: constraint-unmet / **LOCATION**: lines 57–205. The essay closes at line 57 (\"Why would they operate a hospital if they could go meta and sell the doctorbots to the MBAs running the hospital?\"). The piece then runs through link lists, appearances, books and a colophon, and ends on line 205: \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: A phone reader who s",
+      "**LOCATION**: lines 57–205. The essay closes at line 57 (\"Why would they operate a hospital if they could go meta and sell the doctorbots to the MBAs running the hospital?\"). The piece then runs through link lists, appearances, books and a colophon, and ends on line 205: \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: A phone reader who scrolls past the essay's close "
+    ]
+  },
+  "n-loo-2026-07-13-go-meta-meta-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-loo-2026-07-13-go-meta-meta-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 205, \"A Little Brother short story about DIY insulin PLANNING\". Also line 201, \"Today's top sources:\", which has nothing under it. / - **AS DELIVERED**: The essay closes at line 57 (\"Why would they operate a hospital if they could go meta and sell the doctorbots to the MBAs running the hospital?\"). After that, the phone reader scrolls through ab",
+      "- **LOCATION**: line 205, \"A Little Brother short story about DIY insulin PLANNING\". Also line 201, \"Today's top sources:\", which has nothing under it. / - **AS DELIVERED**: The essay closes at line 57 (\"Why would they operate a hospital if they could go meta and sell the doctorbots to the MBAs running the hospital?\"). After that, the phone reader scrolls through about 150 lines of links, appearan"
+    ]
+  },
+  "n-loo-2026-07-14-designated-survivor-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–7, \"Today's links\" / \"Gerontocracy's failure mode: Where are the designated survivors?\" / \"Hey look at this: Delights to delectate.\" / \"Object permanence: MSFT v MP3; …\" / - **AS DELIVERED**: A reader who opens this in an inbox first sees a heading and then a table of contents. The essay's first real paragraph does not appear until line 21, a",
+      "- **LOCATION**: lines 1–7, \"Today's links\" / \"Gerontocracy's failure mode: Where are the designated survivors?\" / \"Hey look at this: Delights to delectate.\" / \"Object permanence: MSFT v MP3; …\" / - **AS DELIVERED**: A reader who opens this in an inbox first sees a heading and then a table of contents. The essay's first real paragraph does not appear until line 21, after about a phone screen of nav"
+    ]
+  },
+  "n-loo-2026-07-14-designated-survivor-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–17. The piece opens with \"Today's links\", then \"Gerontocracy's failure mode: Where are the designated survivors?\" and \"Hey look at this: Delights to delectate.\", and goes on to \"Colophon: All the rest.\" / - **AS DELIVERED**: Someone who opens this in an inbox first sees a heading and then seventeen lines of section labels. The labels read lik",
+      "- **LOCATION**: lines 1–17. The piece opens with \"Today's links\", then \"Gerontocracy's failure mode: Where are the designated survivors?\" and \"Hey look at this: Delights to delectate.\", and goes on to \"Colophon: All the rest.\" / - **AS DELIVERED**: Someone who opens this in an inbox first sees a heading and then seventeen lines of section labels. The labels read like link text, but nothing in the "
+    ]
+  },
+  "n-loo-2026-07-14-designated-survivor-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–17. The piece opens with \"Today's links\", then a run of contents entries: \"Gerontocracy's failure mode: Where are the designated survivors?\" / \"Hey look at this: Delights to delectate.\" / … / \"Colophon: All the rest.\" / - **AS DELIVERED**: The first paragraph a phone reader meets is a heading, and the next screen is a list of section labels. ",
+      "- **LOCATION**: lines 1–17. The piece opens with \"Today's links\", then a run of contents entries: \"Gerontocracy's failure mode: Where are the designated survivors?\" / \"Hey look at this: Delights to delectate.\" / … / \"Colophon: All the rest.\" / - **AS DELIVERED**: The first paragraph a phone reader meets is a heading, and the next screen is a list of section labels. The first sentence that gives a ",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 95 \"The fact that our political classes seem to think that they can choose the time and manner of their passing is baffling.\" The piece then runs on to line 221 \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: A reader who scrolls to the end meets a status note about a work in progress, not a close. The close they ",
+      "- **LOCATION**: line 95 \"The fact that our political classes seem to think that they can choose the time and manner of their passing is baffling.\" The piece then runs on to line 221 \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: A reader who scrolls to the end meets a status note about a work in progress, not a close. The close they could sit with is at line 95, mo"
+    ]
+  },
+  "n-loo-2026-07-29-la-la-la-la-la-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 1, \"Today's links\", followed by the table of contents on lines 3–17 / - **AS DELIVERED**: The first paragraph a phone reader sees in their inbox is a heading, followed by eleven one-line menu entries. Nothing gives them a reason to keep scrolling before the context arrives at line 21. / - **CONSTRAINT**: hook-present",
+      "- **LOCATION**: line 1, \"Today's links\", followed by the table of contents on lines 3–17 / - **AS DELIVERED**: The first paragraph a phone reader sees in their inbox is a heading, followed by eleven one-line menu entries. Nothing gives them a reason to keep scrolling before the context arrives at line 21. / - **CONSTRAINT**: hook-present",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 141, \"I hope some of you found this useful! … I'll be back with more essays in the days to come.\"; line 143, \"One final note for newsletter readers: …\"; line 267, \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay signs off at line 141 and then signs off again at line 143. After that the email runs on throu",
+      "- **LOCATION**: line 141, \"I hope some of you found this useful! … I'll be back with more essays in the days to come.\"; line 143, \"One final note for newsletter readers: …\"; line 267, \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay signs off at line 141 and then signs off again at line 143. After that the email runs on through link lists and a colophon, an",
+      "- **CLASS**: breaks-in-medium / - **LOCATION**: line 143, \"I have violated my \"one emoji per edition\" rule with the flags above\"; country lines such as line 43, \"USA and Canada : Farrar, Straus and Giroux\", and line 103, \"Quebec 󠁣󠁡󠁱󠁣󠁿: Éditions Québec Amérique\" / - **AS DELIVERED**: The reader is told about flags above, but there are none. Each country name has a stray space before its colon ",
+      "- **LOCATION**: line 143, \"I have violated my \"one emoji per edition\" rule with the flags above\"; country lines such as line 43, \"USA and Canada : Farrar, Straus and Giroux\", and line 103, \"Quebec 󠁣󠁡󠁱󠁣󠁿: Éditions Québec Amérique\" / - **AS DELIVERED**: The reader is told about flags above, but there are none. Each country name has a stray space before its colon where the flag used to be, and t",
+      "- **CLASS**: breaks-in-medium / - **LOCATION**: line 263, \"Today's top sources:\" / - **AS DELIVERED**: The label ends in a colon and nothing follows it. The next line, \"Currently writing: …\", is unrelated, so the reader meets an empty list. / - **CONSTRAINT**: delivery_notes",
+      "- **LOCATION**: line 263, \"Today's top sources:\" / - **AS DELIVERED**: The label ends in a colon and nothing follows it. The next line, \"Currently writing: …\", is unrelated, so the reader meets an empty list. / - **CONSTRAINT**: delivery_notes"
+    ]
+  },
+  "n-loo-2026-07-29-la-la-la-la-la-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–17, `Today's links` … `Enshittification and Reverse Centaurs go global: The good globalism.` … `Colophon: All the rest.` / - **AS DELIVERED**: Someone opening this in an inbox first sees a heading and then nine lines of section labels, such as \"Recent appearances: Where I've been.\" The first prose paragraph that gives a reason to read on star",
+      "- **LOCATION**: lines 1–17, `Today's links` … `Enshittification and Reverse Centaurs go global: The good globalism.` … `Colophon: All the rest.` / - **AS DELIVERED**: Someone opening this in an inbox first sees a heading and then nine lines of section labels, such as \"Recent appearances: Where I've been.\" The first prose paragraph that gives a reason to read on starts at line 21, below the index. ",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 141 `I hope some of you found this useful! … I'll be back with more essays in the days to come.`; line 143 `One final note for newsletter readers: …`; line 267 `A Little Brother short story about DIY insulin PLANNING` / - **AS DELIVERED**: The piece closes at line 141 and again at line 143. It then runs on for about 120 lines of link lists and f",
+      "- **LOCATION**: line 141 `I hope some of you found this useful! … I'll be back with more essays in the days to come.`; line 143 `One final note for newsletter readers: …`; line 267 `A Little Brother short story about DIY insulin PLANNING` / - **AS DELIVERED**: The piece closes at line 141 and again at line 143. It then runs on for about 120 lines of link lists and finally stops on a colophon fragm",
+      "- **CLASS**: breaks-in-medium / - **LOCATION**: line 143 `I have violated my \"one emoji per edition\" rule with the flags above`; line 43 `USA and Canada : Farrar`; line 53 `(Australia , New Zealand , India , South Africa , and beyond)`; line 103 `Quebec 󠁣󠁡󠁱󠁣󠁿:` / - **AS DELIVERED**: The flags are not in the delivered text. All that is left is a stray space before each colon or comma and, on l",
+      "- **LOCATION**: line 143 `I have violated my \"one emoji per edition\" rule with the flags above`; line 43 `USA and Canada : Farrar`; line 53 `(Australia , New Zealand , India , South Africa , and beyond)`; line 103 `Quebec 󠁣󠁡󠁱󠁣󠁿:` / - **AS DELIVERED**: The flags are not in the delivered text. All that is left is a stray space before each colon or comma and, on line 103, invisible tag character"
+    ]
+  },
+  "n-loo-2026-07-29-la-la-la-la-la-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**LOCATION**: lines 1–17, beginning \"Today's links\" / \"Enshittification and Reverse Centaurs go global: The good globalism.\" / **AS DELIVERED**: When the reader opens the email on a phone, they first see a heading and then nine lines of section labels. That is a table of contents, not a reason to read on, and the essay does not start until line 21. / **CONSTRAINT**: hook-present",
+      "**LOCATION**: line 143, \"I realize that I have violated my \"one emoji per edition\" rule with the flags above\", read against lines 43–135, e.g. \"USA and Canada : Farrar, Straus and Giroux\" and \"Brazil : Grupo Editorial Record\" / **AS DELIVERED**: Every country label has an empty gap before its colon, where the flag should be. Line 103 (\"Quebec 󠁣󠁡󠁱󠁣󠁿:\") holds only invisible tag characters. So t",
+      "**LOCATION**: line 263, \"Today's top sources:\" / **AS DELIVERED**: The label ends in a colon and nothing follows it. Line 265, the next section, starts straight after, so the reader sees a list that was announced and is empty. / **CONSTRAINT**: delivery_notes",
+      "**LOCATION**: line 141, \"I hope some of you found this useful! … I'll be back with more essays in the days to come.\" Then line 143, \"One final note for newsletter readers: …\". The piece's last line is 267, \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: The essay signs off at line 141 and then adds a second sign-off at line 143. After that, roughly 120 lines of link s"
+    ]
+  },
+  "n-loo-2026-08-04-technology-freedom-cooperative-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: lines 1–5, \"Today's links\" / \"Post-American compute for a post-American Internet: Building cooperative human rights computing infrastructure in Puerto Rico, the EU, Canada and Mexico.\" / \"Hey look at this: Delights to delectate.\" / - **AS DELIVERED**: The first thing the inbox reader sees is a heading and then a table of contents. Each line names a s",
+      "- **LOCATION**: lines 1–5, \"Today's links\" / \"Post-American compute for a post-American Internet: Building cooperative human rights computing infrastructure in Puerto Rico, the EU, Canada and Mexico.\" / \"Hey look at this: Delights to delectate.\" / - **AS DELIVERED**: The first thing the inbox reader sees is a heading and then a table of contents. Each line names a section further down. Nothing giv",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 97, \"At last, the first steps towards a post-American internet.\" followed by lines 99–235, ending on \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay ends at line 97. It is followed by about 140 lines of link lists, event dates, book listings and a colophon, so the reader actually finishes on a status not",
+      "- **LOCATION**: line 97, \"At last, the first steps towards a post-American internet.\" followed by lines 99–235, ending on \"A Little Brother short story about DIY insulin PLANNING\" / - **AS DELIVERED**: The essay ends at line 97. It is followed by about 140 lines of link lists, event dates, book listings and a colophon, so the reader actually finishes on a status note about work in progress. That n",
+      "- **CLASS**: breaks-in-medium / - **LOCATION**: lines 19, 99, 107, 135, 169, 191, 215, 225, \"(permalink)\"; line 227, \"Today's top sources:\" / - **AS DELIVERED**: Each section heading ends with the word \"(permalink)\", but the delivered text has no link there, so a phone reader can't tap it. \"Today's top sources:\" is a label with nothing after it before the next line. / - **CONSTRAINT**: delivery_no",
+      "- **LOCATION**: lines 19, 99, 107, 135, 169, 191, 215, 225, \"(permalink)\"; line 227, \"Today's top sources:\" / - **AS DELIVERED**: Each section heading ends with the word \"(permalink)\", but the delivered text has no link there, so a phone reader can't tap it. \"Today's top sources:\" is a label with nothing after it before the next line. / - **CONSTRAINT**: delivery_notes"
+    ]
+  },
+  "n-loo-2026-08-04-technology-freedom-cooperative-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**LOCATION**: lines 1–17. The piece opens with \"Today's links\", then \"Post-American compute for a post-American Internet: Building cooperative human rights computing infrastructure in Puerto Rico, the EU, Canada and Mexico.\", followed by \"Hey look at this: Delights to delectate.\" and the rest of the section list. / **AS DELIVERED**: The phone reader opens the email to a heading and then a menu of ",
+      "**LOCATION**: line 97, \"At last, the first steps towards a post-American internet.\", against line 235, \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: The essay closes at line 97, but the email keeps going for about 140 more lines of link lists, event dates, book listings and colophon. The reader who reaches the bottom ends on a work-in-progress status line, not on an",
+      "**LOCATION**: line 19, \"Post-American compute for a post-American Internet (permalink)\". The same thing appears at lines 99, 107, 135, 169, 191, 215 and 225. / **AS DELIVERED**: The reader sees \"(permalink)\" eight times as plain text with no link behind it. The section list at lines 3–17 is likewise a set of labels that don't jump anywhere, so the navigation the piece is built around does nothing.",
+      "**LOCATION**: line 227, \"Today's top sources:\" / **AS DELIVERED**: The reader meets a label with nothing after it. The next line is \"Currently writing:\", so the sources the label promises never appear. / **CONSTRAINT**: delivery_notes"
+    ]
+  },
+  "n-loo-2026-08-04-technology-freedom-cooperative-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: constraint-unmet / **LOCATION**: line 1, \"Today's links\", followed by a table of contents on lines 3–17 (\"Hey look at this: Delights to delectate.\" … \"Colophon: All the rest.\") / **AS DELIVERED**: A reader who opens this on a phone first sees a heading and then nine lines of section index. The first sentence that argues anything is on line 21, past the index and a second heading, \"Post-",
+      "**LOCATION**: line 1, \"Today's links\", followed by a table of contents on lines 3–17 (\"Hey look at this: Delights to delectate.\" … \"Colophon: All the rest.\") / **AS DELIVERED**: A reader who opens this on a phone first sees a heading and then nine lines of section index. The first sentence that argues anything is on line 21, past the index and a second heading, \"Post-American compute for a post-Am",
+      "**CLASS**: constraint-unmet / **LOCATION**: line 97, \"At last, the first steps towards a post-American internet.\", and the end of the piece at line 235, \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: The essay ends at line 97. About 140 more lines follow: link lists, event listings, book listings and a colophon. The piece ends on a writing-progress line, which is not",
+      "**LOCATION**: line 97, \"At last, the first steps towards a post-American internet.\", and the end of the piece at line 235, \"A Little Brother short story about DIY insulin PLANNING\" / **AS DELIVERED**: The essay ends at line 97. About 140 more lines follow: link lists, event listings, book listings and a colophon. The piece ends on a writing-progress line, which is not a close the reader can act on"
+    ]
+  },
+  "n-post-hook-carries-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-post-hook-carries-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-post-hook-carries-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-thread-clean-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: segment 4, line 7: \"The first three are bad and you throw them away.\" / - **AS DELIVERED**: When this segment is quoted alone in a feed, the reader can't tell what \"the first three\" are. Nothing in the segment says, and nothing earlier in the thread names a set of three either: segment 3 mentions only \"a sentence\". / - **CONSTRAINT**: each-segment-st",
+      "- **LOCATION**: segment 4, line 7: \"The first three are bad and you throw them away.\" / - **AS DELIVERED**: When this segment is quoted alone in a feed, the reader can't tell what \"the first three\" are. Nothing in the segment says, and nothing earlier in the thread names a set of three either: segment 3 mentions only \"a sentence\". / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "n-thread-clean-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: segment 4, line 7, \"The first three are bad and you throw them away.\" / - **AS DELIVERED**: Someone who sees this segment quoted alone in a feed meets \"the first three\" with nothing to count. Read inside the thread, segment 3 doesn't count three of anything either, so the phrase has nothing to refer to. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: segment 4, line 7, \"The first three are bad and you throw them away.\" / - **AS DELIVERED**: Someone who sees this segment quoted alone in a feed meets \"the first three\" with nothing to count. Read inside the thread, segment 3 doesn't count three of anything either, so the phrase has nothing to refer to. / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "n-thread-clean-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: constraint-unmet / **LOCATION**: segment 4, line 7: \"The first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince.\" / **AS DELIVERED**: Someone who sees this segment quoted alone in a feed can't tell what \"the first three\" means. Nothing in the segment names it, and the segment before it only mentions \"a sentence written by hand",
+      "**LOCATION**: segment 4, line 7: \"The first three are bad and you throw them away. Not literally: you keep them, and once a decade you open one and wince.\" / **AS DELIVERED**: Someone who sees this segment quoted alone in a feed can't tell what \"the first three\" means. Nothing in the segment names it, and the segment before it only mentions \"a sentence written by hand,\" so the reader is left guess"
+    ]
+  },
+  "n-thread-long-but-whole-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / - **AS DELIVERED**: Quoted alone in a feed, \"the first three\" has no noun, so the reader can't tell three of what are bad. \"Not literally\" then takes back a claim the reader never understood. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / - **AS DELIVERED**: Quoted alone in a feed, \"the first three\" has no noun, so the reader can't tell three of what are bad. \"Not literally\" then takes back a claim the reader never understood. / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "n-thread-long-but-whole-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: constraint-unmet / **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / **AS DELIVERED**: When this segment is quoted alone in a feed, the reader can't tell what \"the first three\" refers to. Segment 2 doesn't make it clear either, since it talks about only \"A sentence\", singular. So the line reads as a leftover from a thread the reader can",
+      "**LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / **AS DELIVERED**: When this segment is quoted alone in a feed, the reader can't tell what \"the first three\" refers to. Segment 2 doesn't make it clear either, since it talks about only \"A sentence\", singular. So the line reads as a leftover from a thread the reader can't see. / **CONSTRAINT**: each"
+    ]
+  },
+  "n-thread-long-but-whole-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / - **AS DELIVERED**: Quoted alone in a feed, \"The first three\" never says three of what. Nothing in this segment names the noun, and nothing earlier in the thread does either. The reader meets a count with nothing to count. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / - **AS DELIVERED**: Quoted alone in a feed, \"The first three\" never says three of what. Nothing in this segment names the noun, and nothing earlier in the thread does either. The reader meets a count with nothing to count. / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "p-post-hook-buried-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 1, \"A few thoughts on a habit of mine, for anyone who might find them useful, in no particular order.\" (with line 3, \"Some background first.\") / - **AS DELIVERED**: Before the \"see more\" cut, a phone scroller sees an opening that never names the habit, followed by \"Some background first.\" The notebook and the point that it is \"for slowing down\" ",
+      "- **LOCATION**: line 1, \"A few thoughts on a habit of mine, for anyone who might find them useful, in no particular order.\" (with line 3, \"Some background first.\") / - **AS DELIVERED**: Before the \"see more\" cut, a phone scroller sees an opening that never names the habit, followed by \"Some background first.\" The notebook and the point that it is \"for slowing down\" come only after the cut, so the "
+    ]
+  },
+  "p-post-hook-buried-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: constraint-unmet / - **LOCATION**: line 1, \"A few thoughts on a habit of mine, for anyone who might find them useful, in no particular order.\" The text visible before the cut then continues into line 3, \"Some background first.\" / - **AS DELIVERED**: On a phone, the reader sees a generic preamble before the \"see more\" cut. It doesn't name the habit (the notebook) or give any reason to ",
+      "- **LOCATION**: line 1, \"A few thoughts on a habit of mine, for anyone who might find them useful, in no particular order.\" The text visible before the cut then continues into line 3, \"Some background first.\" / - **AS DELIVERED**: On a phone, the reader sees a generic preamble before the \"see more\" cut. It doesn't name the habit (the notebook) or give any reason to expand. The post's real point, t"
+    ]
+  },
+  "p-post-hook-buried-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: constraint-unmet / **LOCATION**: line 1, \"A few thoughts on a habit of mine, for anyone who might find them useful, in no particular order.\" / **AS DELIVERED**: On a phone this line fills the two lines shown before \"see more\". The reader deciding whether to expand sees a preamble that never names the habit (the notebook first appears on line 3, below the fold) and gives no reason to rea",
+      "**LOCATION**: line 1, \"A few thoughts on a habit of mine, for anyone who might find them useful, in no particular order.\" / **AS DELIVERED**: On a phone this line fills the two lines shown before \"see more\". The reader deciding whether to expand sees a preamble that never names the habit (the notebook first appears on line 3, below the fold) and gives no reason to read on. / **CONSTRAINT**: hook-a"
+    ]
+  },
+  "p-thread-cut-sentence-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: cuts-a-sentence / **LOCATION**: segments 1–2, lines 1–3: \"I kept a notebook for eleven years before I understood what it was\" / \"for.\" / **AS DELIVERED**: The separator splits one sentence in two. Segment 1 is the whole piece to most readers, and in the feed it ends unfinished on \"what it was\". / **CONSTRAINT**: segments-are-sentences",
+      "**LOCATION**: segments 1–2, lines 1–3: \"I kept a notebook for eleven years before I understood what it was\" / \"for.\" / **AS DELIVERED**: The separator splits one sentence in two. Segment 1 is the whole piece to most readers, and in the feed it ends unfinished on \"what it was\". / **CONSTRAINT**: segments-are-sentences",
+      "**CLASS**: constraint-unmet / **LOCATION**: segment 2, line 3: \"for. It was not for remembering.\" / **AS DELIVERED**: Quoted alone, segment 2 opens with \"for.\" and the reader has nothing to attach it to. / **CONSTRAINT**: each-segment-stands",
+      "**LOCATION**: segment 2, line 3: \"for. It was not for remembering.\" / **AS DELIVERED**: Quoted alone, segment 2 opens with \"for.\" and the reader has nothing to attach it to. / **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "p-thread-cut-sentence-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: cuts-a-sentence / - **LOCATION**: Segments 1–2, lines 1–3. \"I kept a notebook for eleven years before I understood what it was\" / \"for.\" / - **AS DELIVERED**: The separator falls inside the sentence. Segment 1 is the whole piece to most readers, and it stops at \"what it was\" with no ending. / - **CONSTRAINT**: segments-are-sentences",
+      "- **LOCATION**: Segments 1–2, lines 1–3. \"I kept a notebook for eleven years before I understood what it was\" / \"for.\" / - **AS DELIVERED**: The separator falls inside the sentence. Segment 1 is the whole piece to most readers, and it stops at \"what it was\" with no ending. / - **CONSTRAINT**: segments-are-sentences",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: Segment 2, line 3. \"for. It was not for remembering.\" / - **AS DELIVERED**: Shown or quoted on its own, segment 2 opens with the leftover word \"for.\", which is the end of segment 1's sentence and means nothing by itself. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: Segment 2, line 3. \"for. It was not for remembering.\" / - **AS DELIVERED**: Shown or quoted on its own, segment 2 opens with the leftover word \"for.\", which is the end of segment 1's sentence and means nothing by itself. / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "p-thread-cut-sentence-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: cuts-a-sentence / - **LOCATION**: Segments 1–2, lines 1–3: \"I kept a notebook for eleven years before I understood what it was\" / \"for.\" / - **AS DELIVERED**: The separator splits one sentence, so segment 1 ends mid-clause with no closing punctuation. Most readers see only that first segment, and for them the sentence never finishes. / - **CONSTRAINT**: segments-are-sentences",
+      "- **LOCATION**: Segments 1–2, lines 1–3: \"I kept a notebook for eleven years before I understood what it was\" / \"for.\" / - **AS DELIVERED**: The separator splits one sentence, so segment 1 ends mid-clause with no closing punctuation. Most readers see only that first segment, and for them the sentence never finishes. / - **CONSTRAINT**: segments-are-sentences",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: Segment 2, line 3: \"for. It was not for remembering.\" / - **AS DELIVERED**: Segment 2 opens with the stranded word \"for.\", so anyone who sees it alone in the feed or in a quote meets a leftover fragment of segment 1 before its first full sentence. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: Segment 2, line 3: \"for. It was not for remembering.\" / - **AS DELIVERED**: Segment 2 opens with the stranded word \"for.\", so anyone who sees it alone in the feed or in a quote meets a leftover fragment of segment 1 before its first full sentence. / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "p-thread-long-and-cut-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: cuts-a-sentence / - **LOCATION**: segments 1–2, lines 1–3: \"It was for slowing down, which is a different thing entirely, and the\" / \"difference is the whole of it.\" / - **AS DELIVERED**: The separator splits one sentence across two posts, so segment 1 ends on \"and the\". Per the delivery notes, segment 1 is the whole piece to most readers, so most readers see a sentence that never fin",
+      "- **LOCATION**: segments 1–2, lines 1–3: \"It was for slowing down, which is a different thing entirely, and the\" / \"difference is the whole of it.\" / - **AS DELIVERED**: The separator splits one sentence across two posts, so segment 1 ends on \"and the\". Per the delivery notes, segment 1 is the whole piece to most readers, so most readers see a sentence that never finishes. / - **CONSTRAINT**: segm",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: segment 2, line 3: \"difference is the whole of it.\" / - **AS DELIVERED**: Quoted or shown alone in a feed, the post starts in lowercase in the middle of a sentence. \"the whole of it\" points back to text the reader cannot see. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: segment 2, line 3: \"difference is the whole of it.\" / - **AS DELIVERED**: Quoted or shown alone in a feed, the post starts in lowercase in the middle of a sentence. \"the whole of it\" points back to text the reader cannot see. / - **CONSTRAINT**: each-segment-stands",
+      "- **CLASS**: constraint-unmet / - **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / - **AS DELIVERED**: Nothing in this post or anywhere else in the thread says what \"the first three\" are. A reader meeting it alone can't tell what is bad, what gets thrown away, or what \"Not literally\" corrects. / - **CONSTRAINT**: each-segment-stands",
+      "- **LOCATION**: segment 3, line 5: \"The first three are bad and you throw them away. Not literally.\" / - **AS DELIVERED**: Nothing in this post or anywhere else in the thread says what \"the first three\" are. A reader meeting it alone can't tell what is bad, what gets thrown away, or what \"Not literally\" corrects. / - **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "p-thread-long-and-cut-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: cuts-a-sentence / **LOCATION**: Segments 1→2, lines 1–3: \"…which is a different thing entirely, and the\" / \"difference is the whole of it.\" / **AS DELIVERED**: The separator splits the sentence between \"the\" and \"difference\", so segment 1 ends on \"and the\" in the feed. For most readers segment 1 is the whole piece, so the post they see stops mid-sentence. / **CONSTRAINT**: segments-are-",
+      "**LOCATION**: Segments 1→2, lines 1–3: \"…which is a different thing entirely, and the\" / \"difference is the whole of it.\" / **AS DELIVERED**: The separator splits the sentence between \"the\" and \"difference\", so segment 1 ends on \"and the\" in the feed. For most readers segment 1 is the whole piece, so the post they see stops mid-sentence. / **CONSTRAINT**: segments-are-sentences",
+      "**CLASS**: constraint-unmet / **LOCATION**: Segment 2, line 3: \"difference is the whole of it.\" / **AS DELIVERED**: Shown or quoted alone, this segment opens in lowercase mid-clause. \"difference\" points to no difference the segment states, because it is only the tail of segment 1's sentence. / **CONSTRAINT**: each-segment-stands",
+      "**LOCATION**: Segment 2, line 3: \"difference is the whole of it.\" / **AS DELIVERED**: Shown or quoted alone, this segment opens in lowercase mid-clause. \"difference\" points to no difference the segment states, because it is only the tail of segment 1's sentence. / **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "p-thread-long-and-cut-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "authorship_claims": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: cuts-a-sentence / **LOCATION**: segment 1 → segment 2, lines 1–3: \"It was for slowing down, which is a different thing entirely, and the\" / \"difference is the whole of it.\" / **AS DELIVERED**: The sentence breaks off after \"and the\", so segment 1 ends mid-clause. The delivery notes say segment 1 is the whole piece to most readers, so most of them see the sentence end at a dangling artic",
+      "**LOCATION**: segment 1 → segment 2, lines 1–3: \"It was for slowing down, which is a different thing entirely, and the\" / \"difference is the whole of it.\" / **AS DELIVERED**: The sentence breaks off after \"and the\", so segment 1 ends mid-clause. The delivery notes say segment 1 is the whole piece to most readers, so most of them see the sentence end at a dangling article. / **CONSTRAINT**: segment",
+      "**CLASS**: constraint-unmet / **LOCATION**: segment 2, line 3: \"difference is the whole of it.\" / **AS DELIVERED**: Quoted or seen alone in a feed, this segment starts in lowercase in the middle of a sentence. Its subject only makes sense with the cut-off end of segment 1. / **CONSTRAINT**: each-segment-stands",
+      "**LOCATION**: segment 2, line 3: \"difference is the whole of it.\" / **AS DELIVERED**: Quoted or seen alone in a feed, this segment starts in lowercase in the middle of a sentence. Its subject only makes sense with the cut-off end of segment 1. / **CONSTRAINT**: each-segment-stands"
+    ]
+  },
+  "_how": [
+    "One entry per transcript. `note` and `annotation` are the operator's; both may stay empty.",
+    "The nulls are the two contract counts, and they are counts of what the findings quoted",
+    "under `_findings_to_review` DO — not of what the critic says it did. Read the transcript.",
+    "Nothing here is derived for you, because a critic grading its own compliance is the",
+    "failure verify-run.mjs was written to close. collect refuses to run until they are numbers."
+  ]
+}

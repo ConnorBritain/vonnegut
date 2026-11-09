@@ -1,0 +1,20 @@
+{
+  "mode": "argument",
+  "title": "Calibration (newsletter piece, working title)",
+  "thesis": null,
+  "nodes": [
+    { "id": "n1", "kind": "open-question", "parent": null, "order": 1,
+      "text": "Which calibration? Forecasting/judgment (do 70% calls come true 70% of the time), ML model calibration (predicted probabilities vs. observed rates), instrument calibration, or something else." },
+    { "id": "n2", "kind": "open-question", "parent": null, "order": 2,
+      "text": "What did 'the stuff we talked about' cover? No earlier conversation or notes are available in this session, so the points, examples and conclusions need to be restated or pasted in." },
+    { "id": "n3", "kind": "open-question", "parent": null, "order": 3,
+      "text": "What is the one thing a reader should believe or do after reading? That sentence becomes the thesis." },
+    { "id": "n4", "kind": "open-question", "parent": null, "order": 4,
+      "text": "Who reads the newsletter, and how much do they already know about calibration? This sets whether the piece defines terms or skips straight to the argument." },
+    { "id": "n5", "kind": "open-question", "parent": null, "order": 5,
+      "text": "What evidence is on hand: data, a personal track record, a worked example, a study, an anecdote? Each claim will need a slot that points at one of these." },
+    { "id": "n6", "kind": "open-question", "parent": null, "order": 6,
+      "text": "Roughly how long is a typical issue? Length decides how many claims the outline can carry (often three to five for a newsletter piece)." }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

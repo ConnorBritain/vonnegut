@@ -42,7 +42,36 @@ not spawn and the report says so.
 - `node bundles/prose-review/tests/selftest.mjs`: zero failed; medium fixtures
   re-derived; `run-harness-test.mjs` and `revise-harness-test.mjs` green;
   `prepare medium` exercised end to end (12 leak-free prompts).
-- **No medium run has been dispatched.** The environment had no CLI; the first
-  run is the next session's job, and until it is recorded the critic's evidence
-  is its fixture set and harness, not a number. Delivery judgements have no
-  ground truth, and the critic ships on the negative test.
+- **First medium run, 2026-11-09** (`tests/runs/2026-11-09-medium`, 12 cases ×
+  3 draws through `run-harness.mjs dispatch`, recorded after this release).
+  `verify-run.mjs` prints, quoted:
+
+  ```
+      negative (survives delivery, n=9):   8 REVISE, 1 CLEAN
+      positive (breaks in the medium, n=3): 3 REVISE, 0 CLEAN
+      cases whose k=3 draws did not all agree:  1 of 12   (a split is a finding)
+      findings without a quoted span: 0             <- must be 0
+      any claim about machine authorship: 0        <- must be 0
+          counts the check failed and the critic cleared:           0
+          delivery problems the check could not see and the critic caught: 3
+          verdicts identical to the echo rule's (echo rate):         9 of 12
+  ```
+
+  **The negative test this critic ships on was not met**: quiet on 1 of 9
+  negatives. All six leave-one-out newsletters also fail `repurpose-check`'s
+  `length-band`, so they are not the compliant posts the test assumes, and both
+  thread negatives carry a segment ("The first three are bad…") that every draw
+  flagged as not standing alone. No prompt was tuned in response; fixing the
+  fixtures or the prompt, and re-running, is follow-up. Delivery judgements have
+  no ground truth. The run also fixed `verify-run.mjs`'s medium echo block,
+  which always printed 0 for cleared and caught.
+
+  **The fixtures were then corrected; the prompt was not touched.** The six
+  newsletter negatives are now the essays extracted from their issues
+  (`medium-harness.mjs` `extractEssay`, committed under `fixtures/medium/loo/`):
+  three inside the word band, three over it. The thread segments that leaned on
+  an earlier segment are rewritten to stand alone. Each corrected fixture
+  carries `corrected_after_run: "2026-11-09-medium"`, and `verify-run.mjs`
+  prints the caveat when it verifies that run. **The numbers above are for the
+  old fixtures. The critic's negative test is unmeasured on the corrected set
+  until the medium run is repeated** (`run-harness.mjs prepare medium`, 12 × 3).

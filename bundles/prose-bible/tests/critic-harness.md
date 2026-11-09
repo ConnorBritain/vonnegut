@@ -67,15 +67,21 @@ class-A projects, loud on the three class-B ones.
 
 ## Runs
 
-**No continuity run has been dispatched yet.** The environment that built the
-critic had no authenticated CLI. `prepare` was exercised end to end by
-`selftest.mjs` (seven leak-free prompts, one staging a bible; a poisoned copy
-aborts before a MANIFEST is written; `collect` and `check` round-trip synthetic
-transcripts byte-for-byte). The first real run is the next session's job, and
-until it is recorded here the critic's evidence is the fixture set and the
-harness, not a number. An undispatched run is recorded as not run, never as
-passed.
+**First run: [`runs/2026-11-09-continuity`](runs/2026-11-09-continuity/README.md)**,
+7 cases × 3 draws, each draw a fresh `claude -p` process with Read confined to the
+case's staged inputs. `collect` prints, quoted:
+
+```
+    critic  — negatives quiet 15/15, positives caught 6/6
+    parrot  — negatives quiet 6/15, positives caught 6/6   (flagged when index-diff reports any candidate: redefined, attribute_drift, date_drift, repeated or bible_conflicts)
+    contract — uncited=0, third_location=0   (operator counts, carried through, not derived)
+```
+
+The critic cleared all three class-B over-flags on every draw, where the parrot
+flags all three; no case split across its draws. Seven small synthetic projects
+on one model and one day are an observation, not a rate, and the contract counts
+were made by the session that ran it, not by a person.
 
 | run | draws | negative (A+B, n=5) | positive (C, n=2) | uncited | third_location |
 |---|---|---|---|---|---|
-| — | — | not run | not run | — | — |
+| [2026-11-09](runs/2026-11-09-continuity/README.md) | 3 | **0 REVISE / 5** (15 of 15 draws quiet) | **2 REVISE / 2** (6 of 6 draws) | 0 | 0 |

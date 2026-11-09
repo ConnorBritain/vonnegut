@@ -1,0 +1,15 @@
+model: claude-opus-5-5
+
+Bash: cd <task>/skillwork/prose-research-negative-d1; ls -la; cat draft.md; echo ----; cat ledger.json; S=<repo>/bundles/prose-research/skills/prose-research; ls $S $S/tools $S/references
+
+Bash: cd <task>/skillwork/prose-research-negative-d1; ls -la; cat draft.md; echo ----; cat ledger.json; ls <repo>/bundles/prose-research/skills/prose-research/tools <repo>/bundles/prose-research/skills/prose-research/references
+
+Bash: cd <task>/skillwork/prose-research-negative-d1; ls -la; cat draft.md; echo ----; cat ledger.json
+
+Bash: cd <task>/skillwork/prose-research-negative-d1; mkdir -p .task; cat > .task/map.json <<'EOF'
+{"sentences":[
+{"text":"I like the quarry path best in the rain.","claim":false,"ledger":null},
+{"text":"It is the kind of walk you take when you want to think about nothing in particular, and I recommend it to nobody, because the point of it is that nobody is there.","claim":false,"ledger":null}
+]}
+EOF
+node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --help 2>&1 | head -20

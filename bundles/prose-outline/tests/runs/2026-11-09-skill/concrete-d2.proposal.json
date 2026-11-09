@@ -1,0 +1,33 @@
+{
+  "mode": "argument",
+  "title": "The roadmap is a file, and the build reads it",
+  "thesis": "A team's roadmap should live as a file in the repo and be checked by the build, because plans survive only where the work happens and stay true only when something refuses to let them drift.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1,
+      "text": "You have watched a quarter's plan evaporate; the plan didn't fail, it just stopped being where anyone looked.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2,
+      "text": "Location decides survival: plans checked into the repo outlived plans kept on the wiki.",
+      "evidence": [ { "slot": "e1", "filled_by": "last three retrospectives: checked-in plans survived, wiki plans died" } ] },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 3,
+      "text": "Living in the repo is necessary but not enough; a checked-in file still goes stale unless the build ties it to the work.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 4,
+      "text": "Making the build fail when a version bumps without a plan edit removed stale entries almost at once.",
+      "evidence": [ { "slot": "e1", "filled_by": "March 2024 script: stale plan entries went from eleven to zero in a month" } ] },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 5,
+      "text": "The usual objection is that a forced edit is a thoughtless edit; the post must answer it, not wave it off.",
+      "evidence": [ { "slot": "e1", "filled_by": "the objection itself, as stated in the brief" },
+                    { "slot": "e2", "filled_by": null } ] },
+    { "id": "n6", "kind": "open-question", "parent": "n5", "order": 1,
+      "text": "What answers the objection? The brief gives no data on the quality of the forced edits, only that staleness fell. Is there evidence (reviews, examples of edits), or is the answer an argument (a thoughtless edit is still visible in a diff; a missing one is not)?" },
+    { "id": "n7", "kind": "claim", "parent": null, "order": 6,
+      "text": "Close on the rule itself: no version bumps without the plan moving with it.",
+      "evidence": [ { "slot": "e1", "filled_by": "the March 2024 build check as the rule's enforcement" } ] },
+    { "id": "n8", "kind": "open-question", "parent": "n4", "order": 1,
+      "text": "What counted as a 'stale plan entry' when the eleven were counted, and has the number held at zero since the first month?" },
+    { "id": "n9", "kind": "open-question", "parent": "n1", "order": 1,
+      "text": "Is there a specific evaporated quarter to open on, or should the opening rely on the reader's own memory?" }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

@@ -1,0 +1,25 @@
+model: claude-opus-5-5
+
+Read: <repo>/bundles/prose-bible/skills/prose-bible/references/bible-schema.md
+
+Bash: ls -R book | head -50
+
+Bash: S=<repo>/bundles/prose-bible/skills/prose-bible; T=<task>; P=$PWD/book; cd $S && node tools/entity-index.mjs $P --json > $T/index.json && node tools/index-diff.mjs $T/index.json --json > $T/diff.json; cat $T/diff.json; echo ---; node tools/bible-store.mjs propose --index $T/index.json; echo ---; node tools/bible-store.mjs locate
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && node tools/entity-index.mjs <task>/skillwork/prose-bible-control-d2/book --json > <task>/index.json && node tools/index-diff.mjs <task>/index.json --json > <task>/diff.json; cat <task>/diff.json; echo ---; node tools/bible-store.mjs propose --index <task>/index.json; echo ---; node tools/bible-store.mjs locate
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs <task>/skillwork/prose-bible-control-d2/book --json > <task>/index.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/index.json --json > <task>/diff.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index <task>/index.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Read: <task>/diff.json
+
+Read: <task>/index.json
+
+Agent: Judge whether this project contradicts itself, from the index-diff candidates below. There is no current bible (none saved yet; treat as empty). Diff JSON is at <task>/diff.json — read it. Report only findings citing two locations from the diff, or CLEAN.
+
+Read: <task>/diff.json

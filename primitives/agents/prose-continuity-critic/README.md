@@ -70,6 +70,11 @@ The harness, the echo rule and the four-class fixture table are in
 
 ## Known limits
 
+**Measured once.** First run 2026-11-09, k=3, on the seven synthetic fixtures:
+negatives quiet 15/15 draws (the parrot: 6/15), positives caught 6/6, `uncited`
+and `third_location` 0 (`bundles/prose-bible/tests/runs/2026-11-09-continuity`).
+Seven small projects on one model are an observation, not a rate.
+
 **It inherits the index's blind spots.** Pronouns are never resolved, so
 "her eyes were green" attaches to nobody; attributes are two surface patterns
 over a fixed noun list; definitions are three patterns and can misattribute a

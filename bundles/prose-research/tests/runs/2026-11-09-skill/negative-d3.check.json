@@ -1,0 +1,3 @@
+{
+  "error": "sentence map: schema must be sentence-map/1; sentences[0].id required; sentences[1].id required; sentences[1]: duplicate id undefined"
+}

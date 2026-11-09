@@ -38,8 +38,13 @@ From a session with the bundle installed, for each brief:
    `--approved` flag is only ever set after one).
 
 Quote the checker's output in the PR; do not retype it. A run that was not
-dispatched — this environment has no authenticated CLI — is recorded as not
-run, never as passed.
+dispatched is recorded as not run, never as passed.
+
+## Runs
+
+| run | draws | positive (concrete) | negative (underspecified) | saved without a yes |
+|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-skill/README.md) | 3 | `clean`, `errors: []` on 3/3 | `clean`, `errors: []` on 3/3 — `thesis: null`, open questions only | 0 of 6 (registry absent; save path not exercised) |
 
 ## What this does not measure
 

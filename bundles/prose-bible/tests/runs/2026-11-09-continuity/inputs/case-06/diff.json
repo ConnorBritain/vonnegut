@@ -1,0 +1,38 @@
+{
+ "schema": "index-diff/1",
+ "redefined": [
+  {
+   "key": "ines",
+   "surface_forms": [
+    "Ines"
+   ],
+   "similarity": 0,
+   "a": {
+    "file": "chapter-03.md",
+    "line": 3,
+    "offset": 17,
+    "sentence": "Ines is the miller's daughter, and the only person in the village who can read the old ledger.",
+    "pattern": "is-a",
+    "definition": "miller's daughter"
+   },
+   "b": {
+    "file": "chapter-04.md",
+    "line": 3,
+    "offset": 16,
+    "sentence": "Ines is the one who counts the sacks, because nobody else in the village will.",
+    "pattern": "is-a",
+    "definition": "one who counts the sacks"
+   }
+  }
+ ],
+ "attribute_drift": [],
+ "repeated": [],
+ "bible_conflicts": [],
+ "limits": [
+  "Two definitions are 'different' when their content-word overlap is below 0.5; a paraphrase can pass as the same and a different emphasis as different.",
+  "Attribute values are compared after lower-casing and stripping punctuation; 'grey' and 'gray' are different values.",
+  "Every entry is a candidate; a flashback, a nickname or a lie looks the same as drift here."
+ ],
+ "date_drift": [],
+ "summary": "1 redefined, 0 attribute drift, 0 date drift, 0 repeated, 0 bible conflicts"
+}

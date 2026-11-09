@@ -1,0 +1,14 @@
+{
+  "mode": "argument",
+  "title": "Three things I got wrong about calibration",
+  "thesis": "Calibrate before trusting the scanner, but for better reasons than the three I gave.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "text": "Shipped thresholds are guesses, and a labelled guess beats an unlabelled measurement.",
+      "evidence": [ { "slot": "e1", "filled_by": "the banner drove more calibration than any argument" } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2, "text": "Five samples give bands but not trustworthy bands.",
+      "evidence": [ { "slot": "e1", "filled_by": "the tool now says thin below ten" } ] },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 3, "text": "Calibration is not a one-time job; bands drift as the corpus grows, so lock what you like.",
+      "evidence": [ { "slot": "e1", "filled_by": "a lock: a named snapshot calibrated against on purpose" } ] },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 4, "text": "The tool was right; the reasons were the weak part.", "evidence": [ { "slot": "e1", "filled_by": "the three corrections above" } ] }
+  ]
+}

@@ -1,0 +1,15 @@
+
+  bundles/prose-review/tests/runs/2026-11-09-structure — 21 case(s), 63 transcript(s) (k=3)
+
+    negative (sound structure, n=17):     0 REVISE, 17 CLEAN
+    positive (planted gap, n=4):         4 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  0 of 21   (a split is a finding)
+    findings without a quoted span and a scan/outline reference: 0   <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+
+    verdicts matching the expected verdict:                    21 of 21
+    counts the scan flagged and the critic cleared:            15
+    gaps the scan could not see and the critic caught:         2
+    verdicts identical to the echo rule's (echo rate):         4 of 21
+    the echo rule is tests/structure-harness.mjs ECHO_RULE, applied to outline-scan; it is a parrot, not a finding
+

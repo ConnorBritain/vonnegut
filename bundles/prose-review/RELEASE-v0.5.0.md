@@ -45,9 +45,28 @@ note that the transcripts are evidence about the earlier prompt.
   provenance fixtures re-derived (scan FAITHFUL on all three; provenance
   drifted, drifted, exact); `run-harness-test.mjs` and `revise-harness-test.mjs`
   green; the four historical runs re-check.
-- **No fidelity run with a provenance block has been dispatched.** The build
-  environment had no authenticated CLI. The first run is the next session's
-  job; until it is recorded, the block's evidence is the fixture set, and an
-  undispatched run is recorded as not run, never as passed. The narrow
-  extension is revisited if that run shows the block raising false positives
-  on the existing fixtures.
+- **First fidelity run with the provenance block, 2026-11-09**
+  (`tests/runs/2026-11-09-fidelity-provenance`, all 16 fixtures × 3 draws
+  through `run-harness.mjs dispatch`, recorded after this release).
+  `verify-run.mjs` prints, quoted:
+
+  ```
+      negative (faithful revisions, n=7):     2 MATERIAL-LOSS, 5 FAITHFUL
+      positive (lossy revisions, n=9):        9 MATERIAL-LOSS, 0 FAITHFUL
+      cases whose k=3 draws did not all agree:  1 of 16   (a split is a finding)
+      findings not quoting both original and revision: 0   <- must be 0
+      claims an atom is present that the scan flagged: 0   <- must be 0
+
+      verdicts matching the fixture's expected verdict:  14 of 16
+      losses the scan flagged and the critic cleared:    1
+      losses the scan missed and the critic caught:      6
+      verdicts identical to fidelity-scan's (echo rate): 9 of 16
+  ```
+
+  The three provenance fixtures went as specified on every draw: the `exact`
+  negative `FAITHFUL` 3 of 3, both `drifted` positives `MATERIAL-LOSS` 3 of 3.
+  The two negatives that read `MATERIAL-LOSS` (`n-beauty-modernised`,
+  `n-rossolimo-island-dropped`) carry no provenance block and were flagged on
+  every S4 draw too. So the run does **not** show the block raising false
+  positives on the existing fixtures, and the narrow extension stands. The
+  contract counts were made by the session, not a person.

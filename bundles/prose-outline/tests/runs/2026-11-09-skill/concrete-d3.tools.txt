@@ -1,0 +1,19 @@
+model: claude-opus-5-5
+
+Read: <repo>/bundles/prose-outline/skills/prose-outline/references/outline-schema.md
+
+Bash: cd <repo>/bundles/prose-outline/skills/prose-outline && ls tools && node tools/outline-store.mjs locate
+
+Bash: S=<repo>/bundles/prose-outline/skills/prose-outline; ls $S/tools; node $S/tools/outline-store.mjs locate
+
+Bash: node <repo>/bundles/prose-outline/skills/prose-outline/tools/outline-store.mjs locate
+
+Write: <task>/skillwork/prose-outline-concrete-d3/brief.md
+
+Write: <task>/skillwork/prose-outline-concrete-d3/proposal.json
+
+Bash: D=<task>/skillwork/prose-outline-concrete-d3; node <repo>/bundles/prose-outline/skills/prose-outline/tools/proposal-check.mjs $D/proposal.json --brief $D/brief.md; echo exit=$?
+
+Bash: node <repo>/bundles/prose-outline/skills/prose-outline/tools/proposal-check.mjs <task>/skillwork/prose-outline-concrete-d3/proposal.json --brief <task>/skillwork/prose-outline-concrete-d3/brief.md; echo exit=$?
+
+Bash: node <repo>/bundles/prose-outline/skills/prose-outline/tools/proposal-check.mjs <task>/skillwork/prose-outline-concrete-d3/proposal.json --brief <task>/skillwork/prose-outline-concrete-d3/brief.md

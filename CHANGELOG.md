@@ -22,6 +22,48 @@ it is not yet in their hands.
   handoff (K) and a chief-editor reading pass (L), with one spec each under
   `docs/roadmap/` and the end-to-end path in [`docs/workflow.md`](docs/workflow.md).
   No bundle version changes.
+- **Measured** the `prose-research` skill: first run,
+  `tests/runs/2026-11-09-skill`, positive and negative × 3 draws. Positive met
+  3/3 against `claims-check` over the skill's own maps. Negative behaviour met
+  3/3, but its coverage check was not produced; re-run owed. The fixture ledger
+  lacks the header `claims-check` requires.
+- **Measured** the `prose-outline` skill: first run,
+  `tests/runs/2026-11-09-skill`, two briefs × 3 draws — `proposal-check
+  --brief` clean on all six; no thesis invented for the underspecified brief;
+  nothing saved without a yes.
+- **Measured** the `prose-bible` skill: first run,
+  `tests/runs/2026-11-09-skill`, project and control × 3 draws. Control met
+  3/3. Project: attribute put to the writer and nothing saved 3/3, but the
+  critic got a clean context on only 1/3 (two draws passed it the project
+  directory) and every draw raised an unindexed character from the files. No
+  prompt edited; follow-up.
+- **Measured** `prose-reader-critic` (prose-review): first run,
+  `tests/runs/2026-11-09-reader`, 4 personas × 12 essays × 3 draws — 16
+  `REVISE` of 48 negatives: skeptical-cto 1/12 (within the 0–2 default),
+  acquisitions-editor 3/12, first-time-reader 3/12, adversarial-reader 9/12
+  (all three exceeding it). Contract counts 0. No persona tuned; follow-up.
+- **Measured** `prose-medium-critic` (prose-review): first run,
+  `tests/runs/2026-11-09-medium`, 12 cases × 3 draws — **8 `REVISE` of 9
+  negatives**, so the negative test it ships on is not met; 3 of 3 positives;
+  echo rate 9 of 12; contract counts 0. The six leave-one-out newsletters fail
+  the mechanical length check. No prompt tuned; follow-up. **Fixed**
+  `verify-run.mjs`'s medium echo block, which read the critic name as its
+  profile and always printed 0 for cleared/caught, and now counts cases.
+- **Measured** `prose-fidelity-critic` with the provenance block (prose-review):
+  `tests/runs/2026-11-09-fidelity-provenance`, 16 fixtures × 3 draws — 2
+  `MATERIAL-LOSS` of 7 negatives (neither carries a provenance block), 9 of 9
+  positives, 14 of 16 expected, echo rate 9 of 16, both contract counts 0. The
+  `exact` provenance negative was quiet on every draw.
+- **Measured** `prose-continuity-critic` (prose-bible): first run,
+  `tests/runs/2026-11-09-continuity`, 7 cases × 3 draws — negatives quiet 15/15
+  draws (parrot 6/15), positives caught 6/6, `uncited` and `third_location` 0.
+  Added to `tools/check.mjs`'s re-check list.
+- **Measured** `prose-structure-critic` (prose-review): first run,
+  `tests/runs/2026-11-09-structure`, 21 cases × 3 draws — 0 `REVISE` of 12
+  leave-one-out essays, 4 of 4 synthetic positives, echo rate 4 of 21, both
+  contract counts 0. **Fixed** `verify-run.mjs`'s structure block resolving the
+  repository root one directory short, which crashed on the first
+  leave-one-out case.
 - **Added** a durable roadmap — [`docs/ROADMAP.md`](docs/ROADMAP.md), one spec per
   item under `docs/roadmap/`, and a `STATUS.md` checklist that is now the single
   pin for bundle versions — plus `tools/check-roadmap.mjs`, run first by

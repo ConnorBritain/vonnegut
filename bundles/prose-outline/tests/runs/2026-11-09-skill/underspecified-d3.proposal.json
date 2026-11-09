@@ -1,0 +1,20 @@
+{
+  "mode": "argument",
+  "title": "Calibration (newsletter piece)",
+  "thesis": null,
+  "nodes": [
+    { "id": "n1", "kind": "open-question", "parent": null, "order": 1,
+      "text": "Which calibration? Forecasting and judgment (do your 70% calls come true about 70% of the time), ML model calibration (do predicted probabilities match observed frequencies), measuring instruments, or something else?" },
+    { "id": "n2", "kind": "open-question", "parent": null, "order": 2,
+      "text": "What is 'the stuff we talked about'? That earlier conversation isn't available here, and there are no notes in the workspace. Paste or summarise the points you want to cover." },
+    { "id": "n3", "kind": "open-question", "parent": null, "order": 3,
+      "text": "What is the one claim the piece should leave readers with? That becomes the thesis." },
+    { "id": "n4", "kind": "open-question", "parent": null, "order": 4,
+      "text": "Who reads the newsletter, and what do they already know about calibration? That decides whether the piece starts by defining it or skips ahead to the argument." },
+    { "id": "n5", "kind": "open-question", "parent": null, "order": 5,
+      "text": "What evidence do you have: your own track record, a dataset, a study, an anecdote? Every claim needs an evidence slot, and none can be filled yet." },
+    { "id": "n6", "kind": "open-question", "parent": null, "order": 6,
+      "text": "Length and register: a short note or a long essay? Is there a practical takeaway (a habit, a check, a tool)?" }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

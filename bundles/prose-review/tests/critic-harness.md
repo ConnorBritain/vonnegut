@@ -210,12 +210,22 @@ node tests/run-harness.mjs collect  runs/2026-XX-XX-structure           # → ve
     verdicts identical to the echo rule's (echo rate):         N of 21
 ```
 
-**No structure run has been dispatched yet.** The environment that built the
-critic had no authenticated CLI; `prepare` was exercised end to end (21 leak-free
-prompts, 4 in intended-outline mode) and the first real run is the next
-session's job. Until it is recorded here, the critic's evidence is the fixture
-set and the harness, not a number — and an undispatched run is recorded as not
-run, never as passed.
+**First run: [`runs/2026-11-09-structure`](runs/2026-11-09-structure/README.md)**,
+21 cases × 3 draws through `dispatch`. Its block, quoted from `verify-run.mjs`:
+
+```
+    verdicts matching the expected verdict:                    21 of 21
+    counts the scan flagged and the critic cleared:            15
+    gaps the scan could not see and the critic caught:         2
+    verdicts identical to the echo rule's (echo rate):         4 of 21
+```
+
+The leave-one-out negative is 0 `REVISE` of 12 (36 of 36 draws `CLEAN`), inside
+the ≤ 2 default, and no case split across its three draws. The positives are the
+four synthetic class C/D fixtures, so `4 REVISE / 4` says the critic finds gaps
+planted for it, not that it finds the ones that matter in a writer's draft. The
+run also found a path defect in `verify-run.mjs`'s structure block, fixed with
+it — see the run's README.
 
 ## The overlap test, once a second critic exists
 
@@ -348,6 +358,10 @@ k=3 with a majority + split report. See [`.planning/SAMPLING-POLICY.md`](../../.
 | [2026-08-05](runs/2026-08-05-fidelity-complete.md) — `prose-fidelity-critic`, full sweep | 1 | **1 MATERIAL-LOSS / 6** | **7 MATERIAL-LOSS / 7** | 0 | 0 |
 | [2026-08-05b](runs/2026-08-05-voice-cross-author-complete.md) — `prose-voice-critic`, **cross-author substitution** | mixed (3 on headline, 1 elsewhere) | **0 REVISE / 18** (6 authors × 3 draws) | **12 REVISE / 12** register-matched · 26 REVISE / 26 across-register, single draws | 0 | 0 |
 | [2026-08-05-s4](runs/2026-08-05-fidelity-s4-complete.md) — `prose-fidelity-critic`, full sweep **after** the P3 scanner fix | 1 | **4 MATERIAL-LOSS / 6** | **7 MATERIAL-LOSS / 7** | 0 | 0 |
+| [2026-11-09-fidelity-provenance](runs/2026-11-09-fidelity-provenance/README.md) — `prose-fidelity-critic`, 16 fixtures incl. the three provenance ones | 3 | **2 MATERIAL-LOSS / 7** (1 split) | **9 MATERIAL-LOSS / 9** | 0 | 0 |
+| [2026-11-09-medium](runs/2026-11-09-medium/README.md) — `prose-medium-critic`, first run | 3 | **8 REVISE / 9** — negative test not met; see the log | **3 REVISE / 3** synthetic | 0 | 0 |
+| [2026-11-09-reader](runs/2026-11-09-reader/README.md) — `prose-reader-critic`, four personas × 12 essays | 3 | **16 REVISE / 48**: skeptical-cto 1/12, acquisitions-editor 3/12, first-time-reader 3/12, adversarial-reader 9/12 | — (no positives by design) | 0 | 0 |
+| [2026-11-09-structure](runs/2026-11-09-structure/README.md) — `prose-structure-critic`, first run | 3 | **0 REVISE / 17** (12 leave-one-out + 5 synthetic) | **4 REVISE / 4** synthetic | 0 | 0 |
 
 **The fidelity critic's negative rate got WORSE when the scanner got better, and
 that is published rather than tuned away.** A controlled experiment — the four
