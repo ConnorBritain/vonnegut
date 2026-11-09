@@ -60,9 +60,18 @@ is the same one line in each.
   - an invented thesis on thin material;
   - the transcript cached without approval;
   - SRT cue numbers kept.
-- **No model run of the skill has been dispatched.** The checker and the
-  example proposals are the evidence until one is. The harness is in
-  [`tests/skill-harness.md`](tests/skill-harness.md).
+- **Measured on 2026-11-09:** 3 draws per transcript
+  ([`tests/runs/2026-11-09-brainstorm`](tests/runs/2026-11-09-brainstorm/README.md),
+  harness in [`tests/skill-harness.md`](tests/skill-harness.md)).
+  - The checker printed `angles-check: ok` on all six.
+  - Positive (monologue): `"expect": "concrete", "findings": []`, met 3/3.
+  - Negative (ramble): `"expect": "underspecified", "findings": []`, met 3/3,
+    with no thesis on any angle.
+  - No quote needed fixing, and nothing was saved or cached without a yes, 0 of
+    6 each.
+  - The store refused a null angle `audience` that the check accepts. 4 of 6
+    draws then saved a placeholder ("undecided"). Fixed in 0.4.1: the schema now
+    takes `null` with an open question ([`RELEASE-v0.4.1.md`](RELEASE-v0.4.1.md)).
 - Known limits:
   - topic segments are a lexical heuristic;
   - speakers come from labels only, with no diarisation;

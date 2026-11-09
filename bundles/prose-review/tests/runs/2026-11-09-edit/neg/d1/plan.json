@@ -1,0 +1,17 @@
+{
+  "draft": "draft.md",
+  "voice_profile": null,
+  "mode": "plan-only",
+  "entries": [
+    {
+      "id": "e01",
+      "source": "writer",
+      "location": {
+        "line": 47,
+        "quote": "And about the time that we reached the suburb of the city, and the traffic grew thinner, and the noises more few, I began to hear what they were saying."
+      },
+      "change": "Cut the sentence ending 'I began to hear what they were saying.' (lines 47-50, from 'And about the time that we reached the suburb'), leaving the paragraph to run from the farce-count description to 'Though they spoke French quickly'.",
+      "reason": "Redundant: the dialogue that follows makes it obvious the narrator can hear them."
+    }
+  ]
+}

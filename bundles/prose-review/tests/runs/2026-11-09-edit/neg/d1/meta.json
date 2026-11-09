@@ -1,0 +1,67 @@
+{
+  "turns": [
+    {
+      "turn": 1,
+      "init_model": "claude-opus-5-5",
+      "seconds": 37,
+      "model_turns": 8,
+      "cost_usd": 0.20460640000000002,
+      "is_error": false
+    },
+    {
+      "turn": 2,
+      "init_model": "claude-opus-5-5",
+      "seconds": 13,
+      "model_turns": 1,
+      "cost_usd": 0.23622300000000002,
+      "is_error": false
+    },
+    {
+      "turn": 3,
+      "init_model": "claude-opus-5-5",
+      "seconds": 21,
+      "model_turns": 2,
+      "cost_usd": 0.2985838,
+      "is_error": false
+    },
+    {
+      "turn": 4,
+      "init_model": "claude-opus-5-5",
+      "seconds": 13,
+      "model_turns": 3,
+      "cost_usd": 0.3459568,
+      "is_error": false
+    },
+    {
+      "turn": 5,
+      "init_model": "claude-opus-5-5",
+      "seconds": 17,
+      "model_turns": 3,
+      "cost_usd": 0.405737,
+      "is_error": false
+    },
+    {
+      "turn": 6,
+      "init_model": "claude-opus-5-5",
+      "seconds": 17,
+      "model_turns": 3,
+      "cost_usd": 0.47738880000000006,
+      "is_error": false
+    },
+    {
+      "turn": 7,
+      "init_model": "claude-opus-5-5",
+      "seconds": 31,
+      "model_turns": 10,
+      "cost_usd": 0.6678574000000002,
+      "is_error": false
+    }
+  ],
+  "ended": "writer-done",
+  "skill_cost_usd": 2.6364,
+  "writer_cost_usd": 0.3005,
+  "model_usage_cost_usd": {
+    "claude-opus-5-5": 2.6363532000000003
+  },
+  "first_message": "/prose-review:prose-edit Let's read draft.md together, section by section. The review has already run; the consolidated notes are in review.md."
+}

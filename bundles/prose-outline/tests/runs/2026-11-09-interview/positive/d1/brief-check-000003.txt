@@ -1,0 +1,4 @@
+brief-check: not done — next: shape (What shape should it take?)
+  open (required): shape, thesis
+  open (optional): must_include, exclude, links, assumptions
+exit 1

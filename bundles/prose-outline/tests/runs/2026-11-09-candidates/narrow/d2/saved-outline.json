@@ -1,0 +1,130 @@
+{
+  "schema": "voice-outline/1",
+  "id": "starter-is-the-bakery",
+  "revision": 1,
+  "parent_digest": null,
+  "mode": "argument",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "letter",
+  "length": {
+    "unit": "words",
+    "min": 200,
+    "max": 300
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "claim",
+      "parent": null,
+      "order": 1,
+      "part": "occasion",
+      "words": 30,
+      "text": "To team leads: a note about what gets praised, and what never gets seen.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "kind": "open-question",
+      "parent": "n1",
+      "order": 1,
+      "text": "What prompts the letter now? The brief names the reader but no occasion (a review cycle, a launch, a specific team moment)."
+    },
+    {
+      "id": "n3",
+      "kind": "claim",
+      "parent": null,
+      "order": 2,
+      "part": "body",
+      "words": 75,
+      "covers": [
+        "must_include.0"
+      ],
+      "text": "The month of feeding the starter is the work nobody watches, and it is where the loaf is decided: a weak starter cannot be rescued at the oven.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "transcript s1 line 5: \"If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven.\""
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "kind": "claim",
+      "parent": null,
+      "order": 3,
+      "part": "body",
+      "words": 60,
+      "covers": [
+        "must_include.1"
+      ],
+      "text": "The eleven years of notebooks are the same kind of work at a longer scale: slow, unseen, and the reason the result is good.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "kind": "open-question",
+      "parent": "n4",
+      "order": 1,
+      "text": "Whose notebooks are they, and what is in them? The brief requires them but the material I have doesn't say."
+    },
+    {
+      "id": "n6",
+      "kind": "claim",
+      "parent": null,
+      "order": 4,
+      "part": "body",
+      "words": 55,
+      "text": "The person who knows the craft can tell who will be good from how they treat the slow part, not from the finished loaf.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "transcript s2 line 9: \"That was the moment she knew he would be good.\""
+        }
+      ]
+    },
+    {
+      "id": "n7",
+      "kind": "open-question",
+      "parent": "n6",
+      "order": 1,
+      "text": "Who are \"she\" and \"he\", and what did he do in that moment? The quote is the turn but the brief doesn't carry the scene."
+    },
+    {
+      "id": "n8",
+      "kind": "claim",
+      "parent": null,
+      "order": 5,
+      "part": "ask",
+      "words": 40,
+      "text": "The ask: before you praise the loaf, find out who fed the starter, and protect that work on your team.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "brief purpose (writer, rev 3): \"Make readers protect the unglamorous early work on their teams.\""
+        }
+      ]
+    },
+    {
+      "id": "n9",
+      "kind": "open-question",
+      "parent": "n8",
+      "order": 1,
+      "text": "Should the ask name a workplace equivalent of the starter, or leave the translation to the reader? The brief gives no team example."
+    }
+  ],
+  "source": {
+    "brief_digest": "233c9c53e4334086b660bd9ed68581e30f00f7939972ceca72c950d8eb17d697",
+    "draft_digest": null
+  }
+}

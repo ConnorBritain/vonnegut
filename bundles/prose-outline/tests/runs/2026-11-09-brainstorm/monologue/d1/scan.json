@@ -1,0 +1,17 @@
+{
+  "schema": "transcript-scan/1",
+  "source_digest": "ab20ffe81d2e1d97296cabb366bcce5c0a23608bf1249e83be2e1a39fa82f5d2",
+  "format": "plain",
+  "words": 962,
+  "clean": { "digest": "ab20ffe81d2e1d97296cabb366bcce5c0a23608bf1249e83be2e1a39fa82f5d2", "lines": 33 },
+  "turns": [ { "speaker": "S1", "line": 1, "words": 962 } ],
+  "segments": [
+    { "id": "s1", "start_line": 1, "end_line": 5, "sentences": 11, "words": 176, "top_terms": ["starter", "bakery", "bakers", "dough", "month"] },
+    { "id": "s2", "start_line": 7, "end_line": 13, "sentences": 11, "words": 164, "top_terms": ["part", "notebook", "noticed", "patience", "starter"] },
+    { "id": "s3", "start_line": 13, "end_line": 15, "sentences": 9, "words": 131, "top_terms": ["minutes", "updates", "agenda", "decision", "keep"] },
+    { "id": "s4", "start_line": 17, "end_line": 21, "sentences": 11, "words": 165, "top_terms": ["meeting", "document", "update", "agenda", "decision"] },
+    { "id": "s5", "start_line": 21, "end_line": 25, "sentences": 10, "words": 121, "top_terms": ["essays", "every", "future", "readers", "small"] },
+    { "id": "s6", "start_line": 25, "end_line": 33, "sentences": 15, "words": 205, "top_terms": ["essay", "small", "toolbox", "bakery", "because"] }
+  ],
+  "status": "measured"
+}

@@ -49,6 +49,19 @@ Jobs without an outline, and their receipts, are unchanged. The runtime ignores
 - The full mutation sweep is green. Four mutations are all caught: open
   questions dropped, the length band forgotten, a fact with no source, and an
   unconfirmed answer taken into the job.
-- **No end-to-end runtime run from an outline has been dispatched**, so it is
-  recorded as not run.
+- **End to end, measured on 2026-11-09:** 3 draws per input
+  ([`tests/runs/2026-11-09-outline-draft`](tests/runs/2026-11-09-outline-draft/README.md)).
+  The identity was preference-only, so voice was not evaluated, and the writer
+  was simulated.
+  - **Positive: met 3/3.** Every receipt carries `Drafted from outline: project
+    not-evaluated, revision not-evaluated, shape problem-solution; outline
+    digest f7be2b53…`. The runtime's own counter gives 970, 942 and 915 words,
+    all within 800–1100. `check-result` gives `"status":"passed"`. Every job
+    matches a fresh `outline-job` build.
+  - **Negative (`outline-open.json`): met 3/3.** Each draw reported the
+    `refused` result naming open question n6. None used `--allow-open`, ran
+    the runtime, or edited the job.
+  - The fixture outline (`problem-solution`) contradicts the fixture brief's
+    shape (`narrative-arc`), and `outline-job` does not flag it. All six draws
+    noticed. Fixed in 0.10.1 ([`RELEASE-v0.10.1.md`](RELEASE-v0.10.1.md)).
 - Section budgets are guidance to the drafter. Only the overall band is enforced.

@@ -1,0 +1,2 @@
+{"schema":"prose-result-verification/1","status":"passed","result_status":"checked","mechanical_status":"not-evaluated","reason":"Report reproduced against exact final bytes","telemetry_status":"not-evaluated","delivery_status":"passed","claim":"Receipt integrity only; existing check statuses are unchanged, not upgraded."}
+exit 0

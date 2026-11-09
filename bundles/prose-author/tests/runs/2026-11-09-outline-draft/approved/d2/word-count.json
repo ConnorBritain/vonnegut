@@ -1,0 +1,20 @@
+{
+  "counter": "visible-prose/1: Unicode letter/number runs, retaining internal straight or curly apostrophes; hyphens separate words.",
+  "words": 942,
+  "band": [
+    800,
+    1100
+  ],
+  "within": true,
+  "checkRules": {
+    "id": "band",
+    "kind": "word-limit",
+    "directive": "800–1100 words",
+    "enforcement": "enforced",
+    "actual": 942,
+    "minimum": 800,
+    "maximum": 1100,
+    "occurrences": [],
+    "status": "passed"
+  }
+}

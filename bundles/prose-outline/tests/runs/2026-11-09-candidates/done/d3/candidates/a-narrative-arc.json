@@ -1,0 +1,26 @@
+{
+  "mode": "beat-sheet",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "narrative-arc",
+  "length": { "unit": "words", "min": 800, "max": 1100 },
+  "nodes": [
+    { "id": "n1", "kind": "beat", "parent": null, "order": 1, "part": "setup", "words": 170,
+      "text": "The bakery and its starter: if the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven (transcript line 5)." },
+    { "id": "n2", "kind": "beat", "parent": null, "order": 2, "part": "inciting-moment", "words": 100,
+      "text": "The month of feeding the starter begins: work that will show nothing for weeks.",
+      "covers": ["must_include.0"] },
+    { "id": "n3", "kind": "beat", "parent": null, "order": 3, "part": "complication", "words": 300,
+      "text": "The long, unseen middle: the month goes on with nothing to show, set against the eleven years of notebooks.",
+      "covers": ["must_include.0", "must_include.1"] },
+    { "id": "n6", "kind": "open-question", "parent": "n3", "order": 1,
+      "text": "Whose notebooks are the eleven years, and what do they record? The brief names them but doesn't say." },
+    { "id": "n4", "kind": "turn", "parent": null, "order": 4, "part": "turn", "words": 150,
+      "text": "\"That was the moment she knew he would be good.\" (transcript line 9): the slow work is recognised before any loaf proves it." },
+    { "id": "n7", "kind": "open-question", "parent": "n4", "order": 1,
+      "text": "Who are she and he, and what happened in that moment? The brief quotes the line but not the scene." },
+    { "id": "n5", "kind": "beat", "parent": null, "order": 5, "part": "resolution", "words": 180,
+      "text": "Hand it to the team lead: the slow invisible part of the work decided the result (transcript line 11). Leave the reader to protect it, and don't explain the story back to them." }
+  ],
+  "source": { "brief_digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e", "draft_digest": null }
+}

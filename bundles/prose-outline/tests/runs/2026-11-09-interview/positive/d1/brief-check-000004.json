@@ -1,0 +1,20 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": "must_include",
+  "asks": "What has to be in it — stories, examples, facts?",
+  "open_required": [],
+  "open_optional": [
+    "must_include",
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": true
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "section-split/1",
+  "draft_digest": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3",
+  "window": 4,
+  "units": [
+    {
+      "id": "u1f357ef5",
+      "order": 1,
+      "heading": null,
+      "start_line": 1,
+      "end_line": 52,
+      "words": 581,
+      "digest": "1f357ef57bbb6c689cadeaecde86a5b43b15b64cbe2e517b1ddaa35de20bf19f"
+    },
+    {
+      "id": "u6164b565",
+      "order": 2,
+      "heading": null,
+      "start_line": 54,
+      "end_line": 71,
+      "words": 170,
+      "digest": "6164b565624a4d9b22b8d9ed6ad78e9b46258c92d3e0660b036893c666827c5f"
+    },
+    {
+      "id": "ucf0ff025",
+      "order": 3,
+      "heading": null,
+      "start_line": 73,
+      "end_line": 109,
+      "words": 368,
+      "digest": "cf0ff0259d5fc31d7a1ebb65d5d62924aa20ee6aa007179e67f1652d3b83654f"
+    },
+    {
+      "id": "ubc2fbff4",
+      "order": 4,
+      "heading": null,
+      "start_line": 111,
+      "end_line": 158,
+      "words": 609,
+      "digest": "bc2fbff44324510a18dbc5b04e7efbe9b54a226bb3413cc11bc11c43e735944a"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "mode": "argument",
+  "title": "Protect the starter",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "problem-solution",
+  "length": { "unit": "words", "min": 800, "max": 1100 },
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "part": "problem", "words": 230,
+      "text": "Team leads reward the output they can see, so the slow groundwork goes unrewarded and unprotected.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "transcript line 11: \"patience with the slow invisible part of the work\"" },
+        { "slot": "e2", "filled_by": null }
+      ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2, "part": "stakes", "words": 150,
+      "text": "By the time the output is visible, the result is already decided, and it can't be fixed at that stage.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "transcript line 5: \"If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven.\"" }
+      ] },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 3, "part": "solution", "words": 380,
+      "text": "Protect the unglamorous early work the way a baker protects the starter: the month of feeding it, the eleven years of notebooks.",
+      "covers": ["must_include.0", "must_include.1"],
+      "evidence": [
+        { "slot": "e1", "filled_by": "brief must_include.0: the month of feeding the starter" },
+        { "slot": "e2", "filled_by": "brief must_include.1: the eleven years of notebooks" },
+        { "slot": "e3", "filled_by": null }
+      ] },
+    { "id": "n6", "kind": "open-question", "parent": "n3", "order": 1,
+      "text": "What does protecting early work actually look like on a team? The brief has the bakery side of it but no team practice." },
+    { "id": "n4", "kind": "open-question", "parent": null, "order": 4, "part": "objection", "words": 100,
+      "text": "Which objection will a team lead raise first? The brief doesn't name one, so this part is held open." },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 5, "part": "close", "words": 100,
+      "text": "First step: learn to see quality in the slow part, the way she knew he would be good before any loaf proved it.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "transcript line 9: \"That was the moment she knew he would be good.\"" }
+      ] }
+  ],
+  "source": { "brief_digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e", "draft_digest": null }
+}

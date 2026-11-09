@@ -1,0 +1,134 @@
+{
+  "schema": "voice-outline/1",
+  "id": "starter",
+  "revision": 1,
+  "parent_digest": null,
+  "mode": "argument",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "letter",
+  "length": {
+    "unit": "words",
+    "min": 200,
+    "max": 300
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "claim",
+      "parent": null,
+      "order": 1,
+      "part": "occasion",
+      "words": 30,
+      "text": "I'm writing to you, a lead who rewards what shows up at the oven, about the part of the work that never does.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "kind": "open-question",
+      "parent": "n1",
+      "order": 1,
+      "text": "What prompts the letter now? The brief names the reader but not the occasion, and a letter without one is an essay with a salutation."
+    },
+    {
+      "id": "n3",
+      "kind": "claim",
+      "parent": null,
+      "order": 2,
+      "part": "body",
+      "words": 70,
+      "covers": [
+        "must_include.0"
+      ],
+      "text": "The loaves are decided in the month of feeding the starter, not at the oven.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "transcript s1 line 5: \"If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven.\""
+        },
+        {
+          "slot": "e2",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "kind": "claim",
+      "parent": null,
+      "order": 3,
+      "part": "body",
+      "words": 70,
+      "covers": [
+        "must_include.1"
+      ],
+      "text": "The eleven years of notebooks are the same slow, invisible work, kept up whether or not anyone looked.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "kind": "open-question",
+      "parent": "n4",
+      "order": 1,
+      "text": "Whose notebooks are they, and what is in them? The brief requires them but doesn't say."
+    },
+    {
+      "id": "n6",
+      "kind": "claim",
+      "parent": null,
+      "order": 4,
+      "part": "body",
+      "words": 50,
+      "text": "The person who knows the craft judges people by that invisible work, not by the output.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "transcript s2 line 9: \"That was the moment she knew he would be good.\""
+        }
+      ]
+    },
+    {
+      "id": "n7",
+      "kind": "open-question",
+      "parent": "n6",
+      "order": 1,
+      "text": "Who are \"she\" and \"he\", and what did he do in that moment? The brief quotes the line but not the scene."
+    },
+    {
+      "id": "n8",
+      "kind": "claim",
+      "parent": null,
+      "order": 5,
+      "part": "ask",
+      "words": 40,
+      "text": "Protect the unglamorous early work on your team before it has anything to show.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n9",
+      "kind": "open-question",
+      "parent": "n8",
+      "order": 1,
+      "text": "What exactly should a lead do on Monday? The brief gives the purpose but not a concrete action to ask for."
+    }
+  ],
+  "source": {
+    "brief_digest": "233c9c53e4334086b660bd9ed68581e30f00f7939972ceca72c950d8eb17d697",
+    "draft_digest": null
+  }
+}

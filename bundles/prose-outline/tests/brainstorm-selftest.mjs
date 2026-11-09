@@ -104,6 +104,9 @@ try {
   check("a well-formed brief validates, and so does an empty one", errs(brief()).length === 0 && errs(bs.emptyBrief()).length === 0, errs(brief()).join("; "));
   check("a null thesis with no open question is refused — thin material yields questions, not silence", errs(brief({ angles: [angle({ thesis: null })] })).some((e) => /null thesis/.test(e))
     && errs(brief({ angles: [angle({ thesis: null, open_questions: ["What is the claim?"] })] })).length === 0);
+  check("a null audience with an open question validates; without one it is refused, and a placeholder is the writer's problem to avoid, not the schema's",
+    errs(brief({ angles: [angle({ audience: null, open_questions: ["Who is this for?"] })] })).length === 0
+      && errs(brief({ angles: [angle({ audience: null })] })).some((e) => /null audience needs/.test(e)));
   check("an angle that quotes nothing is refused", errs(brief({ angles: [angle({ uses: [] })] })).some((e) => /quote at least one passage/.test(e)));
   check("unknown fields are refused at every level", errs({ ...brief(), extra: 1 }).some((e) => /unknown field extra/.test(e))
     && errs(brief({ angles: [angle({ score: 9 })] })).some((e) => /unknown field score/.test(e)));
@@ -331,6 +334,8 @@ try {
     check("SKILL.md: one question at a time, look it up before asking, done only when brief-check says so, save with --approved",
       /One question at a time/.test(text) && /Look for the answer in the writer's own material/.test(text) && /done: true/.test(text) && /--approved/.test(text) && /Never open another bundle's store yourself/.test(text));
     check("meta.yaml: a planner skill in prose-outline that writes only the brief store", /^kind: planner$/m.test(meta) && /writes: project-brief-store/.test(meta) && /^bundle: prose-outline$/m.test(meta));
+    check("SKILL.md (after the 2026-11-09 run): look up on every turn, confirm found answers, record the writer verbatim, one decision per turn optional ones included",
+      /on every turn, for every\s+decision/.test(text) && /chosen_angle` is the answer to `angle`/.test(text) && /recorded as they said them/.test(text) && /verbatim/.test(text) && /optional decisions included/.test(text));
   }
 } finally {
   rmSync(tmp, { recursive: true, force: true });

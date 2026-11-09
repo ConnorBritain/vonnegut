@@ -1,0 +1,4 @@
+brief-check: not done — next: angle (Which angle is this piece — one of the brainstormed ones, or a new one?)
+  open (required): angle, audience, purpose, form, length, shape, thesis
+  open (optional): must_include, exclude, links, assumptions
+exit 1

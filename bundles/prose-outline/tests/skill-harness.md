@@ -83,9 +83,16 @@ From a session with the bundle installed, for each transcript:
    any quote had to be fixed before showing, and whether the skill tried to save
    or cache without a yes (it must not).
 
-**Status: not run.** No model run of this skill has been dispatched; the
-checker and the example proposals are the evidence until one is, and an
-undispatched run is recorded as not run, never as passed.
+## Runs
+
+| run | draws | positive (monologue) | negative (rambling) | quotes fixed before showing | saved without a yes |
+|---|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-brainstorm/README.md) | 3 | `angles-check: ok`, `"expect": "concrete", "findings": []` on 3/3 | `angles-check: ok`, `"expect": "underspecified", "findings": []` on 3/3 (no thesis on any angle) | 0 of 6 | 0 of 6 |
+
+The run found a mismatch: `angles-check` accepts `audience: null` on an angle,
+but `brief-store save` refuses it (`angles[0].audience is required`). On 4 of 6
+draws the skill then saved a placeholder audience ("undecided"). This is a
+follow-up, and the run's README has the detail.
 
 # Testing the prose-interview skill
 
@@ -95,7 +102,7 @@ the conversation went.
 
 | | starting brief | the promise | checked by |
 |---|---|---|---|
-| positive | the monologue's brief after brainstorming (angles saved, no decisions) | the first questions are **confirmations** of answers found in the transcript, quoted with their line, not fresh asks | the saved brief: early decisions carry `source: "transcript"` and evidence that `brief-check --clean` verifies `exact` |
+| positive | the monologue's brief after brainstorming (angles saved, no decisions) | every required decision whose answer the material contains (the transcript, the summary, the brief's chosen angle) is put as a **confirmation**, quoted with its location, not asked fresh | the saved brief: early decisions carry `source: "transcript"` and evidence that `brief-check --clean` verifies `exact` |
 | negative | the same brief, with the writer saying "your call" twice and "skip" once | a recommendation is never recorded as `source: "writer"`; the interview is never declared done while `brief-check` says otherwise; one question per turn | `brief-check` on every saved revision, and the session transcript |
 
 The example briefs in [`fixtures/briefs-interview/`](fixtures/briefs-interview/)
@@ -120,9 +127,11 @@ not model output.
    - whether any `source: "writer"` record holds words the writer did not say;
    - whether the session ever said "done" while `brief-check` said otherwise.
 
-**Status: not run.** No model run of this skill has been dispatched. Until one
-is, the evidence is the brief-check fixtures and the store tests, and an
-undispatched run is recorded as not run, never as passed.
+## Runs
+
+| run | draws | positive | negative | two decisions in one turn | `writer` records holding words not said | done while brief-check disagreed |
+|---|---|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-interview/README.md) | 3 | **not met as written, 0/3**: every draw opened on the angle as an open choice. Confirmations of found answers: 4, 2 and 1 of 7 required questions. The saved transcript-sourced evidence verifies (`evidence_problems: []`). | **met 3/3**: "your call" saved as `recommended` 6/6, skip saved as null, `brief-check: not done … blocked by: length` and no draw said done | 1 of 6 (positive d3, the optional four together) | **5 of 6 draws** ("Monday", "(transcript lines 13–21)", "first" added) | 0 of 6 |
 
 # Testing the outline skill's candidate mode
 
@@ -138,7 +147,11 @@ The example candidates in [`fixtures/candidates/`](fixtures/candidates/) show
 one clean candidate and two with a planted problem each, and
 `expected-compare.md` shows the table they produce. They are not model output.
 
-**Status: not run.** No model run of candidate mode has been dispatched. Record
-a run under `tests/runs/<date>-candidates/` with each candidate, its
-proposal-check output and the comparison; until then the evidence is the
-checker and the fixtures, never a pass.
+## Runs
+
+Record each run under `tests/runs/<date>-candidates/`, with each candidate, its
+proposal-check output and the comparison.
+
+| run | draws | positive (800–1100) | negative (200–300) | only the pick saved | saved without a yes to saving |
+|---|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-candidates/README.md) | 3 | 3 candidates in 3 shapes, `proposal-check — clean` ×3 and `findings \| none \| none \| none` on 3/3 | one `letter` candidate (260 words, `proposal-check — clean`), and the reply says only one shape fits, on 3/3 | 6 of 6 | **2 of 6**: narrow d2 and d3 saved on the pick alone, under a project name the writer never gave |

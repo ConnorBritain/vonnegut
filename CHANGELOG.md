@@ -22,6 +22,44 @@ it is not yet in their hands.
   handoff (K) and a chief-editor reading pass (L), with one spec each under
   `docs/roadmap/` and the end-to-end path in [`docs/workflow.md`](docs/workflow.md).
   No bundle version changes.
+- **Measured** the `prose-brainstorm` skill (prose-outline): first run,
+  `tests/runs/2026-11-09-brainstorm`, monologue and ramble × 3 draws.
+  `angles-check: ok` on all six. Positive met 3/3, and negative met 3/3 with no
+  thesis invented. No quote needed fixing, and nothing was saved without a yes.
+  The store refused a null angle audience that the check accepts, and 4 of 6
+  draws saved a placeholder instead. No prompt edited; follow-up.
+- **Measured** the `prose-edit` skill (prose-review): first run,
+  `tests/runs/2026-11-09-edit`, sectioned draft (structure CLEAN, skeptical-cto
+  REVISE) and an all-CLEAN leave-one-out essay × 3 draws.
+  - `notes-check: clean` on all six.
+  - Positive met 3/3, with each consolidated note in exactly one unit.
+  - Negative met 3/3, with no notes but the writer's.
+  - No session critique entered a ledger. 4 of 6 draws named passages when
+    routing a "what do you think?" to an unrun critic.
+- **Measured** drafting from an approved outline (prose-author `prose-draft`):
+  first end-to-end run, `tests/runs/2026-11-09-outline-draft`, approved and
+  open outline × 3 draws, preference-only identity.
+  - Positive met 3/3: the receipt carries "Drafted from outline", and the
+    drafts are 970, 942 and 915 words by the runtime's counter.
+  - Negative met 3/3: the refusal was reported, with no `--allow-open` and no
+    run.
+  - The fixture outline's shape contradicts the fixture brief's, and
+    `outline-job` does not flag it. Follow-up.
+- **Measured** the `prose-interview` skill (prose-outline): first run,
+  `tests/runs/2026-11-09-interview`, positive and negative × 3 draws, starting
+  from the brainstorm run's saved brief.
+  - Negative met 3/3. "Your call" was saved as `recommended` 6/6, and no draw
+    said done while `brief-check` reported `blocked by: length`.
+  - Positive not met as written, 0/3: no draw opened with a confirmation. The
+    saved transcript evidence verifies.
+  - 5 of 6 draws filed the session's own words under `source: "writer"`.
+  - No prompt edited; follow-up.
+- **Measured** `prose-outline` candidate mode: first run,
+  `tests/runs/2026-11-09-candidates`, 800–1100 and 200–300 word briefs × 3
+  draws. Positive met 3/3, with three clean candidates in three shapes.
+  Negative met 3/3, with one clean `letter` and the reply saying only one shape
+  fits. Only the pick was saved, 6/6, but 2 of 6 draws saved on the pick alone
+  without a yes to saving. No prompt edited; follow-up.
 - **Measured** the `prose-research` skill: first run,
   `tests/runs/2026-11-09-skill`, positive and negative × 3 draws. Positive met
   3/3 against `claims-check` over the skill's own maps. Negative behaviour met
@@ -126,6 +164,17 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
   neither has been run here.
 
 ## prose-outline
+
+### [0.4.1] — fixes from the first skill harness runs
+
+Release notes in [`RELEASE-v0.4.1.md`](bundles/prose-outline/RELEASE-v0.4.1.md).
+
+- **Fixed** prose-interview: confirmations for every decision the material
+  answers (from the brief's chosen angle on), the writer's replies recorded
+  verbatim, one decision per turn including optional ones. Candidate mode: a
+  pick is not a yes to saving, and no project name is invented.
+  `project-brief/1` accepts a null audience with an open question. One
+  mutation. The prompt fixes are unmeasured; a re-run is owed.
 
 ### [0.4.0] — outline baselines
 
@@ -393,6 +442,14 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 ---
 
 ## prose-author
+
+### [0.10.1] — fixes from the first outline-draft run
+
+Release notes in [`RELEASE-v0.10.1.md`](bundles/prose-author/RELEASE-v0.10.1.md).
+
+- **Fixed** `outline-job` refuses an outline whose shape or length band
+  contradicts the brief's settled one; the handoff fixture brief agrees with
+  its outline. One mutation.
 
 ### [0.10.0] — drafting from an outline
 

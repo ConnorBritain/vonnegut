@@ -24,10 +24,10 @@ detector outcomes. Example facts are not automatically facts about you.
 
 | Bundle | Version | Purpose |
 |---|---|---|
-| [prose-author](bundles/prose-author/) | 0.10.0 | Drafting (from a brief or an approved outline), profiles, persistent preferences, opt-in history, corpus intake, repurposing |
+| [prose-author](bundles/prose-author/) | 0.10.1 | Drafting (from a brief or an approved outline), profiles, persistent preferences, opt-in history, corpus intake, repurposing |
 | [prose-review](bundles/prose-review/) | 0.8.0 | Voice, fidelity (provenance-aware), structure, medium and reader-persona critics, a chief editor's reading pass, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
-| [prose-outline](bundles/prose-outline/) | 0.4.0 | Brainstormed angles from a voice-memo transcript, an interview that settles the brief, outlines from a brief or candidate outlines in different shapes, a draft's implied outline, diffs, per-project persistence |
+| [prose-outline](bundles/prose-outline/) | 0.4.1 | Brainstormed angles from a voice-memo transcript, an interview that settles the brief, outlines from a brief or candidate outlines in different shapes, a draft's implied outline, diffs, per-project persistence |
 | [prose-bible](bundles/prose-bible/) | 0.1.0 | Cross-file continuity index, per-project bible, and a critic that cites two places or nothing |
 | [prose-research](bundles/prose-research/) | 0.1.0 | Sources pinned by sha, a dossier and claims ledger, quote / link / coverage checks, provenance for the fidelity critic |
 

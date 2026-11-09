@@ -1,0 +1,53 @@
+{
+  "angles": [
+    {
+      "id": "a1",
+      "title": "Days I walk",
+      "thesis": null,
+      "audience": null,
+      "shape": "personal-essay",
+      "uses": [
+        { "segment": "s1", "line": 3, "quote": "something about routines, but I don't know what I would say about routines that people haven't already said a hundred times" },
+        { "segment": "s1", "line": 5, "quote": "Maybe it's about how I feel different on days I walk." }
+      ],
+      "leaves_out": ["s2"],
+      "open_questions": [
+        "How do you feel different on days you walk? The memo says you do, not how.",
+        "What would you say about routines that hasn't been said a hundred times? That is the piece's claim, and it isn't in the memo yet."
+      ]
+    },
+    {
+      "id": "a2",
+      "title": "It felt like it mattered",
+      "thesis": null,
+      "audience": null,
+      "shape": "meditation",
+      "uses": [
+        { "segment": "s1", "line": 1, "quote": "I had a feeling about something, like a mood more than an idea." },
+        { "segment": "s2", "line": 7, "quote": "But it felt like it mattered while I was walking, and I can't say why." }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "Is the subject the feeling itself, or the habit of chasing a feeling before it fades (\"I just wanted to get the feeling down before it goes\")?",
+        "Should the piece stay open, or does it have to arrive at why it mattered?"
+      ]
+    },
+    {
+      "id": "a3",
+      "title": "The city in the morning",
+      "thesis": null,
+      "audience": null,
+      "shape": "sketch",
+      "uses": [
+        { "segment": "s1", "line": 3, "quote": "The light was nice. There were a lot of dogs out." },
+        { "segment": "s2", "line": 5, "quote": "My sister says I should write about the city more, but I don't know which part of the city." }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "Which city, and which part of it? The memo doesn't name one.",
+        "Are the dogs worth keeping? You called them \"silly\", but they are one of the two concrete details you noticed."
+      ]
+    }
+  ],
+  "unused_segments": []
+}

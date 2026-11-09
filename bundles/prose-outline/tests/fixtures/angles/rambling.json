@@ -4,7 +4,7 @@
       "id": "a1",
       "title": "A morning walk, before it has a point",
       "thesis": null,
-      "audience": "unknown \u2014 the writer has not said",
+      "audience": null,
       "shape": "letter",
       "uses": [
         {
@@ -23,7 +23,7 @@
       "id": "a2",
       "title": "Writing about the city",
       "thesis": null,
-      "audience": "unknown \u2014 the writer has not said",
+      "audience": null,
       "shape": "letter",
       "uses": [
         {
@@ -34,7 +34,8 @@
       ],
       "leaves_out": [],
       "open_questions": [
-        "Which part of the city, and why that part?"
+        "Which part of the city, and why that part?",
+        "Who would read this?"
       ]
     }
   ],

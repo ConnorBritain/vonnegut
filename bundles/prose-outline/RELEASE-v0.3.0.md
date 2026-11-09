@@ -64,9 +64,21 @@ shared module, and the results are identical.
   - staleness removed;
   - a found answer without evidence;
   - a question asked before its dependencies.
-- **No model run of the skill has been dispatched.** The harness is in
-  [`tests/skill-harness.md`](tests/skill-harness.md). Until a run is dispatched,
-  the evidence is the bookkeeping, never a pass.
+- **Measured on 2026-11-09:** 3 draws per script
+  ([`tests/runs/2026-11-09-interview`](tests/runs/2026-11-09-interview/README.md),
+  harness in [`tests/skill-harness.md`](tests/skill-harness.md)). The writer
+  was simulated.
+  - **Negative: met 3/3.** Every "your call" was saved as `recommended`, 6 of
+    6. The skip was saved as null. Every saved revision reads `brief-check: not
+    done … blocked by: length`, and no draw said done.
+  - **Positive: not met as written, 0/3.** No draw opened with a confirmation.
+    Confirmations of found answers came later: 4, 2 and 1 of the 7 required
+    questions. The transcript evidence that was saved verifies exactly.
+  - **5 of 6 draws** saved `source: "writer"` values with words the writer did
+    not say, such as "Monday" and "(transcript lines 13–21)".
+  - One draw put four optional decisions in one turn.
+  - Follow-up. No prompt was edited in that run. The prompt is fixed in 0.4.1,
+    [`RELEASE-v0.4.1.md`](RELEASE-v0.4.1.md); a re-run is owed.
 - Known limits:
   - the tree suits non-fiction;
   - answers found in sources are only as good as what was supplied;

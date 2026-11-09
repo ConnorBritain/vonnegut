@@ -1,0 +1,17 @@
+{
+  "draft": "draft.md",
+  "voice_profile": null,
+  "mode": "plan-only",
+  "entries": [
+    {
+      "id": "e01",
+      "source": "writer",
+      "location": {
+        "line": 49,
+        "quote": "I began to hear what they were saying."
+      },
+      "change": "Cut the sentence containing 'I began to hear what they were saying.'",
+      "reason": "Cut this sentence. The dialogue that follows makes it obvious."
+    }
+  ]
+}

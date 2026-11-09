@@ -1,0 +1,105 @@
+{
+  "schema": "voice-outline/1",
+  "id": "starter-is-the-bakery",
+  "revision": 1,
+  "parent_digest": null,
+  "mode": "argument",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "letter",
+  "length": {
+    "unit": "words",
+    "min": 200,
+    "max": 300
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "claim",
+      "parent": null,
+      "order": 1,
+      "part": "occasion",
+      "words": 30,
+      "text": "To team leads who reward what they can see: here is a story about what you can't see yet.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "kind": "claim",
+      "parent": null,
+      "order": 2,
+      "part": "body",
+      "words": 100,
+      "text": "The month of feeding the starter is where the bread is made; nothing done at the oven can rescue a weak one.",
+      "covers": [
+        "must_include.0"
+      ],
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "transcript s1 line 5: \"If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven.\""
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "kind": "claim",
+      "parent": null,
+      "order": 3,
+      "part": "body",
+      "words": 90,
+      "text": "The eleven years of notebooks are the same slow invisible work, kept up long enough to become judgement.",
+      "covers": [
+        "must_include.1"
+      ],
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        },
+        {
+          "slot": "e2",
+          "filled_by": "transcript s2 line 9: \"That was the moment she knew he would be good.\""
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "kind": "open-question",
+      "parent": "n3",
+      "order": 1,
+      "text": "The brief has no detail on the notebooks: whose they are, what is in them, and how they connect to the moment in s2 line 9."
+    },
+    {
+      "id": "n5",
+      "kind": "claim",
+      "parent": null,
+      "order": 4,
+      "part": "ask",
+      "words": 40,
+      "text": "Protect the unglamorous early work on your team before it has anything to show.",
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n6",
+      "kind": "open-question",
+      "parent": "n5",
+      "order": 1,
+      "text": "What does protecting it look like in practice? The brief states the purpose but names no concrete action for the reader to take."
+    }
+  ],
+  "source": {
+    "brief_digest": "233c9c53e4334086b660bd9ed68581e30f00f7939972ceca72c950d8eb17d697",
+    "draft_digest": null
+  }
+}

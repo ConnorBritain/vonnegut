@@ -1,0 +1,6 @@
+{
+  "status": "refused",
+  "reasons": [
+    "outline: open question n6: Does the objection need its own section, or a sentence in the solution?"
+  ]
+}

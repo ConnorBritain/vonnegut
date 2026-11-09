@@ -1,0 +1,38 @@
+{
+  "mode": "argument",
+  "title": "Feed the starter",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "problem-solution",
+  "length": { "unit": "words", "min": 800, "max": 1100 },
+  "brief_ref": { "project": "starter", "revision": 4, "digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e" },
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "part": "problem", "words": 230,
+      "text": "Team leads reward what they can see, but the result is decided upstream, before anyone looks, the way bread fails twelve hours before the dough is touched.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "transcript line 5: failure happened twelve hours before they touched the dough" },
+        { "slot": "e2", "filled_by": null }
+      ] },
+    { "id": "n2", "kind": "open-question", "parent": "n1", "order": 1,
+      "text": "The shape fails if the problem stays abstract. What team-side moment makes a team lead recognise it? The brief gives none (slot e2)." },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 2, "part": "stakes", "words": 150,
+      "text": "Rush the groundwork and the failure can't be fixed at the end, and the people who rushed never learn why.",
+      "evidence": [ { "slot": "e1", "filled_by": "transcript line 5: 'nobody can fix that at the oven'; rushers 'never understand why their bread fails'" } ] },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 3, "part": "solution", "words": 200,
+      "covers": ["must_include.0"],
+      "text": "Protect a stretch of slow work on purpose: the bakery's first month of feeding the starter, with no loaves shaped.",
+      "evidence": [ { "slot": "e1", "filled_by": "transcript line 3: the first-month rule" } ] },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 4, "part": "solution", "words": 170,
+      "covers": ["must_include.1"],
+      "text": "Keep a record of the slow part so you can read back instead of guessing.",
+      "evidence": [ { "slot": "e1", "filled_by": "transcript line 7: eleven years of notebooks above the ovens" } ] },
+    { "id": "n6", "kind": "claim", "parent": null, "order": 5, "part": "objection", "words": 140,
+      "text": "'It's hazing.' Her best baker thought so too, until week three, when he noticed the rain slowing the rise.",
+      "evidence": [ { "slot": "e1", "filled_by": "transcript line 9" } ] },
+    { "id": "n7", "kind": "claim", "parent": null, "order": 6, "part": "close", "words": 100,
+      "text": "The first step for a team lead on Monday.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n8", "kind": "open-question", "parent": "n7", "order": 1,
+      "text": "What is the concrete first step? The brief's purpose ('protect the unglamorous early work') names the goal but not the action." }
+  ],
+  "source": { "brief_digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e", "draft_digest": null }
+}

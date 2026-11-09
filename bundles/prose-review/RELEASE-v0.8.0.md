@@ -39,8 +39,19 @@ The critics, the reviser and every published run are unchanged. Skipping step
 - The full mutation sweep is green. Four mutations in the new `edit` suite are
   all caught: a note placed anywhere, declined notes exported, an unread unit
   ignored, and a finished pass with notes still proposed.
-- **No model run of the skill has been dispatched**, so it is recorded as not
-  run. "Adds no finding of its own" is a prompt rule, partly backed by the
-  ledger refusing any source but a critic or the writer.
+- **Measured on 2026-11-09:** 3 draws per draft
+  ([`tests/runs/2026-11-09-edit`](tests/runs/2026-11-09-edit/README.md)). The
+  writer was simulated, and one review was shared by all draws: structure
+  critic plus skeptical-cto reader on `draft-sectioned.md`, and an all-CLEAN
+  structure review on a leave-one-out Chesterton essay.
+  - `notes-check: clean` on all six.
+  - Positive: `2 accepted, 1 declined, 0 deferred, 0 proposed`. Each
+    consolidated note is filed once, in its own unit. Met 3/3.
+  - Negative: `1 accepted … exported 1 plan entries`, the writer's own note
+    and nothing else. Met 3/3.
+  - Asked "what do you think?", every draw declined to give its own read. But
+    4 of 6 named passages as examples of what an unrun critic would examine.
+  - "Adds no finding of its own" is still a prompt rule, partly backed by the
+    ledger refusing any source but a critic or the writer.
 - The pass is only as good as the critics behind it, and only their measured
   bounds are evidence.

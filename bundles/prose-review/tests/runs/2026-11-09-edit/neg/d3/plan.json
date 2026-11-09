@@ -1,0 +1,17 @@
+{
+  "draft": "draft.md",
+  "voice_profile": null,
+  "mode": "plan-only",
+  "entries": [
+    {
+      "id": "e01",
+      "source": "writer",
+      "location": {
+        "line": 47,
+        "quote": "And about the time that we reached the suburb of the city, and the traffic grew thinner, and the noises more few, I began to hear what they were saying."
+      },
+      "change": "Cut the whole sentence beginning 'And about the time that we reached the suburb of the city' and ending 'I began to hear what they were saying.' (lines 47-50)",
+      "reason": "The dialogue that follows makes it obvious."
+    }
+  ]
+}

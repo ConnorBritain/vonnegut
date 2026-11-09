@@ -84,6 +84,11 @@ a signal, not a finding: say it, do not force the budget into the range. The
 table has no scores and no winner; the writer chooses. Save only the one they
 pick, below. The others stay task-local.
 
+**A pick is not a yes to saving.** When the writer picks a candidate, show it
+and ask whether to save it; run the save only on that yes, in a later turn.
+Save under the brief's project name. If there is no brief or no project name,
+ask the writer for one. Never make one up from the outline's title.
+
 ## Save only on approval
 
 Locate the store first and say what it found:

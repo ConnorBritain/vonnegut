@@ -1,0 +1,27 @@
+{
+  "turns": [
+    {
+      "turn": 1,
+      "init_model": "claude-opus-5-5",
+      "seconds": 34,
+      "model_turns": 11,
+      "cost_usd": 0.3000824,
+      "is_error": false
+    },
+    {
+      "turn": 2,
+      "init_model": "claude-opus-5-5",
+      "seconds": 8,
+      "model_turns": 1,
+      "cost_usd": 0.31736040000000004,
+      "is_error": false
+    }
+  ],
+  "ended": "writer-done",
+  "skill_cost_usd": 0.6174,
+  "writer_cost_usd": 0.042,
+  "model_usage_cost_usd": {
+    "claude-opus-5-5": 0.6174428000000001
+  },
+  "first_message": "/prose-author:prose-draft Draft the piece from my approved outline. The outline export is outline.json and the brief is brief.json, both in this directory."
+}

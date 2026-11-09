@@ -1,0 +1,25 @@
+{
+  "schema": "edit-notes/1",
+  "draft_digest": "b7469508565a75b304c9efa2839fcffc051c674bc894c294df6fd10c1ba0d4e3",
+  "finished": true,
+  "units": [
+    { "id": "u48cf569d", "status": "read", "skip_reason": null },
+    { "id": "ua1f2aac3", "status": "read", "skip_reason": null },
+    { "id": "ua41483fb", "status": "read", "skip_reason": null },
+    { "id": "u4e83b821", "status": "read", "skip_reason": null }
+  ],
+  "notes": [
+    { "id": "N1", "unit": "ua1f2aac3", "source": "reader-critic:skeptical-cto",
+      "line": 14, "quote": "Teams work the same way.",
+      "note": "Where the reader stopped: the case rests on this analogy without saying what the 'starter' is in a real org or how starving it causes the failure.",
+      "change": "Say what the starter is on a team, the first weeks of onboarding work, before making the comparison.", "status": "accepted", "writer_comment": null },
+    { "id": "N2", "unit": "u4e83b821", "source": "reader-critic:skeptical-cto",
+      "line": 29, "quote": "Give the new person a month on the slow part.",
+      "note": "Forced choice: asks for a month of every new hire's output, puts no cost on it, and offers only the bakery story as benefit.",
+      "change": null, "status": "declined", "writer_comment": "The cost is the point. I'm not putting a number on it." },
+    { "id": "N3", "unit": "u4e83b821", "source": "writer",
+      "line": 30, "quote": "because that is when you know",
+      "note": "Repeats the line about the moment she knew.",
+      "change": "Cut the phrase 'because that is when you know'.", "status": "accepted", "writer_comment": null }
+  ]
+}
