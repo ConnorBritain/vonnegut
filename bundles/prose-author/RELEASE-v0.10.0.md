@@ -63,5 +63,5 @@ Jobs without an outline, and their receipts, are unchanged. The runtime ignores
     the runtime, or edited the job.
   - The fixture outline (`problem-solution`) contradicts the fixture brief's
     shape (`narrative-arc`), and `outline-job` does not flag it. All six draws
-    noticed. Follow-up.
+    noticed. Fixed in 0.10.1 ([`RELEASE-v0.10.1.md`](RELEASE-v0.10.1.md)).
 - Section budgets are guidance to the drafter. Only the overall band is enforced.

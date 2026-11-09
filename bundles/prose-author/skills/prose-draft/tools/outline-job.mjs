@@ -16,7 +16,8 @@
  *   nodes in reading order (part, words) → ordered facts
  *   filled evidence                      → facts
  *   must-include / exclude               → semantic rules (reviewable, not enforced)
- *   open questions, a null thesis, or an unsettled required decision → refusal,
+ *   open questions, a null thesis, an unsettled required decision, or a shape
+ *     or length band that contradicts the brief's settled one → refusal,
  *     unless --allow-open, which turns each open question into an explicit
  *     "leave this unresolved" semantic rule
  *
@@ -58,6 +59,10 @@ export function outlineJob(outlineDoc, briefDoc = null, { harness, form = null, 
 
   const d = state?.valid ? state.decisions : {};
   const ctxValue = (id) => (state?.valid && state.settled(id) ? d[id].value : null);
+  // The outline must be the plan the brief settled: a different shape or band means one of them changed.
+  const briefShape = ctxValue("shape"), briefBand = ctxValue("length");
+  if (briefShape && outline.shape !== undefined && outline.shape !== briefShape) reasons.push(`outline: shape ${outline.shape} contradicts the brief's settled shape ${briefShape}; revise the outline or the brief`);
+  if (briefBand && outline.length && (outline.length.min !== briefBand.min || outline.length.max !== briefBand.max)) reasons.push(`outline: length band ${outline.length.min}–${outline.length.max} contradicts the brief's settled ${briefBand.min}–${briefBand.max}; revise the outline or the brief`);
   const ctxForm = ctxValue("form")?.form ?? form;
   const ctxPurpose = ctxValue("purpose") ?? purpose;
   if (!ctxForm) reasons.push("no form: give a brief with a settled form, or --form");

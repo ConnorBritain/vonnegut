@@ -136,3 +136,14 @@ In each draw:
   the reference asks. Every draw said so.
 
 These counts and readings were made by the session that ran the harness, not by a person.
+
+## Fixed after this run (prose-author 0.10.1)
+
+- The fixture brief's `shape` decision is now `problem-solution`, so it agrees
+  with `outline.json`.
+- `outline-job` now refuses an outline whose shape or length band contradicts the
+  brief's settled one, naming both. A new fixture, `brief-other-shape.json`, and a
+  mutation cover it.
+
+This run's drafts used the earlier brief. That changes nothing it measured,
+because the job does not carry the shape.

@@ -51,6 +51,11 @@ export async function run(t, { HERE } = {}) {
   const stale = refusal(() => outlineJob(load("outline.json"), load("brief-stale.json"), { harness: "codex" }));
   t.check("a brief whose audience changed after the rest was settled is refused, naming each stale decision",
     ["purpose", "form", "length", "shape", "thesis"].every((d) => (stale ?? []).some((r) => r.includes(`decision ${d} is stale`))));
+  const otherShape = refusal(() => outlineJob(outline, load("brief-other-shape.json"), { harness: "claude" }));
+  t.check("an outline whose shape contradicts the brief's settled shape is refused, naming both", (otherShape ?? []).some((r) => /shape problem-solution contradicts the brief's settled shape narrative-arc/.test(r)));
+  const otherBand = load("brief.json"); otherBand.decisions.length = { ...otherBand.decisions.length, value: { unit: "words", min: 1200, max: 1500 } };
+  t.check("an outline whose band contradicts the brief's settled band is refused", (refusal(() => outlineJob(outline, otherBand, { harness: "claude" })) ?? []).some((r) => /length band 800–1100 contradicts the brief's settled 1200–1500/.test(r)));
+  t.check("the fixture brief and outline agree on shape (found by the 2026-11-09 run)", load("brief.json").decisions.shape.value === outline.shape);
   const nullThesis = { ...outline, thesis: null, nodes: [...outline.nodes, { id: "n9", kind: "open-question", parent: null, order: 9, text: "What is the claim?" }] };
   t.check("a withheld thesis stops the job", (refusal(() => outlineJob(nullThesis, load("brief.json"), { harness: "claude" })) ?? []).some((r) => /thesis is withheld/.test(r)));
   t.check("without a brief, form and purpose must be given; without a harness, the job is refused",
