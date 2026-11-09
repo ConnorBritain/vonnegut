@@ -33,8 +33,9 @@ readers").
   stores hold the writer's own prose, so a hash would hide nothing, and a
   readable path is what "back up the registry together with its referenced
   stores" needs.
-- `<store>` is one of `outlines`, `bible`, `research`. A consumer never reads
-  another consumer's store.
+- `<store>` is one of `outlines`, `bible`, `research` (and, planned in roadmap
+  item H, `brief`, owned by prose-outline like `outlines`). A consumer never reads
+  another consumer's store; two stores owned by the same bundle may read each other.
 
 ## Three registry states, all handled
 

@@ -86,3 +86,42 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] G2 — `personas/{skeptical-cto,first-time-reader,acquisitions-editor,adversarial-reader}.md` + `tools/persona-check.mjs` + fixtures
 - [x] G3 — harness entry staging the persona as input; leave-one-out runs per persona recorded; PROTOCOL.md step 2 conditional spawn; AGENTS.md, wiring, README
 - [x] G4 — prose-review bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+
+### H. Transcript intake and brainstorm — planned
+
+- [ ] H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON
+- [ ] H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned
+- [ ] H3 — `angles-check.mjs` + fixtures
+- [ ] H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative)
+- [ ] H5 — mutations in a `brainstorm` suite; PROTOCOL/README/AGENTS/DESIGN
+- [ ] H6 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+
+### I. Interview — planned
+
+- [ ] I1 — `lib/decisions.mjs` + `references/decisions.md` + `brief-check.mjs` + fixtures
+- [ ] I2 — `prose-interview` SKILL.md + meta.yaml; per-batch brief-store writes with expected revision; skill harness entry
+- [ ] I3 — mutations; PROTOCOL/README/AGENTS/DESIGN
+- [ ] I4 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+
+### J. Outline baselines — planned
+
+- [ ] J1 — six shape files + `shape-check.mjs` + invalid fixtures
+- [ ] J2 — `voice-outline/1` optional fields validated when present; `proposal-check` shape, budget and coverage checks
+- [ ] J3 — `outline-compare.mjs` + expected output; SKILL.md candidate mode; skill harness entry
+- [ ] J4 — mutations; PROTOCOL/README/AGENTS/DESIGN; `references/outline-schema.md`
+- [ ] J5 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+
+### K. Outline → draft handoff — planned
+
+- [ ] K1 — `docs/contracts/outline-handoff.md` + `lib/outline-handoff.mjs` port + parity test
+- [ ] K2 — `outline-job.mjs` + fixtures
+- [ ] K3 — prose-draft SKILL.md path + `references/outline-handoff.md`; PROTOCOL.md; mutations; end-to-end run recorded
+- [ ] K4 — prose-author minor bump, RELEASE notes, CHANGELOG, version pin above, README, ROADMAP status → shipped
+
+### L. Chief-editor reading pass — planned
+
+- [ ] L1 — `section-split.mjs` + fixtures
+- [ ] L2 — `edit-notes/1` + `notes-check.mjs` + export + fixtures
+- [ ] L3 — `prose-edit` SKILL.md + meta.yaml; PROTOCOL.md step 3a; README/AGENTS/DESIGN; skill harness entry
+- [ ] L4 — mutations
+- [ ] L5 — prose-review minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped

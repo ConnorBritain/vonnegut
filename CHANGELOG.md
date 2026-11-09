@@ -17,6 +17,11 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Planned** roadmap sequence 4, the idea-to-draft workflow: transcript intake
+  and brainstorm (H), interview (I), outline baselines (J), outline → draft
+  handoff (K) and a chief-editor reading pass (L), with one spec each under
+  `docs/roadmap/` and the end-to-end path in [`docs/workflow.md`](docs/workflow.md).
+  No bundle version changes.
 - **Added** a durable roadmap — [`docs/ROADMAP.md`](docs/ROADMAP.md), one spec per
   item under `docs/roadmap/`, and a `STATUS.md` checklist that is now the single
   pin for bundle versions — plus `tools/check-roadmap.mjs`, run first by
