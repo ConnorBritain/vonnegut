@@ -165,6 +165,17 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
+### [0.4.1] — fixes from the first skill harness runs
+
+Release notes in [`RELEASE-v0.4.1.md`](bundles/prose-outline/RELEASE-v0.4.1.md).
+
+- **Fixed** prose-interview: confirmations for every decision the material
+  answers (from the brief's chosen angle on), the writer's replies recorded
+  verbatim, one decision per turn including optional ones. Candidate mode: a
+  pick is not a yes to saving, and no project name is invented.
+  `project-brief/1` accepts a null audience with an open question. One
+  mutation. The prompt fixes are unmeasured; a re-run is owed.
+
 ### [0.4.0] — outline baselines
 
 Roadmap item J ([`docs/roadmap/J-outline-baselines.md`](docs/roadmap/J-outline-baselines.md));
@@ -431,6 +442,14 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 ---
 
 ## prose-author
+
+### [0.10.1] — fixes from the first outline-draft run
+
+Release notes in [`RELEASE-v0.10.1.md`](bundles/prose-author/RELEASE-v0.10.1.md).
+
+- **Fixed** `outline-job` refuses an outline whose shape or length band
+  contradicts the brief's settled one; the handoff fixture brief agrees with
+  its outline. One mutation.
 
 ### [0.10.0] — drafting from an outline
 

@@ -26,6 +26,7 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | outline-job forgets the length band | 4 | the outline's length band is a hard word-limit rule in the job |
 | outline-job emits a fact with no source | 8 | every fact in the job traces to a node of the approved outline |
 | outline-job takes unconfirmed answers into the job | 1 | only answers the writer confirmed shape the draft |
+| outline-job drafts an outline whose shape contradicts the brief | 1 | the draft is the plan the brief settled; a contradicting outline is refused, not drafted |
 | repurpose-check reports every mechanical constraint as passed | 3 | mechanical constraints are evaluated on the final bytes, never assumed |
 | repurpose-check drops the fidelity listing against the source | 2 | what the compression dropped is listed for the writer whenever the scanner is present |
 | a medium profile with an unknown field loads | 1 | unknown profile fields are refused by name |
@@ -59,6 +60,7 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | angles-check lets thin material keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
 | brief-store caches the transcript without approval | 1 | nothing persistent is written without approval, the cached source text included |
 | transcript-scan keeps SRT cue numbers in the cleaned text | 3 | cleaning removes subtitle scaffolding and nothing the speaker said |
+| the brief schema accepts a null audience with no open question | 1 | an angle with no named reader says who might read it, as a question |
 | brief-check counts an unconfirmed answer as settled | 2 | a recommendation or a found answer is not the writer's until they say yes; the interview is not done without it |
 | brief-check never marks a downstream answer stale | 3 | changing an answer puts everything that depends on it back to the writer |
 | a found answer needs no evidence | 11 | an answer taken from the writer's material carries the quote it came from |

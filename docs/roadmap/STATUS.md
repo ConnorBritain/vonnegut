@@ -15,9 +15,9 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 | Bundle | Version |
 |---|---|
-| prose-author | 0.10.0 |
+| prose-author | 0.10.1 |
 | prose-bible | 0.1.0 |
-| prose-outline | 0.4.0 |
+| prose-outline | 0.4.1 |
 | prose-research | 0.1.0 |
 | prose-review | 0.8.0 |
 | prose-tell-scan | 0.1.1 |
