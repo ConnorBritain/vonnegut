@@ -17,7 +17,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 |---|---|
 | prose-author | 0.9.0 |
 | prose-bible | 0.1.0 |
-| prose-outline | 0.3.0 |
+| prose-outline | 0.4.0 |
 | prose-research | 0.1.0 |
 | prose-review | 0.7.0 |
 | prose-tell-scan | 0.1.1 |
@@ -103,13 +103,13 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] I3 — mutations; PROTOCOL/README/AGENTS/DESIGN
 - [x] I4 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### J. Outline baselines — in-progress
+### J. Outline baselines — shipped
 
 - [x] J1 — six shape files + `shape-check.mjs` + invalid fixtures
 - [x] J2 — `voice-outline/1` optional fields validated when present; `proposal-check` shape, budget and coverage checks
 - [x] J3 — `outline-compare.mjs` + expected output; SKILL.md candidate mode; skill harness entry
 - [x] J4 — mutations; PROTOCOL/README/AGENTS/DESIGN; `references/outline-schema.md`
-- [ ] J5 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+- [x] J5 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
 ### K. Outline → draft handoff — in-progress
 

@@ -52,7 +52,7 @@ for how a session picks up from here.
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | shipped |
 | 4 | [H. Transcript intake and brainstorm](#h-transcript-intake-and-brainstorm) | `prose-outline` | [H-transcript-brainstorm.md](roadmap/H-transcript-brainstorm.md) | shipped |
 | 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | shipped |
-| 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | in-progress |
+| 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | shipped |
 | 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | in-progress |
 | 4 | [L. Chief-editor reading pass](#l-chief-editor-reading-pass) | `prose-review` | [L-chief-editor.md](roadmap/L-chief-editor.md) | in-progress |
 
@@ -455,7 +455,7 @@ stay task-local.
 name; proposal-check names an overshooting and an uncovering candidate;
 outline-compare reproduces expected output; mutations green.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## K. Outline → draft handoff
 

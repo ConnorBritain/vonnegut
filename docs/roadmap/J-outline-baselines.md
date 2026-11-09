@@ -1,7 +1,9 @@
 # J. Outline baselines
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). End-to-end context: [`docs/workflow.md`](../workflow.md).
+Status: **shipped** as prose-outline 0.4.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-outline/DESIGN.md` and
+`RELEASE-v0.4.0.md`. End-to-end context: [`docs/workflow.md`](../workflow.md).
 
 ## 1. Goal and non-goals
 

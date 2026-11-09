@@ -85,9 +85,10 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
-### [0.4.0] — in progress: outline baselines
+### [0.4.0] — outline baselines
 
-Roadmap item J ([`docs/roadmap/J-outline-baselines.md`](docs/roadmap/J-outline-baselines.md)).
+Roadmap item J ([`docs/roadmap/J-outline-baselines.md`](docs/roadmap/J-outline-baselines.md));
+release notes in [`RELEASE-v0.4.0.md`](bundles/prose-outline/RELEASE-v0.4.0.md).
 
 - **Added** six shapes as data under `skills/prose-outline/shapes/` (argument
   essay, narrative arc, problem–solution, Q&A, numbered lessons, letter) and
