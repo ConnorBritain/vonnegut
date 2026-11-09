@@ -1,0 +1,25 @@
+{
+  "mode": "beat-sheet",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "narrative-arc",
+  "length": { "unit": "words", "min": 800, "max": 1100 },
+  "brief_ref": { "project": "starter", "revision": 4, "digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e" },
+  "nodes": [
+    { "id": "n1", "kind": "act", "parent": null, "order": 1, "part": "setup", "words": 150,
+      "text": "The neighbour's sourdough bakery on the corner, eleven years running; the writer asks how she trains new bakers." },
+    { "id": "n2", "kind": "beat", "parent": null, "order": 2, "part": "inciting-moment", "words": 100,
+      "covers": ["must_include.0"],
+      "text": "Her answer: for the first month they may not shape a single loaf. They feed the starter, clean the proofing baskets, log the cold-room temperature every morning. The writer's first reaction: that sounds brutal." },
+    { "id": "n3", "kind": "beat", "parent": null, "order": 3, "part": "complication", "words": 320,
+      "covers": ["must_include.1"],
+      "text": "Why: the starter is the whole bakery; a weak starter makes flat, sour loaves nobody can fix at the oven, and the failure happens twelve hours before anyone touches the dough. Her proof is the shelf above the ovens: eleven years of batch notebooks she reads back to find the day the starter got tired. Even her best baker hated the month and thought it was hazing." },
+    { "id": "n4", "kind": "turn", "parent": null, "order": 4, "part": "turn", "words": 170,
+      "text": "Three weeks in, he notices the dough rising slower on rainy days and adjusts the water temperature on his own. 'That was the moment she knew he would be good': not his shaping, not his scoring, the fact that he noticed the starter." },
+    { "id": "n5", "kind": "beat", "parent": null, "order": 5, "part": "resolution", "words": 180,
+      "text": "He runs the early shift now. The piece turns to the reader: what is the starter on your team, and who is being rewarded for noticing it?" },
+    { "id": "n6", "kind": "open-question", "parent": "n5", "order": 1,
+      "text": "The transcript gives no team-side example of 'the starter'. Does the resolution name one for team leads, or leave the reader to find their own? The shape warns against explaining what the story already showed." }
+  ],
+  "source": { "brief_digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e", "draft_digest": null }
+}

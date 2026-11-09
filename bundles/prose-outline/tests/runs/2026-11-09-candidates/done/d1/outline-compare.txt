@@ -1,0 +1,11 @@
+| | cand-a-narrative-arc | cand-b-argument-essay | cand-c-problem-solution |
+|---|---|---|---|
+| shape | narrative-arc (beat-sheet) | argument-essay (argument) | problem-solution (argument) |
+| nodes | 6 | 8 | 8 |
+| words allocated | 920 of 800–1100 | 1020 of 800–1100 | 990 of 800–1100 |
+| required parts missing | none | none | none |
+| must-include covered | 2 of 2 | 2 of 2 | 2 of 2 |
+| open questions | 1 | 1 | 2 |
+| share signals | 0 | 0 | 0 |
+| findings | none | none | none |
+exit 0

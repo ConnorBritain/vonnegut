@@ -45,7 +45,15 @@ and the differ are unchanged.
 - The full mutation sweep is green. Four mutations in the new `baselines` suite
   are all caught: the budget check removed, a missing required part accepted, an
   uncovered must-include item ignored, and overfilled shares accepted.
-- **No model run of candidate mode has been dispatched.** The harness is in
-  [`tests/skill-harness.md`](tests/skill-harness.md).
+- **Candidate mode measured on 2026-11-09:** 3 draws per brief
+  ([`tests/runs/2026-11-09-candidates`](tests/runs/2026-11-09-candidates/README.md),
+  harness in [`tests/skill-harness.md`](tests/skill-harness.md)).
+  - Positive: three candidates in three shapes, each `proposal-check — clean`,
+    with `outline-compare` showing `findings | none | none | none`. Met 3/3.
+  - Negative (200–300 words): one `letter` candidate, clean at 260 words, and
+    the reply says only one shape fits. Met 3/3.
+  - Only the picked candidate was saved, 6 of 6. But **2 of 6 draws saved on
+    the writer's pick alone, without a yes to saving**, under an invented
+    project name. Follow-up.
 - Share ranges are starting values, not measurements. Word budgets are plans.
   Six shapes is a starting set.

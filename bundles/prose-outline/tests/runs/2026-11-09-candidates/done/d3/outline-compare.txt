@@ -1,0 +1,11 @@
+| | a-narrative-arc | b-problem-solution | c-letter |
+|---|---|---|---|
+| shape | narrative-arc (beat-sheet) | problem-solution (argument) | letter (argument) |
+| nodes | 7 | 6 | 7 |
+| words allocated | 900 of 800–1100 | 960 of 800–1100 | 980 of 800–1100 |
+| required parts missing | none | none | none |
+| must-include covered | 2 of 2 | 2 of 2 | 2 of 2 |
+| open questions | 2 | 2 | 2 |
+| share signals | 0 | 0 | 0 |
+| findings | none | none | none |
+exit 0

@@ -1,0 +1,27 @@
+{
+  "turns": [
+    {
+      "turn": 1,
+      "init_model": "claude-opus-5-5",
+      "seconds": 137,
+      "model_turns": 26,
+      "cost_usd": 0.7044047999999998,
+      "is_error": false
+    },
+    {
+      "turn": 2,
+      "init_model": "claude-opus-5-5",
+      "seconds": 18,
+      "model_turns": 3,
+      "cost_usd": 0.7853669999999998,
+      "is_error": false
+    }
+  ],
+  "ended": "writer-done",
+  "skill_cost_usd": 1.4898,
+  "writer_cost_usd": 0.068,
+  "model_usage_cost_usd": {
+    "claude-opus-5-5": 1.4897717999999998
+  },
+  "first_message": "/prose-outline:prose-outline Here's my project brief: brief.json. Show me two or three candidate outlines in different shapes so I can pick one."
+}

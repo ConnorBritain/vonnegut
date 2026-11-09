@@ -28,6 +28,12 @@ it is not yet in their hands.
   thesis invented. No quote needed fixing, and nothing was saved without a yes.
   The store refused a null angle audience that the check accepts, and 4 of 6
   draws saved a placeholder instead. No prompt edited; follow-up.
+- **Measured** `prose-outline` candidate mode: first run,
+  `tests/runs/2026-11-09-candidates`, 800–1100 and 200–300 word briefs × 3
+  draws. Positive met 3/3, with three clean candidates in three shapes.
+  Negative met 3/3, with one clean `letter` and the reply saying only one shape
+  fits. Only the pick was saved, 6/6, but 2 of 6 draws saved on the pick alone
+  without a yes to saving. No prompt edited; follow-up.
 - **Measured** the `prose-research` skill: first run,
   `tests/runs/2026-11-09-skill`, positive and negative × 3 draws. Positive met
   3/3 against `claims-check` over the skill's own maps. Negative behaviour met

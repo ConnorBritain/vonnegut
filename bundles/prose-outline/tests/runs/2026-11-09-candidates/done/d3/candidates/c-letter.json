@@ -1,0 +1,43 @@
+{
+  "mode": "argument",
+  "title": "A letter to the team lead about the starter",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "letter",
+  "length": { "unit": "words", "min": 800, "max": 1100 },
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "part": "occasion", "words": 100,
+      "text": "To the team lead who rewards visible output: here is something I learned from bread.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "brief audience: team leads who reward visible output over slow groundwork" }
+      ] },
+    { "id": "n6", "kind": "open-question", "parent": "n1", "order": 1,
+      "text": "What prompts the letter now, and who is the writer to this reader? A letter needs that relationship, and the brief doesn't give it." },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2, "part": "body", "words": 300,
+      "text": "The starter decides the loaf: weak starter, flat sour bread, and nothing at the oven fixes it. That's why the month of feeding it matters.",
+      "covers": ["must_include.0"],
+      "evidence": [
+        { "slot": "e1", "filled_by": "transcript line 5: \"If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven.\"" },
+        { "slot": "e2", "filled_by": "brief must_include.0: the month of feeding the starter" }
+      ] },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 3, "part": "body", "words": 250,
+      "text": "The eleven years of notebooks are the same patience at a longer scale.",
+      "covers": ["must_include.1"],
+      "evidence": [
+        { "slot": "e1", "filled_by": "brief must_include.1: the eleven years of notebooks" },
+        { "slot": "e2", "filled_by": null }
+      ] },
+    { "id": "n7", "kind": "open-question", "parent": "n3", "order": 1,
+      "text": "Whose notebooks are they, and what do they record? The brief doesn't say." },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 4, "part": "body", "words": 200,
+      "text": "Good judges see quality in the slow part: she knew he would be good before any result showed it.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "transcript line 9: \"That was the moment she knew he would be good.\"" }
+      ] },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 5, "part": "ask", "words": 130,
+      "text": "My ask: protect the unglamorous early work on your team, before it has anything to show.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "brief purpose: make readers protect the unglamorous early work on their teams" }
+      ] }
+  ],
+  "source": { "brief_digest": "718a3caff0c9ea588f3505f13c1454961fd324ec4b4d6698ef293ae4e04d261e", "draft_digest": null }
+}

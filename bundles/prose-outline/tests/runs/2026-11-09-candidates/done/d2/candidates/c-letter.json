@@ -1,0 +1,31 @@
+{
+  "mode": "argument",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "letter",
+  "length": { "unit": "words", "min": 800, "max": 1100 },
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1, "part": "occasion", "words": 120,
+      "text": "To a team lead who rewards what can be seen: you are judging the loaves at the oven, and by then the bread is already decided.",
+      "evidence": [ { "slot": "e1", "filled_by": "transcript s1, line 5" } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2, "part": "body", "words": 250,
+      "text": "Here is what the work before the oven looks like: the month of feeding the starter, with nothing to show for it.",
+      "covers": ["must_include.0"],
+      "evidence": [ { "slot": "e1", "filled_by": "brief must_include.0: the month of feeding the starter" } ] },
+    { "id": "n3", "kind": "claim", "parent": null, "order": 3, "part": "body", "words": 230,
+      "text": "And this is what it looks like kept up for years: the eleven years of notebooks.",
+      "covers": ["must_include.1"],
+      "evidence": [ { "slot": "e1", "filled_by": "brief must_include.1: the eleven years of notebooks" } ] },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 4, "part": "body", "words": 200,
+      "text": "Someone who knew the craft saw it in the slow work: \"That was the moment she knew he would be good.\" You can learn to look there too.",
+      "evidence": [ { "slot": "e1", "filled_by": "transcript s2, line 9" } ] },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 5, "part": "ask", "words": 150,
+      "text": "The ask: protect the unglamorous early work on your team before it has anything to show.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n6", "kind": "open-question", "parent": "n1", "order": 1,
+      "text": "Who is the letter to: one real lead, or a general \"you\"? And what prompts it now? The brief names the audience but no occasion." },
+    { "id": "n7", "kind": "open-question", "parent": "n5", "order": 1,
+      "text": "What specific thing is the reader asked to do? A letter's ask needs to be concrete, and the brief only gives the purpose." }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

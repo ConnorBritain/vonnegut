@@ -1,0 +1,4 @@
+proposal-check — clean
+  0 claims, 2 open questions, 0 empty evidence slots
+  limit: Whether these are the right claims, in the right order, is not checked here.
+exit 0

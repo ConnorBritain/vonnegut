@@ -1,0 +1,86 @@
+{
+  "schema": "voice-outline/1",
+  "id": "starter",
+  "revision": 1,
+  "parent_digest": null,
+  "mode": "beat-sheet",
+  "title": "The starter is the bakery",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "narrative-arc",
+  "length": {
+    "unit": "words",
+    "min": 800,
+    "max": 1100
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "beat",
+      "parent": null,
+      "order": 1,
+      "part": "setup",
+      "words": 150,
+      "text": "The bakery as a customer sees it: loaves coming out of the oven. Then the rule underneath: if the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven."
+    },
+    {
+      "id": "n2",
+      "kind": "beat",
+      "parent": null,
+      "order": 2,
+      "part": "inciting-moment",
+      "words": 100,
+      "text": "The month of feeding the starter begins: work with nothing to show for it yet.",
+      "covers": [
+        "must_include.0"
+      ]
+    },
+    {
+      "id": "n3",
+      "kind": "beat",
+      "parent": null,
+      "order": 3,
+      "part": "complication",
+      "words": 300,
+      "text": "The month goes on with no visible result, set against the eleven years of notebooks: the same slow, unseen kind of work, kept up for years.",
+      "covers": [
+        "must_include.1"
+      ]
+    },
+    {
+      "id": "n4",
+      "kind": "turn",
+      "parent": null,
+      "order": 4,
+      "part": "turn",
+      "words": 150,
+      "text": "\"That was the moment she knew he would be good.\" The judgement comes from the slow work, not from a finished loaf."
+    },
+    {
+      "id": "n5",
+      "kind": "beat",
+      "parent": null,
+      "order": 5,
+      "part": "resolution",
+      "words": 200,
+      "text": "Turn to the reader without explaining the story again: a team lead who rewards visible output is judging at the oven. Leave them with the starter."
+    },
+    {
+      "id": "n6",
+      "kind": "open-question",
+      "parent": "n3",
+      "order": 1,
+      "text": "Whose notebooks are they, and what is written in them? The brief names them but doesn't say."
+    },
+    {
+      "id": "n7",
+      "kind": "open-question",
+      "parent": "n4",
+      "order": 1,
+      "text": "Who are \"she\" and \"he\", and what did he do in that moment? The brief quotes the line (s2, line 9) but not what led up to it."
+    }
+  ],
+  "source": {
+    "brief_digest": null,
+    "draft_digest": null
+  }
+}

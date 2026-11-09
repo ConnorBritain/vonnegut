@@ -145,7 +145,11 @@ The example candidates in [`fixtures/candidates/`](fixtures/candidates/) show
 one clean candidate and two with a planted problem each, and
 `expected-compare.md` shows the table they produce. They are not model output.
 
-**Status: not run.** No model run of candidate mode has been dispatched. Record
-a run under `tests/runs/<date>-candidates/` with each candidate, its
-proposal-check output and the comparison; until then the evidence is the
-checker and the fixtures, never a pass.
+## Runs
+
+Record each run under `tests/runs/<date>-candidates/`, with each candidate, its
+proposal-check output and the comparison.
+
+| run | draws | positive (800–1100) | negative (200–300) | only the pick saved | saved without a yes to saving |
+|---|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-candidates/README.md) | 3 | 3 candidates in 3 shapes, `proposal-check — clean` ×3 and `findings \| none \| none \| none` on 3/3 | one `letter` candidate (260 words, `proposal-check — clean`), and the reply says only one shape fits, on 3/3 | 6 of 6 | **2 of 6**: narrow d2 and d3 saved on the pick alone, under a project name the writer never gave |
