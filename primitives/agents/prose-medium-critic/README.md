@@ -80,6 +80,14 @@ check miscounts, the critic reports it under *Check defects* and cannot fix
 it. **Its verdicts are model judgements and single draws are observations,
 not rates.**
 
+**Its negative test failed on first measurement.** 2026-11-09, k=3: quiet on 1
+of 9 negatives, 3 of 3 positives flagged, contract counts 0
+(`bundles/prose-review/tests/runs/2026-11-09-medium`). The six leave-one-out
+newsletters fail the mechanical length check and open on a contents list; the
+two thread negatives carry a segment that does not stand alone. Until the
+fixtures or the prompt change and the run is repeated, "quiet on compliant
+human posts" above is a design intent, not a measurement.
+
 ## Install
 
 ```bash

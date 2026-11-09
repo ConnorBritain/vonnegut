@@ -340,21 +340,23 @@ async function mediumAgreement(runs, dir, critic, line) {
   if (!repurposePresent()) { line("    echo baseline: not computed — prose-author's repurpose skill is absent"); return; }
   const manifest = loadMediumManifest();
   const byName = new Map(manifest.fixtures.map((f) => [f.name, f]));
+  // `critic` is the profile's NAME, not the profile; this read `critic.flag` until the first
+  // medium run (2026-11-09), so the cleared/caught lines were always 0. It also counted draws
+  // where the structure and fidelity blocks count case majorities; it now matches them.
+  const { flag, clean } = CRITICS[critic];
+  const manifestJson = existsSync(join(dir, "MANIFEST.json")) ? JSON.parse(readFileSync(join(dir, "MANIFEST.json"), "utf8")) : null;
   let same = 0, cleared = 0, caught = 0, total = 0;
-  for (const r of runs) {
-    const fixture = r.file.replace(/\.md$/, "").replace(/-d\d+$/, "");
-    const f = byName.get(fixture);
+  for (const c of groupCases(runs)) {
+    const f = byName.get(c.fixture);
     const form = f?.form ?? manifest.leave_one_out.form;
-    const inputs = join(dir, "inputs");
-    const manifestJson = existsSync(join(dir, "MANIFEST.json")) ? JSON.parse(readFileSync(join(dir, "MANIFEST.json"), "utf8")) : null;
-    const caseId = manifestJson?.cases.find((c) => c.fixture === fixture)?.case;
+    const caseId = manifestJson?.cases.find((m) => m.fixture === c.fixture)?.case;
     if (!caseId) continue;
-    const piece = readFileSync(join(inputs, caseId, "piece.md"), "utf8");
+    const piece = readFileSync(join(dir, "inputs", caseId, "piece.md"), "utf8");
     const says = checkSays(await checkPiece(piece, form));
     total += 1;
-    if (says === r.verdict) same += 1;
-    if (says === critic.flag && r.verdict === critic.clean) cleared += 1;
-    if (says === critic.clean && r.verdict === critic.flag) caught += 1;
+    if (says === c.majority) same += 1;
+    if (says === flag && c.majority === clean) cleared += 1;
+    if (says === clean && c.majority === flag) caught += 1;
   }
   line(`    counts the check failed and the critic cleared:           ${cleared}`);
   line(`    delivery problems the check could not see and the critic caught: ${caught}`);

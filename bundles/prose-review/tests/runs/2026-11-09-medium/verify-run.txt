@@ -1,0 +1,12 @@
+
+  bundles/prose-review/tests/runs/2026-11-09-medium — 12 case(s), 36 transcript(s) (k=3)
+
+    negative (survives delivery, n=9):   8 REVISE, 1 CLEAN
+    positive (breaks in the medium, n=3): 3 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  1 of 12   (a split is a finding)
+    findings without a quoted span: 0             <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+        counts the check failed and the critic cleared:           0
+        delivery problems the check could not see and the critic caught: 3
+        verdicts identical to the echo rule's (echo rate):         9 of 12
+

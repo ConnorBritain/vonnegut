@@ -17,6 +17,13 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** `prose-medium-critic` (prose-review): first run,
+  `tests/runs/2026-11-09-medium`, 12 cases × 3 draws — **8 `REVISE` of 9
+  negatives**, so the negative test it ships on is not met; 3 of 3 positives;
+  echo rate 9 of 12; contract counts 0. The six leave-one-out newsletters fail
+  the mechanical length check. No prompt tuned; follow-up. **Fixed**
+  `verify-run.mjs`'s medium echo block, which read the critic name as its
+  profile and always printed 0 for cleared/caught, and now counts cases.
 - **Measured** `prose-fidelity-critic` with the provenance block (prose-review):
   `tests/runs/2026-11-09-fidelity-provenance`, 16 fixtures × 3 draws — 2
   `MATERIAL-LOSS` of 7 negatives (neither carries a provenance block), 9 of 9

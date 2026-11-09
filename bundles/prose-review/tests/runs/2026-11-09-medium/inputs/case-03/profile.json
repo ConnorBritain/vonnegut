@@ -1,0 +1,18 @@
+{
+  "schema": "medium-profile/1",
+  "form": "thread",
+  "medium": "web",
+  "length": { "unit": "characters", "min": 200, "max": 5600 },
+  "segments": { "max_count": 20, "max_characters": 280, "separator": "\n---\n" },
+  "structure": ["hook", "body", "close"],
+  "constraints": [
+    { "id": "segment-limit", "kind": "mechanical", "rule": { "type": "max_segment_characters", "max": 280 } },
+    { "id": "segment-count", "kind": "mechanical", "rule": { "type": "max_segments", "max": 20 } },
+    { "id": "no-links-in-first-segment", "kind": "mechanical", "rule": { "type": "no_urls_in_segment", "segment": 1 } },
+    { "id": "no-headings", "kind": "mechanical", "rule": { "type": "no_headings" } },
+    { "id": "segments-are-sentences", "kind": "semantic", "rule": { "text": "Every segment boundary falls at a sentence boundary; no sentence is cut by the separator." }, "note": "a segment that ends mid-sentence, which the count cannot see" },
+    { "id": "each-segment-stands", "kind": "semantic", "rule": { "text": "Each segment reads on its own when quoted out of the thread." }, "note": "a segment that is only a fragment of the previous one" }
+  ],
+  "delivery_notes": "Posted as numbered segments, each shown alone in a feed and quoted alone. The first segment is the whole piece to most readers. A link in the first segment is what the platform down-ranks and what readers skip.",
+  "checked": "2026-09-22"
+}
