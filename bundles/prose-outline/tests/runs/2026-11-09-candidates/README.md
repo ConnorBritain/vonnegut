@@ -119,3 +119,10 @@ mode should treat a pick as a pick, not as approval to write the store, and ask
 for the project name when the brief carries none.
 
 These counts and readings were made by the session that ran the harness, not by a person.
+
+## Fixed after this run (prose-outline 0.4.1)
+
+This run measured the 0.4.0 `prose-outline/SKILL.md`. Afterwards, candidate mode
+says that a pick is not a yes to saving. It asks for the yes in a later turn, and
+saves under the brief's project name or one the writer gives, never one made from
+the outline's title. **Unmeasured: a re-run is owed.**

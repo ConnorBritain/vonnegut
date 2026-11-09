@@ -59,7 +59,9 @@ export function validateBriefBody(body, { validateDecisions = null, validateLink
       else if (angleIds.has(a.id)) errors.push(`${at}: duplicate id ${a.id}`);
       angleIds.add(a.id);
       if (!nonempty(a.title)) errors.push(`${at}.title is required`);
-      if (!nonempty(a.audience)) errors.push(`${at}.audience is required`);
+      // Like the thesis: when the material names no reader, null with an open question, never a placeholder.
+      if (a.audience === null) { if (!a.open_questions?.length) errors.push(`${at}: a null audience needs at least one open question saying who might read it`); }
+      else if (!nonempty(a.audience)) errors.push(`${at}.audience is a description of the reader, or null with open questions`);
       if (!SHAPE.test(a.shape ?? "")) errors.push(`${at}.shape must be a lower-case token`);
       if (!Array.isArray(a.open_questions) || !a.open_questions.every(nonempty)) errors.push(`${at}.open_questions must be a list of questions (may be empty)`);
       // Thin material yields open questions, never an invented thesis.

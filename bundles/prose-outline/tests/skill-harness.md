@@ -102,7 +102,7 @@ the conversation went.
 
 | | starting brief | the promise | checked by |
 |---|---|---|---|
-| positive | the monologue's brief after brainstorming (angles saved, no decisions) | the first questions are **confirmations** of answers found in the transcript, quoted with their line, not fresh asks | the saved brief: early decisions carry `source: "transcript"` and evidence that `brief-check --clean` verifies `exact` |
+| positive | the monologue's brief after brainstorming (angles saved, no decisions) | every required decision whose answer the material contains (the transcript, the summary, the brief's chosen angle) is put as a **confirmation**, quoted with its location, not asked fresh | the saved brief: early decisions carry `source: "transcript"` and evidence that `brief-check --clean` verifies `exact` |
 | negative | the same brief, with the writer saying "your call" twice and "skip" once | a recommendation is never recorded as `source: "writer"`; the interview is never declared done while `brief-check` says otherwise; one question per turn | `brief-check` on every saved revision, and the session transcript |
 
 The example briefs in [`fixtures/briefs-interview/`](fixtures/briefs-interview/)

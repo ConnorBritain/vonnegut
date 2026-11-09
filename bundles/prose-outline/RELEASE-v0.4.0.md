@@ -54,6 +54,7 @@ and the differ are unchanged.
     the reply says only one shape fits. Met 3/3.
   - Only the picked candidate was saved, 6 of 6. But **2 of 6 draws saved on
     the writer's pick alone, without a yes to saving**, under an invented
-    project name. Follow-up.
+    project name. Follow-up: fixed in 0.4.1 ([`RELEASE-v0.4.1.md`](RELEASE-v0.4.1.md)),
+    and a re-run is owed.
 - Share ranges are starting values, not measurements. Word budgets are plans.
   Six shapes is a starting set.

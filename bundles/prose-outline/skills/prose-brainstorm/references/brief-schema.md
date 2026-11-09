@@ -33,7 +33,7 @@ fields are refused at every level.
 | Field | Meaning |
 |---|---|
 | `sources[]` | Every text the brief may quote. A transcript is cached as its **cleaned** text (transcript-scan's), because every line number refers to that; `format` records what it was cleaned from. A summary or notes file is cached as given. One text is one source. |
-| `angles[]` | Pieces the material could become. `thesis` is a sentence, or `null` with at least one open question; never invented. `uses` quotes the passages the angle rests on, by scan segment and cleaned-text line (`segment: "summary"` for the writer's summary). `leaves_out` lists segments the angle deliberately drops. `shape` is a free lower-case token until outline shapes ship, then a shape name. |
+| `angles[]` | Pieces the material could become. `thesis` is a sentence, or `null` with at least one open question; never invented. `audience` follows the same rule: when the material names no reader, `null` and an open question, never a placeholder such as "undecided". `uses` quotes the passages the angle rests on, by scan segment and cleaned-text line (`segment: "summary"` for the writer's summary). `leaves_out` lists segments the angle deliberately drops. `shape` is a free lower-case token until outline shapes ship, then a shape name. |
 | `unused_segments` | Segments no angle uses or leaves out. With `uses` and `leaves_out`, every segment is accounted for; `angles-check.mjs` enforces that. |
 | `chosen_angle` | Set only when the writer chooses. |
 | `decisions`, `links` | Filled by the interview. |

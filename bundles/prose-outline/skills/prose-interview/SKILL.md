@@ -30,22 +30,34 @@ transcript instead, the brainstorm skill is the better first step; offer it.
 node tools/brief-check.mjs <brief.json> --clean <cached transcript> [--summary <cached summary>]
 ```
 
-Take its `next`. Then, before asking anything:
+Take its `next`. Then, before asking anything — on every turn, for every
+decision, not only the first:
 
-1. **Look for the answer in the writer's own material.** The cleaned transcript
+1. **Look for the answer in the writer's own material.** Start with the brief
+   itself: a `chosen_angle` is the answer to `angle`, and an angle's audience,
+   thesis or shape may answer those decisions. The cleaned transcript
    and summary cached under the brief, the brief's angles, this project's
    outline (`outline-store show`), and — when the session supplies their read
    output — the continuity bible, the research ledger, or prose-author's corpus
    manifest. Never open another bundle's store yourself.
-2. **Found it:** quote it with its location and ask the writer to confirm,
-   change or reject it. Record `source` as where it came from, with `evidence`;
+2. **Found it:** put it as a confirmation, not an open question: quote it with
+   its location and ask the writer to confirm, change or reject it. Any
+   required decision whose answer is in the material is asked this way. Record `source` as where it came from, with `evidence`;
    it stays `confirmed: false` until they say yes.
 3. **Not found:** ask the one question, give your recommended answer, and one
    line of why. Then stop and wait.
 4. **"Your call"** records your recommendation with `source: "recommended"`,
    confirmed. **"Skip"** records `value: null` and their reason in `skipped`.
 
-Never ask two questions in one turn, never record a recommendation as the
+**The writer's words are recorded as they said them.** A `source: "writer"`
+value is the writer's reply, verbatim, trimmed of nothing but surrounding
+whitespace: do not add a day, a qualifier, a tidier phrasing or a pointer such
+as "(transcript lines 13–21)". Where an answer came from goes in `evidence`,
+and only for found answers. If their reply needs tightening, offer the tighter
+wording as a recommendation and record it only if they say yes to it.
+
+Never ask two questions in one turn — optional decisions included, one at a
+time, even when the writer seems ready to answer several — never record a recommendation as the
 writer's own answer, and never mark the interview done yourself: it is done
 when `brief-check` says `done: true`. If `next` is null and it is not done, a
 skipped required question is blocking (`blocked_by`); say which, and ask

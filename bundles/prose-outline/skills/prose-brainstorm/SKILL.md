@@ -39,7 +39,9 @@ An angle is a piece the material could become. Write 3–5 to a task-local
   word for word. Copy; never paraphrase inside a quote.
 - **Thin material yields open questions, not an invented thesis.** When the
   transcript does not say what the piece argues, `thesis` is `null` and
-  `open_questions` says what is missing. Fewer honest angles beat five padded ones.
+  `open_questions` says what is missing. The same goes for `audience`: when
+  the material names no reader, it is `null` with an open question, never a
+  placeholder like "undecided". Fewer honest angles beat five padded ones.
 - Every segment is accounted for: used by an angle, in an angle's `leaves_out`,
   or listed in `unused_segments`. Nothing the writer said is silently dropped.
 - `shape` is a lower-case word for the form you have in mind (`narrative-arc`,

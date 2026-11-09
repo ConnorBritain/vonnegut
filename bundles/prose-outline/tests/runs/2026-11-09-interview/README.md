@@ -154,3 +154,16 @@ Follow-up, with no prompt edited: record the writer's answer verbatim, and put
 any locating detail in `evidence`, not in `value`.
 
 These counts and readings were made by the session that ran the harness, not by a person.
+
+## Fixed after this run (prose-outline 0.4.1)
+
+This run measured the 0.4.0 `prose-interview/SKILL.md`. Afterwards:
+- the lookup now happens on every turn, starting with the brief's `chosen_angle`;
+- any required decision whose answer is in the material is put as a confirmation;
+- a `source: "writer"` value is the writer's reply verbatim, with locating
+  detail kept out of it;
+- optional decisions are asked one at a time too.
+
+The harness promise is reworded to match: "every required decision whose answer
+the material contains is put as a confirmation". **The fixes are unmeasured: a
+re-run is owed.**

@@ -77,7 +77,8 @@ shared module, and the results are identical.
   - **5 of 6 draws** saved `source: "writer"` values with words the writer did
     not say, such as "Monday" and "(transcript lines 13–21)".
   - One draw put four optional decisions in one turn.
-  - Follow-up. No prompt was edited.
+  - Follow-up. No prompt was edited in that run. The prompt is fixed in 0.4.1,
+    [`RELEASE-v0.4.1.md`](RELEASE-v0.4.1.md); a re-run is owed.
 - Known limits:
   - the tree suits non-fiction;
   - answers found in sources are only as good as what was supplied;

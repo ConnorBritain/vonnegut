@@ -134,7 +134,8 @@ try {
     check("two candidates in one shape are noted: they are not a choice", (same.notes ?? []).some((n) => /share a shape/.test(n)));
     const text = readFileSync(join(SKILL, "SKILL.md"), "utf8");
     check("SKILL.md describes candidate mode: different shapes, check and compare before showing, save only the pick",
-      /Candidate mode/.test(text) && /different shapes/.test(text) && text.includes("node tools/outline-compare.mjs") && text.includes("node tools/shape-check.mjs") && /Save only the one they\s+pick/.test(text));
+      /A pick is not a yes to saving/.test(text) && /Never make one up from the outline's title/.test(text)
+      && /Candidate mode/.test(text) && /different shapes/.test(text) && text.includes("node tools/outline-compare.mjs") && text.includes("node tools/shape-check.mjs") && /Save only the one they\s+pick/.test(text));
     const cli = spawnSync(process.execPath, [join(TOOLS, "outline-compare.mjs"), join(CANDIDATES, "problem-solution.json")], { encoding: "utf8" });
     check("CLI: a single candidate is not a comparison (exit 2)", cli.status === 2);
   }

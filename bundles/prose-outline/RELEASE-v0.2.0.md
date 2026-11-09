@@ -70,7 +70,8 @@ is the same one line in each.
   - No quote needed fixing, and nothing was saved or cached without a yes, 0 of
     6 each.
   - The store refused a null angle `audience` that the check accepts. 4 of 6
-    draws then saved a placeholder ("undecided"). Follow-up.
+    draws then saved a placeholder ("undecided"). Fixed in 0.4.1: the schema now
+    takes `null` with an open question ([`RELEASE-v0.4.1.md`](RELEASE-v0.4.1.md)).
 - Known limits:
   - topic segments are a lexical heuristic;
   - speakers come from labels only, with no diarisation;

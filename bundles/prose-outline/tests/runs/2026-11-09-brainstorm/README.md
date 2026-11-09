@@ -124,3 +124,11 @@ question, as `thesis` already may, or the skill says it is required and what to
 put there.
 
 These counts and readings were made by the session that ran the harness, not by a person.
+
+## Fixed after this run (prose-outline 0.4.1)
+
+`project-brief/1` now accepts `audience: null` when the angle carries an open
+question, as `thesis` already did. The brainstorm SKILL.md says to use it rather
+than a placeholder, and a mutation guards the rule. The placeholders this run saved
+("undecided") are left as recorded. The change makes the store agree with the
+check; the skill's two measured promises are unaffected.
