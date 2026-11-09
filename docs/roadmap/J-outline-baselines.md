@@ -157,6 +157,17 @@ Mutations:
 - **No ranking.** Which shape suits the writer's idea is the writer's
   judgement. The table gives facts to judge with.
 
+### Build-time decisions
+
+- **Shapes live inside the skill** (`skills/prose-outline/shapes/`), not at the
+  bundle root, so a loose install of the skill carries them.
+- **The shape frontmatter is one line per part** (`name | required|optional |
+  min-max`) rather than YAML maps, so a dependency-free parser reads it exactly.
+- **Parts may repeat** (one node per question or lesson); a part's share is the
+  sum of its nodes. **A budget under a budget is refused**, so nothing is counted twice.
+- **A brief's length band must match the outline's** when both exist; the brief
+  is where the writer settled it.
+
 ## 10. Deliverables
 
 - J1 — six shape files + `shape-check.mjs` + invalid fixtures. Accept: the three invalid shapes are refused by name.

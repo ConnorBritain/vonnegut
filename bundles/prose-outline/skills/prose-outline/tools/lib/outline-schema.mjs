@@ -9,6 +9,16 @@
  *
  * Node ids are stable across revisions and the differ keys on them. A node is
  * never matched by its text.
+ *
+ * Optional fields (roadmap item J), validated when present and ignored by
+ * readers that predate them, so the schema id stays voice-outline/1:
+ *   length     { unit: "words", min, max } — the band the piece is planned to
+ *   shape      the shape name (shapes/<name>.md)
+ *   brief_ref  { project, revision, digest } — the brief the outline came from
+ *   nodes[].part    which of the shape's parts a node belongs to
+ *   nodes[].words   the node's word budget; no node with a budget sits under another
+ *   nodes[].covers  brief decisions the node carries, e.g. "must_include.0"
+ * Any other unknown key is still ignored, as it always was.
  */
 export const OUTLINE_SCHEMA = "voice-outline/1";
 export const MODES = Object.freeze({
@@ -18,6 +28,10 @@ export const MODES = Object.freeze({
 const ID = /^n[1-9]\d*$/;
 const SLOT = /^e[1-9]\d*$/;
 const DIGEST = /^[a-f0-9]{64}$/;
+const TOKEN = /^[a-z][a-z0-9-]{0,63}$/;
+const COVER = /^[a-z][a-z_]*(?:\.\d+)?$/;
+const PROJECT = /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}$/;
+const isObject = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
 const nonempty = (s) => typeof s === "string" && s.trim().length > 0;
 
 /** Errors for a full document (envelope included). Empty array means valid. */
@@ -68,6 +82,7 @@ export function validateOutlineBody(body) {
     } else if (n.evidence !== undefined) errors.push(`${where}: only a claim carries evidence`);
   }
   for (const n of body.nodes) if (n?.parent && !ids.has(n.parent)) errors.push(`node ${n.id}: parent ${n.parent} does not exist`);
+  errors.push(...validatePlanFields(body));
   for (const n of body.nodes) if (n?.parent === n?.id) errors.push(`node ${n.id}: a node cannot parent itself`);
   const src = body.source;
   if (src !== undefined) {
@@ -79,3 +94,42 @@ export function validateOutlineBody(body) {
 
 /** Children of `parent` in order. */
 export const children = (body, parent) => body.nodes.filter((n) => n.parent === parent).sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
+
+/** The optional planning fields (item J): length, shape, brief_ref, and per-node part, words, covers. */
+export function validatePlanFields(body) {
+  const errors = [];
+  if (body.length !== undefined) {
+    const l = body.length;
+    if (!isObject(l) || l.unit !== "words" || !Number.isInteger(l.min) || !Number.isInteger(l.max) || l.min < 1 || l.min > l.max || Object.keys(l).some((k) => !["unit", "min", "max"].includes(k))) errors.push('length must be { unit: "words", min, max } with 1 ≤ min ≤ max');
+  }
+  if (body.shape !== undefined && !TOKEN.test(body.shape ?? "")) errors.push("shape must be a shape name (a lower-case token)");
+  if (body.brief_ref !== undefined) {
+    const b = body.brief_ref;
+    if (!isObject(b) || !PROJECT.test(b.project ?? "") || !Number.isInteger(b.revision) || b.revision < 1 || !DIGEST.test(b.digest ?? "") || Object.keys(b).some((k) => !["project", "revision", "digest"].includes(k))) errors.push("brief_ref must be { project, revision, digest }");
+  }
+  const byId = new Map((body.nodes ?? []).map((n) => [n?.id, n]));
+  for (const n of body.nodes ?? []) {
+    const where = `node ${n?.id ?? "?"}`;
+    if (n?.part !== undefined) {
+      if (!TOKEN.test(n.part ?? "")) errors.push(`${where}: part must be a lower-case token`);
+      if (body.shape === undefined) errors.push(`${where}: a part names one of the shape's parts, so the outline needs a shape`);
+    }
+    if (n?.words !== undefined) {
+      if (!Number.isInteger(n.words) || n.words < 1) errors.push(`${where}: words is a budget, an integer ≥ 1`);
+      // A budget under another budget would be counted twice.
+      for (let p = byId.get(n.parent), hops = 0; p && hops < 1000; p = byId.get(p.parent), hops += 1) {
+        if (p.words !== undefined) { errors.push(`${where}: has a word budget under ${p.id}, which has one too`); break; }
+      }
+    }
+    if (n?.covers !== undefined && (!Array.isArray(n.covers) || !n.covers.every((c) => COVER.test(c ?? "")))) errors.push(`${where}: covers lists brief decisions, e.g. "must_include.0"`);
+  }
+  return errors;
+}
+
+/** Nodes in reading order: depth-first, siblings by order. */
+export function readingOrder(body) {
+  const out = [];
+  const visit = (parent) => { for (const n of children(body, parent)) { out.push(n); visit(n.id); } };
+  visit(null);
+  return out;
+}

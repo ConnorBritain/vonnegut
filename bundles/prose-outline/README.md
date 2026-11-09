@@ -12,10 +12,13 @@ ships and the evidence; the planning records are
 
 | Component | What it is | What it does |
 |---|---|---|
-| `skills/prose-outline/` | skill | Brief → outline proposal; draft → implied outline; diff; save on approval |
+| `skills/prose-outline/` | skill | Brief → outline proposal, or 2–3 candidates in different shapes; draft → implied outline; diff; save on approval |
 | `.../tools/outline-scan.mjs` | script | Heading tree, topic-sentence candidates, claim-marker density, transitions, section balance — as JSON |
 | `.../tools/outline-diff.mjs` | script | Two `voice-outline/1` revisions → added, removed, moved, reworded nodes, by id |
 | `.../tools/outline-store.mjs` | script | Per-project revisions under the identity registry, approval-gated, with undo |
+| `.../shapes/*.md` | data | Six shapes — argument essay, narrative arc, problem–solution, Q&A, numbered lessons, letter — as ordered parts with share ranges |
+| `.../tools/shape-check.mjs` | script | Validates shape files, shipped or personal |
+| `.../tools/outline-compare.mjs` | script | Candidate outlines side by side: band, required parts, must-include coverage, signals, findings — no scores |
 | `.../tools/lib/text-index.mjs` | script | Segmentation with locations; the canonical copy that `prose-bible` mirrors byte-for-byte |
 | `skills/prose-brainstorm/` | skill | Transcript → 3–5 angles that quote what they rest on → a project brief, saved on approval |
 | `.../tools/transcript-scan.mjs` | script | SRT, WebVTT, speaker-labelled or plain transcript → cleaned text with stable lines; words, turns, recurring terms, questions, fillers, topic segments |
@@ -26,6 +29,7 @@ ships and the evidence; the planning records are
 | `.../tools/lib/decisions.mjs` | script | The decision tree as data, with validators for answers and links |
 | `tests/selftest.mjs` | script | Fixtures, parity cases, store guards |
 | `tests/brainstorm-selftest.mjs` | script | Transcript, angle and interview fixtures; brief store guards |
+| `tests/baselines-selftest.mjs` | script | Shapes, plan fields, proposal-check's plan checks, the candidate comparison |
 
 ## Why this exists
 

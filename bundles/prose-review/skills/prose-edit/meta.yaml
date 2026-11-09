@@ -1,0 +1,63 @@
+# Metadata for the prose-edit skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". A skill
+# renders once; its portable form is the bundle's AGENTS.md. This file exists
+# because the contract and an honest per-harness enforcement label are not
+# optional for any surface.
+
+name: prose-edit
+kind: reviewer
+surface: skill
+bundle: prose-review
+
+# Why reviewer: it reads a draft and its review and produces a record of notes
+# against it; it never edits the draft. It is not a critic — it originates no
+# finding — and not an orchestrator: it runs no code that sequences agents.
+# Consolidation stays protocol (DESIGN.md, "Consolidation is protocol, not an agent").
+
+contract:
+  read_only: true           # on the draft; it writes a task-local ledger and plan entries
+  writes: task-local-edit-notes
+  clean_context: false      # it works with the writer; the critics it presents ran clean
+  scope: draft-consolidated-review-and-writer-reactions
+  deterministic: partial    # units, ledger checks and the export are scripts; the presentation is not
+  verdict: null
+
+  denied_inputs:
+    - the tell catalog, in any form
+    - the corpus
+    - any finding not produced by a critic or the writer
+
+  refuses:
+    - Adding a finding of its own, or answering "what do you think?" with one
+    - Re-running a critic per section by default, or presenting such a run as within measured bounds
+    - Moving a note out of proposed without the writer's call
+    - Exporting declined, deferred or proposed notes to the plan
+    - Rewriting the draft — the reviser and the writer do that
+    - Stating or implying who or what wrote the draft
+
+  tools:
+    - tools/section-split.mjs       # reading units with text-derived ids
+    - tools/notes-check.mjs         # the ledger's honesty, and the export
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Dispatcher-triggered from the description. Units, ledger validation and
+      the export are deterministic; "adds no finding of its own" is a prompt
+      rule, partly backed by the ledger refusing any source but a critic or
+      the writer.
+  cursor:
+    enforcement: partial
+    notes: >-
+      Scripts behave identically. Skill dispatch is absent; invoke by name.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same. Use the bundle's AGENTS.md block.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      The scripts port intact; the presentation rules are prose. notes-check
+      is the gate before anything reaches the reviser; run it.

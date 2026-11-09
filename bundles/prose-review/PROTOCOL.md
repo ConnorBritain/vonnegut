@@ -20,6 +20,8 @@ here, exactly as in `verification-gate`. The main session executes this.
   1  scan           tell-scan, deterministic, no model      (prose-tell-scan)
   2  critics        spawned IN PARALLEL, clean context each  (voice, others)
   3  consolidate    this session, not an agent — plan.json emerges here
+  3a read           the editor's pass, optional: section by section, the     (prose-edit)
+                    notes beside each; the writer accepts, declines, defers
   4  the author edits, OR proceeds to 5
   ─────────────────────────────────────────────────────────
   5  revise         prose-reviser (log-only), harness applies (prose-reviser)
@@ -129,11 +131,31 @@ author can ask for everything; they should not be handed it.
 **Every critic's `CLEAN` is reported.** Silence from four of five is information,
 and hiding it makes the one finding look like a verdict on the whole draft.
 
+## Step 3a — read it the way an editor would
+
+Optional, and the protocol is unchanged without it. The `prose-edit` skill
+splits the draft into reading units (`section-split`) and walks the writer
+through them with the consolidated notes that fall in each, ranked as step 3
+ranked them, disagreements still visible, every CLEAN still said. The writer
+accepts (with the change, in their terms), declines or defers each note and may
+add their own; the ledger (`edit-notes/1`) records it, `notes-check` refuses a
+note placed in the wrong section, a section nobody read, or a pass finished
+with notes still proposed, and its export puts exactly the accepted notes into
+`plan.json` for step 5.
+
+Two things the pass never does. It adds no finding of its own — the session is
+not a source, and the ledger refuses one — because an editor with opinions is a
+second consolidator, which step 3 rules out. And it does not re-run critics per
+section: their bounds were measured on whole drafts, so a per-section run is
+outside them, and is said to be if the writer asks for one.
+
 ## What this session must never do
 
 - State or imply that any passage was machine-written. No critic may produce
   that claim and no consolidation may synthesise one.
 - Rewrite anything. v0.1 has no transformer; the author edits.
+- Add a note of its own during the editor's pass (step 3a). Every note has one
+  critic, or the writer, as its source.
 - Present a finding that arrived without its evidence. A voice finding with no
   corpus citation is a guess, and the prompt requires it dropped — if one
   reaches consolidation anyway, drop it here.

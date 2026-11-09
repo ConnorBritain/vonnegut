@@ -103,25 +103,25 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] I3 — mutations; PROTOCOL/README/AGENTS/DESIGN
 - [x] I4 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### J. Outline baselines — planned
+### J. Outline baselines — in-progress
 
-- [ ] J1 — six shape files + `shape-check.mjs` + invalid fixtures
-- [ ] J2 — `voice-outline/1` optional fields validated when present; `proposal-check` shape, budget and coverage checks
-- [ ] J3 — `outline-compare.mjs` + expected output; SKILL.md candidate mode; skill harness entry
-- [ ] J4 — mutations; PROTOCOL/README/AGENTS/DESIGN; `references/outline-schema.md`
+- [x] J1 — six shape files + `shape-check.mjs` + invalid fixtures
+- [x] J2 — `voice-outline/1` optional fields validated when present; `proposal-check` shape, budget and coverage checks
+- [x] J3 — `outline-compare.mjs` + expected output; SKILL.md candidate mode; skill harness entry
+- [x] J4 — mutations; PROTOCOL/README/AGENTS/DESIGN; `references/outline-schema.md`
 - [ ] J5 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### K. Outline → draft handoff — planned
+### K. Outline → draft handoff — in-progress
 
-- [ ] K1 — `docs/contracts/outline-handoff.md` + `lib/outline-handoff.mjs` port + parity test
-- [ ] K2 — `outline-job.mjs` + fixtures
-- [ ] K3 — prose-draft SKILL.md path + `references/outline-handoff.md`; PROTOCOL.md; mutations; end-to-end run recorded
+- [x] K1 — `docs/contracts/outline-handoff.md` + `lib/outline-handoff.mjs` port + parity test
+- [x] K2 — `outline-job.mjs` + fixtures
+- [x] K3 — prose-draft SKILL.md path + `references/outline-handoff.md`; PROTOCOL.md; mutations; end-to-end run recorded
 - [ ] K4 — prose-author minor bump, RELEASE notes, CHANGELOG, version pin above, README, ROADMAP status → shipped
 
-### L. Chief-editor reading pass — planned
+### L. Chief-editor reading pass — in-progress
 
-- [ ] L1 — `section-split.mjs` + fixtures
-- [ ] L2 — `edit-notes/1` + `notes-check.mjs` + export + fixtures
-- [ ] L3 — `prose-edit` SKILL.md + meta.yaml; PROTOCOL.md step 3a; README/AGENTS/DESIGN; skill harness entry
-- [ ] L4 — mutations
+- [x] L1 — `section-split.mjs` + fixtures
+- [x] L2 — `edit-notes/1` + `notes-check.mjs` + export + fixtures
+- [x] L3 — `prose-edit` SKILL.md + meta.yaml; PROTOCOL.md step 3a; README/AGENTS/DESIGN; skill harness entry
+- [x] L4 — mutations
 - [ ] L5 — prose-review minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped

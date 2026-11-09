@@ -41,6 +41,11 @@ outline with an earlier one:
    and report the identity, project and revision it was saved under. If no
    writing identity is selected, say the outline is task-local and stop there.
 4. For a second revision, show `outline-diff` output, not a prose paraphrase.
+5. Given a project brief and a request for options, propose two or three
+   candidates in DIFFERENT shapes (skills/prose-outline/shapes/), each with a
+   part and a word budget on every top-level node, check each with
+       node <path>/skills/prose-outline/tools/proposal-check.mjs c.json --shape <shape.md> --brief-json brief.json
+   and show `outline-compare` across them. No scores; the writer picks; save only the pick.
 
 Do not draft prose from the outline here, and do not judge the argument — the
 structure critic in prose-review owns that question.

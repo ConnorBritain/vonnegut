@@ -85,6 +85,20 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
+### [0.4.0] — in progress: outline baselines
+
+Roadmap item J ([`docs/roadmap/J-outline-baselines.md`](docs/roadmap/J-outline-baselines.md)).
+
+- **Added** six shapes as data under `skills/prose-outline/shapes/` (argument
+  essay, narrative arc, problem–solution, Q&A, numbered lessons, letter) and
+  `shape-check.mjs`; `voice-outline/1` gains optional, validated-when-present
+  `length`, `shape`, `brief_ref` and per-node `part`, `words`, `covers`;
+  `proposal-check` gains `--shape` (required parts, order, mode), the budget sum
+  against the band, and `--brief-json` (must-include coverage, the brief's band),
+  with part shares outside their ranges as signals; `outline-compare.mjs`
+  tabulates candidates with no score. Candidate mode in SKILL.md; four mutations
+  in a `baselines` suite; harness entry recorded as not run.
+
 ### [0.3.0] — the interview
 
 Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md));
@@ -231,6 +245,18 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md)
 
 ## prose-review
 
+### [0.8.0] — in progress: the chief editor's reading pass
+
+Roadmap item L ([`docs/roadmap/L-chief-editor.md`](docs/roadmap/L-chief-editor.md)).
+
+- **Added** the `prose-edit` skill (reviewer, read-only on the draft), the
+  bundle's first: `section-split.mjs` (reading units with text-derived ids) and
+  `notes-check.mjs` over an `edit-notes/1` ledger — every note placed by its
+  quote inside its unit, every unit read or skipped with a reason, nothing left
+  proposed, and an export of exactly the accepted notes as PLAN-FORMAT entries.
+  PROTOCOL step 3a. The session adds no finding and re-runs no critic per
+  section. Four mutations in an `edit` suite.
+
 ### [0.7.0] — one prompt, many readers
 
 Roadmap item G; release notes in [`RELEASE-v0.7.0.md`](bundles/prose-review/RELEASE-v0.7.0.md).
@@ -323,6 +349,21 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 ---
 
 ## prose-author
+
+### [0.10.0] — in progress: drafting from an outline
+
+Roadmap item K ([`docs/roadmap/K-outline-handoff.md`](docs/roadmap/K-outline-handoff.md)).
+
+- **Added** `skills/prose-draft/tools/outline-job.mjs` and `lib/outline-handoff.mjs`
+  (a port of prose-outline's read side, pinned by a parity test):
+  an approved outline and brief become a `prose-writing-job/1` mechanically —
+  length band as a word-limit rule, sections as ordered facts, filled evidence
+  as facts, confirmed decisions as context, must-include and exclude as semantic
+  rules — with every fact and rule traced in `job.handoff`. Open questions, a
+  withheld thesis and unsettled decisions are refused by name; `--allow-open`
+  carries open questions forward as explicit rules. The receipt names the
+  outline. Contract: [`docs/contracts/outline-handoff.md`](docs/contracts/outline-handoff.md).
+  Four mutations; PROTOCOL "Drafting from an outline (v0.10)".
 
 ### [0.9.0] — one piece, many forms
 

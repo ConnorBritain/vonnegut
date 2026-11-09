@@ -43,6 +43,27 @@ dropped and replaced.
 | `nodes[].evidence` | Claims only. An array of `{ slot: "e1", filled_by: "<pointer>" \| null }`. May be empty, but a concrete brief should give every claim at least one slot. `filled_by` is a pointer in the writer's words; item E may later point it at a research-ledger id. |
 | `source` | Optional. `brief_digest` / `draft_digest`: sha256 of the inputs the proposal was made from, or null. |
 
+## Planning fields (optional)
+
+Added for candidate mode. Validated when present; a reader that predates them
+ignores them, so the schema stays `voice-outline/1`.
+
+| Field | Rule |
+|---|---|
+| `length` | `{ "unit": "words", "min": 800, "max": 1100 }` — the band the piece is planned to; the brief's, when there is one. |
+| `shape` | A shape name: `shapes/<name>.md` in this skill, or a personal shapes directory. Required when any node carries `part`. |
+| `brief_ref` | `{ "project", "revision", "digest" }` — the brief revision the outline was made from. |
+| `nodes[].part` | One of the shape's parts. A part may repeat (one node per question, one per lesson). |
+| `nodes[].words` | A word budget, an integer ≥ 1. No node with a budget may sit under another node with one: it would be counted twice. |
+| `nodes[].covers` | Brief decisions the node carries, e.g. `"must_include.0"`. |
+
+```json
+{ "mode": "argument", "title": "Feed the starter", "thesis": "…",
+  "shape": "problem-solution", "length": { "unit": "words", "min": 800, "max": 1100 },
+  "nodes": [ { "id": "n1", "kind": "claim", "parent": null, "order": 1, "part": "problem", "words": 200,
+               "text": "…", "evidence": [ { "slot": "e1", "filled_by": null } ] } ] }
+```
+
 ## What the differ reports
 
 `added`, `removed`, `moved` (position among the same siblings), `reparented`,
@@ -55,5 +76,9 @@ dropped and replaced.
 `tools/proposal-check.mjs <proposal> --brief <brief>` validates the body and,
 when the brief's frontmatter carries `expect: concrete`, requires a thesis and
 a slot on every claim; with `expect: underspecified`, requires a null thesis and
-at least one open question. Whether the claims are the right claims is not
-checked anywhere; that is the reader's.
+at least one open question. With `--shape` it requires every required part,
+in the shape's order, and no part the shape lacks; with a length band it
+requires the budgets to sum inside it; with `--brief-json` it requires every
+must-include item covered and the brief's band. A part's share outside the
+shape's range is reported as a signal, never a finding. Whether the claims are
+the right claims is not checked anywhere; that is the reader's.

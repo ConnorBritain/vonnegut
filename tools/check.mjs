@@ -18,10 +18,12 @@ const checks = [
   ["bundles/prose-tell-scan/tests/acceptance.mjs"],
   ["bundles/prose-outline/tests/selftest.mjs"],
   ["bundles/prose-outline/tests/brainstorm-selftest.mjs"],
+  ["bundles/prose-outline/tests/baselines-selftest.mjs"],
   ["bundles/prose-bible/tests/selftest.mjs"],
   ["bundles/prose-research/tests/selftest.mjs"],
   ["bundles/prose-author/tests/selftest.mjs"],
   ["bundles/prose-review/tests/selftest.mjs"],
+  ["bundles/prose-review/tests/edit-selftest.mjs"],
   ["bundles/prose-review/tests/run-harness-test.mjs"],
   ["bundles/prose-review/tests/revise-harness-test.mjs"],
 ];

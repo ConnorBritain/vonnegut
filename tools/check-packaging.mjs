@@ -48,7 +48,7 @@ assert.deepEqual(deployed.sort(), [...AGENTS].sort());
 // (docs/ROADMAP.md "No cross-bundle import"). The canonical copy is the first path;
 // every other copy must match it exactly, so drift is impossible rather than detected late.
 const SHARED_FILES = [
-  ["bundles/prose-outline/skills/prose-outline/tools/lib/text-index.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/text-index.mjs", "bundles/prose-outline/skills/prose-brainstorm/tools/lib/text-index.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/text-index.mjs"],
+  ["bundles/prose-outline/skills/prose-outline/tools/lib/text-index.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/text-index.mjs", "bundles/prose-outline/skills/prose-brainstorm/tools/lib/text-index.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/text-index.mjs", "bundles/prose-review/skills/prose-edit/tools/lib/text-index.mjs"],
   ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/registry-reader.mjs"],
   ["bundles/prose-outline/skills/prose-outline/tools/lib/revision-store.mjs", "bundles/prose-bible/skills/prose-bible/tools/lib/revision-store.mjs", "bundles/prose-research/skills/prose-research/tools/lib/revision-store.mjs", "bundles/prose-outline/skills/prose-brainstorm/tools/lib/revision-store.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/revision-store.mjs"],
   ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-research/skills/prose-research/tools/lib/registry-reader.mjs", "bundles/prose-outline/skills/prose-brainstorm/tools/lib/registry-reader.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/registry-reader.mjs"],

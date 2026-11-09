@@ -30,6 +30,7 @@ import * as historyV050 from "./suite-history-v050.mjs";
 import * as identityV060 from "./suite-identity-v060.mjs";
 import * as corpusIngestion from "./suite-corpus-ingestion.mjs";
 import * as repurpose from "./suite-repurpose.mjs";
+import * as outlineHandoff from "./suite-outline-handoff.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CORPUS = resolve(HERE, "..", "..", "prose-tell-scan", "tests", "corpus");
@@ -104,6 +105,7 @@ const SUITES = [
   ["identity-v060", identityV060],
   ["corpus-ingestion", corpusIngestion],
   ["repurpose", repurpose],
+  ["outline-handoff", outlineHandoff],
 ];
 const only = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const selected = only.length

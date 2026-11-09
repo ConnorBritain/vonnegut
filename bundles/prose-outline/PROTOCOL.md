@@ -10,6 +10,9 @@ this; there is no orchestrator.
   2  scan          outline-scan on the draft, if there is one    (deterministic)
   3  propose       voice-outline/1: thesis · claims · evidence slots · open questions
                    (beat-sheet mode: premise · acts · beats · turns)
+                   — or, from a brief, 2–3 candidates in different shapes, each
+                   checked (proposal-check --shape --brief-json) and compared
+                   (outline-compare); the writer picks one
   4  approve       the user reads it; nothing is saved until they say so
   5  save          outline-store … --approved → identity / project / revision receipt
   6  diff          on a later revision, outline-diff old new; show the JSON's findings
@@ -62,6 +65,15 @@ measure.
 The skill is a planner. An underspecified brief yields open questions; a claim
 with no evidence gets an empty slot, not an invented citation. The proposal is
 written to a task-local file and shown whole.
+
+## Step 3, candidate mode — the writer chooses the shape
+
+Shapes are data (`shapes/*.md`). Candidates vary the shape, not only the
+wording; each allocates the brief's length band across its parts and marks the
+must-include items it carries. proposal-check's findings are fixed before a
+candidate is shown; a part outside its share range is a signal to mention, not
+a budget to force. outline-compare tabulates facts with no score, and only the
+writer's pick is saved.
 
 ## Step 4–5 — approval is the gate
 

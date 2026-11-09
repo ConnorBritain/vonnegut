@@ -16,5 +16,6 @@
     "review",
     "revision"
   ],
-  "agents": "agents"
+  "agents": "agents",
+  "skills": "skills"
 }

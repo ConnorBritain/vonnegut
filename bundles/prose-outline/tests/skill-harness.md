@@ -118,3 +118,22 @@ not model output.
 **Status: not run.** No model run of this skill has been dispatched. Until one
 is, the evidence is the brief-check fixtures and the store tests, and an
 undispatched run is recorded as not run, never as passed.
+
+# Testing the outline skill's candidate mode
+
+Candidate mode's promises are checked by the same script as the single
+proposal, given the shape and the brief.
+
+| | brief | the promise | checked by |
+|---|---|---|---|
+| positive | [`fixtures/briefs-interview/done.json`](fixtures/briefs-interview/done.json) — a newsletter, 800–1100 words, two must-include items | at least two candidates, in different shapes, each clean | `proposal-check --shape --brief-json` per candidate; `outline-compare` |
+| negative | the same brief with the length band set to 200–300 words | no candidate whose required parts cannot fit the band — or the skill says only one shape fits | `proposal-check` (the budget sum against the band) |
+
+The example candidates in [`fixtures/candidates/`](fixtures/candidates/) show
+one clean candidate and two with a planted problem each, and
+`expected-compare.md` shows the table they produce. They are not model output.
+
+**Status: not run.** No model run of candidate mode has been dispatched. Record
+a run under `tests/runs/<date>-candidates/` with each candidate, its
+proposal-check output and the comparison; until then the evidence is the
+checker and the fixtures, never a pass.

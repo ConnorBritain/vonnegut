@@ -15,6 +15,9 @@ The commands there are agent internals, never homework for the user.
 
 - New prose from a brief, topic, notes or outline: `draft`. “Blank page” means
   there is no existing passage to rewrite.
+- New prose from an **approved `voice-outline/1`** (prose-outline's store):
+  build the job with `outline-job.mjs`, never by summarising the outline
+  yourself. See [references/outline-handoff.md](references/outline-handoff.md).
 - A supplied passage to change: `rewrite`; preserve supplied facts, quotations,
   qualifications and scope. Show original and result when useful.
 - Extend a passage: `continue`; supply relevant existing text for coherence.

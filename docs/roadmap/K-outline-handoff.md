@@ -132,6 +132,18 @@ Mutations:
   is how invented claims get in. `--allow-open` exists because the writer
   sometimes wants to see a draft anyway, and then the gaps are explicit rules.
 
+### Build-time decisions
+
+- **Provenance lives in `job.handoff`**, parallel to facts and rules: the runtime
+  requires facts to be strings and refuses unknown rule fields, so `from`
+  cannot sit inside them. The runtime ignores `handoff`; tests read it.
+- **The receipt gains one conditional line** naming the outline project,
+  revision, shape and digest; receipts of jobs without an outline are unchanged.
+- **Only settled answers reach the job**, optional ones included: an
+  unconfirmed must-include is not a rule.
+- **Without a brief, form and purpose come from flags**, because the runtime
+  refuses a job without them.
+
 ## 10. Deliverables
 
 - K1 — `docs/contracts/outline-handoff.md` + `lib/outline-handoff.mjs` port + parity test. Accept: parity over prose-outline's fixtures; SKIP printed when the sibling is absent.

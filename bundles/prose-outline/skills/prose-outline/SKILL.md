@@ -1,6 +1,6 @@
 ---
 name: prose-outline
-description: This skill should be used when the user asks to outline a piece from a brief, topic or notes, to see what a draft actually argues section by section, to beat-sheet a chapter or story, to compare an outline with an earlier revision, or to save or restore a project's outline. It proposes outlines and runs a deterministic structure scan; it does not draft prose (prose-draft does), and it does not judge whether the argument is good (prose-structure-critic in prose-review does). Nothing is saved without the user's approval.
+description: This skill should be used when the user asks to outline a piece from a brief, topic or notes, to compare two or three candidate outlines in different shapes for a project brief, to see what a draft actually argues section by section, to beat-sheet a chapter or story, to compare an outline with an earlier revision, or to save or restore a project's outline. It proposes outlines and runs a deterministic structure scan; it does not draft prose (prose-draft does), and it does not judge whether the argument is good (prose-structure-critic in prose-review does). Nothing is saved without the user's approval.
 ---
 
 # Prose outline
@@ -54,6 +54,35 @@ node tools/proposal-check.mjs <proposal.json> --brief <brief.md>
   with a withheld one.
 - Node ids are `n1, n2, …` and stay stable across revisions; the differ keys on
   them. Reuse ids when revising; never renumber.
+
+## Candidate mode — two or three shapes, one choice
+
+When the project has a brief (`prose-brainstorm` and `prose-interview` write
+one; `node ../prose-brainstorm/tools/brief-store.mjs show --project <name>`, or
+the same tool in either skill) and the writer wants to see options, propose
+**two or three** outlines in **different shapes** instead of one. A shape is a
+data file under `shapes/` (argument essay, narrative arc, problem–solution,
+Q&A, numbered lessons, letter); `node tools/shape-check.mjs` lists and
+validates them, and a personal shapes directory is checked the same way.
+
+- Pick shapes whose `length_hint` overlaps the brief's length band and whose
+  `good_for` fits its form. Two candidates in the same shape are not a choice;
+  if only one shape fits, say so and offer one.
+- Each candidate carries `shape`, the brief's `length` band, `brief_ref`, and
+  on every top-level node a `part` (one of the shape's parts) and a `words`
+  budget. Mark `covers` with the brief decisions a node carries
+  (`must_include.0`, …). Open decisions become `open-question` nodes.
+- Check each, then compare them, and show the table with the outlines:
+
+```bash
+node tools/proposal-check.mjs <candidate.json> --shape shapes/<shape>.md --brief-json <brief.json>
+node tools/outline-compare.mjs <a.json> <b.json> [c.json] --brief-json <brief.json>
+```
+
+Fix every finding before showing a candidate. A part outside its share range is
+a signal, not a finding: say it, do not force the budget into the range. The
+table has no scores and no winner; the writer chooses. Save only the one they
+pick, below. The others stay task-local.
 
 ## Save only on approval
 

@@ -148,6 +148,17 @@ Mutations:
   critic, or the writer, as its source.
 - **The ledger is task-local.** It belongs to one draft, as `plan.json` does.
 
+### Build-time decisions
+
+- **Unit ids are derived from the unit's text** (`u` + 8 hex of its sha256), so an
+  edit elsewhere never renames a unit; `order` carries reading order.
+- **An accepted note needs a `change`**, because the reviser executes changes,
+  not findings; the note text becomes the plan entry's `reason`.
+- **The line is not load-bearing**: a note is placed by its quote inside its
+  unit, and a moved line is reported, as PLAN-FORMAT says.
+- **The cursor manifest gains `"skills": "skills"`**; the Claude manifest keeps
+  only its `agents` list, so skill discovery there is unchanged.
+
 ## 10. Deliverables
 
 - L1 — `section-split.mjs` + fixtures. Accept: expected units for both drafts; ids stable under an edit elsewhere.

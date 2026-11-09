@@ -1,0 +1,95 @@
+{
+  "mode": "argument",
+  "title": "Why won't she let them shape a loaf?",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "question-and-answer",
+  "length": {
+    "unit": "words",
+    "min": 800,
+    "max": 1100
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "claim",
+      "parent": null,
+      "order": 1,
+      "text": "A bakery that makes new bakers wait a month.",
+      "part": "framing",
+      "words": 100,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "kind": "claim",
+      "parent": null,
+      "order": 2,
+      "text": "Why a month of feeding the starter?",
+      "part": "question",
+      "words": 250,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ],
+      "covers": [
+        "must_include.0"
+      ]
+    },
+    {
+      "id": "n3",
+      "kind": "claim",
+      "parent": null,
+      "order": 3,
+      "text": "What does the starter have to do with the bread that fails?",
+      "part": "question",
+      "words": 250,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "kind": "claim",
+      "parent": null,
+      "order": 4,
+      "text": "How does she know who will be good?",
+      "part": "question",
+      "words": 250,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "kind": "claim",
+      "parent": null,
+      "order": 5,
+      "text": "Where is the starter in your team's work?",
+      "part": "close",
+      "words": 100,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": null
+        }
+      ]
+    }
+  ],
+  "source": {
+    "brief_digest": null,
+    "draft_digest": null
+  }
+}

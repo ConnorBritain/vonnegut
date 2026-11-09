@@ -1,0 +1,217 @@
+{
+  "schema": "outline-compare/1",
+  "brief_length": {
+    "unit": "words",
+    "min": 800,
+    "max": 1100
+  },
+  "candidates": [
+    {
+      "name": "problem-solution",
+      "title": "Feed the starter",
+      "shape": "problem-solution",
+      "mode": "argument",
+      "nodes": 5,
+      "length": {
+        "unit": "words",
+        "min": 800,
+        "max": 1100
+      },
+      "words_allocated": 930,
+      "within_band": true,
+      "required_parts": {
+        "present": [
+          "problem",
+          "stakes",
+          "solution",
+          "close"
+        ],
+        "missing": []
+      },
+      "parts": {
+        "problem": {
+          "words": 200,
+          "share": 0.215,
+          "range": [
+            0.15,
+            0.3
+          ]
+        },
+        "stakes": {
+          "words": 120,
+          "share": 0.129,
+          "range": [
+            0.05,
+            0.2
+          ]
+        },
+        "solution": {
+          "words": 380,
+          "share": 0.409,
+          "range": [
+            0.3,
+            0.55
+          ]
+        },
+        "objection": {
+          "words": 120,
+          "share": 0.129,
+          "range": [
+            0.05,
+            0.2
+          ]
+        },
+        "close": {
+          "words": 110,
+          "share": 0.118,
+          "range": [
+            0.05,
+            0.15
+          ]
+        }
+      },
+      "must_include": {
+        "total": 2,
+        "covered": 2
+      },
+      "open_questions": 0,
+      "signals": [],
+      "findings": [],
+      "clean": true
+    },
+    {
+      "name": "narrative-arc-overshoot",
+      "title": "The month on the starter",
+      "shape": "narrative-arc",
+      "mode": "beat-sheet",
+      "nodes": 5,
+      "length": {
+        "unit": "words",
+        "min": 800,
+        "max": 1100
+      },
+      "words_allocated": 1400,
+      "within_band": false,
+      "required_parts": {
+        "present": [
+          "setup",
+          "inciting-moment",
+          "complication",
+          "turn",
+          "resolution"
+        ],
+        "missing": []
+      },
+      "parts": {
+        "setup": {
+          "words": 300,
+          "share": 0.214,
+          "range": [
+            0.1,
+            0.25
+          ]
+        },
+        "inciting-moment": {
+          "words": 150,
+          "share": 0.107,
+          "range": [
+            0.05,
+            0.15
+          ]
+        },
+        "complication": {
+          "words": 500,
+          "share": 0.357,
+          "range": [
+            0.2,
+            0.4
+          ]
+        },
+        "turn": {
+          "words": 250,
+          "share": 0.179,
+          "range": [
+            0.1,
+            0.2
+          ]
+        },
+        "resolution": {
+          "words": 200,
+          "share": 0.143,
+          "range": [
+            0.1,
+            0.25
+          ]
+        }
+      },
+      "must_include": {
+        "total": 2,
+        "covered": 2
+      },
+      "open_questions": 0,
+      "signals": [],
+      "findings": [
+        "word budgets sum to 1400, outside the length band 800–1100"
+      ],
+      "clean": false
+    },
+    {
+      "name": "question-and-answer-uncovered",
+      "title": "Why won't she let them shape a loaf?",
+      "shape": "question-and-answer",
+      "mode": "argument",
+      "nodes": 5,
+      "length": {
+        "unit": "words",
+        "min": 800,
+        "max": 1100
+      },
+      "words_allocated": 950,
+      "within_band": true,
+      "required_parts": {
+        "present": [
+          "framing",
+          "question"
+        ],
+        "missing": []
+      },
+      "parts": {
+        "framing": {
+          "words": 100,
+          "share": 0.105,
+          "range": [
+            0.05,
+            0.15
+          ]
+        },
+        "question": {
+          "words": 750,
+          "share": 0.789,
+          "range": [
+            0.6,
+            0.9
+          ]
+        },
+        "close": {
+          "words": 100,
+          "share": 0.105,
+          "range": [
+            0.05,
+            0.15
+          ]
+        }
+      },
+      "must_include": {
+        "total": 2,
+        "covered": 1
+      },
+      "open_questions": 0,
+      "signals": [],
+      "findings": [
+        "must-include items no node covers: must_include.1 (the eleven years of notebooks)"
+      ],
+      "clean": false
+    }
+  ],
+  "notes": []
+}
