@@ -1,0 +1,17 @@
+model: claude-opus-5-5
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && cat references/bible-schema.md && ls tools && ls -R <task>/skillwork/prose-bible-control-d3/book
+
+Bash: S=<repo>/bundles/prose-bible/skills/prose-bible; cat $S/references/bible-schema.md; ls $S/tools; ls -R book
+
+Read: <repo>/bundles/prose-bible/skills/prose-bible/references/bible-schema.md
+
+Glob: book/**/*
+
+Bash: mkdir -p <task>/bible && node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs book --json > <task>/bible/index.json && node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/bible/index.json --json > <task>/bible/diff.json && node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index <task>/bible/index.json; echo ---; cat <task>/bible/diff.json; echo ---; node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Agent: Judge continuity candidates for the project. Diff JSON: <task>/bible/diff.json. Current bible: none exists yet (empty). Report only findings that cite two locations from the diff, or CLEAN.
+
+Grep: lock|pieces
+
+Read: <task>/bible/diff.json

@@ -1,0 +1,529 @@
+{
+  "n-anger-scripture-exact-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-anger-scripture-exact-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-anger-scripture-exact-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-beauty-modernised-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: claim-drift / **ORIGINAL**: line 1, \"and surely virtue is best / in a body that is comely\" / **REVISION**: line 1, \"and surely virtue shows best / in a body that is comely\" / **WHAT THE READER LOSES**: The original says virtue is at its best in a comely body. The revision says only that virtue *looks* best there. That turns a claim about virtue into a claim about how it appears, and the"
+    ]
+  },
+  "n-beauty-modernised-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: claim-drift / - **ORIGINAL**: line 1–2, \"surely virtue is best / in a body that is comely\" / - **REVISION**: line 1–2, \"surely virtue shows best / in a body that is comely\" / - **WHAT THE READER LOSES**: The original says virtue is at its best in a comely body, which is a claim about virtue itself. The revision says only that virtue looks its best there, which is a claim about how it "
+    ]
+  },
+  "n-beauty-modernised-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: claim-drift / **ORIGINAL**: line 1–2, \"surely virtue is best / in a body that is comely\" / **REVISION**: line 1–2, \"surely virtue shows best / in a body that is comely\" / **WHAT THE READER LOSES**: The original says virtue itself is at its best in a comely body. The revision says only that virtue looks its best there, so a claim about what virtue is becomes a claim about how it appears,"
+    ]
+  },
+  "n-rossolimo-island-dropped-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 19, \"travelled to the Island of Sahalin\" / - **REVISION**: line 19, \"travelled to Sahalin\" / - **WHAT THE READER LOSES**: The original says Sahalin is an island, and the revision doesn't. This is the only time the place is named. A reader who doesn't already know Sahalin can no longer tell from the text that Chekhov's 1890 journey was to an island p"
+    ]
+  },
+  "n-rossolimo-island-dropped-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 19, \"travelled to the Island of Sahalin, to write afterwards a book upon our\" / - **REVISION**: line 19, \"travelled to Sahalin, to write afterwards a book upon our\" / - **WHAT THE READER LOSES**: The revision no longer says Sahalin is an island. This is the only time the place is mentioned, and \"penal colony and prisons\" doesn't tell the reader it i"
+    ]
+  },
+  "n-rossolimo-island-dropped-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 19, \"travelled to the Island of Sahalin\" / - **REVISION**: line 19, \"travelled to Sahalin\" / - **WHAT THE READER LOSES**: Sahalin appears only once, so this is the only place the text says it is an island. A reader who doesn't already know the place can no longer tell that the 1890 trip and the penal colony were on an island, which also tells them h"
+    ]
+  },
+  "n-rossolimo-tightened-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-rossolimo-tightened-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-rossolimo-tightened-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-sister-condensed-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-sister-condensed-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-sister-condensed-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-tihonov-moscow-university-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-tihonov-moscow-university-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-tihonov-moscow-university-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-tihonov-reordered-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: dropped-qualification / **ORIGINAL**: line 9, \"I only remember that Vvedensky and I for some reason roared with laughter as we listened to you.\" / **REVISION**: lines 8–10, \"What I do remember is that Vvedensky and I, for some reason, roared with laughter as we listened to you.\" / **WHAT THE READER LOSES**: The original says the laughter is all he remembers of the criticism. The revisio"
+    ]
+  },
+  "n-tihonov-reordered-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "n-tihonov-reordered-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "FAITHFUL",
+    "_findings_to_review": []
+  },
+  "p-anger-scripture-misquoted-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 14–15, “to possess our souls in patience;” / - **REVISION**: lines 14–15, “to possess our souls in patience;”. provenance-scan marks this quote `drifted`, ledger k1 → source s1. The source reads: “In your patience possess ye your souls”. / - **WHAT THE READER LOSES**: The reader takes this as the Scripture's own words, but the cached source has dif"
+    ]
+  },
+  "p-anger-scripture-misquoted-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact (a provenance `drifted` quote) / - **ORIGINAL**: lines 14–15: “to possess our souls in patience;” / - **REVISION**: lines 14–15: “to possess our souls in patience;”. The ledger source (k1 → s1) reads: \"In your patience possess ye your souls\" / - **WHAT THE READER LOSES**: The words inside the quotation marks credited to \"The Scripture\" do not match the wording of the ledg"
+    ]
+  },
+  "p-anger-scripture-misquoted-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 14–15: “to possess our souls in patience;” / - **REVISION**: lines 14–15: “to possess our souls in patience;”. The ledger source (k1 → s1) reads “In your patience possess ye your souls”. / - **WHAT THE READER LOSES**: The words in quotation marks are attributed to Scripture but are not the cited source's wording. The reader has no way to tell they "
+    ]
+  },
+  "p-anger-seneca-misquoted-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 13–14: “that anger is like ruin, which breaks itself upon that it falls.” / - **REVISION**: line 13–14: “that anger is like ruin, which breaks itself upon that it falls.” `provenance-scan` marks this quote `drifted` against ledger k1 / source s1. The source reads: \"Anger is like a ruin which breaks itself on that upon which it falls\" / - **WHAT THE "
+    ]
+  },
+  "p-anger-seneca-misquoted-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact (a `drifted` quote, which the provenance rules treat as a finding) / - **ORIGINAL**: lines 13–14, `Seneca saith well, “that anger is like ruin, which breaks itself upon that it falls.”` / - **REVISION**: lines 13–14, `Seneca saith well, “that anger is like ruin, which breaks itself upon that it falls.”` The ledger source (k1 → s1) reads: `Anger is like a ruin which breaks"
+    ]
+  },
+  "p-anger-seneca-misquoted-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": []
+  },
+  "p-beauty-qualifications-dropped-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: L2: \"comely, though not of delicate features, and that\" / - **REVISION**: L2: \"comely, and that hath rather dignity\" / - **WHAT THE READER LOSES**: The original rules out delicate features from the ideal body. The revision drops that exclusion, so the reader no longer learns that the best setting for virtue is not a finely featured face.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L3–5: \"neither is it always most seen, that very beautiful persons are otherwise of great virtue\" / - **REVISION**: L3: \"Very beautiful persons are otherwise of great virtue\" / - **WHAT THE READER LOSES**: The polarity is reversed. The original says beautiful people are often not also of great virtue, and the revision says they are. That makes the next cl",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L7–8: \"But this holds not always; for Augustus Cæsar\" / - **REVISION**: L6: \"Augustus Cæsar,\" / - **WHAT THE READER LOSES**: The list of rulers no longer works as counterexamples to the general rule. The reader cannot tell that the six names are exceptions, so the general rule now reads as having none.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L15–16: \"A man cannot tell whether Apelles, or Albert Durer, were the more trifler\" / - **REVISION**: L15: \"Apelles was the greater trifler, and Albert Durer the lesser\" / - **WHAT THE READER LOSES**: The original says it is impossible to choose between the two painters. The revision states a ranking the author refused to make.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L19: \"Such personages, I think, would please nobody\" / - **REVISION**: L18: \"Such personages would please nobody\" / - **WHAT THE READER LOSES**: Dropping \"I think\" turns the author's personal opinion into a flat statement of fact.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L20–21: \"not but I think a painter may make a better face than ever was; but he must do it\" / - **REVISION**: L18–19: \"A painter may make a better face than ever was, and he must do it\" / - **WHAT THE READER LOSES**: The hedge \"I think\" is gone, and the concession (\"not but … but\") has become a plain \"and\". The reader loses that this sentence limits the c",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L24–25: \"If it be true that the principal part of beauty is in decent motion, certainly it is no marvel\" / - **REVISION**: L24–25: \"The principal part of beauty is in decent motion, and it is no marvel\" / - **WHAT THE READER LOSES**: The original offers this premise as a condition. The revision asserts it outright, so the conclusion now seems to rest on a",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: L25–26: \"persons in years seem many times more amiable\" / - **REVISION**: L25–26: \"persons in years seem more amiable\" / - **WHAT THE READER LOSES**: The original says this is often true. The revision makes it true of older people in general.",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: L29–30: \"and, for the most part, it makes a dissolute youth\" / - **REVISION**: L29: \"and it makes a dissolute youth\" / - **WHAT THE READER LOSES**: The original says beauty usually leads to a dissolute youth. The revision says it always does."
+    ]
+  },
+  "p-beauty-qualifications-dropped-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": []
+  },
+  "p-beauty-qualifications-dropped-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: lines 1–3, \"virtue is best in a body that is comely, though not of delicate features, and that hath rather dignity of presence\" / - **REVISION**: lines 1–2, \"virtue is best in a body that is comely, and that hath rather dignity of presence\" / - **WHAT THE READER LOSES**: The original says the comely body should *not* have delicate features. With",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: lines 3–5, \"neither is it always most seen, that very beautiful persons are otherwise of great virtue\" / - **REVISION**: line 3, \"Very beautiful persons are otherwise of great virtue\" / - **WHAT THE READER LOSES**: The polarity is reversed. The original says beautiful people are *not usually* also of great virtue, and the revision says they are, which mak",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: lines 7–8, \"But this holds not always; for Augustus Cæsar\" / - **REVISION**: line 6, \"Augustus Cæsar\" / - **WHAT THE READER LOSES**: The list of rulers was offered as exceptions to a general rule. With the turn removed, the reader cannot tell that these figures are counter-examples rather than proof of the claim before them.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: lines 15–16, \"A man cannot tell whether Apelles, or Albert Durer, were the more trifler\" / - **REVISION**: line 15, \"Apelles was the greater trifler, and Albert Durer the lesser\" / - **WHAT THE READER LOSES**: The original says no one can decide between the two. The revision decides for Apelles, a verdict the author explicitly refused to give.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: line 19, \"Such personages, I think, would please nobody but the painter\" / - **REVISION**: line 18, \"Such personages would please nobody but the painter\" / - **WHAT THE READER LOSES**: Without \"I think\", the author's opinion now reads as a flat fact.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: lines 20–21, \"not but I think a painter may make a better face than ever was; but he must do it by a kind of felicity\" / - **REVISION**: lines 18–20, \"A painter may make a better face than ever was, and he must do it by a kind of felicity\" / - **WHAT THE READER LOSES**: The \"I think\" is gone, so opinion becomes assertion. \"But\" also became \"and\", so the r",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: lines 24–25, \"If it be true that the principal part of beauty is in decent motion, certainly it is no marvel\" / - **REVISION**: lines 24–25, \"The principal part of beauty is in decent motion, and it is no marvel\" / - **WHAT THE READER LOSES**: The original made this a condition (\"if it be true\"). The revision states it as settled fact, so the reader loses",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: lines 25–26, \"persons in years seem many times more amiable\" / - **REVISION**: lines 25–26, \"persons in years seem more amiable\" / - **WHAT THE READER LOSES**: \"Many times\" meant \"often\". Without it, the revision claims older people always seem more amiable.",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: lines 29–30, \"and, for the most part, it makes a dissolute youth\" / - **REVISION**: line 29, \"and it makes a dissolute youth\" / - **WHAT THE READER LOSES**: The original says beauty *usually* corrupts youth. The revision says it always does."
+    ]
+  },
+  "p-death-quotes-paraphrased-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 31: `Augustus Cæsar died in a compliment: “Livia, conjugii nostri memor, vive et vale.”` / - **REVISION**: lines 30–31: `Augustus Cæsar died in a compliment to his wife;` / - **WHAT THE READER LOSES**: Augustus's actual last words (\"Livia, mindful of our marriage, live and farewell\") are gone, and so is his wife's name. The reader can no longer see ",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 32–33: `Tiberius in dissimulation, as Tacitus saith of him, “Jam Tiberium vires et corpus, non dissimulatio, deserebant:”` / - **REVISION**: line 31: `Tiberius in dissimulation, as Tacitus saith of him;` / - **WHAT THE READER LOSES**: Tacitus's sentence (his strength and body were failing Tiberius, but his dissimulation was not) is gone. \"As Tacitu",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 34: `Vespasian in a jest, sitting upon the stool, “Ut puto Deus fio;”` / - **REVISION**: lines 31–32: `Vespasian in a jest, sitting upon the stool;` / - **WHAT THE READER LOSES**: The jest itself (\"I think I am becoming a god\") is gone. The reader is told there was a joke but cannot know what it was or why it counts as dying \"in a jest.\"",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 34–35: `Galba with a sentence, “Feri, si ex re sit populi Romani,” holding forth his neck;` / - **REVISION**: line 32: `Galba with a sentence, holding forth his neck;` / - **WHAT THE READER LOSES**: Galba's sentence (\"Strike, if it be for the good of the Roman people\") is gone. The reader learns only that he said something, not what.",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 45: `the sweetest canticle is “Nunc dimittis,”` / - **REVISION**: lines 42–43: `the sweetest canticle is the old song of departure,` / - **WHAT THE READER LOSES**: The original names the canticle as the Nunc dimittis, Simeon's song. \"The old song of departure\" does not say which canticle is meant, so the reader cannot recover the reference."
+    ]
+  },
+  "p-death-quotes-paraphrased-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: L31: `Augustus Cæsar died in a compliment: “Livia, conjugii nostri memor, vive et vale.”` / - **REVISION**: L30–31: `Augustus Cæsar died in a compliment to his wife;` / - **WHAT THE READER LOSES**: The wife's name, Livia, and what the compliment actually said (\"remember our marriage, live and farewell\"). The reader can no longer tell what the compliment ",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: L32–33: `Tiberius in dissimulation, as Tacitus saith of him, “Jam Tiberium vires et corpus, non dissimulatio, deserebant:”` / - **REVISION**: L31: `Tiberius in dissimulation, as Tacitus saith of him;` / - **WHAT THE READER LOSES**: What Tacitus said: Tiberius's strength and body were failing him, but his dissimulation was not. The attribution is still th",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: L33–34: `Vespasian in a jest, sitting upon the stool, “Ut puto Deus fio;”` / - **REVISION**: L31–32: `Vespasian in a jest, sitting upon the stool;` / - **WHAT THE READER LOSES**: The jest itself (\"I think I am becoming a god\"). The reader is told a joke was made but cannot know what it was or why it was funny.",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: L34–36: `Galba with a sentence, “Feri, si ex re sit populi Romani,” holding forth his neck;` / - **REVISION**: L32–33: `Galba with a sentence, holding forth his neck;` / - **WHAT THE READER LOSES**: The sentence itself (\"Strike, if it be for the good of the Roman people\"). The reader cannot tell what Galba said or why it shows a calm spirit at death.",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: L47–48: `extinguisheth envy: “Extinctus amabitur idem.”` / - **REVISION**: L45: `extinguisheth envy: the man once gone will be loved.` / - **WHAT THE READER LOSES**: The quotation marks showing these are borrowed words are gone, so the line now reads as the author's own claim. The paraphrase also drops *idem* (\"that same man\"), which tied the line to the ",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: L45: `the sweetest canticle is “Nunc dimittis,”` / - **REVISION**: L42–43: `the sweetest canticle is the old song of departure,` / - **WHAT THE READER LOSES**: The name of the canticle (the Song of Simeon). \"The old song of departure\" does not identify it, and the reader cannot get the name back from the revision."
+    ]
+  },
+  "p-death-quotes-paraphrased-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 31: `Augustus Cæsar died in a compliment: “Livia, conjugii nostri memor, vive et vale.”` / **REVISION**: lines 30–31: `Augustus Cæsar died in a compliment to his wife;` / **WHAT THE READER LOSES**: The wife's name (Livia) and Augustus's actual last words (\"mindful of our marriage, live and farewell\") are gone, so the reader can't see what the compliment",
+      "**CLASS**: dropped-fact / **ORIGINAL**: lines 32–33: `Tiberius in dissimulation, as Tacitus saith of him, “Jam Tiberium vires et corpus, non dissimulatio, deserebant:”` / **REVISION**: line 31: `Tiberius in dissimulation, as Tacitus saith of him;` / **WHAT THE READER LOSES**: What Tacitus said is gone: Tiberius's strength and body were failing him, but his dissimulation was not. The attribution is",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 34: `Vespasian in a jest, sitting upon the stool, “Ut puto Deus fio;”` / **REVISION**: lines 31–32: `Vespasian in a jest, sitting upon the stool;` / **WHAT THE READER LOSES**: The jest itself (\"I think I am becoming a god\") is gone, so the reader is told there was a joke but not what it was.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: lines 34–36: `Galba with a sentence, “Feri, si ex re sit populi Romani,” holding forth his neck;` / **REVISION**: lines 32–33: `Galba with a sentence, holding forth his neck;` / **WHAT THE READER LOSES**: The sentence (\"Strike, if it be for the good of the Roman people\") is gone. \"With a sentence\" now refers to words the reader never sees.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 45: `the sweetest canticle is “Nunc dimittis,”` / **REVISION**: lines 42–43: `the sweetest canticle is the old song of departure,` / **WHAT THE READER LOSES**: The named canticle (the Nunc dimittis, the Song of Simeon) is replaced by a vague description, and the reader can't work back to which song is meant."
+    ]
+  },
+  "p-death-severus-unnamed-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 36, \"Septimus Severus in dispatch, “Adeste, si quid mihi restat agendum,”\" / - **REVISION**: line 36, \"Severus in dispatch, “Adeste, si quid mihi restat agendum,”\" / - **WHAT THE READER LOSES**: Several Roman emperors were called Severus, including Septimius, Severus Alexander and Severus II. With the forename gone, the reader can no longer tell whi"
+    ]
+  },
+  "p-death-severus-unnamed-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 36, \"Septimus Severus in dispatch, “Adeste, si quid mihi restat agendum,”\" / - **REVISION**: line 36, \"Severus in dispatch, “Adeste, si quid mihi restat agendum,”\" / - **WHAT THE READER LOSES**: More than one emperor was called Severus, including Septimius Severus and Severus Alexander. Nothing else in the passage names this one, so the reader can't"
+    ]
+  },
+  "p-death-severus-unnamed-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 36, \"his neck; Septimus Severus in dispatch, “Adeste, si quid mihi restat\" / - **REVISION**: line 36, \"his neck; Severus in dispatch, “Adeste, si quid mihi restat\" / - **WHAT THE READER LOSES**: More than one Roman emperor was named Severus, including Septimius, Alexander and Severus II. The revision drops the praenomen, and nothing else in the pass"
+    ]
+  },
+  "p-rossolimo-hedges-removed-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: dropped-qualification / **ORIGINAL**: L7–8 \"On a separate sheet I send a few facts, very bald, but I can do no more....\" / **REVISION**: L7 \"On a separate sheet I send the facts.\" / **WHAT THE READER LOSES**: The writer's warning that the sheet is sparse and deliberately incomplete is gone, so \"the facts\" now reads as a complete account.",
+      "**CLASS**: claim-drift / **ORIGINAL**: L13–14 \"I had at the time only a slight idea of the Faculties in general\" / **REVISION**: L12 \"I had an idea of the Faculties in general\" / **WHAT THE READER LOSES**: The admission that he knew very little about the faculties when he chose is gone, and the sentence now says he was informed.",
+      "**CLASS**: claim-drift / **ORIGINAL**: L14–15 \"chose the Faculty of Medicine I don’t remember on what grounds, but did not regret my choice afterwards\" / **REVISION**: L13–14 \"chose the Faculty of Medicine on good grounds, and did not regret my choice afterwards\" / **WHAT THE READER LOSES**: The original says he does not remember why he chose medicine. The revision says he had good reasons, which ",
+      "**CLASS**: dropped-qualification / **ORIGINAL**: L20–22 \"Not counting reviews, feuilletons, paragraphs, and all that I have written from day to day for the newspapers, which it would be difficult now to seek out and collect,\" / **REVISION**: absent / **WHAT THE READER LOSES**: The reader no longer learns that the output figure leaves out a large body of journalism, or that he wrote that journalism",
+      "**CLASS**: dropped-qualification / **ORIGINAL**: L23 \"published more than three hundred signatures of print\" / **REVISION**: L19 \"published three hundred signatures of print\" / **WHAT THE READER LOSES**: \"More than\" made the figure a lower bound. Without it the reader takes three hundred as the exact total.",
+      "**CLASS**: claim-drift / **ORIGINAL**: L26 \"I have no doubt that the study of medicine has had an important influence\" / **REVISION**: L22 \"The study of medicine has had an important influence\" / **WHAT THE READER LOSES**: The claim was framed as his personal conviction. With the attribution removed, it reads as a plain statement of fact.",
+      "**CLASS**: claim-drift / **ORIGINAL**: L30–31 \"it is probably due to my close association with medicine that I have succeeded in avoiding many mistakes\" / **REVISION**: L26–27 \"it is due to my close association with medicine that I have succeeded in avoiding many mistakes\" / **WHAT THE READER LOSES**: Removing \"probably\" turns a tentative explanation into a certain one.",
+      "**CLASS**: claim-drift / **ORIGINAL**: L34–36 \"I have always tried where it was possible to be consistent with the facts of science, and where it was impossible I have preferred not to write at all.\" / **REVISION**: L30–31 \"I have always been consistent with the facts of science.\" / **WHAT THE READER LOSES**: A limited effort (\"tried where it was possible\") becomes a claim of complete success. His",
+      "**CLASS**: claim-drift / **ORIGINAL**: L36–38 \"I may observe in passing that the conditions of artistic creation do not always admit of complete harmony with the facts of science.\" / **REVISION**: L31–32 \"The conditions of artistic creation do not admit of complete harmony with the facts of science.\" / **WHAT THE READER LOSES**: Dropping \"always\" changes \"sometimes impossible\" to \"never possible\","
+    ]
+  },
+  "p-rossolimo-hedges-removed-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": []
+  },
+  "p-rossolimo-hedges-removed-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": []
+  },
+  "p-sister-fourmis-cut-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 24, \"I heard the midnight service in the Church of the Embassy....\" / - **REVISION**: line 24, \"I heard the midnight service at church....\" / - **WHAT THE READER LOSES**: Which church it was. The reader can no longer tell that he heard the Easter service at the embassy church, the Russian Orthodox one, rather than at some church in Paris.",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 29, \"I went to the Salon and couldn’t see half the pictures\" / - **REVISION**: lines 29–30, \"I went to an exhibition of pictures and couldn’t see half of them\" / - **WHAT THE READER LOSES**: The name of the exhibition. \"The Salon\" identifies the official annual Paris art show, and \"an exhibition of pictures\" could be anything. The scan does not extr",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 31–32, \"In comparison with the landscape painters I saw here yesterday Levitan is a king....\" / - **REVISION**: absent / - **WHAT THE READER LOSES**: The whole judgement is gone: the painter Levitan, the claim that he is a \"king\" next to the French landscape painters, and the fact that he saw those paintings \"yesterday\". The scan does not extract s",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 42, \"to do a bust of Suvorin\" / - **REVISION**: line 41, \"to do a bust of a friend\" / - **WHAT THE READER LOSES**: Who the bust is of. Suvorin is a named person and the reason \"us\" are staying until Saturday. \"A friend\" names nobody and suggests a relationship the original does not state. The scan does not extract single-word entities, so it could n",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 46–47, \"when the Minister for Internal Affairs was called to account\" / - **REVISION**: line 46, \"when a minister was called to account\" / - **WHAT THE READER LOSES**: Which office was answerable. The reader can no longer tell that it was the interior minister, the one responsible for the police, who was called to account.",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 48–49, \"putting down the riots in Fourmis (there were many killed and wounded)\" / - **REVISION**: lines 47–48, \"putting down some riots in the north\" / - **WHAT THE READER LOSES**: Three things: where it happened (Fourmis becomes a vague region), the casualties (\"many killed and wounded\" is gone entirely), and the definite \"the riots\", which treate"
+    ]
+  },
+  "p-sister-fourmis-cut-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 24, \"I heard the midnight service in the Church of the Embassy....\" / **REVISION**: line 24, \"I heard the midnight service at church....\" / **WHAT THE READER LOSES**: Where he heard the Easter service, the Russian embassy church, is gone. \"At church\" could be any Paris church, so the reader no longer knows he went to a Russian Orthodox service abroad.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 29, \"I went to the Salon and couldn’t see half the pictures\" / **REVISION**: lines 29–30, \"I went to an exhibition of pictures and couldn’t see half of them\" / **WHAT THE READER LOSES**: The named venue, the Paris Salon, becomes an unnamed exhibition. The scan cannot catch this because single-word entities are not extracted.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: lines 31–32, \"In comparison with the landscape painters I saw here yesterday Levitan is a king....\" / **REVISION**: absent / **WHAT THE READER LOSES**: The whole sentence is cut: the comparison with the French landscape painters, the fact that he saw them \"yesterday\", and his verdict naming Levitan. The reader can no longer tell which Russian artist he rated",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 42, \"to do a bust of Suvorin\" / **REVISION**: line 41, \"to do a bust of a friend\" / **WHAT THE READER LOSES**: The sitter, Suvorin, is no longer named, so the reader cannot tell whose bust is keeping them in Paris. The scan cannot catch this because the entity is a single word.",
+      "**CLASS**: claim-drift / **ORIGINAL**: line 42, \"to do a bust of Suvorin\" / **REVISION**: line 41, \"to do a bust of a friend\" / **WHAT THE READER LOSES**: The revision says the sitter is \"a friend\", which the original never says. The reader is given a description of the relationship that the original does not support.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 47, \"the Minister for Internal Affairs was called to account\" / **REVISION**: line 46, \"a minister was called to account\" / **WHAT THE READER LOSES**: Which minister answered for the crackdown is lost. Interior was the ministry responsible for the police, and \"a minister\" could be any member of the cabinet.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 49, \"putting down the riots in Fourmis\" / **REVISION**: line 47–48, \"putting down some riots in the north\" / **WHAT THE READER LOSES**: The town, Fourmis, is replaced by a vague region, so the reader cannot identify the event being debated. The scan cannot catch this because the entity is a single word.",
+      "**CLASS**: dropped-qualification / **ORIGINAL**: line 49, \"(there were many killed and wounded)\" / **REVISION**: absent / **WHAT THE READER LOSES**: The parenthesis saying the suppression caused many deaths and injuries is gone. Without it, the reader cannot tell why the government was being called to account or why the sitting was stormy."
+    ]
+  },
+  "p-sister-fourmis-cut-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / **ORIGINAL**: line 24, \"I heard the midnight service in the Church of the Embassy....\" / **REVISION**: line 24, \"I heard the midnight service at church....\" / **WHAT THE READER LOSES**: Which church he went to. The reader can no longer tell that he spent his Easter service at the Russian embassy's church rather than at some Paris church.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: line 29, \"I went to the Salon and couldn’t see half the pictures\" / **REVISION**: lines 29–30, \"I went to an exhibition of pictures and couldn’t see half of them\" / **WHAT THE READER LOSES**: The name of the venue. The reader can't tell that this was the Paris Salon, the official annual exhibition, and not just any show of paintings. The scan doesn't extra",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: lines 31–32, \"In comparison with the landscape painters I saw here yesterday Levitan is a king....\" / **REVISION**: absent / **WHAT THE READER LOSES**: A whole judgement is gone: Levitan ranked above the French landscape painters, and the detail that he saw them \"yesterday\". Without it, the general claim that Russian artists are more serious has no concret",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: line 42, \"to do a bust of Suvorin\" / **REVISION**: line 41, \"to do a bust of a friend\" / **WHAT THE READER LOSES**: Who the bust is of. The reader can't work out that the delay is for Suvorin, the person Chekhov was travelling with. \"A friend\" is also a relationship the original never states.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: line 47, \"the Minister for Internal Affairs was called to account\" / **REVISION**: line 46, \"a minister was called to account\" / **WHAT THE READER LOSES**: Which minister answered in the Chamber. Policing the riots was the Interior Minister's responsibility, and \"a minister\" no longer shows that.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: line 49, \"putting down the riots in Fourmis\" / **REVISION**: line 47–48, \"putting down some riots in the north\" / **WHAT THE READER LOSES**: The place. A specific, identifiable event at Fourmis becomes vague riots \"in the north\", so the reader can't identify the incident. The scan doesn't extract single-word place names, so it couldn't catch this one.",
+      "- **CLASS**: dropped-qualification / **ORIGINAL**: line 49, \"(there were many killed and wounded)\" / **REVISION**: absent / **WHAT THE READER LOSES**: That people died. Without it the reader can't tell that the \"irregularities\" were deadly, which is why the sitting was stormy and why the minister had to answer for it."
+    ]
+  },
+  "p-sister-scope-dropped-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "**CLASS**: dropped-fact / **ORIGINAL**: lines 8–10, \"The other exhibition buildings I saw only from the outside, as they were occupied by cavalry brought there in anticipation of disorders.\" / **REVISION**: lines 8–9, \"I saw the other exhibition buildings from the outside.\" / **WHAT THE READER LOSES**: The reader no longer learns that cavalry had taken over the exhibition buildings because the aut",
+      "**CLASS**: dropped-qualification / **ORIGINAL**: line 8, \"saw only from the outside\" / **REVISION**: line 8, \"saw the other exhibition buildings from the outside\" / **WHAT THE READER LOSES**: Without \"only\", the revision no longer says the writer was kept out of the buildings, so it no longer reads as a restriction. It reads as a choice.",
+      "**CLASS**: dropped-qualification / **ORIGINAL**: lines 12–13, \"a dozen policemen are sufficient here.\" / **REVISION**: lines 11–12, \"a dozen policemen are sufficient.\" / **WHAT THE READER LOSES**: Without \"here\", the remark is no longer limited to Paris. An observation about the Parisian police and crowds now reads as a general claim about crowds anywhere.",
+      "**CLASS**: dropped-fact / **ORIGINAL**: lines 29–30, \"couldn’t see half the pictures, thanks to my short sight.\" / **REVISION**: lines 28–29, \"couldn’t see half the pictures.\" / **WHAT THE READER LOSES**: The writer's short-sightedness is no longer stated. Nothing now explains why he missed half the pictures, so the reader can only guess that it was the broken pince-nez.",
+      "**CLASS**: dropped-qualification / **ORIGINAL**: lines 31–32, \"In comparison with the landscape painters I saw here yesterday Levitan is a king....\" / **REVISION**: line 30, \"Levitan is a king....\" / **WHAT THE READER LOSES**: Levitan is now called \"a king\" without limit. In the original he was a king only next to the landscape painters the writer saw in Paris the day before. The reader also loses",
+      "**CLASS**: dropped-fact / **ORIGINAL**: line 49, \"down the riots in Fourmis (there were many killed and wounded).\" / **REVISION**: line 47, \"down the riots in Fourmis.\" / **WHAT THE READER LOSES**: The revision no longer says the Fourmis riots left many people killed and wounded. Without that, the reader cannot tell how serious the government's \"irregularities\" were or why the Chamber sitting was "
+    ]
+  },
+  "p-sister-scope-dropped-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 8–10, \"The other exhibition buildings I saw only from the outside, as they were occupied by cavalry brought there in anticipation of disorders.\" / - **REVISION**: lines 8–9, \"I saw the other exhibition buildings from the outside.\" / - **WHAT THE READER LOSES**: The reader no longer knows why he stayed outside: cavalry had taken over the exhibition ",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: line 9, \"saw only from the outside\" / - **REVISION**: line 9, \"buildings from the outside\" / - **WHAT THE READER LOSES**: Without \"only\", the sentence no longer says he was kept out. It reads as if he chose to look at the buildings from outside, not that he could not get in.",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: lines 12–13, \"a dozen policemen are sufficient here\" / - **REVISION**: line 12, \"a dozen policemen are sufficient\" / - **WHAT THE READER LOSES**: The original limits this to Paris and sets it against home. The revision makes it a general claim about crowds anywhere, and the comparison is gone.",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 29–30, \"couldn’t see half the pictures, thanks to my short sight\" / - **REVISION**: lines 28–29, \"couldn’t see half the pictures.\" / - **WHAT THE READER LOSES**: The stated reason, his short sight, is gone. The reader can only guess at it from the nearby line about spectacles, and \"couldn't see half the pictures\" could now mean crowds or the way th",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: lines 31–32, \"In comparison with the landscape painters I saw here yesterday Levitan is a king....\" / - **REVISION**: line 30, \"Levitan is a king....\" / - **WHAT THE READER LOSES**: The original praises Levitan in comparison with the French landscape painters he saw the day before. The revision makes it unqualified praise, and the reader no long",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 49, \"down the riots in Fourmis (there were many killed and wounded).\" / - **REVISION**: line 47, \"down the riots in Fourmis.\" / - **WHAT THE READER LOSES**: The reader no longer learns that many people were killed and wounded at Fourmis. Without that, the minister being called to account looks like a dispute over procedure rather than a reckoning fo"
+    ]
+  },
+  "p-sister-scope-dropped-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 8–10, \"The other exhibition buildings I saw only from the outside, as they were occupied by cavalry brought there in anticipation of disorders.\" / - **REVISION**: lines 8–9, \"I saw the other exhibition buildings from the outside.\" / - **WHAT THE READER LOSES**: The reader no longer learns that cavalry occupied the exhibition buildings in expectatio",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: line 9, \"saw only from the outside\" / - **REVISION**: line 9, \"saw the other exhibition buildings from the outside\" / - **WHAT THE READER LOSES**: Without \"only\", the reader cannot tell that he was kept out. The revision allows that he looked at the outsides and then went in.",
+      "- **CLASS**: dropped-qualification / - **ORIGINAL**: lines 12–13, \"To disperse a big crowd a dozen policemen are sufficient here.\" / - **REVISION**: lines 11–12, \"To disperse a big crowd a dozen policemen are sufficient.\" / - **WHAT THE READER LOSES**: The original says a dozen police are enough in Paris, an observation about French crowds compared with home. Without \"here\" it reads as a general r",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: lines 29–30, \"couldn’t see half the pictures, thanks to my short sight.\" / - **REVISION**: lines 28–29, \"couldn’t see half the pictures.\" / - **WHAT THE READER LOSES**: The reader loses the stated reason he could not see the pictures. The link to the broken pince-nez is now left to inference, and the gap could just as well be read as crowds or bad hangin",
+      "- **CLASS**: claim-drift / - **ORIGINAL**: lines 31–32, \"In comparison with the landscape painters I saw here yesterday Levitan is a king....\" / - **REVISION**: line 30, \"Levitan is a king....\" / - **WHAT THE READER LOSES**: In the original, Levitan is a king next to the French landscape painters he saw the day before. In the revision he is simply a king, with no comparison, no genre and no occasi",
+      "- **CLASS**: dropped-fact / - **ORIGINAL**: line 49, \"down the riots in Fourmis (there were many killed and wounded).\" / - **REVISION**: line 47, \"down the riots in Fourmis.\" / - **WHAT THE READER LOSES**: The reader no longer learns that the suppression killed and wounded many people. That is the cause of the Minister being called to account, and it is why the sitting was stormy."
+    ]
+  },
+  "p-tihonov-summarised-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": []
+  },
+  "p-tihonov-summarised-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": []
+  },
+  "p-tihonov-summarised-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "contradicts_scan": 0,
+    "_verdict": "MATERIAL-LOSS",
+    "_findings_to_review": [
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L12, \"I was born in Taganrog in 1860.\" / **REVISION**: L12–13, \"I was born in Taganrog around the middle of the century\" / **WHAT THE READER LOSES**: The birth year. \"Around the middle of the century\" could mean anything from about 1845 to 1860, so the reader can no longer work out his age.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L12–13, \"I finished the course at Taganrog high school in 1879.\" / **REVISION**: L13, \"finished at the Taganrog high school\" / **WHAT THE READER LOSES**: The year he left school. This was the only fixed point between his birth and his degree.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L13–14, \"In 1884 I took my degree in medicine at the University of Moscow.\" / **REVISION**: L13–14, \"and some years later took my degree in medicine at the University of Moscow\" / **WHAT THE READER LOSES**: The year of the medical degree. \"Some years later\" hangs off a school date that is now gone too, so the degree cannot be dated at all.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L14–15, \"In 1888 I gained the Pushkin prize.\" / **REVISION**: L14–15, \"I won a literary prize not long after\" / **WHAT THE READER LOSES**: Both the year (1888) and which prize it was. The Pushkin prize is a named, identifiable honour; \"a literary prize\" is not. \"Not long after\" also squeezes a four-year gap into what reads as a short one.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L15–16, \"In 1890 I made a journey to Sahalin across Siberia and back by sea.\" / **REVISION**: L15–16, \"travelled to Sahalin across Siberia and back by sea\" / **WHAT THE READER LOSES**: The year of the Sahalin journey. The sentence now gives no date for it at all.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L16, \"In 1891 I made a tour in Europe\" / **REVISION**: L16, \"and the following year made a tour in Europe\" / **WHAT THE READER LOSES**: The year of the European tour. \"The following year\" points back to the Sahalin journey, which is now undated, so 1891 cannot be recovered.",
+      "- **CLASS**: claim-drift / **ORIGINAL**: L17–18, \"In 1892 I took part in an orgy in the company of V. A. Tihonov at a name-day party.\" / **REVISION**: L17–18, \"Last year I took part in an orgy in the company of V. A. Tihonov at a name-day party.\" / **WHAT THE READER LOSES**: The letter is dated 1892 (L2), so \"last year\" now places the orgy in 1891. That contradicts the original, and also the openi",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L18, \"I began writing in 1879.\" / **REVISION**: L18–19, \"I began writing while still at school.\" / **WHAT THE READER LOSES**: The year he started writing. The original says it was the year he finished school. \"While still at school\" is vaguer and could mean any earlier year.",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L19–20, \"The published collections of my works are: “Motley Tales,” “In the Twilight,” “Stories,” “Surly People,” and a novel, “The Duel.”\" / **REVISION**: L19–20, \"Several collections of my stories have been published, along with a novel.\" / **WHAT THE READER LOSES**: Every title: four collections (Motley Tales, In the Twilight, Stories, Surly People) and",
+      "- **CLASS**: dropped-fact / **ORIGINAL**: L24–25, \"The mysteries of love I fathomed at the age of thirteen.\" / **REVISION**: L24, \"The mysteries of love I fathomed young.\" / **WHAT THE READER LOSES**: The age, thirteen. It is written as a word, so the scan does not extract it, and \"young\" does not recover it.",
+      "- **CLASS**: dropped-qualification / **ORIGINAL**: L28, \"though I have not done so for two or three years.\" / **REVISION**: L28, \"though I have not done so for some time.\" / **WHAT THE READER LOSES**: How long it has been since he last did a post-mortem: two or three years. \"Some time\" could be weeks or decades."
+    ]
+  },
+  "_how": [
+    "One entry per transcript. `note` and `annotation` are the operator's; both may stay empty.",
+    "The nulls are the two contract counts, and they are counts of what the findings quoted",
+    "under `_findings_to_review` DO — not of what the critic says it did. Read the transcript.",
+    "Nothing here is derived for you, because a critic grading its own compliance is the",
+    "failure verify-run.mjs was written to close. collect refuses to run until they are numbers."
+  ]
+}

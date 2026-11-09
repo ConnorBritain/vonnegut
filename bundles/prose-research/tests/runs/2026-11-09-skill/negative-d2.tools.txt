@@ -1,0 +1,17 @@
+model: claude-opus-5-5
+
+Bash: cd <task>/skillwork/prose-research-negative-d2; ls -la; cat draft.md; echo ----; cat ledger.json; ls <repo>/bundles/prose-research/skills/prose-research/tools <repo>/bundles/prose-research/skills/prose-research/references
+
+Bash: cd <task>/skillwork/prose-research-negative-d2; ls -la; cat draft.md; echo ----; cat ledger.json
+
+Bash: S=<task>; mkdir -p $S; cat > $S/map.json <<'EOF'
+{"sentences":[
+{"text":"I like the quarry path best in the rain.","claim":false,"ledger":null},
+{"text":"It is the kind of walk you take when you want to think about nothing in particular, and I recommend it to nobody, because the point of it is that nobody is there.","claim":false,"ledger":null}
+]}
+EOF
+cd <repo>/bundles/prose-research/skills/prose-research && node tools/claims-check.mjs --help 2>&1 | head -30
+
+Write: <task>/map.json
+
+Bash: cd <repo>/bundles/prose-research/skills/prose-research && node tools/claims-check.mjs --help 2>&1 | head -30

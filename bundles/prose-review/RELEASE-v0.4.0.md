@@ -43,11 +43,26 @@ reviewed and nothing is estimated by eye.
   structure class distribution A=2 B=3 C=2 D=2; `run-harness-test.mjs` and
   `revise-harness-test.mjs` green; `prepare structure` exercised end to end
   (21 leak-free prompts, 4 in intended-outline mode).
-- **No structure run has been dispatched.** The build environment had no
-  authenticated CLI. The protocol, the commands and the echo block are recorded
-  in `tests/critic-harness.md`; the first real run is the next session's job,
-  and until it is recorded the critic's evidence is its fixture set and
-  harness, not a number.
+- **First structure run, 2026-11-09** (`tests/runs/2026-11-09-structure`,
+  21 cases × 3 draws through `run-harness.mjs dispatch`, recorded after this
+  release). `verify-run.mjs` prints, quoted:
+
+  ```
+      negative (sound structure, n=17):     0 REVISE, 17 CLEAN
+      positive (planted gap, n=4):         4 REVISE, 0 CLEAN
+      cases whose k=3 draws did not all agree:  0 of 21   (a split is a finding)
+      findings without a quoted span and a scan/outline reference: 0   <- must be 0
+      any claim about machine authorship: 0        <- must be 0
+
+      verdicts matching the expected verdict:                    21 of 21
+      counts the scan flagged and the critic cleared:            15
+      gaps the scan could not see and the critic caught:         2
+      verdicts identical to the echo rule's (echo rate):         4 of 21
+  ```
+
+  The leave-one-out negative is 0 `REVISE` of 12, inside the "≤ 2 of 12"
+  default; that remains a default, not a derived threshold. One model, one
+  day; the contract counts were made by the session, not a person.
 - The leave-one-out negative measures structure a human writer found
   acceptable, not whether the critic finds the right gaps; the class-D
   positives are synthetic. Order has no ground truth without an outline, and

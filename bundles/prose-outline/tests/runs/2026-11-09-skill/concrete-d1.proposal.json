@@ -1,0 +1,32 @@
+{
+  "mode": "argument",
+  "title": "The roadmap is a file, and the build reads it",
+  "thesis": "A team's roadmap should be a file in the repo, checked by the build: plans survive where the work lives, and they stay true only when the build fails if they fall behind.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1,
+      "text": "Plans evaporate because of where they live, not because teams stop caring: the plans kept next to the code outlived the ones kept on the wiki.",
+      "evidence": [ { "slot": "e1", "filled_by": "last three retrospectives: checked-in plans survived, wiki plans died" } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2,
+      "text": "Living in the repo keeps a plan alive but does not keep it true; without a check, entries go stale.",
+      "evidence": [ { "slot": "e1", "filled_by": "eleven stale plan entries before the March 2024 script" } ] },
+    { "id": "n3", "kind": "open-question", "parent": "n2", "order": 1,
+      "text": "Was the plan with eleven stale entries already a checked-in file before March 2024? The claim depends on it; the brief does not say." },
+    { "id": "n4", "kind": "open-question", "parent": "n2", "order": 2,
+      "text": "What counted as a 'stale' entry, and who counted? The post should define it in one line." },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 3,
+      "text": "Tie the plan to an event the build already sees: a version bump without a plan edit fails the build, and staleness disappears.",
+      "evidence": [ { "slot": "e1", "filled_by": "script added March 2024: stale entries went from eleven to zero in a month" } ] },
+    { "id": "n6", "kind": "claim", "parent": null, "order": 4,
+      "text": "The usual objection is that a forced edit is a thoughtless edit; the answer is that a thoughtless edit is a visible diff someone can review, while a missing edit is invisible.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "the objection itself, as stated in the brief" },
+        { "slot": "e2", "filled_by": null }
+      ] },
+    { "id": "n7", "kind": "open-question", "parent": "n6", "order": 1,
+      "text": "Is there anything on the quality of the forced edits since March 2024 (reviewed, reverted, rubber-stamped)? Without it the rebuttal rests on reasoning alone, and the post should concede that much." },
+    { "id": "n8", "kind": "claim", "parent": null, "order": 5,
+      "text": "Close on the rule itself: the roadmap is a file in the repo, and a version that moves without the plan moving does not build.",
+      "evidence": [ { "slot": "e1", "filled_by": "the March 2024 build check, restated as the rule" } ] }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

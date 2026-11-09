@@ -2,6 +2,6 @@ I kept a notebook for eleven years before I understood what it was for. It was n
 ---
 A sentence written by hand takes as long as it takes.
 ---
-The first three are bad and you throw them away. Not literally.
+Most early notebook entries are bad. Keep them anyway.
 ---
 Nobody needs a particular pen. What matters is that the tool cannot be edited.

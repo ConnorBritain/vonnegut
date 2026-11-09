@@ -1,0 +1,30 @@
+{
+  "mode": "argument",
+  "title": "The roadmap is a file, and the build reads it",
+  "thesis": "A team's roadmap belongs in the repo as a file, and the build should fail when the code moves and the plan doesn't.",
+  "nodes": [
+    { "id": "n1", "kind": "claim", "parent": null, "order": 1,
+      "text": "Plans die where nobody has to look at them: the ones kept next to the code survive, the ones kept on the wiki don't.",
+      "evidence": [ { "slot": "e1", "filled_by": "last three retrospectives: checked-in plans survived, wiki plans died" } ] },
+    { "id": "n2", "kind": "claim", "parent": null, "order": 2,
+      "text": "Being in the repo keeps a plan alive but not current; it goes stale unless something ties it to the code changing.",
+      "evidence": [ { "slot": "e1", "filled_by": null } ] },
+    { "id": "n3", "kind": "open-question", "parent": "n2", "order": 1,
+      "text": "The brief gives no figure for how stale checked-in plans got before March 2024 beyond the eleven entries. Is 'eleven stale entries' the evidence for this claim too, or is there an earlier observation?" },
+    { "id": "n4", "kind": "claim", "parent": null, "order": 3,
+      "text": "A build check that ties the plan to releases keeps it current.",
+      "evidence": [ { "slot": "e1", "filled_by": "March 2024 script: build fails when a version bumps without a plan edit; stale entries went from eleven to zero within a month" } ] },
+    { "id": "n5", "kind": "claim", "parent": null, "order": 4,
+      "text": "The usual objection is that a forced edit is a thoughtless edit. Answer it: a thoughtless edit is still visible in review, which is more than a wiki page nobody opened can say.",
+      "evidence": [
+        { "slot": "e1", "filled_by": "the objection itself, as stated in the brief" },
+        { "slot": "e2", "filled_by": null }
+      ] },
+    { "id": "n6", "kind": "open-question", "parent": "n5", "order": 1,
+      "text": "The brief has no evidence on whether the forced edits were thoughtful (e.g. review comments, reverted or boilerplate plan edits). Without it, the rebuttal is argument only; should the post concede part of the objection?" },
+    { "id": "n7", "kind": "claim", "parent": null, "order": 5,
+      "text": "Close on the rule itself, stated plainly: no version bumps without a plan edit.",
+      "evidence": [ { "slot": "e1", "filled_by": "the March 2024 script's condition, restated as the rule" } ] }
+  ],
+  "source": { "brief_digest": null, "draft_digest": null }
+}

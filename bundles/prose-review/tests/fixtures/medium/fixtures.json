@@ -14,25 +14,77 @@
     "  D  check quiet, critic flags    - every count passes; only a reader in the medium sees the cut sentence or the buried hook",
     "B and D are the whole argument for the critic existing. The parrot's score is reported beside the critic's.",
     "",
-    "The leave-one-out negatives are the six shortest Doctorow posts staged under the newsletter profile; every",
-    "one is over the profile's word band, so the check says REVISE on all six and the critic must stay quiet where",
-    "the count is loud. That is the negative test: compliant human prose as delivery, not whether the critic finds",
-    "the right delivery problems."
+    "The leave-one-out negatives are six Doctorow essays EXTRACTED from their Pluralistic issues (tests/medium-harness.mjs",
+    "extractEssay; committed under fixtures/medium/loo/): the title and the essay, without the issue's contents list, link",
+    "roundups, colophon, '(permalink)' markers, bare link-target URLs or image credits. The first run staged whole issues,",
+    "and the critic was right that a contents list is no hook and a link dump no close (runs/2026-11-09-medium). Three",
+    "essays fit the newsletter's word band and three do not, so the negatives cover class A (check quiet) and class B",
+    "(check loud): the critic must stay quiet on both. `check_says` per essay is re-derived by the selftest."
   ],
   "echo_rule": "flagged when repurpose-check reports any mechanical constraint as failed",
   "fixtures": [
-    { "name": "n-thread-clean", "kind": "negative", "class": "A", "form": "thread", "check_says": "CLEAN", "expect": "CLEAN",
-      "piece_does": "Five segments, each under 280 characters, each a whole sentence or two, no link in the first. Nothing to count against and nothing for the medium to break." },
-    { "name": "n-thread-long-but-whole", "kind": "negative", "class": "B", "form": "thread", "check_says": "REVISE", "expect": "CLEAN",
-      "piece_does": "The first segment is over 280 characters, so the check fails segment-limit. Every segment is whole sentences and stands alone; the length is the writer's to fix, and the critic must not restate the count as a finding." },
-    { "name": "p-thread-long-and-cut", "kind": "positive", "class": "C", "form": "thread", "check_says": "REVISE", "expect": "REVISE",
-      "piece_does": "The first segment is over the limit AND ends mid-sentence ('and the / difference is the whole of it'). The check flags the length; the critic must name the cut, which the count cannot see." },
-    { "name": "p-thread-cut-sentence", "kind": "positive", "class": "D", "form": "thread", "check_says": "CLEAN", "expect": "REVISE",
-      "piece_does": "Every segment is under the limit and there is no link, so the check is quiet. The first separator falls between 'what it was' and 'for.' Only a reader who meets segment one alone sees it." },
-    { "name": "n-post-hook-carries", "kind": "negative", "class": "A", "form": "linkedin-post", "check_says": "CLEAN", "expect": "CLEAN",
-      "piece_does": "Under 3,000 characters, no headings, no hashtags; the first line states the piece's claim, so the truncation point carries it." },
-    { "name": "p-post-hook-buried", "kind": "positive", "class": "D", "form": "linkedin-post", "check_says": "CLEAN", "expect": "REVISE",
-      "piece_does": "Same body, but the first two lines are 'a few thoughts... in no particular order' and 'some background first'. Every count passes; the platform truncates after two lines that carry nothing, which is the semantic constraint hook-above-the-fold the check lists as the critic's." }
+    {
+      "name": "n-thread-clean",
+      "kind": "negative",
+      "class": "A",
+      "form": "thread",
+      "check_says": "CLEAN",
+      "expect": "CLEAN",
+      "piece_does": "Five segments, each under 280 characters, each a whole sentence or two, no link in the first. Nothing to count against and nothing for the medium to break.",
+      "corrected_after_run": "2026-11-09-medium",
+      "correction": "segments 2-4 leaned on segment 1 ('It was…', 'The first three…'); rewritten so each stands alone"
+    },
+    {
+      "name": "n-thread-long-but-whole",
+      "kind": "negative",
+      "class": "B",
+      "form": "thread",
+      "check_says": "REVISE",
+      "expect": "CLEAN",
+      "piece_does": "The first segment is over 280 characters, so the check fails segment-limit. Every segment is whole sentences and stands alone; the length is the writer's to fix, and the critic must not restate the count as a finding.",
+      "corrected_after_run": "2026-11-09-medium",
+      "correction": "'The first three are bad…' named nothing in its segment; rewritten"
+    },
+    {
+      "name": "p-thread-long-and-cut",
+      "kind": "positive",
+      "class": "C",
+      "form": "thread",
+      "check_says": "REVISE",
+      "expect": "REVISE",
+      "piece_does": "The first segment is over the limit AND ends mid-sentence ('and the / difference is the whole of it'). The check flags the length; the critic must name the cut, which the count cannot see.",
+      "corrected_after_run": "2026-11-09-medium",
+      "correction": "the same segment rewritten, so the only defects are the planted length and cut"
+    },
+    {
+      "name": "p-thread-cut-sentence",
+      "kind": "positive",
+      "class": "D",
+      "form": "thread",
+      "check_says": "CLEAN",
+      "expect": "REVISE",
+      "piece_does": "Every segment is under the limit and there is no link, so the check is quiet. The first separator falls between 'what it was' and 'for.' Only a reader who meets segment one alone sees it.",
+      "corrected_after_run": "2026-11-09-medium",
+      "correction": "'It was for slowing down' leaned on segment 1; rewritten, so the only defect is the planted cut"
+    },
+    {
+      "name": "n-post-hook-carries",
+      "kind": "negative",
+      "class": "A",
+      "form": "linkedin-post",
+      "check_says": "CLEAN",
+      "expect": "CLEAN",
+      "piece_does": "Under 3,000 characters, no headings, no hashtags; the first line states the piece's claim, so the truncation point carries it."
+    },
+    {
+      "name": "p-post-hook-buried",
+      "kind": "positive",
+      "class": "D",
+      "form": "linkedin-post",
+      "check_says": "CLEAN",
+      "expect": "REVISE",
+      "piece_does": "Same body, but the first two lines are 'a few thoughts... in no particular order' and 'some background first'. Every count passes; the platform truncates after two lines that carry nothing, which is the semantic constraint hook-above-the-fold the check lists as the critic's."
+    }
   ],
   "leave_one_out": {
     "form": "newsletter",
@@ -43,7 +95,17 @@
       "pluralistic/2026-08-04-technology-freedom-cooperative.txt",
       "pluralistic/2026-07-14-designated-survivor.txt",
       "pluralistic/2026-07-09-wilhoitian.txt"
-    ]
+    ],
+    "check_says": {
+      "2026-07-29-la-la-la-la-la": "CLEAN",
+      "2026-07-13-go-meta-meta": "CLEAN",
+      "2026-07-10-posthuman-as-in-no-humans": "CLEAN",
+      "2026-08-04-technology-freedom-cooperative": "REVISE",
+      "2026-07-14-designated-survivor": "REVISE",
+      "2026-07-09-wilhoitian": "REVISE"
+    },
+    "corrected_after_run": "2026-11-09-medium",
+    "correction": "whole Pluralistic issues replaced by the essay each carries (extractEssay); the issue's contents list, roundups and colophon are not a newsletter piece"
   },
-  "leave_one_out_note": "Six posts by one author, staged under the newsletter profile as pieces delivered on the web. All exceed the profile's 1,200-word band, so the parrot scores 0 of 6 on the negatives. Expected CLEAN on all six; <= 1 REVISE is a default, not a measurement (critic-harness.md)."
+  "leave_one_out_note": "Six essays by one author, extracted from their issues and staged under the newsletter profile as pieces delivered on the web. Three are inside the profile's 1,200-word band (the parrot is quiet) and three over it (the parrot flags them). Expected CLEAN on all six; <= 1 REVISE is a default, not a measurement (critic-harness.md)."
 }

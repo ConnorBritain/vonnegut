@@ -1,0 +1,43 @@
+model: claude-opus-5-5
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && cat references/bible-schema.md && ls tools; ls -R <task>/skillwork/prose-bible-project-d2/book
+
+Bash: S=<repo>/bundles/prose-bible/skills/prose-bible; cat $S/references/bible-schema.md; ls $S/tools; ls -R book
+
+Read: <repo>/bundles/prose-bible/skills/prose-bible/references/bible-schema.md
+
+Glob: book/**/*
+
+Bash: mkdir -p <task>/task && node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs book --json > <task>/task/index.json && echo ok
+
+Bash: T=<task>/task; node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs $T/index.json --json > $T/diff.json; node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index $T/index.json > $T/propose.json; cat $T/diff.json $T/propose.json; node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Bash: cd <task>/task && node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs index.json --json > diff.json && node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index index.json > propose.json; cat diff.json propose.json; node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/task/index.json --json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index <task>/task/index.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Read: <task>/skillwork/prose-bible-project-d2/book/chapter-01.md
+
+Read: <task>/skillwork/prose-bible-project-d2/book/chapter-02.md
+
+Read: <task>/skillwork/prose-bible-project-d2/book/notes.md
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/task/index.json --json > <task>/task/diff.json
+
+Agent: Judge the contradiction candidates in this index-diff output for the project at <task>/skillwork/prose-bible-project-d2/book.
+
+Diff JSON: <task>/task/diff.json
+
+Current bible: none (no saved bible exists; empty).
+
+Report only findings that cite two locations from the diff, or CLEAN.
+
+Read: <task>/task/diff.json
+
+Bash: cd <task>/skillwork/prose-bible-project-d2/book; for f in *.md; do echo "== $f"; cat -n $f; done
+
+Grep: .

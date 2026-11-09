@@ -36,9 +36,14 @@ From a session with the bundle installed, for each project:
    nothing else, and whether anything was saved before a yes (it must not; the
    store's `--approved` flag is only ever set after one).
 
-Quote the scripts' output; do not retype it. A run that was not dispatched —
-this environment has no authenticated CLI — is recorded as not run, never as
-passed.
+Quote the scripts' output; do not retype it. A run that was not dispatched is
+recorded as not run, never as passed.
+
+## Runs
+
+| run | draws | positive (project) | negative (control) |
+|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-skill/README.md) | 3 | attribute put to the writer 3/3; nothing saved 3/3; cited `file:line` in the index 3/3; **critic clean context 1/3**; unindexed occurrence raised 3/3; every `propose` entry shown 2/3 | met 3/3: critic `CLEAN`, skill said so, no invented contradiction |
 
 ## What this does not measure
 

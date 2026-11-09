@@ -1,0 +1,282 @@
+{
+  "critic": "structure",
+  "run_id": "2026-11-09-structure",
+  "prepared": "2026-11-09",
+  "draws": 3,
+  "agent_prompt": "primitives/agents/prose-structure-critic/agent.md",
+  "agent_sha256": "d8131ee9df0357cb4199ede647e224a53872d39576e0f774cf3cbfd15c43b5be",
+  "cases": [
+    {
+      "case": "case-01",
+      "fixture": "n-loo-chesterton-humanity-an-interlude",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-humanity-an-interlude.txt",
+          "sha256": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3"
+        }
+      ]
+    },
+    {
+      "case": "case-02",
+      "fixture": "n-loo-bacon-of-seditions-and-troubles",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-seditions-and-troubles.txt",
+          "sha256": "da142a176e0eede581cfadf58d974f24a46fc36adba7e81258e9d11fd38b72ce"
+        }
+      ]
+    },
+    {
+      "case": "case-03",
+      "fixture": "n-loo-bacon-of-the-true-greatness-of-kingdoms-and-estates",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-the-true-greatness-of-kingdoms-and-estates.txt",
+          "sha256": "58f0ffdbf160c6fcbe015e784467f86fa55417b25aab97b2e1e2b7cd8c3b1e9c"
+        }
+      ]
+    },
+    {
+      "case": "case-04",
+      "fixture": "n-loo-chesterton-a-somewhat-improbable-story",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-a-somewhat-improbable-story.txt",
+          "sha256": "856d8adbc13608533a63a45cb9822f936f6d1618a972cb6abd8bb59b8e270825"
+        }
+      ]
+    },
+    {
+      "case": "case-05",
+      "fixture": "n-technical-flat",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/n-technical-flat/draft.md",
+          "sha256": "286a2e957a6f8c5b09072efb83d42be430b1dd792306d1d33cbcd170b4d78036"
+        }
+      ]
+    },
+    {
+      "case": "case-06",
+      "fixture": "n-post-marked",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/n-post-marked/draft.md",
+          "sha256": "4a718286117ec34ead3684cfd6f16dcf9344dcbe02214734e69b69c9f09f972a"
+        }
+      ]
+    },
+    {
+      "case": "case-07",
+      "fixture": "p-essay-topic-jump",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-essay-topic-jump/draft.md",
+          "sha256": "751a367672b8bdb9bd0938e87fd4ea3e15b21e43bf18ec7651da17798db1bbaa"
+        }
+      ]
+    },
+    {
+      "case": "case-08",
+      "fixture": "n-loo-bacon-of-friendship",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-friendship.txt",
+          "sha256": "3876c2ee3b4ff00aead1af9eb1609f2d136b406f22aae99d54278e2ae6770adb"
+        }
+      ]
+    },
+    {
+      "case": "case-09",
+      "fixture": "n-loo-2026-07-16-lucky-orifices",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-16-lucky-orifices.txt",
+          "sha256": "3fbe7cefa93700466d42df3ec7afc3d4432a2e6bd0adb60cfd8f4dcf117f2744"
+        }
+      ]
+    },
+    {
+      "case": "case-10",
+      "fixture": "p-essay-orphan-claim",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-essay-orphan-claim/draft.md",
+          "sha256": "99f1c8d402bb8dda7ef68fb26cc182362703d34f1c60a3cc338fe5addecf07d9"
+        },
+        {
+          "as": "outline.json",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-essay-orphan-claim/outline.json",
+          "sha256": "7d0c29c16d1d6f8de8b1b80c74db87ece7b7f47f98f8d59d969ab792a1f7e527"
+        }
+      ]
+    },
+    {
+      "case": "case-11",
+      "fixture": "n-chapter-scene-breaks",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/n-chapter-scene-breaks/draft.md",
+          "sha256": "6eefb7a8b8beaafe962b770a71c15beb0d871a73fdd49b3940ee9b1892848f73"
+        }
+      ]
+    },
+    {
+      "case": "case-12",
+      "fixture": "p-post-reordered",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-post-reordered/draft.md",
+          "sha256": "8c32468d8da3fe18944979d511ceeb3744249f29ad4e2e17a2f643df1c269ebf"
+        },
+        {
+          "as": "outline.json",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-post-reordered/outline.json",
+          "sha256": "953f12db46f8d6362534f7711c35b61a968d30fbbfaa9eec52235ca94766da2c"
+        }
+      ]
+    },
+    {
+      "case": "case-13",
+      "fixture": "n-loo-2026-07-31-just-do-it",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-31-just-do-it.txt",
+          "sha256": "88e37c3e106864d0e187cb3f0d33bfd1714165de807ac0396b56961eb570075f"
+        }
+      ]
+    },
+    {
+      "case": "case-14",
+      "fixture": "n-loo-2026-08-01-dare-snot",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-08-01-dare-snot.txt",
+          "sha256": "6c0b53e195fc7f03efad5d47c457a0d8f38cfe1400cb29d51bae5e6cf88e52b8"
+        }
+      ]
+    },
+    {
+      "case": "case-15",
+      "fixture": "n-loo-chesterton-the-diabolist",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-diabolist.txt",
+          "sha256": "86b3a3f20354ee86d42e2c3c86b17c20bc4b6b5a363d82b9ccf8ad2e86d7a506"
+        }
+      ]
+    },
+    {
+      "case": "case-16",
+      "fixture": "n-essay-second-reason",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/n-essay-second-reason/draft.md",
+          "sha256": "7dfdc813a105c25fbff961250b3781d7d155e5e3cdf692deb6bfde46efe60f84"
+        },
+        {
+          "as": "outline.json",
+          "from": "bundles/prose-review/tests/fixtures/structure/n-essay-second-reason/outline.json",
+          "sha256": "ef237666ce5aa805552a62315fca7674bd0ae4b7848d062fbfbbe00e96828522"
+        }
+      ]
+    },
+    {
+      "case": "case-17",
+      "fixture": "n-listicle-cuts",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/n-listicle-cuts/draft.md",
+          "sha256": "abe966cae22d4687bdd2531ecba6d502ff4f1c3a6f0bd96d7848235e15a23c4d"
+        }
+      ]
+    },
+    {
+      "case": "case-18",
+      "fixture": "n-loo-2026-07-25-cruel-cruelty-oh-cruelty",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-25-cruel-cruelty-oh-cruelty.txt",
+          "sha256": "e427ea50f17eecf48300e8dfa251c61bda4acc2624a31c0bdf662ddbe23aa2ef"
+        }
+      ]
+    },
+    {
+      "case": "case-19",
+      "fixture": "n-loo-chesterton-the-shop-of-ghosts",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/chesterton-the-shop-of-ghosts.txt",
+          "sha256": "87d17af764a12f0059f4f0a45fe5ef0968dae564bd5b435cfb0f2ac19abbc5e1"
+        }
+      ]
+    },
+    {
+      "case": "case-20",
+      "fixture": "n-loo-bacon-of-gardens",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/gutenberg/bacon-of-gardens.txt",
+          "sha256": "d2c1a60ec9645d9118821c642777b1c40c60bf3212c544a38d21111bec258949"
+        }
+      ]
+    },
+    {
+      "case": "case-21",
+      "fixture": "p-essay-unsupported",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "draft.md",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-essay-unsupported/draft.md",
+          "sha256": "3080ad52dc18b8fc06f4129cf92188c83584c4a519a196f1ae12c47858b6fb9a"
+        },
+        {
+          "as": "outline.json",
+          "from": "bundles/prose-review/tests/fixtures/structure/p-essay-unsupported/outline.json",
+          "sha256": "ad98a0cb4e394e87b6ef148a2adeb1a11e5765fe226eb643032c08277357ea12"
+        }
+      ]
+    }
+  ]
+}

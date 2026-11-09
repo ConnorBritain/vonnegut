@@ -1,0 +1,32 @@
+model: claude-opus-5-5
+
+Read: <repo>/bundles/prose-bible/skills/prose-bible/references/bible-schema.md
+
+Bash: ls -R book | head -50
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && P=<task>/skillwork/prose-bible-project-d1/book; T=<task>; node tools/entity-index.mjs $P --json > $T/index.json && node tools/index-diff.mjs $T/index.json --json > $T/diff.json; echo "--- diff"; cat $T/diff.json; echo "--- propose"; node tools/bible-store.mjs propose --index $T/index.json; echo "--- locate"; node tools/bible-store.mjs locate
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && node tools/entity-index.mjs <task>/skillwork/prose-bible-project-d1/book --json > <task>/index.json && node tools/index-diff.mjs <task>/index.json --json > <task>/diff.json; echo "--- diff"; cat <task>/diff.json; echo "--- propose"; node tools/bible-store.mjs propose --index <task>/index.json; echo "--- locate"; node tools/bible-store.mjs locate
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs <task>/skillwork/prose-bible-project-d1/book --json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs <task>/skillwork/prose-bible-project-d1/book --json > <task>/index.json
+
+Read: <task>/skillwork/prose-bible-project-d1/book/chapter-01.md
+
+Read: <task>/skillwork/prose-bible-project-d1/book/chapter-02.md
+
+Read: <task>/skillwork/prose-bible-project-d1/book/notes.md
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/index.json --json > <task>/diff.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index <task>/index.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Agent: Judge the contradiction candidates for a book project. Inputs:
+- index-diff output: <task>/diff.json
+- current bible: none (no bible has been saved for this project yet).
+Report only findings that cite two locations from the diff, or say CLEAN.
+
+Read: <task>/diff.json

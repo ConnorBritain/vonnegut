@@ -24,10 +24,13 @@ const checks = [
   ["bundles/prose-review/tests/run-harness-test.mjs"],
   ["bundles/prose-review/tests/revise-harness-test.mjs"],
 ];
-for (const run of ["2026-08-04-b", "2026-08-05-fidelity", "2026-08-05-fidelity-s4", "2026-08-05-voice-cross-author"]) {
+for (const run of ["2026-08-04-b", "2026-08-05-fidelity", "2026-08-05-fidelity-s4", "2026-08-05-voice-cross-author", "2026-11-09-structure", "2026-11-09-fidelity-provenance", "2026-11-09-medium", "2026-11-09-reader"]) {
   const path = `bundles/prose-review/tests/runs/${run}`;
   checks.push(["bundles/prose-review/tests/run-harness.mjs", "check", path]);
   checks.push(["bundles/prose-review/tests/verify-run.mjs", path]);
+}
+for (const run of ["2026-11-09-continuity"]) {
+  checks.push(["bundles/prose-bible/tests/continuity-harness.mjs", "check", `bundles/prose-bible/tests/runs/${run}`]);
 }
 checks.push(["bundles/prose-author/tests/concurrency.mjs"]);
 if (args.includes("--mutations")) checks.push(["bundles/prose-author/tests/mutations.mjs"]);

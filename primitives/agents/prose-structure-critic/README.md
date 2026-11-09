@@ -84,7 +84,9 @@ the honest answer to that: it stays quiet where it cannot point at an intent.
 **The leave-one-out negative measures register, not argument.** The human
 essays it is run over were not written from outlines, so the negative test
 bounds false positives on structure that human writers found acceptable; it
-does not show the critic finds the right gaps.
+does not show the critic finds the right gaps. Measured once, 2026-11-09, k=3:
+0 `REVISE` of 12 leave-one-out essays, 4 of 4 synthetic class C/D positives,
+echo rate 4 of 21 (`bundles/prose-review/tests/runs/2026-11-09-structure`).
 
 **Imbalance is a ratio the scan reports; the critic must not treat it as a
 judgement.** The fixture set contains a flat reference document precisely so a

@@ -1,0 +1,10 @@
+
+  bundles/prose-review/tests/runs/2026-11-09-reader — 48 case(s), 144 transcript(s) (k=3)
+
+    negative (reader finishes, n=48):    16 REVISE, 32 CLEAN
+    positive (reader stops, n=0):       0 REVISE, 0 CLEAN
+    cases whose k=3 draws did not all agree:  6 of 48   (a split is a finding)
+    stops without a quoted sentence: 0          <- must be 0
+    any claim about machine authorship: 0        <- must be 0
+    transcripts without a FORCED CHOICE: 0       <- must be 0
+

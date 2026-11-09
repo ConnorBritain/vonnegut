@@ -57,9 +57,14 @@ item B) does not run and the skill does not substitute its own critique.
 
 ## Limits
 
-No model run of the skill was dispatched in this environment; the harness
-([`tests/skill-harness.md`](tests/skill-harness.md)) records how to run and
-check one, and an undispatched run is recorded as not run, never as passed.
+No model run of the skill was dispatched in the build environment. The first
+was made on 2026-11-09, after this release (`tests/runs/2026-11-09-skill`, two
+briefs × 3 draws, `claude -p` with the bundle as a plugin): `proposal-check
+--brief` against each fixture brief returned `"status": "clean"` with
+`"errors": []` on all six proposals; the underspecified brief got `thesis:
+null` and open questions on 3 of 3 draws, with no invented thesis; nothing was
+saved without a yes on 6 of 6 (the registry was absent, so the save path was
+not exercised). Readings by the session, not a person.
 Sentence boundaries, claim markers and topic-sentence candidates are English
 heuristics. An outline is the writer's plan, not evidence about a draft's
 quality, and nothing here states or implies who wrote anything. The store

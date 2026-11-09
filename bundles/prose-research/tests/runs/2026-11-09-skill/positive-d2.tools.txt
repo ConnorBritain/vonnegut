@@ -1,0 +1,37 @@
+model: claude-opus-5-5
+
+Bash: cd <task>/skillwork/prose-research-positive-d2; ls -la; ls -la sources; cat draft.md; cat ledger.json; ls <repo>/bundles/prose-research/skills/prose-research/tools <repo>/bundles/prose-research/skills/prose-research/references
+
+Bash: cd <task>/skillwork/prose-research-positive-d2; ls -la; ls -la sources; cat draft.md; echo ----; cat ledger.json
+
+Bash: cd <task>/skillwork/prose-research-positive-d2/sources; cat -n mill-history.txt; echo ----; cat -n valley-guide.html; sha256sum *
+
+Read: <repo>/bundles/prose-research/skills/prose-research/references/ledger-schema.md
+
+Read: <repo>/bundles/prose-research/skills/prose-research/references/dossier-schema.md
+
+Bash: S=<repo>/bundles/prose-research/skills/prose-research; P=<task>/skillwork/prose-research-positive-d2; T=<task>; cd $S && node tools/source-intake.mjs $P/sources/mill-history.txt --json > $T/intake-s1.json; node tools/source-intake.mjs $P/sources/valley-guide.html --json > $T/intake-s2.json; cat $T/intake-s1.json $T/intake-s2.json; node tools/research-store.mjs --help 2>&1 | head -30
+
+Bash: cd <repo>/bundles/prose-research/skills/prose-research && node tools/source-intake.mjs <task>/skillwork/prose-research-positive-d2/sources/mill-history.txt --json > <task>/intake-s1.json && node tools/source-intake.mjs <task>/skillwork/prose-research-positive-d2/sources/valley-guide.html --json > <task>/intake-s2.json; cat <task>/intake-s*.json
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs <task>/skillwork/prose-research-positive-d2/sources/mill-history.txt --json
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs <task>/skillwork/prose-research-positive-d2/sources/valley-guide.html --json
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs <task>/skillwork/prose-research-positive-d2/sources/valley-guide.html --json > <task>/intake-s2.json
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/source-intake.mjs <task>/skillwork/prose-research-positive-d2/sources/mill-history.txt --json > <task>/intake-s1.json
+
+Write: <task>/bin/build.mjs
+
+Write: <task>/map.json
+
+Bash: node <task>/bin/build.mjs
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger <task>/skillwork/prose-research-positive-d2/ledger.json --dossier <task>/dossier.json --sources-dir <task>/research/sources --draft <task>/skillwork/prose-research-positive-d2/draft.md --map <task>/map.json --offline --json
+
+Edit: <task>/bin/build.mjs
+
+Bash: node <task>/bin/build.mjs <task>/skillwork/prose-research-positive-d2/ledger.json
+
+Bash: node <repo>/bundles/prose-research/skills/prose-research/tools/claims-check.mjs --ledger <task>/ledger.json --dossier <task>/dossier.json --sources-dir <task>/research/sources --draft <task>/skillwork/prose-research-positive-d2/draft.md --map <task>/map.json --offline --json

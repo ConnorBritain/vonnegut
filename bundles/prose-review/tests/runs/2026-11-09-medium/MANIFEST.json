@@ -1,0 +1,214 @@
+{
+  "critic": "medium",
+  "run_id": "2026-11-09-medium",
+  "prepared": "2026-11-09",
+  "draws": 3,
+  "agent_prompt": "primitives/agents/prose-medium-critic/agent.md",
+  "agent_sha256": "c2720ccc976e61b492dfa6738bd8226a3db66b30067a392aa3601234ff1d5661",
+  "cases": [
+    {
+      "case": "case-01",
+      "fixture": "n-loo-2026-07-29-la-la-la-la-la",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-29-la-la-la-la-la.txt",
+          "sha256": "4a961af16d0d9427d1ed68eae3cbe2a630ab625b2fba11dde7334111a616b179"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/newsletter.json",
+          "sha256": "aa2609ea54d9637b5076966b1986c7b3a8caaa0f4e1f7339c57e5040b113366a"
+        }
+      ]
+    },
+    {
+      "case": "case-02",
+      "fixture": "n-loo-2026-08-04-technology-freedom-cooperative",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-08-04-technology-freedom-cooperative.txt",
+          "sha256": "6efe381d10ec0964b1cef7b1537fc7d79e0eb012695d6ae61b649ef1c0dc3420"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/newsletter.json",
+          "sha256": "aa2609ea54d9637b5076966b1986c7b3a8caaa0f4e1f7339c57e5040b113366a"
+        }
+      ]
+    },
+    {
+      "case": "case-03",
+      "fixture": "p-thread-long-and-cut",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-review/tests/fixtures/medium/p-thread-long-and-cut/piece.md",
+          "sha256": "0698860ed1ab19f945d25047e256abfe878f3bfabcd3057066954154ce2e6dd5"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/thread.json",
+          "sha256": "6ab0547f0cf6619f5bdcee46ba1679ff3abeba74e614bea2bc6a5e4ab0c288eb"
+        }
+      ]
+    },
+    {
+      "case": "case-04",
+      "fixture": "n-thread-clean",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-review/tests/fixtures/medium/n-thread-clean/piece.md",
+          "sha256": "d4333f93bb6b773d88652449bff435084847e7531a85a31835db07fcec059290"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/thread.json",
+          "sha256": "6ab0547f0cf6619f5bdcee46ba1679ff3abeba74e614bea2bc6a5e4ab0c288eb"
+        }
+      ]
+    },
+    {
+      "case": "case-05",
+      "fixture": "n-post-hook-carries",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-review/tests/fixtures/medium/n-post-hook-carries/piece.md",
+          "sha256": "9309ed58c0f1e9d9e5b9bb563788c6e27d1a1e9dcc27ef881cead85a4aaa9503"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/linkedin-post.json",
+          "sha256": "7d7ec5184c6b27796fe2b97f11bd0c5a879924bc7408756027083f8af9060dd2"
+        }
+      ]
+    },
+    {
+      "case": "case-06",
+      "fixture": "n-loo-2026-07-09-wilhoitian",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-09-wilhoitian.txt",
+          "sha256": "de1ca4e1873b11d370db3b7b63870afba9574aaff3f4c56972f99722b2f34247"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/newsletter.json",
+          "sha256": "aa2609ea54d9637b5076966b1986c7b3a8caaa0f4e1f7339c57e5040b113366a"
+        }
+      ]
+    },
+    {
+      "case": "case-07",
+      "fixture": "p-thread-cut-sentence",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-review/tests/fixtures/medium/p-thread-cut-sentence/piece.md",
+          "sha256": "30abe570db6da56c6292b3e5292f70818dffb0f8b52a484a1f1ba13aa7e45c14"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/thread.json",
+          "sha256": "6ab0547f0cf6619f5bdcee46ba1679ff3abeba74e614bea2bc6a5e4ab0c288eb"
+        }
+      ]
+    },
+    {
+      "case": "case-08",
+      "fixture": "p-post-hook-buried",
+      "kind": "positive",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-review/tests/fixtures/medium/p-post-hook-buried/piece.md",
+          "sha256": "35ec3e054b593ce75d907aadc2f2bbe9cc929ef7f8366d0e450dcb58a9dc1429"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/linkedin-post.json",
+          "sha256": "7d7ec5184c6b27796fe2b97f11bd0c5a879924bc7408756027083f8af9060dd2"
+        }
+      ]
+    },
+    {
+      "case": "case-09",
+      "fixture": "n-thread-long-but-whole",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-review/tests/fixtures/medium/n-thread-long-but-whole/piece.md",
+          "sha256": "be3f80bf67d692a9457261b7fa6ce224e2ddcfc15e53d0a8fd642b5c62474b1c"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/thread.json",
+          "sha256": "6ab0547f0cf6619f5bdcee46ba1679ff3abeba74e614bea2bc6a5e4ab0c288eb"
+        }
+      ]
+    },
+    {
+      "case": "case-10",
+      "fixture": "n-loo-2026-07-13-go-meta-meta",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-13-go-meta-meta.txt",
+          "sha256": "611dddcbe186544413a89dc28b784c3b55fb900f07cc2f4fe4bbceb0b8d8da0b"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/newsletter.json",
+          "sha256": "aa2609ea54d9637b5076966b1986c7b3a8caaa0f4e1f7339c57e5040b113366a"
+        }
+      ]
+    },
+    {
+      "case": "case-11",
+      "fixture": "n-loo-2026-07-10-posthuman-as-in-no-humans",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-10-posthuman-as-in-no-humans.txt",
+          "sha256": "0a5591b9981f7c8fd2a308ba8e239a259e27ac380c3d25dfeac3c784cad4def7"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/newsletter.json",
+          "sha256": "aa2609ea54d9637b5076966b1986c7b3a8caaa0f4e1f7339c57e5040b113366a"
+        }
+      ]
+    },
+    {
+      "case": "case-12",
+      "fixture": "n-loo-2026-07-14-designated-survivor",
+      "kind": "negative",
+      "inputs": [
+        {
+          "as": "piece.md",
+          "from": "bundles/prose-tell-scan/tests/corpus/human-essays/pluralistic/2026-07-14-designated-survivor.txt",
+          "sha256": "55ee931633d0be3352622405ca929aed3819083205b4c157934b37a26c86bd9e"
+        },
+        {
+          "as": "profile.json",
+          "from": "bundles/prose-author/skills/prose-repurpose/media/newsletter.json",
+          "sha256": "aa2609ea54d9637b5076966b1986c7b3a8caaa0f4e1f7339c57e5040b113366a"
+        }
+      ]
+    }
+  ]
+}

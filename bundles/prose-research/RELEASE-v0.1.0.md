@@ -67,10 +67,16 @@ task-local and the skill says so.
 
 ## Limits
 
-**No model run of the skill was dispatched.** The build environment had no
-authenticated CLI. [`tests/skill-harness.md`](tests/skill-harness.md) records
-how to run and check the positive and negative test, and an undispatched run
-is recorded as not run, never as passed. A ledger entry proves a source said
+**No model run of the skill was dispatched in the build environment.** The
+first was made on 2026-11-09, after this release (`tests/runs/2026-11-09-skill`,
+positive and negative × 3 draws, `claude -p` with the bundle as a plugin).
+Positive: `claims-check` over each draw's own map gave the expected rows on 3 of
+3 (`k3`/`k4` drifted, `k5` absent, two unledgered sentences); no draw called a
+claim true or false, filled a confidence, or saved. Negative: every draw marked
+no sentence a claim and invented no entry, but **the mechanical check was not
+produced** — the run's own allowlist blocked two draws, and the fixture ledger
+lacks the `claims-ledger/1` header `claims-check` requires. Readings by the
+session, not a person; the negative is owed a re-run. A ledger entry proves a source said
 something, not that it is true. HTML becomes text heuristically; paywalled or
 dynamic pages fetch as their shell; a link status is a status code; PDF text
 is `pdftotext`'s or the writer's export. The sentence map is a model's mapping,
