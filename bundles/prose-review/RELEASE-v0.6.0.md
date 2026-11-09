@@ -65,3 +65,13 @@ not spawn and the report says so.
   fixtures or the prompt, and re-running, is follow-up. Delivery judgements have
   no ground truth. The run also fixed `verify-run.mjs`'s medium echo block,
   which always printed 0 for cleared and caught.
+
+  **The fixtures were then corrected; the prompt was not touched.** The six
+  newsletter negatives are now the essays extracted from their issues
+  (`medium-harness.mjs` `extractEssay`, committed under `fixtures/medium/loo/`):
+  three inside the word band, three over it. The thread segments that leaned on
+  an earlier segment are rewritten to stand alone. Each corrected fixture
+  carries `corrected_after_run: "2026-11-09-medium"`, and `verify-run.mjs`
+  prints the caveat when it verifies that run. **The numbers above are for the
+  old fixtures. The critic's negative test is unmeasured on the corrected set
+  until the medium run is repeated** (`run-harness.mjs prepare medium`, 12 × 3).

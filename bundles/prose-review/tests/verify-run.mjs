@@ -340,6 +340,12 @@ async function mediumAgreement(runs, dir, critic, line) {
   if (!repurposePresent()) { line("    echo baseline: not computed — prose-author's repurpose skill is absent"); return; }
   const manifest = loadMediumManifest();
   const byName = new Map(manifest.fixtures.map((f) => [f.name, f]));
+  // Fixtures corrected AFTER this run: its critic saw the earlier text (staged under inputs/),
+  // and is scored on that. Printed only for the run named, as the fidelity block does.
+  const runName = basename(resolve(dir));
+  const corrected = [...manifest.fixtures.filter((f) => f.corrected_after_run === runName).map((f) => `${f.name}: ${f.correction}`),
+    ...(manifest.leave_one_out.corrected_after_run === runName ? [`leave-one-out set: ${manifest.leave_one_out.correction}`] : [])];
+  if (corrected.length) { line("    fixtures corrected after this run (it was scored on the earlier text in inputs/):"); for (const c of corrected) line(`      ${c}`); }
   // `critic` is the profile's NAME, not the profile; this read `critic.flag` until the first
   // medium run (2026-11-09), so the cleared/caught lines were always 0. It also counted draws
   // where the structure and fidelity blocks count case majorities; it now matches them.

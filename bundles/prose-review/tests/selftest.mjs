@@ -839,7 +839,7 @@ group("medium fixtures — integrity, four-class geometry re-derived from the ec
   const mh = await import("./medium-harness.mjs");
   const manifest = mh.loadMediumManifest();
   const dir = new URL("fixtures/medium/", import.meta.url);
-  const onDisk = readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  const onDisk = readdirSync(dir, { withFileTypes: true }).filter((e) => e.isDirectory() && e.name !== "loo").map((e) => e.name).sort();
   check("every medium fixture directory is declared in fixtures.json", JSON.stringify(onDisk) === JSON.stringify(manifest.fixtures.map((f) => f.name).sort()));
   check("the manifest states the echo rule the harness implements", manifest.echo_rule === mh.ECHO_RULE.description);
   const classes = { A: 0, B: 0, C: 0, D: 0 };
@@ -855,13 +855,24 @@ group("medium fixtures — integrity, four-class geometry re-derived from the ec
     check(`${f.name}: check_says re-derived (${says})`, says === f.check_says);
   }
   check("classes A, B, C and D each have at least one fixture, and A and D at least two", classes.A >= 2 && classes.B >= 1 && classes.C >= 1 && classes.D >= 2, JSON.stringify(classes));
-  if (mh.repurposePresent()) {
-    let loud = 0;
-    for (const rel of manifest.leave_one_out.essays) {
-      const text = readFileSync(new URL(`../../prose-tell-scan/tests/corpus/human-essays/${rel}`, import.meta.url), "utf8");
-      if (mh.checkSays(await mh.checkPiece(text, manifest.leave_one_out.form)) === "REVISE") loud += 1;
-    }
-    check("every leave-one-out post reads REVISE under the echo rule: the parrot scores 0 of 6 on the negatives", loud === manifest.leave_one_out.essays.length, `${loud} loud`);
+  {
+    const essays = manifest.leave_one_out.essays;
+    const files = essays.map((rel) => { try { return readFileSync(new URL(`loo/${mh.looName(rel)}.md`, dir), "utf8"); } catch { return null; } });
+    const staged = files.map((t) => (t === null ? null : mh.essayBody(t)));
+    check("each extract keeps its source, author, license and permalink as frontmatter (CC-BY-4.0 attribution)",
+      files.every((t) => t && /^---\n[\s\S]*?^author: Cory Doctorow$[\s\S]*?^license: CC-BY-4.0$[\s\S]*?\n---\n/m.test(t)));
+    check("each leave-one-out essay is the committed extraction of its Pluralistic issue (rerun node tests/medium-harness.mjs --update)",
+      files.every((t, i) => t !== null && t === mh.extractEssay(readFileSync(mh.looSource(essays[i]), "utf8"))));
+    check("the staged essays carry none of the issue's scaffolding: no contents list, roundup, permalink marker, bare URL line or image credit",
+      staged.every((t) => t && !/Today's links|Hey look at this|Object permanence|Colophon:|\(permalink\)|^\s*https?:\/\/\S+\s*$|^\(Image:/m.test(t)));
+    check("every staged essay is word for word a run of its source's lines", staged.every((t, i) => t && t.split("\n").filter(Boolean).every((l) => readFileSync(mh.looSource(essays[i]), "utf8").includes(l))));
+    if (mh.repurposePresent()) {
+      const says = {};
+      for (const [i, rel] of essays.entries()) says[mh.looName(rel)] = mh.checkSays(await mh.checkPiece(staged[i] ?? "", manifest.leave_one_out.form));
+      check("leave-one-out check_says re-derived per essay", JSON.stringify(says) === JSON.stringify(manifest.leave_one_out.check_says), JSON.stringify(says));
+      check("the negatives cover both geometries: at least two essays with the check quiet (A) and two with it loud (B)",
+        Object.values(says).filter((v) => v === "CLEAN").length >= 2 && Object.values(says).filter((v) => v === "REVISE").length >= 2);
+    } else process.stdout.write("  SKIP leave-one-out check_says — prose-author's repurpose skill absent\n");
   }
   const { CRITICS } = await import("./run-harness.mjs");
   const fixtures = CRITICS.medium.fixtures({});

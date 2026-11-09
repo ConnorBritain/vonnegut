@@ -73,7 +73,14 @@ What the findings are, read from the transcripts:
   the premise that the leave-one-out posts are a clean negative does not hold
   for the newsletter profile.
 
-**Follow-up, not done in this session:** no agent prompt was edited. Whether
+**Follow-up, done afterwards (fixtures only):** the leave-one-out set is now
+the essay extracted from each issue (`fixtures/medium/loo/`), and the thread
+segments are rewritten to stand alone; each corrected fixture carries
+`corrected_after_run: "2026-11-09-medium"`, which `verify-run.mjs` prints for
+this run. This run's own inputs, under `inputs/`, are unchanged and it is still
+scored on them. A repeat on the corrected fixtures is owed.
+
+**As this run left it:** no agent prompt was edited. Whether
 the fix is in the fixtures (a leave-one-out set that passes the mechanical
 check, and thread text whose segments stand alone) or in the prompt is a
 decision for the next session, and either way the run has to be repeated.
