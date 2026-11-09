@@ -1,0 +1,17 @@
+model: claude-opus-5-5
+
+Bash: cd <repo>/bundles/prose-outline/skills/prose-outline && cat references/outline-schema.md && ls tools; ls -la <task>/skillwork/prose-outline-underspecified-d1
+
+Bash: S=<repo>/bundles/prose-outline/skills/prose-outline; cat $S/references/outline-schema.md; ls $S/tools; ls -la <task>/skillwork/prose-outline-underspecified-d1
+
+Read: <repo>/bundles/prose-outline/skills/prose-outline/references/outline-schema.md
+
+Glob: **/*
+
+Write: <task>/brief.md
+
+Write: <task>/proposal.json
+
+Bash: node <repo>/bundles/prose-outline/skills/prose-outline/tools/proposal-check.mjs <task>/proposal.json --brief <task>/brief.md
+
+Bash: node <repo>/bundles/prose-outline/skills/prose-outline/tools/outline-store.mjs locate

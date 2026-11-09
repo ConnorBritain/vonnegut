@@ -1,0 +1,16 @@
+{
+  "schema": "proposal-check/1",
+  "errors": [],
+  "expectation": "concrete",
+  "findings": [],
+  "limits": [
+    "Whether these are the right claims, in the right order, is not checked here."
+  ],
+  "counts": {
+    "nodes": 7,
+    "claims": 5,
+    "open_questions": 2,
+    "empty_slots": 2
+  },
+  "status": "clean"
+}

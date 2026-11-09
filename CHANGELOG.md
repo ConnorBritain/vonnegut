@@ -17,6 +17,10 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** the `prose-outline` skill: first run,
+  `tests/runs/2026-11-09-skill`, two briefs × 3 draws — `proposal-check
+  --brief` clean on all six; no thesis invented for the underspecified brief;
+  nothing saved without a yes.
 - **Measured** the `prose-bible` skill: first run,
   `tests/runs/2026-11-09-skill`, project and control × 3 draws. Control met
   3/3. Project: attribute put to the writer and nothing saved 3/3, but the
