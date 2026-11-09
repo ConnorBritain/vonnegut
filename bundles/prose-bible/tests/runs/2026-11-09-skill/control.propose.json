@@ -1,0 +1,46 @@
+{
+  "status": "proposal",
+  "project": null,
+  "entries": 3,
+  "proposal": {
+    "entries": [
+      {
+        "id": "b1",
+        "kind": "term",
+        "name": "Cadence Rule",
+        "key": "cadence rule",
+        "definition": "one habit that made the scanner useful",
+        "first_seen": {
+          "file": "essay-01.md",
+          "line": 3
+        },
+        "notes": "proposed from the index: 4 occurrence(s) in 3 file(s)"
+      },
+      {
+        "id": "b2",
+        "kind": "term",
+        "name": "lock",
+        "key": "lock",
+        "definition": "named snapshot of the bands you calibrated on purpose",
+        "first_seen": {
+          "file": "essay-02.md",
+          "line": 3
+        },
+        "notes": "proposed from the index: 1 occurrence(s) in 1 file(s)"
+      },
+      {
+        "id": "b3",
+        "kind": "term",
+        "name": "pieces",
+        "key": "pieces",
+        "definition": "lock on noise",
+        "first_seen": {
+          "file": "essay-02.md",
+          "line": 3
+        },
+        "notes": "proposed from the index: 1 occurrence(s) in 1 file(s)"
+      }
+    ]
+  },
+  "receipt": "Candidates from the index; nothing is saved until each is confirmed and save runs with --approved."
+}

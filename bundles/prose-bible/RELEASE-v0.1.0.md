@@ -78,9 +78,16 @@ collect` prints, quoted:
 ```
 
 One model, one day, seven synthetic projects; the contract counts were made by
-the session that ran it. **No model run of the skill has been dispatched**;
-[`tests/skill-harness.md`](tests/skill-harness.md) records how to run and check
-one, and an undispatched run is recorded as not run, never as passed. Class D (diff quiet, critic flags) is empty by construction and the
+the session that ran it. **The skill was first run the same day**
+(`tests/runs/2026-11-09-skill`, project and control × 3 draws, `claude -p`
+with the bundle as a plugin). Control: 3 of 3 met — critic `CLEAN`, the skill
+said so and invented nothing. Project: the two-valued attribute went to the
+writer and nothing was saved on 3 of 3, every cited `file:line` is in the
+index, but **the critic ran in a clean context on only 1 of 3** (two draws
+handed it the project directory and it read the chapters), all three raised an
+unindexed character from the files, and one draw dropped an index entry
+(saying so). The readings were made by the session, not a person; no prompt was
+edited. Class D (diff quiet, critic flags) is empty by construction and the
 fixture manifest says why. Pronouns are never resolved; attributes and
 definitions are surface patterns; a contradiction stated in paraphrase with no
 shared term is not a candidate. Nothing here fact-checks against the world,

@@ -1,0 +1,43 @@
+model: claude-opus-5-5
+
+Read: <repo>/bundles/prose-bible/skills/prose-bible/references/bible-schema.md
+
+Bash: ls -R book | head -50
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && P=<task>/skillwork/prose-bible-project-d3/book; S=<task>; mkdir -p $S && node tools/entity-index.mjs $P --json > $S/index.json && node tools/index-diff.mjs $S/index.json --json > $S/diff.json; cat $S/diff.json; echo ---; node tools/bible-store.mjs propose --index $S/index.json; echo ---; node tools/bible-store.mjs locate
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && node tools/entity-index.mjs <task>/skillwork/prose-bible-project-d3/book --json > <task>/index.json && node tools/index-diff.mjs <task>/index.json --json > <task>/diff.json && cat <task>/diff.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs <task>/skillwork/prose-bible-project-d3/book --json > <task>/index.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/index.json --json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index <task>/index.json
+
+Bash: node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Read: <task>/skillwork/prose-bible-project-d3/book/chapter-01.md
+
+Read: <task>/skillwork/prose-bible-project-d3/book/chapter-02.md
+
+Read: <task>/skillwork/prose-bible-project-d3/book/notes.md
+
+Agent: Judge whether this project contradicts itself, using only the index-diff candidates below and the current bible. Project directory (read-only, for checking cited lines): <task>/skillwork/prose-bible-project-d3/book
+
+Diff JSON: <task>/diff.json
+
+Current bible: none exists yet (empty — {"entries": []}).
+
+Report only findings that cite two locations from the diff, or say CLEAN.
+
+Read: <task>/diff.json
+
+Glob: **/diff.json
+
+Bash: ls -la /tmp/claude-0/-tmp-claude-0--home-user-vonnegut-114b4780-cec9-5a21-b936-a7727c043a5c-scratchpad-skillwork-prose-bible-project-d3/ /tmp/claude-0/-tmp-claude-0--home-user-vonnegut-114b4780-cec9-5a21-b936-a7727c043a5c-scratchpad-skillwork-prose-bible-project-d3/*/ 2>&1 | head -30
+
+Glob: **/*
+
+Read: <task>/index.json
+
+Bash: cd <task>/skillwork/prose-bible-project-d3/book && cat -n chapter-01.md chapter-02.md notes.md

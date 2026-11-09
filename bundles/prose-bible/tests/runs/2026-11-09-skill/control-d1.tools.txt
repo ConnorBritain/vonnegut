@@ -1,0 +1,19 @@
+model: claude-opus-5-5
+
+Bash: cd <repo>/bundles/prose-bible/skills/prose-bible && cat references/bible-schema.md && ls <task>/skillwork/prose-bible-control-d1/book
+
+Bash: S=<repo>/bundles/prose-bible/skills/prose-bible; cat $S/references/bible-schema.md; ls -la book
+
+Read: <repo>/bundles/prose-bible/skills/prose-bible/references/bible-schema.md
+
+Glob: book/**/*
+
+Bash: mkdir -p <task>/task && node <repo>/bundles/prose-bible/skills/prose-bible/tools/entity-index.mjs book --json > <task>/task/index.json && node <repo>/bundles/prose-bible/skills/prose-bible/tools/index-diff.mjs <task>/task/index.json --json > <task>/task/diff.json && node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs propose --index <task>/task/index.json; echo ---; cat <task>/task/diff.json; echo ---; node <repo>/bundles/prose-bible/skills/prose-bible/tools/bible-store.mjs locate
+
+Agent: Judge these index-diff candidates for contradictions. Current bible: none (no confirmed bible exists yet for this project).
+
+Diff JSON file: <task>/task/diff.json
+
+Read: <task>/task/diff.json
+
+Grep: lock|pieces

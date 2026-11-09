@@ -17,6 +17,12 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** the `prose-bible` skill: first run,
+  `tests/runs/2026-11-09-skill`, project and control × 3 draws. Control met
+  3/3. Project: attribute put to the writer and nothing saved 3/3, but the
+  critic got a clean context on only 1/3 (two draws passed it the project
+  directory) and every draw raised an unindexed character from the files. No
+  prompt edited; follow-up.
 - **Measured** `prose-reader-critic` (prose-review): first run,
   `tests/runs/2026-11-09-reader`, 4 personas × 12 essays × 3 draws — 16
   `REVISE` of 48 negatives: skeptical-cto 1/12 (within the 0–2 default),
