@@ -1,0 +1,19 @@
+
+  21 transcript(s) wrapped in bundles/prose-bible/tests/runs/2026-11-09-continuity
+
+  bundles/prose-bible/tests/runs/2026-11-09-continuity — 21 transcript(s), 7 fixture(s)
+
+    n-alias-definitions      negative critic 3/3 CLEAN   parrot says REVISE
+    n-refrain                negative critic 3/3 CLEAN   parrot says REVISE
+    n-restated-rule          negative critic 3/3 CLEAN   parrot says REVISE
+    n-separate-topics        negative critic 3/3 CLEAN   parrot says CLEAN
+    n-two-notes              negative critic 3/3 CLEAN   parrot says CLEAN
+    p-bible-conflict         positive critic 3/3 REVISE   parrot says REVISE
+    p-drift-project          positive critic 3/3 REVISE   parrot says REVISE
+
+    critic  — negatives quiet 15/15, positives caught 6/6
+    parrot  — negatives quiet 6/15, positives caught 6/6   (flagged when index-diff reports any candidate: redefined, attribute_drift, date_drift, repeated or bible_conflicts)
+    contract — uncited=0, third_location=0   (operator counts, carried through, not derived)
+
+    Single draws are observations, not rates. A negative that reads REVISE is the finding to read first.
+

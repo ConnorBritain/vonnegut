@@ -17,6 +17,10 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** `prose-continuity-critic` (prose-bible): first run,
+  `tests/runs/2026-11-09-continuity`, 7 cases × 3 draws — negatives quiet 15/15
+  draws (parrot 6/15), positives caught 6/6, `uncited` and `third_location` 0.
+  Added to `tools/check.mjs`'s re-check list.
 - **Measured** `prose-structure-critic` (prose-review): first run,
   `tests/runs/2026-11-09-structure`, 21 cases × 3 draws — 0 `REVISE` of 12
   leave-one-out essays, 4 of 4 synthetic positives, echo rate 4 of 21, both

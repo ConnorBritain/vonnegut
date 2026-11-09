@@ -60,8 +60,10 @@ drift.
 
 The critic's fixtures, echo rule and harness are in
 [`tests/critic-harness.md`](tests/critic-harness.md); the skill's positive and
-negative test in [`tests/skill-harness.md`](tests/skill-harness.md). Both record
-that no model run has been dispatched yet, and say what a run must show.
+negative test in [`tests/skill-harness.md`](tests/skill-harness.md). The critic's
+first run (2026-11-09, k=3) was quiet on 15 of 15 negative draws and caught 6 of 6
+positive draws, both contract counts 0; the skill's harness records that no model
+run of it has been dispatched yet.
 
 ## Install
 

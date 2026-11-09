@@ -1,0 +1,14 @@
+{
+ "schema": "index-diff/1",
+ "redefined": [],
+ "attribute_drift": [],
+ "repeated": [],
+ "bible_conflicts": [],
+ "limits": [
+  "Two definitions are 'different' when their content-word overlap is below 0.5; a paraphrase can pass as the same and a different emphasis as different.",
+  "Attribute values are compared after lower-casing and stripping punctuation; 'grey' and 'gray' are different values.",
+  "Every entry is a candidate; a flashback, a nickname or a lie looks the same as drift here."
+ ],
+ "date_drift": [],
+ "summary": "0 redefined, 0 attribute drift, 0 date drift, 0 repeated, 0 bible conflicts"
+}

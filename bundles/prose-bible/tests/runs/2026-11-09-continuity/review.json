@@ -1,0 +1,189 @@
+{
+  "n-alias-definitions-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-alias-definitions-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-alias-definitions-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-refrain-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-refrain-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-refrain-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-restated-rule-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-restated-rule-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-restated-rule-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-separate-topics-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-separate-topics-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-separate-topics-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-two-notes-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-two-notes-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "n-two-notes-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "CLEAN",
+    "_findings_to_review": []
+  },
+  "p-bible-conflict-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: attribute / **KEY**: dorota (eyes) / **A**: bible entry b1, first_seen chapter-05.md:3. Value \"grey\". Notes: \"Grey. Her mother's eyes; it is the point of chapter twelve.\" / **B**: chapter-05.md:3: \"Dorota had green eyes and a soldier's way of standing.\" / **WHY THEY CANNOT BOTH HOLD**: The bible says Dorota's eyes are grey, the same as her mother's, and that this is the point of chapter"
+    ]
+  },
+  "p-bible-conflict-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: attribute / **KEY**: dorota / **A**: bible b1 (first_seen chapter-05.md:3): eyes \"grey\". Notes: \"Grey. Her mother's eyes; it is the point of chapter twelve.\" / **B**: chapter-05.md:3: \"Dorota had green eyes and a soldier's way of standing.\" / **WHY THEY CANNOT BOTH HOLD**: The bible records Dorota's eyes as grey and says the plot depends on it. The text's own narration, at the very line"
+    ]
+  },
+  "p-bible-conflict-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: attribute / **KEY**: dorota / **A**: bible b1 (first_seen chapter-05.md:3): eyes \"grey\". Note: \"Grey. Her mother's eyes; it is the point of chapter twelve.\" / **B**: chapter-05.md:3: \"Dorota had green eyes and a soldier's way of standing.\" / **WHY THEY CANNOT BOTH HOLD**: The bible gives Dorota grey eyes and makes that colour a plot point, but the narration at the line the bible cites a"
+    ]
+  },
+  "p-drift-project-d1": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: attribute / **KEY**: mara (eyes) / **A**: chapter-01.md:3, \"Mara had grey eyes and a habit of counting doors.\" / **B**: chapter-02.md:3, \"Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.\" / **WHY THEY CANNOT BOTH HOLD**: Both are plain narration of Mara's eye colour, and chapter two treats her as unchanged (\"as she always did\"), so he"
+    ]
+  },
+  "p-drift-project-d2": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "- **CLASS**: attribute / - **KEY**: mara (eyes) / - **A**: chapter-01.md:3. \"Mara had grey eyes and a habit of counting doors.\" / - **B**: chapter-02.md:3. \"Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.\" / - **WHY THEY CANNOT BOTH HOLD**: The narrator says both times, flatly, that Mara's eyes are a certain colour. Nothing in either sentence e"
+    ]
+  },
+  "p-drift-project-d3": {
+    "note": "",
+    "annotation": "",
+    "uncited": 0,
+    "third_location": 0,
+    "_verdict": "REVISE",
+    "_findings_to_review": [
+      "**CLASS**: attribute / **KEY**: mara (eyes) / **A**: chapter-01.md:3. \"Mara had grey eyes and a habit of counting doors.\" / **B**: chapter-02.md:3. \"Mara had green eyes, and she crossed at the ford counting the doors of the village as she always did.\" / **WHY THEY CANNOT BOTH HOLD**: Both sentences describe Mara in the story's present and plainly state her eye colour, and \"as she always did\" ties "
+    ]
+  },
+  "_how": [
+    "One entry per transcript. `note` and `annotation` are the operator's; both may stay empty.",
+    "`uncited` counts findings that do not quote BOTH locations; `third_location` counts findings",
+    "that cite a file:line the staged diff did not supply. Both are counts of what the quoted findings",
+    "DO, read against inputs/<case>/diff.json — not of what the critic says it did. collect refuses",
+    "to run until they are numbers."
+  ]
+}

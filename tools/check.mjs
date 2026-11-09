@@ -29,6 +29,9 @@ for (const run of ["2026-08-04-b", "2026-08-05-fidelity", "2026-08-05-fidelity-s
   checks.push(["bundles/prose-review/tests/run-harness.mjs", "check", path]);
   checks.push(["bundles/prose-review/tests/verify-run.mjs", path]);
 }
+for (const run of ["2026-11-09-continuity"]) {
+  checks.push(["bundles/prose-bible/tests/continuity-harness.mjs", "check", `bundles/prose-bible/tests/runs/${run}`]);
+}
 checks.push(["bundles/prose-author/tests/concurrency.mjs"]);
 if (args.includes("--mutations")) checks.push(["bundles/prose-author/tests/mutations.mjs"]);
 for (const command of checks) {

@@ -67,12 +67,20 @@ identity it asks.
 
 ## Limits
 
-**No model run has been dispatched.** The build environment had no
-authenticated CLI. [`tests/critic-harness.md`](tests/critic-harness.md) and
-[`tests/skill-harness.md`](tests/skill-harness.md) record how to run and check
-one; until a run is recorded the critic's evidence is its fixture set and
-harness, not a number, and an undispatched run is recorded as not run, never
-as passed. Class D (diff quiet, critic flags) is empty by construction and the
+**The critic was first run on 2026-11-09, after this release**
+(`tests/runs/2026-11-09-continuity`, 7 cases × 3 draws). `continuity-harness.mjs
+collect` prints, quoted:
+
+```
+    critic  — negatives quiet 15/15, positives caught 6/6
+    parrot  — negatives quiet 6/15, positives caught 6/6   (flagged when index-diff reports any candidate: redefined, attribute_drift, date_drift, repeated or bible_conflicts)
+    contract — uncited=0, third_location=0   (operator counts, carried through, not derived)
+```
+
+One model, one day, seven synthetic projects; the contract counts were made by
+the session that ran it. **No model run of the skill has been dispatched**;
+[`tests/skill-harness.md`](tests/skill-harness.md) records how to run and check
+one, and an undispatched run is recorded as not run, never as passed. Class D (diff quiet, critic flags) is empty by construction and the
 fixture manifest says why. Pronouns are never resolved; attributes and
 definitions are surface patterns; a contradiction stated in paraphrase with no
 shared term is not a candidate. Nothing here fact-checks against the world,
