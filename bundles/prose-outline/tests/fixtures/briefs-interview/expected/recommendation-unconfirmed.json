@@ -1,0 +1,22 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": "thesis",
+  "asks": "In one sentence, what does the piece argue (or, for a story, what is its premise)?",
+  "open_required": [],
+  "open_optional": [
+    "must_include",
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [
+    "thesis"
+  ],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": false
+}

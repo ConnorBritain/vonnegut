@@ -1,0 +1,30 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": null,
+  "asks": null,
+  "open_required": [
+    "purpose",
+    "form",
+    "length",
+    "shape",
+    "thesis"
+  ],
+  "open_optional": [
+    "must_include",
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [
+    "audience"
+  ],
+  "blocked_by": [
+    "audience"
+  ],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": false
+}

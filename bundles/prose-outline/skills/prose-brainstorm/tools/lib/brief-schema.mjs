@@ -25,8 +25,8 @@ export const emptyBrief = () => ({ sources: [], angles: [], unused_segments: [],
 
 /**
  * Errors for the payload. `validateDecisions` and `validateLinks` are hooks the
- * interview's copy supplies (lib/decisions.mjs); without them the two fields
- * must merely be an object and an array.
+ * interview supplies (lib/decisions.mjs), called with the field and the whole
+ * body; without them the two fields must merely be an object and an array.
  */
 export function validateBriefBody(body, { validateDecisions = null, validateLinks = null } = {}) {
   const errors = [];
@@ -80,9 +80,9 @@ export function validateBriefBody(body, { validateDecisions = null, validateLink
   if (!Array.isArray(body.unused_segments) || !body.unused_segments.every((s) => SEGMENT_ID.test(s))) errors.push("unused_segments must be a list of segment ids");
   if (body.chosen_angle !== null && !angleIds.has(body.chosen_angle)) errors.push("chosen_angle must be null or the id of one of the angles");
   if (!isObject(body.decisions)) errors.push("decisions must be an object");
-  else if (validateDecisions) errors.push(...validateDecisions(body.decisions));
+  else if (validateDecisions) errors.push(...validateDecisions(body.decisions, body));
   if (!Array.isArray(body.links)) errors.push("links must be an array");
-  else if (validateLinks) errors.push(...validateLinks(body.links));
+  else if (validateLinks) errors.push(...validateLinks(body.links, body));
   return errors;
 }
 

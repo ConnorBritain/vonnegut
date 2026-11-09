@@ -60,7 +60,7 @@ Each decision is recorded in `project-brief/1` → `decisions`:
 ```json
 { "<id>": { "value": "…", "source": "writer | transcript | summary | outlines | bible | research | corpus | recommended",
             "evidence": { "ref": "…", "line": 0, "quote": "…" },
-            "confirmed": true, "stale": false, "at_revision": 3 } }
+            "confirmed": true, "at_revision": 3, "skipped": "<writer's reason, only when skipped>" } }
 ```
 
 A value whose `source` is anything but `writer` must carry `evidence`
@@ -73,8 +73,9 @@ corpus-piece, ref, why }`.
 ```json
 { "schema": "brief-check/1", "next": "<decision id> | null",
   "open_required": ["…"], "open_optional": ["…"],
-  "unconfirmed": ["…"], "stale": ["…"],
-  "evidence_problems": [ { "decision": "…", "status": "absent | drifted" } ],
+  "unconfirmed": ["…"], "stale": ["…"], "skipped": ["…"], "blocked_by": ["…"],
+  "evidence_problems": [ { "decision": "…", "status": "misplaced | drifted | absent" } ],
+  "evidence_unverified": [ { "decision": "…", "why": "…" } ],
   "done": false }
 ```
 
@@ -183,6 +184,21 @@ Mutations:
   interview works, with less help, when those bundles are absent.
 - **Same bundle and store as H.** An interview without a brief to fill has
   nothing to persist into.
+
+### Build-time decisions
+
+- **Staleness is computed, never stored.** A stored `stale` flag would be
+  derived data that goes wrong the moment an upstream answer changes; brief-check
+  derives it from `at_revision` and the tree's transitive dependencies.
+- **A drifted evidence quote unsettles its decision.** The decision goes back to
+  the writer (it becomes `next` when its dependencies allow) rather than merely
+  being reported.
+- **A skip is explicit.** `value: null` with the writer's reason in `skipped`;
+  a skipped required decision blocks the questions downstream of it
+  (`blocked_by`), so `next` can be null while the interview is not done.
+- **Quote verification is one module.** `lib/quote.mjs` is shared byte-for-byte
+  with prose-brainstorm's angles-check, so the brief's evidence and the angles
+  are held to one rule.
 
 ## 10. Deliverables
 

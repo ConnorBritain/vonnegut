@@ -16,10 +16,12 @@ import { dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { TRANSCRIPTS, TRANSCRIPT_CASES, TRANSCRIPT_SCAN, scanCase, render } from "./transcript-fixtures.mjs";
+import { BRIEFS, BRIEF_CHECK, INTERVIEW_CASES, checkCase, loadBrief, monologueClean } from "./interview-fixtures.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BUNDLE = resolve(HERE, "..");
 const BRAINSTORM = join(BUNDLE, "skills", "prose-brainstorm");
+const INTERVIEW = join(BUNDLE, "skills", "prose-interview");
 
 let passed = 0;
 let failed = 0;
@@ -212,6 +214,66 @@ try {
     check("the checker refuses theses on thin material — run the concrete example as if it were thin", inverted.ok === false && /invented thesis/.test(inverted.expectation?.findings.join(" ") ?? ""));
     const thin = expectOn("rambling", cleanOf("rambling.txt"), ramScan, "concrete");
     check("and refuses too few angles with no thesis on concrete material", thin.ok === false && thin.expectation?.findings.length === 2);
+  }
+
+  /* ---------------------------------------------------------------- */
+  group("decisions — the tree is data, and a recorded answer says where it came from");
+  {
+    const dc = await import(pathToFileURL(join(INTERVIEW, "tools", "lib", "decisions.mjs")).href);
+    const ids = dc.DECISIONS.map((d) => d.id);
+    check("every dependency precedes its decision in the tree, so tree order is dependency order",
+      dc.DECISIONS.every((d, i) => d.depends.every((dep) => ids.indexOf(dep) >= 0 && ids.indexOf(dep) < i)));
+    check("ancestors are transitive: the length depends on the audience through the form", dc.ancestors("length").includes("audience") && dc.ancestors("thesis").includes("audience"));
+    const body = loadBrief("done");
+    const v = (decisions, links = body.links) => dc.validateDecisions(decisions, { ...body, links });
+    check("the fixture briefs' decisions all validate", INTERVIEW_CASES.every((n) => dc.validateDecisions(loadBrief(n).decisions, loadBrief(n)).length === 0));
+    check("a found answer without evidence is refused; a writer's answer with evidence is refused",
+      v({ audience: { value: "x", source: "bible", confirmed: false, at_revision: 1 } }).some((e) => /evidence must be/.test(e))
+        && v({ audience: { value: "x", source: "writer", confirmed: true, at_revision: 1, evidence: { ref: "r", quote: "q" } } }).some((e) => /needs none/.test(e)));
+    check("a transcript quote must name its line", v({ audience: { value: "x", source: "transcript", confirmed: false, at_revision: 1, evidence: { ref: "transcript", quote: "q" } } }).some((e) => /line is required/.test(e)));
+    check("a decision outside the tree, an angle the brief lacks, and a skip with a value are refused",
+      v({ tone: { value: "x", source: "writer", confirmed: true, at_revision: 1 } }).some((e) => /not a decision/.test(e))
+        && v({ angle: { value: "a9", source: "writer", confirmed: true, at_revision: 1 } }).some((e) => /does not have/.test(e))
+        && v({ audience: { value: "x", skipped: "later", source: "writer", confirmed: true, at_revision: 1 } }).some((e) => /value null/.test(e)));
+    check("form and length are structured, and a links answer must cite listed links",
+      v({ form: { value: "newsletter", source: "writer", confirmed: true, at_revision: 1 } }).length > 0
+        && v({ length: { value: { unit: "words", min: 900, max: 800 }, source: "writer", confirmed: true, at_revision: 1 } }).length > 0
+        && v({ links: { value: ["outline:other"], source: "writer", confirmed: true, at_revision: 1 } }, []).some((e) => /does not list/.test(e))
+        && v({ links: { value: ["outline:other"], source: "writer", confirmed: true, at_revision: 1 } }, [{ kind: "outline", ref: "outline:other", why: "same story" }]).length === 0);
+    check("links entries need a kind, a ref and a why", dc.validateLinks([{ kind: "tweet", ref: "x" }]).length === 2);
+  }
+
+  /* ---------------------------------------------------------------- */
+  group("brief-check — next, stale and done are computed, and match the hand-built cases");
+  {
+    for (const name of INTERVIEW_CASES) {
+      const result = await attemptAsync(() => checkCase(name));
+      const expected = join(BRIEFS, "expected", `${name}.json`);
+      check(`${name}: reproduces its expected JSON byte for byte`, existsSync(expected) && !result.crashed && readFileSync(expected, "utf8") === render(result), "rerun tests/interview-fixtures.mjs --update and review the diff");
+    }
+    const c = {};
+    for (const name of INTERVIEW_CASES) c[name] = await attemptAsync(() => checkCase(name));
+    check("an empty brief asks for the angle first", c.empty.next === "angle" && c.empty.done === false && c.empty.open_required?.length === 7);
+    check("with angle and audience settled, the next question is the purpose (tree order, dependencies met)", c.partial.next === "purpose");
+    check("changing the audience after the rest was settled makes purpose, form, length, shape and thesis stale — transitively",
+      c["audience-changed"].stale?.join() === "purpose,form,length,shape,thesis" && c["audience-changed"].next === "purpose" && c["audience-changed"].done === false);
+    check("a transcript quote that drifted puts that decision back to the writer, and the interview is not done",
+      c["transcript-drift"].evidence_problems?.[0]?.decision === "audience" && c["transcript-drift"].evidence_problems[0].status === "drifted" && c["transcript-drift"].next === "audience" && c["transcript-drift"].done === false);
+    check("a recommendation the writer has not confirmed blocks done", c["recommendation-unconfirmed"].unconfirmed?.join() === "thesis" && c["recommendation-unconfirmed"].next === "thesis" && c["recommendation-unconfirmed"].done === false);
+    check("a skipped required decision blocks the questions downstream of it, and done", c["skipped-audience"].blocked_by?.join() === "audience" && c["skipped-audience"].next === null && c["skipped-audience"].done === false);
+    check("every required decision settled is done, while optional ones stay open and are still offered",
+      c.done.done === true && c.done.open_optional?.length === 3 && c.done.next === "exclude" && c.done.evidence_problems?.length === 0);
+    const { checkBrief } = await import(pathToFileURL(BRIEF_CHECK).href);
+    const noText = checkBrief(loadBrief("done"));
+    check("without the transcript text, its quotes are unverified — listed, never counted as passed", noText.evidence_unverified?.length === 1 && noText.evidence_problems?.length === 0);
+    const invalid = checkBrief({ ...loadBrief("done"), decisions: { tone: {} } });
+    check("an invalid brief is reported invalid, never done", invalid.valid === false && invalid.done === false);
+    const BCLI = join(INTERVIEW, "tools", "brief-check.mjs");
+    const cleanFile = join(tmp, "interview-clean.txt"); writeFileSync(cleanFile, await monologueClean());
+    const bc = (name, ...a) => spawnSync(process.execPath, [BCLI, join(BRIEFS, `${name}.json`), "--clean", cleanFile, ...a], { encoding: "utf8" });
+    const invalidFile = join(tmp, "invalid-brief.json"); writeFileSync(invalidFile, JSON.stringify({ ...loadBrief("done"), decisions: { tone: {} } }));
+    check("CLI: exit 0 when done, 1 when not, 2 on an invalid brief or bad usage",
+      bc("done").status === 0 && bc("partial").status === 1 && spawnSync(process.execPath, [BCLI, invalidFile], { encoding: "utf8" }).status === 2 && spawnSync(process.execPath, [BCLI], { encoding: "utf8" }).status === 2);
   }
 } finally {
   rmSync(tmp, { recursive: true, force: true });

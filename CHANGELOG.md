@@ -85,6 +85,18 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
+### [0.3.0] — in progress: the interview
+
+Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md)).
+
+- **Added** `skills/prose-interview/tools/lib/decisions.mjs` (the decision tree
+  as data, with decision and link validators) and `brief-check.mjs`: the next
+  question in dependency order, transitive staleness when an answer changes,
+  skipped questions that block, transcript and summary evidence re-verified,
+  and `done`. Seven hand-built briefs with expected output.
+- **Changed** quote verification moves to `lib/quote.mjs`, shared byte-for-byte
+  by angles-check and brief-check.
+
 ### [0.2.0] — in progress: transcript intake and brainstorm
 
 Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-transcript-brainstorm.md)).

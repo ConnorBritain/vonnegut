@@ -1,0 +1,28 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": "angle",
+  "asks": "Which angle is this piece — one of the brainstormed ones, or a new one?",
+  "open_required": [
+    "angle",
+    "audience",
+    "purpose",
+    "form",
+    "length",
+    "shape",
+    "thesis"
+  ],
+  "open_optional": [
+    "must_include",
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": false
+}

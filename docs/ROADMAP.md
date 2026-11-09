@@ -51,7 +51,7 @@ for how a session picks up from here.
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | shipped |
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | shipped |
 | 4 | [H. Transcript intake and brainstorm](#h-transcript-intake-and-brainstorm) | `prose-outline` | [H-transcript-brainstorm.md](roadmap/H-transcript-brainstorm.md) | in-progress |
-| 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | planned |
+| 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | in-progress |
 | 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | planned |
 | 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | planned |
 | 4 | [L. Chief-editor reading pass](#l-chief-editor-reading-pass) | `prose-review` | [L-chief-editor.md](roadmap/L-chief-editor.md) | planned |
@@ -426,7 +426,7 @@ fixtures (including an audience change that stales length, shape and thesis);
 the skill never marks done while brief-check says otherwise and never records
 a recommendation as the writer's answer; mutations green.
 
-**Status.** planned
+**Status.** in-progress
 
 ## J. Outline baselines
 
