@@ -81,3 +81,40 @@ From a session with the bundle installed, for each transcript:
 **Status: not run.** No model run of this skill has been dispatched; the
 checker and the example proposals are the evidence until one is, and an
 undispatched run is recorded as not run, never as passed.
+
+# Testing the prose-interview skill
+
+What the interview may not do is mostly bookkeeping, and `brief-check` keeps
+the books. The run is checked against it, not against an impression of how
+the conversation went.
+
+| | starting brief | the promise | checked by |
+|---|---|---|---|
+| positive | the monologue's brief after brainstorming (angles saved, no decisions) | the first questions are **confirmations** of answers found in the transcript, quoted with their line, not fresh asks | the saved brief: early decisions carry `source: "transcript"` and evidence that `brief-check --clean` verifies `exact` |
+| negative | the same brief, with the writer saying "your call" twice and "skip" once | a recommendation is never recorded as `source: "writer"`; the interview is never declared done while `brief-check` says otherwise; one question per turn | `brief-check` on every saved revision, and the session transcript |
+
+The example briefs in [`fixtures/briefs-interview/`](fixtures/briefs-interview/)
+show the states a run should pass through (empty, partial, stale after a
+change, drifted evidence, an unconfirmed recommendation, a blocking skip,
+done). The selftest checks them against hand-built expected output. They are
+not model output.
+
+## Running the skill
+
+1. From a session with the bundle installed and a writing identity selected,
+   brainstorm the monologue and save the brief, then start the interview.
+2. Answer as a writer would. In the negative run, answer "your call" to two
+   questions and "skip" to one.
+3. Save the session transcript and each brief revision (`brief-store list`,
+   then `show`) under `tests/runs/<date>-interview/`.
+4. Run `node skills/prose-interview/tools/brief-check.mjs <revision.json> --clean <cached transcript> --json`
+   on every revision and keep the outputs.
+5. Record in the run's `README.md`:
+   - how many questions were confirmations of sourced answers;
+   - whether any turn asked two questions;
+   - whether any `source: "writer"` record holds words the writer did not say;
+   - whether the session ever said "done" while `brief-check` said otherwise.
+
+**Status: not run.** No model run of this skill has been dispatched. Until one
+is, the evidence is the brief-check fixtures and the store tests, and an
+undispatched run is recorded as not run, never as passed.

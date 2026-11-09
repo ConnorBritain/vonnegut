@@ -275,6 +275,63 @@ try {
     check("CLI: exit 0 when done, 1 when not, 2 on an invalid brief or bad usage",
       bc("done").status === 0 && bc("partial").status === 1 && spawnSync(process.execPath, [BCLI, invalidFile], { encoding: "utf8" }).status === 2 && spawnSync(process.execPath, [BCLI], { encoding: "utf8" }).status === 2);
   }
+
+  /* ---------------------------------------------------------------- */
+  group("brief-store decide — answers are stamped with the revision that records them, on approval");
+  {
+    const { runStore } = await import(pathToFileURL(join(INTERVIEW, "tools", "brief-store.mjs")).href);
+    const { checkBrief } = await import(pathToFileURL(BRIEF_CHECK).href);
+    const REG = join(HERE, "fixtures", "registry");
+    const env = { PROSE_PROJECTS_DIR: join(tmp, "interview-projects") };
+    const sel = ["--registry", join(REG, "selected")];
+    const run = (argv) => { try { return runStore(argv, env); } catch (e) { return { crashed: e.message }; } };
+    const answers = (obj) => { const f = join(tmp, `answers-${Math.random().toString(36).slice(2)}.json`); writeFileSync(f, JSON.stringify(obj)); return f; };
+    const typed = join(tmp, "typed-brief.md"); writeFileSync(typed, "A post about why our weekly meeting should only exist when there is a decision to make.\n");
+    const noBrief = run(["decide", "--project", "meet", "--answers", answers({ decisions: {} }), "--expected-revision", "0", "--approved", ...sel]);
+    check("decide with no brief is refused — add a source first", /add a source first/.test(noBrief.crashed ?? ""));
+    check("a typed brief starts the project as a notes source (revision 1)", run(["add-source", "--project", "meet", "--file", typed, "--kind", "notes", "--expected-revision", "0", "--approved", ...sel]).revision === 1);
+    const first = answers({ decisions: {
+      angle: { value: "Meetings only for decisions", source: "writer", confirmed: true },
+      audience: { value: "Engineering managers", source: "writer", confirmed: true, at_revision: 99 },
+      purpose: { value: "Cancel status meetings", source: "writer", confirmed: true },
+      form: { value: { form: "newsletter", medium: "web" }, source: "writer", confirmed: true } } });
+    const dry = run(["decide", "--project", "meet", "--answers", first, "--expected-revision", "1", ...sel]);
+    check("decide without --approved proposes and writes nothing", dry.status === "proposal" && run(["list", "--project", "meet", ...sel]).revisions?.length === 1);
+    const d2 = run(["decide", "--project", "meet", "--answers", first, "--expected-revision", "1", "--approved", ...sel]);
+    const b2 = run(["show", "--project", "meet", ...sel]).brief;
+    check("approved: every answer is stamped with the revision written (2), and a caller's own stamp is replaced",
+      d2.status === "saved" && d2.revision === 2 && Object.values(b2?.decisions ?? {}).every((r) => r.at_revision === 2) && b2?.decisions?.audience?.at_revision === 2);
+    const d3 = run(["decide", "--project", "meet", "--answers", answers({ decisions: { audience: { value: "Founders", source: "writer", confirmed: true } } }), "--expected-revision", "2", "--approved", ...sel]);
+    const b3 = run(["show", "--project", "meet", ...sel]).brief;
+    const c3 = (() => { try { return checkBrief(b3 ?? {}); } catch (e) { return { crashed: e.message }; } })();
+    check("changing one answer later re-stamps only it, and brief-check sees what depends on it as stale",
+      d3.revision === 3 && b3?.decisions?.angle?.at_revision === 2 && b3?.decisions?.audience?.at_revision === 3 && c3.stale?.join() === "purpose,form" && c3.next === "purpose");
+    const stale = run(["decide", "--project", "meet", "--answers", first, "--expected-revision", "2", "--approved", ...sel]);
+    check("a stale expected revision is refused", /Stale revision/.test(stale.crashed ?? ""));
+    const unsourced = run(["decide", "--project", "meet", "--answers", answers({ decisions: { thesis: { value: "x", source: "bible", confirmed: false } } }), "--expected-revision", "3", "--approved", ...sel]);
+    check("an answer found in a source but carrying no evidence is refused before anything is written",
+      /invalid/.test(unsourced.crashed ?? "") && run(["list", "--project", "meet", ...sel]).revisions?.length === 3);
+    const extra = run(["decide", "--project", "meet", "--answers", answers({ decisions: {}, notes: "x" }), "--expected-revision", "3", "--approved", ...sel]);
+    check("answers holding anything but decisions and links are refused", /unknown: notes/.test(extra.crashed ?? ""));
+    const linked = run(["decide", "--project", "meet", "--answers", answers({ links: [{ kind: "outline", ref: "outline:standups", why: "the same argument for daily standups" }],
+      decisions: { links: { value: ["outline:standups"], source: "writer", confirmed: true } } }), "--expected-revision", "3", "--approved", ...sel]);
+    check("links are recorded with the decision that cites them", linked.revision === 4 && run(["show", "--project", "meet", ...sel]).brief?.links?.[0]?.ref === "outline:standups");
+    const { runStore: brainstormStore } = await import(pathToFileURL(join(BRAINSTORM, "tools", "brief-store.mjs")).href);
+    let threw = null; try { brainstormStore(["decide", "--project", "meet", "--answers", answers({ decisions: { tone: { value: "x", source: "writer", confirmed: true } } }), "--expected-revision", "4", "--approved", ...sel], env); } catch (e) { threw = e.message; }
+    check("the brainstorm's copy of the store validates decisions too — one store, one rule", /not a decision in the tree/.test(threw ?? ""));
+  }
+
+  /* ---------------------------------------------------------------- */
+  group("prose-interview skill — SKILL.md, meta.yaml, the rules that a script cannot keep");
+  {
+    const text = readFileSync(join(INTERVIEW, "SKILL.md"), "utf8");
+    const meta = readFileSync(join(INTERVIEW, "meta.yaml"), "utf8");
+    check("SKILL.md has frontmatter with name and a trigger-first description", /^---\nname: prose-interview\ndescription: This skill should be used when/.test(text));
+    check("SKILL.md calls its tools by relative path, never ${CLAUDE_PLUGIN_ROOT}", !text.includes("CLAUDE_PLUGIN_ROOT") && ["brief-check", "brief-store"].every((t) => text.includes(`node tools/${t}.mjs`)));
+    check("SKILL.md: one question at a time, look it up before asking, done only when brief-check says so, save with --approved",
+      /One question at a time/.test(text) && /Look for the answer in the writer's own material/.test(text) && /done: true/.test(text) && /--approved/.test(text) && /Never open another bundle's store yourself/.test(text));
+    check("meta.yaml: a planner skill in prose-outline that writes only the brief store", /^kind: planner$/m.test(meta) && /writes: project-brief-store/.test(meta) && /^bundle: prose-outline$/m.test(meta));
+  }
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }

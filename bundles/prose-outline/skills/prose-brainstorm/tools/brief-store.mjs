@@ -8,6 +8,7 @@
  *   node brief-store.mjs list       --project P [--identity ID]
  *   node brief-store.mjs add-source --project P --file F --kind transcript|summary|notes --expected-revision N [--approved] [--identity ID]
  *   node brief-store.mjs save       --project P --proposal FILE --expected-revision N [--approved] [--identity ID]
+ *   node brief-store.mjs decide     --project P --answers FILE --expected-revision N [--approved] [--identity ID]
  *   node brief-store.mjs undo       --project P --expected-revision N [--approved] [--identity ID]
  *
  * Layout: <projects>/<identity>/<project>/brief/ is a revision store
@@ -18,6 +19,11 @@
  *
  * `add-source` is a save that appends one source; without --approved it prints
  * what it would write and writes nothing, the text cache included.
+ *
+ * `decide` merges interview answers ({ decisions: {id: record}, links: [...] })
+ * into the current brief and stamps every answer with the revision being
+ * written (`at_revision`), which is what lets brief-check compute staleness.
+ * A caller cannot choose the stamp: any `at_revision` it sends is replaced.
  * Exit codes: 0 done; 1 error; 2 usage; 3 cannot persist in this registry state.
  */
 import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
@@ -28,14 +34,11 @@ import { listRevisions, readStore, saveStore, storePath, undoStore } from "./lib
 import { BRIEF_SCHEMA, SOURCE_KINDS, bodyOf, emptyBrief, validateBrief, validateBriefBody } from "./lib/brief-schema.mjs";
 import { cleanTranscript, detectFormat } from "./transcript-scan.mjs";
 import { words } from "./lib/text-index.mjs";
+import { HOOKS } from "./lib/decisions.mjs";
 
 export class StoreRefusal extends Error { constructor(message, code) { super(message); this.code = code; } }
 
-const FLAGS = { locate: [], show: ["--project"], list: ["--project"], "add-source": ["--project", "--file", "--kind", "--expected-revision"], save: ["--project", "--proposal", "--expected-revision"], undo: ["--project", "--expected-revision"] };
-
-/** Validation hooks a caller may pass (the interview supplies decision and link validators). */
-let HOOKS = {};
-export const setValidationHooks = (hooks) => { HOOKS = hooks ?? {}; };
+const FLAGS = { locate: [], show: ["--project"], list: ["--project"], "add-source": ["--project", "--file", "--kind", "--expected-revision"], save: ["--project", "--proposal", "--expected-revision"], decide: ["--project", "--answers", "--expected-revision"], undo: ["--project", "--expected-revision"] };
 
 export function parseStoreArgs(argv) {
   const [op, ...rest] = argv;
@@ -122,6 +125,25 @@ export function runStore(argv, env = process.env) {
     const missing = body.sources.filter((s) => !existsSync(join(store.directory, s.cached))).map((s) => s.cached);
     if (missing.length) throw new StoreRefusal(`The brief cites sources that are not cached; add them with add-source first: ${missing.join(", ")}`, 1);
     return receiptOf(saveStore(store.directory, { schema: BRIEF_SCHEMA, id: store.project, payload: body, expectedRevision, approved }), receipt);
+  }
+  if (op === "decide") {
+    const file = resolve(flags.get("--answers"));
+    if (!existsSync(file)) throw new StoreRefusal(`Answers file not found: ${file}`, 1);
+    let answers;
+    try { answers = JSON.parse(readFileSync(file, "utf8")); } catch (e) { throw new StoreRefusal(`Answers are not JSON: ${e.message}`, 1); }
+    const extra = Object.keys(answers ?? {}).filter((k) => !["decisions", "links"].includes(k));
+    if (!answers || typeof answers !== "object" || extra.length) throw new StoreRefusal(`Answers hold only decisions and links${extra.length ? `; unknown: ${extra.join(", ")}` : ""}`, 1);
+    const current = readStore(store.directory, BRIEF_SCHEMA, store.project);
+    if (!current) throw new StoreRefusal(`No brief saved for project ${store.project}; add a source first`, 1);
+    const body = bodyOf(current);
+    const stamp = expectedRevision + 1;
+    const decisions = { ...body.decisions };
+    for (const [id, rec] of Object.entries(answers.decisions ?? {})) decisions[id] = { ...rec, at_revision: stamp };
+    const links = [...body.links];
+    for (const l of answers.links ?? []) { const i = links.findIndex((x) => x.ref === l?.ref); if (i >= 0) links[i] = l; else links.push(l); }
+    const next = { ...body, decisions, links };
+    const errors = validateBriefBody(next, HOOKS); if (errors.length) throw new StoreRefusal(`These answers would make the brief invalid: ${errors.join("; ")}`, 1);
+    return receiptOf(saveStore(store.directory, { schema: BRIEF_SCHEMA, id: store.project, payload: next, expectedRevision, approved }), { ...receipt, decided: Object.keys(answers.decisions ?? {}), at_revision: stamp });
   }
   return receiptOf(undoStore(store.directory, { schema: BRIEF_SCHEMA, id: store.project, expectedRevision, approved }), receipt);
 }

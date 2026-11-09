@@ -54,6 +54,9 @@ const SHARED_FILES = [
   ["bundles/prose-outline/skills/prose-outline/tools/lib/registry-reader.mjs", "bundles/prose-research/skills/prose-research/tools/lib/registry-reader.mjs", "bundles/prose-outline/skills/prose-brainstorm/tools/lib/registry-reader.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/registry-reader.mjs"],
   ["bundles/prose-outline/skills/prose-brainstorm/tools/lib/brief-schema.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/brief-schema.mjs"],
   ["bundles/prose-outline/skills/prose-brainstorm/tools/lib/quote.mjs", "bundles/prose-outline/skills/prose-interview/tools/lib/quote.mjs"],
+  ["bundles/prose-outline/skills/prose-interview/tools/lib/decisions.mjs", "bundles/prose-outline/skills/prose-brainstorm/tools/lib/decisions.mjs"],
+  ["bundles/prose-outline/skills/prose-brainstorm/tools/brief-store.mjs", "bundles/prose-outline/skills/prose-interview/tools/brief-store.mjs"],
+  ["bundles/prose-outline/skills/prose-brainstorm/tools/transcript-scan.mjs", "bundles/prose-outline/skills/prose-interview/tools/transcript-scan.mjs"],
   ["bundles/prose-author/skills/prose-corpus/tools/lib/html-text.mjs", "bundles/prose-research/skills/prose-research/tools/lib/html-text.mjs"],
 ];
 for (const [canonical, ...copies] of SHARED_FILES) {

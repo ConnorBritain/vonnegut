@@ -96,6 +96,13 @@ Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md)).
   and `done`. Seven hand-built briefs with expected output.
 - **Changed** quote verification moves to `lib/quote.mjs`, shared byte-for-byte
   by angles-check and brief-check.
+- **Added** the `prose-interview` skill (`SKILL.md`, `meta.yaml`, kind planner):
+  one question at a time with a recommended answer, answers looked up in the
+  writer's own material before asking and confirmed before recording, done only
+  when brief-check says so. `brief-store decide` merges each approved batch of
+  answers and stamps it with the revision it writes; the store validates
+  decisions and links in both skills' byte-identical copies. Skill-harness
+  entry, recorded as not run.
 
 ### [0.2.0] — in progress: transcript intake and brainstorm
 
