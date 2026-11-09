@@ -1,0 +1,95 @@
+{
+  "angles": [
+    {
+      "id": "a1",
+      "title": "A feeling that mattered and I can't say why",
+      "thesis": null,
+      "audience": "not yet known (the memo names no reader)",
+      "shape": "meditation",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 1,
+          "quote": "I had a feeling about something, like a mood more than an idea"
+        },
+        {
+          "segment": "s2",
+          "line": 7,
+          "quote": "But it felt like it mattered while I was walking, and I can't say why."
+        },
+        {
+          "segment": "s2",
+          "line": 7,
+          "quote": "I just wanted to get the feeling down before it goes."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "What was the feeling? The memo calls it 'a mood more than an idea' but never names it.",
+        "Is the piece about the feeling itself, or about the not-knowing-why and the urge to catch it before it goes?",
+        "Who is it for: yourself, or readers who know that kind of unexplained mood?"
+      ]
+    },
+    {
+      "id": "a2",
+      "title": "Days I walk",
+      "thesis": null,
+      "audience": "not yet known (the memo names no reader)",
+      "shape": "personal-essay",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 5,
+          "quote": "Maybe it's about how I feel different on days I walk."
+        },
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "something about routines, but I don't know what I would say about routines that people haven't already said a hundred times"
+        },
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "It was about mornings, I think, or maybe about the walk."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "How do you feel different on days you walk? The memo says you do, not how.",
+        "What could you say about routines that hasn't 'already been said a hundred times'? You raise that worry yourself and don't answer it.",
+        "You also say 'maybe it's not about walking at all'. Is walking the subject, or only where the feeling showed up?"
+      ]
+    },
+    {
+      "id": "a3",
+      "title": "The city on a morning walk",
+      "thesis": null,
+      "audience": "not yet known (the memo names no reader)",
+      "shape": "sketch",
+      "uses": [
+        {
+          "segment": "s2",
+          "line": 5,
+          "quote": "My sister says I should write about the city more, but I don't know which part of the city."
+        },
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "The light was nice. There were a lot of dogs out."
+        },
+        {
+          "segment": "s2",
+          "line": 5,
+          "quote": "I could write about the dogs, but that seems silly."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "Which part of the city? The memo leaves that open.",
+        "Is this your idea or only your sister's? The memo gives it as her suggestion.",
+        "The light and the dogs are the only concrete details. You call the dogs 'silly'. Are they worth keeping, or just a way into the piece?"
+      ]
+    }
+  ],
+  "unused_segments": []
+}

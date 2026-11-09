@@ -1,0 +1,33 @@
+Okay, so this is a voice memo about the bakery thing, and then maybe the meetings thing, and I want to get it down before I lose it.
+
+So my neighbour has run a sourdough bakery on the corner for eleven years, and last week I asked her how she trains new bakers. And she said, um, the first month they are not allowed to shape a single loaf. They feed the starter. They clean the proofing baskets. They watch the dough rise in the cold room overnight and they write down the temperature every morning. And I thought that was kind of brutal, honestly, like a month of feeding flour and water to a jar.
+
+But she said the starter is the whole bakery. If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven. You can't rescue bad fermentation with good scoring. The bakers who rush the starter never understand why their bread fails, because the failure happened twelve hours before they touched the dough.
+
+And she keeps a notebook for every batch, the flour, the hydration, the room temperature, how long the bulk ferment took. Eleven years of notebooks on a shelf above the ovens. When a loaf goes wrong she reads back through the notebook and she can usually find the day the starter got tired. That struck me, you know, the patience of reading back through your own records instead of guessing.
+
+Her best baker, the one who runs the early shift now, apparently hated the first month. He thought it was hazing. And then about three weeks in he noticed the dough rising slower on rainy days and he started adjusting the water temperature on his own. That was the moment she knew he would be good. Not his shaping, not his scoring, the fact that he noticed the starter.
+
+So the bread part is really about patience with the slow invisible part of the work, the part that happens before anyone sees anything.
+
+Anyway. The other thing I keep thinking about is our weekly team meeting, which has become, um, kind of a disaster. It is ninety minutes on a video call every Monday and half the agenda is status updates that could be a written document. People read their updates out loud from a slide. Nobody asks a question. The engineers keep their cameras off and work on other tickets, and honestly I don't blame them.
+
+I counted last Monday and we spent seventy minutes on updates and twenty minutes on the one decision that actually mattered, which was whether to delay the billing migration. And that decision got rushed because the meeting was already over time. So the agenda is upside down. The thing that needs the whole room gets the least time.
+
+What I want to try is a written update document that everyone fills in by Friday, and then the Monday meeting is only for decisions and disagreements. If there is no decision on the agenda, we cancel the meeting. I think the managers will hate that, because the meeting is where they feel informed, but the engineers will love it.
+
+There is a risk, I mean, that the written updates turn into a wall nobody reads. I have seen that at the last company. The update document grew to forty pages and people skimmed it. So maybe the rule is each update is three lines, what changed, what is blocked, what decision you need. Three lines and a link.
+
+And the meeting facilitator should change every week, so it is not always the manager running the agenda. That spreads the ownership around. I have read that some teams do a silent reading start, ten minutes where everyone reads the document on the call before talking. I want to try that too.
+
+Okay, last thing, and this one is more personal. I have been trying to write in public for about two years, short essays, mostly on a newsletter, and I keep stalling because every draft feels too small. I start an essay about something huge, like the future of work, and three paragraphs in I realise I have nothing specific to say about the future of work. I have a feeling, not an argument.
+
+The essays that actually landed with readers were all small and concrete. The one about my grandfather's toolbox. The one about the parking garage attendant who knew every car. Readers wrote back to those. Nobody wrote back to the big abstract ones. So why do I keep starting with the abstract?
+
+I think I start big because I want the essay to matter, and small feels like it does not matter. But the small specific thing is the only way a reader gets in. The toolbox essay was really about inheritance and silence between generations, but nobody would have read an essay titled inheritance and silence.
+
+Maybe the rule for my newsletter is start with one object or one person, and let the big idea show up on its own by the end, or not at all. Write the toolbox, not the thesis. I could even go back through my drafts folder, which has like thirty abandoned essays, and see which ones have a concrete thing hiding in them.
+
+And honestly this connects back to the bakery, doesn't it? The small invisible daily thing, the starter, the notebook, the toolbox. Maybe that is the actual essay. I don't know yet. Is it one piece or three pieces? I genuinely can't tell.
+
+Okay that is enough for now. I want to come back to the meeting one this week because the team needs it, and the bakery one feels like the best story I have heard in months.

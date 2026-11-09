@@ -1,0 +1,76 @@
+{
+  "angles": [
+    {
+      "id": "a1",
+      "title": "The starter is the whole bakery",
+      "thesis": "The slow, invisible part of the work, the part that happens before anyone sees anything, decides the result.",
+      "audience": "general newsletter readers",
+      "shape": "narrative-arc",
+      "uses": [
+        { "segment": "s1", "line": 3, "quote": "the first month they are not allowed to shape a single loaf" },
+        { "segment": "s1", "line": 5, "quote": "You can't rescue bad fermentation with good scoring." },
+        { "segment": "s1", "line": 5, "quote": "the failure happened twelve hours before they touched the dough" },
+        { "segment": "s2", "line": 7, "quote": "the patience of reading back through your own records instead of guessing" },
+        { "segment": "s2", "line": 9, "quote": "Not his shaping, not his scoring, the fact that he noticed the starter." },
+        { "segment": "s2", "line": 11, "quote": "the bread part is really about patience with the slow invisible part of the work, the part that happens before anyone sees anything" }
+      ],
+      "leaves_out": ["s3", "s4", "s5", "s6"],
+      "open_questions": []
+    },
+    {
+      "id": "a2",
+      "title": "The agenda is upside down",
+      "thesis": "Status updates belong in a short written document; the weekly meeting should exist only for decisions and disagreements, and be cancelled when there are none.",
+      "audience": "the writer's own team and its managers",
+      "shape": "problem-solution",
+      "uses": [
+        { "segment": "s3", "line": 13, "quote": "half the agenda is status updates that could be a written document" },
+        { "segment": "s3", "line": 15, "quote": "we spent seventy minutes on updates and twenty minutes on the one decision that actually mattered" },
+        { "segment": "s3", "line": 15, "quote": "The thing that needs the whole room gets the least time." },
+        { "segment": "s4", "line": 17, "quote": "the Monday meeting is only for decisions and disagreements. If there is no decision on the agenda, we cancel the meeting." },
+        { "segment": "s4", "line": 19, "quote": "each update is three lines, what changed, what is blocked, what decision you need" },
+        { "segment": "s4", "line": 21, "quote": "the meeting facilitator should change every week" }
+      ],
+      "leaves_out": ["s1", "s2", "s5", "s6"],
+      "open_questions": [
+        "Is this a proposal to the team, or an essay for outsiders about meetings in general?",
+        "How should the managers' objection (the meeting is where they feel informed) be answered?"
+      ]
+    },
+    {
+      "id": "a3",
+      "title": "Write the toolbox, not the thesis",
+      "thesis": "Essays reach readers through one small, concrete object or person; the big idea has to arrive on its own, or not at all.",
+      "audience": "people who write in public, and the writer's own newsletter readers",
+      "shape": "personal-essay",
+      "uses": [
+        { "segment": "s5", "line": 23, "quote": "I have a feeling, not an argument." },
+        { "segment": "s5", "line": 25, "quote": "The essays that actually landed with readers were all small and concrete." },
+        { "segment": "s6", "line": 27, "quote": "I think I start big because I want the essay to matter, and small feels like it does not matter." },
+        { "segment": "s6", "line": 27, "quote": "nobody would have read an essay titled inheritance and silence" },
+        { "segment": "s6", "line": 29, "quote": "start with one object or one person, and let the big idea show up on its own by the end, or not at all. Write the toolbox, not the thesis." }
+      ],
+      "leaves_out": ["s1", "s2", "s3", "s4"],
+      "open_questions": []
+    },
+    {
+      "id": "a4",
+      "title": "The small invisible daily thing",
+      "thesis": null,
+      "audience": "general newsletter readers",
+      "shape": "braided-essay",
+      "uses": [
+        { "segment": "s6", "line": 31, "quote": "The small invisible daily thing, the starter, the notebook, the toolbox. Maybe that is the actual essay. I don't know yet. Is it one piece or three pieces? I genuinely can't tell." },
+        { "segment": "s2", "line": 11, "quote": "the slow invisible part of the work" },
+        { "segment": "s5", "line": 25, "quote": "So why do I keep starting with the abstract?" }
+      ],
+      "leaves_out": ["s3", "s4"],
+      "open_questions": [
+        "What does the combined piece argue? The memo names a shared image (the starter, the notebook, the toolbox) but not a claim that joins them.",
+        "Does the meeting material belong in it? The memo never connects the meeting to the bakery or the essays.",
+        "Is the toolbox essay already published material to reuse, or only to mention?"
+      ]
+    }
+  ],
+  "unused_segments": []
+}

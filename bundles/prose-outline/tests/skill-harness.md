@@ -83,9 +83,16 @@ From a session with the bundle installed, for each transcript:
    any quote had to be fixed before showing, and whether the skill tried to save
    or cache without a yes (it must not).
 
-**Status: not run.** No model run of this skill has been dispatched; the
-checker and the example proposals are the evidence until one is, and an
-undispatched run is recorded as not run, never as passed.
+## Runs
+
+| run | draws | positive (monologue) | negative (rambling) | quotes fixed before showing | saved without a yes |
+|---|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-brainstorm/README.md) | 3 | `angles-check: ok`, `"expect": "concrete", "findings": []` on 3/3 | `angles-check: ok`, `"expect": "underspecified", "findings": []` on 3/3 (no thesis on any angle) | 0 of 6 | 0 of 6 |
+
+The run found a mismatch: `angles-check` accepts `audience: null` on an angle,
+but `brief-store save` refuses it (`angles[0].audience is required`). On 4 of 6
+draws the skill then saved a placeholder audience ("undecided"). This is a
+follow-up, and the run's README has the detail.
 
 # Testing the prose-interview skill
 

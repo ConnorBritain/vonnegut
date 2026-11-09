@@ -1,0 +1,87 @@
+{
+  "schema": "angles-check/1",
+  "quotes": [
+    {
+      "angle": "a1",
+      "segment": "s1",
+      "line": 1,
+      "quote": "I had a feeling about something, like a mood more than an idea",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s2",
+      "line": 7,
+      "quote": "it felt like it mattered while I was walking, and I can't say why",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s2",
+      "line": 7,
+      "quote": "I just wanted to get the feeling down before it goes",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s1",
+      "line": 5,
+      "quote": "Maybe it's about how I feel different on days I walk.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s1",
+      "line": 3,
+      "quote": "something about routines, but I don't know what I would say about routines that people haven't already said a hundred times",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s1",
+      "line": 3,
+      "quote": "It was about mornings, I think, or maybe about the walk.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s2",
+      "line": 5,
+      "quote": "My sister says I should write about the city more, but I don't know which part of the city.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s1",
+      "line": 3,
+      "quote": "The light was nice. There were a lot of dogs out.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s2",
+      "line": 5,
+      "quote": "I could write about the dogs, but that seems silly.",
+      "status": "exact",
+      "segment_ok": true
+    }
+  ],
+  "coverage": {
+    "status": "evaluated",
+    "unaccounted_segments": [],
+    "unknown_segments": []
+  },
+  "expectation": {
+    "expect": "underspecified",
+    "findings": []
+  },
+  "ok": true
+}

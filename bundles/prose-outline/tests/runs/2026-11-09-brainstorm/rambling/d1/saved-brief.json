@@ -1,0 +1,111 @@
+{
+  "schema": "project-brief/1",
+  "id": "walk",
+  "revision": 2,
+  "parent_digest": "9d31f7b860d0d51c6c68e447b41af372a21e79493dc87a3d44f1d87b085ac7ea",
+  "sources": [
+    {
+      "kind": "transcript",
+      "digest": "6dc2b11c64b1502328cef61f3219e39b46a85a022cb470aeaa9d4ad1ed78d529",
+      "words": 189,
+      "cached": "sources/6dc2b11c64b1502328cef61f3219e39b46a85a022cb470aeaa9d4ad1ed78d529.txt",
+      "format": "plain"
+    }
+  ],
+  "angles": [
+    {
+      "id": "a1",
+      "title": "A mood more than an idea",
+      "thesis": null,
+      "audience": "undecided; the memo names no reader",
+      "shape": "personal-essay",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 1,
+          "quote": "I had a feeling about something, like a mood more than an idea"
+        },
+        {
+          "segment": "s2",
+          "line": 7,
+          "quote": "it felt like it mattered while I was walking, and I can't say why"
+        },
+        {
+          "segment": "s2",
+          "line": 7,
+          "quote": "I just wanted to get the feeling down before it goes"
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "Is the piece about the feeling itself, or about trying (and failing) to say why it mattered?",
+        "What did the feeling actually consist of? The memo names it but never describes it.",
+        "Who is this for: yourself, readers of personal essays, other writers who start from a mood?"
+      ]
+    },
+    {
+      "id": "a2",
+      "title": "Days I walk",
+      "thesis": null,
+      "audience": "undecided; the memo names no reader",
+      "shape": "reflection",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 5,
+          "quote": "Maybe it's about how I feel different on days I walk."
+        },
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "something about routines, but I don't know what I would say about routines that people haven't already said a hundred times"
+        },
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "It was about mornings, I think, or maybe about the walk."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "How do you feel different on days you walk? The memo says you do, not how.",
+        "What would you say about routines that hasn't been said a hundred times? You raise this yourself.",
+        "Is it mornings, the walk, or routine in general? You name all three and settle on none."
+      ]
+    },
+    {
+      "id": "a3",
+      "title": "Which part of the city",
+      "thesis": null,
+      "audience": "undecided; the memo names no reader",
+      "shape": "place-piece",
+      "uses": [
+        {
+          "segment": "s2",
+          "line": 5,
+          "quote": "My sister says I should write about the city more, but I don't know which part of the city."
+        },
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "The light was nice. There were a lot of dogs out."
+        },
+        {
+          "segment": "s2",
+          "line": 5,
+          "quote": "I could write about the dogs, but that seems silly."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "The memo doesn't say the walk was in the city. Was it, and is that the part you'd write about?",
+        "Which part of the city? You say you don't know yet.",
+        "Is the city your own idea, or only your sister's suggestion?"
+      ]
+    }
+  ],
+  "unused_segments": [],
+  "chosen_angle": null,
+  "decisions": {},
+  "links": []
+}

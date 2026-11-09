@@ -1,0 +1,183 @@
+{
+  "schema": "angles-check/1",
+  "quotes": [
+    {
+      "angle": "a1",
+      "segment": "s1",
+      "line": 3,
+      "quote": "the first month they are not allowed to shape a single loaf",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s1",
+      "line": 5,
+      "quote": "the starter is the whole bakery",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s1",
+      "line": 5,
+      "quote": "the failure happened twelve hours before they touched the dough",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s2",
+      "line": 7,
+      "quote": "the patience of reading back through your own records instead of guessing",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s2",
+      "line": 9,
+      "quote": "Not his shaping, not his scoring, the fact that he noticed the starter.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a1",
+      "segment": "s2",
+      "line": 11,
+      "quote": "the slow invisible part of the work, the part that happens before anyone sees anything",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s3",
+      "line": 13,
+      "quote": "half the agenda is status updates that could be a written document",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s3",
+      "line": 15,
+      "quote": "we spent seventy minutes on updates and twenty minutes on the one decision that actually mattered",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s3",
+      "line": 15,
+      "quote": "The thing that needs the whole room gets the least time.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s4",
+      "line": 17,
+      "quote": "the Monday meeting is only for decisions and disagreements. If there is no decision on the agenda, we cancel the meeting.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s4",
+      "line": 19,
+      "quote": "each update is three lines, what changed, what is blocked, what decision you need",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a2",
+      "segment": "s4",
+      "line": 21,
+      "quote": "the meeting facilitator should change every week",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s5",
+      "line": 23,
+      "quote": "I keep stalling because every draft feels too small",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s5",
+      "line": 23,
+      "quote": "I have a feeling, not an argument.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s5",
+      "line": 25,
+      "quote": "Nobody wrote back to the big abstract ones. So why do I keep starting with the abstract?",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s6",
+      "line": 27,
+      "quote": "But the small specific thing is the only way a reader gets in.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a3",
+      "segment": "s6",
+      "line": 29,
+      "quote": "Write the toolbox, not the thesis.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a4",
+      "segment": "s6",
+      "line": 31,
+      "quote": "The small invisible daily thing, the starter, the notebook, the toolbox. Maybe that is the actual essay. I don't know yet.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a4",
+      "segment": "s6",
+      "line": 31,
+      "quote": "Is it one piece or three pieces? I genuinely can't tell.",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a4",
+      "segment": "s2",
+      "line": 11,
+      "quote": "the slow invisible part of the work",
+      "status": "exact",
+      "segment_ok": true
+    },
+    {
+      "angle": "a4",
+      "segment": "s6",
+      "line": 27,
+      "quote": "the small specific thing is the only way a reader gets in",
+      "status": "exact",
+      "segment_ok": true
+    }
+  ],
+  "coverage": {
+    "status": "evaluated",
+    "unaccounted_segments": [],
+    "unknown_segments": []
+  },
+  "expectation": {
+    "expect": "concrete",
+    "findings": []
+  },
+  "ok": true
+}

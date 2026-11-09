@@ -22,6 +22,12 @@ it is not yet in their hands.
   handoff (K) and a chief-editor reading pass (L), with one spec each under
   `docs/roadmap/` and the end-to-end path in [`docs/workflow.md`](docs/workflow.md).
   No bundle version changes.
+- **Measured** the `prose-brainstorm` skill (prose-outline): first run,
+  `tests/runs/2026-11-09-brainstorm`, monologue and ramble × 3 draws.
+  `angles-check: ok` on all six. Positive met 3/3, and negative met 3/3 with no
+  thesis invented. No quote needed fixing, and nothing was saved without a yes.
+  The store refused a null angle audience that the check accepts, and 4 of 6
+  draws saved a placeholder instead. No prompt edited; follow-up.
 - **Measured** the `prose-research` skill: first run,
   `tests/runs/2026-11-09-skill`, positive and negative × 3 draws. Positive met
   3/3 against `claims-check` over the skill's own maps. Negative behaviour met

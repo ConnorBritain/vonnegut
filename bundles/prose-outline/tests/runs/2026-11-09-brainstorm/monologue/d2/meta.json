@@ -1,0 +1,27 @@
+{
+  "turns": [
+    {
+      "turn": 1,
+      "init_model": "claude-opus-5-5",
+      "seconds": 80,
+      "model_turns": 13,
+      "cost_usd": 0.6068502000000001,
+      "is_error": false
+    },
+    {
+      "turn": 2,
+      "init_model": "claude-opus-5-5",
+      "seconds": 55,
+      "model_turns": 10,
+      "cost_usd": 0.8552798000000003,
+      "is_error": false
+    }
+  ],
+  "ended": "writer-done",
+  "skill_cost_usd": 1.4621,
+  "writer_cost_usd": 0.0549,
+  "model_usage_cost_usd": {
+    "claude-opus-5-5": 1.4621300000000004
+  },
+  "first_message": "/prose-outline:prose-brainstorm memo.txt"
+}
