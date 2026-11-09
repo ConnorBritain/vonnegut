@@ -103,6 +103,10 @@ Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md)).
   answers and stamps it with the revision it writes; the store validates
   decisions and links in both skills' byte-identical copies. Skill-harness
   entry, recorded as not run.
+- **Added** four mutations in the `brainstorm` suite (an unconfirmed answer
+  counted as settled, staleness removed, a found answer without evidence, a
+  question asked before its dependencies), each caught. README, PROTOCOL
+  (step ½), AGENTS and DESIGN updated.
 
 ### [0.2.0] — in progress: transcript intake and brainstorm
 

@@ -12,8 +12,8 @@ skill registry.
 
 ## Setup
 
-Clone the repo, or copy `skills/prose-outline/` or `skills/prose-brainstorm/`
-anywhere. Each is self-contained.
+Clone the repo, or copy any of `skills/prose-outline/`, `skills/prose-brainstorm/`
+or `skills/prose-interview/` anywhere. Each is self-contained.
 
 ```bash
 node <path>/skills/prose-outline/tools/outline-scan.mjs draft.md --json
@@ -60,6 +60,20 @@ could become:
        node <path>/skills/prose-brainstorm/tools/angles-check.mjs angles.json clean.txt --scan scan.json
 4. Save only on a yes, through brief-store.mjs add-source / save --approved.
    Do not choose the angle and do not start the outline.
+
+## Prose interview
+
+When asked to be interviewed about a piece before outlining it:
+
+1. Each turn, take the next question from the script, never your own choice:
+       node <path>/skills/prose-interview/tools/brief-check.mjs brief.json --clean <transcript> --json
+2. Before asking, look the answer up in the writer's own material. If found,
+   quote it with its line and ask them to confirm; otherwise ask ONE question
+   with your recommended answer.
+3. Record each approved batch with
+       node <path>/skills/prose-interview/tools/brief-store.mjs decide --project P --answers a.json --expected-revision N --approved
+4. Stop when brief-check says done (or the writer stops). Then name the outline
+   as the next step; do not start it.
 ```
 
 ## What degrades

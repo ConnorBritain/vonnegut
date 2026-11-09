@@ -1,7 +1,8 @@
 # prose-outline
 
 Outlines for prose, and the steps before one: brainstorming angles from a
-voice-memo transcript into a project brief. Two skills, no agents.
+voice-memo transcript into a project brief, and an interview that settles what
+the piece is. Three skills, no agents.
 
 **Status: v0.1.1.** See [`RELEASE-v0.1.1.md`](RELEASE-v0.1.1.md) and [`RELEASE-v0.1.0.md`](RELEASE-v0.1.0.md) for what
 ships and the evidence; the planning record is
@@ -18,8 +19,11 @@ ships and the evidence; the planning record is
 | `.../tools/transcript-scan.mjs` | script | SRT, WebVTT, speaker-labelled or plain transcript → cleaned text with stable lines; words, turns, recurring terms, questions, fillers, topic segments |
 | `.../tools/angles-check.mjs` | script | Every quote verbatim at its line; every segment accounted for; the skill's two promises |
 | `.../tools/brief-store.mjs` | script | `project-brief/1` revisions and cached sources under the identity registry, approval-gated, with undo |
+| `skills/prose-interview/` | skill | One question at a time, a recommended answer each, sourced answers confirmed before recording, until the brief's decisions are settled |
+| `.../tools/brief-check.mjs` | script | The next question in dependency order, stale answers, blocking skips, re-verified evidence, done |
+| `.../tools/lib/decisions.mjs` | script | The decision tree as data, with validators for answers and links |
 | `tests/selftest.mjs` | script | Fixtures, parity cases, store guards |
-| `tests/brainstorm-selftest.mjs` | script | Transcript fixtures, angle fixtures, brief store guards |
+| `tests/brainstorm-selftest.mjs` | script | Transcript, angle and interview fixtures; brief store guards |
 
 ## Why this exists
 
@@ -41,7 +45,10 @@ project brief, and the brief exists to become an outline — nobody wants one
 without the other, so they install together. Its rules are the outline's rules
 moved upstream: quote the writer's exact words at the line they said them,
 account for everything they said, and when the material has no point yet, ask
-rather than supply one. The end-to-end path is in
+rather than supply one. The interview settles the brief's decisions —
+audience, length, shape, thesis — on the same terms: it looks answers up in the
+writer's material before asking, and a script, not the model, decides what to
+ask next and when it is finished. The end-to-end path is in
 [`docs/workflow.md`](../../docs/workflow.md).
 
 ## Why a separate bundle
@@ -72,6 +79,7 @@ static import across bundles is not allowed here.
 ```bash
 ./install.sh prose-outline        # → ~/.claude/skills/prose-outline/
 ./install.sh prose-brainstorm     # → ~/.claude/skills/prose-brainstorm/
+./install.sh prose-interview      # → ~/.claude/skills/prose-interview/
 ```
 
 Node ≥ 18, no dependencies. Other harnesses: see [`AGENTS.md`](AGENTS.md).

@@ -65,6 +65,22 @@ any outline, and several outlines can be proposed from one brief. Both stores
 belong to this bundle, so the outline skill may read the brief; a store owned by
 another bundle is never read directly.
 
+## The interview is a fixed tree, not a conversation
+
+A model choosing what to ask next asks different things in different sessions
+and cannot say when it is finished. The interview's tree is data; brief-check
+takes the first open, unconfirmed or stale decision whose dependencies are
+settled, so the interview walks each branch in dependency order and resumes in
+another session exactly where it stopped. Staleness is derived from each
+answer's `at_revision` and the tree's transitive dependencies, never stored:
+`decide` stamps the revision it writes, and a caller cannot choose the stamp.
+
+The grill-me pattern's one amendment is that the writer's own material is
+searched before the writer is asked. Every found answer still needs a yes,
+so the source proposes and the writer decides. Sibling bundles' material comes
+through their own read tools, so the interview works — with less help — when
+they are absent, and no store is read by a bundle that does not own it.
+
 ## What would make this a bad bundle
 
 - The scan grows a "score" or a verdict.
@@ -74,3 +90,5 @@ another bundle is never read directly.
 - A copy of `text-index.mjs` drifts and the check does not notice.
 - The brainstorm paraphrases inside a quote, supplies a thesis the material
   lacks, or drops a segment without saying so.
+- The interview picks its own next question, records a recommendation as the
+  writer's answer, or calls itself finished while the check says otherwise.

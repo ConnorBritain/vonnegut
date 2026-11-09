@@ -5,6 +5,7 @@ this; there is no orchestrator.
 
 ```
   0  brainstorm    a transcript or notes → angles → a project brief      (optional; below)
+  ½  interview     settle the brief's decisions, one question at a time  (optional; below)
   1  brief         the user's request or the saved brief, plus any existing draft
   2  scan          outline-scan on the draft, if there is one    (deterministic)
   3  propose       voice-outline/1: thesis · claims · evidence slots · open questions
@@ -29,6 +30,23 @@ words; `drifted` means the session changed them and must fix it before showing.
 Thin material yields angles with a null thesis and open questions. The skill
 never chooses the angle and never starts the outline itself: it names the next
 step — the interview, or step 1.
+
+## Step ½ — interview, to settle what the piece is
+
+```
+  ½a  check      brief-check → next question, stale answers, done        (deterministic)
+  ½b  look up    the transcript, summary, angles, this project's outline, sibling read output
+  ½c  ask        one question with a recommended answer — or confirm a found one
+  ½d  approve    the writer answers; brief-store decide --approved stamps the batch
+```
+
+The tree is fixed (`references/decisions.md`); brief-check walks it in
+dependency order and marks downstream answers stale when an upstream one
+changes. A found answer carries its quote and stays unconfirmed until the
+writer's yes; "your call" is recorded as the recommendation, never as the
+writer's words. The interview is done when brief-check says so, not before.
+Sibling material (the bible, the research ledger, the corpus) arrives as read
+output the session supplies; the skill never opens another bundle's store.
 
 ## Step 2 — scan first, and read the JSON
 
@@ -65,6 +83,8 @@ missing is *removed*, never guessed to be a rewording.
 ## What this session must never do
 
 - Quote the writer in words they did not use, or choose their angle for them.
+- Record a recommendation as the writer's answer, or declare an interview done
+  while brief-check says it is not.
 - Draft prose from the outline here. That is `prose-draft`'s job, with its own
   checks.
 - Judge the argument. `prose-structure-critic` reads this scan in a clean

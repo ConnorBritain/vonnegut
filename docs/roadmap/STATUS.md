@@ -100,7 +100,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 - [x] I1 — `lib/decisions.mjs` + `references/decisions.md` + `brief-check.mjs` + fixtures
 - [x] I2 — `prose-interview` SKILL.md + meta.yaml; per-batch brief-store writes with expected revision; skill harness entry
-- [ ] I3 — mutations; PROTOCOL/README/AGENTS/DESIGN
+- [x] I3 — mutations; PROTOCOL/README/AGENTS/DESIGN
 - [ ] I4 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
 ### J. Outline baselines — planned
