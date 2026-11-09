@@ -17,6 +17,11 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Measured** `prose-fidelity-critic` with the provenance block (prose-review):
+  `tests/runs/2026-11-09-fidelity-provenance`, 16 fixtures × 3 draws — 2
+  `MATERIAL-LOSS` of 7 negatives (neither carries a provenance block), 9 of 9
+  positives, 14 of 16 expected, echo rate 9 of 16, both contract counts 0. The
+  `exact` provenance negative was quiet on every draw.
 - **Measured** `prose-continuity-critic` (prose-bible): first run,
   `tests/runs/2026-11-09-continuity`, 7 cases × 3 draws — negatives quiet 15/15
   draws (parrot 6/15), positives caught 6/6, `uncited` and `third_location` 0.

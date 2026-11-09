@@ -186,7 +186,8 @@ Sahalin"* → *"travelled to Sahalin"*, it returned `MATERIAL-LOSS`: a reader wh
 does not know the geography loses that the penal colony was offshore. Reasonable
 people differ, and the fixture expecting `FAITHFUL` was **not** corrected to
 match. Six draws later — three against each scanner version — it has returned
-`MATERIAL-LOSS` every time, so this is settled behaviour rather than a wobble.
+`MATERIAL-LOSS` every time, and the 2026-11-09 run's three draws did the same, so
+this is settled behaviour rather than a wobble.
 Expect it on real revisions: it is the tie-break rule working as specified, and
 on a borderline that rule always resolves toward `MATERIAL-LOSS`.
 
@@ -206,6 +207,12 @@ the caveat so it cannot fall out of a summary. Exactly one fixture was corrected
 this way; the next disagreement was carried as a false positive instead, because
 a second correction in the same direction would make the expectations
 unfalsifiable.
+
+**The provenance block has been run once, on three fixtures.** 2026-11-09, k=3:
+quiet on the `exact` negative 3 of 3, `MATERIAL-LOSS` on both `drifted` positives
+3 of 3 (`bundles/prose-review/tests/runs/2026-11-09-fidelity-provenance`). Three
+fixtures on one model bound nothing about real ledgers; they show the block is
+read and not over-read.
 
 **It says nothing about voice.** A revision can preserve every fact and every
 qualification and still not sound like the author. That is

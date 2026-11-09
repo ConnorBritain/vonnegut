@@ -1,0 +1,64 @@
+{
+ "schema": "provenance-scan/1",
+ "quotes": [
+  {
+   "atom": "Be angry, but sin not; let not the sun go down upon your anger.",
+   "in": "both",
+   "ledger": null,
+   "source": null,
+   "status": "unledgered",
+   "source_span": null
+  },
+  {
+   "atom": "to be angry,",
+   "in": "both",
+   "ledger": null,
+   "source": null,
+   "status": "unledgered",
+   "source_span": null
+  },
+  {
+   "atom": "that anger is like ruin, which breaks itself upon that it falls.",
+   "in": "both",
+   "ledger": "k1",
+   "source": "s1",
+   "status": "drifted",
+   "source_span": "Anger is like a ruin which breaks itself on that upon which it falls",
+   "why": "the source does not contain this wording; the ledger's quote is shown"
+  },
+  {
+   "atom": "to possess our souls in patience;",
+   "in": "both",
+   "ledger": null,
+   "source": null,
+   "status": "unledgered",
+   "source_span": null
+  },
+  {
+   "atom": "animasque in vulnere ponunt.",
+   "in": "both",
+   "ledger": null,
+   "source": null,
+   "status": "unledgered",
+   "source_span": null
+  },
+  {
+   "atom": "Telam honoris crassiorem.",
+   "in": "both",
+   "ledger": null,
+   "source": null,
+   "status": "unledgered",
+   "source_span": null
+  }
+ ],
+ "counts": {
+  "exact": 0,
+  "drifted": 1,
+  "absent": 0,
+  "unledgered": 5
+ },
+ "limits": [
+  "Presence only: an atom is exact when its words appear in the cached source text, drifted when its ledger source does not contain them, absent when that source is not cached, unledgered when no ledger quote shares 60% of its words. Truth is not assessed.",
+  "The quote rule is fidelity-scan's: three or more words inside straight or paired curly quotes, never across a blank line."
+ ]
+}
