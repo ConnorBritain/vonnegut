@@ -85,6 +85,16 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
+### [0.2.0] — in progress: transcript intake and brainstorm
+
+Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-transcript-brainstorm.md)).
+
+- **Added** `skills/prose-brainstorm/tools/transcript-scan.mjs`: SRT, WebVTT,
+  speaker-labelled (inline or Otter-style headers) and plain transcripts cleaned
+  without losing line numbers or the speaker's words; words, turns, recurring
+  terms, questions, fillers and topic-shift segments, all labelled heuristic
+  where they are. Six fixtures with expected JSON; `tests/brainstorm-selftest.mjs`.
+
 ### [0.1.1] — definition-pattern fixes in the shared text-index
 
 Release notes in [`RELEASE-v0.1.1.md`](bundles/prose-outline/RELEASE-v0.1.1.md).

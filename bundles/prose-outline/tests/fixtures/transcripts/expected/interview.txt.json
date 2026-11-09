@@ -1,0 +1,175 @@
+{
+  "schema": "transcript-scan/1",
+  "source_digest": "55749f7f8659a0b6553df61e94baa2631111fdbd2232cc75b142e5e7cff167f2",
+  "format": "speaker-labelled",
+  "words": 240,
+  "clean": {
+    "digest": "7bd6d8006d64afefd084b8af3ee56dc4c7e4f1a3b43a3656cc47ed85033d49ac",
+    "lines": 27
+  },
+  "turns": [
+    {
+      "speaker": "Maya",
+      "line": 1,
+      "words": 11
+    },
+    {
+      "speaker": "Dev",
+      "line": 3,
+      "words": 38
+    },
+    {
+      "speaker": "Maya",
+      "line": 6,
+      "words": 8
+    },
+    {
+      "speaker": "Dev",
+      "line": 8,
+      "words": 39
+    },
+    {
+      "speaker": "Maya",
+      "line": 11,
+      "words": 7
+    },
+    {
+      "speaker": "Dev",
+      "line": 13,
+      "words": 36
+    },
+    {
+      "speaker": "Maya",
+      "line": 16,
+      "words": 9
+    },
+    {
+      "speaker": "Dev",
+      "line": 18,
+      "words": 36
+    },
+    {
+      "speaker": "Maya",
+      "line": 21,
+      "words": 6
+    },
+    {
+      "speaker": "Dev",
+      "line": 23,
+      "words": 25
+    },
+    {
+      "speaker": "Maya",
+      "line": 25,
+      "words": 13
+    },
+    {
+      "speaker": "Dev",
+      "line": 27,
+      "words": 12
+    }
+  ],
+  "segments": [
+    {
+      "id": "s1",
+      "start_line": 1,
+      "end_line": 18,
+      "sentences": 15,
+      "words": 166,
+      "top_terms": [
+        "buyer",
+        "cooperative",
+        "scale",
+        "else",
+        "every"
+      ]
+    },
+    {
+      "id": "s2",
+      "start_line": 19,
+      "end_line": 27,
+      "sentences": 8,
+      "words": 74,
+      "top_terms": [
+        "price",
+        "power",
+        "story",
+        "alone",
+        "anymore"
+      ]
+    }
+  ],
+  "recurring_terms": [
+    {
+      "term": "price",
+      "count": 6,
+      "lines": [
+        3,
+        4,
+        21,
+        23,
+        25,
+        27
+      ]
+    },
+    {
+      "term": "buyer",
+      "count": 3,
+      "lines": [
+        3,
+        4
+      ]
+    },
+    {
+      "term": "cooperative",
+      "count": 3,
+      "lines": [
+        1,
+        6,
+        16
+      ]
+    },
+    {
+      "term": "scale",
+      "count": 3,
+      "lines": [
+        13,
+        14,
+        18
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "line": 6,
+      "text": "And the cooperative was the answer to that?"
+    },
+    {
+      "line": 11,
+      "text": "How did you fix the trust problem?"
+    },
+    {
+      "line": 16,
+      "text": "What would you tell someone starting a cooperative now?"
+    },
+    {
+      "line": 21,
+      "text": "Did the price actually go up?"
+    }
+  ],
+  "fillers": {
+    "um": 0,
+    "uh": 0,
+    "you know": 0,
+    "like": 1,
+    "i mean": 0
+  },
+  "limits": [
+    "Topic segments are a heuristic: a lexical-cohesion dip (TextTiling) over windows of 6 sentences, cut at mean − sd/2 of the depth scores, no segment under 8 sentences. It can split one long thought or merge two short ones.",
+    "Sentence boundaries are the shared English splitter; unpunctuated speech-to-text output yields long 'sentences' and fewer segments.",
+    "Speakers are taken from labels only; an unlabelled transcript is one speaker (S1). No diarisation is attempted.",
+    "Fillers are counted from a fixed list; 'like' is counted wherever it appears, including as a verb.",
+    "Recurring terms are capitalised runs seen twice or more plus lower-case content words seen three times or more; neither is a judgement of importance."
+  ],
+  "status": "measured"
+}

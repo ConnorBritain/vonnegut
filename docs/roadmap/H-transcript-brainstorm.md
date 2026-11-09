@@ -162,11 +162,11 @@ show, then approval, then save the brief, then I or J.
 ## 8. Fixtures and harness
 
 `tests/fixtures/transcripts/` holds:
-- a plain monologue (about 1,500 words, three topics);
+- a plain monologue (about 1,000 words, three topics), an Otter-style export;
 - an SRT export;
 - a WebVTT export;
 - a two-speaker labelled interview;
-- a 120-word fragment, the refusal case;
+- a fragment under 150 words, the refusal case;
 - a transcript with a planted near-quote, one comma changed.
 
 Each has an expected scan JSON and a hand-built angles file. The angles-check
@@ -208,7 +208,7 @@ Mutations:
 
 ## 10. Deliverables
 
-- H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON. Accept: all formats detected; the 120-word file is `not-evaluated`; cleaned-text line numbers stable.
+- H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON. Accept: all formats detected; the fragment under 150 words is `not-evaluated`; cleaned-text line numbers stable.
 - H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned. Accept: approval gate, stale-revision refusal, undo round-trip, source cache by sha.
 - H3 — `angles-check.mjs` + fixtures. Accept: names exactly the planted drifted quote and the unaccounted segment.
 - H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative), recorded as not run until dispatched.

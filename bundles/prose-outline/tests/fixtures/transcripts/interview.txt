@@ -1,0 +1,16 @@
+Maya: So tell me where the idea for the cooperative came from.
+Dev: Honestly it started with my uncle's farm. He sold to one buyer for twenty years and that buyer set the price every season.
+Dev: When the buyer dropped the price by a third, he had nowhere else to go.
+Maya: And the cooperative was the answer to that?
+Dev: Partly. Eight farms pooled their harvest so they could negotiate together and sell to three buyers instead of one.
+Dev: The first year was a mess. Nobody trusted the shared ledger and everyone thought someone else was cheating on weights.
+Maya: How did you fix the trust problem?
+Dev: We put the scale in the middle of the village and every weighing happened in public, with two farmers watching.
+Dev: It sounds silly but the public scale did more for trust than any contract we signed.
+Maya: What would you tell someone starting a cooperative now?
+Dev: Start with the scale. Make the thing people fight about visible, before you write any rules about it.
+Dev: The rules came later, and they were easy, because by then everyone could see the numbers for themselves.
+Maya: Did the price actually go up?
+Dev: In the third year, yes, by about a fifth. But the bigger change was that nobody could drop the price on one farm alone anymore.
+Maya: That feels like the real story, the bargaining power, more than the price.
+Dev: It is. The price is the headline. The power is the story.

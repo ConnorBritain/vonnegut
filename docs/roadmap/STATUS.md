@@ -87,9 +87,9 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] G3 — harness entry staging the persona as input; leave-one-out runs per persona recorded; PROTOCOL.md step 2 conditional spawn; AGENTS.md, wiring, README
 - [x] G4 — prose-review bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### H. Transcript intake and brainstorm — planned
+### H. Transcript intake and brainstorm — in-progress
 
-- [ ] H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON
+- [x] H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON
 - [ ] H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned
 - [ ] H3 — `angles-check.mjs` + fixtures
 - [ ] H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative)

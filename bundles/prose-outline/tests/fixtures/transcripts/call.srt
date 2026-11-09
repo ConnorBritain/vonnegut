@@ -1,0 +1,51 @@
+1
+00:00:01,000 --> 00:00:04,200
+So the question I keep coming back to is why our onboarding takes six weeks.
+
+2
+00:00:04,300 --> 00:00:08,900
+New engineers spend the first week just getting access to the systems they need.
+
+3
+00:00:09,000 --> 00:00:13,400
+The second week they read documentation that is, um, mostly out of date.
+
+4
+00:00:13,500 --> 00:00:18,000
+And by week three they are pairing, which is where they actually learn anything.
+
+5
+00:00:18,100 --> 00:00:23,600
+So what if we started pairing on day one and fixed the access problem in parallel?
+
+6
+00:00:23,700 --> 00:00:28,300
+The documentation could be written by the new people as they go, because they see the gaps.
+
+7
+00:00:28,400 --> 00:00:33,000
+Every new hire would leave the onboarding docs a little better than they found them.
+
+8
+00:00:33,100 --> 00:00:38,500
+That turns the most confused person in the room into the most useful editor of the docs.
+
+9
+00:00:38,600 --> 00:00:43,000
+I think the managers worry that pairing on day one slows down the senior engineers.
+
+10
+00:00:43,100 --> 00:00:48,200
+But the senior engineers already lose hours answering the same access questions in chat.
+
+11
+00:00:48,300 --> 00:00:53,900
+If we measured those hours I bet pairing would come out cheaper, you know, by a lot.
+
+12
+00:00:54,000 --> 00:00:59,000
+So maybe the experiment is two new hires, pairing from day one, and we count the chat questions.
+
+13
+00:00:59,100 --> 00:01:04,000
+If the chat questions drop and the docs improve, we roll it out to the whole team next quarter.

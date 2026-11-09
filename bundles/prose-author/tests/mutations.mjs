@@ -76,6 +76,7 @@ const SUITES = {
   sibling: "bundles/prose-tell-scan/tests/selftest.mjs",
   review: "bundles/prose-review/tests/selftest.mjs",
   outline: "bundles/prose-outline/tests/selftest.mjs",
+  brainstorm: "bundles/prose-outline/tests/brainstorm-selftest.mjs",
   bible: "bundles/prose-bible/tests/selftest.mjs",
   research: "bundles/prose-research/tests/selftest.mjs",
 };
