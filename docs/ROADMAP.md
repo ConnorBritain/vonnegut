@@ -50,7 +50,7 @@ for how a session picks up from here.
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | shipped |
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | shipped |
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | shipped |
-| 4 | [H. Transcript intake and brainstorm](#h-transcript-intake-and-brainstorm) | `prose-outline` | [H-transcript-brainstorm.md](roadmap/H-transcript-brainstorm.md) | in-progress |
+| 4 | [H. Transcript intake and brainstorm](#h-transcript-intake-and-brainstorm) | `prose-outline` | [H-transcript-brainstorm.md](roadmap/H-transcript-brainstorm.md) | shipped |
 | 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | in-progress |
 | 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | planned |
 | 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | planned |
@@ -396,7 +396,7 @@ lines; a fragment under 150 words is `not-evaluated`; angles-check names exactly
 planted one-comma drift and an unaccounted segment; store guards; skill
 positive and negative tests recorded; mutations green.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## I. Interview
 

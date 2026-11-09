@@ -46,6 +46,15 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | outline schema accepts a withheld thesis with no open question | 1 | an outline with no thesis must say what is missing |
 | proposal-check lets an underspecified brief keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
 | outline schema accepts duplicate node ids | 1 | node ids are unique, or the differ has nothing to key on |
+| angles-check accepts a quote whose case was changed | 1 | a quote is the writer's exact words; case alone is drift |
+| angles-check ignores a segment no angle accounts for | 2 | nothing the writer said is silently dropped: every segment is used, left out or listed as unused |
+| angles-check lets thin material keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
+| brief-store caches the transcript without approval | 1 | nothing persistent is written without approval, the cached source text included |
+| transcript-scan keeps SRT cue numbers in the cleaned text | 3 | cleaning removes subtitle scaffolding and nothing the speaker said |
+| brief-check counts an unconfirmed answer as settled | 2 | a recommendation or a found answer is not the writer's until they say yes; the interview is not done without it |
+| brief-check never marks a downstream answer stale | 3 | changing an answer puts everything that depends on it back to the writer |
+| a found answer needs no evidence | 11 | an answer taken from the writer's material carries the quote it came from |
+| brief-check asks a question before its dependencies are settled | 2 | the interview walks the tree in dependency order; a skipped required question blocks what depends on it |
 | identity accepts a future registry schema | 1 | incompatible registry versions are not silently reinterpreted |
 | identity ignores registry digests | 1 | shared registry revision bytes reproduce their pinned digest |
 | identity overwrites a stale registry revision | 5 | concurrent clients cannot overwrite a newer default or profile selection |

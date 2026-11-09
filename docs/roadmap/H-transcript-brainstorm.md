@@ -1,7 +1,9 @@
 # H. Transcript intake and brainstorm
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). End-to-end context: [`docs/workflow.md`](../workflow.md).
+Status: **shipped** as prose-outline 0.2.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-outline/DESIGN.md`, `README.md`
+and `RELEASE-v0.2.0.md`. End-to-end context: [`docs/workflow.md`](../workflow.md).
 
 ## 1. Goal and non-goals
 
@@ -205,6 +207,21 @@ Mutations:
   see how talky the material is. It is never a quality judgement.
 - **Speaker diarisation is not attempted.** A transcript without labels is
   treated as one speaker. That is a known limit.
+
+### Build-time decisions
+
+- **Line numbers refer to the cleaned text**, and that is what the store caches.
+  Subtitle cues keep one line each so a quote can still be located by line.
+- **Otter-style headers settle the format on their own.** Two "Name  0:03" lines
+  mark a speaker-labelled export even when spoken lines outnumber labels; inline
+  "Name: text" labels must cover a third of the lines, so a stray "Note:" does not.
+- **A speech stoplist lives in transcript-scan**, not in the shared text-index,
+  which must stay byte-identical with prose-bible's: words like "about", "back"
+  and contractions carry rhythm, not topic, and are kept out of top terms only.
+- **`misplaced` is a fourth quote status**: the writer's exact words cited at the
+  wrong line are reported with the line they are really on.
+- **`--expect concrete|underspecified`** turns the skill's two promises into a
+  check, the way `proposal-check --brief` does for outlines.
 
 ## 10. Deliverables
 

@@ -4,9 +4,10 @@ Outlines for prose, and the steps before one: brainstorming angles from a
 voice-memo transcript into a project brief, and an interview that settles what
 the piece is. Three skills, no agents.
 
-**Status: v0.1.1.** See [`RELEASE-v0.1.1.md`](RELEASE-v0.1.1.md) and [`RELEASE-v0.1.0.md`](RELEASE-v0.1.0.md) for what
-ships and the evidence; the planning record is
-[`docs/roadmap/A-prose-outline.md`](../../docs/roadmap/A-prose-outline.md).
+**Status: v0.2.0.** See [`RELEASE-v0.2.0.md`](RELEASE-v0.2.0.md), [`RELEASE-v0.1.1.md`](RELEASE-v0.1.1.md) and [`RELEASE-v0.1.0.md`](RELEASE-v0.1.0.md) for what
+ships and the evidence; the planning records are
+[`docs/roadmap/A-prose-outline.md`](../../docs/roadmap/A-prose-outline.md) and
+[`docs/roadmap/H-transcript-brainstorm.md`](../../docs/roadmap/H-transcript-brainstorm.md).
 
 | Component | What it is | What it does |
 |---|---|---|

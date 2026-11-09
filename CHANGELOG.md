@@ -108,9 +108,10 @@ Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md)).
   question asked before its dependencies), each caught. README, PROTOCOL
   (step ½), AGENTS and DESIGN updated.
 
-### [0.2.0] — in progress: transcript intake and brainstorm
+### [0.2.0] — transcript intake and brainstorm
 
-Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-transcript-brainstorm.md)).
+Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-transcript-brainstorm.md));
+release notes in [`RELEASE-v0.2.0.md`](bundles/prose-outline/RELEASE-v0.2.0.md).
 
 - **Added** `skills/prose-brainstorm/tools/transcript-scan.mjs`: SRT, WebVTT,
   speaker-labelled (inline or Otter-style headers) and plain transcripts cleaned

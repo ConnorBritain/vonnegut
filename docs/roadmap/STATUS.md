@@ -17,7 +17,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 |---|---|
 | prose-author | 0.9.0 |
 | prose-bible | 0.1.0 |
-| prose-outline | 0.1.1 |
+| prose-outline | 0.2.0 |
 | prose-research | 0.1.0 |
 | prose-review | 0.7.0 |
 | prose-tell-scan | 0.1.1 |
@@ -87,14 +87,14 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] G3 — harness entry staging the persona as input; leave-one-out runs per persona recorded; PROTOCOL.md step 2 conditional spawn; AGENTS.md, wiring, README
 - [x] G4 — prose-review bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### H. Transcript intake and brainstorm — in-progress
+### H. Transcript intake and brainstorm — shipped
 
 - [x] H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON
 - [x] H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned
 - [x] H3 — `angles-check.mjs` + fixtures
 - [x] H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative)
 - [x] H5 — mutations in a `brainstorm` suite; PROTOCOL/README/AGENTS/DESIGN
-- [ ] H6 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+- [x] H6 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
 ### I. Interview — in-progress
 
