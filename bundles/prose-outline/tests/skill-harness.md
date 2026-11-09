@@ -127,9 +127,11 @@ not model output.
    - whether any `source: "writer"` record holds words the writer did not say;
    - whether the session ever said "done" while `brief-check` said otherwise.
 
-**Status: not run.** No model run of this skill has been dispatched. Until one
-is, the evidence is the brief-check fixtures and the store tests, and an
-undispatched run is recorded as not run, never as passed.
+## Runs
+
+| run | draws | positive | negative | two decisions in one turn | `writer` records holding words not said | done while brief-check disagreed |
+|---|---|---|---|---|---|---|
+| [2026-11-09](runs/2026-11-09-interview/README.md) | 3 | **not met as written, 0/3**: every draw opened on the angle as an open choice. Confirmations of found answers: 4, 2 and 1 of 7 required questions. The saved transcript-sourced evidence verifies (`evidence_problems: []`). | **met 3/3**: "your call" saved as `recommended` 6/6, skip saved as null, `brief-check: not done … blocked by: length` and no draw said done | 1 of 6 (positive d3, the optional four together) | **5 of 6 draws** ("Monday", "(transcript lines 13–21)", "first" added) | 0 of 6 |
 
 # Testing the outline skill's candidate mode
 

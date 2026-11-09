@@ -1,0 +1,20 @@
+{
+  "schema": "project-brief/1",
+  "id": "starter",
+  "revision": 1,
+  "parent_digest": null,
+  "sources": [
+    {
+      "kind": "transcript",
+      "digest": "ab20ffe81d2e1d97296cabb366bcce5c0a23608bf1249e83be2e1a39fa82f5d2",
+      "words": 962,
+      "cached": "sources/ab20ffe81d2e1d97296cabb366bcce5c0a23608bf1249e83be2e1a39fa82f5d2.txt",
+      "format": "plain"
+    }
+  ],
+  "angles": [],
+  "unused_segments": [],
+  "chosen_angle": null,
+  "decisions": {},
+  "links": []
+}

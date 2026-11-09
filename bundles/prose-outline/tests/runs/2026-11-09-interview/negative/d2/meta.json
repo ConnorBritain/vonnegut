@@ -1,0 +1,107 @@
+{
+  "turns": [
+    {
+      "turn": 1,
+      "init_model": "claude-opus-5-5",
+      "seconds": 48,
+      "model_turns": 11,
+      "cost_usd": 0.2744838,
+      "is_error": false
+    },
+    {
+      "turn": 2,
+      "init_model": "claude-opus-5-5",
+      "seconds": 36,
+      "model_turns": 5,
+      "cost_usd": 0.4306582,
+      "is_error": false
+    },
+    {
+      "turn": 3,
+      "init_model": "claude-opus-5-5",
+      "seconds": 23,
+      "model_turns": 3,
+      "cost_usd": 0.5036998,
+      "is_error": false
+    },
+    {
+      "turn": 4,
+      "init_model": "claude-opus-5-5",
+      "seconds": 21,
+      "model_turns": 3,
+      "cost_usd": 0.5793818,
+      "is_error": false
+    },
+    {
+      "turn": 5,
+      "init_model": "claude-opus-5-5",
+      "seconds": 19,
+      "model_turns": 3,
+      "cost_usd": 0.652434,
+      "is_error": false
+    },
+    {
+      "turn": 6,
+      "init_model": "claude-opus-5-5",
+      "seconds": 21,
+      "model_turns": 3,
+      "cost_usd": 0.7304845999999999,
+      "is_error": false
+    },
+    {
+      "turn": 7,
+      "init_model": "claude-opus-5-5",
+      "seconds": 24,
+      "model_turns": 3,
+      "cost_usd": 0.8147764,
+      "is_error": false
+    },
+    {
+      "turn": 8,
+      "init_model": "claude-opus-5-5",
+      "seconds": 25,
+      "model_turns": 2,
+      "cost_usd": 0.9006846,
+      "is_error": false
+    },
+    {
+      "turn": 9,
+      "init_model": "claude-opus-5-5",
+      "seconds": 23,
+      "model_turns": 2,
+      "cost_usd": 0.9754577999999999,
+      "is_error": false
+    },
+    {
+      "turn": 10,
+      "init_model": "claude-opus-5-5",
+      "seconds": 25,
+      "model_turns": 2,
+      "cost_usd": 1.0512222,
+      "is_error": false
+    },
+    {
+      "turn": 11,
+      "init_model": "claude-opus-5-5",
+      "seconds": 24,
+      "model_turns": 2,
+      "cost_usd": 1.1356848000000002,
+      "is_error": false
+    },
+    {
+      "turn": 12,
+      "init_model": "claude-opus-5-5",
+      "seconds": 20,
+      "model_turns": 3,
+      "cost_usd": 1.2211118,
+      "is_error": false
+    }
+  ],
+  "ended": "writer-done",
+  "skill_cost_usd": 9.2701,
+  "writer_cost_usd": 0.4061,
+  "model_usage_cost_usd": {
+    "claude-opus-5-5": 9.270079800000001
+  },
+  "first_message": "/prose-outline:prose-interview Interview me about the starter project."
+}

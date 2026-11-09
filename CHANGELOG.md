@@ -28,6 +28,15 @@ it is not yet in their hands.
   thesis invented. No quote needed fixing, and nothing was saved without a yes.
   The store refused a null angle audience that the check accepts, and 4 of 6
   draws saved a placeholder instead. No prompt edited; follow-up.
+- **Measured** the `prose-interview` skill (prose-outline): first run,
+  `tests/runs/2026-11-09-interview`, positive and negative × 3 draws, starting
+  from the brainstorm run's saved brief.
+  - Negative met 3/3. "Your call" was saved as `recommended` 6/6, and no draw
+    said done while `brief-check` reported `blocked by: length`.
+  - Positive not met as written, 0/3: no draw opened with a confirmation. The
+    saved transcript evidence verifies.
+  - 5 of 6 draws filed the session's own words under `source: "writer"`.
+  - No prompt edited; follow-up.
 - **Measured** `prose-outline` candidate mode: first run,
   `tests/runs/2026-11-09-candidates`, 800–1100 and 200–300 word briefs × 3
   draws. Positive met 3/3, with three clean candidates in three shapes.

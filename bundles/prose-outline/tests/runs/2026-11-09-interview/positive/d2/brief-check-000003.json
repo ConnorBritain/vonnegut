@@ -1,0 +1,15 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": null,
+  "asks": null,
+  "open_required": [],
+  "open_optional": [],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": true
+}

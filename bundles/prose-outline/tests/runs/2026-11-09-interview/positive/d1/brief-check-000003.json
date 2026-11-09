@@ -1,0 +1,23 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": "shape",
+  "asks": "What shape should it take?",
+  "open_required": [
+    "shape",
+    "thesis"
+  ],
+  "open_optional": [
+    "must_include",
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": false
+}
