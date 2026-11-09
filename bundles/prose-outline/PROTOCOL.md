@@ -4,7 +4,8 @@ How this bundle is meant to be run. Prose, not code — the main session execute
 this; there is no orchestrator.
 
 ```
-  1  brief         the user's request, plus any existing draft
+  0  brainstorm    a transcript or notes → angles → a project brief      (optional; below)
+  1  brief         the user's request or the saved brief, plus any existing draft
   2  scan          outline-scan on the draft, if there is one    (deterministic)
   3  propose       voice-outline/1: thesis · claims · evidence slots · open questions
                    (beat-sheet mode: premise · acts · beats · turns)
@@ -12,6 +13,22 @@ this; there is no orchestrator.
   5  save          outline-store … --approved → identity / project / revision receipt
   6  diff          on a later revision, outline-diff old new; show the JSON's findings
 ```
+
+## Step 0 — brainstorm, when the material is spoken
+
+```
+  0a  scan       transcript-scan → cleaned text with stable lines      (deterministic)
+  0b  propose    3–5 angles, each quoting the passages it rests on
+  0c  check      angles-check: quotes verbatim at their line, every segment accounted for
+  0d  approve    the writer reads the angles; nothing is saved until they say so
+  0e  save       brief-store add-source (the cleaned transcript), then save --approved
+```
+
+Every line number refers to the cleaned text. A quote is the writer's exact
+words; `drifted` means the session changed them and must fix it before showing.
+Thin material yields angles with a null thesis and open questions. The skill
+never chooses the angle and never starts the outline itself: it names the next
+step — the interview, or step 1.
 
 ## Step 2 — scan first, and read the JSON
 
@@ -47,6 +64,7 @@ missing is *removed*, never guessed to be a rewording.
 
 ## What this session must never do
 
+- Quote the writer in words they did not use, or choose their angle for them.
 - Draft prose from the outline here. That is `prose-draft`'s job, with its own
   checks.
 - Judge the argument. `prose-structure-critic` reads this scan in a clean

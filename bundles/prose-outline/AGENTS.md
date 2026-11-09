@@ -12,7 +12,8 @@ skill registry.
 
 ## Setup
 
-Clone the repo, or copy `skills/prose-outline/` anywhere. It is self-contained.
+Clone the repo, or copy `skills/prose-outline/` or `skills/prose-brainstorm/`
+anywhere. Each is self-contained.
 
 ```bash
 node <path>/skills/prose-outline/tools/outline-scan.mjs draft.md --json
@@ -43,6 +44,22 @@ outline with an earlier one:
 
 Do not draft prose from the outline here, and do not judge the argument — the
 structure critic in prose-review owns that question.
+
+## Prose brainstorm
+
+When handed a voice-memo transcript or rough spoken notes and asked what they
+could become:
+
+1. Clean and scan it; every line number afterwards refers to the cleaned text:
+       node <path>/skills/prose-brainstorm/tools/transcript-scan.mjs <file> --json --clean-out clean.txt
+2. Propose 3–5 angles that differ in thesis or audience. Each quotes the
+   passages it rests on, word for word, by cleaned-text line. Thin material
+   gets a null thesis and open questions, never an invented one. Every segment
+   is used, left out, or listed as unused.
+3. Check before showing, and fix every quote that is not `exact`:
+       node <path>/skills/prose-brainstorm/tools/angles-check.mjs angles.json clean.txt --scan scan.json
+4. Save only on a yes, through brief-store.mjs add-source / save --approved.
+   Do not choose the angle and do not start the outline.
 ```
 
 ## What degrades

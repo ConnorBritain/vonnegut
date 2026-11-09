@@ -48,6 +48,23 @@ segmenter, so a cross-implementation fixture asserts its line numbers agree
 with `fidelity-scan.mjs` and `visible-prose.mjs` on shared text — critics must
 never receive locations from tools that disagree.
 
+## The brainstorm is the outline's rules, moved upstream
+
+A transcript is the writer's own words, so the brainstorm's one hard rule is
+the research bundle's: a quote matches the text exactly, whitespace aside, at
+the line it names. Case and punctuation are not "close enough" — the check
+reports them as drift. Line numbers refer to the cleaned transcript, because
+timestamps and cue numbers are scaffolding the writer never said, and that
+cleaned text is what the brief store caches. Coverage is the second rule: every
+topic segment is used, left out or listed as unused, so an angle cannot quietly
+drop the part of the memo that did not fit. Fillers are counted and kept;
+removing them would make quotes unmatchable and edit the writer's speech.
+
+The brief is a new store beside `outlines`, not a field in it: it exists before
+any outline, and several outlines can be proposed from one brief. Both stores
+belong to this bundle, so the outline skill may read the brief; a store owned by
+another bundle is never read directly.
+
 ## What would make this a bad bundle
 
 - The scan grows a "score" or a verdict.
@@ -55,3 +72,5 @@ never receive locations from tools that disagree.
 - An outline is saved without the user having said yes.
 - The differ starts matching by text.
 - A copy of `text-index.mjs` drifts and the check does not notice.
+- The brainstorm paraphrases inside a quote, supplies a thesis the material
+  lacks, or drops a segment without saying so.

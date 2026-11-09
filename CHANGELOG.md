@@ -108,6 +108,10 @@ Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-trans
   save only on approval. `angles-check --expect concrete|underspecified` makes
   the skill's two promises mechanical; positive and negative example proposals
   and a skill-harness entry, recorded as not run.
+- **Added** five mutations in a `brainstorm` suite (a case-changed quote, an
+  unaccounted segment, an invented thesis on thin material, a cache written
+  without approval, SRT cue numbers kept), each caught. README, PROTOCOL
+  (step 0), AGENTS (portable block) and DESIGN updated.
 
 ### [0.1.1] — definition-pattern fixes in the shared text-index
 
