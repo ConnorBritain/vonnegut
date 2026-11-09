@@ -351,9 +351,10 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 
 ## prose-author
 
-### [0.10.0] — in progress: drafting from an outline
+### [0.10.0] — drafting from an outline
 
-Roadmap item K ([`docs/roadmap/K-outline-handoff.md`](docs/roadmap/K-outline-handoff.md)).
+Roadmap item K ([`docs/roadmap/K-outline-handoff.md`](docs/roadmap/K-outline-handoff.md));
+release notes in [`RELEASE-v0.10.0.md`](bundles/prose-author/RELEASE-v0.10.0.md).
 
 - **Added** `skills/prose-draft/tools/outline-job.mjs` and `lib/outline-handoff.mjs`
   (a port of prose-outline's read side, pinned by a parity test):

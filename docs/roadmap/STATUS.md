@@ -15,7 +15,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 
 | Bundle | Version |
 |---|---|
-| prose-author | 0.9.0 |
+| prose-author | 0.10.0 |
 | prose-bible | 0.1.0 |
 | prose-outline | 0.4.0 |
 | prose-research | 0.1.0 |
@@ -111,12 +111,12 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] J4 — mutations; PROTOCOL/README/AGENTS/DESIGN; `references/outline-schema.md`
 - [x] J5 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### K. Outline → draft handoff — in-progress
+### K. Outline → draft handoff — shipped
 
 - [x] K1 — `docs/contracts/outline-handoff.md` + `lib/outline-handoff.mjs` port + parity test
 - [x] K2 — `outline-job.mjs` + fixtures
 - [x] K3 — prose-draft SKILL.md path + `references/outline-handoff.md`; PROTOCOL.md; mutations; end-to-end run recorded
-- [ ] K4 — prose-author minor bump, RELEASE notes, CHANGELOG, version pin above, README, ROADMAP status → shipped
+- [x] K4 — prose-author minor bump, RELEASE notes, CHANGELOG, version pin above, README, ROADMAP status → shipped
 
 ### L. Chief-editor reading pass — in-progress
 

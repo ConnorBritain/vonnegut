@@ -1,7 +1,9 @@
 # K. Outline → draft handoff
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). End-to-end context: [`docs/workflow.md`](../workflow.md).
+Status: **shipped** as prose-author 0.10.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable contract is [`docs/contracts/outline-handoff.md`](../contracts/outline-handoff.md);
+release notes in `bundles/prose-author/RELEASE-v0.10.0.md`. End-to-end context: [`docs/workflow.md`](../workflow.md).
 
 ## 1. Goal and non-goals
 

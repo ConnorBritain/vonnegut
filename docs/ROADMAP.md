@@ -53,7 +53,7 @@ for how a session picks up from here.
 | 4 | [H. Transcript intake and brainstorm](#h-transcript-intake-and-brainstorm) | `prose-outline` | [H-transcript-brainstorm.md](roadmap/H-transcript-brainstorm.md) | shipped |
 | 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | shipped |
 | 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | shipped |
-| 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | in-progress |
+| 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | shipped |
 | 4 | [L. Chief-editor reading pass](#l-chief-editor-reading-pass) | `prose-review` | [L-chief-editor.md](roadmap/L-chief-editor.md) | in-progress |
 
 Status values: `planned` | `in-progress` | `shipped`. Sequence 1 items are built
@@ -484,7 +484,7 @@ a no-owner contract, `docs/contracts/outline-handoff.md`
 fact or rule lacks `from`; parity over prose-outline's fixtures; one
 end-to-end run recorded; mutations green.
 
-**Status.** in-progress
+**Status.** shipped
 
 ## L. Chief-editor reading pass
 
