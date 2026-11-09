@@ -1,0 +1,80 @@
+{
+  "angles": [
+    {
+      "id": "a1",
+      "title": "The starter is the bakery",
+      "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+      "audience": "team leads who reward visible output",
+      "shape": "narrative-arc",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 5,
+          "quote": "If the starter is weak the loaves come out flat, and sour and nobody can fix that at the oven."
+        },
+        {
+          "segment": "s2",
+          "line": 9,
+          "quote": "That was the moment she knew he would be good."
+        }
+      ],
+      "leaves_out": [
+        "s3",
+        "s4"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "a2",
+      "title": "Meetings for decisions only",
+      "thesis": "A weekly meeting should exist only when there is a decision on the agenda.",
+      "audience": "engineering managers",
+      "shape": "problem-solution",
+      "uses": [
+        {
+          "segment": "s3",
+          "line": 15,
+          "quote": "So the agenda is upside down."
+        },
+        {
+          "segment": "s4",
+          "line": 17,
+          "quote": "If there is no decision on the agenda, we cancel the meeting."
+        }
+      ],
+      "leaves_out": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "open_questions": [
+        "Will managers accept losing the meeting where they feel informed?"
+      ]
+    },
+    {
+      "id": "a3",
+      "title": "Write the toolbox, not the thesis",
+      "thesis": null,
+      "audience": "newsletter readers who write",
+      "shape": "letter",
+      "uses": [
+        {
+          "segment": "s5",
+          "line": 25,
+          "quote": "The essays that actually landed with readers were all small and concrete."
+        },
+        {
+          "segment": "s6",
+          "line": 29,
+          "quote": "Write the toolbox, not the thesis."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "Is the bakery story the concrete object this essay needs, or a separate piece?"
+      ]
+    }
+  ],
+  "unused_segments": []
+}

@@ -99,6 +99,10 @@ Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-trans
   (the cached source text included), stale-revision refusal, undo; transcripts
   are cached as their cleaned text. `revision-store.mjs` accepts the `brief` store
   name in every byte-identical copy.
+- **Added** `angles-check.mjs`: every quoted passage must start on the line it
+  names, whitespace the only normalisation (exact, misplaced, drifted, absent),
+  and every scan segment must be used, left out or listed as unused. Five
+  fixtures, each naming exactly its planted problem.
 
 ### [0.1.1] — definition-pattern fixes in the shared text-index
 

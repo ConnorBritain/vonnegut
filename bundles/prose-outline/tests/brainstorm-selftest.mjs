@@ -153,6 +153,41 @@ try {
   check("CLI: a bad --kind and a missing flag exit 2; a missing registry exits 3",
     bcli("add-source", "--project", "x", "--file", monoFile, "--kind", "memo", "--expected-revision", "0").status === 2
       && bcli("save", "--project", "x").status === 2 && bcli("locate", "--registry", join(tmp, "nowhere")).status === 3);
+
+  /* ---------------------------------------------------------------- */
+  group("angles-check — quotes are the writer's exact words, and nothing they said is dropped");
+  {
+  const ac = await import(pathToFileURL(join(BRAINSTORM, "tools", "angles-check.mjs")).href);
+  const ANGLES = join(HERE, "fixtures", "angles");
+  const monoText = cleanOf("monologue.txt");
+  const monoScan = ts.scanTranscript(read("monologue.txt"));
+  const run = (name, opts = {}) => { try { return ac.checkAngles(JSON.parse(readFileSync(join(ANGLES, `${name}.json`), "utf8")), monoText, { scan: monoScan, ...opts }); } catch (e) { return { crashed: e.message, quotes: [], coverage: {} }; } };
+  const bad = (r) => r.quotes.filter((q) => q.status !== "exact");
+  const clean = run("clean");
+  check("the clean proposal passes: every quote exact and inside its segment, all six segments accounted for",
+    clean.ok === true && clean.quotes.length === 6 && clean.quotes.every((q) => q.status === "exact" && q.segment_ok === true) && clean.coverage.unaccounted_segments?.length === 0);
+  const drifted = run("drifted");
+  check("a quote with one comma moved is drifted — the planted one, and only that one", drifted.ok === false && bad(drifted).length === 1 && bad(drifted)[0].status === "drifted" && bad(drifted)[0].line === 5);
+  const misplaced = run("misplaced");
+  check("the right words cited at the wrong line are misplaced, with the line they are really on", bad(misplaced).length === 1 && bad(misplaced)[0].status === "misplaced" && bad(misplaced)[0].found_line === 9);
+  const absent = run("absent");
+  check("an invented sentence is absent", bad(absent).length === 1 && bad(absent)[0].status === "absent" && absent.ok === false);
+  const unaccounted = run("unaccounted");
+  check("a segment no angle uses or leaves out is named — exactly the planted one", unaccounted.ok === false && unaccounted.coverage.unaccounted_segments?.join() === "s6" && bad(unaccounted).length === 0);
+  check("case alone is drift, never exact: the writer's words are never close enough",
+    ac.quoteStatus("The starter is the whole bakery.", "the starter is the whole bakery.", 1).status === "drifted" && ac.quoteStatus("one  two\nthree", "one two three", 1).status === "exact");
+  const noScan = run("clean", { scan: null });
+  check("without a scan, coverage is not-evaluated and the check does not pass", noScan.coverage.status === "not-evaluated" && noScan.ok === false);
+  const summaryAngle = { angles: [{ id: "a1", uses: [{ segment: "summary", line: 1, quote: "Bread is patience." }] }], unused_segments: [] };
+  check("a summary quote is checked against the summary, and is not-evaluated without one",
+    ac.checkAngles(summaryAngle, monoText, { summary: "Bread is patience.\n" }).quotes[0].status === "exact" && ac.checkAngles(summaryAngle, monoText).quotes[0].status === "not-evaluated");
+  const ACLI = join(BRAINSTORM, "tools", "angles-check.mjs");
+  const clean_txt = join(tmp, "mono-clean.txt"), scan_json = join(tmp, "mono-scan.json");
+  writeFileSync(clean_txt, monoText); writeFileSync(scan_json, JSON.stringify(monoScan));
+  const acli = (name, ...a) => spawnSync(process.execPath, [ACLI, join(ANGLES, `${name}.json`), clean_txt, "--scan", scan_json, ...a], { encoding: "utf8" });
+  check("CLI: exit 0 on the clean proposal, 1 on each planted problem, 2 on bad usage",
+    acli("clean").status === 0 && ["drifted", "misplaced", "absent", "unaccounted"].every((n) => acli(n).status === 1) && spawnSync(process.execPath, [ACLI], { encoding: "utf8" }).status === 2);
+  }
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }

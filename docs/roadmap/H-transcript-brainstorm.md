@@ -86,7 +86,7 @@ the writer said.
 is cited as `{ "segment": "summary", "line": n, "quote": "…" }` and is never
 confused with something the writer said aloud.
 
-`angles-check/1`: `{ quotes: [{angle, line, status: exact | drifted | absent}],
+`angles-check/1`: `{ quotes: [{angle, line, status: exact | misplaced | drifted | absent, found_line?, segment_ok}],
 coverage: { unaccounted_segments: [ids] }, ok: bool }`.
 
 Verdicts: none.
