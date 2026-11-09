@@ -28,6 +28,15 @@ it is not yet in their hands.
   thesis invented. No quote needed fixing, and nothing was saved without a yes.
   The store refused a null angle audience that the check accepts, and 4 of 6
   draws saved a placeholder instead. No prompt edited; follow-up.
+- **Measured** drafting from an approved outline (prose-author `prose-draft`):
+  first end-to-end run, `tests/runs/2026-11-09-outline-draft`, approved and
+  open outline × 3 draws, preference-only identity.
+  - Positive met 3/3: the receipt carries "Drafted from outline", and the
+    drafts are 970, 942 and 915 words by the runtime's counter.
+  - Negative met 3/3: the refusal was reported, with no `--allow-open` and no
+    run.
+  - The fixture outline's shape contradicts the fixture brief's, and
+    `outline-job` does not flag it. Follow-up.
 - **Measured** the `prose-interview` skill (prose-outline): first run,
   `tests/runs/2026-11-09-interview`, positive and negative × 3 draws, starting
   from the brainstorm run's saved brief.

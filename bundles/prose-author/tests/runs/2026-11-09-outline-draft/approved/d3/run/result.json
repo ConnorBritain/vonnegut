@@ -1,0 +1,239 @@
+{
+  "schema": "prose-writing-result/1",
+  "status": "checked",
+  "reason": "Exact final text checked; no resemblance, quality or factual guarantee",
+  "draft": "There's a bakery where new people spend their first month not baking. No shaping. Only feeding: the starter, every day, for a month.\n\nThat sounds like a strange way to train a baker until you see what it protects. The starter is the bakery. Everything that comes out of the oven was decided by it long before anyone saw a loaf. Shaping is the part a customer could watch through the window. Feeding is the part nobody watches at all.\n\nMost teams run the other way. They reward what they can see: the demo, the shipped feature, the deck that lands well in the meeting. The work that decides whether any of that holds up gets whatever time is left over, and usually that's none. That means the cleanup, the setup, the slow feeding of a system nobody's looking at. Then the visible part fails, and everyone goes looking for the cause in the visible part, because that's where they've been looking all along.\n\nThis isn't a character flaw. Visible output is easy to count and easy to praise. Groundwork is hard to point at. But if you lead a team, you're the one who decides which work gets fed and which work starves.\n\nHere's what makes this dangerous. When bread fails, it fails hours before anyone touches the dough. By the time someone is shaping and scoring, the outcome is already set. There's a line for this: 'You can't rescue bad fermentation with good scoring.'\n\nYour team's failures work the same way. The cause sits upstream, in work that happened quietly and early. The symptom shows up downstream, in work everyone can see. So the person holding the symptom takes the blame, and the cause goes unexamined. Nobody saw it happen, because nobody was looking there. And the next time, it happens again.\n\nThe fix has two parts, and the bakery does both.\n\nFirst, give new people a month on the starter. Not a week of orientation and then the real work. A month in which the slow part is the real work. At the bakery, that means feeding. It's the same task every day, done while watching what changes and what doesn't. It isn't busywork. It's how someone learns what the foundation of the whole operation looks like when it's healthy, so they can tell when it isn't.\n\nOn your team, the starter is whatever everything else depends on and nobody gets credit for. It might be the build, the data pipeline, the support queue, the test suite or the onboarding docs. Put new people there first, on purpose, and tell them why. Tell them this is the part that decides the result. Then act like it: ask about it in one-on-ones, notice when it's done well, and don't pull people off it the minute a visible project needs hands. A month sounds long. It's short next to the years someone will spend building on top of what they learned in it.\n\nSecond, keep the notebook. The bakery has eleven years of them. That record is what lets someone read a failure back. When a batch comes out wrong, the notebooks are where you go to find out what changed before anyone could see it.\n\nMost teams don't keep that kind of record for their groundwork. They keep records of output: tickets closed, features shipped, incidents resolved. What they rarely write down is the state of the slow stuff, like what got changed upstream, what was quietly patched, or what someone noticed and didn't have time to chase. So when something breaks, there's nothing to read back. People guess, and they usually guess at whatever is most visible.\n\nA notebook doesn't need to be elaborate. It needs to be kept by the people doing the early work, and it needs to be read. Eleven years of notebooks only matter because someone opens them. Start one this week for the part of your team's work nobody sees, and make keeping it part of that first month. A new person who writes down what they notice is learning to notice. A year from now, when a failure shows up and nobody can explain it, you'll have something better than a guess.\n\nThere's an honest objection, and it comes from the people doing the feeding. To them, it can look like hazing. The bakery had an early-shift baker who hated the first month.\n\nTake that seriously. If nobody explains why the slow work matters, it feels exactly like hazing: paying your dues before you're allowed near the real thing. The difference is whether the work is the real thing. Hazing is arbitrary. The month on the starter isn't, but only if you say so out loud, keep saying it, and show people what they're learning while they do it. And if you can't explain why the groundwork decides the result, maybe it doesn't. In that case, go find the work that does.\n\nHere's how you know it's working. At the bakery, the moment you know someone will be good is when they notice the starter. On rainy days, they adjust the water. They see something change before it shows up in the bread, and they respond where it matters, early and quietly.\n\nThat's what you're building on your team: people who look upstream without being asked. You won't get them by rewarding only what shows up downstream. Feed the slow part. Write it down. Then watch for the day someone adjusts the water.",
+  "receipt": {
+    "draft_digest": "f9ae9db19db658c732c2c904d6b7561d9d886f3bef673fe9dacf386d3b00a9ac",
+    "profile_digest": null,
+    "preference_digest": "ae2296b2109619edc0a3ec1c159beecf65bbfd759179a02c5ce5e4eb0e85d6af",
+    "preference_revision": 1,
+    "active_preferences": [],
+    "overrides": [
+      "outline-length",
+      "must-include-1",
+      "must-include-2"
+    ],
+    "examples": [],
+    "example_exclusions": [],
+    "example_warnings": [],
+    "model_calls": 2,
+    "elapsed_ms": 59159,
+    "final_check": {
+      "cycle": 0,
+      "draft_digest": "f9ae9db19db658c732c2c904d6b7561d9d886f3bef673fe9dacf386d3b00a9ac"
+    },
+    "isolation": "partial: fresh CLI context and audited tool events, not a general read-isolation guarantee"
+  },
+  "claims": [
+    {
+      "quote": "Shaping is the part a customer could watch through the window.",
+      "reason": "Neither the brief nor the outline mentions a window or customers watching. It is worded as a possibility, but it still adds a detail about the bakery that the sources don't give."
+    }
+  ],
+  "omitted": [],
+  "advisory_omissions": [],
+  "unresolved_omissions": [],
+  "attempts": [
+    {
+      "cycle": 0,
+      "draft": "There's a bakery where new people spend their first month not baking. No shaping. Only feeding: the starter, every day, for a month.\n\nThat sounds like a strange way to train a baker until you see what it protects. The starter is the bakery. Everything that comes out of the oven was decided by it long before anyone saw a loaf. Shaping is the part a customer could watch through the window. Feeding is the part nobody watches at all.\n\nMost teams run the other way. They reward what they can see: the demo, the shipped feature, the deck that lands well in the meeting. The work that decides whether any of that holds up gets whatever time is left over, and usually that's none. That means the cleanup, the setup, the slow feeding of a system nobody's looking at. Then the visible part fails, and everyone goes looking for the cause in the visible part, because that's where they've been looking all along.\n\nThis isn't a character flaw. Visible output is easy to count and easy to praise. Groundwork is hard to point at. But if you lead a team, you're the one who decides which work gets fed and which work starves.\n\nHere's what makes this dangerous. When bread fails, it fails hours before anyone touches the dough. By the time someone is shaping and scoring, the outcome is already set. There's a line for this: 'You can't rescue bad fermentation with good scoring.'\n\nYour team's failures work the same way. The cause sits upstream, in work that happened quietly and early. The symptom shows up downstream, in work everyone can see. So the person holding the symptom takes the blame, and the cause goes unexamined. Nobody saw it happen, because nobody was looking there. And the next time, it happens again.\n\nThe fix has two parts, and the bakery does both.\n\nFirst, give new people a month on the starter. Not a week of orientation and then the real work. A month in which the slow part is the real work. At the bakery, that means feeding. It's the same task every day, done while watching what changes and what doesn't. It isn't busywork. It's how someone learns what the foundation of the whole operation looks like when it's healthy, so they can tell when it isn't.\n\nOn your team, the starter is whatever everything else depends on and nobody gets credit for. It might be the build, the data pipeline, the support queue, the test suite or the onboarding docs. Put new people there first, on purpose, and tell them why. Tell them this is the part that decides the result. Then act like it: ask about it in one-on-ones, notice when it's done well, and don't pull people off it the minute a visible project needs hands. A month sounds long. It's short next to the years someone will spend building on top of what they learned in it.\n\nSecond, keep the notebook. The bakery has eleven years of them. That record is what lets someone read a failure back. When a batch comes out wrong, the notebooks are where you go to find out what changed before anyone could see it.\n\nMost teams don't keep that kind of record for their groundwork. They keep records of output: tickets closed, features shipped, incidents resolved. What they rarely write down is the state of the slow stuff, like what got changed upstream, what was quietly patched, or what someone noticed and didn't have time to chase. So when something breaks, there's nothing to read back. People guess, and they usually guess at whatever is most visible.\n\nA notebook doesn't need to be elaborate. It needs to be kept by the people doing the early work, and it needs to be read. Eleven years of notebooks only matter because someone opens them. Start one this week for the part of your team's work nobody sees, and make keeping it part of that first month. A new person who writes down what they notice is learning to notice. A year from now, when a failure shows up and nobody can explain it, you'll have something better than a guess.\n\nThere's an honest objection, and it comes from the people doing the feeding. To them, it can look like hazing. The bakery had an early-shift baker who hated the first month.\n\nTake that seriously. If nobody explains why the slow work matters, it feels exactly like hazing: paying your dues before you're allowed near the real thing. The difference is whether the work is the real thing. Hazing is arbitrary. The month on the starter isn't, but only if you say so out loud, keep saying it, and show people what they're learning while they do it. And if you can't explain why the groundwork decides the result, maybe it doesn't. In that case, go find the work that does.\n\nHere's how you know it's working. At the bakery, the moment you know someone will be good is when they notice the starter. On rainy days, they adjust the water. They see something change before it shows up in the bread, and they respond where it matters, early and quietly.\n\nThat's what you're building on your team: people who look upstream without being asked. You won't get them by rewarding only what shows up downstream. Feed the slow part. Write it down. Then watch for the day someone adjusts the water.",
+      "draft_digest": "f9ae9db19db658c732c2c904d6b7561d9d886f3bef673fe9dacf386d3b00a9ac",
+      "mechanical": {
+        "schema": "voice-rule-report/1",
+        "draft_digest": "f9ae9db19db658c732c2c904d6b7561d9d886f3bef673fe9dacf386d3b00a9ac",
+        "draft_words": 915,
+        "normalization": "visible-prose/1",
+        "exclusions": [],
+        "warnings": [],
+        "checks": [
+          {
+            "id": "outline-length",
+            "kind": "word-limit",
+            "directive": "Between 800 and 1100 words, the outline's band.",
+            "enforcement": "enforced",
+            "actual": 915,
+            "minimum": 800,
+            "maximum": 1100,
+            "occurrences": [],
+            "status": "passed"
+          },
+          {
+            "id": "must-include-1",
+            "kind": "semantic",
+            "directive": "Include: the month of feeding the starter",
+            "status": "not-evaluated",
+            "enforcement": "advisory",
+            "reason": "Requires contextual semantic review; no mechanical verifier"
+          },
+          {
+            "id": "must-include-2",
+            "kind": "semantic",
+            "directive": "Include: the eleven years of notebooks",
+            "status": "not-evaluated",
+            "enforcement": "advisory",
+            "reason": "Requires contextual semantic review; no mechanical verifier"
+          }
+        ],
+        "status": "not-evaluated"
+      },
+      "observed": {
+        "status": "not-evaluated",
+        "reason": "A current profile is unavailable",
+        "measurements": []
+      },
+      "copying": {
+        "status": "not-evaluated",
+        "findings": [],
+        "reason": "No corpus text available for copying comparison"
+      },
+      "artifacts": {
+        "status": "passed",
+        "draft_digest": "f9ae9db19db658c732c2c904d6b7561d9d886f3bef673fe9dacf386d3b00a9ac",
+        "findings": [],
+        "reason": "Tier A artifact scan only; no fallback cadence claim"
+      },
+      "reviews": [
+        {
+          "stage": "task-review",
+          "status": "passed",
+          "result": {
+            "schema": "prose-runtime-review/1",
+            "verdict": "clear",
+            "findings": [],
+            "instructions": [
+              {
+                "id": "outline-length",
+                "status": "applied",
+                "reason": "My hand count puts the draft at about 940–960 words, which is inside the 800–1100 band. I estimated by section, so this is not an exact tally."
+              },
+              {
+                "id": "must-include-1",
+                "status": "applied",
+                "reason": "The month of feeding appears in the opening (\"Only feeding: the starter, every day, for a month\") and again in the solution section (\"give new people a month on the starter\")."
+              },
+              {
+                "id": "must-include-2",
+                "status": "applied",
+                "reason": "The notebooks appear as \"The bakery has eleven years of them\" and again as \"Eleven years of notebooks only matter because someone opens them.\""
+              }
+            ],
+            "atom_accounting": [],
+            "disclosures": [
+              {
+                "quote": "Shaping is the part a customer could watch through the window.",
+                "reason": "Neither the brief nor the outline mentions a window or customers watching. It is worded as a possibility, but it still adds a detail about the bakery that the sources don't give."
+              }
+            ]
+          }
+        }
+      ],
+      "omitted": [],
+      "advisory_omissions": [],
+      "unresolved_omissions": [],
+      "claims": []
+    }
+  ],
+  "calls": [
+    {
+      "stage": "draft",
+      "status": "passed",
+      "dispatched": true,
+      "harness": "claude",
+      "model": null,
+      "elapsed_ms": 48219,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 801,
+        "cache_read_input_tokens": 4074,
+        "output_tokens": 4590,
+        "output_tokens_details": {
+          "thinking_tokens": 2885
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 801,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4590,
+            "cache_read_input_tokens": 4074,
+            "cache_creation_input_tokens": 801,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 801
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "input_digest": "6c4a8c9fd63f495de4f5badfc7a6a7be6c6b83ce1497ebdca9f7fd54e6331939",
+      "system_digest": "094126fd8d0e4bf362091cf14ec2e5e567ec8c6b3e382c428f774d4cb6d656e3",
+      "isolation": "partial",
+      "reason": null
+    },
+    {
+      "stage": "task-review",
+      "status": "passed",
+      "dispatched": true,
+      "harness": "claude",
+      "model": null,
+      "elapsed_ms": 10503,
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3612,
+        "cache_read_input_tokens": 1813,
+        "output_tokens": 906,
+        "output_tokens_details": {
+          "thinking_tokens": 421
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3612,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 906,
+            "cache_read_input_tokens": 1813,
+            "cache_creation_input_tokens": 3612,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3612
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "input_digest": "944b4dfc77fd7e04a4034dd5ddb0f5fe513cc231e5bd58cc70562bd9ff61399b",
+      "system_digest": "c5a6c09238f8cfa4142dad4146f4815422c9fd7838c9d4eb3a1bcfa0970233c0",
+      "isolation": "partial",
+      "reason": null
+    }
+  ],
+  "invocation": {
+    "model_calls": 2,
+    "model_call_records": 2,
+    "model_elapsed_ms": 58722,
+    "elapsed_ms": 59161,
+    "input_digest": "a03839e60d51164b4a6fc18f7a1d17f56eca0a7be62a5b949b2d3959aba36201",
+    "resolved_input_digest": "a03839e60d51164b4a6fc18f7a1d17f56eca0a7be62a5b949b2d3959aba36201"
+  }
+}
