@@ -85,9 +85,10 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
-### [0.3.0] — in progress: the interview
+### [0.3.0] — the interview
 
-Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md)).
+Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md));
+release notes in [`RELEASE-v0.3.0.md`](bundles/prose-outline/RELEASE-v0.3.0.md).
 
 - **Added** `skills/prose-interview/tools/lib/decisions.mjs` (the decision tree
   as data, with decision and link validators) and `brief-check.mjs`: the next

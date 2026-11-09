@@ -1,7 +1,9 @@
 # I. Interview
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). End-to-end context: [`docs/workflow.md`](../workflow.md).
+Status: **shipped** as prose-outline 0.3.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-outline/DESIGN.md`, `README.md`
+and `RELEASE-v0.3.0.md`. End-to-end context: [`docs/workflow.md`](../workflow.md).
 
 ## 1. Goal and non-goals
 
@@ -196,6 +198,12 @@ Mutations:
 - **A skip is explicit.** `value: null` with the writer's reason in `skipped`;
   a skipped required decision blocks the questions downstream of it
   (`blocked_by`), so `next` can be null while the interview is not done.
+- **`decide` stamps the revision.** Answers are merged by brief-store's
+  `decide`, which sets each answer's `at_revision` to the revision it writes;
+  a caller cannot choose the stamp, so staleness cannot be forged.
+- **The brief store is one store with one rule.** decisions.mjs, brief-store
+  and transcript-scan ship byte-identical in both skills, so the brainstorm's
+  copy validates decisions exactly as the interview's does.
 - **Quote verification is one module.** `lib/quote.mjs` is shared byte-for-byte
   with prose-brainstorm's angles-check, so the brief's evidence and the angles
   are held to one rule.

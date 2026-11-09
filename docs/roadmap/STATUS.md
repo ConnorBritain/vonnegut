@@ -17,7 +17,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 |---|---|
 | prose-author | 0.9.0 |
 | prose-bible | 0.1.0 |
-| prose-outline | 0.2.0 |
+| prose-outline | 0.3.0 |
 | prose-research | 0.1.0 |
 | prose-review | 0.7.0 |
 | prose-tell-scan | 0.1.1 |
@@ -96,12 +96,12 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] H5 — mutations in a `brainstorm` suite; PROTOCOL/README/AGENTS/DESIGN
 - [x] H6 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
-### I. Interview — in-progress
+### I. Interview — shipped
 
 - [x] I1 — `lib/decisions.mjs` + `references/decisions.md` + `brief-check.mjs` + fixtures
 - [x] I2 — `prose-interview` SKILL.md + meta.yaml; per-batch brief-store writes with expected revision; skill harness entry
 - [x] I3 — mutations; PROTOCOL/README/AGENTS/DESIGN
-- [ ] I4 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+- [x] I4 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 
 ### J. Outline baselines — planned
 
