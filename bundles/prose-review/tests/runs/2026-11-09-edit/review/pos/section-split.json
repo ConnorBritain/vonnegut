@@ -1,0 +1,43 @@
+{
+  "schema": "section-split/1",
+  "draft_digest": "b7469508565a75b304c9efa2839fcffc051c674bc894c294df6fd10c1ba0d4e3",
+  "window": null,
+  "units": [
+    {
+      "id": "u48cf569d",
+      "order": 1,
+      "heading": "Feed the starter",
+      "start_line": 1,
+      "end_line": 6,
+      "words": 44,
+      "digest": "48cf569d566db66584a1db5619a85db85639af4c5cdf67f3b0390024442fa8eb"
+    },
+    {
+      "id": "ua1f2aac3",
+      "order": 2,
+      "heading": "The part nobody sees",
+      "start_line": 8,
+      "end_line": 15,
+      "words": 70,
+      "digest": "a1f2aac310958a49ebf19272214f02b0a89abe514b943b5d080f95cff57e1d5e"
+    },
+    {
+      "id": "ua41483fb",
+      "order": 3,
+      "heading": "A month on the starter",
+      "start_line": 17,
+      "end_line": 25,
+      "words": 78,
+      "digest": "a41483fbbd1676c11d9d31908511fb67b12663b8182e0af07ac1e3569334e258"
+    },
+    {
+      "id": "u4e83b821",
+      "order": 4,
+      "heading": "What to do on Monday",
+      "start_line": 27,
+      "end_line": 31,
+      "words": 35,
+      "digest": "4e83b821fb8934dce917004c1be9d55cf8ff9c6ecc92b6ed9c0c98eb8a451e8d"
+    }
+  ]
+}

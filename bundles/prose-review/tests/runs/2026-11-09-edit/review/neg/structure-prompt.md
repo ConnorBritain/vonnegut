@@ -1,0 +1,439 @@
+# Critic run
+
+You have a draft, the output of `outline-scan` over it, and no intended outline. Report on the draft's structure, following your instructions exactly, including the mode line, the output contract and the closing one-line verdict.
+
+Mode: draft-only.
+
+## outline-scan output
+
+```json
+{
+  "schema": "outline-scan/1",
+  "file": "draft.md",
+  "markdown": true,
+  "words": 1728,
+  "status": "measured",
+  "headings": [],
+  "sections": [
+    {
+      "heading": null,
+      "title": "(preamble)",
+      "level": 0,
+      "paragraphs": [
+        {
+          "line": 1,
+          "words": 276,
+          "sentences": 15,
+          "first_sentence": "Except for some fine works of art, which seem to be there by accident, the City of Brussels is like a bad Paris, a Paris with everything noble cut out, and everything nasty left in.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 0.725
+          },
+          "transition_in": null
+        },
+        {
+          "line": 24,
+          "words": 163,
+          "sentences": 7,
+          "first_sentence": "Now Brussels is Paris without this constant purification of pain.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 0.613
+          },
+          "transition_in": {
+            "marker": "now",
+            "kind": "sequence",
+            "lexical_overlap": 0.047,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 40,
+          "words": 0,
+          "sentences": 1,
+          "first_sentence": ".....",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 42,
+          "words": 142,
+          "sentences": 5,
+          "first_sentence": "For all these reasons, and many more, when I had got into Brussels I began to make all necessary arrangements for getting out of it again; and I had impulsively got into a tram which seemed to be going out of the city.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 2,
+            "numeric": 0,
+            "citation": 0,
+            "total": 2,
+            "per_100_words": 1.408
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 54,
+          "words": 14,
+          "sentences": 1,
+          "first_sentence": "The man with the black beard said: “It must that we have the Progress.”",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 1,
+            "total": 2,
+            "per_100_words": 14.286
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.071,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 56,
+          "words": 19,
+          "sentences": 1,
+          "first_sentence": "The man with the whiskers parried this smartly by saying: “It must also that we have the Consolidation International.”",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 5.263
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.231,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 59,
+          "words": 107,
+          "sentences": 5,
+          "first_sentence": "This is a sort of discussion which I like myself, so I listened with some care, and I think I picked up the thread of it.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 2,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 0,
+            "total": 3,
+            "per_100_words": 2.804
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.073,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 69,
+          "words": 30,
+          "sentences": 1,
+          "first_sentence": "And the man with the beard answered him: “It does not suffice to have progress in the science; one must have it also in the sentiment of the human justice.”",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 1,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 1,
+            "per_100_words": 3.333
+          },
+          "transition_in": {
+            "marker": "and",
+            "kind": "addition",
+            "lexical_overlap": 0.044,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 73,
+          "words": 170,
+          "sentences": 13,
+          "first_sentence": "This remark I applauded, as if at a public meeting, but they were much too keen on their argument to hear me.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 8,
+            "connective": 2,
+            "numeric": 0,
+            "citation": 0,
+            "total": 10,
+            "per_100_words": 5.882
+          },
+          "transition_in": {
+            "marker": "this",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.038,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 89,
+          "words": 111,
+          "sentences": 9,
+          "first_sentence": "Here Whiskers stopped an instant for breath; and the man with the sentiment for human justice had “la parole” off him in a flash.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": "here",
+            "kind": "demonstrative",
+            "lexical_overlap": 0.065,
+            "linked": true,
+            "same_section": true
+          }
+        },
+        {
+          "line": 100,
+          "words": 0,
+          "sentences": 1,
+          "first_sentence": ".....",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 102,
+          "words": 87,
+          "sentences": 2,
+          "first_sentence": "At this important point of evolution the tram came to a jerky stoppage; and staring around I found, to my stunned consternation, that it was almost dark, that I was far away from Brussels, that I could not dream of getting back to dinner; in short, that through the clinging fascination of this great controversy on Humanity and its recent complete alteration by science or Tolstoy, I had landed myself Heaven knows where.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 111,
+          "words": 266,
+          "sentences": 13,
+          "first_sentence": "I was alone in the flat fields out of sight of the city.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.027,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 132,
+          "words": 229,
+          "sentences": 8,
+          "first_sentence": "I came out on a clear space and a low, long cottage, the door of which was open, but was blocked by a big grey horse, who seemed to prefer to eat with his head inside the sitting-room.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 3,
+            "connective": 1,
+            "numeric": 0,
+            "citation": 1,
+            "total": 5,
+            "per_100_words": 2.183
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.058,
+            "linked": false,
+            "same_section": true
+          }
+        },
+        {
+          "line": 150,
+          "words": 114,
+          "sentences": 3,
+          "first_sentence": "I found my way back to the city, and some time afterwards I actually saw in the street my two men talking, no doubt still saying, one that Science had changed all in Humanity, and the other that Humanity was now pushing the wings of the purely intellectual.",
+          "heading_overlap_sentence": null,
+          "heading_overlap": 0,
+          "claim_markers": {
+            "assertive": 0,
+            "connective": 0,
+            "numeric": 0,
+            "citation": 0,
+            "total": 0,
+            "per_100_words": 0
+          },
+          "transition_in": {
+            "marker": null,
+            "kind": null,
+            "lexical_overlap": 0.091,
+            "linked": true,
+            "same_section": true
+          }
+        }
+      ],
+      "words": 1728,
+      "paragraph_count": 15,
+      "start_line": 1,
+      "end_line": 150,
+      "claim_markers": 27,
+      "claim_markers_per_100_words": 1.563,
+      "ratio_to_median": 1
+    }
+  ],
+  "balance": {
+    "sections": 1,
+    "median_words": 1728,
+    "max_ratio": 1,
+    "min_ratio": 1
+  },
+  "transitions": {
+    "boundaries": 14,
+    "marked": 7,
+    "unmarked": [
+      {
+        "line": 40,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 42,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 54,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 100,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 102,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 111,
+        "section": "(preamble)",
+        "same_section": true
+      },
+      {
+        "line": 132,
+        "section": "(preamble)",
+        "same_section": true
+      }
+    ]
+  },
+  "limits": [
+    "Topic-sentence candidates are positional (first sentence) and lexical (highest heading overlap); neither is a semantic judgement.",
+    "Claim markers are counts of listed word classes, not a claim detector; the lists are in the tool and are the whole definition.",
+    "A transition is a listed opening marker, a demonstrative, or content-word overlap ≥ 0.08 with the previous paragraph; absence of all three is reported, not judged.",
+    "Sections are ATX headings; a document with other structure reads as one preamble section.",
+    "Sentence boundaries are an English heuristic with a finite abbreviation list.",
+    "A capitalised run is a surface pattern, not a named entity; sentence-initial function words are excluded by a stoplist, nothing else is.",
+    "Defined terms are matched by three surface patterns ('X is', 'X, the', 'called X').",
+    "Dates are recognised in numeric and month-name forms only.",
+    "Markdown structure recognised: ATX headings, fenced and inline code, links, frontmatter, list and quote markers, tables, thematic breaks."
+  ]
+}
+```
+
+## The draft
+
+Read it from this file (line numbers you cite refer to it exactly as given):
+
+    <review>/neg/inputs/draft.md
+
+You may read only that file. Output your report and nothing else.

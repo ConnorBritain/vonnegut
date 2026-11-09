@@ -1,0 +1,27 @@
+{
+  "draft": "draft.md",
+  "voice_profile": null,
+  "mode": "plan-only",
+  "entries": [
+    {
+      "id": "e01",
+      "source": "reader-critic:skeptical-cto",
+      "location": {
+        "line": 14,
+        "quote": "Teams work the same way."
+      },
+      "change": "Say what the starter is on a team, the first weeks of onboarding work, before making the comparison.",
+      "reason": "Where the reader stopped: the case rests on this analogy without saying what the 'starter' is in a real org or how starving it causes the failure."
+    },
+    {
+      "id": "e03",
+      "source": "writer",
+      "location": {
+        "line": 30,
+        "quote": "because that is when you know"
+      },
+      "change": "Cut the phrase 'because that is when you know'.",
+      "reason": "Repeats the line about the moment she knew."
+    }
+  ]
+}

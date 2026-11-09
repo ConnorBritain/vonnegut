@@ -1,0 +1,24 @@
+{
+  "schema": "edit-notes/1",
+  "draft_digest": "b2ba2fa47cf0ef25684b6249abb23bdabb3cf7702d21240b6067859bef69e4a3",
+  "finished": true,
+  "units": [
+    { "id": "u1f357ef5", "status": "read", "skip_reason": null },
+    { "id": "u6164b565", "status": "read", "skip_reason": null },
+    { "id": "ucf0ff025", "status": "read", "skip_reason": null },
+    { "id": "ubc2fbff4", "status": "read", "skip_reason": null }
+  ],
+  "notes": [
+    {
+      "id": "N1",
+      "unit": "u1f357ef5",
+      "source": "writer",
+      "line": 47,
+      "quote": "And about the time that we reached the suburb of the city, and the traffic grew thinner, and the noises more few, I began to hear what they were saying.",
+      "note": "Redundant: the dialogue that follows makes it obvious the narrator can hear them.",
+      "change": "Cut the sentence ending 'I began to hear what they were saying.' (lines 47-50, from 'And about the time that we reached the suburb'), leaving the paragraph to run from the farce-count description to 'Though they spoke French quickly'.",
+      "status": "accepted",
+      "writer_comment": "Cut this sentence. The dialogue that follows makes it obvious."
+    }
+  ]
+}

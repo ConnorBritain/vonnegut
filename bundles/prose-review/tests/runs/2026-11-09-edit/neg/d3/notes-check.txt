@@ -1,0 +1,3 @@
+notes-check: clean — 1 accepted, 0 declined, 0 deferred, 0 proposed
+  exported 1 plan entries
+exit 0

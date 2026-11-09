@@ -1,0 +1,32 @@
+{
+  "schema": "notes-check/1",
+  "valid": true,
+  "draft_changed": false,
+  "units": 4,
+  "located": [
+    {
+      "note": "N1",
+      "line": 14
+    },
+    {
+      "note": "N2",
+      "line": 29
+    },
+    {
+      "note": "N3",
+      "line": 30
+    }
+  ],
+  "problems": [],
+  "unvisited": [],
+  "proposed": [],
+  "finished": true,
+  "finished_problems": [],
+  "counts": {
+    "accepted": 2,
+    "declined": 1,
+    "deferred": 0,
+    "proposed": 0
+  },
+  "ok": true
+}

@@ -28,6 +28,14 @@ it is not yet in their hands.
   thesis invented. No quote needed fixing, and nothing was saved without a yes.
   The store refused a null angle audience that the check accepts, and 4 of 6
   draws saved a placeholder instead. No prompt edited; follow-up.
+- **Measured** the `prose-edit` skill (prose-review): first run,
+  `tests/runs/2026-11-09-edit`, sectioned draft (structure CLEAN, skeptical-cto
+  REVISE) and an all-CLEAN leave-one-out essay × 3 draws.
+  - `notes-check: clean` on all six.
+  - Positive met 3/3, with each consolidated note in exactly one unit.
+  - Negative met 3/3, with no notes but the writer's.
+  - No session critique entered a ledger. 4 of 6 draws named passages when
+    routing a "what do you think?" to an unrun critic.
 - **Measured** drafting from an approved outline (prose-author `prose-draft`):
   first end-to-end run, `tests/runs/2026-11-09-outline-draft`, approved and
   open outline × 3 draws, preference-only identity.
