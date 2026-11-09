@@ -103,6 +103,11 @@ Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-trans
   names, whitespace the only normalisation (exact, misplaced, drifted, absent),
   and every scan segment must be used, left out or listed as unused. Five
   fixtures, each naming exactly its planted problem.
+- **Added** the `prose-brainstorm` skill (`SKILL.md`, `meta.yaml`, kind planner):
+  scan, propose 3–5 angles that quote what they rest on, check before showing,
+  save only on approval. `angles-check --expect concrete|underspecified` makes
+  the skill's two promises mechanical; positive and negative example proposals
+  and a skill-harness entry, recorded as not run.
 
 ### [0.1.1] — definition-pattern fixes in the shared text-index
 

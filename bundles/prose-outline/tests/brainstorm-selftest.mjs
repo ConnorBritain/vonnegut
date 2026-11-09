@@ -188,6 +188,31 @@ try {
   check("CLI: exit 0 on the clean proposal, 1 on each planted problem, 2 on bad usage",
     acli("clean").status === 0 && ["drifted", "misplaced", "absent", "unaccounted"].every((n) => acli(n).status === 1) && spawnSync(process.execPath, [ACLI], { encoding: "utf8" }).status === 2);
   }
+
+  /* ---------------------------------------------------------------- */
+  group("prose-brainstorm skill — SKILL.md, meta.yaml, and the two promises, mechanically");
+  {
+    const text = readFileSync(join(BRAINSTORM, "SKILL.md"), "utf8");
+    const meta = readFileSync(join(BRAINSTORM, "meta.yaml"), "utf8");
+    check("SKILL.md has frontmatter with name and a trigger-first description", /^---\nname: prose-brainstorm\ndescription: This skill should be used when/.test(text));
+    check("SKILL.md calls its tools by relative path, never ${CLAUDE_PLUGIN_ROOT}", !text.includes("CLAUDE_PLUGIN_ROOT") && ["transcript-scan", "angles-check", "brief-store"].every((t) => text.includes(`node tools/${t}.mjs`)));
+    check("SKILL.md says to check before showing, save only on approval, and never invent a thesis",
+      /Check before showing/.test(text) && /--approved/.test(text) && /not an invented thesis/.test(text) && /Never pick the first/.test(text));
+    check("meta.yaml: a planner skill in prose-outline that writes only the brief store", /^kind: planner$/m.test(meta) && /^surface: skill$/m.test(meta) && /writes: project-brief-store/.test(meta) && /^bundle: prose-outline$/m.test(meta));
+    const ac = await import(pathToFileURL(join(BRAINSTORM, "tools", "angles-check.mjs")).href);
+    const ANGLES = join(HERE, "fixtures", "angles");
+    const load = (n) => JSON.parse(readFileSync(join(ANGLES, `${n}.json`), "utf8"));
+    const monoScan = ts.scanTranscript(read("monologue.txt")), ramScan = ts.scanTranscript(read("rambling.txt"));
+    const expectOn = (n, clean, scan, expect) => { try { return ac.checkAngles(load(n), clean, { scan, expect }); } catch (e) { return { crashed: e.message }; } };
+    const pos = expectOn("clean", cleanOf("monologue.txt"), monoScan, "concrete");
+    const neg = expectOn("rambling", cleanOf("rambling.txt"), ramScan, "underspecified");
+    check("positive: the monologue example keeps the concrete promise and passes", pos.ok === true && pos.expectation?.findings.length === 0);
+    check("negative: the rambling example keeps the underspecified promise and passes", neg.ok === true && neg.expectation?.findings.length === 0);
+    const inverted = expectOn("clean", cleanOf("monologue.txt"), monoScan, "underspecified");
+    check("the checker refuses theses on thin material — run the concrete example as if it were thin", inverted.ok === false && /invented thesis/.test(inverted.expectation?.findings.join(" ") ?? ""));
+    const thin = expectOn("rambling", cleanOf("rambling.txt"), ramScan, "concrete");
+    check("and refuses too few angles with no thesis on concrete material", thin.ok === false && thin.expectation?.findings.length === 2);
+  }
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }

@@ -92,7 +92,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] H1 — `transcript-scan.mjs` + transcript fixtures + expected JSON
 - [x] H2 — `project-brief/1` schema + `brief-store.mjs` + `registry-stores.md` gains `brief`; shared-lib copies pinned
 - [x] H3 — `angles-check.mjs` + fixtures
-- [ ] H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative)
+- [x] H4 — `prose-brainstorm` SKILL.md + meta.yaml + skill harness entry (positive and negative)
 - [ ] H5 — mutations in a `brainstorm` suite; PROTOCOL/README/AGENTS/DESIGN
 - [ ] H6 — prose-outline minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
 

@@ -46,3 +46,38 @@ run, never as passed.
 Whether the claims are the right claims, or in the right order. That has no
 ground truth without a reader, and the structure critic (item B) reads the scan
 in a clean context for exactly that reason.
+
+# Testing the prose-brainstorm skill
+
+The skill makes the same kind of promise as the outline skill, and the same
+script that checks its quotes checks the promise: `angles-check --expect`.
+
+| | transcript | the promise | checked by |
+|---|---|---|---|
+| positive | [`fixtures/transcripts/monologue.txt`](fixtures/transcripts/monologue.txt) | at least three angles, at least one with a thesis; every quote exact; every segment accounted for | `angles-check --scan --expect concrete` |
+| negative | [`fixtures/transcripts/rambling.txt`](fixtures/transcripts/rambling.txt) | no thesis on any angle, open questions saying what is missing; nothing invented | `angles-check --scan --expect underspecified` |
+
+The negative test is the one that matters. Rambling material tempts a
+brainstormer to supply the point the writer has not found yet, and that point
+is the writer's to find. The example proposals in
+[`fixtures/angles/`](fixtures/angles/) (`clean.json` for the monologue,
+`rambling.json` for the ramble) show the promises kept, and the selftest runs
+the checker over them in both directions. They are not model output.
+
+## Running the skill
+
+From a session with the bundle installed, for each transcript:
+
+1. Give the skill the transcript file and nothing else.
+2. Save its `angles.json`, the cleaned text and the scan JSON under
+   `tests/runs/<date>-brainstorm/<transcript>/`, with the transcript of the
+   session beside them as `session.md`.
+3. Run `node skills/prose-brainstorm/tools/angles-check.mjs angles.json clean.txt --scan scan.json --expect <concrete|underspecified> --json`
+   and keep the output as `check.json`.
+4. Record in the run's `README.md`: the checker's result per transcript, whether
+   any quote had to be fixed before showing, and whether the skill tried to save
+   or cache without a yes (it must not).
+
+**Status: not run.** No model run of this skill has been dispatched; the
+checker and the example proposals are the evidence until one is, and an
+undispatched run is recorded as not run, never as passed.

@@ -21,6 +21,7 @@ export const TRANSCRIPT_CASES = [
   { name: "talk.vtt", format: "vtt", status: "measured" },
   { name: "interview.txt", format: "speaker-labelled", status: "measured" },
   { name: "otter.txt", format: "speaker-labelled", status: "measured" },
+  { name: "rambling.txt", format: "plain", status: "measured" },
   { name: "fragment.txt", format: "plain", status: "not-evaluated" },
 ];
 

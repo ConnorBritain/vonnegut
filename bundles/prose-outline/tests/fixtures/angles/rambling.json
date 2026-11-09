@@ -1,0 +1,42 @@
+{
+  "angles": [
+    {
+      "id": "a1",
+      "title": "A morning walk, before it has a point",
+      "thesis": null,
+      "audience": "unknown \u2014 the writer has not said",
+      "shape": "letter",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 3,
+          "quote": "It was about mornings, I think, or maybe about the walk."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "What is the walk evidence of \u2014 a routine, a mood, a place?",
+        "Who would read this, and what should they come away with?"
+      ]
+    },
+    {
+      "id": "a2",
+      "title": "Writing about the city",
+      "thesis": null,
+      "audience": "unknown \u2014 the writer has not said",
+      "shape": "letter",
+      "uses": [
+        {
+          "segment": "s2",
+          "line": 5,
+          "quote": "My sister says I should write about the city more, but I don't know which part of the city."
+        }
+      ],
+      "leaves_out": [],
+      "open_questions": [
+        "Which part of the city, and why that part?"
+      ]
+    }
+  ],
+  "unused_segments": []
+}

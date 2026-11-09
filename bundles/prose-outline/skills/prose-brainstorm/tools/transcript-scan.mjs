@@ -30,7 +30,7 @@ export const MIN_SEGMENT = 8;
 export const FILLERS = Object.freeze(["um", "uh", "you know", "like", "i mean"]);
 /** Words of spoken rhythm that carry no topic; kept out of top terms and recurring terms, never out of the text. */
 export const SPEECH_STOP = Object.freeze(new Set(("about actually back basically down get got gonna have honestly just kind know like maybe mean okay "
-  + "pretty probably really could did does would right said say says sort stuff thing things think thought want yeah yes").split(" ")));
+  + "pretty probably really could did does would don't can't didn't doesn't isn't it's that's i'm i've i'll won't right said say says sort stuff thing things think thought want yeah yes").split(" ")));
 export const LIMITS = Object.freeze([
   "Topic segments are a heuristic: a lexical-cohesion dip (TextTiling) over windows of 6 sentences, cut at mean − sd/2 of the depth scores, no segment under 8 sentences. It can split one long thought or merge two short ones.",
   "Sentence boundaries are the shared English splitter; unpunctuated speech-to-text output yields long 'sentences' and fewer segments.",
