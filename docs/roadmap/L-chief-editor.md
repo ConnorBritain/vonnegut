@@ -1,7 +1,9 @@
 # L. Chief-editor reading pass
 
-Status: **planned** (mirror of [`ROADMAP.md`](../ROADMAP.md); deliverables in
-[`STATUS.md`](STATUS.md)). End-to-end context: [`docs/workflow.md`](../workflow.md).
+Status: **shipped** as prose-review 0.8.0 (mirror of [`ROADMAP.md`](../ROADMAP.md);
+deliverables in [`STATUS.md`](STATUS.md)). **Historical planning record.** The
+durable rationale now lives in `bundles/prose-review/DESIGN.md`, `PROTOCOL.md`
+(step 3a) and `RELEASE-v0.8.0.md`. End-to-end context: [`docs/workflow.md`](../workflow.md).
 
 ## 1. Goal and non-goals
 

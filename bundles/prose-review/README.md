@@ -4,7 +4,7 @@ Three read-only critics and one revising transformer for prose. Every rewrite
 this bundle produces goes through the fidelity gate before it reaches the
 author.
 
-**Status: v0.7 — five critics and a reviser; the medium and reader critics are conditional.**
+**Status: v0.8 — five critics, a reviser and the editor's reading pass; the medium and reader critics are conditional.**
 
 - `prose-voice-critic`: does this draft sound like the person it is supposed to
   be by, judged against their own corpus.

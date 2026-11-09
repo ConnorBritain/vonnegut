@@ -54,7 +54,7 @@ for how a session picks up from here.
 | 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | shipped |
 | 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | shipped |
 | 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | shipped |
-| 4 | [L. Chief-editor reading pass](#l-chief-editor-reading-pass) | `prose-review` | [L-chief-editor.md](roadmap/L-chief-editor.md) | in-progress |
+| 4 | [L. Chief-editor reading pass](#l-chief-editor-reading-pass) | `prose-review` | [L-chief-editor.md](roadmap/L-chief-editor.md) | shipped |
 
 Status values: `planned` | `in-progress` | `shipped`. Sequence 1 items are built
 together because A and C share one text-index module and B consumes A's scan.
@@ -513,4 +513,4 @@ notes-check names an out-of-unit quote, an unreasoned skip and a declined note
 in the export; skill negative test — an all-CLEAN review yields no notes but
 the writer's; mutations green.
 
-**Status.** in-progress
+**Status.** shipped

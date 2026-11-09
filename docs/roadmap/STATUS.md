@@ -19,7 +19,7 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 | prose-bible | 0.1.0 |
 | prose-outline | 0.4.0 |
 | prose-research | 0.1.0 |
-| prose-review | 0.7.0 |
+| prose-review | 0.8.0 |
 | prose-tell-scan | 0.1.1 |
 
 ## Deliverables
@@ -118,10 +118,10 @@ release; it does not make the edit meaningful, which is the reviewer's job.
 - [x] K3 — prose-draft SKILL.md path + `references/outline-handoff.md`; PROTOCOL.md; mutations; end-to-end run recorded
 - [x] K4 — prose-author minor bump, RELEASE notes, CHANGELOG, version pin above, README, ROADMAP status → shipped
 
-### L. Chief-editor reading pass — in-progress
+### L. Chief-editor reading pass — shipped
 
 - [x] L1 — `section-split.mjs` + fixtures
 - [x] L2 — `edit-notes/1` + `notes-check.mjs` + export + fixtures
 - [x] L3 — `prose-edit` SKILL.md + meta.yaml; PROTOCOL.md step 3a; README/AGENTS/DESIGN; skill harness entry
 - [x] L4 — mutations
-- [ ] L5 — prose-review minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped
+- [x] L5 — prose-review minor bump, RELEASE notes, CHANGELOG, version pin above, ROADMAP status → shipped

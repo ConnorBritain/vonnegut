@@ -25,13 +25,13 @@ detector outcomes. Example facts are not automatically facts about you.
 | Bundle | Version | Purpose |
 |---|---|---|
 | [prose-author](bundles/prose-author/) | 0.10.0 | Drafting (from a brief or an approved outline), profiles, persistent preferences, opt-in history, corpus intake, repurposing |
-| [prose-review](bundles/prose-review/) | 0.7.0 | Voice, fidelity (provenance-aware), structure, medium and reader-persona critics, plus a plan-based reviser |
+| [prose-review](bundles/prose-review/) | 0.8.0 | Voice, fidelity (provenance-aware), structure, medium and reader-persona critics, a chief editor's reading pass, plus a plan-based reviser |
 | [prose-tell-scan](bundles/prose-tell-scan/) | 0.1.1 | Deterministic prose measurements and report-only signals |
 | [prose-outline](bundles/prose-outline/) | 0.4.0 | Brainstormed angles from a voice-memo transcript, an interview that settles the brief, outlines from a brief or candidate outlines in different shapes, a draft's implied outline, diffs, per-project persistence |
 | [prose-bible](bundles/prose-bible/) | 0.1.0 | Cross-file continuity index, per-project bible, and a critic that cites two places or nothing |
 | [prose-research](bundles/prose-research/) | 0.1.0 | Sources pinned by sha, a dossier and claims ledger, quote / link / coverage checks, provenance for the fidelity critic |
 
-Install all six for the complete writing workflow. Eleven agents and ten
+Install all six for the complete writing workflow. Eleven agents and eleven
 skills ship; the experimental `prose-pattern-critic` source remains held.
 
 ## Install
@@ -50,7 +50,7 @@ node install-prose-codex.mjs --check
 
 This installs the local checkout's six plugins and eleven custom agents. Keep
 the checkout at that path. Start a new session, then ask for `$prose-draft`,
-`$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, `$tell-scan`, `$prose-brainstorm`, `$prose-interview`, `$prose-outline`, `$prose-bible` or `$prose-research`.
+`$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, `$tell-scan`, `$prose-brainstorm`, `$prose-interview`, `$prose-outline`, `$prose-bible`, `$prose-research` or `$prose-edit`.
 
 ### Claude Code
 
@@ -64,7 +64,7 @@ the checkout at that path. Start a new session, then ask for `$prose-draft`,
 /plugin install prose-research@vonnegut
 ```
 
-Restart the session and ask for `prose-draft`, `prose-style-tune`, `prose-brainstorm`, `prose-interview`, `prose-outline`, `prose-bible` or `prose-research`.
+Restart the session and ask for `prose-draft`, `prose-style-tune`, `prose-brainstorm`, `prose-interview`, `prose-outline`, `prose-bible`, `prose-research` or `prose-edit`.
 For loose files, clone the repo and run `./install.sh` (Windows: `./install.ps1`).
 Use `--project` (`-Project` on Windows) to install into the current project.
 

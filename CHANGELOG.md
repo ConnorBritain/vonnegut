@@ -246,9 +246,10 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md)
 
 ## prose-review
 
-### [0.8.0] — in progress: the chief editor's reading pass
+### [0.8.0] — the chief editor's reading pass
 
-Roadmap item L ([`docs/roadmap/L-chief-editor.md`](docs/roadmap/L-chief-editor.md)).
+Roadmap item L ([`docs/roadmap/L-chief-editor.md`](docs/roadmap/L-chief-editor.md));
+release notes in [`RELEASE-v0.8.0.md`](bundles/prose-review/RELEASE-v0.8.0.md).
 
 - **Added** the `prose-edit` skill (reviewer, read-only on the draft), the
   bundle's first: `section-split.mjs` (reading units with text-derived ids) and
