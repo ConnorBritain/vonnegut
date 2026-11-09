@@ -1,0 +1,89 @@
+{
+  "schema": "transcript-scan/1",
+  "source_digest": "ec26624d85782547f9a2b2174f197a914f7f86c919c28d7995b5608bb5128778",
+  "format": "speaker-labelled",
+  "words": 159,
+  "clean": {
+    "digest": "497881f854952fa993137d63740dcbda056037b839fb28afe80c540bd37c6fb2",
+    "lines": 15
+  },
+  "turns": [
+    {
+      "speaker": "Connor",
+      "line": 1,
+      "words": 33
+    },
+    {
+      "speaker": "Priya",
+      "line": 4,
+      "words": 25
+    },
+    {
+      "speaker": "Connor",
+      "line": 7,
+      "words": 28
+    },
+    {
+      "speaker": "Priya",
+      "line": 10,
+      "words": 20
+    },
+    {
+      "speaker": "Connor",
+      "line": 13,
+      "words": 53
+    }
+  ],
+  "segments": [
+    {
+      "id": "s1",
+      "start_line": 1,
+      "end_line": 15,
+      "sentences": 14,
+      "words": 159,
+      "top_terms": [
+        "notes",
+        "because",
+        "job",
+        "log",
+        "month"
+      ]
+    }
+  ],
+  "recurring_terms": [
+    {
+      "term": "notes",
+      "count": 3,
+      "lines": [
+        1,
+        4,
+        7
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "line": 10,
+      "text": "That's the same idea as the decision log your team tried last year, isn't it?"
+    },
+    {
+      "line": 11,
+      "text": "Why did that one die?"
+    }
+  ],
+  "fillers": {
+    "um": 0,
+    "uh": 0,
+    "you know": 0,
+    "like": 0,
+    "i mean": 0
+  },
+  "limits": [
+    "Topic segments are a heuristic: a lexical-cohesion dip (TextTiling) over windows of 6 sentences, cut at mean − sd/2 of the depth scores, no segment under 8 sentences. It can split one long thought or merge two short ones.",
+    "Sentence boundaries are the shared English splitter; unpunctuated speech-to-text output yields long 'sentences' and fewer segments.",
+    "Speakers are taken from labels only; an unlabelled transcript is one speaker (S1). No diarisation is attempted.",
+    "Fillers are counted from a fixed list; 'like' is counted wherever it appears, including as a verb.",
+    "Recurring terms are capitalised runs seen twice or more plus lower-case content words seen three times or more; neither is a judgement of importance."
+  ],
+  "status": "measured"
+}

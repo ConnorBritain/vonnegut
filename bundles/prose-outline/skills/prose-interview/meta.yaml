@@ -1,0 +1,67 @@
+# Metadata for the prose-interview skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". A skill
+# renders once; its portable form is the bundle's AGENTS.md. This file exists
+# because the contract and an honest per-harness enforcement label are not
+# optional for any surface.
+
+name: prose-interview
+kind: planner
+surface: skill
+bundle: prose-outline
+
+# Why planner: it decomposes "what is this piece?" into a fixed tree of
+# decisions whose completion is checkable (brief-check's `done`), and it
+# surfaces every ambiguity as a question to the writer instead of resolving it.
+# Its recommendations are proposals; only the writer's yes records one.
+
+contract:
+  read_only: false          # it writes ONE thing: brief revisions with the writer's answers, on approval
+  writes: project-brief-store
+  clean_context: false      # an interview, not an adversarial review
+  scope: brief-sources-and-supplied-sibling-reads
+  deterministic: partial    # next question, staleness, done and evidence checks are scripts; the questions' wording is not
+  verdict: null
+
+  denied_inputs:
+    - the tell catalog, in any form
+    - another bundle's store, opened directly (sibling data arrives as read output the session supplies)
+    - another identity's briefs
+
+  refuses:
+    - Asking more than one question at a time
+    - Recording a recommendation, or an answer found in a source, as confirmed without the writer's yes
+    - Declaring the interview finished while brief-check says it is not
+    - Checking an assumption from memory — prose-research owns that
+    - Saving without the user's approval
+    - Picking an identity when the registry has several and no default
+    - Outlining or drafting — prose-outline and prose-draft own those
+    - Stating or implying who or what wrote the writer's material
+
+  tools:
+    - tools/brief-check.mjs         # next, stale, blocked, evidence, done
+    - tools/brief-store.mjs         # approval-gated; `decide` stamps each answer's revision
+    - tools/transcript-scan.mjs     # the same cleaner the brainstorm uses, for a transcript handed straight here
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Dispatcher-triggered from the description. The tree, staleness and done
+      are computed by a script and the approval gate is a flag the script
+      honours; one-question-at-a-time and confirming before recording are
+      prompt rules, not harness guarantees.
+  cursor:
+    enforcement: partial
+    notes: >-
+      Scripts and store behave identically. Skill dispatch is absent; invoke by name.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same. Use the bundle's AGENTS.md block so the model takes `next` from
+      brief-check instead of choosing its own questions.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      The scripts port intact; the interviewing rules are prose. brief-check
+      turns "are we done?" into a check; run it every turn.

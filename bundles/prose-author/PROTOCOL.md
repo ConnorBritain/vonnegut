@@ -115,6 +115,22 @@ preference is touched, and no profile is refreshed as a side effect — offer th
 existing refresh path afterwards. Without `prose-tell-scan`, intake still works
 and calibration is reported unavailable.
 
+## Drafting from an outline (v0.10)
+
+An approved outline becomes a job through `outline-job.mjs`, not through a
+model's summary of it: the length band becomes a word-limit rule, sections in
+reading order become facts with their part and word budget, filled evidence
+becomes facts, the brief's confirmed audience, purpose and form become the
+context, and must-include and exclude items become semantic rules. Every fact
+and rule points back at the node or decision it came from. Open questions, a
+withheld thesis, or a required decision the interview left open, skipped,
+unconfirmed or stale stop the job by name; `--allow-open` carries open
+questions forward as explicit "leave unresolved" rules. The receipt names the
+outline project, revision and digest. After delivery, with `prose-review`
+installed, offer the structure critic in intended-outline mode with the same
+outline, so the draft is checked against the plan it was written from. The
+contract with prose-outline is [`docs/contracts/outline-handoff.md`](../../docs/contracts/outline-handoff.md).
+
 ## Repurposing (v0.9)
 
 One finished piece becomes other forms through the `prose-repurpose` skill and

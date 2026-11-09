@@ -17,6 +17,11 @@ it is not yet in their hands.
 
 ## Unreleased
 
+- **Planned** roadmap sequence 4, the idea-to-draft workflow: transcript intake
+  and brainstorm (H), interview (I), outline baselines (J), outline → draft
+  handoff (K) and a chief-editor reading pass (L), with one spec each under
+  `docs/roadmap/` and the end-to-end path in [`docs/workflow.md`](docs/workflow.md).
+  No bundle version changes.
 - **Measured** the `prose-research` skill: first run,
   `tests/runs/2026-11-09-skill`, positive and negative × 3 draws. Positive met
   3/3 against `claims-check` over the skill's own maps. Negative behaviour met
@@ -122,6 +127,74 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-bible/RELEASE-v0.1.0.md).
 
 ## prose-outline
 
+### [0.4.0] — outline baselines
+
+Roadmap item J ([`docs/roadmap/J-outline-baselines.md`](docs/roadmap/J-outline-baselines.md));
+release notes in [`RELEASE-v0.4.0.md`](bundles/prose-outline/RELEASE-v0.4.0.md).
+
+- **Added** six shapes as data under `skills/prose-outline/shapes/` (argument
+  essay, narrative arc, problem–solution, Q&A, numbered lessons, letter) and
+  `shape-check.mjs`; `voice-outline/1` gains optional, validated-when-present
+  `length`, `shape`, `brief_ref` and per-node `part`, `words`, `covers`;
+  `proposal-check` gains `--shape` (required parts, order, mode), the budget sum
+  against the band, and `--brief-json` (must-include coverage, the brief's band),
+  with part shares outside their ranges as signals; `outline-compare.mjs`
+  tabulates candidates with no score. Candidate mode in SKILL.md; four mutations
+  in a `baselines` suite; harness entry recorded as not run.
+
+### [0.3.0] — the interview
+
+Roadmap item I ([`docs/roadmap/I-interview.md`](docs/roadmap/I-interview.md));
+release notes in [`RELEASE-v0.3.0.md`](bundles/prose-outline/RELEASE-v0.3.0.md).
+
+- **Added** `skills/prose-interview/tools/lib/decisions.mjs` (the decision tree
+  as data, with decision and link validators) and `brief-check.mjs`: the next
+  question in dependency order, transitive staleness when an answer changes,
+  skipped questions that block, transcript and summary evidence re-verified,
+  and `done`. Seven hand-built briefs with expected output.
+- **Changed** quote verification moves to `lib/quote.mjs`, shared byte-for-byte
+  by angles-check and brief-check.
+- **Added** the `prose-interview` skill (`SKILL.md`, `meta.yaml`, kind planner):
+  one question at a time with a recommended answer, answers looked up in the
+  writer's own material before asking and confirmed before recording, done only
+  when brief-check says so. `brief-store decide` merges each approved batch of
+  answers and stamps it with the revision it writes; the store validates
+  decisions and links in both skills' byte-identical copies. Skill-harness
+  entry, recorded as not run.
+- **Added** four mutations in the `brainstorm` suite (an unconfirmed answer
+  counted as settled, staleness removed, a found answer without evidence, a
+  question asked before its dependencies), each caught. README, PROTOCOL
+  (step ½), AGENTS and DESIGN updated.
+
+### [0.2.0] — transcript intake and brainstorm
+
+Roadmap item H ([`docs/roadmap/H-transcript-brainstorm.md`](docs/roadmap/H-transcript-brainstorm.md));
+release notes in [`RELEASE-v0.2.0.md`](bundles/prose-outline/RELEASE-v0.2.0.md).
+
+- **Added** `skills/prose-brainstorm/tools/transcript-scan.mjs`: SRT, WebVTT,
+  speaker-labelled (inline or Otter-style headers) and plain transcripts cleaned
+  without losing line numbers or the speaker's words; words, turns, recurring
+  terms, questions, fillers and topic-shift segments, all labelled heuristic
+  where they are. Six fixtures with expected JSON; `tests/brainstorm-selftest.mjs`.
+- **Added** `project-brief/1` (`lib/brief-schema.mjs`, `references/brief-schema.md`)
+  and `brief-store.mjs`: a new `brief` store under the registry, approval-gated
+  (the cached source text included), stale-revision refusal, undo; transcripts
+  are cached as their cleaned text. `revision-store.mjs` accepts the `brief` store
+  name in every byte-identical copy.
+- **Added** `angles-check.mjs`: every quoted passage must start on the line it
+  names, whitespace the only normalisation (exact, misplaced, drifted, absent),
+  and every scan segment must be used, left out or listed as unused. Five
+  fixtures, each naming exactly its planted problem.
+- **Added** the `prose-brainstorm` skill (`SKILL.md`, `meta.yaml`, kind planner):
+  scan, propose 3–5 angles that quote what they rest on, check before showing,
+  save only on approval. `angles-check --expect concrete|underspecified` makes
+  the skill's two promises mechanical; positive and negative example proposals
+  and a skill-harness entry, recorded as not run.
+- **Added** five mutations in a `brainstorm` suite (a case-changed quote, an
+  unaccounted segment, an invented thesis on thin material, a cache written
+  without approval, SRT cue numbers kept), each caught. README, PROTOCOL
+  (step 0), AGENTS (portable block) and DESIGN updated.
+
 ### [0.1.1] — definition-pattern fixes in the shared text-index
 
 Release notes in [`RELEASE-v0.1.1.md`](bundles/prose-outline/RELEASE-v0.1.1.md).
@@ -215,6 +288,19 @@ release notes in [`RELEASE-v0.1.0.md`](bundles/prose-research/RELEASE-v0.1.0.md)
 
 ## prose-review
 
+### [0.8.0] — the chief editor's reading pass
+
+Roadmap item L ([`docs/roadmap/L-chief-editor.md`](docs/roadmap/L-chief-editor.md));
+release notes in [`RELEASE-v0.8.0.md`](bundles/prose-review/RELEASE-v0.8.0.md).
+
+- **Added** the `prose-edit` skill (reviewer, read-only on the draft), the
+  bundle's first: `section-split.mjs` (reading units with text-derived ids) and
+  `notes-check.mjs` over an `edit-notes/1` ledger — every note placed by its
+  quote inside its unit, every unit read or skipped with a reason, nothing left
+  proposed, and an export of exactly the accepted notes as PLAN-FORMAT entries.
+  PROTOCOL step 3a. The session adds no finding and re-runs no critic per
+  section. Four mutations in an `edit` suite.
+
 ### [0.7.0] — one prompt, many readers
 
 Roadmap item G; release notes in [`RELEASE-v0.7.0.md`](bundles/prose-review/RELEASE-v0.7.0.md).
@@ -307,6 +393,22 @@ deliverables land one at a time against [`docs/roadmap/STATUS.md`](docs/roadmap/
 ---
 
 ## prose-author
+
+### [0.10.0] — drafting from an outline
+
+Roadmap item K ([`docs/roadmap/K-outline-handoff.md`](docs/roadmap/K-outline-handoff.md));
+release notes in [`RELEASE-v0.10.0.md`](bundles/prose-author/RELEASE-v0.10.0.md).
+
+- **Added** `skills/prose-draft/tools/outline-job.mjs` and `lib/outline-handoff.mjs`
+  (a port of prose-outline's read side, pinned by a parity test):
+  an approved outline and brief become a `prose-writing-job/1` mechanically —
+  length band as a word-limit rule, sections as ordered facts, filled evidence
+  as facts, confirmed decisions as context, must-include and exclude as semantic
+  rules — with every fact and rule traced in `job.handoff`. Open questions, a
+  withheld thesis and unsettled decisions are refused by name; `--allow-open`
+  carries open questions forward as explicit rules. The receipt names the
+  outline. Contract: [`docs/contracts/outline-handoff.md`](docs/contracts/outline-handoff.md).
+  Four mutations; PROTOCOL "Drafting from an outline (v0.10)".
 
 ### [0.9.0] — one piece, many forms
 

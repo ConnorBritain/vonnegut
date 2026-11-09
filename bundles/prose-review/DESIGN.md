@@ -183,6 +183,15 @@ sentence kept and the substance critic wants it cut, that tension *is* the
 finding. A consolidator that silently picks one has destroyed the most useful
 thing on the page.
 
+The editor's reading pass (`prose-edit`, PROTOCOL step 3a) is the same rule
+applied to reading. It was asked for as a "chief editor", and it could have
+been an agent that reads the draft and the critics and delivers an editorial
+judgement — which is a consolidator with opinions, the thing this section
+exists to prevent. It ships instead as a skill that presents what the critics
+found, section by section, and records the writer's calls. The session is not a
+note source and the ledger refuses one. Critics are not re-run per section,
+because their bounds were measured on whole drafts.
+
 ---
 
 ## The pile-on problem
@@ -298,6 +307,7 @@ orchestrator makes where it is not.
 - The reviser gets the catalog as a target, in any form, however hinted.
 - Critics ship without being run against the human corpus first.
 - Consolidation resolves disagreements instead of surfacing them.
+- The editor's pass grows opinions of its own, or exports a note the writer did not accept.
 - `CLEAN` is a verdict no critic ever actually returns.
 - The reviser ships before the fidelity check.
 - Findings arrive as an undifferentiated wall, and the author stops reading.

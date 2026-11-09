@@ -1,0 +1,30 @@
+{
+  "angles": [
+    {
+      "id": "a1",
+      "title": "The starter is the bakery",
+      "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+      "audience": "team leads who reward visible output",
+      "shape": "narrative-arc",
+      "uses": [
+        {
+          "segment": "s1",
+          "line": 5,
+          "quote": "If the starter is weak, the loaves come out flat and sour and nobody can fix that at the oven."
+        },
+        {
+          "segment": "s2",
+          "line": 9,
+          "quote": "That was the moment she knew he would be good."
+        }
+      ],
+      "leaves_out": [
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "open_questions": []
+    }
+  ],
+  "unused_segments": []
+}

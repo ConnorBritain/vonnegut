@@ -8,9 +8,12 @@ The useful installation is the bundles together:
 
 - `prose-author` supplies `$prose-draft`, `$prose-style-tune`, `$prose-corpus`, `$prose-repurpose`, and the profile and drafting agents.
 - `prose-tell-scan` supplies the deterministic `$tell-scan` measurement skill.
-- `prose-review` supplies the independent voice and fidelity critics plus the reviser.
-- `prose-outline` supplies `$prose-outline`: outlines from a brief, a draft's implied
-  outline, diffs, and per-project persistence under the shared identity registry.
+- `prose-review` supplies the independent critics, the reviser, and `$prose-edit`, the chief
+  editor's section-by-section reading pass over their notes.
+- `prose-outline` supplies `$prose-brainstorm`, `$prose-interview` and `$prose-outline`:
+  angles and a project brief from a voice-memo transcript, an interview that settles
+  the brief one question at a time, outlines from a brief, a draft's implied outline,
+  diffs, and per-project persistence under the shared identity registry.
 - `prose-bible` supplies `$prose-bible` and the continuity critic: a cross-file index of
   names, terms, dates and repeats, a per-project bible, and contradictions cited two places.
 - `prose-research` supplies `$prose-research`: sources pinned by sha, a dossier and claims
@@ -109,7 +112,7 @@ Or install loose files from a clone:
 
 ```bash
 ./install.sh voice-profile-render voice-draft voice-feedback-interpret voice-rhetoric-measure \
-  prose-draft prose-style-tune prose-corpus prose-repurpose tell-scan prose-outline prose-bible prose-research \
+  prose-draft prose-style-tune prose-corpus prose-repurpose tell-scan prose-brainstorm prose-interview prose-outline prose-bible prose-research prose-edit \
   prose-voice-critic prose-fidelity-critic prose-structure-critic prose-medium-critic prose-reader-critic prose-reviser prose-continuity-critic
 ```
 

@@ -1,0 +1,92 @@
+{
+  "schema": "transcript-scan/1",
+  "source_digest": "69b6e867c216693c5d48e59d9f4a7a11f45af8ef06d15c5e387c00e6261da253",
+  "format": "vtt",
+  "words": 176,
+  "clean": {
+    "digest": "c2c03a441444eed89396c5911357b33626cc1c13b33024ef53af5b6b462afbf2",
+    "lines": 11
+  },
+  "turns": [
+    {
+      "speaker": "Connor",
+      "line": 1,
+      "words": 176
+    }
+  ],
+  "segments": [
+    {
+      "id": "s1",
+      "start_line": 1,
+      "end_line": 11,
+      "sentences": 11,
+      "words": 176,
+      "top_terms": [
+        "roadmap",
+        "customers",
+        "date",
+        "list",
+        "problems"
+      ]
+    }
+  ],
+  "recurring_terms": [
+    {
+      "term": "roadmap",
+      "count": 5,
+      "lines": [
+        2,
+        3,
+        5,
+        6,
+        10
+      ]
+    },
+    {
+      "term": "date",
+      "count": 3,
+      "lines": [
+        8,
+        9
+      ]
+    },
+    {
+      "term": "list",
+      "count": 3,
+      "lines": [
+        10,
+        11
+      ]
+    },
+    {
+      "term": "problems",
+      "count": 3,
+      "lines": [
+        6,
+        7,
+        10
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "line": 6,
+      "text": "What if the public roadmap only listed problems we are working on, not features and dates?"
+    }
+  ],
+  "fillers": {
+    "um": 0,
+    "uh": 0,
+    "you know": 0,
+    "like": 1,
+    "i mean": 0
+  },
+  "limits": [
+    "Topic segments are a heuristic: a lexical-cohesion dip (TextTiling) over windows of 6 sentences, cut at mean − sd/2 of the depth scores, no segment under 8 sentences. It can split one long thought or merge two short ones.",
+    "Sentence boundaries are the shared English splitter; unpunctuated speech-to-text output yields long 'sentences' and fewer segments.",
+    "Speakers are taken from labels only; an unlabelled transcript is one speaker (S1). No diarisation is attempted.",
+    "Fillers are counted from a fixed list; 'like' is counted wherever it appears, including as a verb.",
+    "Recurring terms are capitalised runs seen twice or more plus lower-case content words seen three times or more; neither is a judgement of importance."
+  ],
+  "status": "measured"
+}

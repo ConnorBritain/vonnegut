@@ -1,0 +1,96 @@
+{
+  "mode": "argument",
+  "title": "Feed the starter",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "problem-solution",
+  "length": {
+    "unit": "words",
+    "min": 800,
+    "max": 1100
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "claim",
+      "parent": null,
+      "order": 1,
+      "text": "Teams reward the visible part of the work and starve the part that decides it.",
+      "part": "problem",
+      "words": 200,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "the bakery's first month: no shaping, only feeding"
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "kind": "claim",
+      "parent": null,
+      "order": 2,
+      "text": "The failure happens hours before anyone touches the dough, so nobody sees its cause.",
+      "part": "stakes",
+      "words": 120,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "'You can't rescue bad fermentation with good scoring.'"
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "kind": "claim",
+      "parent": null,
+      "order": 3,
+      "text": "Give new people a month on the starter, and keep the notebook that lets you read the failure back.",
+      "part": "solution",
+      "words": 380,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "the month of feeding; eleven years of notebooks"
+        }
+      ],
+      "covers": [
+        "must_include.0",
+        "must_include.1"
+      ]
+    },
+    {
+      "id": "n4",
+      "kind": "claim",
+      "parent": null,
+      "order": 4,
+      "text": "It looks like hazing to the people doing it.",
+      "part": "objection",
+      "words": 120,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "the early-shift baker who hated the first month"
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "kind": "claim",
+      "parent": null,
+      "order": 5,
+      "text": "The moment you know someone will be good is when they notice the starter.",
+      "part": "close",
+      "words": 110,
+      "evidence": [
+        {
+          "slot": "e1",
+          "filled_by": "adjusting the water on rainy days"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "brief_digest": null,
+    "draft_digest": null
+  }
+}

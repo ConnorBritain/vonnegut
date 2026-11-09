@@ -18,6 +18,14 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | a ledger accepts confidence the writer did not label | 2 | confidence is a label the writer gives; the schema refuses anything else |
 | a ledger may cite a source the dossier does not have | 2 | every ledger claim points at a source the dossier holds |
 | provenance-scan associates an atom with any ledger entry regardless of shared words | 1 | an atom no ledger quote shares 60% of its words with is unledgered, not judged against a stranger's source |
+| notes-check places a note anywhere in the draft, not in its unit | 2 | a note is read beside the section it is about; one filed under the wrong section is named |
+| the editor's export carries declined and deferred notes to the reviser | 3 | only what the writer accepted becomes an edit |
+| notes-check ignores a unit nobody read | 1 | a finished pass has every section read or skipped with a reason |
+| notes-check finishes a pass with notes still proposed | 1 | every note gets the writer's call before the pass ends |
+| outline-job drops open questions silently | 2 | an unresolved question in the plan stops the draft, or is carried forward explicitly; it never vanishes |
+| outline-job forgets the length band | 4 | the outline's length band is a hard word-limit rule in the job |
+| outline-job emits a fact with no source | 8 | every fact in the job traces to a node of the approved outline |
+| outline-job takes unconfirmed answers into the job | 1 | only answers the writer confirmed shape the draft |
 | repurpose-check reports every mechanical constraint as passed | 3 | mechanical constraints are evaluated on the final bytes, never assumed |
 | repurpose-check drops the fidelity listing against the source | 2 | what the compression dropped is listed for the writer whenever the scanner is present |
 | a medium profile with an unknown field loads | 1 | unknown profile fields are refused by name |
@@ -46,6 +54,19 @@ node tests/mutations.mjs --update   # rewrite it from the runs
 | outline schema accepts a withheld thesis with no open question | 1 | an outline with no thesis must say what is missing |
 | proposal-check lets an underspecified brief keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
 | outline schema accepts duplicate node ids | 1 | node ids are unique, or the differ has nothing to key on |
+| angles-check accepts a quote whose case was changed | 1 | a quote is the writer's exact words; case alone is drift |
+| angles-check ignores a segment no angle accounts for | 2 | nothing the writer said is silently dropped: every segment is used, left out or listed as unused |
+| angles-check lets thin material keep an invented thesis | 1 | the skill's negative test is enforced by the checker, not by reading |
+| brief-store caches the transcript without approval | 1 | nothing persistent is written without approval, the cached source text included |
+| transcript-scan keeps SRT cue numbers in the cleaned text | 3 | cleaning removes subtitle scaffolding and nothing the speaker said |
+| brief-check counts an unconfirmed answer as settled | 2 | a recommendation or a found answer is not the writer's until they say yes; the interview is not done without it |
+| brief-check never marks a downstream answer stale | 3 | changing an answer puts everything that depends on it back to the writer |
+| a found answer needs no evidence | 11 | an answer taken from the writer's material carries the quote it came from |
+| brief-check asks a question before its dependencies are settled | 2 | the interview walks the tree in dependency order; a skipped required question blocks what depends on it |
+| proposal-check lets word budgets overshoot the length band | 3 | a candidate's section budgets fit the length the brief settled |
+| proposal-check lets a required part go missing | 1 | a candidate in a shape has every part that shape requires |
+| proposal-check ignores an uncovered must-include item | 3 | everything the writer said must be in the piece has a node that carries it |
+| shape-check accepts required shares that overfill the piece | 2 | a shape's required parts can fit in the piece at their minimum shares |
 | identity accepts a future registry schema | 1 | incompatible registry versions are not silently reinterpreted |
 | identity ignores registry digests | 1 | shared registry revision bytes reproduce their pinned digest |
 | identity overwrites a stale registry revision | 5 | concurrent clients cannot overwrite a newer default or profile selection |

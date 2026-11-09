@@ -1,0 +1,68 @@
+{
+  "mode": "beat-sheet",
+  "title": "The month on the starter",
+  "thesis": "The slow invisible part of the work decides the result, long before anyone sees it.",
+  "shape": "narrative-arc",
+  "length": {
+    "unit": "words",
+    "min": 800,
+    "max": 1100
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "kind": "act",
+      "parent": null,
+      "order": 1,
+      "text": "A neighbour's corner bakery, eleven years of notebooks on a shelf above the ovens.",
+      "part": "setup",
+      "words": 300,
+      "covers": [
+        "must_include.1"
+      ]
+    },
+    {
+      "id": "n2",
+      "kind": "beat",
+      "parent": null,
+      "order": 2,
+      "text": "She says new bakers don't shape a loaf for a month.",
+      "part": "inciting-moment",
+      "words": 150,
+      "covers": [
+        "must_include.0"
+      ]
+    },
+    {
+      "id": "n3",
+      "kind": "beat",
+      "parent": null,
+      "order": 3,
+      "text": "The best baker hated it and called it hazing.",
+      "part": "complication",
+      "words": 500
+    },
+    {
+      "id": "n4",
+      "kind": "turn",
+      "parent": null,
+      "order": 4,
+      "text": "Three weeks in he adjusts the water on rainy days without being told.",
+      "part": "turn",
+      "words": 250
+    },
+    {
+      "id": "n5",
+      "kind": "act",
+      "parent": null,
+      "order": 5,
+      "text": "That is when she knew he would be good.",
+      "part": "resolution",
+      "words": 200
+    }
+  ],
+  "source": {
+    "brief_digest": null,
+    "draft_digest": null
+  }
+}

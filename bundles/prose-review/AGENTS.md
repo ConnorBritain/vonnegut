@@ -134,6 +134,18 @@ Only when the author names a reader ("read this as …"):
 Do not judge voice, structure, fidelity or prose quality. This is one reader's reaction only.
 ```
 
+## Prose edit (the editor's reading pass)
+
+After consolidation, when the writer wants to read the draft with the notes:
+
+1. Split it: `node <path>/skills/prose-edit/tools/section-split.mjs draft.md --json`
+2. Unit by unit, show the text and the consolidated notes whose quote falls in
+   it. Record the writer's call on each (accepted with a change, declined,
+   deferred) and any note of their own, in an `edit-notes/1` ledger. Add NO
+   finding of your own, and do not re-run critics per section.
+3. When they finish: `node <path>/skills/prose-edit/tools/notes-check.mjs edit-notes.json draft.md --export entries.json`,
+   fix what it names, and append the entries to plan.json for the reviser.
+
 ## The one thing worth getting right, per critic
 
 **Voice: rule 4.** A voice finding without evidence of how the author writes
@@ -167,6 +179,7 @@ silence; fidelity resolves to MATERIAL-LOSS. Do not harmonise them.
 | Scan-is-authoritative (fidelity) | prompt + tool | prompt + tool — **survives**, if you run the scan |
 | Scan-is-authoritative and the mode line (structure) | prompt + tool | prompt + tool — **survives**, if you run `outline-scan` and say the mode |
 | Check-is-authoritative (medium) | prompt + tool | prompt + tool — **survives**, if you run `repurpose-check` and paste the profile |
+| Editor's pass: notes placed, every section visited, only accepted notes exported | `notes-check` | `notes-check` — **survives**; "adds no finding of its own" is prompt |
 
 The ones that survive are the ones that matter most, which is the only good news
 in this table. The fidelity row is the best case in the bundle: its load-bearing

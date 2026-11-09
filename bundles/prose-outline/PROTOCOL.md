@@ -4,14 +4,52 @@ How this bundle is meant to be run. Prose, not code — the main session execute
 this; there is no orchestrator.
 
 ```
-  1  brief         the user's request, plus any existing draft
+  0  brainstorm    a transcript or notes → angles → a project brief      (optional; below)
+  ½  interview     settle the brief's decisions, one question at a time  (optional; below)
+  1  brief         the user's request or the saved brief, plus any existing draft
   2  scan          outline-scan on the draft, if there is one    (deterministic)
   3  propose       voice-outline/1: thesis · claims · evidence slots · open questions
                    (beat-sheet mode: premise · acts · beats · turns)
+                   — or, from a brief, 2–3 candidates in different shapes, each
+                   checked (proposal-check --shape --brief-json) and compared
+                   (outline-compare); the writer picks one
   4  approve       the user reads it; nothing is saved until they say so
   5  save          outline-store … --approved → identity / project / revision receipt
   6  diff          on a later revision, outline-diff old new; show the JSON's findings
 ```
+
+## Step 0 — brainstorm, when the material is spoken
+
+```
+  0a  scan       transcript-scan → cleaned text with stable lines      (deterministic)
+  0b  propose    3–5 angles, each quoting the passages it rests on
+  0c  check      angles-check: quotes verbatim at their line, every segment accounted for
+  0d  approve    the writer reads the angles; nothing is saved until they say so
+  0e  save       brief-store add-source (the cleaned transcript), then save --approved
+```
+
+Every line number refers to the cleaned text. A quote is the writer's exact
+words; `drifted` means the session changed them and must fix it before showing.
+Thin material yields angles with a null thesis and open questions. The skill
+never chooses the angle and never starts the outline itself: it names the next
+step — the interview, or step 1.
+
+## Step ½ — interview, to settle what the piece is
+
+```
+  ½a  check      brief-check → next question, stale answers, done        (deterministic)
+  ½b  look up    the transcript, summary, angles, this project's outline, sibling read output
+  ½c  ask        one question with a recommended answer — or confirm a found one
+  ½d  approve    the writer answers; brief-store decide --approved stamps the batch
+```
+
+The tree is fixed (`references/decisions.md`); brief-check walks it in
+dependency order and marks downstream answers stale when an upstream one
+changes. A found answer carries its quote and stays unconfirmed until the
+writer's yes; "your call" is recorded as the recommendation, never as the
+writer's words. The interview is done when brief-check says so, not before.
+Sibling material (the bible, the research ledger, the corpus) arrives as read
+output the session supplies; the skill never opens another bundle's store.
 
 ## Step 2 — scan first, and read the JSON
 
@@ -27,6 +65,15 @@ measure.
 The skill is a planner. An underspecified brief yields open questions; a claim
 with no evidence gets an empty slot, not an invented citation. The proposal is
 written to a task-local file and shown whole.
+
+## Step 3, candidate mode — the writer chooses the shape
+
+Shapes are data (`shapes/*.md`). Candidates vary the shape, not only the
+wording; each allocates the brief's length band across its parts and marks the
+must-include items it carries. proposal-check's findings are fixed before a
+candidate is shown; a part outside its share range is a signal to mention, not
+a budget to force. outline-compare tabulates facts with no score, and only the
+writer's pick is saved.
 
 ## Step 4–5 — approval is the gate
 
@@ -47,6 +94,9 @@ missing is *removed*, never guessed to be a rewording.
 
 ## What this session must never do
 
+- Quote the writer in words they did not use, or choose their angle for them.
+- Record a recommendation as the writer's answer, or declare an interview done
+  while brief-check says it is not.
 - Draft prose from the outline here. That is `prose-draft`'s job, with its own
   checks.
 - Judge the argument. `prose-structure-critic` reads this scan in a clean

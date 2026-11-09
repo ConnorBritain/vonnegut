@@ -48,6 +48,54 @@ segmenter, so a cross-implementation fixture asserts its line numbers agree
 with `fidelity-scan.mjs` and `visible-prose.mjs` on shared text — critics must
 never receive locations from tools that disagree.
 
+## The brainstorm is the outline's rules, moved upstream
+
+A transcript is the writer's own words, so the brainstorm's one hard rule is
+the research bundle's: a quote matches the text exactly, whitespace aside, at
+the line it names. Case and punctuation are not "close enough" — the check
+reports them as drift. Line numbers refer to the cleaned transcript, because
+timestamps and cue numbers are scaffolding the writer never said, and that
+cleaned text is what the brief store caches. Coverage is the second rule: every
+topic segment is used, left out or listed as unused, so an angle cannot quietly
+drop the part of the memo that did not fit. Fillers are counted and kept;
+removing them would make quotes unmatchable and edit the writer's speech.
+
+The brief is a new store beside `outlines`, not a field in it: it exists before
+any outline, and several outlines can be proposed from one brief. Both stores
+belong to this bundle, so the outline skill may read the brief; a store owned by
+another bundle is never read directly.
+
+## The interview is a fixed tree, not a conversation
+
+A model choosing what to ask next asks different things in different sessions
+and cannot say when it is finished. The interview's tree is data; brief-check
+takes the first open, unconfirmed or stale decision whose dependencies are
+settled, so the interview walks each branch in dependency order and resumes in
+another session exactly where it stopped. Staleness is derived from each
+answer's `at_revision` and the tree's transitive dependencies, never stored:
+`decide` stamps the revision it writes, and a caller cannot choose the stamp.
+
+The grill-me pattern's one amendment is that the writer's own material is
+searched before the writer is asked. Every found answer still needs a yes,
+so the source proposes and the writer decides. Sibling bundles' material comes
+through their own read tools, so the interview works — with less help — when
+they are absent, and no store is read by a bundle that does not own it.
+
+## Shapes are data, and the comparison has no winner
+
+A shape is a file — ordered parts, which are required, and the share of the
+length each usually takes — so a writer's favourite format is a file they add,
+not a prompt anyone edits. The frontmatter is one line per part rather than
+YAML so the dependency-free parser reads it exactly. Shapes ship inside the
+skill directory so a loose install carries them. Share ranges are starting
+values, not measurements of good writing: an outline outside one gets a signal,
+never a finding. The budget sum against the band, the required parts and the
+must-include coverage are findings, because each is a promise the writer made
+in the brief. outline-compare shows candidates side by side with no score and
+no ordering: which shape suits the idea is the writer's call. The new outline
+fields are optional and additive, so `voice-outline/1` keeps its id and every
+older reader keeps working.
+
 ## What would make this a bad bundle
 
 - The scan grows a "score" or a verdict.
@@ -55,3 +103,8 @@ never receive locations from tools that disagree.
 - An outline is saved without the user having said yes.
 - The differ starts matching by text.
 - A copy of `text-index.mjs` drifts and the check does not notice.
+- The brainstorm paraphrases inside a quote, supplies a thesis the material
+  lacks, or drops a segment without saying so.
+- The comparison grows a score, or the skill saves every candidate instead of the pick.
+- The interview picks its own next question, records a recommendation as the
+  writer's answer, or calls itself finished while the check says otherwise.

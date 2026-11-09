@@ -50,11 +50,18 @@ for how a session picks up from here.
 | 3 | [E. prose-research](#e-prose-research) | `prose-research` (new) | [E-prose-research.md](roadmap/E-prose-research.md) | shipped |
 | 3 | [F. prose-repurpose](#f-prose-repurpose) | `prose-author` (+ `prose-review` for the medium critic) | [F-prose-repurpose.md](roadmap/F-prose-repurpose.md) | shipped |
 | 3 | [G. Reader-persona critics](#g-reader-persona-critics) | `prose-review` | [G-reader-personas.md](roadmap/G-reader-personas.md) | shipped |
+| 4 | [H. Transcript intake and brainstorm](#h-transcript-intake-and-brainstorm) | `prose-outline` | [H-transcript-brainstorm.md](roadmap/H-transcript-brainstorm.md) | shipped |
+| 4 | [I. Interview](#i-interview) | `prose-outline` | [I-interview.md](roadmap/I-interview.md) | shipped |
+| 4 | [J. Outline baselines](#j-outline-baselines) | `prose-outline` | [J-outline-baselines.md](roadmap/J-outline-baselines.md) | shipped |
+| 4 | [K. Outline → draft handoff](#k-outline--draft-handoff) | `prose-author` | [K-outline-handoff.md](roadmap/K-outline-handoff.md) | shipped |
+| 4 | [L. Chief-editor reading pass](#l-chief-editor-reading-pass) | `prose-review` | [L-chief-editor.md](roadmap/L-chief-editor.md) | shipped |
 
 Status values: `planned` | `in-progress` | `shipped`. Sequence 1 items are built
 together because A and C share one text-index module and B consumes A's scan.
 Within a sequence, build in the order listed; across sequences, finish the
-earlier sequence first.
+earlier sequence first. Sequence 4 is the idea-to-draft workflow described
+end to end in [`workflow.md`](workflow.md): each item is usable alone, and
+they are built in the order a piece moves through them.
 
 ---
 
@@ -355,5 +362,155 @@ personas may live beside the project's outline store later, not now.
 leave-one-out over human essays with the false-positive bound reported as a
 default; forced choice present in every transcript; zero uncited findings, zero
 authorship claims; PROTOCOL.md step 2 lists personas as conditional spawns.
+
+**Status.** shipped
+
+## H. Transcript intake and brainstorm
+
+**Goal.** Turn a voice-memo transcript (and an optional summary the writer
+wrote) into three to five candidate *angles* — each a piece the material could
+become, each resting on quoted transcript passages — stored in a per-project
+brief that the interview and outline build on.
+
+**Deterministic half.** `transcript-scan.mjs` cleans SRT, WebVTT,
+speaker-labelled or plain transcripts without losing line numbers, and counts
+words, turns, recurring terms (via the shared `text-index`), questions,
+fillers and topic-shift segments (labelled heuristic). `angles-check.mjs`
+verifies every quoted passage verbatim and that every segment is used, left
+out, or listed as unused. `brief-store.mjs` persists `project-brief/1`.
+
+**Model half.** The `prose-brainstorm` skill (planner) proposes angles that
+differ in thesis or audience, quotes the passages each uses, and fixes any
+drifted quote before showing anything. Thin material yields open questions,
+never an invented thesis.
+
+**Bundle.** `prose-outline`, new skill — nobody wants brainstorming without
+outlining. Minor bump.
+
+**Registry state.** New store `<projects-dir>/<identity>/<project>/brief/`
+(added to [`registry-stores.md`](registry-stores.md)); the transcript is cached
+there by sha256. Approval-gated, undo.
+
+**Acceptance.** Every transcript format detected with stable cleaned-text
+lines; a fragment under 150 words is `not-evaluated`; angles-check names exactly a
+planted one-comma drift and an unaccounted segment; store guards; skill
+positive and negative tests recorded; mutations green.
+
+**Status.** shipped
+
+## I. Interview
+
+**Goal.** Settle the decisions that decide what the piece is — angle,
+audience, purpose, form, length, shape, thesis, must-include, exclusions,
+links, assumptions — one question at a time, each with a recommended answer,
+in "grill me" style; anything the writer's sources already answer is looked
+up and put to the writer to confirm instead of asked.
+
+**Deterministic half.** The decision tree is data (`lib/decisions.mjs`).
+`brief-check.mjs` computes the next question (first open decision whose
+dependencies are settled), marks downstream answers stale when an upstream one
+changes, re-verifies sourced quotes, and decides `done` — so "are we finished?"
+is counted, not judged.
+
+**Model half.** The `prose-interview` skill (planner) asks or confirms, records
+"your call" as a confirmed recommendation and "skip" as open, and saves each
+confirmed batch on approval. Links to bible, research or corpus come from
+those bundles' own read tools, supplied by the session, never from their stores.
+
+**Bundle.** `prose-outline`; writes H's `brief/` store. Minor bump.
+
+**Registry state.** `brief/` only; reads the project's own `outlines/`.
+
+**Acceptance.** `next`, `stale`, `done` and evidence checks match hand-built
+fixtures (including an audience change that stales length, shape and thesis);
+the skill never marks done while brief-check says otherwise and never records
+a recommendation as the writer's answer; mutations green.
+
+**Status.** shipped
+
+## J. Outline baselines
+
+**Goal.** From one brief, propose two or three candidate outlines in
+different *shapes*, each allocating the length band across its sections; the
+writer picks one and only that one is saved.
+
+**Deterministic half.** Shapes are data files (`shapes/*.md`: argument essay,
+narrative arc, problem–solution, Q&A, numbered lessons, letter) validated by
+`shape-check.mjs`. `voice-outline/1` gains optional, validated-when-present
+`length`, `shape`, `brief_ref` and per-node `part` / `words` / `covers`.
+`proposal-check` gains shape-part, budget-sum and must-include coverage checks;
+`outline-compare.mjs` tabulates candidates — facts, no scores.
+
+**Model half.** The `prose-outline` skill gains candidate mode: shapes vary
+across candidates, open decisions become open-question nodes, and the
+comparison table is shown before the writer chooses.
+
+**Bundle.** `prose-outline`. Minor bump. Additive fields keep installed 0.1.x
+readers working; a `/2` cut is not needed.
+
+**Registry state.** The pick goes to `outlines/` with `brief_ref`; candidates
+stay task-local.
+
+**Acceptance.** Six shapes validate and three malformed ones are refused by
+name; proposal-check names an overshooting and an uncovering candidate;
+outline-compare reproduces expected output; mutations green.
+
+**Status.** shipped
+
+## K. Outline → draft handoff
+
+**Goal.** Turn an approved outline and brief into a `prose-writing-job/1`
+mechanically, so the runtime drafts the piece that was planned in the writer's
+voice, then check the draft against the plan with the structure critic in
+intended-outline mode.
+
+**Deterministic half.** `outline-job.mjs`: length band → `word-limit` rule;
+sections with budgets → ordered facts; filled evidence → facts; confirmed
+audience/purpose/form → `context`; must-include/exclude → semantic rules;
+open questions or unconfirmed decisions → refusal unless `--allow-open`, which
+turns each into an explicit "leave unresolved" rule. Every fact and rule
+carries a `from` pointer.
+
+**Model half.** None new: the `prose-draft` skill gains the from-an-outline
+path and never edits the generated job.
+
+**Bundle.** `prose-author` (minor bump); the read subset of the two schemas is
+a no-owner contract, `docs/contracts/outline-handoff.md`
+(written in K1), with a ported validator pinned by a parity test against prose-outline.
+
+**Registry state.** None new.
+
+**Acceptance.** Expected jobs byte-equal; refusals name each open item; no
+fact or rule lacks `from`; parity over prose-outline's fixtures; one
+end-to-end run recorded; mutations green.
+
+**Status.** shipped
+
+## L. Chief-editor reading pass
+
+**Goal.** Read a reviewed draft section by section with the notes for each
+section beside it; the writer accepts, declines or defers each note and adds
+their own; accepted notes become the reviser's plan.
+
+**Deterministic half.** `section-split.mjs` (units with stable ids);
+`notes-check.mjs` verifies every note's quote sits in its unit, every unit was
+read or skipped with a reason, nothing is left proposed, and exports exactly
+the accepted notes as PLAN-FORMAT entries.
+
+**Model half.** The `prose-edit` skill (reviewer, read-only on the draft)
+presents consolidated findings unit by unit and keeps the `edit-notes/1`
+ledger. It adds no critique of its own and dispatches no critic per section by
+default — critics run once on the whole draft, the conditions their bounds
+were measured under.
+
+**Bundle.** `prose-review`, its first skill; PROTOCOL.md gains step 3a. No new
+agent — consolidation stays protocol. Minor bump.
+
+**Registry state.** None; the ledger is task-local beside `plan.json`.
+
+**Acceptance.** Expected units for sectioned and heading-free drafts;
+notes-check names an out-of-unit quote, an unreasoned skip and a declined note
+in the export; skill negative test — an all-CLEAN review yields no notes but
+the writer's; mutations green.
 
 **Status.** shipped

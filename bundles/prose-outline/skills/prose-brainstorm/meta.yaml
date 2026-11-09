@@ -1,0 +1,67 @@
+# Metadata for the prose-brainstorm skill.
+#
+# Skills have no primitives/ entry — see CONTRIBUTING.md "Surfaces". A skill
+# renders once; its portable form is the bundle's AGENTS.md. This file exists
+# because the contract and an honest per-harness enforcement label are not
+# optional for any surface.
+
+name: prose-brainstorm
+kind: planner
+surface: skill
+bundle: prose-outline
+
+# Why planner: it decomposes raw material into candidate pieces whose success
+# criteria are checkable — every quote verbatim at its line, every segment
+# accounted for — and it surfaces ambiguity (a null thesis with open questions)
+# instead of resolving it. It chooses nothing for the writer.
+
+contract:
+  read_only: false          # it writes ONE thing: a brief revision (and its cached sources), on approval
+  writes: project-brief-store
+  clean_context: false      # no adversarial framing to protect; it proposes
+  scope: transcript-summary-and-notes
+  deterministic: partial    # scan, check and store are scripts; the angles are not
+  verdict: null             # proposals, not a judgement
+
+  denied_inputs:
+    - the tell catalog, in any form
+    - the corpus (voice is not this skill's question)
+    - another identity's briefs
+
+  refuses:
+    - Quoting the writer in words they did not use, or at a line they did not say it on
+    - Inventing a thesis, fact, story or example the material does not contain
+    - Dropping part of the transcript without listing it as left out or unused
+    - Choosing the angle for the writer
+    - Saving without the user's approval, or caching a transcript as a side effect
+    - Picking an identity when the registry has several and no default
+    - Outlining or drafting — prose-outline and prose-draft own those
+    - Stating or implying who or what produced a transcript
+
+  tools:
+    - tools/transcript-scan.mjs     # clean without losing words; counts, with limits
+    - tools/angles-check.mjs        # quotes verbatim at their line; full coverage; the two promises
+    - tools/brief-store.mjs         # approval-gated, three registry states, source cache
+
+harness:
+  claude-code:
+    enforcement: partial
+    notes: >-
+      Dispatcher-triggered from the description. The scripts are deterministic
+      and the approval gate is a flag the script honours; that the model runs
+      angles-check before showing, and sets --approved only after a yes, are
+      prompt rules, not harness guarantees.
+  cursor:
+    enforcement: partial
+    notes: >-
+      Scripts and store behave identically. Skill dispatch is absent; invoke by name.
+  codex:
+    enforcement: partial
+    notes: >-
+      Same. Use the bundle's AGENTS.md block so the model runs the scan and the
+      check instead of quoting from memory.
+  agents-md:
+    enforcement: advisory
+    notes: >-
+      The scripts port intact; the quoting and approval rules are prose that
+      angles-check and the store's --approved flag turn into checks. Run them.

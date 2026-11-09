@@ -1,0 +1,73 @@
+{
+  "schema": "edit-notes/1",
+  "draft_digest": "b7469508565a75b304c9efa2839fcffc051c674bc894c294df6fd10c1ba0d4e3",
+  "finished": true,
+  "units": [
+    {
+      "id": "u48cf569d",
+      "status": "read",
+      "skip_reason": null
+    },
+    {
+      "id": "ua1f2aac3",
+      "status": "read",
+      "skip_reason": null
+    },
+    {
+      "id": "ua41483fb",
+      "status": "read",
+      "skip_reason": null
+    },
+    {
+      "id": "u4e83b821",
+      "status": "read",
+      "skip_reason": null
+    }
+  ],
+  "notes": [
+    {
+      "id": "N1",
+      "unit": "ua41483fb",
+      "source": "voice-critic",
+      "line": 13,
+      "quote": "we starve the part that decides it",
+      "note": "'starve' is the transcript's word but the paragraph's only metaphor; the critic reads it as outside the corpus register",
+      "change": "replace 'starve' with 'neglect'",
+      "status": "accepted",
+      "writer_comment": null
+    },
+    {
+      "id": "N2",
+      "unit": "ua41483fb",
+      "source": "structure-critic",
+      "line": 17,
+      "quote": "Her best baker hated the first month.",
+      "note": "no transition from the team claim back to the bakery story",
+      "change": null,
+      "status": "declined",
+      "writer_comment": "the jump is the point"
+    },
+    {
+      "id": "N3",
+      "unit": "u4e83b821",
+      "source": "writer",
+      "line": 29,
+      "quote": "Give the new person a month on the slow part.",
+      "note": "too abrupt as a first sentence of the close",
+      "change": "open the close with one sentence tying it back to the team",
+      "status": "accepted",
+      "writer_comment": null
+    },
+    {
+      "id": "N4",
+      "unit": "u48cf569d",
+      "source": "reader-critic:skeptical-cto",
+      "line": 3,
+      "quote": "New\nbakers there do not shape a single loaf for their first month.",
+      "note": "a CTO would ask whether a month is affordable for a startup",
+      "change": null,
+      "status": "deferred",
+      "writer_comment": "maybe in the objection"
+    }
+  ]
+}

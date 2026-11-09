@@ -1,0 +1,82 @@
+{
+  "schema": "prose-writing-job/1",
+  "mode": "draft",
+  "brief": "The starter is the bakery: The slow invisible part of the work decides the result, long before anyone sees it.",
+  "context": {
+    "form": "newsletter",
+    "purpose": "Make readers protect the unglamorous early work on their teams.",
+    "register": null,
+    "audience": "Team leads who reward visible output over slow groundwork.",
+    "project": null
+  },
+  "facts": [
+    "Section 1 (≈200 words, problem): Teams reward the visible part of the work and starve the part that decides it.",
+    "Evidence for section 1: the bakery's first month: no shaping, only feeding",
+    "Section 2 (≈120 words, stakes): The failure happens hours before anyone touches the dough, so nobody sees its cause.",
+    "Evidence for section 2: 'You can't rescue bad fermentation with good scoring.'",
+    "Section 3 (≈380 words, solution): Give new people a month on the starter, and keep the notebook that lets you read the failure back.",
+    "Evidence for section 3: the month of feeding; eleven years of notebooks",
+    "Section 4 (≈120 words, objection): It looks like hazing to the people doing it.",
+    "Evidence for section 4: the early-shift baker who hated the first month",
+    "Section 5 (≈110 words, close): The moment you know someone will be good is when they notice the starter.",
+    "Evidence for section 5: adjusting the water on rainy days"
+  ],
+  "rules": [
+    {
+      "id": "outline-length",
+      "kind": "word-limit",
+      "directive": "Between 800 and 1100 words, the outline's band.",
+      "minimum": 800,
+      "maximum": 1100
+    },
+    {
+      "id": "must-include-1",
+      "kind": "semantic",
+      "directive": "Include: the month of feeding the starter"
+    },
+    {
+      "id": "must-include-2",
+      "kind": "semantic",
+      "directive": "Include: the eleven years of notebooks"
+    },
+    {
+      "id": "unresolved-n6",
+      "kind": "semantic",
+      "directive": "Leave this unresolved; do not assert an answer: Does the objection need its own section, or a sentence in the solution?"
+    }
+  ],
+  "examples": true,
+  "review": "standard",
+  "adapter": {
+    "harness": "claude"
+  },
+  "outline": {
+    "project": null,
+    "revision": null,
+    "digest": "1a8d6cd580def6a9c5e468b5c449ea829fd09c5494633bd3812f72913b31ba3d",
+    "shape": "problem-solution"
+  },
+  "handoff": {
+    "schema": "outline-handoff/1",
+    "facts_from": [
+      "n1",
+      "n1.e1",
+      "n2",
+      "n2.e1",
+      "n3",
+      "n3.e1",
+      "n4",
+      "n4.e1",
+      "n5",
+      "n5.e1"
+    ],
+    "rules_from": [
+      "length",
+      "must_include.0",
+      "must_include.1",
+      "n6"
+    ],
+    "notes": [],
+    "brief_revision": null
+  }
+}

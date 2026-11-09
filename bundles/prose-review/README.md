@@ -4,7 +4,7 @@ Three read-only critics and one revising transformer for prose. Every rewrite
 this bundle produces goes through the fidelity gate before it reaches the
 author.
 
-**Status: v0.7 — five critics and a reviser; the medium and reader critics are conditional.**
+**Status: v0.8 — five critics, a reviser and the editor's reading pass; the medium and reader critics are conditional.**
 
 - `prose-voice-critic`: does this draft sound like the person it is supposed to
   be by, judged against their own corpus.
@@ -32,6 +32,7 @@ reason is in [`tests/critic-harness.md`](tests/critic-harness.md).
 | [`prose-reader-critic`](agents/prose-reader-critic.md) | shipped v0.6.0 — one prompt, many readers; personas in [`personas/`](personas/); see the [primitive README](../../primitives/agents/prose-reader-critic/README.md) |
 | `prose-adversarial-reader` | *order* and *weakest section* belong to the structure critic; the rest ships as [`personas/adversarial-reader.md`](personas/adversarial-reader.md), read by `prose-reader-critic` |
 | [`prose-medium-critic`](agents/prose-medium-critic.md) | shipped v0.6.0 — conditional; reads a `medium-profile/1` and `repurpose-check` output the session supplies; see the [primitive README](../../primitives/agents/prose-medium-critic/README.md) |
+| [`skills/prose-edit/`](skills/prose-edit/SKILL.md) | the chief editor's reading pass (PROTOCOL step 3a) — a skill, not a critic: presents the consolidated notes section by section, keeps the writer's ledger, exports the accepted notes to the reviser's plan |
 
 ## The critics point opposite ways, on purpose
 

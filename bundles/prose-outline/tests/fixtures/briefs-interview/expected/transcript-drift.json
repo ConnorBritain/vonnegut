@@ -1,0 +1,26 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": "audience",
+  "asks": "Who is this for, and what do they already know?",
+  "open_required": [],
+  "open_optional": [
+    "must_include",
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [
+    {
+      "decision": "audience",
+      "status": "drifted",
+      "found_line": 11
+    }
+  ],
+  "evidence_unverified": [],
+  "done": false
+}

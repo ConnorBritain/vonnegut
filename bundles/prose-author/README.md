@@ -5,7 +5,8 @@ checks tied to the delivered text. **v0.6.0 adds shared writing identities** acr
 compatible installations, without copying your corpus or preferences into plugins;
 **v0.7.0 adds corpus intake** from a Substack export, a Google Docs folder, a
 Markdown vault or an mbox, selected and attested by the writer per batch;
-**v0.9.0 adds repurposing** into other forms under medium profiles.
+**v0.9.0 adds repurposing** into other forms under medium profiles;
+**v0.10.0 drafts from an approved outline**, mechanically, with the receipt naming it.
 See [identity setup and limits](skills/prose-draft/references/identities.md) and
 [v0.6 verification](tests/V060-ENGINEERING.md). Historical evaluation evidence
 remains in [v0.5 verification](tests/V050-FINAL-ENGINEERING.md) and

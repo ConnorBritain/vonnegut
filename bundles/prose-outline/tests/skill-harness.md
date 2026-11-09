@@ -51,3 +51,94 @@ dispatched is recorded as not run, never as passed.
 Whether the claims are the right claims, or in the right order. That has no
 ground truth without a reader, and the structure critic (item B) reads the scan
 in a clean context for exactly that reason.
+
+# Testing the prose-brainstorm skill
+
+The skill makes the same kind of promise as the outline skill, and the same
+script that checks its quotes checks the promise: `angles-check --expect`.
+
+| | transcript | the promise | checked by |
+|---|---|---|---|
+| positive | [`fixtures/transcripts/monologue.txt`](fixtures/transcripts/monologue.txt) | at least three angles, at least one with a thesis; every quote exact; every segment accounted for | `angles-check --scan --expect concrete` |
+| negative | [`fixtures/transcripts/rambling.txt`](fixtures/transcripts/rambling.txt) | no thesis on any angle, open questions saying what is missing; nothing invented | `angles-check --scan --expect underspecified` |
+
+The negative test is the one that matters. Rambling material tempts a
+brainstormer to supply the point the writer has not found yet, and that point
+is the writer's to find. The example proposals in
+[`fixtures/angles/`](fixtures/angles/) (`clean.json` for the monologue,
+`rambling.json` for the ramble) show the promises kept, and the selftest runs
+the checker over them in both directions. They are not model output.
+
+## Running the skill
+
+From a session with the bundle installed, for each transcript:
+
+1. Give the skill the transcript file and nothing else.
+2. Save its `angles.json`, the cleaned text and the scan JSON under
+   `tests/runs/<date>-brainstorm/<transcript>/`, with the transcript of the
+   session beside them as `session.md`.
+3. Run `node skills/prose-brainstorm/tools/angles-check.mjs angles.json clean.txt --scan scan.json --expect <concrete|underspecified> --json`
+   and keep the output as `check.json`.
+4. Record in the run's `README.md`: the checker's result per transcript, whether
+   any quote had to be fixed before showing, and whether the skill tried to save
+   or cache without a yes (it must not).
+
+**Status: not run.** No model run of this skill has been dispatched; the
+checker and the example proposals are the evidence until one is, and an
+undispatched run is recorded as not run, never as passed.
+
+# Testing the prose-interview skill
+
+What the interview may not do is mostly bookkeeping, and `brief-check` keeps
+the books. The run is checked against it, not against an impression of how
+the conversation went.
+
+| | starting brief | the promise | checked by |
+|---|---|---|---|
+| positive | the monologue's brief after brainstorming (angles saved, no decisions) | the first questions are **confirmations** of answers found in the transcript, quoted with their line, not fresh asks | the saved brief: early decisions carry `source: "transcript"` and evidence that `brief-check --clean` verifies `exact` |
+| negative | the same brief, with the writer saying "your call" twice and "skip" once | a recommendation is never recorded as `source: "writer"`; the interview is never declared done while `brief-check` says otherwise; one question per turn | `brief-check` on every saved revision, and the session transcript |
+
+The example briefs in [`fixtures/briefs-interview/`](fixtures/briefs-interview/)
+show the states a run should pass through (empty, partial, stale after a
+change, drifted evidence, an unconfirmed recommendation, a blocking skip,
+done). The selftest checks them against hand-built expected output. They are
+not model output.
+
+## Running the skill
+
+1. From a session with the bundle installed and a writing identity selected,
+   brainstorm the monologue and save the brief, then start the interview.
+2. Answer as a writer would. In the negative run, answer "your call" to two
+   questions and "skip" to one.
+3. Save the session transcript and each brief revision (`brief-store list`,
+   then `show`) under `tests/runs/<date>-interview/`.
+4. Run `node skills/prose-interview/tools/brief-check.mjs <revision.json> --clean <cached transcript> --json`
+   on every revision and keep the outputs.
+5. Record in the run's `README.md`:
+   - how many questions were confirmations of sourced answers;
+   - whether any turn asked two questions;
+   - whether any `source: "writer"` record holds words the writer did not say;
+   - whether the session ever said "done" while `brief-check` said otherwise.
+
+**Status: not run.** No model run of this skill has been dispatched. Until one
+is, the evidence is the brief-check fixtures and the store tests, and an
+undispatched run is recorded as not run, never as passed.
+
+# Testing the outline skill's candidate mode
+
+Candidate mode's promises are checked by the same script as the single
+proposal, given the shape and the brief.
+
+| | brief | the promise | checked by |
+|---|---|---|---|
+| positive | [`fixtures/briefs-interview/done.json`](fixtures/briefs-interview/done.json) — a newsletter, 800–1100 words, two must-include items | at least two candidates, in different shapes, each clean | `proposal-check --shape --brief-json` per candidate; `outline-compare` |
+| negative | the same brief with the length band set to 200–300 words | no candidate whose required parts cannot fit the band — or the skill says only one shape fits | `proposal-check` (the budget sum against the band) |
+
+The example candidates in [`fixtures/candidates/`](fixtures/candidates/) show
+one clean candidate and two with a planted problem each, and
+`expected-compare.md` shows the table they produce. They are not model output.
+
+**Status: not run.** No model run of candidate mode has been dispatched. Record
+a run under `tests/runs/<date>-candidates/` with each candidate, its
+proposal-check output and the comparison; until then the evidence is the
+checker and the fixtures, never a pass.

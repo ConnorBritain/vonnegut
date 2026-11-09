@@ -1,0 +1,19 @@
+{
+  "schema": "brief-check/1",
+  "valid": true,
+  "next": "exclude",
+  "asks": "What stays out?",
+  "open_required": [],
+  "open_optional": [
+    "exclude",
+    "links",
+    "assumptions"
+  ],
+  "unconfirmed": [],
+  "stale": [],
+  "skipped": [],
+  "blocked_by": [],
+  "evidence_problems": [],
+  "evidence_unverified": [],
+  "done": true
+}

@@ -23,7 +23,7 @@ import { randomUUID } from "node:crypto";
 import { sha256 } from "./registry-reader.mjs";
 
 export const PROJECT_NAME = /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}$/;
-export const STORES = Object.freeze(["outlines", "bible", "research"]);
+export const STORES = Object.freeze(["outlines", "bible", "research", "brief"]);
 
 export const stableJSON = (v) => Array.isArray(v) ? `[${v.map(stableJSON).join(",")}]`
   : v && typeof v === "object" ? `{${Object.keys(v).sort().map((k) => `${JSON.stringify(k)}:${stableJSON(v[k])}`).join(",")}}` : JSON.stringify(v);

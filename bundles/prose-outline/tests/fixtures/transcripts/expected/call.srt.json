@@ -1,0 +1,139 @@
+{
+  "schema": "transcript-scan/1",
+  "source_digest": "70e3749d000afe8d91829f39a4457cc9464b9e4a3c56391b4ddec4bfe1f1f64d",
+  "format": "srt",
+  "words": 204,
+  "clean": {
+    "digest": "960befaff7a6ef22371fd177d763d86de7d5acd8ebc0a309e9280e2b58489323",
+    "lines": 13
+  },
+  "turns": [
+    {
+      "speaker": "S1",
+      "line": 1,
+      "words": 204
+    }
+  ],
+  "segments": [
+    {
+      "id": "s1",
+      "start_line": 1,
+      "end_line": 13,
+      "sentences": 13,
+      "words": 204,
+      "top_terms": [
+        "pairing",
+        "access",
+        "chat",
+        "day",
+        "docs"
+      ]
+    }
+  ],
+  "recurring_terms": [
+    {
+      "term": "pairing",
+      "count": 5,
+      "lines": [
+        4,
+        5,
+        9,
+        11,
+        12
+      ]
+    },
+    {
+      "term": "access",
+      "count": 3,
+      "lines": [
+        2,
+        5,
+        10
+      ]
+    },
+    {
+      "term": "chat",
+      "count": 3,
+      "lines": [
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "term": "day",
+      "count": 3,
+      "lines": [
+        5,
+        9,
+        12
+      ]
+    },
+    {
+      "term": "docs",
+      "count": 3,
+      "lines": [
+        7,
+        8,
+        13
+      ]
+    },
+    {
+      "term": "engineers",
+      "count": 3,
+      "lines": [
+        2,
+        9,
+        10
+      ]
+    },
+    {
+      "term": "out",
+      "count": 3,
+      "lines": [
+        3,
+        11,
+        13
+      ]
+    },
+    {
+      "term": "questions",
+      "count": 3,
+      "lines": [
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "term": "week",
+      "count": 3,
+      "lines": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "line": 5,
+      "text": "So what if we started pairing on day one and fixed the access problem in parallel?"
+    }
+  ],
+  "fillers": {
+    "um": 1,
+    "uh": 0,
+    "you know": 1,
+    "like": 0,
+    "i mean": 0
+  },
+  "limits": [
+    "Topic segments are a heuristic: a lexical-cohesion dip (TextTiling) over windows of 6 sentences, cut at mean − sd/2 of the depth scores, no segment under 8 sentences. It can split one long thought or merge two short ones.",
+    "Sentence boundaries are the shared English splitter; unpunctuated speech-to-text output yields long 'sentences' and fewer segments.",
+    "Speakers are taken from labels only; an unlabelled transcript is one speaker (S1). No diarisation is attempted.",
+    "Fillers are counted from a fixed list; 'like' is counted wherever it appears, including as a verb.",
+    "Recurring terms are capitalised runs seen twice or more plus lower-case content words seen three times or more; neither is a judgement of importance."
+  ],
+  "status": "measured"
+}
